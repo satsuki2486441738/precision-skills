@@ -1,0 +1,17 @@
+# Publish only the generic skill; keep cases and environments local.
+/*
+!/.gitignore
+!/README.md
+!/AGENTS.md
+!/CLAUDE.md
+!/SKILL.md
+!/docs/
+/docs/*
+!/docs/ARCHITECTURE.md
+!/docs/WORKFLOW.md
+!/scripts/
+/scripts/*
+!/scripts/compare_scores.py
+!/tests/
+/tests/*
+!/tests/test_compare_scores.py
