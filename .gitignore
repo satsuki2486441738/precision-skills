@@ -13,5 +13,12 @@
 !/tests/test_compare_scores.py
 !/tests/test_artifact_tools.py
 !/tests/test_shared_tools.py
+!/tests/results/
+/tests/results/*
+!/tests/results/2026-10-19/
+/tests/results/2026-10-19/*
+!/tests/results/2026-10-19/README.md
+!/tests/results/2026-10-19/verification.json
+!/tests/results/2026-10-19/evidence.zip
 __pycache__/
 *.pyc
