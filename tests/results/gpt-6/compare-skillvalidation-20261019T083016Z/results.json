@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-10-19T08:38:52.749242+00:00",
+  "repository": "satsuki2486441738/precision-skills",
+  "author_github": "YuZhengYYDS",
+  "model_family": "gpt-6",
+  "exact_backend_model_id": null,
+  "branch": "validation/gpt-6-cold-skill-20261019",
+  "baseline_commit": "f7325d2e919e04368b0e7d9d59299486c1ff85fa",
+  "local_fix_commit": "d942715acb06176e62526db7a4f726f74bc3d6b6",
+  "branches_inspected": {
+    "main": {
+      "sha": "f7325d2e919e04368b0e7d9d59299486c1ff85fa"
+    },
+    "validation/main-tests-20261019": {
+      "sha": "602c8e5647a326066ed5ff46086ce97670f7e25b",
+      "main_only_commits": 1,
+      "branch_only_commits": 1
+    },
+    "docs/resource-reuse-npu-validation": {
+      "sha": "320b0a85e9700960171d2c92d0538afd0148b202",
+      "main_only_commits": 46,
+      "branch_only_commits": 0
+    }
+  },
+  "isolation": {
+    "fork_turns": "none",
+    "worker": "cold_precision_skill",
+    "snapshot": "detached worktree at baseline_commit",
+    "not_inherited": "parent conversation and findings",
+    "runtime_system_instructions_and_tools_still_available": true,
+    "worker_read_scope": [
+      "AGENTS.md",
+      "skills/precision-skill/SKILL.md",
+      "references/sft.md",
+      "references/comparison.md",
+      "module docstrings: tensor_artifacts.py, compare_tensors.py, artifact_io.py, conditions.py, validate_artifacts.py",
+      "CLI --help: tensor_artifacts.py, compare_tensors.py, validate_artifacts.py",
+      "AST function/class names and line numbers only, with no function implementations read"
+    ],
+    "task": "Invoke the checkout precision-skill to build and compare small synthetic two-side CPU training captures: gradients and actual stored updates, two logical ranks/shards, absent and present-zero gradients, declared FP16/FP32 native parameter storage differences, independent known-value metrics, one missing-input negative and one mismatched-setting negative. Write only fresh run artifacts. Do not read tests, Git history, other worktrees or parent findings. No remote access. Bound to 12 minutes."
+  },
+  "cold_execution": {
+    "run": "compare-coldtraining-20261019T082631Z",
+    "completed_utc": "2026-10-19T08:34:22.141527+00:00",
+    "artifact_files": 79,
+    "listed_checks": 95,
+    "verification": {
+      "all_listed_checks_verified": true,
+      "documented_behavior_expectation_not_met": "The expected unaffected tensor metrics were not retained for a whole-tensor inventory omission; recorded as ambiguity, not a confirmed tool bug."
+    },
+    "normal_status": "no_thresholds",
+    "thresholds": null,
+    "confirmed_bugs": [],
+    "coverage": {
+      "gradients": {
+        "expected_logical_parameters": 3,
+        "observed_logical_parameters": 3,
+        "paired_present_parameters": 2,
+        "paired_absent_parameters": 1,
+        "paired_present_elements": 6,
+        "absent_gradient_elements": 2,
+        "expected_ranks_per_side": 2,
+        "completed_ranks_per_side": 2,
+        "present_zero_parameters": 1
+      },
+      "updates": {
+        "expected_logical_parameters": 3,
+        "paired_parameters": 3,
+        "paired_elements": 8,
+        "unchanged_parameters": 2,
+        "applied_events_per_side": 1,
+        "expected_ranks_per_side": 2,
+        "completed_ranks_per_side": 2
+      },
+      "input_omission": {
+        "expected_logical_parameters": 3,
+        "observed_side_a_parameters": 3,
+        "observed_side_b_parameters": 2,
+        "missing_parameter": "synthetic_model.zero",
+        "missing_gradient_elements": 2,
+        "paired_metric_elements_reported": null,
+        "tool_status": "not_covered"
+      },
+      "mismatched_setting": {
+        "affected_side": "synthetic_fp32",
+        "affected_rank": 1,
+        "field": "optimizer.accumulation_steps",
+        "expected": 1,
+        "actual": 2,
+        "tool_status": "incomparable"
+      }
+    },
+    "independent_expected": {
+      "synthetic": true,
+      "thresholds": null,
+      "independence": "literal hand-derived vectors and scalar Python math",
+      "gradients": {
+        "global": {
+          "count": 6,
+          "l2_error": 1.0,
+          "rmse": 0.408248290463863,
+          "cosine": 0.9939990885479664,
+          "max_abs_error": 1.0,
+          "maximum_flat_indices": [
+            3
+          ],
+          "norm_a": 5.477225575051661,
+          "norm_b": 6.244997998398398
+        },
+        "weight": {
+          "count": 4,
+          "l2_error": 1.0,
+          "rmse": 0.5,
+          "cosine": 0.9939990885479664,
+          "max_abs_error": 1.0,
+          "maximum_flat_indices": [
+            3
+          ],
+          "norm_a": 5.477225575051661,
+          "norm_b": 6.244997998398398
+        },
+        "zero": {
+          "count": 2,
+          "l2_error": 0.0,
+          "rmse": 0.0,
+          "cosine": null,
+          "max_abs_error": 0.0,
+          "maximum_flat_indices": [
+            0,
+            1
+          ],
+          "norm_a": 0.0,
+          "norm_b": 0.0
+        },
+        "max_coordinate": {
+          "tensor": "synthetic_model.weight",
+          "flat_index": 3,
+          "index": [
+            1,
+            1
+          ]
+        },
+        "expected_logical_parameters": 3,
+        "paired_present_parameters": 2,
+        "paired_absent_parameters": 1,
+        "paired_present_elements": 6
+      },
+      "updates": {
+        "global": {
+          "count": 8,
+          "l2_error": 0.3535533905932738,
+          "rmse": 0.125,
+          "cosine": 0.9812567051925868,
+          "max_abs_error": 0.25,
+          "maximum_flat_indices": [
+            0,
+            3
+          ],
+          "norm_a": 1.346291201783626,
+          "norm_b": 1.5612494995995996
+        },
+        "weight": {
+          "count": 4,
+          "l2_error": 0.3535533905932738,
+          "rmse": 0.1767766952966369,
+          "cosine": 0.9812567051925868,
+          "max_abs_error": 0.25,
+          "maximum_flat_indices": [
+            0,
+            3
+          ],
+          "norm_a": 1.346291201783626,
+          "norm_b": 1.5612494995995996
+        },
+        "zero": {
+          "count": 2,
+          "l2_error": 0.0,
+          "rmse": 0.0,
+          "cosine": null,
+          "max_abs_error": 0.0,
+          "maximum_flat_indices": [
+            0,
+            1
+          ],
+          "norm_a": 0.0,
+          "norm_b": 0.0
+        },
+        "absent": {
+          "count": 2,
+          "l2_error": 0.0,
+          "rmse": 0.0,
+          "cosine": null,
+          "max_abs_error": 0.0,
+          "maximum_flat_indices": [
+            0,
+            1
+          ],
+          "norm_a": 0.0,
+          "norm_b": 0.0
+        },
+        "maximum_coordinates": [
+          {
+            "tensor": "synthetic_model.weight",
+            "flat_index": 0
+          },
+          {
+            "tensor": "synthetic_model.weight",
+            "flat_index": 3
+          }
+        ],
+        "paired_present_parameters": 3,
+        "paired_present_elements": 8,
+        "initial_weight_difference": [
+          0.25,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "storage_a": "float16",
+        "storage_b": "float32"
+      },
+      "negative_input_omission": {
+        "omitted_parameter": "synthetic_model.zero",
+        "expected_exit": 1,
+        "full_aggregate": "unavailable",
+        "valid_weight_metrics": "retained"
+      },
+      "negative_mismatched_setting": {
+        "rank": 1,
+        "setting": "optimizer.accumulation_steps",
+        "expected": 1,
+        "actual": 2,
+        "expected_exit": 1,
+        "comparison": "unavailable"
+      }
+    },
+    "friction": [
+      {
+        "id": "missing_inventory_diagnostics",
+        "type": "usability_and_documentation_ambiguity",
+        "description": "Removing the whole zero-gradient tensor yields not_covered with reason 'tensor inventory mismatch'; per_tensor is empty. No missing-name or count detail is supplied. The compare_tensors docstring says an invalid tensor leaves valid per-tensor results, but does not delimit inventory-level omissions. The independent expectation of retained weight metrics did not hold for this omission. Coverage rejection itself is correct."
+      },
+      {
+        "id": "condition_diagnostics",
+        "type": "usability",
+        "description": "The deliberately mismatched rank-1 accumulation setting is correctly rejected, but the error identifies only optimizer and omits the side, rank, nested setting and expected/actual values."
+      },
+      {
+        "id": "output_schema_discovery",
+        "type": "documentation",
+        "description": "The input docstrings were sufficient to construct all successful artifacts on the first attempt. Consuming reports required inspecting the first output to discover value/status wrappers, error_norm/max_abs names and the logical maximum-coordinate representation."
+      }
+    ]
+  },
+  "parent_findings": [
+    {
+      "id": "BUG-001",
+      "severity": "P2",
+      "origin": "parent reproduction",
+      "state": "fixed",
+      "summary": "Safetensors header duplicate keys silently select later values; nonfinite literals accepted",
+      "fix": "shared artifact_io.parse_json decoder",
+      "regression": "Fixture.test_safetensors_header_rejects_duplicate_keys_and_nonfinite_json"
+    },
+    {
+      "id": "BUG-002",
+      "severity": "P2",
+      "origin": "parent reproduction",
+      "state": "fixed",
+      "summary": "Non-object distribution position records leak AttributeError and lose CLI reports",
+      "fix": "shared coordinate object guard",
+      "regressions": [
+        "Fixture.test_distribution_position_objects_fail_with_diagnostics",
+        "Fixture.test_null_distribution_position_cli_writes_diagnostic_report"
+      ]
+    },
+    {
+      "id": "ENV-001",
+      "origin": "existing environment restriction",
+      "state": "unchanged",
+      "summary": "Windows directory symlink creation lacks privilege; same regression passes in WSL"
+    }
+  ],
+  "reusable_operations": [
+    {
+      "name": "artifact_io.parse_json",
+      "state": "implemented",
+      "inputs": "JSON text/bytes",
+      "outputs": "decoded object or diagnosed rejection"
+    },
+    {
+      "name": "tests/results/gpt-6/replay.py",
+      "state": "implemented",
+      "inputs": "hashed ZIP and nested replay assertions",
+      "outputs": "fresh per-case diagnostic reports and replay summary"
+    },
+    {
+      "name": "structured inventory/condition differences",
+      "state": "candidate",
+      "inputs": "expected inventory/settings and actual rank records",
+      "outputs": "missing names/counts plus side/rank/nested-field/expected/actual"
+    }
+  ],
+  "validation": {
+    "linux": {
+      "tests": 119,
+      "passed": 119,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "seconds": 6.260169000015594,
+      "python": "3.11.17",
+      "numpy": "2.2.6"
+    },
+    "windows": {
+      "tests": 119,
+      "passed": 118,
+      "failures": 0,
+      "errors": 1,
+      "skipped": 0,
+      "exit_code": 1,
+      "seconds": 8.044256899971515,
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "error_test": "test_compare_scores.CompareTests.test_evidence_paths_resolve_directory_symlinks",
+      "error": "WinError 1314"
+    },
+    "targeted_artifact_tests": 42,
+    "independent_fix_review": "no actionable findings; all 42 artifact tests passed",
+    "skill_metadata": "valid under bundled validator in WSL",
+    "original_local_links_checked": 52,
+    "replay": [
+      {
+        "label": "baseline",
+        "matched": true,
+        "cases": 8,
+        "case_assertions": [
+          {
+            "name": "gradients",
+            "report": "case-00.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "synthetic_fp16-gradients-validation",
+            "report": "case-01.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "synthetic_fp32-gradients-validation",
+            "report": "case-02.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "updates",
+            "report": "case-03.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "synthetic_fp16-updates-validation",
+            "report": "case-04.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "synthetic_fp32-updates-validation",
+            "report": "case-05.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "input-omission",
+            "report": "case-06.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "mismatched-setting",
+            "report": "case-07.json",
+            "assertion": "matched"
+          }
+        ]
+      },
+      {
+        "label": "fixed",
+        "matched": true,
+        "cases": 8,
+        "case_assertions": [
+          {
+            "name": "gradients",
+            "report": "case-00.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "synthetic_fp16-gradients-validation",
+            "report": "case-01.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "synthetic_fp32-gradients-validation",
+            "report": "case-02.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "updates",
+            "report": "case-03.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "synthetic_fp16-updates-validation",
+            "report": "case-04.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "synthetic_fp32-updates-validation",
+            "report": "case-05.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "input-omission",
+            "report": "case-06.json",
+            "assertion": "matched"
+          },
+          {
+            "name": "mismatched-setting",
+            "report": "case-07.json",
+            "assertion": "matched"
+          }
+        ]
+      }
+    ],
+    "replay_negative_smoke_exit_codes": {
+      "valid": 0,
+      "tampered-array": 1,
+      "wrong-expectation": 1
+    },
+    "nested_assertion_checks": 4,
+    "review_development_issue": "Replay list assertions initially used exact equality; fixed to recurse and preserve subset/tolerance semantics.",
+    "all_local_links_including_model_records": 58
+  },
+  "evidence": {
+    "archive": "evidence.zip",
+    "sha256": "c04b486f920470ff7e67dbe366853df4badd5b032df06a2e6bb6c89fc96b384f",
+    "export_index": "EXPORT.json",
+    "replay_assertions": "REPLAY.json",
+    "source_hashes": {
+      "skills/precision-skill/examples/tensors.py": "5adf50c3b0cc1fba4f37ec3acd28415b767d1b8b3616fa44b4506ca364cdcdd8",
+      "skills/precision-skill/scripts/artifact_io.py": "3df5e8271b817e78444dade3a6b6700b64a9ed3b028141e968343deb5e7b6a3f",
+      "skills/precision-skill/scripts/compare_distributions.py": "f8efa3fab164cbc9913feaf8e24859acb8f094135b5edb1f96b3c20a02a3549b",
+      "skills/precision-skill/scripts/compare_scores.py": "205b1c186a8ad9d3bf259529c6b5ad9fdd98f526c53c6f59e606d26111b8b1a3",
+      "skills/precision-skill/scripts/compare_target_scores.py": "8c784ba8fcd2505dd5ca9f9eae5fa60321a6451d3b7dc27bd5c5e005c43135ff",
+      "skills/precision-skill/scripts/compare_tensors.py": "05c39d401900420815bdfa57762c7164f111b9b442098b0902ff139d058115e9",
+      "skills/precision-skill/scripts/conditions.py": "2f38598facdfb34b92225d0ea2893ceaf941516f6ec3843b6e6193321a6cb577",
+      "skills/precision-skill/scripts/msprobe_capture.py": "1cc8fb9224dfb30c1b9457eace46a3582713f90110ded62f598fdf2795b3cf2e",
+      "skills/precision-skill/scripts/query_distributions.py": "f2cea9dc3f7e1bcf19e91f3fb4ded3acb14a6f1866da6a05bce749b7b97d487b",
+      "skills/precision-skill/scripts/score_metrics.py": "17dd19a2406fa69af7002b542d68ce7f28902dfc31aa34e72c0b4debe7fde72e",
+      "skills/precision-skill/scripts/tensor_artifacts.py": "f0ab0fea2ea8a4dc39401f88ecfb0837cc5ce76a4ac1d8c6689138635640518f",
+      "skills/precision-skill/scripts/validate_artifacts.py": "749f146c2d0f1c70268db7dd36d1dbaccde622120e6fb1f4b54366373740afe3",
+      "tests/test_artifact_tools.py": "d3bdb29ca2e978307aa07783eace6d7b83ab11b8c97d46a7cf30998a2308c6b8"
+    },
+    "source_hash_note": "Hashes refer to tested working-tree bytes; Git may normalize line endings. Original cold bytes retained locally. Exported arrays unchanged; JSON references made relative; personal path prefixes redacted.",
+    "replay_tool_sha256": "3121db7c95ddced2ea73d2893f79dde91c1aa7964179e51ab5889b2e88654bbe"
+  },
+  "limitations": [
+    "Synthetic artifact integration only; no framework autograd, real model, native distributed synchronization or hardware numerics were tested.",
+    "FP16 versus FP32 means native NumPy array storage, not a real training-framework execution.",
+    "No precision pass/fail is inferred: all contracts and metric reports use thresholds=null."
+  ]
+}

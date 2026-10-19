@@ -13,5 +13,8 @@
 !/tests/test_compare_scores.py
 !/tests/test_artifact_tools.py
 !/tests/test_shared_tools.py
+!/tests/results/
+/tests/results/*
+!/tests/results/gpt-6/
 __pycache__/
 *.pyc
