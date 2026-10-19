@@ -1,0 +1,1984 @@
+{
+  "schema_version": 1,
+  "run": "compare-inferencematrix-20261019T124758Z",
+  "started_utc": "2026-10-19T12:47:58Z",
+  "finished_utc": "2026-10-19T13:15:59.031407+00:00",
+  "thresholds": null,
+  "status": "completed_with_explicit_unavailable_frameworks",
+  "skill": "skills/precision-skill/SKILL.md with inference recipe, runtime_probe, FixedHistory, export_records, target/distribution comparators and artifact validator",
+  "scope": {
+    "families": [
+      "LlamaForCausalLM / SmolLM2",
+      "Qwen2ForCausalLM / Qwen2.5"
+    ],
+    "model_initialization": "both pretrained pinned public checkpoints; no random-init models",
+    "fixed_sequences_per_model": 1,
+    "scored_targets_per_model": 3,
+    "history_lengths": [
+      6,
+      7,
+      8
+    ],
+    "vocab_sizes": {
+      "SmolLM2": 49152,
+      "Qwen2.5": 151936
+    },
+    "native_framework_model_captures": 6,
+    "primary_framework_target_pairs": 18,
+    "stage_boundary_limitations": "Only llama and TF CPU references have true fixed-token native cached decode. LMDeploy rows are repeated-prefill scoring, never labeled native decode."
+  },
+  "frameworks": {
+    "llama.cpp": {
+      "status": "native_capture_and_comparison_completed",
+      "version": "v0.7.0",
+      "revision": "757cad021b357f417065ddbc41a6e8f87c1f8136",
+      "backend": "CPU native GGML; no GPU offload",
+      "models": 2,
+      "paired_targets_per_model": 3,
+      "paired_distributions_per_model": 3,
+      "native_cache_coverage_per_model": {
+        "prefill": 1,
+        "first_decode": 1,
+        "later_decode": 1
+      },
+      "entrypoint": "llama_model_load_from_file -> llama_init_from_model -> llama_decode -> llama_get_logits_ith(ctx,-1)",
+      "weights": "F32 GGUF from exact checkpoint via pinned official converter; no quantization",
+      "kv_dtype": "F32"
+    },
+    "LMDeploy-TurboMind": {
+      "status": "native_capture_and_comparison_completed",
+      "version": "0.18.0",
+      "backend": "native CUDA TurboMind on RTX5060",
+      "models": 2,
+      "paired_targets_per_model": 3,
+      "paired_distributions_per_model": 3,
+      "native_execution": "three fresh full-prefix requests per model",
+      "cached_decode_coverage": 0,
+      "entrypoint": "Smol: AsyncEngine.async_get_logits; Qwen: Session.request_handle + AsyncEngine.safe_run with neutral GenerationConfig",
+      "weights": "FP16 from same pretrained checkpoints",
+      "kv_dtype": "FP16",
+      "warmup_log_caveat": "session_len128 triggers larger warmup shape status6 logs although short requests completed successfully"
+    },
+    "LMDeploy-PyTorch": {
+      "status": "native_capture_and_comparison_completed_exploratory_dependencies",
+      "version": "0.18.0",
+      "backend": "native CUDA/Triton, eager, RTX5060",
+      "models": 2,
+      "paired_targets_per_model": 3,
+      "paired_distributions_per_model": 3,
+      "native_execution": "three fresh full-prefix requests per model",
+      "cached_decode_coverage": 0,
+      "entrypoint": "Session.request_handle + AsyncEngine.safe_run with neutral GenerationConfig",
+      "dependency_caveat": "Native Triton3.4 warmup failed. Triton3.5.1 completed but differs from Torch2.8 pinned Triton3.4.",
+      "processed_default_attempt": "preserved diagnostic only, excluded final raw-score pairs"
+    },
+    "TensorRT-LLM": {
+      "status": "prerequisite_blocked_no_native_capture",
+      "probe": "tensorrt-llm-prerequisite-probe.json",
+      "observed_error": "ModuleNotFoundError: No module named 'tensorrt_llm'",
+      "entrypoint_requested": "tensorrt_llm.LLM; not resolved because import failed",
+      "package_metadata": "PyPI1.2.1 is a10133-byte wheel-stub sdist directing to pypi.nvidia.com; source retained",
+      "observed_prerequisites": "No nvcc or docker executable; NVIDIA GPU present. Absence of nvcc is not claimed to rule out prebuilt-wheel execution.",
+      "model_coverage": 0,
+      "official_hardware_source": "RTX5060 is not named in the pinned supported-hardware page; no assertion of universal incompatibility"
+    },
+    "MindIE-LLM": {
+      "status": "prerequisite_blocked_no_native_capture",
+      "probe": "mindie-llm-prerequisite-probe.json",
+      "observed_error": "ModuleNotFoundError: No module named 'torch_npu'",
+      "observed_prerequisites": "No npu-smi, /dev/davinci*, /usr/local/Ascend, CANN or MindIE paths. NVIDIA GPU only.",
+      "public_pypi_probe": "mindie-llm endpoint404, not evidence private vendor wheels are unavailable",
+      "model_coverage": 0,
+      "native_entrypoint": "not launched because required Ascend runtime/hardware absent"
+    }
+  },
+  "model_identities": {
+    "SmolLM2": {
+      "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "initialization": "pretrained",
+      "files": {
+        "config.json": {
+          "bytes": 861,
+          "sha256": "8eb740e8bbe4cff95ea7b4588d17a2432deb16e8075bc5828ff7ba9be94d982a"
+        },
+        "generation_config.json": {
+          "bytes": 132,
+          "sha256": "87b916edaaab66b3899b9d0dd0752727dff6666686da0504d89ae0a6e055a013"
+        },
+        "merges.txt": {
+          "bytes": 466391,
+          "sha256": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510"
+        },
+        "model.safetensors": {
+          "bytes": 269060552,
+          "sha256": "5af571cbf074e6d21a03528d2330792e532ca608f24ac70a143f6b369968ab8c"
+        },
+        "source_manifest.json": {
+          "bytes": 2366,
+          "sha256": "d7340533890076dc09196863509590131e326dd763feaa047675c89aaa0bc141"
+        },
+        "special_tokens_map.json": {
+          "bytes": 655,
+          "sha256": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52"
+        },
+        "tokenizer.json": {
+          "bytes": 2104556,
+          "sha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c"
+        },
+        "tokenizer_config.json": {
+          "bytes": 3764,
+          "sha256": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df"
+        },
+        "vocab.json": {
+          "bytes": 800662,
+          "sha256": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        }
+      },
+      "gguf": {
+        "path": "<RESOURCE_ROOT>/inference/SmolLM2-135M-Instruct-f32.gguf",
+        "sha256": "9b29071563138f115f72e147dcc8c5afbb6699f67aa099d7f075ec0ba0b295c8"
+      },
+      "llama_revision": "757cad021b357f417065ddbc41a6e8f87c1f8136"
+    },
+    "Qwen2.5": {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "initialization": "pretrained",
+      "files": {
+        "model.safetensors": {
+          "bytes": 988097824,
+          "sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe"
+        },
+        "tokenizer.json": {
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+        },
+        "config.json": {
+          "bytes": 659,
+          "sha256": "18e18afcaccafade98daf13a54092927904649e1dd4eba8299ab717d5d94ff45"
+        },
+        "tokenizer_config.json": {
+          "bytes": 7305,
+          "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+        },
+        "merges.txt": {
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+        },
+        "generation_config.json": {
+          "bytes": 242,
+          "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6"
+        },
+        "vocab.json": {
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      },
+      "gguf": {
+        "path": "<RESOURCE_ROOT>/inference/Qwen2.5-0.5B-Instruct-f32.gguf",
+        "sha256": "213d0777582f4dac46232fa7bd471a90837b582a612a9df7de5144453c008ea4"
+      }
+    }
+  },
+  "inputs": {
+    "SmolLM2": {
+      "sample": "geography",
+      "text": "The capital of France is Paris. The capital of Germany is Berlin.",
+      "prompt": [
+        504,
+        3575,
+        282,
+        4649,
+        314,
+        7042
+      ],
+      "continuation": [
+        30,
+        378,
+        3575
+      ],
+      "all_token_ids": [
+        504,
+        3575,
+        282,
+        4649,
+        314,
+        7042,
+        30,
+        378,
+        3575,
+        282,
+        4521,
+        314,
+        11452,
+        30
+      ],
+      "bos_added": false,
+      "template": null,
+      "attention_mask": "all ones",
+      "positions": "absolute contiguous from zero"
+    },
+    "Qwen2.5": {
+      "sample": "geography",
+      "text": "The capital of France is Paris. The capital of Germany is Berlin.",
+      "prompt": [
+        785,
+        6722,
+        315,
+        9625,
+        374,
+        12095
+      ],
+      "continuation": [
+        13,
+        576,
+        6722
+      ],
+      "all_token_ids": [
+        785,
+        6722,
+        315,
+        9625,
+        374,
+        12095,
+        13,
+        576,
+        6722,
+        315,
+        9856,
+        374,
+        19846,
+        13
+      ],
+      "bos_added": false,
+      "template": null,
+      "attention_mask": "all ones",
+      "positions": "absolute contiguous from zero"
+    }
+  },
+  "environment": {
+    "python_executable": "<ENV_ROOT>/precision-inference-20261019/bin/python",
+    "python_version": "3.11.17 (main, Oct 14 2026, 01:05:33) [Clang 23.1.3 ]",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "host": "<HOST>",
+    "isolated_environment": "<ENV_ROOT>/precision-inference-20261019",
+    "reused_site_packages": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages",
+    "base_environment_mutated": false,
+    "hardware": {
+      "nvidia-smi --query-gpu=name,compute_cap,memory.total,driver_version --format=csv,noheader": {
+        "returncode": 0,
+        "stdout": "NVIDIA GeForce RTX 5060, 12.0, 8151 MiB, 595.95\n",
+        "stderr": ""
+      },
+      "npu-smi info": {
+        "error": "FileNotFoundError(2, 'No such file or directory')"
+      },
+      "docker version": {
+        "error": "FileNotFoundError(2, 'No such file or directory')"
+      },
+      "nvcc --version": {
+        "error": "FileNotFoundError(2, 'No such file or directory')"
+      },
+      "ascend_devices": [],
+      "ascend_install_paths": {
+        "/usr/local/Ascend": false,
+        "/usr/local/Ascend/ascend-toolkit": false,
+        "/usr/local/Ascend/mindie": false
+      }
+    },
+    "runtime_reference": {
+      "status": "completed",
+      "executable": "<ENV_ROOT>/precision-inference-20261019/bin/python",
+      "python": "3.11.17 (main, Oct 14 2026, 01:05:33) [Clang 23.1.3 ]",
+      "architecture": "x86_64",
+      "host": "<HOST>",
+      "pid": 2830,
+      "modules": {
+        "torch": {
+          "path": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages/torch/__init__.py",
+          "version": "2.8.0+cu128"
+        },
+        "transformers": {
+          "path": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages/transformers/__init__.py",
+          "version": "4.57.1"
+        },
+        "numpy": {
+          "path": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages/numpy/__init__.py",
+          "version": "2.2.6"
+        }
+      },
+      "symbols": [
+        "transformers:AutoModelForCausalLM"
+      ],
+      "checks": {},
+      "distributions": {
+        "torch": {
+          "version": "2.8.0+cu128",
+          "location": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages"
+        },
+        "transformers": {
+          "version": "4.57.1",
+          "location": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages"
+        },
+        "numpy": {
+          "version": "2.2.6",
+          "location": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages"
+        }
+      },
+      "elapsed_seconds": 2.0596995999999876,
+      "returncode": 0,
+      "diagnostics": "",
+      "diagnostic_bytes": 0
+    },
+    "runtime_metadata": {
+      "sys_path": [
+        "<EVIDENCE_ROOT>",
+        "<HOME>/.local/share/uv/python/cpython-3.11.17-linux-x86_64-gnu/lib/python311.zip",
+        "<HOME>/.local/share/uv/python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11",
+        "<HOME>/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/lib/python3.11/lib-dynload",
+        "<ENV_ROOT>/precision-inference-20261019/lib/python3.11/site-packages",
+        "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages"
+      ],
+      "packages": {
+        "torch": {
+          "version": "2.8.0+cu128",
+          "metadata_location": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages",
+          "requires": [
+            {
+              "requirement": "filelock",
+              "installed": "4.2.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "typing-extensions>=4.10.0",
+              "installed": "4.16.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "sympy>=1.13.3",
+              "installed": "1.14.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "networkx",
+              "installed": "3.6.1",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "jinja2",
+              "installed": "3.1.6",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "fsspec",
+              "installed": "2026.9.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cuda-nvrtc-cu12==12.8.93; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "12.8.93",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cuda-runtime-cu12==12.8.90; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "12.8.90",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cuda-cupti-cu12==12.8.90; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "12.8.90",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cudnn-cu12==9.10.2.21; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "9.10.2.21",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cublas-cu12==12.8.4.1; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "12.8.4.1",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cufft-cu12==11.3.3.83; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "11.3.3.83",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-curand-cu12==10.3.9.90; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "10.3.9.90",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cusolver-cu12==11.7.3.90; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "11.7.3.90",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cusparse-cu12==12.5.8.93; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "12.5.8.93",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cusparselt-cu12==0.7.1; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "0.7.1",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-nccl-cu12==2.27.3; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "2.27.3",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-nvtx-cu12==12.8.90; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "12.8.90",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-nvjitlink-cu12==12.8.93; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "12.8.93",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cufile-cu12==1.13.1.3; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "1.13.1.3",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "triton==3.4.0; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
+              "installed": "3.5.1",
+              "status": "version_mismatch"
+            }
+          ]
+        },
+        "transformers": {
+          "version": "4.57.1",
+          "metadata_location": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages",
+          "requires": [
+            {
+              "requirement": "filelock",
+              "installed": "4.2.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "huggingface-hub<1.0,>=0.34.0",
+              "installed": "0.36.2",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "numpy>=1.17",
+              "installed": "2.2.6",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "packaging>=20.0",
+              "installed": "26.3",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "pyyaml>=5.1",
+              "installed": "6.0.3",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "regex!=2019.12.17",
+              "installed": "2026.9.29",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "requests",
+              "installed": "2.34.2",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "tokenizers<=0.23.0,>=0.22.0",
+              "installed": "0.22.2",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "safetensors>=0.4.3",
+              "installed": "0.8.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "tqdm>=4.27",
+              "installed": "4.70.1",
+              "status": "satisfied"
+            }
+          ]
+        },
+        "lmdeploy": {
+          "version": "0.18.0",
+          "metadata_location": "<ENV_ROOT>/precision-inference-20261019/lib/python3.11/site-packages",
+          "requires": [
+            {
+              "requirement": "cloudpickle",
+              "installed": "3.1.2",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "einops",
+              "installed": "0.8.2",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "fastapi",
+              "installed": "0.143.2",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "fire",
+              "installed": "0.7.1",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "mmengine-lite",
+              "installed": "0.10.7",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "numpy",
+              "installed": "2.2.6",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "openai>=2.45.0",
+              "installed": "2.45.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "openai_harmony",
+              "installed": "0.0.8",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "partial_json_parser",
+              "installed": "0.2.1.1.post7",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "pillow",
+              "installed": "12.3.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "protobuf",
+              "installed": "7.36.2",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "pybase64",
+              "installed": "1.5.1",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "pydantic>2.0.0",
+              "installed": "2.14.1",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "pyzmq",
+              "installed": "27.2.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "ray",
+              "installed": "2.59.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "rdkit",
+              "installed": null,
+              "status": "missing"
+            },
+            {
+              "requirement": "safetensors",
+              "installed": "0.8.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "sentencepiece",
+              "installed": "0.2.2",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "shortuuid",
+              "installed": "1.0.13",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "tiktoken",
+              "installed": "0.14.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "transformers!=5.0.*,!=5.1.*,!=5.2.*,!=5.3.*,!=5.4.*,!=5.5.0,!=5.7.*,!=5.8.*,!=5.9.*,>=4.56.0",
+              "installed": "4.57.1",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "uvicorn",
+              "installed": "0.54.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "xgrammar!=0.2.5.post1,>=0.2.0",
+              "installed": "0.1.25",
+              "status": "version_mismatch"
+            },
+            {
+              "requirement": "accelerate>=0.29.3",
+              "installed": null,
+              "status": "missing"
+            },
+            {
+              "requirement": "aiohttp",
+              "installed": "3.14.5",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "apache-tvm-ffi==0.1.11; sys_platform == \"linux\" and \"aarch64\" not in platform_machine and \"arm\" not in platform_machine",
+              "installed": null,
+              "status": "missing"
+            },
+            {
+              "requirement": "flash-linear-attention>=0.4.2",
+              "installed": null,
+              "status": "missing"
+            },
+            {
+              "requirement": "opencv-python-headless",
+              "installed": "5.0.0.93",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "peft<=0.14.0",
+              "installed": null,
+              "status": "missing"
+            },
+            {
+              "requirement": "prometheus_client",
+              "installed": "0.26.0",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "tilelang==0.1.11; sys_platform == \"linux\" and \"aarch64\" not in platform_machine and \"arm\" not in platform_machine",
+              "installed": null,
+              "status": "missing"
+            },
+            {
+              "requirement": "torch<=2.12.1,>=2.0.0",
+              "installed": "2.8.0+cu128",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "torchvision<=0.27.1,>=0.15.0",
+              "installed": "0.23.0+cu128",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "triton<=3.7.1,>=3.4.0; sys_platform == \"linux\" and \"aarch64\" not in platform_machine and \"arm\" not in platform_machine",
+              "installed": "3.5.1",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-nccl-cu12",
+              "installed": "2.27.3",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cuda-runtime-cu12",
+              "installed": "12.8.90",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-cublas-cu12",
+              "installed": "12.8.4.1",
+              "status": "satisfied"
+            },
+            {
+              "requirement": "nvidia-curand-cu12",
+              "installed": "10.3.9.90",
+              "status": "satisfied"
+            }
+          ]
+        },
+        "triton": {
+          "version": "3.5.1",
+          "metadata_location": "<ENV_ROOT>/precision-inference-20261019/lib/python3.11/site-packages",
+          "requires": []
+        },
+        "numpy": {
+          "version": "2.2.6",
+          "metadata_location": "<ENV_ROOT>/precision-vllm011/lib/python3.11/site-packages",
+          "requires": []
+        },
+        "tensorrt-llm": {
+          "status": "missing"
+        },
+        "mindie-llm": {
+          "status": "missing"
+        },
+        "torch-npu": {
+          "status": "missing"
+        }
+      },
+      "note": "Unlike uv pip check, importlib metadata traverses the inherited .pth site-packages used by this interpreter."
+    },
+    "native_runtime_evidence": [
+      "lmdeploy-pytorch-neutral-runtime.json",
+      "lmdeploy-turbomind-runtime.json",
+      "qwen2.5-0.5b/lmdeploy-pytorch-neutral-runtime.json",
+      "qwen2.5-0.5b/lmdeploy-turbomind-neutral-runtime.json"
+    ],
+    "dependency_support": "Exploratory LMDeploy environment: Torch2.8 pins Triton3.4, PyTorch engine needed isolated Triton3.5.1; optional/multimodal LMDeploy requirements not all installed. See runtime-metadata-dependencies.json. TurboMind Smol capture used original Triton3.4."
+  },
+  "pairs": [
+    {
+      "model": "SmolLM2-135M-Instruct",
+      "pair": "llama-cpu-f32",
+      "target_metrics": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5048238039016724,
+        "side_b_nll_nat_per_token": 1.5048235654830933,
+        "nll_abs_diff_nat_per_token": 2.384185791015625e-07,
+        "mae_nat": 2.304712931315104e-06,
+        "p99_nat": 3.0994415283203125e-06,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 3.0994415283203125e-06,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 7,
+          "token": 378
+        }
+      },
+      "distribution_metrics": {
+        "probability_rmse": {
+          "mean": 8.720664859319803e-08,
+          "p99": 1.4028932415604076e-07,
+          "max": 1.4185486757577196e-07,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7
+          }
+        },
+        "max_probability_error": {
+          "mean": 6.194190092327171e-07,
+          "p99": 9.785646497317836e-07,
+          "max": 9.889620567471447e-07,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7,
+            "token": 2240
+          }
+        },
+        "tail_merged_js": {
+          "mean": 6.262972677460913e-13,
+          "p99": 1.138168290989205e-12,
+          "max": 1.1516210753702765e-12,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 1.0
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.9705996815197452,
+            "p1": 0.9404709420945372,
+            "min": 0.939812521638829
+          },
+          "side_b_top100": {
+            "mean": 0.97059962833234,
+            "p1": 0.940470822289505,
+            "min": 0.9398124000420232
+          },
+          "side_a_union": {
+            "mean": 0.9705996815197452,
+            "p1": 0.9404709420945372,
+            "min": 0.939812521638829
+          },
+          "side_b_union": {
+            "mean": 0.97059962833234,
+            "p1": 0.940470822289505,
+            "min": 0.9398124000420232
+          }
+        }
+      },
+      "coverage": {
+        "expected": 3,
+        "paired": 3
+      },
+      "target_report": {
+        "contract": "target-contract.json",
+        "side_a": "transformers-cpu-f32-targets.json",
+        "side_b": "llama-cpu-f32-targets.json"
+      },
+      "distribution_sources": {
+        "contract": "distribution-contract.json",
+        "side_a": "transformers-cpu-f32-distribution.json",
+        "side_b": "llama-cpu-f32-distribution.json"
+      }
+    },
+    {
+      "model": "SmolLM2-135M-Instruct",
+      "pair": "lmdeploy-pytorch-neutral",
+      "target_metrics": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5048238039016724,
+        "side_b_nll_nat_per_token": 1.5080272356669109,
+        "nll_abs_diff_nat_per_token": 0.003203431765238518,
+        "mae_nat": 0.005604147911071777,
+        "p99_nat": 0.007049429416656494,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.00706791877746582,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 6,
+          "token": 30
+        }
+      },
+      "distribution_metrics": {
+        "probability_rmse": {
+          "mean": 0.00034145046378758183,
+          "p99": 0.0005336177001416555,
+          "max": 0.0005389446698698299,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.0024587910352666573,
+          "p99": 0.0037865954131924328,
+          "max": 0.003824273625803065,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5,
+            "token": 28
+          }
+        },
+        "tail_merged_js": {
+          "mean": 4.981246193565142e-06,
+          "p99": 7.997583918158414e-06,
+          "max": 8.0729923420907e-06,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 0.9966666666666667
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.9705996815197452,
+            "p1": 0.9404709420945372,
+            "min": 0.939812521638829
+          },
+          "side_b_top100": {
+            "mean": 0.9706118299877304,
+            "p1": 0.9404010543928304,
+            "min": 0.9397391370324791
+          },
+          "side_a_union": {
+            "mean": 0.9706652152534129,
+            "p1": 0.9404748741185572,
+            "min": 0.939812521638829
+          },
+          "side_b_union": {
+            "mean": 0.970676704143386,
+            "p1": 0.9404049468421697,
+            "min": 0.9397391370324791
+          }
+        }
+      },
+      "coverage": {
+        "expected": 3,
+        "paired": 3
+      },
+      "target_report": {
+        "contract": "target-contract.json",
+        "side_a": "transformers-cpu-f32-targets.json",
+        "side_b": "lmdeploy-pytorch-neutral-targets.json"
+      },
+      "distribution_sources": {
+        "contract": "distribution-contract.json",
+        "side_a": "transformers-cpu-f32-distribution.json",
+        "side_b": "lmdeploy-pytorch-neutral-distribution.json"
+      }
+    },
+    {
+      "model": "SmolLM2-135M-Instruct",
+      "pair": "lmdeploy-turbomind",
+      "target_metrics": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5048238039016724,
+        "side_b_nll_nat_per_token": 1.5048394600550334,
+        "nll_abs_diff_nat_per_token": 1.565615336107662e-05,
+        "mae_nat": 0.005647579828898112,
+        "p99_nat": 0.008442838191986084,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.008447885513305664,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 7,
+          "token": 378
+        }
+      },
+      "distribution_metrics": {
+        "probability_rmse": {
+          "mean": 0.0001657994935501748,
+          "p99": 0.00032594442231498566,
+          "max": 0.00032955900216537155,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.0012347671589247322,
+          "p99": 0.002431517638813391,
+          "max": 0.0024590133555901783,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7,
+            "token": 3575
+          }
+        },
+        "tail_merged_js": {
+          "mean": 3.638768494461554e-06,
+          "p99": 8.07276637919687e-06,
+          "max": 8.184891157181697e-06,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 0.9966666666666667
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.9705996815197452,
+            "p1": 0.9404709420945372,
+            "min": 0.939812521638829
+          },
+          "side_b_top100": {
+            "mean": 0.9706423052706086,
+            "p1": 0.9405879689461333,
+            "min": 0.9399318091769018
+          },
+          "side_a_union": {
+            "mean": 0.9706652152534129,
+            "p1": 0.9404748741185572,
+            "min": 0.939812521638829
+          },
+          "side_b_union": {
+            "mean": 0.9707074946676614,
+            "p1": 0.9405918803099564,
+            "min": 0.9399318091769018
+          }
+        }
+      },
+      "coverage": {
+        "expected": 3,
+        "paired": 3
+      },
+      "target_report": {
+        "contract": "target-contract.json",
+        "side_a": "transformers-cpu-f32-targets.json",
+        "side_b": "lmdeploy-turbomind-targets.json"
+      },
+      "distribution_sources": {
+        "contract": "distribution-contract.json",
+        "side_a": "transformers-cpu-f32-distribution.json",
+        "side_b": "lmdeploy-turbomind-distribution.json"
+      }
+    },
+    {
+      "model": "SmolLM2-135M-Instruct",
+      "pair": "transformers-cuda-f16",
+      "target_metrics": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5048238039016724,
+        "side_b_nll_nat_per_token": 1.5056081016858418,
+        "nll_abs_diff_nat_per_token": 0.000784297784169441,
+        "mae_nat": 0.0011674761772155762,
+        "p99_nat": 0.002877805233001709,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.0029276609420776367,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 8,
+          "token": 3575
+        }
+      },
+      "distribution_metrics": {
+        "probability_rmse": {
+          "mean": 0.00020976101778196005,
+          "p99": 0.0004589301114351808,
+          "max": 0.00046557740281818344,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.0015574853969662443,
+          "p99": 0.003462516163825304,
+          "max": 0.003515207162853695,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6,
+            "token": 7042
+          }
+        },
+        "tail_merged_js": {
+          "mean": 4.116140901098198e-06,
+          "p99": 9.244197037130762e-06,
+          "max": 9.386868626051581e-06,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 0.9966666666666667
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.9705996815197452,
+            "p1": 0.9404709420945372,
+            "min": 0.939812521638829
+          },
+          "side_b_top100": {
+            "mean": 0.9707171190248642,
+            "p1": 0.9407825961924923,
+            "min": 0.9401300289227491
+          },
+          "side_a_union": {
+            "mean": 0.9706652152534129,
+            "p1": 0.9404748741185572,
+            "min": 0.939812521638829
+          },
+          "side_b_union": {
+            "mean": 0.970782295307829,
+            "p1": 0.9407865067694701,
+            "min": 0.9401300289227491
+          }
+        }
+      },
+      "coverage": {
+        "expected": 3,
+        "paired": 3
+      },
+      "target_report": {
+        "contract": "target-contract.json",
+        "side_a": "transformers-cpu-f32-targets.json",
+        "side_b": "transformers-cuda-f16-targets.json"
+      },
+      "distribution_sources": {
+        "contract": "distribution-contract.json",
+        "side_a": "transformers-cpu-f32-distribution.json",
+        "side_b": "transformers-cuda-f16-distribution.json"
+      }
+    },
+    {
+      "model": "SmolLM2-135M-Instruct",
+      "pair": "lmdeploy-pytorch-neutral-vs-cuda-f16",
+      "target_metrics": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5056081016858418,
+        "side_b_nll_nat_per_token": 1.5080272356669109,
+        "nll_abs_diff_nat_per_token": 0.002419133981069077,
+        "mae_nat": 0.004529933134714763,
+        "p99_nat": 0.007127970457077026,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.007207810878753662,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 6,
+          "token": 30
+        }
+      },
+      "distribution_metrics": {
+        "probability_rmse": {
+          "mean": 0.00046015481659730247,
+          "p99": 0.0006755366973640215,
+          "max": 0.0006786037124654016,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.0033478859746023195,
+          "p99": 0.004862840518048812,
+          "max": 0.004883090528813749,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6,
+            "token": 7042
+          }
+        },
+        "tail_merged_js": {
+          "mean": 1.0484575486101737e-05,
+          "p99": 1.9857363700136505e-05,
+          "max": 2.010751226232227e-05,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 1.0
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.9707171190248642,
+            "p1": 0.9407825961924923,
+            "min": 0.9401300289227491
+          },
+          "side_b_top100": {
+            "mean": 0.9706118299877304,
+            "p1": 0.9404010543928304,
+            "min": 0.9397391370324791
+          },
+          "side_a_union": {
+            "mean": 0.9707171190248642,
+            "p1": 0.9407825961924923,
+            "min": 0.9401300289227491
+          },
+          "side_b_union": {
+            "mean": 0.9706118299877304,
+            "p1": 0.9404010543928304,
+            "min": 0.9397391370324791
+          }
+        }
+      },
+      "coverage": {
+        "expected": 3,
+        "paired": 3
+      },
+      "target_report": {
+        "contract": "target-contract.json",
+        "side_a": "transformers-cuda-f16-targets.json",
+        "side_b": "lmdeploy-pytorch-neutral-targets.json"
+      },
+      "distribution_sources": {
+        "contract": "distribution-contract.json",
+        "side_a": "transformers-cuda-f16-distribution.json",
+        "side_b": "lmdeploy-pytorch-neutral-distribution.json"
+      }
+    },
+    {
+      "model": "SmolLM2-135M-Instruct",
+      "pair": "lmdeploy-turbomind-vs-cuda-f16",
+      "target_metrics": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5056081016858418,
+        "side_b_nll_nat_per_token": 1.5048394600550334,
+        "nll_abs_diff_nat_per_token": 0.0007686416308083643,
+        "mae_nat": 0.004573365052541097,
+        "p99_nat": 0.007958106994628907,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.008013010025024414,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 7,
+          "token": 378
+        }
+      },
+      "distribution_metrics": {
+        "probability_rmse": {
+          "mean": 0.00020578869811256837,
+          "p99": 0.00037190332629848864,
+          "max": 0.0003752201301303574,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.0016019192745661364,
+          "p99": 0.0029624264644772767,
+          "max": 0.0029906727975450575,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6,
+            "token": 7042
+          }
+        },
+        "tail_merged_js": {
+          "mean": 4.610418381341186e-06,
+          "p99": 7.481499360654843e-06,
+          "max": 7.527882496485274e-06,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 1.0
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.9707171190248642,
+            "p1": 0.9407825961924923,
+            "min": 0.9401300289227491
+          },
+          "side_b_top100": {
+            "mean": 0.9706423052706086,
+            "p1": 0.9405879689461333,
+            "min": 0.9399318091769018
+          },
+          "side_a_union": {
+            "mean": 0.9707171190248642,
+            "p1": 0.9407825961924923,
+            "min": 0.9401300289227491
+          },
+          "side_b_union": {
+            "mean": 0.9706423052706086,
+            "p1": 0.9405879689461333,
+            "min": 0.9399318091769018
+          }
+        }
+      },
+      "coverage": {
+        "expected": 3,
+        "paired": 3
+      },
+      "target_report": {
+        "contract": "target-contract.json",
+        "side_a": "transformers-cuda-f16-targets.json",
+        "side_b": "lmdeploy-turbomind-targets.json"
+      },
+      "distribution_sources": {
+        "contract": "distribution-contract.json",
+        "side_a": "transformers-cuda-f16-distribution.json",
+        "side_b": "lmdeploy-turbomind-distribution.json"
+      }
+    },
+    {
+      "model": "Qwen2.5-0.5B-Instruct",
+      "pair": "llama-cpu-f32",
+      "target_metrics": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.563386340936025,
+        "side_b_nll_nat_per_token": 1.5633885264396667,
+        "nll_abs_diff_nat_per_token": 2.1855036418383378e-06,
+        "mae_nat": 2.1855036417643228e-06,
+        "p99_nat": 2.9778480529785157e-06,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 2.9802322387695312e-06,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 6,
+          "token": 13
+        }
+      },
+      "distribution_metrics": {
+        "probability_rmse": {
+          "mean": 1.0007468073768474e-07,
+          "p99": 1.9687508729002031e-07,
+          "max": 1.9973124929475336e-07,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5
+          }
+        },
+        "max_probability_error": {
+          "mean": 7.740107734790133e-07,
+          "p99": 1.629751086971165e-06,
+          "max": 1.655659139454535e-06,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5,
+            "token": 13
+          }
+        },
+        "tail_merged_js": {
+          "mean": 1.150959614104195e-12,
+          "p99": 1.850812814922548e-12,
+          "max": 1.872402855883718e-12,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 1.0
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.8786277116219504,
+            "p1": 0.7547214092818602,
+            "min": 0.7519944364790971
+          },
+          "side_b_top100": {
+            "mean": 0.8786276638528937,
+            "p1": 0.754721332086149,
+            "min": 0.7519943582014994
+          },
+          "side_a_union": {
+            "mean": 0.8786277116219504,
+            "p1": 0.7547214092818602,
+            "min": 0.7519944364790971
+          },
+          "side_b_union": {
+            "mean": 0.8786276638528937,
+            "p1": 0.754721332086149,
+            "min": 0.7519943582014994
+          }
+        }
+      },
+      "coverage": {
+        "expected": 3,
+        "paired": 3
+      },
+      "target_report": {
+        "contract": "qwen2.5-0.5b/native-target-contract.json",
+        "side_a": "qwen2.5-0.5b/transformers-cpu-f32-native-targets.json",
+        "side_b": "qwen2.5-0.5b/llama-cpu-f32-native-targets.json"
+      },
+      "distribution_sources": {
+        "contract": "qwen2.5-0.5b/native-distribution-contract.json",
+        "side_a": "qwen2.5-0.5b/transformers-cpu-f32-native-distribution.json",
+        "side_b": "qwen2.5-0.5b/llama-cpu-f32-native-distribution.json"
+      }
+    },
+    {
+      "model": "Qwen2.5-0.5B-Instruct",
+      "pair": "lmdeploy-turbomind-neutral",
+      "target_metrics": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.563386340936025,
+        "side_b_nll_nat_per_token": 1.560939888159434,
+        "nll_abs_diff_nat_per_token": 0.002446452776590835,
+        "mae_nat": 0.002446452776590983,
+        "p99_nat": 0.005895202159881592,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.00599217414855957,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 8,
+          "token": 6722
+        }
+      },
+      "distribution_metrics": {
+        "probability_rmse": {
+          "mean": 0.00016761741897527746,
+          "p99": 0.0002655393342086973,
+          "max": 0.00026835412356792526,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.001236224332965737,
+          "p99": 0.0019969711474702697,
+          "max": 0.0020193759079345786,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6,
+            "token": 1084
+          }
+        },
+        "tail_merged_js": {
+          "mean": 5.514128115846212e-06,
+          "p99": 1.0547888066019794e-05,
+          "max": 1.0701475502923138e-05,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 0.9933333333333333
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.8786277116219504,
+            "p1": 0.7547214092818602,
+            "min": 0.7519944364790971
+          },
+          "side_b_top100": {
+            "mean": 0.8785147773219442,
+            "p1": 0.7545423703087902,
+            "min": 0.751815070414594
+          },
+          "side_a_union": {
+            "mean": 0.8792131027582233,
+            "p1": 0.7558240644654386,
+            "min": 0.753106448682641
+          },
+          "side_b_union": {
+            "mean": 0.8791030136111303,
+            "p1": 0.7556420962355062,
+            "min": 0.752923853486849
+          }
+        }
+      },
+      "coverage": {
+        "expected": 3,
+        "paired": 3
+      },
+      "target_report": {
+        "contract": "qwen2.5-0.5b/native-target-contract.json",
+        "side_a": "qwen2.5-0.5b/transformers-cpu-f32-native-targets.json",
+        "side_b": "qwen2.5-0.5b/lmdeploy-turbomind-neutral-native-targets.json"
+      },
+      "distribution_sources": {
+        "contract": "qwen2.5-0.5b/native-distribution-contract.json",
+        "side_a": "qwen2.5-0.5b/transformers-cpu-f32-native-distribution.json",
+        "side_b": "qwen2.5-0.5b/lmdeploy-turbomind-neutral-native-distribution.json"
+      }
+    },
+    {
+      "model": "Qwen2.5-0.5B-Instruct",
+      "pair": "lmdeploy-pytorch-neutral",
+      "target_metrics": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.563386340936025,
+        "side_b_nll_nat_per_token": 1.5609274903933208,
+        "nll_abs_diff_nat_per_token": 0.0024588505427041163,
+        "mae_nat": 0.002458850542704264,
+        "p99_nat": 0.006691517829895019,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.006816864013671875,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 8,
+          "token": 6722
+        }
+      },
+      "distribution_metrics": {
+        "probability_rmse": {
+          "mean": 0.0001265716560321716,
+          "p99": 0.00019951485466352526,
+          "max": 0.00020113776921501094,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.0010993388647198125,
+          "p99": 0.0019384612353753339,
+          "max": 0.001959670495679383,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6,
+            "token": 1084
+          }
+        },
+        "tail_merged_js": {
+          "mean": 3.3095339339705947e-06,
+          "p99": 5.3981746033950804e-06,
+          "max": 5.434921147024255e-06,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 0.9933333333333333
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.8786277116219504,
+            "p1": 0.7547214092818602,
+            "min": 0.7519944364790971
+          },
+          "side_b_top100": {
+            "mean": 0.8788519220160557,
+            "p1": 0.755821086560839,
+            "min": 0.7531262716523892
+          },
+          "side_a_union": {
+            "mean": 0.8790084465395066,
+            "p1": 0.7558111812413332,
+            "min": 0.753106448682641
+          },
+          "side_b_union": {
+            "mean": 0.8792319474226327,
+            "p1": 0.7569085903678722,
+            "min": 0.754235969414668
+          }
+        }
+      },
+      "coverage": {
+        "expected": 3,
+        "paired": 3
+      },
+      "target_report": {
+        "contract": "qwen2.5-0.5b/native-target-contract.json",
+        "side_a": "qwen2.5-0.5b/transformers-cpu-f32-native-targets.json",
+        "side_b": "qwen2.5-0.5b/lmdeploy-pytorch-neutral-native-targets.json"
+      },
+      "distribution_sources": {
+        "contract": "qwen2.5-0.5b/native-distribution-contract.json",
+        "side_a": "qwen2.5-0.5b/transformers-cpu-f32-native-distribution.json",
+        "side_b": "qwen2.5-0.5b/lmdeploy-pytorch-neutral-native-distribution.json"
+      }
+    }
+  ],
+  "validation": {
+    "status": "validated",
+    "side_manifests": 9,
+    "summary": "validation-summary.json",
+    "stage_context_breakdowns": "stage-context-breakdowns.json",
+    "original_native_logit_storage": "Observed native logits are F32 on CPU, F16 on LMDeploy/CUDA. Raw-logit .npy values were losslessly promoted to F32 for serialization; native dtype is retained in capture records and verified exactly round-trippable to F16. FP32 natural-log softmax rows are the required comparison artifacts."
+  },
+  "confirmed_bugs_and_friction": [
+    {
+      "id": "lmdeploy-pytorch-temperature",
+      "status": "confirmed_score_semantics_issue",
+      "finding": "Native async_get_logits chooses GenerationConfig default temperature0.8. PyTorch mutates the last logit row in place before returning output_logits. All49152 logits in all3 default rows exactly match neutral native rows divided by FP16(0.8).",
+      "evidence": [
+        "lmdeploy-default-temperature-diagnostic.json",
+        "installed-source/lmdeploy__serve__core__async_engine.py",
+        "installed-source/lmdeploy__pytorch__engine__logits_process.py",
+        "installed-source/lmdeploy__pytorch__engine__model_agent__agent.py"
+      ],
+      "resolution": "Use native safe_run with explicit neutral processors; default capture excluded from final raw-score comparisons."
+    },
+    {
+      "id": "lmdeploy-triton-pdl",
+      "status": "confirmed_native_warmup_failure",
+      "finding": "LMDeploy0.18 with Torch2.8/Triton3.4 on compute capability12.0 fails at gdc_launch_dependents unexpected _semantic. Isolated Triton3.5.1 runs succeeded.",
+      "evidence": [
+        "diagnostics/default-temperature/lmdeploy-pytorch-native-third.log",
+        "lmdeploy-pytorch-neutral-completion.json"
+      ],
+      "limitation": "Fallback is exploratory because Torch metadata pins Triton3.4."
+    },
+    {
+      "id": "float32-normalization",
+      "status": "measured_integration_friction",
+      "finding": "Torch FP32 logsoftmax over49152 vocabulary has mass drift up to2.19471e-5 in this capture, exceeding initial1e-5 validation tolerance. Final explicit tolerance1e-4 plus FP64 renormalization used; thresholds remain null.",
+      "evidence": [
+        "comparison-attempt1",
+        "validation-summary.json"
+      ]
+    },
+    {
+      "id": "lmdeploy-warmup-readiness",
+      "status": "confirmed_nonfatal_log_friction",
+      "finding": "Tiny session_len128 reports warmup failures for larger token shapes even though native scoring requests and artifact validation succeed. Do not classify job success from ERROR-text matching alone.",
+      "evidence": [
+        "lmdeploy-turbomind-native.log",
+        "lmdeploy-turbomind-completion.json"
+      ]
+    },
+    {
+      "id": "collector-fixes",
+      "status": "resolved_adapter_errors",
+      "finding": "Initial collector JSON serialization of EngineRole and missing multiprocessing main guard were corrected. These are task adapter mistakes, not skill/framework defects.",
+      "evidence": [
+        "lmdeploy_capture_attempt1.py",
+        "lmdeploy_capture_attempt2.py",
+        "diagnostics/default-temperature/lmdeploy-pytorch-native.log",
+        "diagnostics/default-temperature/lmdeploy-pytorch-native-second.log"
+      ]
+    },
+    {
+      "id": "source-build-routing",
+      "status": "resolved_build_integration_friction",
+      "finding": "All-target llama archive build tried application requiring build-info.h while tools disabled; target llama built successfully. Git clone TLS failure and nonexistent initial tag query were bypassed using pinned official release archive.",
+      "evidence": [
+        "llama-clone.log",
+        "llama-build.log",
+        "llama-build-library.log",
+        "llama-source-ref.json"
+      ]
+    },
+    {
+      "id": "pth-metadata",
+      "status": "confirmed_environment_inspection_friction",
+      "finding": "uv pip check does not see inherited .pth distributions and reports torch/numpy absent even though native workers import them. importlib.metadata audit records actual inherited distributions and real mismatches.",
+      "evidence": [
+        "runtime-dependency-check.log",
+        "runtime-metadata-dependencies.json"
+      ]
+    }
+  ],
+  "reusable_helper_candidates": [
+    {
+      "name": "neutral native score request adapter",
+      "purpose": "Set explicit neutral processors, inspect returned score aliasing, separate raw model logits from sampling scores across native backends."
+    },
+    {
+      "name": "native score semantic check",
+      "purpose": "Compare default versus neutral settings and detect exact temperature scaling before treating API output as raw."
+    },
+    {
+      "name": "lossless dtype-aware logit serializer",
+      "purpose": "Store original native dtype alongside FP32 normalized distributions and explicit derived-versus-captured metadata."
+    },
+    {
+      "name": "environment import plus metadata probe",
+      "purpose": "Inspect .pth inherited modules and metadata separately; report mismatched constraints without replacing native implementations."
+    },
+    {
+      "name": "native stage coverage manifest",
+      "purpose": "Represent repeated-prefill and true cache replay distinctly at each fixed history."
+    }
+  ],
+  "commands": [
+    {
+      "stage": "isolated environment preparation",
+      "command": "bash <EVIDENCE_ROOT>/prepare.sh",
+      "status": "partial; tools installed, Git clone failed TLS",
+      "logs": [
+        "install-tools.log",
+        "llama-clone.log"
+      ]
+    },
+    {
+      "stage": "initial source tag API query",
+      "command": "GET https://api.github.com/repos/ggml-org/llama.cpp/git/ref/tags/b7000",
+      "status": "failed HTTP404; release resolver used instead"
+    },
+    {
+      "stage": "pinned source archive and initial build",
+      "command": "<ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/prepare_source.py",
+      "status": "source retrieved; all-target build failed build-info.h app target",
+      "logs": [
+        "source-retry.log",
+        "llama-configure.log",
+        "llama-build.log"
+      ]
+    },
+    {
+      "stage": "native library-only build",
+      "command": "<ENV_ROOT>/precision-inference-20261019/bin/cmake --build <RESOURCE_ROOT>/inference/llama.cpp-757cad021b357f417065ddbc41a6e8f87c1f8136/build --target llama -j 8",
+      "status": "completed",
+      "logs": [
+        "llama-build-library.log"
+      ]
+    },
+    {
+      "stage": "Smol GGUF conversion",
+      "command": "<ENV_ROOT>/precision-inference-20261019/bin/python <RESOURCE_ROOT>/inference/llama.cpp-757cad021b357f417065ddbc41a6e8f87c1f8136/convert_hf_to_gguf.py <RESOURCE_ROOT>/models/SmolLM2-135M-Instruct/12fd25f77366fa6b3b4b768ec3050bf629380bac --outfile <RESOURCE_ROOT>/inference/SmolLM2-135M-Instruct-f32.gguf --outtype f32",
+      "status": "completed",
+      "logs": [
+        "gguf-convert.log"
+      ]
+    },
+    {
+      "stage": "Smol reference and llama capture",
+      "command": "timeout 180 <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/capture_compare.py",
+      "status": "completed",
+      "logs": [
+        "capture-stage.log"
+      ]
+    },
+    {
+      "stage": "LMDeploy installation and import fixes",
+      "command": "uv pip install --python <ENV_ROOT>/precision-inference-20261019/bin/python lmdeploy==0.18.0 --no-deps; uv pip install --python <ENV_ROOT>/precision-inference-20261019/bin/python mmengine-lite fire shortuuid pybase64 partial_json_parser openai_harmony openai==2.45.0 --no-deps; uv pip install --python <ENV_ROOT>/precision-inference-20261019/bin/python yapf addict rich termcolor",
+      "status": "completed targeted dependencies; broader metadata requirements incomplete",
+      "logs": [
+        "lmdeploy-install.log",
+        "lmdeploy-import-initial.log",
+        "lmdeploy-deps.log",
+        "lmdeploy-import-second.log",
+        "lmdeploy-deps-third.log",
+        "lmdeploy-import-third.log"
+      ]
+    },
+    {
+      "stage": "LMDeploy launcher attempts",
+      "command": "flock -w 240 /tmp/precision-skills-gpu.lock timeout 180 <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/lmdeploy_capture.py lmdeploy-pytorch",
+      "status": "first collector JSON serialization then missing __main__ guard fixed; native Triton3.4 warmup failed; Triton3.5.1 native run completed but default temperature transformed logits",
+      "logs": [
+        "diagnostics/default-temperature/lmdeploy-pytorch-native.log",
+        "diagnostics/default-temperature/lmdeploy-pytorch-native-second.log",
+        "diagnostics/default-temperature/lmdeploy-pytorch-native-third.log",
+        "diagnostics/default-temperature/lmdeploy-pytorch-native-fourth.log"
+      ]
+    },
+    {
+      "stage": "Triton dependency adjustment",
+      "command": "uv pip install --python <ENV_ROOT>/precision-inference-20261019/bin/python triton==3.5.1 --no-deps",
+      "status": "installed only isolated environment; Torch metadata mismatch recorded",
+      "logs": [
+        "triton351-install.log"
+      ]
+    },
+    {
+      "stage": "Smol neutral native PyTorch capture",
+      "command": "flock -w 240 /tmp/precision-skills-gpu.lock timeout 180 <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/lmdeploy_capture.py lmdeploy-pytorch-neutral",
+      "status": "completed",
+      "logs": [
+        "lmdeploy-pytorch-neutral-native.log"
+      ]
+    },
+    {
+      "stage": "Smol native TurboMind capture",
+      "command": "flock -w 240 /tmp/precision-skills-gpu.lock timeout 180 <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/lmdeploy_capture.py lmdeploy-turbomind",
+      "status": "completed; native returned logits unaffected by sampling temperature",
+      "logs": [
+        "lmdeploy-turbomind-native.log"
+      ]
+    },
+    {
+      "stage": "CUDA FP16 reference",
+      "command": "flock -w 240 /tmp/precision-skills-gpu.lock timeout 90 <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/transformers_cuda_reference.py",
+      "status": "completed",
+      "logs": [
+        "transformers-cuda-f16-native.log"
+      ]
+    },
+    {
+      "stage": "Qwen pinned download",
+      "command": "timeout 360 env HF_HUB_DISABLE_XET=1 HF_HUB_DOWNLOAD_TIMEOUT=30 <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/download_qwen.py",
+      "status": "completed third attempt; first stalled at80MiB and terminated, metadata HTTP retry failed, cached metadata HTTP retry completed",
+      "logs": [
+        "qwen-download.log",
+        "qwen-download-http-retry.log",
+        "qwen-download-http-second-retry.log"
+      ]
+    },
+    {
+      "stage": "Qwen reference and native llama capture",
+      "command": "timeout 420 <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/qwen_native_compare.py",
+      "status": "completed",
+      "logs": [
+        "qwen-native-compare.log"
+      ]
+    },
+    {
+      "stage": "Qwen native LMDeploy captures",
+      "command": "env PRECISION_CAPTURE_RUN=<EVIDENCE_ROOT>/qwen2.5-0.5b PRECISION_MODEL_DIR=<RESOURCE_ROOT>/inference/Qwen2.5-0.5B-Instruct-7ae557604adf67be50417f59c2c2f167def9a775 flock -w 240 /tmp/precision-skills-gpu.lock timeout 180 <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/lmdeploy_capture.py BACKEND-neutral",
+      "backend_values": [
+        "lmdeploy-pytorch",
+        "lmdeploy-turbomind"
+      ],
+      "status": "both completed",
+      "logs": [
+        "qwen2.5-0.5b/lmdeploy-pytorch-neutral-native.log",
+        "qwen2.5-0.5b/lmdeploy-turbomind-neutral-native.log"
+      ]
+    },
+    {
+      "stage": "native prerequisite probes and pinned official source",
+      "command": "timeout 300 <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/prerequisite_probes.py",
+      "status": "completed probes; absent TensorRT/MindIE prerequisites",
+      "logs": [
+        "prerequisite-probes.log"
+      ]
+    },
+    {
+      "stage": "skill comparisons",
+      "command": "<ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/compare_artifacts.py; <ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/qwen_engine_compare.py",
+      "status": "all final pairs no_thresholds; earlier tolerance and processed-score outputs retained separately",
+      "logs": [
+        "compare-artifacts-neutral-final.log",
+        "qwen-engine-compare.log"
+      ]
+    },
+    {
+      "stage": "artifact validation and report",
+      "command": "<ENV_ROOT>/precision-inference-20261019/bin/python <EVIDENCE_ROOT>/validate_and_report.py",
+      "status": "completed;9 side manifests validated"
+    }
+  ],
+  "official_sources": [
+    {
+      "framework": "llama.cpp",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/7951f601e89494f2ed12dbd4eb52e254b8401197/include/llama.h",
+      "error": "RemoteDisconnected('Remote end closed connection without response')"
+    },
+    {
+      "framework": "llama.cpp",
+      "repo": "ggml-org/llama.cpp",
+      "revision": "7951f601e89494f2ed12dbd4eb52e254b8401197",
+      "path": "docs/build.md",
+      "url": "https://github.com/ggml-org/llama.cpp/blob/7951f601e89494f2ed12dbd4eb52e254b8401197/docs/build.md",
+      "local": "official-source/llama.cpp--docs__build.md",
+      "sha256": "97a58a014be2386c149a4c754003cdb2b480e484049477758fa933774d77049b"
+    },
+    {
+      "framework": "lmdeploy",
+      "repo": "InternLM/lmdeploy",
+      "revision": "56a6c7971e4b830b5353c4705982b6bebfb8ee0b",
+      "path": "lmdeploy/serve/core/async_engine.py",
+      "url": "https://github.com/InternLM/lmdeploy/blob/56a6c7971e4b830b5353c4705982b6bebfb8ee0b/lmdeploy/serve/core/async_engine.py",
+      "local": "official-source/lmdeploy--lmdeploy__serve__core__async_engine.py",
+      "sha256": "acbe1469931ef7a4b843f6fdbc397cac256e6f78fc1a20cd2d1a50930da890fa"
+    },
+    {
+      "framework": "lmdeploy",
+      "repo": "InternLM/lmdeploy",
+      "revision": "56a6c7971e4b830b5353c4705982b6bebfb8ee0b",
+      "path": "lmdeploy/messages.py",
+      "url": "https://github.com/InternLM/lmdeploy/blob/56a6c7971e4b830b5353c4705982b6bebfb8ee0b/lmdeploy/messages.py",
+      "local": "official-source/lmdeploy--lmdeploy__messages.py",
+      "sha256": "e44c3bfbf1d1eab8a32cf7411ba0b74d97d19a6c35134c65b04d1f455290a988"
+    },
+    {
+      "framework": "lmdeploy",
+      "repo": "InternLM/lmdeploy",
+      "revision": "56a6c7971e4b830b5353c4705982b6bebfb8ee0b",
+      "path": "lmdeploy/pytorch/check_env/triton.py",
+      "url": "https://github.com/InternLM/lmdeploy/blob/56a6c7971e4b830b5353c4705982b6bebfb8ee0b/lmdeploy/pytorch/check_env/triton.py",
+      "local": "official-source/lmdeploy--lmdeploy__pytorch__check_env__triton.py",
+      "sha256": "9dfa07a4ff62f08122e7cf29ce873a925929ae070ff49feaafcf332167b20d1e"
+    },
+    {
+      "framework": "tensorrt-llm",
+      "repo": "NVIDIA/TensorRT-LLM",
+      "revision": "321a38cd0ecbc22b4931d488cf83d31244cd7db3",
+      "path": "docs/source/supported-hardware.md",
+      "url": "https://github.com/NVIDIA/TensorRT-LLM/blob/321a38cd0ecbc22b4931d488cf83d31244cd7db3/docs/source/supported-hardware.md",
+      "local": "official-source/tensorrt-llm--docs__source__supported-hardware.md",
+      "sha256": "8750ebf158fa666b54020c621b7cf8534f0d697a93c64d00deaef74d90543bc5"
+    },
+    {
+      "framework": "tensorrt-llm",
+      "url": "https://raw.githubusercontent.com/NVIDIA/TensorRT-LLM/321a38cd0ecbc22b4931d488cf83d31244cd7db3/docs/source/installation/linux.md",
+      "error": "RemoteDisconnected('Remote end closed connection without response')"
+    },
+    {
+      "framework": "tensorrt-llm",
+      "repo": "NVIDIA/TensorRT-LLM",
+      "revision": "321a38cd0ecbc22b4931d488cf83d31244cd7db3",
+      "path": "docs/source/features/additional-outputs.md",
+      "url": "https://github.com/NVIDIA/TensorRT-LLM/blob/321a38cd0ecbc22b4931d488cf83d31244cd7db3/docs/source/features/additional-outputs.md",
+      "local": "official-source/tensorrt-llm--docs__source__features__additional-outputs.md",
+      "sha256": "2e108fedb4307bfc7d3a76f22283d18921f31957d22e65326e5938b5508ec2f2"
+    },
+    {
+      "framework": "mindie-llm",
+      "repo": "Ascend/MindIE-LLM",
+      "revision": "69e5a5dd4b533eaffc7e198320435350825a36f7",
+      "path": "docs/zh/user_guide/install/source/preparing_software_and_dependencies.md",
+      "url": "https://github.com/Ascend/MindIE-LLM/blob/69e5a5dd4b533eaffc7e198320435350825a36f7/docs/zh/user_guide/install/source/preparing_software_and_dependencies.md",
+      "local": "official-source/mindie-llm--docs__zh__user_guide__install__source__preparing_software_and_dependencies.md",
+      "sha256": "24ed548c981dac933f5029d8d84e50f7f06605476107415da68b1bcccf9f805e"
+    },
+    {
+      "framework": "mindie-llm",
+      "repo": "Ascend/MindIE-LLM",
+      "revision": "69e5a5dd4b533eaffc7e198320435350825a36f7",
+      "path": "docs/zh/user_guide/quick_start/quick_start.md",
+      "url": "https://github.com/Ascend/MindIE-LLM/blob/69e5a5dd4b533eaffc7e198320435350825a36f7/docs/zh/user_guide/quick_start/quick_start.md",
+      "local": "official-source/mindie-llm--docs__zh__user_guide__quick_start__quick_start.md",
+      "sha256": "441f1548d22c4b90d399d5a458ebca62ec3c5fe5432c340996d2c62efef1a669"
+    }
+  ],
+  "download_accounting": {
+    "model_download_bytes": 999586347,
+    "llama_source_archive_bytes": 38199959,
+    "lmdeploy_wheel_bytes": 106690261,
+    "triton351_wheel_approx_bytes": 170393600,
+    "cmake_wheel_approx_bytes": 30198988,
+    "note": "Known primary payloads total about1.34GB; small dependencies/docs and the stalled80MiB partial retry keep this below2GB. GGUF conversions are local outputs, not downloads. Network transfer was not instrumented byte-for-byte."
+  },
+  "limitations": [
+    "Two small pretrained checkpoints and three targets each; no broad model accuracy claim.",
+    "No full supported-dependency claim for LMDeploy PyTorch exploratory Triton fallback.",
+    "TensorRT-LLM and MindIE-LLM have prerequisite/import probes only, with zero native logit coverage.",
+    "No remote service, Ascend hardware or TensorRT engine was used.",
+    "No repository source/tests/skills edited; all scripts/artifacts reside in this fresh run. Existing test/results directories and Git history were not inspected."
+  ],
+  "artifacts": {
+    "report": "report.txt",
+    "hash_manifest": "provenance/original_artifact_hashes.json",
+    "results": "results.json",
+    "Smol_metrics": "metrics-summary.json",
+    "Qwen_metrics": "qwen2.5-0.5b/native-metrics-summary.json",
+    "processed_default_diagnostics": "comparison-attempt3-processed-score-diagnostic/"
+  },
+  "resource_usage": {
+    "elapsed_wall_seconds": 1681.047217,
+    "completed_native_cuda_backend_stage_wall_seconds": {
+      "lmdeploy-turbomind-completion.json": 2.9542010039999695,
+      "lmdeploy-pytorch-completion.json": 15.859040246000063,
+      "lmdeploy-pytorch-neutral-completion.json": 10.141395757000055,
+      "qwen2.5-0.5b/lmdeploy-turbomind-neutral-completion.json": 3.506833142000005,
+      "qwen2.5-0.5b/lmdeploy-pytorch-neutral-completion.json": 9.191696201000013
+    },
+    "known_completed_native_cuda_backend_stage_wall_sum_seconds": 41.653166350000106,
+    "timing_scope": "Stage wall time includes loading, warmup and scoring; not isolated kernel GPU time. Failed warmup/launch attempts and TF CUDA reference are preserved in separate logs.",
+    "gpu_concurrency": "All actual GPU stages serialized with flock /tmp/precision-skills-gpu.lock",
+    "release": "All own native collector/download/build processes had completed; observed total shared GPU memory1340MiB, which includes desktop/other activity."
+  },
+  "portable_export": {
+    "archive": "inference-evidence.zip",
+    "archive_bytes": 7594354,
+    "archive_sha256": "96b9cf9f1be4584ce0ba41279aa8ffeca2434b6697db6907b0383d4af2e7e166",
+    "export_manifest": "EXPORT.json",
+    "files": 424,
+    "replay_verified": true,
+    "replay_comparisons": 9,
+    "validated_side_manifests": 9,
+    "temperature_exact_match_rows": [
+      true,
+      true,
+      true
+    ],
+    "replay_metrics_exactly_equal_original": true,
+    "numpy_only_replay_command": "python replay.py --output NEW_DIRECTORY",
+    "replay_limit": "Captured-array replay only; native runtime/model reruns require separately obtained pinned model weights and compatible environments.",
+    "original_results_raw_sha256": "056225f05f8340d0207758def53a01b24e805d3dec4f4a8ab0d4368961c53fa1",
+    "original_report_raw_sha256": "4e4b28260c01feb32b69c7b6b9e937e2a5e6a064f207e87a3bd1436dd67e18fd",
+    "normalization_tolerance": 0.0001,
+    "accuracy_thresholds": null,
+    "archive_compression": "ZIP_LZMA method14; Python zipfile extraction supported",
+    "exported_hashes_verified": 419
+  },
+  "helper_proposal": "Proposed helper and input contract (proposal only; not implemented)\n\nAdd a small generic ScoreBoundary validation helper before fixed-history export.\nThe adapter supplies the observed value kind (logits/logprobs), exact native API\nand row mapping, full unpadded vocabulary size, native/storage/normalization\ndtypes, effective request settings, model-defined scale/softcap, and output-\naffecting transforms with applied/identity status plus boundary evidence.\n\nExample fields:\nscore_semantics = {value_kind: logits, vocabulary: full_unpadded,\n boundary: model_output_before_sampling_transforms,\n native_dtype: float16, storage_dtype: float32,\n normalization: {operation: log_softmax, dtype: float32, log_base: natural},\n transforms: [{name: temperature, value: 1.0, effect_on_returned_scores: identity},\n              {name: repetition_penalty, value: 1.0, effect_on_returned_scores: identity},\n              {name: vocabulary_truncation, effect_on_returned_scores: absent}],\n boundary_evidence: {kind: native_hook_or_verified_identity_path,\n                    API: exact_native_entrypoint, source_hash: pinned_source_hash}}\n\nReject unknown boundaries or any score-affecting nonidentity sampling transform\nwhen a raw-score contract is requested. Keep sampling selection (e.g. top_k=1)\nseparate from transforms affecting the returned row; do not infer rawness from\nan output_logits flag alone. A small default-versus-explicit-neutral probe can\ndetect transformations like this exact FP16 division by temperature 0.8. Do not\nsilently invert or renormalize away truncation/masking or call the result raw.\nKeep model-defined scaling/softcapping as part of the model score definition.\n",
+  "artifact_reference_base": "Paths refer to archive contents; unpack inference-evidence.zip to inspect or replay."
+}

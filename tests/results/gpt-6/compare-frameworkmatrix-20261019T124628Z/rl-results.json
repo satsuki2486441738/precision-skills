@@ -1,0 +1,3930 @@
+{
+  "schema_version": 1,
+  "run_id": "compare-rlmatrix-20261019T124818Z",
+  "started_utc": "2026-10-19T12:48:18Z",
+  "finished_utc": "2026-10-19T13:17:21.521388+00:00",
+  "skill": "skills/precision-skill/SKILL.md",
+  "clean_context": {
+    "read_git_history": false,
+    "read_repository_tests": false,
+    "read_parent_findings": false,
+    "read_other_worktrees": false
+  },
+  "environment": {
+    "os": "WSL Ubuntu-24.04",
+    "python": "3.11.17",
+    "interpreter": "$ISOLATED_ENV/bin/python",
+    "isolated_env": "$ISOLATED_ENV",
+    "base_environment": "$BASE_ENV",
+    "base_read_only_pth": true,
+    "gpu": "NVIDIA GeForce RTX5060 8151MiB",
+    "driver": "595.95",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.0",
+    "deepspeed": "0.18.1",
+    "flash_attention": "2.8.3",
+    "flash_attention_wheel_flavor": "cu12torch2.8cxx11abiTRUE-cp311-linux_x86_64",
+    "trl": "0.26.2",
+    "accelerate": "1.10.1",
+    "peft": "0.17.1",
+    "openrlhf": "0.9.0",
+    "ms_swift_source_version": "4.7.0.dev0",
+    "runtime_report": "$RL_RUN/post_native_runtime.json",
+    "distribution_metadata": "$RL_RUN/post_native_distribution_metadata.json"
+  },
+  "budgets": {
+    "wall_clock_limit_minutes": 35,
+    "download_limit_bytes": 2000000000,
+    "largest_download": "Official FlashAttention wheel, logged244.2MiB",
+    "download_accounting": "No Torch/model download. Shallow official source packs plus small dependency installs; estimated aggregate below0.75GiB. Network aggregate was not independently byte-metered.",
+    "gpu_lock": "/tmp/precision-skills-gpu.lock",
+    "gpu_replay_wall_seconds": 39.047
+  },
+  "source_pins": [
+    {
+      "name": "openrlhf",
+      "official_repository": "https://github.com/OpenRLHF/OpenRLHF.git",
+      "source": "$FRAMEWORK_SOURCES/openrlhf",
+      "clone": {
+        "name": "clone_openrlhf",
+        "command": [
+          "git",
+          "clone",
+          "--depth",
+          "1",
+          "https://github.com/OpenRLHF/OpenRLHF.git",
+          "$FRAMEWORK_SOURCES/openrlhf"
+        ],
+        "cwd": "$WORKTREE",
+        "timeout_seconds": 240,
+        "returncode": 0,
+        "elapsed_seconds": 1.417,
+        "log": "$RL_RUN/clone_openrlhf.log"
+      },
+      "sha": "dc2a7ad326f619fc5a47737ea47d1920ce2c0b53",
+      "git_pack_bytes": 476320,
+      "manifest_files": [
+        "README_ja.md",
+        "README.md",
+        "README_zh.md",
+        "requirements.txt",
+        "pyproject.toml",
+        "setup.py"
+      ]
+    },
+    {
+      "name": "slime",
+      "official_repository": "https://github.com/THUDM/slime.git",
+      "source": "$FRAMEWORK_SOURCES/slime",
+      "clone": {
+        "name": "clone_slime",
+        "command": [
+          "git",
+          "clone",
+          "--depth",
+          "1",
+          "https://github.com/THUDM/slime.git",
+          "$FRAMEWORK_SOURCES/slime"
+        ],
+        "cwd": "$WORKTREE",
+        "timeout_seconds": 240,
+        "returncode": 128,
+        "elapsed_seconds": 19.205,
+        "log": "$RL_RUN/clone_slime.log"
+      }
+    },
+    {
+      "name": "nemo_rl",
+      "official_repository": "https://github.com/NVIDIA-NeMo/RL.git",
+      "source": "$FRAMEWORK_SOURCES/nemo_rl",
+      "clone": {
+        "name": "clone_nemo_rl",
+        "command": [
+          "git",
+          "clone",
+          "--depth",
+          "1",
+          "https://github.com/NVIDIA-NeMo/RL.git",
+          "$FRAMEWORK_SOURCES/nemo_rl"
+        ],
+        "cwd": "$WORKTREE",
+        "timeout_seconds": 240,
+        "returncode": 0,
+        "elapsed_seconds": 3.995,
+        "log": "$RL_RUN/clone_nemo_rl.log"
+      },
+      "sha": "31a7f8b801e8f4cdb71ebe948a25585ca80b5ddc",
+      "git_pack_bytes": 20039870,
+      "manifest_files": [
+        "README.md",
+        "pyproject.toml"
+      ]
+    },
+    {
+      "name": "ms_swift",
+      "official_repository": "https://github.com/modelscope/ms-swift.git",
+      "source": "$FRAMEWORK_SOURCES/ms_swift",
+      "clone": {
+        "name": "clone_ms_swift",
+        "command": [
+          "git",
+          "clone",
+          "--depth",
+          "1",
+          "https://github.com/modelscope/ms-swift.git",
+          "$FRAMEWORK_SOURCES/ms_swift"
+        ],
+        "cwd": "$WORKTREE",
+        "timeout_seconds": 240,
+        "returncode": 0,
+        "elapsed_seconds": 2.549,
+        "log": "$RL_RUN/clone_ms_swift.log"
+      },
+      "sha": "2efb43ffe61294735be6816abca991fb2ca16011",
+      "git_pack_bytes": 17315106,
+      "manifest_files": [
+        "README.md",
+        "requirements.txt",
+        "README_CN.md",
+        "setup.cfg",
+        "setup.py"
+      ]
+    },
+    {
+      "name": "areal",
+      "official_repository": "https://github.com/areal-project/AReaL.git",
+      "source": "$FRAMEWORK_SOURCES/areal",
+      "clone": {
+        "name": "clone_areal",
+        "command": [
+          "git",
+          "clone",
+          "--depth",
+          "1",
+          "https://github.com/areal-project/AReaL.git",
+          "$FRAMEWORK_SOURCES/areal"
+        ],
+        "cwd": "$WORKTREE",
+        "timeout_seconds": 240,
+        "returncode": 0,
+        "elapsed_seconds": 4.225,
+        "log": "$RL_RUN/clone_areal.log"
+      },
+      "sha": "3b93679888e9f4929f6f155f13c6a286a62dfd72",
+      "git_pack_bytes": 13414172,
+      "manifest_files": [
+        "README.md",
+        "pyproject.toml",
+        "pyproject.vllm.toml"
+      ]
+    },
+    {
+      "name": "roll",
+      "official_repository": "https://github.com/alibaba/ROLL.git",
+      "source": "$FRAMEWORK_SOURCES/roll",
+      "clone": {
+        "name": "clone_roll",
+        "command": [
+          "git",
+          "clone",
+          "--depth",
+          "1",
+          "https://github.com/alibaba/ROLL.git",
+          "$FRAMEWORK_SOURCES/roll"
+        ],
+        "cwd": "$WORKTREE",
+        "timeout_seconds": 240,
+        "returncode": 0,
+        "elapsed_seconds": 7.351,
+        "log": "$RL_RUN/clone_roll.log"
+      },
+      "sha": "d3506ea9e280ae720fb74df9f82db6efac1c72d5",
+      "git_pack_bytes": 56547806,
+      "manifest_files": [
+        "requirements_omni.txt",
+        "README.md",
+        "requirements_torch2100_vllm.txt",
+        "requirements_torch2100_vllm_ppu.txt",
+        "requirements_diffusion.txt",
+        "pyproject.toml",
+        "requirements_vision.txt",
+        "requirements_common.txt",
+        "setup.py",
+        "requirements_torch280_vllm.txt",
+        "requirements_em_local_debug.txt",
+        "requirements_torch_2100_vllm_amd.txt",
+        "requirements_torch280_sglang.txt"
+      ]
+    },
+    {
+      "name": "mindspeed_rl",
+      "official_repository": "https://github.com/Ascend/MindSpeed-RL.git",
+      "source": "$FRAMEWORK_SOURCES/mindspeed_rl",
+      "clone": {
+        "name": "clone_mindspeed_rl",
+        "command": [
+          "git",
+          "clone",
+          "--depth",
+          "1",
+          "https://github.com/Ascend/MindSpeed-RL.git",
+          "$FRAMEWORK_SOURCES/mindspeed_rl"
+        ],
+        "cwd": "$WORKTREE",
+        "timeout_seconds": 240,
+        "returncode": 0,
+        "elapsed_seconds": 5.256,
+        "log": "$RL_RUN/clone_mindspeed_rl.log"
+      },
+      "sha": "26c21e64f84ae8cd26de9483292349a1850099cf",
+      "git_pack_bytes": 15673783,
+      "manifest_files": [
+        "README.md",
+        "requirements.txt",
+        "setup.py"
+      ]
+    },
+    {
+      "name": "openrlhf_selected",
+      "source": "$FRAMEWORK_SOURCES/openrlhf_v090",
+      "sha": "06ab51e75c0e8c5b4d6b66912996b2a611e3dc2f",
+      "official_repository": "https://github.com/OpenRLHF/OpenRLHF.git"
+    },
+    {
+      "name": "slime_selected",
+      "source": "$FRAMEWORK_SOURCES/slime_retry",
+      "sha": "a4202e0595467d9374d9a68d45a34f45c3f8d230",
+      "official_repository": "https://github.com/THUDM/slime.git"
+    },
+    {
+      "name": "nemo_rl_selected",
+      "source": "$FRAMEWORK_SOURCES/nemo_rl",
+      "sha": "31a7f8b801e8f4cdb71ebe948a25585ca80b5ddc",
+      "official_repository": "https://github.com/NVIDIA-NeMo/RL.git"
+    },
+    {
+      "name": "ms_swift_selected",
+      "source": "$FRAMEWORK_SOURCES/ms_swift",
+      "sha": "2efb43ffe61294735be6816abca991fb2ca16011",
+      "official_repository": "https://github.com/modelscope/ms-swift.git"
+    },
+    {
+      "name": "areal_selected",
+      "source": "$FRAMEWORK_SOURCES/areal",
+      "sha": "3b93679888e9f4929f6f155f13c6a286a62dfd72",
+      "official_repository": "https://github.com/areal-project/AReaL.git"
+    },
+    {
+      "name": "roll_selected",
+      "source": "$FRAMEWORK_SOURCES/roll",
+      "sha": "d3506ea9e280ae720fb74df9f82db6efac1c72d5",
+      "official_repository": "https://github.com/alibaba/ROLL.git"
+    },
+    {
+      "name": "mindspeed_rl_selected",
+      "source": "$FRAMEWORK_SOURCES/mindspeed_rl",
+      "sha": "26c21e64f84ae8cd26de9483292349a1850099cf",
+      "official_repository": "https://github.com/Ascend/MindSpeed-RL.git"
+    },
+    {
+      "name": "openrlhf_v0810_inspection_only",
+      "source": "$FRAMEWORK_SOURCES/openrlhf_v0810",
+      "official_repository": "https://github.com/OpenRLHF/OpenRLHF.git",
+      "sha": "f8ec7ca6b5424f6d637d84a461477748e2cb2e03"
+    }
+  ],
+  "frameworks": [
+    {
+      "framework": "openrlhf",
+      "official_source_sha": "06ab51e75c0e8c5b4d6b66912996b2a611e3dc2f",
+      "source": "$FRAMEWORK_SOURCES/openrlhf_v090",
+      "source_inspected": true,
+      "prerequisite_runtime_probe_executed": true,
+      "native_entrypoint_probe_executed": true,
+      "native_entrypoint_returncode": 0,
+      "native_entrypoint_log": "$RL_RUN/deeper_openrlhf_entrypoint.log",
+      "runtime_report": "$RL_RUN/deeper_openrlhf_runtime.json",
+      "runtime_status": "completed",
+      "runtime_error": null,
+      "backend_reports": {},
+      "version_prerequisite_checks": [],
+      "python_requirement": null,
+      "source_prerequisite_evidence": [
+        {
+          "path": "$FRAMEWORK_SOURCES/openrlhf_v090/requirements.txt",
+          "lines": [
+            {
+              "line": 22,
+              "text": "transformers==4.57.0"
+            },
+            {
+              "line": 23,
+              "text": "transformers_stream_generator"
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/openrlhf_v090/pyproject.toml",
+          "lines": [
+            {
+              "line": 26,
+              "text": "# durations=0 will display all tests execution time, sorted in ascending order starting from from the slowest one."
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/openrlhf_v090/README.md",
+          "lines": [
+            {
+              "line": 31,
+              "text": "OpenRLHF is the first easy-to-use, high-performance open-source RLHF framework built on Ray, vLLM, ZeRO-3 and HuggingFace Transformers, designed to make RLHF training simple and accessible:"
+            },
+            {
+              "line": 37,
+              "text": "  RLHF training spends 80% of the time on the sample generation stage. Powered by [vLLM](https://github.com/vllm-project/vllm) and Auto Tensor Parallelism (AutoTP), OpenRLHF delivers high-throughput, memory-efficient samples generation. Native integration with HuggingFace Transformers ensures seamless and fast generation, making it the fastest RLHF framework available."
+            },
+            {
+              "line": 41,
+              "text": "  Incorporates advanced PPO tricks inspired by practical guides and community best practices, enhancing training stability and reward quality in RLHF workflows. Referencing [Zhihu](https://zhuanlan.zhihu.com/p/622134699) and [Advanced Tricks for Training Large Language Models with Proximal Policy Optimization](https://hijkzzz.notion.site/rlhf-implementation-tricks?v=158d9a33ecc98132bf9e000c39227361)."
+            },
+            {
+              "line": 60,
+              "text": "- [2024/12] We analyzed the PPO, REINFORCE++, GRPO and RLOO in the [Notion Blogpost](https://hijkzzz.notion.site/unraveling-rlhf-and-its-variants-engineering-insights#147d9a33ecc9806090f3d5c749d31f05)."
+            },
+            {
+              "line": 141,
+              "text": "- We can use `--input_key` to specify the `JSON key name` of the input datasets `--prompt_data {name or path}` (PPO) or `--dataset {name or path}`, and use `--apply_chat_template` to utilize the `chat_template` from the [Huggingface Tokenizer](https://huggingface.co/docs/transformers/main/en/chat_templating)."
+            },
+            {
+              "line": 184,
+              "text": "   --save_path ./checkpoint/llama3-8b-sft \\"
+            },
+            {
+              "line": 219,
+              "text": "   --save_path ./checkpoint/llama3-8b-rm \\"
+            },
+            {
+              "line": 284,
+              "text": "   --save_path /openrlhf/examples/test_scripts/final/llama3-8b-rlhf \\"
+            },
+            {
+              "line": 285,
+              "text": "   --ckpt_path /openrlhf/examples/test_scripts/ckpt/llama3-8b-rlhf \\"
+            },
+            {
+              "line": 464,
+              "text": "    --lora_path ./checkpoint/llama3-8b-rm \\"
+            },
+            {
+              "line": 540,
+              "text": "- [Hugging Face Transformers ↗](https://github.com/huggingface/transformers)"
+            }
+          ]
+        }
+      ],
+      "executed_stages": {
+        "native_model": true,
+        "native_loss": true,
+        "backward": true,
+        "rollout": false,
+        "native_training_step": false,
+        "native_optimizer_step": false
+      },
+      "blockers": [],
+      "boundary": "Native Actor + PolicyLoss model execution; tiny Qwen2 explicit Torch SGD. No Ray/DeepSpeed training orchestration."
+    },
+    {
+      "framework": "slime",
+      "official_source_sha": "a4202e0595467d9374d9a68d45a34f45c3f8d230",
+      "source": "$FRAMEWORK_SOURCES/slime_retry",
+      "source_inspected": true,
+      "prerequisite_runtime_probe_executed": true,
+      "native_entrypoint_probe_executed": true,
+      "native_entrypoint_returncode": 1,
+      "native_entrypoint_log": "$RL_RUN/deeper_slime_entrypoint.log",
+      "runtime_report": "$RL_RUN/deeper_slime_runtime.json",
+      "runtime_status": "failed",
+      "runtime_error": "No module named 'megatron'",
+      "backend_reports": {
+        "megatron.core": "$RL_RUN/backend_slime_0.json",
+        "sglang": "$RL_RUN/backend_slime_1.json"
+      },
+      "version_prerequisite_checks": [],
+      "python_requirement": null,
+      "source_prerequisite_evidence": [
+        {
+          "path": "$FRAMEWORK_SOURCES/slime_retry/requirements.txt",
+          "lines": [
+            {
+              "line": 20,
+              "text": "sglang-router>=0.3.0"
+            },
+            {
+              "line": 24,
+              "text": "transformers"
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/slime_retry/pyproject.toml",
+          "lines": [
+            {
+              "line": 18,
+              "text": "known_third_party = [\"megatron\", \"wandb\", \"ray\", \"transformers\"]"
+            },
+            {
+              "line": 41,
+              "text": "# durations=0 will display all tests execution time, sorted in ascending order starting from from the slowest one."
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/slime_retry/README.md",
+          "lines": [
+            {
+              "line": 12,
+              "text": "1.  **High-Performance Training**: Supports efficient training in various modes by connecting Megatron with SGLang;"
+            },
+            {
+              "line": 15,
+              "text": "slime's design goal is to make these two capabilities reinforce each other without turning the system into a heavy stack of disconnected trainers, rollout services, and agent frameworks. Megatron training, SGLang rollout, custom data generation, reward computation, verifier feedback, and environment interaction all flow through the same training / rollout / Data Buffer path."
+            },
+            {
+              "line": 22,
+              "text": "- **Direct engine integration**: Megatron arguments are available directly; SGLang arguments use the `--sglang-` prefix."
+            },
+            {
+              "line": 32,
+              "text": "Use Megatron arguments directly for parallelism, optimizers, checkpoints, and model configuration. Prefix installed SGLang arguments with `--sglang-`; for example, `--mem-fraction-static` becomes `--sglang-mem-fraction-static`."
+            },
+            {
+              "line": 36,
+              "text": "- [SGLang Config](docs/en/advanced/sglang-config.md): YAML configuration for server groups, multiple models, and per-group overrides."
+            },
+            {
+              "line": 49,
+              "text": "- [slime: An SGLang-Native Post-Training Framework for RL Scaling](https://lmsys.org/blog/2025-07-09-slime/)"
+            },
+            {
+              "line": 69,
+              "text": "- **training (Megatron)**: Responsible for the main training process, reads data from the Data Buffer, and synchronizes parameters to the rollout module after training."
+            },
+            {
+              "line": 70,
+              "text": "- **rollout (SGLang + router)**: Generates new data (including rewards/verifier outputs) and stores it in the Data Buffer. Custom generate functions can wrap this with multi-turn loops, tool calls, environment/sandbox interaction, and verifier-based reward."
+            },
+            {
+              "line": 102,
+              "text": "[Miles](https://github.com/radixark/miles) is an RL post-training framework for large-scale models, built on slime by [RadixArk](https://github.com/radixark). It stays closely aligned with slime's upstream development while extending it with enterprise-oriented features: deeper [SGLang](https://github.com/sgl-project/sglang) integration, operational tooling, deployment support, and optimizations for new [models](https://www.radixark.com/miles/docs/models) and [hardware](https://www.radixark.com/miles/docs/platforms). Miles also adds a growing set of production features, including LoRA, TITO, and low-precision training."
+            },
+            {
+              "line": 106,
+              "text": "[**vime**](https://github.com/vllm-project/vime) is a post-training framework built on slime and maintained by the vLLM project. It keeps slime's Megatron training stack, Data Buffer dataflow, and custom data-generation design, with its main change being a rollout backend swapped to [**vLLM**](https://github.com/vllm-project/vllm) with [vllm-router](https://github.com/vllm-project/router). Starting from an existing slime launch script, adjusting only rollout-related parameters is enough to quickly run training with vime."
+            },
+            {
+              "line": 110,
+              "text": "[**Relax**](https://github.com/redai-infra/Relax) (Reinforcement Engine Leveraging Agentic X-modality) is an omni-modal agentic RL framework open-sourced by the RedAI Infra team, built upon the slime infrastructure stack that combines Ray, Megatron-LM, and SGLang. Relax adopts a service-oriented architecture on Ray Serve with Megatron-LM and SGLang as training/inference backends. It uses [TransferQueue](https://github.com/Ascend/TransferQueue) to fully decouple Actor, Rollout, ActorFwd, Reference, and Advantage computation onto independent GPU clusters, and introduces **DCS (Distributed Checkpoint Service)** — an NCCL-broadcast weight-sync engine that streams updated Actor weights to Rollout"
+            },
+            {
+              "line": 146,
+              "text": "1.  **Megatron arguments**: slime reads Megatron arguments directly. You can configure Megatron by passing arguments like `--tensor-model-parallel-size 2`."
+            },
+            {
+              "line": 147,
+              "text": "2.  **SGLang arguments**: All arguments for the installed SGLang are supported through pass-through. These arguments must be prefixed with `--sglang-`. For example, `--mem-fraction-static` should be passed as `--sglang-mem-fraction-static`."
+            },
+            {
+              "line": 160,
+              "text": "│  └─ slime/rollout/sglang_rollout.py  Sample generation and reward computation"
+            },
+            {
+              "line": 162,
+              "text": "   └─ slime/backends/megatron_utils/actor.py"
+            },
+            {
+              "line": 163,
+              "text": "      ├─ model.py                    Megatron model execution"
+            },
+            {
+              "line": 167,
+              "text": "On a first pass, treat `slime/utils/arguments.py` as the configuration entry point. The deployment details in `slime/backends/sglang_utils/` and the weight-sync implementations under `slime/backends/megatron_utils/update_weight/` can also wait until you need to change those areas."
+            },
+            {
+              "line": 188,
+              "text": "- Special thanks to the following projects & communities: SGLang, Megatron‑LM, mbridge, OpenRLHF, veRL, Pai-Megatron-Patch and others."
+            }
+          ]
+        }
+      ],
+      "executed_stages": {
+        "native_model": false,
+        "native_loss": false,
+        "backward": false,
+        "rollout": false,
+        "native_training_step": false,
+        "native_optimizer_step": false
+      },
+      "blockers": [
+        "Native Megatron loss import fails: megatron is not installed.",
+        "Native train.py --help reaches the SGLang dependency and fails: sglang is not installed.",
+        "No Megatron or SGLang backend was fabricated or provisioned."
+      ]
+    },
+    {
+      "framework": "nemo_rl",
+      "official_source_sha": "31a7f8b801e8f4cdb71ebe948a25585ca80b5ddc",
+      "source": "$FRAMEWORK_SOURCES/nemo_rl",
+      "source_inspected": true,
+      "prerequisite_runtime_probe_executed": true,
+      "native_entrypoint_probe_executed": true,
+      "native_entrypoint_returncode": 1,
+      "native_entrypoint_log": "$RL_RUN/deeper_nemo_rl_entrypoint.log",
+      "runtime_report": "$RL_RUN/deeper_nemo_rl_runtime.json",
+      "runtime_status": "failed",
+      "runtime_error": "Please use `typing_extensions.TypedDict` instead of `typing.TypedDict` on Python < 3.12.\n\nFor further information visit https://errors.pydantic.dev/2.14/u/typed-dict-version",
+      "backend_reports": {
+        "nemo_automodel": "$RL_RUN/backend_nemo_rl_0.json",
+        "megatron.core": "$RL_RUN/backend_nemo_rl_1.json",
+        "transformer_engine": "$RL_RUN/backend_nemo_rl_2.json"
+      },
+      "version_prerequisite_checks": [
+        {
+          "requirement": "torch>=2.11,<2.14",
+          "actual": "2.8.0+cu128",
+          "satisfied": false
+        },
+        {
+          "requirement": "ray[default]>=2.58.0",
+          "actual": "2.59.0",
+          "satisfied": true
+        },
+        {
+          "requirement": "datasets>=4.0.0",
+          "actual": "4.4.1",
+          "satisfied": true
+        },
+        {
+          "requirement": "transformers>=5.5.0,<=5.12.1",
+          "actual": "4.57.0",
+          "satisfied": false
+        }
+      ],
+      "python_requirement": {
+        "required": ">=3.13.14,<3.14",
+        "actual": "3.11.17",
+        "satisfied": false
+      },
+      "source_prerequisite_evidence": [
+        {
+          "path": "$FRAMEWORK_SOURCES/nemo_rl/pyproject.toml",
+          "lines": [
+            {
+              "line": 16,
+              "text": "requires-python = \">=3.13.14,<3.14\""
+            },
+            {
+              "line": 29,
+              "text": "  # wheels were built against (vllm/mcore/automodel/trtllm: 2.13.0; sglang:"
+            },
+            {
+              "line": 33,
+              "text": "  \"torch>=2.11,<2.14\","
+            },
+            {
+              "line": 62,
+              "text": "  \"transformers>=5.5.0,<=5.12.1\","
+            },
+            {
+              "line": 65,
+              "text": "  \"open-clip-torch>=3.2.0\","
+            },
+            {
+              "line": 75,
+              "text": "  \"pybase64\",                                                                                                 # for sglang refit"
+            },
+            {
+              "line": 96,
+              "text": "  # Without it, qwen3.5 / nano-v3 / moonlight Megatron recipes crash at first"
+            },
+            {
+              "line": 110,
+              "text": "  \"TransferQueue @ git+https://github.com/Ascend/TransferQueue.git@05d4cc3377bee9b0f2897bbb90914ee20c0aea39\","
+            },
+            {
+              "line": 122,
+              "text": "  # sha256), and PyPI's CDN is far more reliable than github releases"
+            },
+            {
+              "line": 140,
+              "text": "  \"torch==2.13.0\","
+            },
+            {
+              "line": 144,
+              "text": "  # Keep this scoped to the automodel fork; sglang intentionally pins TileLang 0.1.8."
+            },
+            {
+              "line": 150,
+              "text": "  # Mirrors nemo-automodel's own `transformers==5.12.1` pin (Automodel r0.6.0)."
+            },
+            {
+              "line": 151,
+              "text": "  \"transformers==5.12.1\","
+            },
+            {
+              "line": 161,
+              "text": "  \"torch==2.13.0\","
+            },
+            {
+              "line": 163,
+              "text": "  \"transformers==5.12.1\","
+            },
+            {
+              "line": 180,
+              "text": "sglang = ["
+            },
+            {
+              "line": 181,
+              "text": "  # sglang-miles (3003d70f) and sglang-kernel 0.4.5 are built against torch 2.11;"
+            },
+            {
+              "line": 183,
+              "text": "  \"torch==2.11.0\","
+            },
+            {
+              "line": 185,
+              "text": "  # sgl-project/sglang branch `sglang-miles` (based on v0.5.16). Needed for the"
+            },
+            {
+              "line": 190,
+              "text": "  \"sglang\","
+            },
+            {
+              "line": 191,
+              "text": "  \"sglang-kernel==0.4.5\",                                                       # Direct dep for explicit version control; required by sglang-miles"
+            },
+            {
+              "line": 192,
+              "text": "  \"sglang-router\",                                                              # Used by nemo_rl.models.generation.sglang.sglang_router for multi-engine routing"
+            },
+            {
+              "line": 197,
+              "text": "  \"transformers==5.12.1\","
+            },
+            {
+              "line": 207,
+              "text": "  # megatron-bridge is installed straight from the submodule's own pyproject.toml, so its"
+            },
+            {
+              "line": 208,
+              "text": "  # dependencies (transformers, transformer-engine, megatron-core[dev,mlm] -> nvidia-modelopt,"
+            },
+            {
+              "line": 212,
+              "text": "  # [te]/[ssm] activate megatron-bridge's transformer-engine and mamba-ssm/causal-conv1d extras."
+            },
+            {
+              "line": 213,
+              "text": "  # megatron-core is intentionally NOT listed: it flows from megatron-bridge's own"
+            },
+            {
+              "line": 214,
+              "text": "  # dependency megatron-core[dev,mlm] and its [tool.uv.sources] path mapping, so Megatron-LM"
+            },
+            {
+              "line": 216,
+              "text": "  \"megatron-bridge[te,ssm]\","
+            },
+            {
+              "line": 218,
+              "text": "  \"torch==2.13.0\","
+            },
+            {
+              "line": 220,
+              "text": "  \"transformers==5.12.1\","
+            },
+            {
+              "line": 226,
+              "text": "  # FlashAttention-4 (CuTe DSL). Required by megatron_cfg.flash_attention_version=4, which"
+            },
+            {
+              "line": 230,
+              "text": "  # mamba-ssm/causal-conv1d LOOK redundant (megatron-bridge[ssm] pulls them), but do not"
+            },
+            {
+              "line": 245,
+              "text": "  # megatron-energon already flows in transitively (megatron-core[dev,mlm] declares it), so"
+            },
+            {
+              "line": 247,
+              "text": "  # Megatron-LM pins ~=7.0, and the energon SFT path requires 7.3+."
+            },
+            {
+              "line": 248,
+              "text": "  # tests/unit/test_dependency_pins.py fails if Megatron-LM's own pin moves, so a"
+            },
+            {
+              "line": 249,
+              "text": "  # Megatron-Bridge bump forces a re-check of this floor."
+            },
+            {
+              "line": 250,
+              "text": "  \"megatron-energon[av-decode]~=7.3\", # for energon backend"
+            },
+            {
+              "line": 257,
+              "text": "  # feat/rl_rc's requirements.txt needs torch>=2.13.0,<=2.14.0a0."
+            },
+            {
+              "line": 258,
+              "text": "  \"torch==2.13.0\","
+            },
+            {
+              "line": 267,
+              "text": "  \"transformers==5.5.4\","
+            },
+            {
+              "line": 329,
+              "text": "megatron-bridge = { path = \"3rdparty/Megatron-Bridge-workspace/Megatron-Bridge\", editable = true }"
+            },
+            {
+              "line": 336,
+              "text": "# Deliberately ahead of the v0.2.0 rev megatron-core pins: this rev carries the"
+            },
+            {
+              "line": 343,
+              "text": "nemo-lens = { git = \"https://github.com/NVIDIA-NeMo/Lens.git\", rev = \"4d045c03186b90afdc815db46b671f6a21bc7e98\" }"
+            },
+            {
+              "line": 344,
+              "text": "sglang = { git = \"https://github.com/sgl-project/sglang.git\", rev = \"3003d70f680d41c59d1b7acbf65cb47795dfd19e\", subdirectory = \"python\" }"
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/nemo_rl/README.md",
+          "lines": [
+            {
+              "line": 24,
+              "text": "    * Sglang backend, Muon Optimizer, Speculative Decoding, Yarn long-context training, Chunked Cross Entropy Loss, top-p/top-k training"
+            },
+            {
+              "line": 30,
+              "text": "    * Recipes: [grpo-qwen3.5-9b-1n8g-megatron.yaml](/examples/configs/recipes/llm/grpo-qwen3.5-9b-1n8g-megatron.yaml), [grpo-qwen3.5-35ba3b-2n8g-megatron-ep16tp2cp2.yaml](/examples/configs/recipes/llm/grpo-qwen3.5-35ba3b-2n8g-megatron-ep16tp2cp2.yaml), [grpo-glm47-flash-4n8g-automodel-ep32.yaml](/examples/configs/recipes/llm/grpo-glm47-flash-4n8g-automodel-ep32.yaml)"
+            },
+            {
+              "line": 42,
+              "text": "    * LoRA SFT is supported on both [DTensor](https://github.com/NVIDIA-NeMo/RL/pull/1556) and [Megatron Core](https://github.com/NVIDIA-NeMo/RL/pull/1629) backends."
+            },
+            {
+              "line": 43,
+              "text": "    * LoRA GRPO is supported on both [DTensor](https://github.com/NVIDIA-NeMo/RL/pull/1797) and [Megatron Core](https://github.com/NVIDIA-NeMo/RL/pull/1889) backends."
+            },
+            {
+              "line": 44,
+              "text": "    * LoRA DPO is supported on both [DTensor](https://github.com/NVIDIA-NeMo/RL/pull/1826) and [Megatron Core](https://github.com/NVIDIA-NeMo/RL/pull/2125) backends."
+            },
+            {
+              "line": 46,
+              "text": "        * [sft-nanov3-30BA3B-2n8g-automodel-lora.yaml](examples/configs/recipes/llm/sft-nanov3-30BA3B-2n8g-automodel-lora.yaml)"
+            },
+            {
+              "line": 47,
+              "text": "        * [grpo-nanov3-30BA3B-2n8g-automodel-lora.yaml](examples/configs/recipes/llm/grpo-nanov3-30BA3B-2n8g-automodel-lora.yaml)"
+            },
+            {
+              "line": 48,
+              "text": "        * [grpo-nanov3-30BA3B-2n8g-megatron-lora.yaml](examples/configs/recipes/llm/grpo-nanov3-30BA3B-2n8g-megatron-lora.yaml)"
+            },
+            {
+              "line": 54,
+              "text": "* [12/15/2025] NeMo-RL is the framework that trained [NVIDIA-NeMotron-3-Nano-30B-A3B-FP8](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8)! [This guide](docs/guides/models/nemotron/nemotron-3-nano.md) provides reproducible instructions for the post-training process."
+            },
+            {
+              "line": 65,
+              "text": "* [7/31/2025] [NeMo RL V0.3: Scalable and Performant Post-training with NeMo RL via Megatron Core](https://github.com/NVIDIA-NeMo/RL/discussions/1161)"
+            },
+            {
+              "line": 86,
+              "text": "- **High performance with Megatron Core**, supporting various parallelism techniques for large models and large context lengths."
+            },
+            {
+              "line": 96,
+              "text": "- [**Megatron**](https://github.com/NVIDIA-NeMo/Megatron-Bridge) - NVIDIA's high-performance training framework for scaling to large models with 6D parallelisms."
+            },
+            {
+              "line": 104,
+              "text": "- [**Megatron**](https://github.com/NVIDIA/Megatron-LM/tree/main/megatron/core/inference) - A high-performance Megatron-native inference backend which eliminates weight conversion between training and inference."
+            },
+            {
+              "line": 113,
+              "text": "- 🔜 **Improved Large MoE Performance** - Improve Megatron Core training performance and generation performance."
+            },
+            {
+              "line": 120,
+              "text": "- ✅ **Megatron Inference** - Improved performance for Megatron Inference (avoid weight conversion)."
+            },
+            {
+              "line": 121,
+              "text": "- ✅ **SGLang Inference** - SGLang rollout support for optimized inference."
+            },
+            {
+              "line": 131,
+              "text": "- ✅ **Larger Model Support with Longer Sequences** - Performant parallelisms with Megatron Core (TP/PP/CP/SP/EP/FSDP) (through NeMo Megatron Bridge). "
+            },
+            {
+              "line": 132,
+              "text": "- ✅ **Sequence Packing** - Sequence packing in both DTensor and Megatron Core for huge training performance gains."
+            },
+            {
+              "line": 134,
+              "text": "- ✅ **Hugging Face Integration** - OOB support in the DTensor path, CKPT conversion available for Megatron path through Megatron Bridge middleware."
+            },
+            {
+              "line": 135,
+              "text": "- ✅ **End-to-End FP8 Low-Precision Training** - Support for Megatron Core FP8 training and FP8 vLLM generation."
+            },
+            {
+              "line": 137,
+              "text": "- ✅ **Megatron Inference** - Megatron Inference for fast Day-0 support for new Megatron models (avoid weight conversion)."
+            },
+            {
+              "line": 171,
+              "text": "> **Recommended:** Use the pre-built NGC container to skip manual system dependency setup. The container ships with CUDA, cuDNN, vLLM, and SGLang already installed."
+            },
+            {
+              "line": 204,
+              "text": "Use this quick start to get going with either the native PyTorch DTensor or Megatron Core training backends."
+            },
+            {
+              "line": 215,
+              "text": "      <th style=\"border:1px solid #d0d7de; padding:8px; text-align:left; width:50%; word-break:break-word; overflow-wrap:anywhere; white-space:normal;\">Megatron Core</th>"
+            },
+            {
+              "line": 234,
+              "text": "        <strong>Run GRPO (Megatron)</strong>"
+            },
+            {
+              "line": 236,
+              "text": "--config examples/configs/grpo_math_1B_megatron.yaml</code></pre>"
+            },
+            {
+              "line": 266,
+              "text": "If you are using the Megatron backend on bare metal (outside of a container), you may"
+            },
+            {
+              "line": 302,
+              "text": "> **Bare metal only (skip if using the NeMo RL container):** If you use the Megatron backend (`--extra mcore`), set these environment variables so Transformer Engine uses the pip-installed cuDNN instead of a potentially mismatched system version:"
+            },
+            {
+              "line": 334,
+              "text": "By default, this uses the configuration in `examples/configs/grpo_math_1B.yaml`. You can customize parameters with command-line overrides. For example, to run on 8 GPUs,"
+            },
+            {
+              "line": 337,
+              "text": "# Run the GRPO math example using a 1B parameter model using 8 GPUs"
+            },
+            {
+              "line": 353,
+              "text": "The default configuration uses the DTensor training backend. We also provide a config `examples/configs/grpo_math_1B_megatron.yaml` which is set up to use the Megatron backend out of the box."
+            },
+            {
+              "line": 358,
+              "text": "# Run a GRPO math example on 1 GPU using the Megatron backend"
+            },
+            {
+              "line": 360,
+              "text": "  --config examples/configs/grpo_math_1B_megatron.yaml"
+            },
+            {
+              "line": 432,
+              "text": "| MOPD | Yes | Yes | On-policy | Top-1 sampled (RL-style) | Same | Megatron |"
+            },
+            {
+              "line": 550,
+              "text": "This fine-tunes the `Llama3.2-1B` model on the SQuAD dataset using a 1 GPU."
+            },
+            {
+              "line": 598,
+              "text": "This trains `Llama3.2-1B-Instruct` on 1 GPU."
+            },
+            {
+              "line": 600,
+              "text": "If you have access to more GPUs, you can update the experiment accordingly. To run on 8 GPUs, we update the cluster configuration and switch to an 8B Llama3.1 Instruct model:"
+            },
+            {
+              "line": 661,
+              "text": "If you have access to more GPUs, you can update the experiment accordingly. To run on 8 GPUs, we update the cluster configuration:"
+            },
+            {
+              "line": 707,
+              "text": "- [Megatron checkpoints](docs/design-docs/checkpointing.md#converting-megatron-checkpoints-to-hugging-face-format)"
+            },
+            {
+              "line": 708,
+              "text": "- [Megatron LoRA adapter checkpoints](docs/design-docs/checkpointing.md#converting-megatron-lora-adapter-checkpoints-to-hugging-face-format)"
+            },
+            {
+              "line": 717,
+              "text": "- If you forget to initialize the NeMo and Megatron submodules when cloning the NeMo-RL repository, you may run into an error like this:"
+            },
+            {
+              "line": 720,
+              "text": "  ModuleNotFoundError: No module named 'megatron'"
+            }
+          ]
+        }
+      ],
+      "executed_stages": {
+        "native_model": false,
+        "native_loss": false,
+        "backward": false,
+        "rollout": false,
+        "native_training_step": false,
+        "native_optimizer_step": false
+      },
+      "blockers": [
+        "Pinned main requires Python >=3.13.14,<3.14 and Torch >=2.11,<2.14; actual Python is3.11.17 and Torch is2.8.0+cu128.",
+        "Native GRPO entrypoint raises a Pydantic TypedDict-on-Python<3.12 error.",
+        "Actual backend probes fail for nemo_automodel, megatron.core and transformer_engine."
+      ]
+    },
+    {
+      "framework": "ms_swift",
+      "official_source_sha": "2efb43ffe61294735be6816abca991fb2ca16011",
+      "source": "$FRAMEWORK_SOURCES/ms_swift",
+      "source_inspected": true,
+      "prerequisite_runtime_probe_executed": true,
+      "native_entrypoint_probe_executed": true,
+      "native_entrypoint_returncode": 0,
+      "native_entrypoint_log": "$RL_RUN/deeper_ms_swift_entrypoint.log",
+      "runtime_report": "$RL_RUN/post_native_runtime.json",
+      "runtime_status": "completed",
+      "runtime_error": null,
+      "backend_reports": {
+        "swift.rlhf_trainers.grpo_trainer": "$RL_RUN/backend_ms_swift_0.json"
+      },
+      "version_prerequisite_checks": [],
+      "python_requirement": null,
+      "source_prerequisite_evidence": [
+        {
+          "path": "$FRAMEWORK_SOURCES/ms_swift/requirements.txt",
+          "lines": []
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/ms_swift/requirements/framework.txt",
+          "lines": [
+            {
+              "line": 34,
+              "text": "transformers>=4.33,<5.20.0"
+            },
+            {
+              "line": 35,
+              "text": "transformers_stream_generator"
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/ms_swift/README.md",
+          "lines": [
+            {
+              "line": 56,
+              "text": "🍔 In addition, ms-swift integrates the latest training technologies, including Megatron parallelism techniques such as TP, PP, CP, EP to accelerate training, as well as numerous GRPO algorithm family reinforcement learning algorithms including: GRPO, DAPO, GSPO, SAPO, CISPO, RLOO, Reinforce++, etc. to enhance model intelligence. ms-swift supports a wide range of training tasks, including preference learning algorithms such as DPO, KTO, RM, CPO, SimPO, ORPO, as well as Embedding, Reranker, and sequence classification tasks. ms-swift provides full-pipeline support for large model training, including acceleration for inference, evaluation, and deployment modules using vLLM, SGLang, and LMDeploy"
+            },
+            {
+              "line": 62,
+              "text": "- **Hardware Support**: Supports NVIDIA GPUs (A100/H100/RTX series, etc., via CUDA), AMD GPUs (MI300 series, etc., via ROCm), domestic hardware such as Ascend NPU, MetaX GPU and Moore Threads GPU (via MUSA), as well as Apple MPS and CPU."
+            },
+            {
+              "line": 66,
+              "text": "- **Distributed Training**: Supports distributed data parallelism (DDP), device_map simple model parallelism, DeepSpeed ZeRO2 ZeRO3, FSDP/FSDP2, and Megatron distributed training technologies."
+            },
+            {
+              "line": 70,
+              "text": "- 🥥 **Megatron Parallelism**: Provides TP/PP/SP/CP/ETP/EP/VPP parallel strategies to significantly boost **MoE model training speed**. Supports full-parameter and LoRA training methods for 300+ pure text large models and 100+ multimodal large models. Supports CPT/SFT/GRPO/DPO/KTO/RM training tasks."
+            },
+            {
+              "line": 74,
+              "text": "- **Inference Acceleration**: Supports Transformers, vLLM, SGLang, and LmDeploy inference acceleration engines, providing OpenAI interfaces for accelerating inference, deployment, and evaluation modules."
+            },
+            {
+              "line": 76,
+              "text": "- **Model Quantization**: Supports quantization export for AWQ, GPTQ, FP8, and BNB. Exported models support inference acceleration using vLLM/SGLang/LmDeploy."
+            },
+            {
+              "line": 82,
+              "text": "- 🔥 2026.10.01: Support for [Xing4.0-29B-A4B](https://www.modelscope.cn/models/XingChen-AGI/Xing4.0-29B-A4B): transformers-backend training and inference, with LoRA & full-parameter SFT on single/multi-GPU (DDP & DeepSpeed ZeRO-3) and grouped_mm expert acceleration (~3.7x). Refer to the [examples](examples/models/xing4_0)."
+            },
+            {
+              "line": 83,
+              "text": "- 🔥 2026.09.21: Support for [DeepSeek-V4.1-Flash](https://www.modelscope.cn/models/deepseek-ai/DeepSeek-V4.1-Flash): Megatron-SWIFT full-parameter training (SFT and GRPO) plus vLLM inference. Refer to the [examples](examples/models/deepseek_v41)."
+            },
+            {
+              "line": 85,
+              "text": "- 🔥 2026.08.26: Day-0 Support for [Qwen3.8-Flash-Next](https://www.modelscope.cn/models/Qwen/Qwen3.8-Flash-Next), refer to [sft example](examples/models/qwen4_exp/megatron_sft.sh) for training."
+            },
+            {
+              "line": 87,
+              "text": "- 🎁 2026.08.11: Support inference and training for the multimodal model [Muse-Glimmer-30B](https://modelscope.cn/models/meta-models/Muse-Glimmer-30B), with Megatron-SWIFT support as well."
+            },
+            {
+              "line": 89,
+              "text": "- 🎁 2026.06.10: Megatron-Ray now supports GRPO and GKD training. See [docs](./docs/source_en/Instruction/Ray.md) and [examples](examples/ray)."
+            },
+            {
+              "line": 91,
+              "text": "- 🎁 2025.11.14: Megatron GRPO is now available!  Check out the [docs](./docs/source_en/Megatron-SWIFT/GRPO.md) and [examples](examples/megatron/grpo)."
+            },
+            {
+              "line": 92,
+              "text": "- 🎁 2025.11.04: Support for [Mcore-Bridge](docs/source_en/Megatron-SWIFT/Mcore-Bridge.md), making Megatron training as simple and easy to use as transformers."
+            },
+            {
+              "line": 96,
+              "text": "- 🎁 2025.09.02: Megatron-SWIFT now supports multimodal model training. Documentation can be found [here](./docs/source_en/Megatron-SWIFT/Multimodal-Model.md)."
+            },
+            {
+              "line": 98,
+              "text": "- 🎁 2025.07.09: Megatron-SWIFT supports LoRA training. Compared to ms-swift, it achieves significant speedup on MoE models. Training scripts can be found [here](https://github.com/modelscope/ms-swift/blob/main/examples/megatron/lora)."
+            },
+            {
+              "line": 104,
+              "text": "- 🎁 2025.06.11: Support for using Megatron parallelism techniques for RLHF training. The training script can be found [here](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/rlhf)."
+            },
+            {
+              "line": 109,
+              "text": "- 🎁 2025.03.16: Support for Megatron's parallel training techniques is now available. Please see the [Megatron-SWIFT training documentation](https://swift.readthedocs.io/en/latest/Megatron-SWIFT/Quick-start.html)."
+            },
+            {
+              "line": 154,
+              "text": "| transformers | >=4.33       | 4.57.6/5.12.1              |                          |"
+            },
+            {
+              "line": 162,
+              "text": "| sglang       | >=0.4.6      |          | Inference/Deployment                      |"
+            },
+            {
+              "line": 294,
+              "text": "from swift import TransformersEngine, InferRequest, RequestConfig"
+            },
+            {
+              "line": 295,
+              "text": "# Perform inference using the native Transformers engine"
+            },
+            {
+              "line": 296,
+              "text": "engine = TransformersEngine(model_id_or_path, adapters=[lora_checkpoint])"
+            },
+            {
+              "line": 313,
+              "text": "|   [Megatron-SWIFT](https://swift.readthedocs.io/en/latest/Megatron-SWIFT/Quick-start.html)   |"
+            },
+            {
+              "line": 372,
+              "text": "    --dataset hjh0119/shareAI-Llama3-DPO-zh-en-emoji \\"
+            },
+            {
+              "line": 379,
+              "text": "### Megatron-SWIFT"
+            },
+            {
+              "line": 381,
+              "text": "ms-swift supports using Megatron parallelism techniques to accelerate training, including large-scale cluster training and MoE model training. The following training methods are supported:"
+            },
+            {
+              "line": 386,
+              "text": "| [Supervised Fine-Tuning](https://github.com/modelscope/ms-swift/tree/main/examples/megatron) | ✅              | ✅    | ✅    | ✅          | ✅    |"
+            },
+            {
+              "line": 387,
+              "text": "| [GRPO](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/grpo)                   | ✅              | ✅    | ✅    | ✅          | ✅    |"
+            },
+            {
+              "line": 388,
+              "text": "| [GKD](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/rlhf/gkd)                   | ✅              | ✅    | ✅    | ✅          | ✅    |"
+            },
+            {
+              "line": 389,
+              "text": "| [DPO](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/rlhf/dpo)                    | ✅              | ✅    | ✅    | ✅          | ✅    |"
+            },
+            {
+              "line": 390,
+              "text": "| [KTO](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/rlhf/kto)                    | ✅              | ✅    | ✅    | ✅          | ✅    |"
+            },
+            {
+              "line": 391,
+              "text": "| [RM](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/rlhf/rm)                     | ✅              | ✅    | ✅    | ✅          | ✅    |"
+            },
+            {
+              "line": 392,
+              "text": "| [Embedding](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/embedding) | ✅ | ✅| ✅ | ✅ | ✅ |"
+            },
+            {
+              "line": 393,
+              "text": "| [Reranker](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/reranker) | ✅ | ✅| ✅ | ✅ | ✅ |"
+            },
+            {
+              "line": 394,
+              "text": "| [Sequence Classification](https://github.com/modelscope/ms-swift/tree/main/examples/megatron/seq_cls)    | ✅              | ✅    | ✅    | ✅          | ✅    |"
+            },
+            {
+              "line": 398,
+              "text": "NPROC_PER_NODE=2 CUDA_VISIBLE_DEVICES=0,1 megatron sft \\"
+            },
+            {
+              "line": 441,
+              "text": "    --infer_backend transformers \\"
+            },
+            {
+              "line": 450,
+              "text": "    --infer_backend transformers \\"
+            },
+            {
+              "line": 465,
+              "text": "    --sampler_engine transformers \\"
+            },
+            {
+              "line": 474,
+              "text": "    --infer_backend sglang \\"
+            }
+          ]
+        }
+      ],
+      "executed_stages": {
+        "native_model": true,
+        "native_loss": true,
+        "backward": true,
+        "rollout": false,
+        "native_training_step": false,
+        "native_optimizer_step": false
+      },
+      "blockers": [],
+      "boundary": "Real native get_model_processor and GRPOTrainer constructor, public compute_loss, native scorer and backward. No train(), training_step(), rollout or optimizer.",
+      "trl_requirement": "GRPOConfig checks trl>=0.26 at swift/rlhf_trainers/arguments.py:102; executed withTRL0.26.2."
+    },
+    {
+      "framework": "areal",
+      "official_source_sha": "3b93679888e9f4929f6f155f13c6a286a62dfd72",
+      "source": "$FRAMEWORK_SOURCES/areal",
+      "source_inspected": true,
+      "prerequisite_runtime_probe_executed": true,
+      "native_entrypoint_probe_executed": true,
+      "native_entrypoint_returncode": 1,
+      "native_entrypoint_log": "$RL_RUN/deeper_areal_entrypoint.log",
+      "runtime_report": "$RL_RUN/deeper_areal_runtime.json",
+      "runtime_status": "failed",
+      "runtime_error": "No module named 'flask'",
+      "backend_reports": {
+        "sglang": "$RL_RUN/backend_areal_0.json",
+        "torch_memory_saver": "$RL_RUN/backend_areal_1.json"
+      },
+      "version_prerequisite_checks": [
+        {
+          "requirement": "torch>=2.9.1,<2.11; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+          "actual": "2.8.0+cu128",
+          "satisfied": false
+        },
+        {
+          "requirement": "torch<2.9.1; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+          "actual": "2.8.0+cu128",
+          "satisfied": true
+        },
+        {
+          "requirement": "datasets>=3.0.0",
+          "actual": "4.4.1",
+          "satisfied": true
+        },
+        {
+          "requirement": "transformers>=5.0.0,<=5.3.0",
+          "actual": "4.57.0",
+          "satisfied": false
+        },
+        {
+          "requirement": "peft<=0.18.1",
+          "actual": "0.17.1",
+          "satisfied": true
+        },
+        {
+          "requirement": "ray[default]",
+          "actual": "2.59.0",
+          "satisfied": true
+        }
+      ],
+      "python_requirement": {
+        "required": ">=3.11,<3.13",
+        "actual": "3.11.17",
+        "satisfied": true
+      },
+      "source_prerequisite_evidence": [
+        {
+          "path": "$FRAMEWORK_SOURCES/areal/pyproject.toml",
+          "lines": [
+            {
+              "line": 10,
+              "text": "requires-python = \">=3.11,<3.13\""
+            },
+            {
+              "line": 45,
+              "text": "    \"torch>=2.9.1,<2.11; sys_platform != 'darwin' or platform_machine != 'x86_64'\","
+            },
+            {
+              "line": 52,
+              "text": "    \"transformers>=5.0.0,<=5.3.0\","
+            },
+            {
+              "line": 145,
+              "text": "# sglang and vllm pin mutually-incompatible torch / torchao versions."
+            },
+            {
+              "line": 147,
+              "text": "sglang = ["
+            },
+            {
+              "line": 148,
+              "text": "    \"sglang[tracing]==0.5.10.post1; sys_platform == 'linux' and platform_machine == 'x86_64'\","
+            },
+            {
+              "line": 160,
+              "text": "megatron = ["
+            },
+            {
+              "line": 161,
+              "text": "    \"megatron-core==0.19.0; python_version >= '3.12' and sys_platform == 'linux' and platform_machine == 'x86_64'\","
+            },
+            {
+              "line": 163,
+              "text": "    \"megatron-bridge==0.6.0; python_version >= '3.12' and sys_platform == 'linux' and platform_machine == 'x86_64'\","
+            },
+            {
+              "line": 168,
+              "text": "    \"areal[megatron]\","
+            },
+            {
+              "line": 174,
+              "text": "# Full CUDA setup: training packages + SGLang inference"
+            },
+            {
+              "line": 177,
+              "text": "    \"areal[sglang]\","
+            },
+            {
+              "line": 236,
+              "text": "    # litellm[proxy] conflicts with sglang's exact pins:"
+            },
+            {
+              "line": 237,
+              "text": "    # - litellm requires openai>=2.8.0, sglang pins openai==2.6.1"
+            },
+            {
+              "line": 238,
+              "text": "    # - litellm requires soundfile>=0.12.1,<0.13.0, sglang pins soundfile==0.13.1"
+            },
+            {
+              "line": 239,
+              "text": "    # sglang pins torchao==0.9.0, but we require >=0.15.0 for archon fp8"
+            },
+            {
+              "line": 240,
+              "text": "    # nvidia-cudnn-cu12 is required for SGLang Vision Models"
+            },
+            {
+              "line": 247,
+              "text": "    # Required by megatron-bridge but are optional (as per docs) cuda-based installs"
+            },
+            {
+              "line": 252,
+              "text": "    # Megatron-Bridge only uses this CUDA extension for GLM-5/DeepSeek-V4 DSA,"
+            },
+            {
+              "line": 256,
+              "text": "    # older host kernels can still install megatron-core."
+            },
+            {
+              "line": 259,
+              "text": "    # Version conflicts with megatron-bridge (resorting to the existing version)"
+            },
+            {
+              "line": 260,
+              "text": "    \"megatron-core==0.19.0; python_version >= '3.12' and sys_platform == 'linux' and platform_machine == 'x86_64'\","
+            },
+            {
+              "line": 263,
+              "text": "    \"transformers>=5.0.0,<=5.3.0\","
+            },
+            {
+              "line": 264,
+              "text": "    # Keep the SGLang runtime's matched FlashInfer pair. Megatron-Bridge uses"
+            },
+            {
+              "line": 271,
+              "text": "name = \"megatron-bridge\""
+            },
+            {
+              "line": 284,
+              "text": "    \"megatron-core[dev,mlm]\","
+            },
+            {
+              "line": 289,
+              "text": "    \"open-clip-torch>=3.2.0\","
+            },
+            {
+              "line": 298,
+              "text": "    \"torch>=2.6.0\","
+            },
+            {
+              "line": 300,
+              "text": "    \"transformers>=5.8,<=5.12.1\","
+            },
+            {
+              "line": 311,
+              "text": "megatron-bridge = { url = \"https://github.com/sitabulaixizawaluduo/Megatron-Bridge/releases/download/areal-v0.6.0-exaone45-fix.2/megatron_bridge-0.6.0-py3-none-any.whl\" }"
+            },
+            {
+              "line": 313,
+              "text": "    { index = \"pytorch-cu129\", extra = \"sglang\" },"
+            },
+            {
+              "line": 317,
+              "text": "    { index = \"pytorch-cu129\", extra = \"sglang\" },"
+            },
+            {
+              "line": 321,
+              "text": "    { index = \"pytorch-cu129\", extra = \"sglang\" },"
+            },
+            {
+              "line": 336,
+              "text": "    \"ignore::UserWarning:transformers.*\","
+            },
+            {
+              "line": 343,
+              "text": "    \"sglang: mark test that requires the SGLang inference backend\","
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/areal/README.md",
+          "lines": [
+            {
+              "line": 84,
+              "text": "[model](https://huggingface.co/inclusionAI/AReaL-SEA-235B-A22B),"
+            },
+            {
+              "line": 96,
+              "text": "**Ascend NPU devices**! The code is actively maintained and continuously updated in the"
+            },
+            {
+              "line": 97,
+              "text": "[`ascend` branch](https://github.com/areal-project/AReaL/tree/ascend). Check out"
+            },
+            {
+              "line": 122,
+              "text": "A-ReaL-boba! This release features significantly faster training with SGLang support and"
+            },
+            {
+              "line": 143,
+              "text": "uv sync --extra cuda  # installs training packages + SGLang (default inference backend)"
+            },
+            {
+              "line": 167,
+              "text": "For Megatron MoE router replay experiments, see the"
+            },
+            {
+              "line": 178,
+              "text": "| **[LoRA Math](examples/math/gsm8k_grpo_lora.yaml)** | Parameter-efficient math training with LoRA (SGLang/vLLM backends)                           | -                                                                 |"
+            },
+            {
+              "line": 236,
+              "text": "| Model Family               | Megatron | PyTorch FSDP | PyTorch Archon | Notes                                                    |"
+            },
+            {
+              "line": 246,
+              "text": "| **Other Hugging Face LLM** | ❌       | ✅           | ❌             | Compatibility depending on the version of `transformers` |"
+            },
+            {
+              "line": 262,
+              "text": "| **Megatron**       | ✅ (ZeRO-1) | ✅              | ✅                          | ✅               | ✅                | ✅              | ✅                  | ✅ (with vLLM inference backend) |"
+            },
+            {
+              "line": 271,
+              "text": "| **SGLang** | ✅              | ❌               | ❌                | ✅                      | ✅              |"
+            },
+            {
+              "line": 282,
+              "text": "- [Large MoE with Megatron](docs/en/tutorial/megatron.md)"
+            },
+            {
+              "line": 336,
+              "text": "# Use `--extra cuda` on Linux with CUDA (installs training packages + SGLang)"
+            },
+            {
+              "line": 393,
+              "text": "- The [SGLang team](https://github.com/sgl-project/sglang) for supporting custom weight"
+            },
+            {
+              "line": 409,
+              "text": "[SGLang](https://github.com/sgl-project/sglang), [QwQ](https://github.com/QwenLM/QwQ),"
+            }
+          ]
+        }
+      ],
+      "executed_stages": {
+        "native_model": false,
+        "native_loss": false,
+        "backward": false,
+        "rollout": false,
+        "native_training_step": false,
+        "native_optimizer_step": false
+      },
+      "blockers": [
+        "Pinned main requires Torch >=2.9.1,<2.11 and Transformers >=5.0,<=5.3; actual2.8.0+cu128/4.57.0 do not satisfy these.",
+        "The native PPOTrainer/entrypoint dependency frontier is missing flask after bounded repairs.",
+        "Actual SGLang and torch_memory_saver backend imports fail."
+      ]
+    },
+    {
+      "framework": "roll",
+      "official_source_sha": "d3506ea9e280ae720fb74df9f82db6efac1c72d5",
+      "source": "$FRAMEWORK_SOURCES/roll",
+      "source_inspected": true,
+      "prerequisite_runtime_probe_executed": true,
+      "native_entrypoint_probe_executed": true,
+      "native_entrypoint_returncode": 1,
+      "native_entrypoint_log": "$RL_RUN/deeper_roll_entrypoint.log",
+      "runtime_report": "$RL_RUN/deeper_roll_runtime.json",
+      "runtime_status": "failed",
+      "runtime_error": "No module named 'transfer_queue'",
+      "backend_reports": {
+        "mcore_adapter": "$RL_RUN/backend_roll_0.json",
+        "megatron.core": "$RL_RUN/backend_roll_1.json",
+        "quack": "$RL_RUN/backend_roll_2.json"
+      },
+      "version_prerequisite_checks": [],
+      "python_requirement": null,
+      "source_prerequisite_evidence": [
+        {
+          "path": "$FRAMEWORK_SOURCES/roll/requirements_torch280_vllm.txt",
+          "lines": [
+            {
+              "line": 5,
+              "text": "torch==2.8.0.*"
+            },
+            {
+              "line": 9,
+              "text": "transformers==4.57.0"
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/roll/requirements_common.txt",
+          "lines": [
+            {
+              "line": 24,
+              "text": "sglang-router"
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/roll/pyproject.toml",
+          "lines": []
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/roll/README.md",
+          "lines": [
+            {
+              "line": 36,
+              "text": "Leveraging a multi-role distributed architecture with Ray for flexible resource allocation and heterogeneous task scheduling, ROLL integrates cutting-edge technologies like Megatron-Core, SGLang and vLLM to accelerate model training and inference."
+            },
+            {
+              "line": 47,
+              "text": "| **[03/06/2026]** 🎉 We support Qwen3.5 [Dense](examples/qwen3.5-35BA3-rlvr_megatron/rlvr_megatron_80GB.yaml) and [MoE](examples/qwen3.5-35BA3-rlvr_megatron/rlvr_megatron_80GB.yaml) series models and [on-policy distill](docs_roll/i18n/zh-Hans/docusaurus-plugin-content-docs/current/User%20Guides/Pipeline/on_policy_distill_pipeline_start.md). Welcome to use! |"
+            },
+            {
+              "line": 48,
+              "text": "| **[02/03/2026]** 🎉 We released FSDP2 Strategy, Megatron with LoRA, GPU partial overlapping, Qwen3-Omni supports and other features. For more details, please refer to the release notes. Welcome to use!                                                                                                                                                           |"
+            },
+            {
+              "line": 53,
+              "text": "| **[09/28/2025]** 🎉 Ascend NPU support — see [usage guide](https://alibaba.github.io/ROLL/docs/User%20Guides/Hardware%20Support/ascend_usage).                                                                                                                                                                                                                      |"
+            },
+            {
+              "line": 57,
+              "text": "| **[09/16/2025]** 🎉 Qwen3-Next model training is supported, refer to [configuration](examples/qwen3-next-80BA3B-rlvr_megatron/rlvr_config.yaml).                                                                                                                                                                                                                    |"
+            },
+            {
+              "line": 59,
+              "text": "| **[08/28/2025]** 🎉 ROLL supports SFT pipeline, refer to [configuration](examples/qwen2.5-7B-sft_megatron/sft_config.yaml).                                                                                                                                                                                                                                         |"
+            },
+            {
+              "line": 62,
+              "text": "| **[08/10/2025]** 🎉 Agentic RL supports [stepwise learning](examples/qwen2.5-0.5B-agentic/agent_val_frozen_lake_gigpo.yaml), like [GiGPO](https://arxiv.org/abs/2505.10978); Distill supports [VLM](examples/distill/off_policy/vlm/distill_vl_megatron.yaml). Explore the new capabilities!                                                                         |"
+            },
+            {
+              "line": 65,
+              "text": "| **[07/31/2025]** 🎉 Support [DistillPipeline](examples/distill/off_policy/llm/run_distill_pipeline.sh)/[DpoPipeline](examples/dpo_examples/run_dpo_pipeline.sh). Support [lora](examples/qwen2.5-7B-rlvr_megatron/rlvr_lora_zero3.yaml). Support [GSPO](https://arxiv.org/abs/2507.18071)                                                                      |"
+            },
+            {
+              "line": 67,
+              "text": "| **[06/13/2025]** 🎉 Support [Qwen2.5 VL rlvr pipeline](examples/qwen2.5-vl-7B-rlvr/rlvr_megatron.yaml) and upgrade mcore to 0.12 version.                                                                                                                                                                                                                           |"
+            },
+            {
+              "line": 69,
+              "text": "| **[06/08/2025]** 🎉Supports  Qwen3([8B](examples/qwen3-8B-rlvr_megatron/rlvr_config.yaml)/14B/32B), Qwen3-MoE([30A3](examples/qwen3-30BA3B-rlvr_megatron/rlvr_config.yaml)/[235A22](examples/qwen3-235BA22B-rlvr_megatron/rlvr_config.yaml)), Qwen2.5([7B](examples/qwen2.5-7B-rlvr_megatron/rlvr_config.yaml)/14B/32B/72B) LLM models.                             |"
+            },
+            {
+              "line": 70,
+              "text": "| **[05/30/2025]** 🎉 Training [RLVR](examples/qwen2.5-7B-rlvr_megatron/rlvr_config.yaml) and [Agentic RL](examples/qwen2.5-0.5B-agentic/agent_val_frozen_lake.yaml) with ROLL is now available! Explore the new capabilities.                                                                                                                                        |"
+            },
+            {
+              "line": 84,
+              "text": "[Converting MCoreAdapter Models to Hugging Face Format](https://alibaba.github.io/ROLL/docs/User%20Guides/Advanced%20Features/megatron_convert_2_hf)  "
+            },
+            {
+              "line": 112,
+              "text": "[Megatron](https://alibaba.github.io/ROLL/docs/User%20Guides/Configuration/megatron)   "
+            },
+            {
+              "line": 114,
+              "text": "[SGLang](https://alibaba.github.io/ROLL/docs/User%20Guides/Configuration/sglang)"
+            },
+            {
+              "line": 124,
+              "text": "#### ROLL x Ascend"
+            },
+            {
+              "line": 125,
+              "text": "[Ascend Usage Guide](https://alibaba.github.io/ROLL/docs/User%20Guides/Hardware%20Support/ascend_usage)"
+            },
+            {
+              "line": 143,
+              "text": "    *   Inference/Generation supports vLLM, SGLang."
+            },
+            {
+              "line": 144,
+              "text": "    *   Training supports FSDP2, Megatron-LM 5D parallelism (mcore-adapter, dp/tp/pp/cp/ep)."
+            },
+            {
+              "line": 183,
+              "text": "  * [NVIDIA/Megatron-LM](https://github.com/NVIDIA/Megatron-LM)"
+            },
+            {
+              "line": 185,
+              "text": "  * [sgl-project/sglang](https://github.com/sgl-project/sglang)"
+            }
+          ]
+        }
+      ],
+      "executed_stages": {
+        "native_model": false,
+        "native_loss": false,
+        "backward": false,
+        "rollout": false,
+        "native_training_step": false,
+        "native_optimizer_step": false
+      },
+      "blockers": [
+        "Native RLVR pipeline/entrypoint import fails for transfer_queue.",
+        "Actual selected backend prerequisites megatron.core and quack are absent.",
+        "Its source has a Torch2.8/vLLM0.11 dependency file, but the distributed pipeline was not provisioned."
+      ]
+    },
+    {
+      "framework": "mindspeed_rl",
+      "official_source_sha": "26c21e64f84ae8cd26de9483292349a1850099cf",
+      "source": "$FRAMEWORK_SOURCES/mindspeed_rl",
+      "source_inspected": true,
+      "prerequisite_runtime_probe_executed": true,
+      "native_entrypoint_probe_executed": true,
+      "native_entrypoint_returncode": 1,
+      "native_entrypoint_log": "$RL_RUN/deeper_mindspeed_rl_entrypoint.log",
+      "runtime_report": "$RL_RUN/deeper_mindspeed_rl_runtime.json",
+      "runtime_status": "failed",
+      "runtime_error": "No module named 'torch_npu'",
+      "backend_reports": {
+        "torch_npu": "$RL_RUN/backend_mindspeed_rl_0.json",
+        "mindspeed": "$RL_RUN/backend_mindspeed_rl_1.json",
+        "megatron.core": "$RL_RUN/backend_mindspeed_rl_2.json"
+      },
+      "version_prerequisite_checks": [],
+      "python_requirement": null,
+      "source_prerequisite_evidence": [
+        {
+          "path": "$FRAMEWORK_SOURCES/mindspeed_rl/requirements.txt",
+          "lines": [
+            {
+              "line": 13,
+              "text": "transformers==4.57.1"
+            }
+          ]
+        },
+        {
+          "path": "$FRAMEWORK_SOURCES/mindspeed_rl/README.md",
+          "lines": [
+            {
+              "line": 9,
+              "text": "MindSpeed RL：基于昇腾生态的强化学习加速框架，旨在为华为 [昇腾芯片](https://www.hiascend.com/) 生态合作伙伴提供端到端的RL训推解决方案，支持超大昇腾集群训推共卡/分离部署、多模型异步流水调度、训推异构切分通信等核心加速能力。"
+            },
+            {
+              "line": 16,
+              "text": "MindSpeed-RL/"
+            },
+            {
+              "line": 22,
+              "text": "├── mindspeed_rl/             # 核心RL训练框架"
+            },
+            {
+              "line": 43,
+              "text": "🌆🌆🌆2026.4 当前MindSpeed-RL仓库已完成既定开发目标，将暂停新增功能的集成，但我们仍然会投入到现有功能的迭代优化与问题响应中，以保障相关应用场景的稳定性和使用体验。"
+            },
+            {
+              "line": 44,
+              "text": "如果希望体验最新的昇腾强化学习方案，可以访问[verl昇腾实践](https://github.com/verl-project/verl/blob/main/docs/ascend_tutorial/get_start/quick_start.rst)。🌆🌆🌆"
+            },
+            {
+              "line": 46,
+              "text": "🚀🚀🚀 2025.11 MindSpeed RL 已支持[agent rl多轮迭代训练](./docs/zh/features/multi_turn.md) ！！！🚀🚀🚀"
+            },
+            {
+              "line": 52,
+              "text": "MindSpeed RL依赖配套如下表："
+            },
+            {
+              "line": 74,
+              "text": "    <td>NNAL（Ascend Transformer Boost加速库）</td>"
+            },
+            {
+              "line": 80,
+              "text": "    <td><a href=\"https://gitcode.com/ascend/pytorch#pytorch%E4%B8%8Epython%E7%89%88%E6%9C%AC%E9%85%8D%E5%A5%97%E8%A1%A8\">PyTorch与Python版本配套表</a></td>"
+            },
+            {
+              "line": 87,
+              "text": "    <td>torch_npu插件</td>"
+            },
+            {
+              "line": 95,
+              "text": "更多详情请参考[版本配套表](https://gitcode.com/ascend/MindSpeed-RL/blob/master/docs/zh/install_guide.md#%E7%89%88%E6%9C%AC%E9%85%8D%E5%A5%97%E8%A1%A8)。"
+            },
+            {
+              "line": 101,
+              "text": "MindSpeed RL具体的安装请参考[安装指南](https://gitcode.com/ascend/MindSpeed-RL/blob/master/docs/zh/install_guide.md#%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)。"
+            },
+            {
+              "line": 107,
+              "text": "  快速在昇腾训练设备上运行 MindSpeed RL可详见[快速入门](https://gitcode.com/ascend/MindSpeed-RL/blob/master/docs/zh/algorithms/grpo.md#grpo)。"
+            },
+            {
+              "line": 135,
+              "text": "      <td><a href=\"https://gitcode.com/ascend/MindSpeed-MM/tree/master/examples/rl\">Doc</a></td>"
+            },
+            {
+              "line": 137,
+              "text": "        <a href=\"https://gitcode.com/ascend/MindSpeed-MM/tree/master/examples/rl\">Qwen2.5VL-3B</a> <br>"
+            },
+            {
+              "line": 138,
+              "text": "        <a href=\"https://gitcode.com/ascend/MindSpeed-MM/tree/master/examples/rl\">Qwen2.5VL-7B</a> <br>"
+            },
+            {
+              "line": 139,
+              "text": "        <a href=\"https://gitcode.com/ascend/MindSpeed-MM/tree/master/examples/rl\">Qwen2.5VL-32B</a> <br>"
+            },
+            {
+              "line": 147,
+              "text": "        <a href=\"examples/grpo/grpo_trainer_qwen3_235b_a22b.sh\">Qwen3-235B-A22B</a> <br>"
+            },
+            {
+              "line": 157,
+              "text": "        <a href=\"examples/dapo/dapo_trainer_qwen3_30b_a3b.sh\">Qwen3-30B-A3B</a> <br>"
+            },
+            {
+              "line": 173,
+              "text": "        <a href=\"examples/dpo/dpo_trainer_qwen3_30b_a3b.sh\">Qwen3-30B-A3B</a> <br>"
+            },
+            {
+              "line": 322,
+              "text": "MindSpeed RL版本有以下五个维护阶段："
+            },
+            {
+              "line": 328,
+              "text": "| 维护                | 6-12 个月 | 合入所有已解决的问题并发布版本，针对不同的MindSpeed RL版本采取不同的维护策略，常规版本和长期支持版本维护周期分别为6个月和12个月 |"
+            },
+            {
+              "line": 332,
+              "text": "MindSpeed RL已发布版本维护策略："
+            },
+            {
+              "line": 334,
+              "text": "| **MindSpeed RL版本** | **对应标签** | **维护策略** | **当前状态** | **发布时间**  | **后续状态** | **EOL日期** |"
+            },
+            {
+              "line": 344,
+              "text": "[MindSpeed RL 安全声明](./SECURITYNOTE.md)"
+            },
+            {
+              "line": 350,
+              "text": "## 致MindSpeed RL使用者"
+            },
+            {
+              "line": 352,
+              "text": "1. MindSpeed RL提供的模型仅供您用于非商业目的。"
+            },
+            {
+              "line": 353,
+              "text": "2. 对于各模型，MindSpeed RL平台仅提示性地向您建议可用于训练的数据集，华为不提供任何数据集，如您使用这些数据集进行训练，请您特别注意应遵守对应数据集的License，如您因使用数据集而产生侵权纠纷，华为不承担任何责任。"
+            },
+            {
+              "line": 354,
+              "text": "3. 如您在使用MindSpeed RL模型过程中，发现任何问题（包括但不限于功能问题、合规问题），请在gitcode提交issue，我们将及时审视并解决。"
+            },
+            {
+              "line": 355,
+              "text": "4. MindSpeed功能依赖的Megatron等第三方开源软件，均由第三方社区提供和维护，因第三方开源软件导致的问题的修复依赖相关社区的贡献和反馈。您应理解，MindSpeed仓库不保证对第三方开源软件本身的问题进行修复，也不保证会测试、纠正所有第三方开源软件的漏洞和错误。"
+            },
+            {
+              "line": 359,
+              "text": "如果您不希望您的数据集在MindSpeed RL中的模型被提及，或希望更新MindSpeed RL中的模型关于您的数据集的描述，请在gitcode提交issue，我们将根据您的issue要求删除或更新您的数据集描述。衷心感谢您对MindSpeed RL的理解和贡献。"
+            },
+            {
+              "line": 365,
+              "text": "- MindSpeed RL产品的使用许可证，具体请参见[LICENSE](LICENSE)。"
+            },
+            {
+              "line": 366,
+              "text": "- MindSpeed RL工具docs目录下的文档适用CC-BY 4.0许可证，具体请参见[LICENSE](./docs/zh/LICENSE)。"
+            },
+            {
+              "line": 372,
+              "text": "MindSpeed RL由华为公司的下列部门以及昇腾生态合作伙伴联合贡献 ："
+            }
+          ]
+        }
+      ],
+      "executed_stages": {
+        "native_model": false,
+        "native_loss": false,
+        "backward": false,
+        "rollout": false,
+        "native_training_step": false,
+        "native_optimizer_step": false
+      },
+      "blockers": [
+        "Native trainer/GRPO entrypoint fails for torch_npu after bounded repairs.",
+        "Actual torch_npu, mindspeed and megatron.core imports fail.",
+        "Available hardware is an NVIDIA RTX5060 under WSL; no Ascend NPU or Ascend runtime is supplied."
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case": "tiny_qwen2_random",
+      "checkpoint": "$RL_RESOURCES/tiny-qwen2-random-seed20261019",
+      "model_origin": "tiny random-initialized Qwen2, seed 20261019; not pretrained",
+      "tied_parameter_mappings": [
+        [
+          "model.embed_tokens.weight",
+          "lm_head.weight"
+        ]
+      ],
+      "stages": {
+        "model_scoring": true,
+        "native_policy_loss": true,
+        "backward": true,
+        "explicit_torch_sgd_step": true,
+        "rollout": false,
+        "native_trainer_step": false
+      },
+      "metrics": {
+        "openrlhf-native": {
+          "loss": -0.09285712242126465,
+          "clip_ratio": 0.2857142984867096,
+          "ppo_kl": 0.06160913035273552,
+          "vllm_kl": null,
+          "valid_actions": 7,
+          "parameter_tensors": 26,
+          "parameter_elements": 22816,
+          "absent_gradients": [],
+          "ratios": [
+            [
+              1.0,
+              1.5,
+              0.5,
+              1.100000023841858
+            ],
+            [
+              1.5,
+              0.5,
+              1.0499998331069946,
+              1.0
+            ]
+          ],
+          "clipped_branch": [
+            [
+              false,
+              true,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "explicit_sgd_step_applied": true,
+          "native_trainer_step": false
+        },
+        "torch-reference": {
+          "loss": -0.09285701811313629,
+          "clip_ratio": 0.2857142984867096,
+          "ppo_kl": 0.06160906329751015,
+          "vllm_kl": null,
+          "valid_actions": 7,
+          "parameter_tensors": 26,
+          "parameter_elements": 22816,
+          "absent_gradients": [],
+          "ratios": [
+            [
+              1.0,
+              1.4999992847442627,
+              0.5000002384185791,
+              1.100000023841858
+            ],
+            [
+              1.5000007152557373,
+              0.5,
+              1.0499998331069946,
+              1.0
+            ]
+          ],
+          "clipped_branch": [
+            [
+              false,
+              true,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "explicit_sgd_step_applied": true,
+          "native_trainer_step": false
+        }
+      },
+      "loss_absolute_difference": 1.043081283569336e-07,
+      "reports": {
+        "scores": "$RL_RUN/tiny_qwen2_random/score_comparison.json",
+        "gradients": "$RL_RUN/tiny_qwen2_random/explicit_disabled_views/gradients_comparison.json",
+        "updates": "$RL_RUN/tiny_qwen2_random/explicit_disabled_views/updates_comparison.json"
+      },
+      "score_status": "no_thresholds",
+      "gradient_status": "no_thresholds",
+      "update_status": "no_thresholds",
+      "elapsed_seconds": 2.1086044311523438,
+      "action_scores": {
+        "target_count": 7,
+        "side_a_nll_nat_per_token": 4.932652269090925,
+        "side_b_nll_nat_per_token": 4.932652200971331,
+        "nll_abs_diff_nat_per_token": 6.811959352148733e-08,
+        "mae_nat": 2.0435878208705356e-07,
+        "p99_nat": 4.76837158203125e-07,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 4.76837158203125e-07,
+        "max_coordinate": {
+          "sample": "trajectory-0",
+          "position": 10,
+          "token": 42
+        }
+      },
+      "gradients": {
+        "count": 22816,
+        "side_a_norm": 2.539192270101267,
+        "side_b_norm": 2.539192765048906,
+        "error_norm": 7.751143216700256e-07,
+        "rmse": 5.131519779898493e-09,
+        "cosine": 0.999999999999972,
+        "max_abs": 2.384185791015625e-07,
+        "max_flat_index": 843,
+        "max_coordinate": {
+          "parameter": "model.embed_tokens.weight",
+          "index": 843
+        }
+      },
+      "raw_capture_attempt_statuses": {
+        "gradient_status": "not_covered",
+        "update_status": "not_covered"
+      },
+      "gradient_comparator_status": "no_thresholds",
+      "gradient_report": "$RL_RUN/tiny_qwen2_random/explicit_disabled_views/gradients_comparison.json",
+      "coverage": {
+        "trajectories": 2,
+        "valid_actions": 7,
+        "valid_eos_actions": 2,
+        "parameter_tensors": 26,
+        "parameter_elements": 22816,
+        "ranks": 1
+      },
+      "objective_configuration": {
+        "objective": "PPO",
+        "policy_loss_type": "ppo",
+        "clip_eps_low": 0.2,
+        "clip_eps_high": 0.2,
+        "token_level_loss": true,
+        "temperature": 1.0,
+        "dual_clip": "disabled",
+        "vllm_importance_correction": "disabled",
+        "kl_term": "disabled"
+      },
+      "updates": {
+        "count": 22816,
+        "side_a_norm": 0.002539192706385058,
+        "side_b_norm": 0.002539193010632659,
+        "error_norm": 7.40159027318292e-09,
+        "rmse": 4.900103872124238e-11,
+        "cosine": 0.999999999995759,
+        "max_abs": 3.725290298461914e-09,
+        "max_flat_index": 11465,
+        "max_coordinate": {
+          "parameter": "model.layers.0.self_attn.o_proj.weight",
+          "index": 633
+        }
+      },
+      "update_report": "$RL_RUN/tiny_qwen2_random/explicit_disabled_views/updates_comparison.json",
+      "update_comparator_status": "no_thresholds"
+    },
+    {
+      "case": "smollm2_135m_pretrained",
+      "checkpoint": "$MODEL_ROOT/SmolLM2-135M-Instruct/12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "model_origin": "pretrained HuggingFace SmolLM2-135M-Instruct",
+      "tied_parameter_mappings": [
+        [
+          "model.embed_tokens.weight",
+          "lm_head.weight"
+        ]
+      ],
+      "stages": {
+        "model_scoring": true,
+        "native_policy_loss": true,
+        "backward": true,
+        "explicit_torch_sgd_step": false,
+        "rollout": false,
+        "native_trainer_step": false
+      },
+      "metrics": {
+        "openrlhf-native": {
+          "loss": -0.09285710752010345,
+          "clip_ratio": 0.2857142984867096,
+          "ppo_kl": 0.06160920113325119,
+          "vllm_kl": null,
+          "valid_actions": 7,
+          "parameter_tensors": 272,
+          "parameter_elements": 134515008,
+          "absent_gradients": [],
+          "ratios": [
+            [
+              1.0,
+              1.5,
+              0.5,
+              1.100000023841858
+            ],
+            [
+              1.5,
+              0.4999997615814209,
+              1.0499998331069946,
+              1.0
+            ]
+          ],
+          "clipped_branch": [
+            [
+              false,
+              true,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "explicit_sgd_step_applied": false,
+          "native_trainer_step": false
+        },
+        "torch-reference": {
+          "loss": -0.09285692125558853,
+          "clip_ratio": 0.2857142984867096,
+          "ppo_kl": 0.06160947307944298,
+          "vllm_kl": null,
+          "valid_actions": 7,
+          "parameter_tensors": 272,
+          "parameter_elements": 134515008,
+          "absent_gradients": [],
+          "ratios": [
+            [
+              1.0,
+              1.4999992847442627,
+              0.4999997615814209,
+              1.0999990701675415
+            ],
+            [
+              1.5000015497207642,
+              0.4999993145465851,
+              1.0499998331069946,
+              1.0
+            ]
+          ],
+          "clipped_branch": [
+            [
+              false,
+              true,
+              true,
+              false
+            ],
+            [
+              false,
+              false,
+              false,
+              false
+            ]
+          ],
+          "explicit_sgd_step_applied": false,
+          "native_trainer_step": false
+        }
+      },
+      "loss_absolute_difference": 1.862645149230957e-07,
+      "reports": {
+        "scores": "$RL_RUN/smollm2_135m_pretrained/score_comparison.json",
+        "gradients": "$RL_RUN/smollm2_135m_pretrained/explicit_disabled_views/gradients_comparison.json",
+        "updates": null
+      },
+      "score_status": "no_thresholds",
+      "gradient_status": "no_thresholds",
+      "update_status": null,
+      "elapsed_seconds": 8.943302154541016,
+      "action_scores": {
+        "target_count": 7,
+        "side_a_nll_nat_per_token": 8.748408453805107,
+        "side_b_nll_nat_per_token": 8.748408726283483,
+        "nll_abs_diff_nat_per_token": 2.7247837586230617e-07,
+        "mae_nat": 5.449567522321428e-07,
+        "p99_nat": 9.5367431640625e-07,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 9.5367431640625e-07,
+        "max_coordinate": {
+          "sample": "trajectory-0",
+          "position": 11,
+          "token": 2
+        }
+      },
+      "gradients": {
+        "count": 134515008,
+        "side_a_norm": 35.716556345778045,
+        "side_b_norm": 35.716564023431516,
+        "error_norm": 4.868455183503564e-05,
+        "rmse": 4.197645952917696e-09,
+        "cosine": 0.9999999999990938,
+        "max_abs": 1.1444091796875e-05,
+        "max_flat_index": 28999,
+        "max_coordinate": {
+          "parameter": "model.embed_tokens.weight",
+          "index": 28999
+        }
+      },
+      "raw_capture_attempt_statuses": {
+        "gradient_status": "not_covered",
+        "update_status": null
+      },
+      "gradient_comparator_status": "no_thresholds",
+      "gradient_report": "$RL_RUN/smollm2_135m_pretrained/explicit_disabled_views/gradients_comparison.json",
+      "coverage": {
+        "trajectories": 2,
+        "valid_actions": 7,
+        "valid_eos_actions": 2,
+        "parameter_tensors": 272,
+        "parameter_elements": 134515008,
+        "ranks": 1
+      },
+      "objective_configuration": {
+        "objective": "PPO",
+        "policy_loss_type": "ppo",
+        "clip_eps_low": 0.2,
+        "clip_eps_high": 0.2,
+        "token_level_loss": true,
+        "temperature": 1.0,
+        "dual_clip": "disabled",
+        "vllm_importance_correction": "disabled",
+        "kl_term": "disabled"
+      }
+    },
+    {
+      "framework": "ms-swift",
+      "case": "SmolLM2-135M-Instruct pretrained",
+      "stages": {
+        "native_model_loader": true,
+        "trainer_constructed": true,
+        "native_action_scoring": true,
+        "native_compute_loss": true,
+        "backward": true,
+        "rollout": false,
+        "native_training_step": false,
+        "native_optimizer_step": false,
+        "trainer_train_loop": false
+      },
+      "losses": {
+        "ms-swift-native": 0.08333331346511841,
+        "torch-reference": 0.08333355188369751
+      },
+      "loss_absolute_difference": 2.384185791015625e-07,
+      "score_report": "$RL_RUN/ms_swift_smollm2_complete_group/score_comparison.json",
+      "gradient_report": "$RL_RUN/ms_swift_smollm2_complete_group/gradient_comparison.json",
+      "score_status": "no_thresholds",
+      "gradient_status": "no_thresholds",
+      "elapsed_seconds": 34.80869722366333,
+      "action_scores": {
+        "target_count": 7,
+        "side_a_nll_nat_per_token": 8.32577201298305,
+        "side_b_nll_nat_per_token": 8.3257703099932,
+        "nll_abs_diff_nat_per_token": 1.7029898504716812e-06,
+        "mae_nat": 1.7029898507254465e-06,
+        "p99_nat": 3.7860870361328123e-06,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 3.814697265625e-06,
+        "max_coordinate": {
+          "sample": "trajectory-1",
+          "position": 8,
+          "token": 50
+        }
+      },
+      "gradients": {
+        "count": 134515008,
+        "side_a_norm": 48.05380108482761,
+        "side_b_norm": 48.05379839702576,
+        "error_norm": 0.0002460203797639971,
+        "rmse": 2.121220002087878e-08,
+        "cosine": 0.999999999986897,
+        "max_abs": 4.6253204345703125e-05,
+        "max_flat_index": 9415,
+        "max_coordinate": {
+          "parameter": "model.embed_tokens.weight",
+          "index": 9415
+        }
+      },
+      "coverage": {
+        "trajectories": 2,
+        "complete_groups": 1,
+        "group_size": 2,
+        "valid_actions": 7,
+        "valid_eos_actions": 2,
+        "parameter_tensors": 272,
+        "parameter_elements": 134515008,
+        "ranks": 1
+      },
+      "objective_configuration": {
+        "objective": "GRPO",
+        "loss_type": "grpo",
+        "importance_sampling_level": "token",
+        "epsilon_low": 0.2,
+        "epsilon_high": 0.2,
+        "beta": 0.0,
+        "temperature": 1.0,
+        "reduction": "mean of masked per-sequence means",
+        "advantage_normalization": "not executed: injected fixed +1/-1 per-sequence advantages expanded to tokens",
+        "gradient_accumulation_steps": 1
+      },
+      "observed_model_config_differences": {
+        "use_cache": {
+          "native": true,
+          "reference": false
+        }
+      },
+      "effective_execution_settings": {
+        "ms-swift-native": "$RL_RUN/ms_swift_smollm2_complete_group/ms-swift-native/execution_settings.json",
+        "torch-reference": "$RL_RUN/ms_swift_smollm2_complete_group/torch-reference/execution_settings.json"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "name": "after_install_areal_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/areal/examples/r3/gsm8k_rlvr.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/areal",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 0.164,
+      "log": "$RL_RUN/after_install_areal_entrypoint.log"
+    },
+    {
+      "name": "after_install_areal_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/after_install_areal.spec.json",
+        "--output",
+        "$RL_RUN/after_install_areal_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.554,
+      "log": "$RL_RUN/after_install_areal_runtime.log"
+    },
+    {
+      "name": "after_install_mindspeed_rl_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/mindspeed_rl/cli/train_grpo.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/mindspeed_rl",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 1.29,
+      "log": "$RL_RUN/after_install_mindspeed_rl_entrypoint.log"
+    },
+    {
+      "name": "after_install_mindspeed_rl_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/after_install_mindspeed_rl.spec.json",
+        "--output",
+        "$RL_RUN/after_install_mindspeed_rl_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.394,
+      "log": "$RL_RUN/after_install_mindspeed_rl_runtime.log"
+    },
+    {
+      "name": "after_install_ms_swift_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "-m",
+        "swift.cli.rlhf",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/ms_swift",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 1.4,
+      "log": "$RL_RUN/after_install_ms_swift_entrypoint.log"
+    },
+    {
+      "name": "after_install_ms_swift_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/after_install_ms_swift.spec.json",
+        "--output",
+        "$RL_RUN/after_install_ms_swift_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 3.793,
+      "log": "$RL_RUN/after_install_ms_swift_runtime.log"
+    },
+    {
+      "name": "after_install_nemo_rl_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/nemo_rl/examples/run_grpo.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/nemo_rl",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 2.991,
+      "log": "$RL_RUN/after_install_nemo_rl_entrypoint.log"
+    },
+    {
+      "name": "after_install_nemo_rl_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/after_install_nemo_rl.spec.json",
+        "--output",
+        "$RL_RUN/after_install_nemo_rl_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 3.536,
+      "log": "$RL_RUN/after_install_nemo_rl_runtime.log"
+    },
+    {
+      "name": "after_install_openrlhf_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "-m",
+        "openrlhf.cli.train_ppo_ray",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/openrlhf_v090",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 5.895,
+      "log": "$RL_RUN/after_install_openrlhf_entrypoint.log"
+    },
+    {
+      "name": "after_install_openrlhf_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/after_install_openrlhf.spec.json",
+        "--output",
+        "$RL_RUN/after_install_openrlhf_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 6.258,
+      "log": "$RL_RUN/after_install_openrlhf_runtime.log"
+    },
+    {
+      "name": "after_install_roll_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/roll/examples/start_rlvr_pipeline.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/roll",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 1.503,
+      "log": "$RL_RUN/after_install_roll_entrypoint.log"
+    },
+    {
+      "name": "after_install_roll_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/after_install_roll.spec.json",
+        "--output",
+        "$RL_RUN/after_install_roll_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.353,
+      "log": "$RL_RUN/after_install_roll_runtime.log"
+    },
+    {
+      "name": "after_install_slime_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/slime_retry/train.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/slime_retry",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 0.239,
+      "log": "$RL_RUN/after_install_slime_entrypoint.log"
+    },
+    {
+      "name": "after_install_slime_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/after_install_slime.spec.json",
+        "--output",
+        "$RL_RUN/after_install_slime_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.432,
+      "log": "$RL_RUN/after_install_slime_runtime.log"
+    },
+    {
+      "name": "backend_areal_0",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_areal_0.spec.json",
+        "--output",
+        "$RL_RUN/backend_areal_0.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.2,
+      "log": "$RL_RUN/backend_areal_0.log"
+    },
+    {
+      "name": "backend_areal_1",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_areal_1.spec.json",
+        "--output",
+        "$RL_RUN/backend_areal_1.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.207,
+      "log": "$RL_RUN/backend_areal_1.log"
+    },
+    {
+      "name": "backend_mindspeed_rl_0",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_mindspeed_rl_0.spec.json",
+        "--output",
+        "$RL_RUN/backend_mindspeed_rl_0.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.216,
+      "log": "$RL_RUN/backend_mindspeed_rl_0.log"
+    },
+    {
+      "name": "backend_mindspeed_rl_1",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_mindspeed_rl_1.spec.json",
+        "--output",
+        "$RL_RUN/backend_mindspeed_rl_1.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.207,
+      "log": "$RL_RUN/backend_mindspeed_rl_1.log"
+    },
+    {
+      "name": "backend_mindspeed_rl_2",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_mindspeed_rl_2.spec.json",
+        "--output",
+        "$RL_RUN/backend_mindspeed_rl_2.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.199,
+      "log": "$RL_RUN/backend_mindspeed_rl_2.log"
+    },
+    {
+      "name": "backend_ms_swift_0",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_ms_swift_0.spec.json",
+        "--output",
+        "$RL_RUN/backend_ms_swift_0.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 3.819,
+      "log": "$RL_RUN/backend_ms_swift_0.log"
+    },
+    {
+      "name": "backend_nemo_rl_0",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_nemo_rl_0.spec.json",
+        "--output",
+        "$RL_RUN/backend_nemo_rl_0.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.22,
+      "log": "$RL_RUN/backend_nemo_rl_0.log"
+    },
+    {
+      "name": "backend_nemo_rl_1",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_nemo_rl_1.spec.json",
+        "--output",
+        "$RL_RUN/backend_nemo_rl_1.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.199,
+      "log": "$RL_RUN/backend_nemo_rl_1.log"
+    },
+    {
+      "name": "backend_nemo_rl_2",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_nemo_rl_2.spec.json",
+        "--output",
+        "$RL_RUN/backend_nemo_rl_2.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.202,
+      "log": "$RL_RUN/backend_nemo_rl_2.log"
+    },
+    {
+      "name": "backend_roll_0",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_roll_0.spec.json",
+        "--output",
+        "$RL_RUN/backend_roll_0.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "elapsed_seconds": 0.21,
+      "log": "$RL_RUN/backend_roll_0.log"
+    },
+    {
+      "name": "backend_roll_1",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_roll_1.spec.json",
+        "--output",
+        "$RL_RUN/backend_roll_1.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.216,
+      "log": "$RL_RUN/backend_roll_1.log"
+    },
+    {
+      "name": "backend_roll_2",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_roll_2.spec.json",
+        "--output",
+        "$RL_RUN/backend_roll_2.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.207,
+      "log": "$RL_RUN/backend_roll_2.log"
+    },
+    {
+      "name": "backend_slime_0",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_slime_0.spec.json",
+        "--output",
+        "$RL_RUN/backend_slime_0.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.208,
+      "log": "$RL_RUN/backend_slime_0.log"
+    },
+    {
+      "name": "backend_slime_1",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/backend_slime_1.spec.json",
+        "--output",
+        "$RL_RUN/backend_slime_1.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 0.209,
+      "log": "$RL_RUN/backend_slime_1.log"
+    },
+    {
+      "name": "clone_areal",
+      "command": [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/areal-project/AReaL.git",
+        "$FRAMEWORK_SOURCES/areal"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 240,
+      "returncode": 0,
+      "elapsed_seconds": 4.225,
+      "log": "$RL_RUN/clone_areal.log"
+    },
+    {
+      "name": "clone_mindspeed_rl",
+      "command": [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/Ascend/MindSpeed-RL.git",
+        "$FRAMEWORK_SOURCES/mindspeed_rl"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 240,
+      "returncode": 0,
+      "elapsed_seconds": 5.256,
+      "log": "$RL_RUN/clone_mindspeed_rl.log"
+    },
+    {
+      "name": "clone_ms_swift",
+      "command": [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/modelscope/ms-swift.git",
+        "$FRAMEWORK_SOURCES/ms_swift"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 240,
+      "returncode": 0,
+      "elapsed_seconds": 2.549,
+      "log": "$RL_RUN/clone_ms_swift.log"
+    },
+    {
+      "name": "clone_nemo_rl",
+      "command": [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/NVIDIA-NeMo/RL.git",
+        "$FRAMEWORK_SOURCES/nemo_rl"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 240,
+      "returncode": 0,
+      "elapsed_seconds": 3.995,
+      "log": "$RL_RUN/clone_nemo_rl.log"
+    },
+    {
+      "name": "clone_openrlhf",
+      "command": [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/OpenRLHF/OpenRLHF.git",
+        "$FRAMEWORK_SOURCES/openrlhf"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 240,
+      "returncode": 0,
+      "elapsed_seconds": 1.417,
+      "log": "$RL_RUN/clone_openrlhf.log"
+    },
+    {
+      "name": "clone_roll",
+      "command": [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/alibaba/ROLL.git",
+        "$FRAMEWORK_SOURCES/roll"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 240,
+      "returncode": 0,
+      "elapsed_seconds": 7.351,
+      "log": "$RL_RUN/clone_roll.log"
+    },
+    {
+      "name": "clone_slime",
+      "command": [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/THUDM/slime.git",
+        "$FRAMEWORK_SOURCES/slime"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 240,
+      "returncode": 128,
+      "elapsed_seconds": 19.205,
+      "log": "$RL_RUN/clone_slime.log"
+    },
+    {
+      "name": "deeper_areal_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/areal/examples/r3/gsm8k_rlvr.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/areal",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 0.191,
+      "log": "$RL_RUN/deeper_areal_entrypoint.log"
+    },
+    {
+      "name": "deeper_areal_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/deeper_areal_runtime.spec.json",
+        "--output",
+        "$RL_RUN/deeper_areal_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 1.672,
+      "log": "$RL_RUN/deeper_areal_runtime.log"
+    },
+    {
+      "name": "deeper_mindspeed_rl_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/mindspeed_rl/cli/train_grpo.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/mindspeed_rl",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 2.466,
+      "log": "$RL_RUN/deeper_mindspeed_rl_entrypoint.log"
+    },
+    {
+      "name": "deeper_mindspeed_rl_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/deeper_mindspeed_rl_runtime.spec.json",
+        "--output",
+        "$RL_RUN/deeper_mindspeed_rl_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 2.717,
+      "log": "$RL_RUN/deeper_mindspeed_rl_runtime.log"
+    },
+    {
+      "name": "deeper_ms_swift_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "-m",
+        "swift.cli.rlhf",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/ms_swift",
+      "timeout_seconds": 45,
+      "returncode": 0,
+      "elapsed_seconds": 4.471,
+      "log": "$RL_RUN/deeper_ms_swift_entrypoint.log"
+    },
+    {
+      "name": "deeper_ms_swift_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/deeper_ms_swift_runtime.spec.json",
+        "--output",
+        "$RL_RUN/deeper_ms_swift_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "elapsed_seconds": 7.428,
+      "log": "$RL_RUN/deeper_ms_swift_runtime.log"
+    },
+    {
+      "name": "deeper_nemo_rl_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/nemo_rl/examples/run_grpo.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/nemo_rl",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 3.24,
+      "log": "$RL_RUN/deeper_nemo_rl_entrypoint.log"
+    },
+    {
+      "name": "deeper_nemo_rl_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/deeper_nemo_rl_runtime.spec.json",
+        "--output",
+        "$RL_RUN/deeper_nemo_rl_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 3.623,
+      "log": "$RL_RUN/deeper_nemo_rl_runtime.log"
+    },
+    {
+      "name": "deeper_openrlhf_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "-m",
+        "openrlhf.cli.train_ppo_ray",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/openrlhf_v090",
+      "timeout_seconds": 45,
+      "returncode": 0,
+      "elapsed_seconds": 5.736,
+      "log": "$RL_RUN/deeper_openrlhf_entrypoint.log"
+    },
+    {
+      "name": "deeper_openrlhf_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/deeper_openrlhf_runtime.spec.json",
+        "--output",
+        "$RL_RUN/deeper_openrlhf_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "elapsed_seconds": 6.072,
+      "log": "$RL_RUN/deeper_openrlhf_runtime.log"
+    },
+    {
+      "name": "deeper_roll_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/roll/examples/start_rlvr_pipeline.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/roll",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 3.674,
+      "log": "$RL_RUN/deeper_roll_entrypoint.log"
+    },
+    {
+      "name": "deeper_roll_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/deeper_roll_runtime.spec.json",
+        "--output",
+        "$RL_RUN/deeper_roll_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 4.732,
+      "log": "$RL_RUN/deeper_roll_runtime.log"
+    },
+    {
+      "name": "deeper_slime_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/slime_retry/train.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/slime_retry",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 1.897,
+      "log": "$RL_RUN/deeper_slime_entrypoint.log"
+    },
+    {
+      "name": "deeper_slime_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/deeper_slime_runtime.spec.json",
+        "--output",
+        "$RL_RUN/deeper_slime_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 1.346,
+      "log": "$RL_RUN/deeper_slime_runtime.log"
+    },
+    {
+      "name": "final_areal_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/areal/examples/r3/gsm8k_rlvr.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/areal",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 0.168,
+      "log": "$RL_RUN/final_areal_entrypoint.log"
+    },
+    {
+      "name": "final_areal_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/final_areal_runtime.spec.json",
+        "--output",
+        "$RL_RUN/final_areal_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 1.363,
+      "log": "$RL_RUN/final_areal_runtime.log"
+    },
+    {
+      "name": "final_mindspeed_rl_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/mindspeed_rl/cli/train_grpo.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/mindspeed_rl",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 1.596,
+      "log": "$RL_RUN/final_mindspeed_rl_entrypoint.log"
+    },
+    {
+      "name": "final_mindspeed_rl_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/final_mindspeed_rl_runtime.spec.json",
+        "--output",
+        "$RL_RUN/final_mindspeed_rl_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 1.863,
+      "log": "$RL_RUN/final_mindspeed_rl_runtime.log"
+    },
+    {
+      "name": "final_ms_swift_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "-m",
+        "swift.cli.rlhf",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/ms_swift",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 1.736,
+      "log": "$RL_RUN/final_ms_swift_entrypoint.log"
+    },
+    {
+      "name": "final_ms_swift_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/final_ms_swift_runtime.spec.json",
+        "--output",
+        "$RL_RUN/final_ms_swift_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 3.87,
+      "log": "$RL_RUN/final_ms_swift_runtime.log"
+    },
+    {
+      "name": "final_nemo_rl_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/nemo_rl/examples/run_grpo.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/nemo_rl",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 3.207,
+      "log": "$RL_RUN/final_nemo_rl_entrypoint.log"
+    },
+    {
+      "name": "final_nemo_rl_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/final_nemo_rl_runtime.spec.json",
+        "--output",
+        "$RL_RUN/final_nemo_rl_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 3.774,
+      "log": "$RL_RUN/final_nemo_rl_runtime.log"
+    },
+    {
+      "name": "final_openrlhf_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "-m",
+        "openrlhf.cli.train_ppo_ray",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/openrlhf_v090",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 5.717,
+      "log": "$RL_RUN/final_openrlhf_entrypoint.log"
+    },
+    {
+      "name": "final_openrlhf_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/final_openrlhf_runtime.spec.json",
+        "--output",
+        "$RL_RUN/final_openrlhf_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 0,
+      "elapsed_seconds": 7.471,
+      "log": "$RL_RUN/final_openrlhf_runtime.log"
+    },
+    {
+      "name": "final_roll_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/roll/examples/start_rlvr_pipeline.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/roll",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 1.725,
+      "log": "$RL_RUN/final_roll_entrypoint.log"
+    },
+    {
+      "name": "final_roll_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/final_roll_runtime.spec.json",
+        "--output",
+        "$RL_RUN/final_roll_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 1.762,
+      "log": "$RL_RUN/final_roll_runtime.log"
+    },
+    {
+      "name": "final_slime_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/slime_retry/train.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/slime_retry",
+      "timeout_seconds": 45,
+      "returncode": 1,
+      "elapsed_seconds": 0.486,
+      "log": "$RL_RUN/final_slime_entrypoint.log"
+    },
+    {
+      "name": "final_slime_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/final_slime_runtime.spec.json",
+        "--output",
+        "$RL_RUN/final_slime_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "45"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 60,
+      "returncode": 1,
+      "elapsed_seconds": 1.416,
+      "log": "$RL_RUN/final_slime_runtime.log"
+    },
+    {
+      "name": "initial_areal_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/areal/examples/r3/gsm8k_rlvr.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/areal",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 0.318,
+      "log": "$RL_RUN/initial_areal_entrypoint.log"
+    },
+    {
+      "name": "initial_areal_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/initial_areal.spec.json",
+        "--output",
+        "$RL_RUN/initial_areal_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.534,
+      "log": "$RL_RUN/initial_areal_runtime.log"
+    },
+    {
+      "name": "initial_mindspeed_rl_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/mindspeed_rl/cli/train_grpo.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/mindspeed_rl",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 0.017,
+      "log": "$RL_RUN/initial_mindspeed_rl_entrypoint.log"
+    },
+    {
+      "name": "initial_mindspeed_rl_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/initial_mindspeed_rl.spec.json",
+        "--output",
+        "$RL_RUN/initial_mindspeed_rl_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.227,
+      "log": "$RL_RUN/initial_mindspeed_rl_runtime.log"
+    },
+    {
+      "name": "initial_ms_swift_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "-m",
+        "swift.cli.rlhf",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/ms_swift",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 0.018,
+      "log": "$RL_RUN/initial_ms_swift_entrypoint.log"
+    },
+    {
+      "name": "initial_ms_swift_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/initial_ms_swift.spec.json",
+        "--output",
+        "$RL_RUN/initial_ms_swift_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 3.689,
+      "log": "$RL_RUN/initial_ms_swift_runtime.log"
+    },
+    {
+      "name": "initial_nemo_rl_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/nemo_rl/examples/run_grpo.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/nemo_rl",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 0.018,
+      "log": "$RL_RUN/initial_nemo_rl_entrypoint.log"
+    },
+    {
+      "name": "initial_nemo_rl_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/initial_nemo_rl.spec.json",
+        "--output",
+        "$RL_RUN/initial_nemo_rl_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.989,
+      "log": "$RL_RUN/initial_nemo_rl_runtime.log"
+    },
+    {
+      "name": "initial_openrlhf_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "-m",
+        "openrlhf.cli.train_ppo_ray",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/openrlhf_v090",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 2.23,
+      "log": "$RL_RUN/initial_openrlhf_entrypoint.log"
+    },
+    {
+      "name": "initial_openrlhf_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/initial_openrlhf.spec.json",
+        "--output",
+        "$RL_RUN/initial_openrlhf_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.675,
+      "log": "$RL_RUN/initial_openrlhf_runtime.log"
+    },
+    {
+      "name": "initial_roll_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/roll/examples/start_rlvr_pipeline.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/roll",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 0.013,
+      "log": "$RL_RUN/initial_roll_entrypoint.log"
+    },
+    {
+      "name": "initial_roll_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/initial_roll.spec.json",
+        "--output",
+        "$RL_RUN/initial_roll_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.18,
+      "log": "$RL_RUN/initial_roll_runtime.log"
+    },
+    {
+      "name": "initial_slime_entrypoint",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$FRAMEWORK_SOURCES/slime_retry/train.py",
+        "--help"
+      ],
+      "cwd": "$FRAMEWORK_SOURCES/slime_retry",
+      "timeout_seconds": 50,
+      "returncode": 1,
+      "elapsed_seconds": 0.224,
+      "log": "$RL_RUN/initial_slime_entrypoint.log"
+    },
+    {
+      "name": "initial_slime_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/initial_slime.spec.json",
+        "--output",
+        "$RL_RUN/initial_slime_runtime.json",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--timeout",
+        "50"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 65,
+      "returncode": 1,
+      "elapsed_seconds": 1.326,
+      "log": "$RL_RUN/initial_slime_runtime.log"
+    },
+    {
+      "name": "install_dataset_and_compat_dependencies",
+      "command": [
+        "$WSL_HOME/.local/bin/uv",
+        "pip",
+        "install",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--no-deps",
+        "xxhash==3.6.0",
+        "tenacity==9.1.2",
+        "protobuf==6.33.1",
+        "zstandard==0.25.0",
+        "json-repair==0.54.2",
+        "simplejson==3.20.2",
+        "sortedcontainers==2.4.0",
+        "binpacking==1.5.2",
+        "nltk==3.9.2",
+        "joblib==1.5.2",
+        "wrapt==2.0.1",
+        "deprecated==1.3.1",
+        "more-itertools==10.8.0",
+        "tensorboard-data-server==0.7.2",
+        "markdown==3.10",
+        "absl-py==2.3.1",
+        "werkzeug==3.1.3",
+        "grpcio==1.76.0"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 180,
+      "returncode": 0,
+      "elapsed_seconds": 4.047,
+      "log": "$RL_RUN/install_dataset_and_compat_dependencies.log"
+    },
+    {
+      "name": "install_native_prerequisites",
+      "command": [
+        "$WSL_HOME/.local/bin/uv",
+        "pip",
+        "install",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--no-deps",
+        "--no-build-isolation",
+        "transformers==4.57.0",
+        "accelerate==1.10.1",
+        "peft==0.17.1",
+        "deepspeed==0.18.1",
+        "hjson==3.1.0",
+        "nvidia-ml-py==13.580.82",
+        "optree==0.17.0",
+        "py-cpuinfo==9.0.0",
+        "datasets==4.4.1",
+        "pandas==2.3.3",
+        "pyarrow==22.0.0",
+        "multiprocess==0.70.18",
+        "hydra-core==1.3.2",
+        "omegaconf==2.3.0",
+        "antlr4-python3-runtime==4.9.3",
+        "dacite==1.9.2",
+        "jsonlines==4.0.0",
+        "orjson==3.11.4",
+        "loralib==0.1.2",
+        "torchdata==0.11.0",
+        "wandb==0.23.0",
+        "tensorboard==2.20.0",
+        "modelscope==1.31.0",
+        "trl==0.25.1"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 300,
+      "returncode": 1,
+      "elapsed_seconds": 3.499,
+      "log": "$RL_RUN/install_native_prerequisites.log"
+    },
+    {
+      "name": "install_official_flashattention",
+      "command": [
+        "$WSL_HOME/.local/bin/uv",
+        "pip",
+        "install",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--no-deps",
+        "https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3%2Bcu12torch2.8cxx11abiTRUE-cp311-cp311-linux_x86_64.whl"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 240,
+      "returncode": 0,
+      "elapsed_seconds": 36.464,
+      "log": "$RL_RUN/install_official_flashattention.log"
+    },
+    {
+      "name": "install_openrlhf_metadata",
+      "command": [
+        "$WSL_HOME/.local/bin/uv",
+        "pip",
+        "install",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--no-deps",
+        "-e",
+        "$FRAMEWORK_SOURCES/openrlhf_v090"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 120,
+      "returncode": 0,
+      "elapsed_seconds": 0.571,
+      "log": "$RL_RUN/install_openrlhf_metadata.log"
+    },
+    {
+      "name": "install_pure_support_dependencies",
+      "command": [
+        "$WSL_HOME/.local/bin/uv",
+        "pip",
+        "install",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--no-deps",
+        "pytz==2025.2",
+        "python-dateutil==2.9.0.post0",
+        "six==1.17.0",
+        "tzdata==2025.2",
+        "platformdirs==4.5.0",
+        "colorlog==6.10.1",
+        "tensordict==0.10.0",
+        "pyvers==0.1.0",
+        "gitpython==3.1.45",
+        "gitdb==4.0.12",
+        "smmap==5.0.2",
+        "codetiming==1.4.0",
+        "addict==2.4.0",
+        "importlib-metadata==8.7.0",
+        "zipp==3.23.0"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 180,
+      "returncode": 0,
+      "elapsed_seconds": 1.082,
+      "log": "$RL_RUN/install_pure_support_dependencies.log"
+    },
+    {
+      "name": "install_swift_grpo_trl_requirement",
+      "command": [
+        "$WSL_HOME/.local/bin/uv",
+        "pip",
+        "install",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--no-deps",
+        "trl==0.26.2"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 120,
+      "returncode": 0,
+      "elapsed_seconds": 1.027,
+      "log": "$RL_RUN/install_swift_grpo_trl_requirement.log"
+    },
+    {
+      "name": "native_cpu_smoke",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$RL_RUN/native_openrlhf.py",
+        "--device",
+        "cpu",
+        "--smoke"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 90,
+      "returncode": 1,
+      "elapsed_seconds": 6.061,
+      "log": "$RL_RUN/native_cpu_smoke.log"
+    },
+    {
+      "name": "native_gpu_replay",
+      "command": [
+        "flock",
+        "-w",
+        "180",
+        "/tmp/precision-skills-gpu.lock",
+        "$ISOLATED_ENV/bin/python",
+        "$RL_RUN/native_openrlhf.py",
+        "--device",
+        "cuda"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 480,
+      "returncode": 0,
+      "elapsed_seconds": 39.047,
+      "log": "$RL_RUN/native_gpu_replay.log"
+    },
+    {
+      "name": "native_ms_swift_complete_group",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$RL_RUN/native_swift.py",
+        "ms_swift_smollm2_complete_group"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 180,
+      "returncode": 0,
+      "elapsed_seconds": 45.88,
+      "log": "$RL_RUN/native_ms_swift_complete_group.log"
+    },
+    {
+      "name": "native_ms_swift_exact_capture",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$RL_RUN/native_swift.py",
+        "ms_swift_smollm2_exact_capture"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 180,
+      "returncode": 0,
+      "elapsed_seconds": 45.7,
+      "log": "$RL_RUN/native_ms_swift_exact_capture.log"
+    },
+    {
+      "name": "native_ms_swift_replay",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$RL_RUN/native_swift.py"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 180,
+      "returncode": 1,
+      "elapsed_seconds": 12.379,
+      "log": "$RL_RUN/native_ms_swift_replay.log"
+    },
+    {
+      "name": "native_ms_swift_replay_trl026",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$RL_RUN/native_swift.py",
+        "ms_swift_smollm2_trl026"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 180,
+      "returncode": 0,
+      "elapsed_seconds": 45.549,
+      "log": "$RL_RUN/native_ms_swift_replay_trl026.log"
+    },
+    {
+      "name": "post_native_runtime",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$WORKTREE/skills/precision-skill/scripts/runtime_probe.py",
+        "--spec",
+        "$RL_RUN/post_native_runtime.spec.json",
+        "--output",
+        "$RL_RUN/post_native_runtime.json",
+        "--timeout",
+        "60"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 75,
+      "returncode": 0,
+      "elapsed_seconds": 9.646,
+      "log": "$RL_RUN/post_native_runtime.log"
+    },
+    {
+      "name": "repair_install_cpu_deepspeed",
+      "command": [
+        "$WSL_HOME/.local/bin/uv",
+        "pip",
+        "install",
+        "--python",
+        "$ISOLATED_ENV/bin/python",
+        "--no-deps",
+        "--no-build-isolation",
+        "transformers==4.57.0",
+        "accelerate==1.10.1",
+        "peft==0.17.1",
+        "deepspeed==0.18.1",
+        "hjson==3.1.0",
+        "nvidia-ml-py==13.580.82",
+        "optree==0.17.0",
+        "py-cpuinfo==9.0.0",
+        "datasets==4.4.1",
+        "pandas==2.3.3",
+        "pyarrow==22.0.0",
+        "multiprocess==0.70.18",
+        "hydra-core==1.3.2",
+        "omegaconf==2.3.0",
+        "antlr4-python3-runtime==4.9.3",
+        "dacite==1.9.2",
+        "jsonlines==4.0.0",
+        "orjson==3.11.4",
+        "loralib==0.1.2",
+        "torchdata==0.11.0",
+        "wandb==0.23.0",
+        "tensorboard==2.20.0",
+        "modelscope==1.31.0",
+        "trl==0.25.1"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 300,
+      "returncode": 0,
+      "elapsed_seconds": 7.035,
+      "log": "$RL_RUN/repair_install_cpu_deepspeed.log"
+    },
+    {
+      "name": "swift_score_alignment",
+      "command": [
+        "$ISOLATED_ENV/bin/python",
+        "$RL_RUN/score_alignment_probe.py"
+      ],
+      "cwd": "$WORKTREE",
+      "timeout_seconds": 90,
+      "returncode": 0,
+      "elapsed_seconds": 6.446,
+      "log": "$RL_RUN/swift_score_alignment.log"
+    }
+  ],
+  "friction": [
+    {
+      "kind": "native prerequisite",
+      "description": "DeepSpeed source build selected CUDA compatibility probes even with DS_BUILD_OPS=0; CUDA_HOME is absent. Supported DS_ACCELERATOR=cpu plus DS_BUILD_OPS=0 built the real package. No fake backend imports were used.",
+      "evidence": "install_native_prerequisites.log and repair_install_cpu_deepspeed.log"
+    },
+    {
+      "kind": "native runtime",
+      "description": "Installed real FlashAttention exposes OpenRLHF Triton cross_entropy; CPU Actor scoring fails with CPU tensor pointer error. Unmodified native scoring/backward succeeded on CUDA under shared flock.",
+      "evidence": "native_cpu_smoke.log and native_gpu_replay.log"
+    },
+    {
+      "kind": "artifact adapter",
+      "description": "Nested null for known-disabled clipping/optimizer was treated as an unknown state by conditions.known. Original reports/captures were preserved; fresh explicit_disabled_views use disabled/not-executed strings and validate.",
+      "evidence": "compare_captured.py and tensor_comparison_summary.json"
+    },
+    {
+      "kind": "runtime probe selection",
+      "description": "Requesting installed distribution metadata for an uninstalled source checkout made the first successful OpenRLHF symbol import report fail at metadata lookup. Editable no-deps installation provided genuine metadata; final ordered probe completed.",
+      "evidence": "after_install_openrlhf_runtime.json and post_native_runtime.json"
+    },
+    {
+      "kind": "native prerequisite",
+      "description": "ms-swift top-level requirements allowTRL>=0.15,<1 but GRPOConfig requiresTRL>=0.26. Initial actual constructor attempt failed withTRL0.25.1; retry with0.26.2 constructed the real trainer and executed its loss/backward.",
+      "evidence": "native_ms_swift_replay.log and native_ms_swift_exact_capture.log"
+    },
+    {
+      "kind": "capture quality",
+      "description": "First Swift attempt captured a no-grad rescoring call separately from the loss forward. A new exact-capture attempt uses a pass-through native-scorer wrapper during public compute_loss; prior attempts remain preserved.",
+      "evidence": "native_swift.py and ms_swift_smollm2_exact_capture/"
+    },
+    {
+      "kind": "trajectory adapter",
+      "description": "The final Swift replay gives both trajectories the identical eight-token prompt, making one complete two-completion GRPO group. Earlier fixed-batch attempts with distinct prompts are preserved as component probes and are not the final group comparison.",
+      "evidence": "ms_swift_smollm2_complete_group/trajectory.json"
+    },
+    {
+      "kind": "version warning",
+      "description": "The official OpenRLHFv0.9.0 Transformers4.57.0 pin is yanked onPyPI for setup issues; its installed wheel executed. Ray2.59 differs from the framework full-trainer pin2.48 and no Ray trainer was run. These are subset native-component checks, not a fully provisioned trainer environment.",
+      "evidence": "repair_install_cpu_deepspeed.log and final/deeper native entrypoint logs"
+    }
+  ],
+  "allowed_implementation_differences": [
+    "OpenRLHF uses the native Actor score transform/Triton cross_entropy and PolicyLoss; reference uses Transformers logits, torch.log_softmax, and an independent clipped PPO formula.",
+    "Swift uses its native model loader, real GRPOTrainer and TRL selective_log_softmax; reference uses direct Transformers loading/log_softmax and independent sequence-mean GRPO reduction.",
+    "Native Swift forwards logits_to_keep=5/use_cache=False as supported by the model; full-sequence reference forwards the same input IDs/positions/masks. The separate row-retention probe did not reduce the initial rescoring discrepancy; no cause is asserted.",
+    "OpenRLHF cases use token-mean PPO; Swift uses its actual sequence-mean GRPO reduction. These cases are independently matched to their references, not cross-framework loss comparisons."
+  ],
+  "common_conditions": [
+    "Identical checkpoint files and exact FP32 initial parameter hash per matched pair.",
+    "Fixed2 trajectories,7 active action targets including2EOS targets; native mask retained.",
+    "Identical injected detached old scores and advantages per pair; no reward model or rollout recomputation.",
+    "Full parameter inventory including tied-weight mappings; no gradient clipping or accumulation beyond one batch.",
+    "TinyQwen2 has a stateless matched explicit SGD(lr0.001,momentum0) step with stored before/after tensors.",
+    "All comparison contracts thresholds=null; no pass/fail precision threshold is invented."
+  ],
+  "coverage_limits": [
+    "No rollout in any framework.",
+    "No framework train() loop, training_step() or distributed optimizer step.",
+    "No critic/value/reward-model/GAE/KL-reward execution.",
+    "Injected advantages do not validate reward normalization or native group-statistic construction.",
+    "No fused-Liger, ring/sequence/tensor/pipeline parallel, DeepSpeed engine, Ray worker or Megatron training execution.",
+    "One pretrained Llama architecture and one explicitly random tinyQwen2 architecture; Swift executed the pretrained architecture only."
+  ],
+  "reusable_candidates": [
+    "A prepared-trajectory adapter that maps native action positions/masks/EOS into target-score artifacts.",
+    "A generic native-call pass-through capture wrapper for exact objective scores without replacing native operators.",
+    "A prerequisite matrix separating source constraints, import probes, CLI initialization, native model/loss execution and full training.",
+    "An artifact metadata convention for explicitly disabled optimizer/clipping states rather than unknown null fields."
+  ],
+  "artifact_directory": "$RL_RUN",
+  "report": "$RL_RUN/report.md",
+  "export": {
+    "archive": "rl-evidence.zip",
+    "manifest": "EXPORT.json",
+    "raw_originals_preserved": true,
+    "original_results_sha256": "23c7ac24dd8bf47a78725560b255b8fdb98f9ab4e10c74a298400f5322ecc797",
+    "original_report_sha256": "e7092758738fb7c57b6af93524c4dce90b2a29fc6bb844d41a2db41067192f95",
+    "arrays_included": false,
+    "full_gradient_replay": false,
+    "scope": "Native measured statistics and coverage retained; omitted NPY/model arrays prevent full numeric replay from this archive alone."
+  }
+}

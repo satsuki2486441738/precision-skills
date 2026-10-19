@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "task": "one bounded clean-context native inference case",
+  "run": "compare-luna-native-20261019T140106Z",
+  "evaluation_provenance": {
+    "configured_agent_model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "fork_turns": "none",
+    "dispatch_budget_minutes": 15,
+    "skill_snapshot": "741afa4acba9664edfdffe8deb681fcbea3739dc",
+    "source": "parent dispatch confirmation; raw capture did not record agent identity/snapshot itself"
+  },
+  "status": "native_execution_supported_with_post_cold_metadata_corrections",
+  "thresholds": null,
+  "precision_acceptance": null,
+  "scope": {
+    "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "initialization": "pretrained",
+    "native_framework": "llama.cpp C API",
+    "native_source_revision": "757cad021b357f417065ddbc41a6e8f87c1f8136",
+    "reference": "Transformers4.57.1/Torch2.8.0+cu128 eager CPU F32",
+    "paired_targets": 3,
+    "paired_full_vocabulary_rows": 3,
+    "vocabulary_size": 49152,
+    "observations_per_side": 147456,
+    "native_gpu_execution": false,
+    "native_execution_rerun_during_packaging": false
+  },
+  "actual_conditions": {
+    "common": {
+      "model": {
+        "id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+        "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+        "tokenizer_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+        "vocab_size": 49152
+      },
+      "inputs": {
+        "sample": "smollm2-native-cpu-001",
+        "prompt_ids": [
+          504,
+          3575,
+          282,
+          4649,
+          314
+        ],
+        "continuation_ids": [
+          7042,
+          314,
+          260
+        ],
+        "prediction_positions": [
+          4,
+          5,
+          6
+        ],
+        "targets": [
+          {
+            "position": 5,
+            "token": 7042
+          },
+          {
+            "position": 6,
+            "token": 314
+          },
+          {
+            "position": 7,
+            "token": 260
+          }
+        ],
+        "add_special_tokens": false
+      },
+      "numerics": {
+        "model_dtype": "float32",
+        "logprob_dtype": "float32",
+        "normalization": "natural-log-softmax-full-vocabulary"
+      },
+      "scope": {
+        "task": "fixed-history next-token scoring",
+        "requested_targets": 3,
+        "requested_distributions": 3,
+        "logical_prediction_positions": [
+          4,
+          5,
+          6
+        ],
+        "cross_forward_cached_decode": false
+      }
+    },
+    "side_conditions": {
+      "transformersCpuF32FullSequence": {
+        "implementation": "Transformers AutoModelForCausalLM",
+        "weights_format": "safetensors promoted to F32",
+        "device": "CPU",
+        "attention": "eager",
+        "threads": 2,
+        "execution": {
+          "mode": "one teacher-forced full-sequence forward; select rows4,5,6",
+          "forwarded_input_ids": [
+            504,
+            3575,
+            282,
+            4649,
+            314,
+            7042,
+            314,
+            260
+          ],
+          "forward_calls": 1,
+          "attention_mask": "not supplied; model causal default",
+          "position_ids": "not supplied; model contiguous default",
+          "tf32": "not set or captured by collector; actual forward is on CPU"
+        },
+        "cache": {
+          "use_cache_argument": "not explicitly passed",
+          "checkpoint_default_use_cache": true,
+          "cache_storage_dtype": "not captured",
+          "past_key_values_supplied": false,
+          "cross_forward_reuse": false
+        }
+      },
+      "llamaCpuF32WeightsF16KV": {
+        "implementation": "llama.cpp C API",
+        "weights_format": "GGUF all F32",
+        "device": "CPU",
+        "attention": "native ggml CPU",
+        "threads": 2,
+        "execution": {
+          "mode": "three separate complete prefix prefills; clear native memory before each",
+          "prefix_ids": [
+            [
+              504,
+              3575,
+              282,
+              4649,
+              314
+            ],
+            [
+              504,
+              3575,
+              282,
+              4649,
+              314,
+              7042
+            ],
+            [
+              504,
+              3575,
+              282,
+              4649,
+              314,
+              7042,
+              314
+            ]
+          ],
+          "forward_calls": 3,
+          "explicit_positions": "0..prefix_length-1",
+          "tf32": "not configured; CPU backend"
+        },
+        "cache": {
+          "storage_dtype_k": "float16",
+          "storage_dtype_v": "float16",
+          "enabled_within_prefix_prefill": true,
+          "clear_between_prefixes": true,
+          "cross_forward_reuse": false,
+          "evidence": "historical/native-collector.log line1165; native collector leaves cp.type_k/type_v defaults"
+        }
+      }
+    }
+  },
+  "target_metrics": {
+    "target_count": 3,
+    "side_a_nll_nat_per_token": 3.162992219130198,
+    "side_b_nll_nat_per_token": 3.162873069445292,
+    "nll_abs_diff_nat_per_token": 0.00011914968490600586,
+    "mae_nat": 0.000430444876352946,
+    "p99_nat": 0.0006144928932189941,
+    "p99_method": "global linear h=0.99*(N-1)",
+    "max_abs_nat": 0.0006175041198730469,
+    "max_coordinate": {
+      "sample": "smollm2-native-cpu-001",
+      "position": 6,
+      "token": 314
+    }
+  },
+  "distribution_metrics": {
+    "probability_rmse": {
+      "mean": 1.943635834200819e-05,
+      "p99": 2.1630118372854394e-05,
+      "max": 2.1674121097190987e-05,
+      "max_coordinate": {
+        "sample": "smollm2-native-cpu-001",
+        "position": 6
+      }
+    },
+    "max_probability_error": {
+      "mean": 0.00012613277605028062,
+      "p99": 0.00012997417628928586,
+      "max": 0.00013007220856880997,
+      "max_coordinate": {
+        "sample": "smollm2-native-cpu-001",
+        "position": 6,
+        "token": 260
+      }
+    },
+    "tail_merged_js": {
+      "mean": 9.087503155271076e-08,
+      "p99": 1.64366338238124e-07,
+      "max": 1.6593001259592145e-07,
+      "max_coordinate": {
+        "sample": "smollm2-native-cpu-001",
+        "position": 6
+      }
+    },
+    "top1_agreement": {
+      "count": 3,
+      "total": 3,
+      "fraction": 1.0
+    },
+    "top100_overlap": {
+      "mean": 1.0
+    },
+    "coverage": {
+      "side_a_top100": {
+        "mean": 0.9554490023186425,
+        "p1": 0.9041969382386773,
+        "min": 0.9029742577051875
+      },
+      "side_b_top100": {
+        "mean": 0.9554145977853502,
+        "p1": 0.9040924608476948,
+        "min": 0.9028675645288643
+      },
+      "side_a_union": {
+        "mean": 0.9554490023186425,
+        "p1": 0.9041969382386773,
+        "min": 0.9029742577051875
+      },
+      "side_b_union": {
+        "mean": 0.9554145977853502,
+        "p1": 0.9040924608476948,
+        "min": 0.9028675645288643
+      }
+    }
+  },
+  "coverage": {
+    "expected": 3,
+    "paired": 3
+  },
+  "normalization": {
+    "tolerance": 5e-05,
+    "renormalization": "none",
+    "meaning": "mass-validation tolerance, distinct from precision acceptance threshold"
+  },
+  "metadata_corrections": [
+    {
+      "field": "scope.stage",
+      "original": "full-forward-cache-off",
+      "export": "fixed-history scoring with one teacher-forced reference forward and three separate native cleared-prefix prefills",
+      "reason": "cache-off did not describe actual within-prefix KV usage or reference forward shape"
+    },
+    {
+      "field": "native cache dtype",
+      "original": "omitted; all-F32 wording could imply cache precision",
+      "export": "F16 K and V, runtime log line1165; F32 weights/logits",
+      "reason": "cp.type_k/type_v left at defaults and actual log confirms F16"
+    },
+    {
+      "field": "reference execution",
+      "original": "summary claimed independent prefix replay on both sides",
+      "export": "one causal full-sequence forward over8 IDs, selected rows4,5,6",
+      "reason": "collect_reference.py computes model(all_ids) once"
+    },
+    {
+      "field": "reference cache and TF32 settings",
+      "original": "cache-off stage; no explicit use_cache/TF32 setting captured",
+      "export": "use_cache not explicitly passed; checkpoint default true; cache storage unobserved; actual CPU execution",
+      "reason": "do not infer unrecorded flag states or claim disabled native KV"
+    },
+    {
+      "field": "provenance completeness",
+      "original": "summary stated compile command reviewable and failed inputs preserved",
+      "export": "available failed reports/specs retained; prior tolerance/schema inputs overwritten; build log empty and exact compile command absent",
+      "reason": "independent source review; no complete attempt/build provenance claim"
+    }
+  ],
+  "review": {
+    "status": "reviewed_with_metadata_findings",
+    "evidence": "review/review.json",
+    "reference_tf32": "not configured/captured; collector explicitly executes on CPU",
+    "cache_error_cause": "No matched cache-dtype or forward-shape probe was run; no causal attribution for measured error."
+  },
+  "provenance_limits": [
+    "The original native-build.log is empty; the exact compile command was not recorded in the available source.",
+    "Available failed reports/specs remain, but original1e-5 contract and schema2 target manifests were corrected in place; complete superseded input/build provenance is unavailable.",
+    "Model/resource hashes were checked by independent review; no independent per-parameter GGUF conversion validation is claimed."
+  ],
+  "preserved_failures": {
+    "runtime_symbol_syntax": "historical/runtime-probe.json",
+    "initial_distribution_tolerance": "historical/distribution-comparison.json",
+    "initial_target_manifest_schema": "historical/target-comparison.json",
+    "build_diagnostics": "historical/native-build.log is empty; initial compiler errors appear only as summary narrative"
+  },
+  "artifact_provenance": {
+    "export_manifest": "EXPORT.json",
+    "hash_pairs": 67,
+    "derived_files": 17,
+    "raw_arrays_unchanged": true,
+    "originals_preserved": true,
+    "available_historical_artifacts_included": true,
+    "complete_original_attempt_history": false
+  },
+  "portable_replay": {
+    "archive": "evidence.zip",
+    "archive_sha256": "49d433192e2a94ec09b5d1e6301d41aca384499c72a03ca2e418dfbcd7b6367c",
+    "archive_bytes": 1694934,
+    "verified_from_fresh_extraction": true,
+    "target_and_distribution_metrics_equal_original": true,
+    "side_manifests_validated": 2,
+    "commands": [
+      "python -m zipfile -e evidence.zip evidence",
+      "python evidence/verify_export.py evidence.zip",
+      "python evidence/replay.py --output NEW_REPLAY_DIRECTORY"
+    ],
+    "requirements": [
+      "Python>=3.10",
+      "NumPy>=1.23"
+    ],
+    "limit": "Captured-array offline comparison/validation only. Native model weights/GGUF/executable and external environments are excluded."
+  },
+  "model_comparison_interpretation": "This one bounded task differs in task selection, context and resource preparation from the larger gpt-6 cohort. It is not a controlled or fair model-ranking experiment."
+}

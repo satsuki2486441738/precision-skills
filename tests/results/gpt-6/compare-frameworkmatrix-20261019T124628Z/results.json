@@ -1,0 +1,667 @@
+{
+  "schema_version": 1,
+  "run_id": "compare-frameworkmatrix-20261019T124628Z",
+  "scope": "Expanded native framework validation with independent public-evidence audit and separate four-GPU TRL smoke.",
+  "agent_identity": {
+    "known_model_family": "gpt-6",
+    "exact_backend": null,
+    "exact_backend_status": "unknown",
+    "cross_llm_model_benchmark_performed": false,
+    "model_variation_scope": "This cohort varied scored/trained models. A separately configured gpt-6-luna agent performed one additional cold native inference case; this is not a controlled agent-model ranking.",
+    "additional_agent_model_test": "../../gpt-6-luna/compare-luna-native-20261019T140106Z/results.json"
+  },
+  "provenance": {
+    "tested_skill_snapshot": "741afa4acba9664edfdffe8deb681fcbea3739dc",
+    "tested_skill_snapshot_short": "741afa4",
+    "parent_integration_context": "Snapshot741afa4 merges origin/main at4e68f9650d48f5cf2ff86e13e9b645ff2a8c420e into the validation branch.",
+    "cold_agent_fork_turns": "none",
+    "initial_collection": "Cold agents used pinned checkouts before reading parent findings or other worktrees.",
+    "later_stage": "Parent review, corrected captures, selected-case mapping, and public evidence packaging followed initial collection.",
+    "new_skill_defects_confirmed_this_round": [],
+    "prior_round_fixes": {
+      "count": 2,
+      "status": "already_on_branch",
+      "attributed_to_this_round": false
+    }
+  },
+  "coverage": {
+    "counting_unit": "One library/task combination is one task lane; engines and model cases are nested within a lane.",
+    "task_lanes": 17,
+    "unique_libraries": 16,
+    "native_execution_lanes": 7,
+    "native_execution_unique_libraries": 6,
+    "blocked_lanes": 10,
+    "primary_local_native_cases": 15,
+    "groups": {
+      "sft": {
+        "task_lanes": 6,
+        "native_execution_lanes": 3,
+        "blocked_lanes": 3,
+        "primary_native_cases": 6
+      },
+      "inference": {
+        "task_lanes": 4,
+        "native_execution_lanes": 2,
+        "blocked_lanes": 2,
+        "primary_native_cases": 6
+      },
+      "rl": {
+        "task_lanes": 7,
+        "native_execution_lanes": 2,
+        "blocked_lanes": 5,
+        "primary_native_cases": 3
+      }
+    },
+    "native_libraries": [
+      "TRL",
+      "LLaMAFactory",
+      "ms-swift",
+      "llama.cpp",
+      "LMDeploy",
+      "OpenRLHF"
+    ],
+    "unique_library_roster": [
+      "TRL",
+      "LLaMAFactory",
+      "ms-swift",
+      "Axolotl",
+      "Megatron Bridge",
+      "MindSpeed-LLM",
+      "llama.cpp",
+      "LMDeploy",
+      "TensorRT-LLM",
+      "MindIE-LLM",
+      "OpenRLHF",
+      "slime",
+      "NeMo RL",
+      "AReaL",
+      "ROLL",
+      "MindSpeed-RL"
+    ],
+    "duplicate_library_across_tasks": "ms-swift occurs in SFT and RL; this explains 17 lanes versus 16 unique libraries and 7 native lanes versus 6 unique native libraries.",
+    "lmdeploy_engine_counting": "TurboMind and PyTorch are two engines within the single LMDeploy inference lane.",
+    "excluded_from_primary_case_count": [
+      "Retries and superseded captures",
+      "Transformers reference executions",
+      "Model conversions",
+      "Default-temperature diagnostic captures",
+      "Offline artifact replay",
+      "Separate remote four-GPU smoke and separate gpt-6-luna follow-up"
+    ],
+    "precision_acceptance": null,
+    "thresholds": null
+  },
+  "lanes": [
+    {
+      "id": "sft/trl",
+      "library": "TRL",
+      "task": "sft",
+      "status": "native_trainer_component_executed",
+      "primary_cases": 2,
+      "native_optimizer_steps": 2,
+      "stage": "Fixed-token native SFTTrainer one-step FP32 SGD; no full CLI/raw-text workflow claim."
+    },
+    {
+      "id": "sft/llamafactory",
+      "library": "LLaMAFactory",
+      "task": "sft",
+      "status": "native_trainer_component_executed",
+      "primary_cases": 2,
+      "native_optimizer_steps": 2,
+      "stage": "CustomSeq2SeqTrainer.train plus native collator/default template; full run_sft, CLI, model-loading workflow and raw-text preprocessing unexecuted."
+    },
+    {
+      "id": "sft/ms-swift",
+      "library": "ms-swift",
+      "task": "sft",
+      "status": "native_trainer_component_executed",
+      "primary_cases": 2,
+      "native_optimizer_steps": 2,
+      "stage": "Fixed-token native trainer one-step FP32 SGD component."
+    },
+    {
+      "id": "sft/axolotl",
+      "library": "Axolotl",
+      "task": "sft",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "Native trainer import requires missing bitsandbytes; probed version/runtime pins do not form a supported training environment."
+    },
+    {
+      "id": "sft/megatron-bridge",
+      "library": "Megatron Bridge",
+      "task": "sft",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "Package installation requires Python >=3.12,<3.13; local Python is 3.11.17; subsequent Megatron import absent."
+    },
+    {
+      "id": "sft/mindspeed-llm",
+      "library": "MindSpeed-LLM",
+      "task": "sft",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "Native adaptor/entrypoint fails at torch_npu; no supplied Ascend NPU/CANN runtime."
+    },
+    {
+      "id": "inference/llama.cpp",
+      "library": "llama.cpp",
+      "task": "inference",
+      "status": "native_inference_executed",
+      "primary_cases": 2,
+      "stage": "CPU F32 weights/KV; one prefill and two fixed-token decode steps per pretrained model."
+    },
+    {
+      "id": "inference/lmdeploy",
+      "library": "LMDeploy",
+      "task": "inference",
+      "status": "native_inference_executed_with_exploratory_dependency_caveat",
+      "primary_cases": 4,
+      "engines": [
+        "TurboMind",
+        "PyTorch"
+      ],
+      "stage": "Native CUDA FP16 rows from three fresh prefix requests per case; cached decode coverage is zero.",
+      "dependency_caveat": "PyTorch engine used isolated Triton 3.5.1, conflicting with Torch 2.8's Triton 3.4 metadata pin."
+    },
+    {
+      "id": "inference/tensorrt-llm",
+      "library": "TensorRT-LLM",
+      "task": "inference",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "tensorrt_llm import absent; requested LLM entrypoint unresolved; no engine execution."
+    },
+    {
+      "id": "inference/mindie-llm",
+      "library": "MindIE-LLM",
+      "task": "inference",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "Ordered initialization fails at torch_npu; no Ascend devices/CANN/MindIE runtime supplied."
+    },
+    {
+      "id": "rl/openrlhf",
+      "library": "OpenRLHF",
+      "task": "rl",
+      "status": "native_model_objective_backward_executed",
+      "primary_cases": 2,
+      "stage": "Actor scoring, native PPO PolicyLoss and full backward; tiny Qwen2 additionally uses explicit Torch SGD.",
+      "framework_training_step": false,
+      "framework_optimizer_step": false,
+      "rollout": false
+    },
+    {
+      "id": "rl/ms-swift",
+      "library": "ms-swift",
+      "task": "rl",
+      "status": "native_initialized_trainer_objective_backward_executed",
+      "primary_cases": 1,
+      "stage": "Real GRPOTrainer construction, native scorer, public compute_loss and full backward on one complete two-completion group.",
+      "framework_training_step": false,
+      "framework_optimizer_step": false,
+      "rollout": false
+    },
+    {
+      "id": "rl/slime",
+      "library": "slime",
+      "task": "rl",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "Native Megatron loss import and SGLang entrypoint dependencies are missing."
+    },
+    {
+      "id": "rl/nemo-rl",
+      "library": "NeMo RL",
+      "task": "rl",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "Pinned source requires Python >=3.13.14 and Torch >=2.11; local 3.11.17/2.8 fails TypedDict initialization and backend imports."
+    },
+    {
+      "id": "rl/areal",
+      "library": "AReaL",
+      "task": "rl",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "Pinned Torch/Transformers version floors are unmet; native Flask frontier and SGLang/torch_memory_saver backends are absent."
+    },
+    {
+      "id": "rl/roll",
+      "library": "ROLL",
+      "task": "rl",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "Native RLVR import fails at transfer_queue; Megatron/quack prerequisites are absent."
+    },
+    {
+      "id": "rl/mindspeed-rl",
+      "library": "MindSpeed-RL",
+      "task": "rl",
+      "status": "prerequisite_blocked",
+      "primary_cases": 0,
+      "blocker": "Native trainer/entrypoint requires torch_npu; no supplied Ascend runtime/hardware."
+    }
+  ],
+  "primary_local_native_cases": [
+    {
+      "id": "sft/trl/tiny-qwen2",
+      "lane": "sft/trl",
+      "model_kind": "random tiny Qwen2",
+      "targets": 14,
+      "active_eos": 2,
+      "gradient_update_elements": 20768
+    },
+    {
+      "id": "sft/trl/smollm2",
+      "lane": "sft/trl",
+      "model_kind": "pretrained SmolLM2",
+      "targets": 14,
+      "active_eos": 2,
+      "gradient_update_elements": 134515008
+    },
+    {
+      "id": "sft/llamafactory/tiny-qwen2",
+      "lane": "sft/llamafactory",
+      "model_kind": "random tiny Qwen2",
+      "targets": 14,
+      "active_eos": 2,
+      "gradient_update_elements": 20768
+    },
+    {
+      "id": "sft/llamafactory/smollm2",
+      "lane": "sft/llamafactory",
+      "model_kind": "pretrained SmolLM2",
+      "targets": 14,
+      "active_eos": 2,
+      "gradient_update_elements": 134515008
+    },
+    {
+      "id": "sft/ms-swift/tiny-qwen2",
+      "lane": "sft/ms-swift",
+      "model_kind": "random tiny Qwen2",
+      "targets": 14,
+      "active_eos": 2,
+      "gradient_update_elements": 20768
+    },
+    {
+      "id": "sft/ms-swift/smollm2",
+      "lane": "sft/ms-swift",
+      "model_kind": "pretrained SmolLM2",
+      "targets": 14,
+      "active_eos": 2,
+      "gradient_update_elements": 134515008
+    },
+    {
+      "id": "inference/llama.cpp/smollm2",
+      "lane": "inference/llama.cpp",
+      "model_kind": "pretrained SmolLM2",
+      "targets": 3,
+      "cache_stages": [
+        "prefill",
+        "first_decode",
+        "later_decode"
+      ]
+    },
+    {
+      "id": "inference/llama.cpp/qwen2.5",
+      "lane": "inference/llama.cpp",
+      "model_kind": "pretrained Qwen2.5",
+      "targets": 3,
+      "cache_stages": [
+        "prefill",
+        "first_decode",
+        "later_decode"
+      ]
+    },
+    {
+      "id": "inference/lmdeploy/turbomind/smollm2",
+      "lane": "inference/lmdeploy",
+      "model_kind": "pretrained SmolLM2",
+      "targets": 3,
+      "cached_decode_coverage": 0
+    },
+    {
+      "id": "inference/lmdeploy/turbomind/qwen2.5",
+      "lane": "inference/lmdeploy",
+      "model_kind": "pretrained Qwen2.5",
+      "targets": 3,
+      "cached_decode_coverage": 0
+    },
+    {
+      "id": "inference/lmdeploy/pytorch/smollm2",
+      "lane": "inference/lmdeploy",
+      "model_kind": "pretrained SmolLM2",
+      "targets": 3,
+      "cached_decode_coverage": 0,
+      "dependency_status": "exploratory"
+    },
+    {
+      "id": "inference/lmdeploy/pytorch/qwen2.5",
+      "lane": "inference/lmdeploy",
+      "model_kind": "pretrained Qwen2.5",
+      "targets": 3,
+      "cached_decode_coverage": 0,
+      "dependency_status": "exploratory"
+    },
+    {
+      "id": "rl/openrlhf/tiny-qwen2",
+      "lane": "rl/openrlhf",
+      "model_kind": "random tiny Qwen2",
+      "actions": 7,
+      "active_eos": 2,
+      "gradient_elements": 22816,
+      "explicit_torch_sgd": true,
+      "framework_optimizer_step": false
+    },
+    {
+      "id": "rl/openrlhf/smollm2",
+      "lane": "rl/openrlhf",
+      "model_kind": "pretrained SmolLM2",
+      "actions": 7,
+      "active_eos": 2,
+      "gradient_elements": 134515008,
+      "explicit_torch_sgd": false
+    },
+    {
+      "id": "rl/ms-swift/smollm2",
+      "lane": "rl/ms-swift",
+      "model_kind": "pretrained SmolLM2",
+      "actions": 7,
+      "active_eos": 2,
+      "gradient_elements": 134515008,
+      "complete_groups": 1,
+      "group_size": 2,
+      "explicit_torch_sgd": false
+    }
+  ],
+  "model_identities": {
+    "pretrained_smollm2": {
+      "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "architecture": "Llama"
+    },
+    "pretrained_qwen2_5": {
+      "repository": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "architecture": "Qwen2"
+    },
+    "tiny_qwen2": {
+      "initialization": "explicitly random, deterministic",
+      "sft_elements": 20768,
+      "rl_elements": 22816,
+      "shared_checkpoint_across_groups": false
+    },
+    "agent_models_are_test_models": false
+  },
+  "comparison_summary": {
+    "sft": {
+      "selected_score_gradient_update_comparisons": 18,
+      "selected_single_side_tensor_validations": 24,
+      "observed_selected_errors": "zero",
+      "targets_per_case": 14,
+      "reference_execution": "Independent forward/backward/update first, then exact state restoration before native execution.",
+      "mathematical_independence_limit": "Both sides share Hugging Face model/loss implementation and native batch preparation."
+    },
+    "inference": {
+      "primary_captures": 6,
+      "primary_targets": 18,
+      "comparison_pairs_including_supplemental_references": 9,
+      "validated_side_manifests": 9,
+      "llama_cpp_max_target_error_nats": {
+        "SmolLM2": 3.1e-06,
+        "Qwen2.5": 2.98e-06
+      },
+      "lmdeploy_target_mae_nats_approximate_range": [
+        0.00245,
+        0.00565
+      ]
+    },
+    "rl": {
+      "openrlhf_smollm2_gradient_rmse": 4.197645952917696e-09,
+      "openrlhf_tiny_qwen2_update_rmse": 4.900103872124238e-11,
+      "swift_smollm2_loss_abs_difference": 2.384185791015625e-07,
+      "swift_smollm2_gradient_rmse": 2.121220002087878e-08,
+      "injected_dependencies": [
+        "detached old scores",
+        "advantages"
+      ],
+      "rollout_executed": false,
+      "native_reward_group_normalization_executed": false,
+      "framework_training_step_executed": false,
+      "framework_optimizer_step_executed": false
+    },
+    "thresholds": null,
+    "precision_acceptance": null
+  },
+  "findings": [
+    {
+      "id": "lmdeploy-default-temperature-alias",
+      "classification": "native API score-semantics finding",
+      "skill_defect": false,
+      "rows": 3,
+      "vocabulary": 49152,
+      "exact_values": 147456,
+      "default_temperature": 0.8,
+      "evidence": "Each returned default last row exactly equals its neutral native row divided by FP16(0.8).",
+      "resolution": "Keep default attempts diagnostic-only; use explicit native neutral score settings for final captures."
+    },
+    {
+      "id": "lmdeploy-triton-dependency",
+      "classification": "exploratory native dependency qualification",
+      "skill_defect": false,
+      "torch_pin": "Triton 3.4.0",
+      "executed_override": "Triton 3.5.1",
+      "finding": "The pinned warmup failed; override executed but conflicts with Torch metadata."
+    },
+    {
+      "id": "swift-grpo-trl-floor",
+      "classification": "empirical framework prerequisite",
+      "skill_defect": false,
+      "failed_trl": "0.25.1",
+      "executed_trl": "0.26.2",
+      "required": "TRL >=0.26 at GRPOConfig construction"
+    },
+    {
+      "id": "trl-batch-row-mapping",
+      "classification": "corrected task-adapter bug",
+      "skill_defect": false,
+      "resolution": "Correct native batch row mapping; assert equal forward inputs; independently execute reference and restore exact initial parameters before native training."
+    },
+    {
+      "id": "nested-null-state",
+      "classification": "artifact-adapter condition semantics",
+      "skill_defect": false,
+      "resolution": "Required nested null remains unknown; known-disabled optimizer/clipping states use explicit disabled/not-executed values in fresh metadata views."
+    }
+  ],
+  "reusable_candidates": {
+    "implemented_this_round": [],
+    "not_implemented": [
+      "score-boundary guard",
+      "fixed-token/timeline capture support",
+      "stage-coverage/evidence-packaging normalizer"
+    ],
+    "reuse_existing_tools": [
+      "skills/precision-skill/scripts/runtime_probe.py",
+      "skills/precision-skill/scripts/inference_capture.py"
+    ]
+  },
+  "validation": {
+    "linux_unittests": {
+      "source": "parent-reported completed run",
+      "snapshot": "741afa4",
+      "tests": 130,
+      "elapsed_seconds": 5.334,
+      "status": "passed"
+    },
+    "public_archive_audit": {
+      "status": "validated",
+      "source_run_id": "compare-exportaudit-20261019T134752Z",
+      "findings": [],
+      "public_inputs_unchanged": true,
+      "safe_relative_paths": true,
+      "crc_checks": "all passed",
+      "indexed_exported_hashes_verified": 1219,
+      "private_original_hash_scope": "Recorded and format-checked; private originals were not independently re-read in this public-only audit.",
+      "inference_offline_replay": {
+        "status": "completed",
+        "network": "disabled",
+        "native_model_execution": false,
+        "comparison_pairs": 9,
+        "comparison_metric_groups": 18,
+        "validated_side_manifests": 9,
+        "exact_temperature_rows": 3,
+        "metrics_equal_public_results": true
+      }
+    },
+    "additional_luna_export_audit": {
+      "status": "validated",
+      "source_run_id": "compare-lunaexportaudit-20261019T142635Z",
+      "findings": [],
+      "paired_targets": 3,
+      "distribution_rows": 3,
+      "validated_side_manifests": 2,
+      "metrics_exactly_reproduced": true,
+      "native_execution": false,
+      "archive_sha256": "49d433192e2a94ec09b5d1e6301d41aca384499c72a03ca2e418dfbcd7b6367c"
+    }
+  },
+  "artifacts": {
+    "guide": "GUIDE.md",
+    "sft": {
+      "report": "sft-report.md",
+      "results": "sft-results.json",
+      "archive": "sft-evidence.zip",
+      "archive_bytes": 1030474,
+      "archive_sha256": "3fea576e14d1c76863767512dee4f7918e44c75941c3a666fa34cf64c4eabde5",
+      "members": 384,
+      "full_gradient_replay": false
+    },
+    "inference": {
+      "report": "inference-report.md",
+      "results": "inference-results.json",
+      "archive": "inference-evidence.zip",
+      "archive_bytes": 7594354,
+      "archive_sha256": "96b9cf9f1be4584ce0ba41279aa8ffeca2434b6697db6907b0383d4af2e7e166",
+      "members": 424,
+      "compression": "ZIP LZMA method 14",
+      "captured_array_offline_replay": true,
+      "native_model_replay": false
+    },
+    "rl": {
+      "report": "rl-report.md",
+      "results": "rl-results.json",
+      "archive": "rl-evidence.zip",
+      "archive_bytes": 523341,
+      "archive_sha256": "356620f059c9c97e2c0329e08011de87d972c290b080be4b2714bccffabda6be",
+      "members": 419,
+      "full_gradient_replay": false
+    },
+    "remote_probe": "remote_four_gpu_probe.py",
+    "parent_evidence": {
+      "archive": "parent-evidence.zip",
+      "status": "published",
+      "scope": "Redacted parent intake, Linux regression log, publication precheck, independent public-export audit, console-observed remote record, probe-v1 and synthetic status regressions.",
+      "archive_bytes": 43166,
+      "archive_sha256": "c5820dee0558fff21f8684c183bd21c17e06aa43d2e09ed6ce1a535c393527d3",
+      "indexed_members": 16,
+      "remote_originals_downloaded": false
+    }
+  },
+  "replay_limits": [
+    "SFT/RL archives omit NPY/model/optimizer payloads and cannot fully replay gradients or native training alone.",
+    "Inference archive supports captured-array offline replay; it does not rerun native models or prove engine readiness.",
+    "Historical attempts remain preserved; final selected case mappings and reports govern coverage.",
+    "All metrics are diagnostics with thresholds=null; no numerical acceptance threshold is invented."
+  ],
+  "remote_status": "native_nccl_and_sft_completed_console_observed",
+  "remote": {
+    "schema_version": 1,
+    "recorded_utc": "2026-10-19T14:22:19.761206+00:00",
+    "provenance": "Parent manually transcribed visible SenseCore console output. Not a downloaded copy of remote JSON. Full original records remain on AFS.",
+    "project": "<REMOTE_PROJECT>",
+    "hardware": {
+      "gpus": 4,
+      "model": "NVIDIA H100 80GB HBM3",
+      "reported_memory_mib_each": 81559
+    },
+    "initial_runtime": {
+      "python": "3.12.3",
+      "torch": "2.8.0a0+5228986c39.nv25.06",
+      "cuda": "12.9"
+    },
+    "framework_environment": {
+      "transformers": "4.57.1",
+      "trl": "0.24.0",
+      "accelerate": "1.10.1",
+      "datasets": "4.2.0",
+      "peft": "0.17.1",
+      "pyarrow": "21.0.0",
+      "shared_base_modified": false,
+      "limit": "Isolated environment uses system site packages; Arrow21 conflicts with inherited cudf/pylibcudf requirements. Those components were not executed."
+    },
+    "attempts": [
+      {
+        "run": "compare-four-gpu-20261019T135848Z",
+        "probe": "v1",
+        "status": "partial",
+        "nccl_four_rank_completed": true,
+        "native_sft_trainer_completed": false,
+        "reason": "Optional native SFT dependencies unavailable after initial installation interruption."
+      },
+      {
+        "run": "compare-four-gpu-20261019T140420Z",
+        "probe": "v1",
+        "status": "partial",
+        "nccl_four_rank_completed": true,
+        "native_sft_trainer_completed": false,
+        "reason": "Installed PyArrow26 requires NumPy>=2; inherited NumPy1.26.4 failed actual import."
+      },
+      {
+        "run": "compare-four-gpu-20261019T140808Z",
+        "probe": "v2",
+        "status": "completed",
+        "nccl_four_rank_completed": true,
+        "native_sft_trainer_completed": true,
+        "remote_originals": [
+          "runs/compare-four-gpu-20261019T140808Z/summary.json",
+          "runs/compare-four-gpu-20261019T140808Z/rank-0.json",
+          "runs/compare-four-gpu-20261019T140808Z/rank-1.json",
+          "runs/compare-four-gpu-20261019T140808Z/rank-2.json",
+          "runs/compare-four-gpu-20261019T140808Z/rank-3.json"
+        ]
+      }
+    ],
+    "probe_v1_sha256": "6baca1303af59e5b5b1f23275e2016cad704fa915d4b3b4fe4793532a3d28c9c",
+    "probe_v2_sha256": "63643a19b89855c8d71bf78642b902da77aaa2032815b0442bf399e2b821e7fd",
+    "probe_scope": {
+      "world_size": 4,
+      "model": "seeded random tiny Qwen2",
+      "native_entrypoint": "TRL SFTTrainer.train(max_steps=1)",
+      "native_rl_training": false,
+      "matched_reference_executed": false,
+      "thresholds": null,
+      "gradient_hash_equality_readout_observed": false
+    },
+    "status_fix": {
+      "classification": "Parent-authored case probe status bug, not precision-skill core defect",
+      "change": "Require top-level rank completion and zero torchrun exit; assert step/world/gradient before recording SFT completed.",
+      "regression": "Four synthetic launcher-only scenarios: complete, NCCL-only, failed-rank nested completed, missing rank; all corrected outcomes passed."
+    },
+    "current_instance_status": "stopped (0/1) observed after successful run; cause not established",
+    "publication_limit": "Native summary completion observed on screen; per-rank raw files and numerical gradient/update metrics were not downloaded or independently re-read before the instance stopped.",
+    "counted_in_local_coverage": false
+  },
+  "additional_agent_model_case": {
+    "configured_agent_model": "gpt-6-luna",
+    "fork_turns": "none",
+    "primary_native_cases": 1,
+    "framework": "llama.cpp CPU inference",
+    "report": "../../gpt-6-luna/compare-luna-native-20261019T140106Z/README.md",
+    "counted_in_this_cohort": false,
+    "formal_agent_ranking": false,
+    "cold_metadata_status": "Parent correction required for KV dtype and execution-boundary declarations; some superseded inputs/build command not preserved.",
+    "max_target_error_nats": 0.0006175041198730469
+  }
+}

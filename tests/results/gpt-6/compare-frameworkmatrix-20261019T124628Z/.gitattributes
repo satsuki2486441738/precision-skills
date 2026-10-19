@@ -1,0 +1,2 @@
+# Retain evidence bytes and published SHA256 values on every platform.
+* -text whitespace=trailing-space,space-before-tab,cr-at-eol
