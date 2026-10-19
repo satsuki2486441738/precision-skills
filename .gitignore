@@ -16,5 +16,7 @@
 !/tests/results/
 /tests/results/*
 !/tests/results/gpt-6/
+!/tests/test_runtime_probe.py
+!/tests/test_inference_capture.py
 __pycache__/
 *.pyc
