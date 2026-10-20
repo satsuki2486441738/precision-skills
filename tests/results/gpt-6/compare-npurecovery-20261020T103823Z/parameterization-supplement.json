@@ -1,0 +1,272 @@
+{
+  "scope": "Supplementary read-only fresh CPU reload metadata using each original private reference environment. No native training or reference objective/gradient computation rerun; all previous ZIPs/captures/reports remain frozen.",
+  "checkpoint_config_tie_word_embeddings": true,
+  "parameter_count_difference": 155582464,
+  "difference_shape": [
+    151936,
+    1024
+  ],
+  "explanation": "Actual parameter ownership differs across Transformers implementations, not merely state_dict/dedup counting. Transformers5.3 observes both embedding and lm_head keys in the checkpoint and intentionally does not alias them on from_pretrained despite config tie_word_embeddings=true. Transformers4.57.6 aliases the same Parameter and storage. Native original optimizer element counts match the respective CPU default-deduplicated counts.",
+  "same_fresh_tf53_reload_embedding_vs_lm_head_values": {
+    "torch_equal": true,
+    "all_elements_compared": 155582464,
+    "dtype": "torch.float32",
+    "shape": [
+      151936,
+      1024
+    ],
+    "embedding_values_sha256": "66490b62288569e367e064ede4ad922015d5bfd923872b1bbb03cf2a92b4f520",
+    "lm_head_values_sha256": "66490b62288569e367e064ede4ad922015d5bfd923872b1bbb03cf2a92b4f520",
+    "meaning": "The two separately owned tensors have identical initial values in this probe; their gradients/optimizer ownership differ. This is not a claim of identical complete training state or cross-version numerical function implementation."
+  },
+  "tf53_actual_loading_warning": [
+    "The tied weights mapping and config for this model specifies to tie model.embed_tokens.weight to lm_head.weight, but both are present in the checkpoints, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning"
+  ],
+  "native_original_evidence": {
+    "areal": {
+      "frozen_evidence_archive": "areal-native-and-core-evidence.zip",
+      "archive_sha256": "23a9553143d6bdefd4ad5a51ed27aa3936258a8948475aefbe1c0d4f30f76526",
+      "optimizer_event_member": "case/optimizer/pid287846-rank0-step0.json",
+      "optimizer_pid": 287846,
+      "optimizer_parameter_element_count": 751632384,
+      "count_rule": "sum(p.numel() for group in original_optimizer.param_groups for p in group[params]); for OpenRLHF FP32 flattened groups, not state_dict count",
+      "reference_count": 751632384,
+      "original_native_embedding_pointer_alias_observed": false,
+      "initial_value_comparison_scope": "exactly checked selected before-update coordinates only; no independent bitwise verification of every native parameter"
+    },
+    "roll": {
+      "frozen_evidence_archive": "roll-native-reference-core-20261020T114322Z.zip",
+      "archive_sha256": "3cb9f6a2c2fe5e4154e9f31af5faf81b3c3ff6db2f6bac8c941d78fc7113aafc",
+      "optimizer_event_member": "case/optimizer/pid455944-rank0-step0.json",
+      "optimizer_pid": 455944,
+      "optimizer_parameter_element_count": 596049920,
+      "count_rule": "sum(p.numel() for group in original_optimizer.param_groups for p in group[params]); for OpenRLHF FP32 flattened groups, not state_dict count",
+      "reference_count": 596049920,
+      "original_native_embedding_pointer_alias_observed": false,
+      "initial_value_comparison_scope": "exactly checked selected before-update coordinates only; no independent bitwise verification of every native parameter"
+    },
+    "openrlhf-community": {
+      "frozen_evidence_archive": "openrlhf-community-native-reference-core-20261020T114334Z.zip",
+      "archive_sha256": "af86c3b5e699562e2030d8e11aaee175f88e29ccce49d98a391427dbb1d77eb6",
+      "optimizer_event_member": "case/optimizer/pid460467-rank0-step0.json",
+      "optimizer_pid": 460467,
+      "optimizer_parameter_element_count": 596049920,
+      "count_rule": "sum(p.numel() for group in original_optimizer.param_groups for p in group[params]); for OpenRLHF FP32 flattened groups, not state_dict count",
+      "reference_count": 596049920,
+      "original_native_embedding_pointer_alias_observed": false,
+      "initial_value_comparison_scope": "exactly checked selected before-update coordinates only; no independent bitwise verification of every native parameter"
+    }
+  },
+  "fresh_cpu_probes": {
+    "roll": {
+      "environment": "roll",
+      "probe_scope": "fresh independent CPU metadata reload using same env/path/options as that framework reference, not an original native alias callback capture",
+      "torch": "2.9.0+cpu",
+      "transformers": "4.57.6",
+      "model_class": "transformers.models.qwen3.modeling_qwen3.Qwen3ForCausalLM",
+      "config_sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+      "checkpoint_config_tie_word_embeddings": true,
+      "actual_config_tie_word_embeddings": true,
+      "named_parameters_default_deduplicated_numel": 596049920,
+      "named_parameters_remove_duplicate_false_numel": 751632384,
+      "state_dict_tensor_numel": 751632384,
+      "unique_storage_bytes": 2384199680,
+      "input_embedding": {
+        "shape": [
+          151936,
+          1024
+        ],
+        "numel": 155582464,
+        "dtype": "torch.float32",
+        "requires_grad": true,
+        "python_object_id": 281471245973648,
+        "data_ptr": 281469925191744,
+        "storage_ptr": 281469925191744,
+        "storage_nbytes": 622329856
+      },
+      "output_embedding": {
+        "shape": [
+          151936,
+          1024
+        ],
+        "numel": 155582464,
+        "dtype": "torch.float32",
+        "requires_grad": true,
+        "python_object_id": 281471245973648,
+        "data_ptr": 281469925191744,
+        "storage_ptr": 281469925191744,
+        "storage_nbytes": 622329856
+      },
+      "embedding_is_lm_head": true,
+      "embedding_storage_aliases_lm_head": true,
+      "embedding_lm_head_first8192_max_abs": 0.0,
+      "tied_name_groups": [
+        [
+          "model.embed_tokens.weight",
+          "lm_head.weight"
+        ]
+      ],
+      "tied_weights_keys": "['lm_head.weight']",
+      "loading_info": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "tie_weights_source_sha256": "eed4d00acb70dd900d7c2cda0b92d96321dad8cdd942749a5c5703c18e51a41a",
+      "tie_weights_source": "    def tie_weights(self):\n        \"\"\"\n        Recursively (for all submodels) tie all the weights of the model.\n        \"\"\"\n        # Note that `self` is included in `self.modules` so we also apply to current PreTrainedModel with this call\n        for module in self.modules():\n            # If it's a PreTrainedModel, may need to tie the embeddings and/or encoder/decoder weights\n            if isinstance(module, PreTrainedModel):\n                module.tie_embeddings_and_encoder_decoder()\n            # Additionally, if it has a custom `_tie_weights`, honor it\n            if hasattr(module, \"_tie_weights\"):\n                module._tie_weights()\n"
+    },
+    "openrlhf-community": {
+      "environment": "openrlhf-community",
+      "probe_scope": "fresh independent CPU metadata reload using same env/path/options as that framework reference, not an original native alias callback capture",
+      "torch": "2.9.0+cpu",
+      "transformers": "4.57.6",
+      "model_class": "transformers.models.qwen3.modeling_qwen3.Qwen3ForCausalLM",
+      "config_sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+      "checkpoint_config_tie_word_embeddings": true,
+      "actual_config_tie_word_embeddings": true,
+      "named_parameters_default_deduplicated_numel": 596049920,
+      "named_parameters_remove_duplicate_false_numel": 751632384,
+      "state_dict_tensor_numel": 751632384,
+      "unique_storage_bytes": 2384199680,
+      "input_embedding": {
+        "shape": [
+          151936,
+          1024
+        ],
+        "numel": 155582464,
+        "dtype": "torch.float32",
+        "requires_grad": true,
+        "python_object_id": 281470525559888,
+        "data_ptr": 281469186994240,
+        "storage_ptr": 281469186994240,
+        "storage_nbytes": 622329856
+      },
+      "output_embedding": {
+        "shape": [
+          151936,
+          1024
+        ],
+        "numel": 155582464,
+        "dtype": "torch.float32",
+        "requires_grad": true,
+        "python_object_id": 281470525559888,
+        "data_ptr": 281469186994240,
+        "storage_ptr": 281469186994240,
+        "storage_nbytes": 622329856
+      },
+      "embedding_is_lm_head": true,
+      "embedding_storage_aliases_lm_head": true,
+      "embedding_lm_head_first8192_max_abs": 0.0,
+      "tied_name_groups": [
+        [
+          "model.embed_tokens.weight",
+          "lm_head.weight"
+        ]
+      ],
+      "tied_weights_keys": "['lm_head.weight']",
+      "loading_info": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "tie_weights_source_sha256": "eed4d00acb70dd900d7c2cda0b92d96321dad8cdd942749a5c5703c18e51a41a",
+      "tie_weights_source": "    def tie_weights(self):\n        \"\"\"\n        Recursively (for all submodels) tie all the weights of the model.\n        \"\"\"\n        # Note that `self` is included in `self.modules` so we also apply to current PreTrainedModel with this call\n        for module in self.modules():\n            # If it's a PreTrainedModel, may need to tie the embeddings and/or encoder/decoder weights\n            if isinstance(module, PreTrainedModel):\n                module.tie_embeddings_and_encoder_decoder()\n            # Additionally, if it has a custom `_tie_weights`, honor it\n            if hasattr(module, \"_tie_weights\"):\n                module._tie_weights()\n"
+    },
+    "areal": {
+      "environment": "areal",
+      "probe_scope": "fresh independent CPU metadata reload using same env/path/options as that framework reference, not an original native alias callback capture",
+      "torch": "2.9.0+cpu",
+      "transformers": "5.3.0",
+      "model_class": "transformers.models.qwen3.modeling_qwen3.Qwen3ForCausalLM",
+      "config_sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+      "checkpoint_config_tie_word_embeddings": true,
+      "actual_config_tie_word_embeddings": true,
+      "named_parameters_default_deduplicated_numel": 751632384,
+      "named_parameters_remove_duplicate_false_numel": 751632384,
+      "state_dict_tensor_numel": 751632384,
+      "unique_storage_bytes": 3006529536,
+      "input_embedding": {
+        "shape": [
+          151936,
+          1024
+        ],
+        "numel": 155582464,
+        "dtype": "torch.float32",
+        "requires_grad": true,
+        "python_object_id": 281471050268448,
+        "data_ptr": 281467455197248,
+        "storage_ptr": 281467455197248,
+        "storage_nbytes": 622329856
+      },
+      "output_embedding": {
+        "shape": [
+          151936,
+          1024
+        ],
+        "numel": 155582464,
+        "dtype": "torch.float32",
+        "requires_grad": true,
+        "python_object_id": 281471084957120,
+        "data_ptr": 281470193627200,
+        "storage_ptr": 281470193627200,
+        "storage_nbytes": 622329856
+      },
+      "embedding_is_lm_head": false,
+      "embedding_storage_aliases_lm_head": false,
+      "embedding_lm_head_first8192_max_abs": 0.0,
+      "embedding_lm_head_full_torch_equal": true,
+      "embedding_lm_head_values_compared": 155582464,
+      "embedding_values_sha256": "66490b62288569e367e064ede4ad922015d5bfd923872b1bbb03cf2a92b4f520",
+      "lm_head_values_sha256": "66490b62288569e367e064ede4ad922015d5bfd923872b1bbb03cf2a92b4f520",
+      "tied_name_groups": [],
+      "tied_weights_keys": "{'lm_head.weight': 'model.embed_tokens.weight'}",
+      "loading_info": {
+        "missing_keys": "set()",
+        "unexpected_keys": "set()",
+        "mismatched_keys": "set()",
+        "error_msgs": []
+      },
+      "tie_weights_source_sha256": "35e507a904d543b4a898a53681350012002a1278e672cb9c3bfe7f3710d7ec56",
+      "tie_weights_source": "    def tie_weights(self, missing_keys: set[str] | None = None, recompute_mapping: bool = True):\n        \"\"\"\n        Tie the model weights. If `recompute_mapping=False` (default when called internally), it will rely on the\n        `model.all_tied_weights_keys` attribute, containing the `{target: source}` mapping for the tied params.\n        If `recompute_mapping=True`, it will re-check all internal submodels and their config to determine the params\n        that need to be tied. This is the default when `model.tie_weights()` is called on its own, outside of\n        `__init__`, and `from_pretrained`, in case the config values were changed somewhere.\n\n        Note that during `from_pretrained`, tying is *symmetric*: if the mapping says \"tie target -> source\" but\n        `source` is missing in the checkpoint while `target` exists, we *swap* source and target so we can still\n        tie everything to the parameter that actually exists.\n        \"\"\"\n        # In this case, the keys stored in `all_tied_weights_keys` are already correct\n        if not recompute_mapping:\n            tied_keys = self.all_tied_weights_keys\n        else:\n            tied_keys = self.get_expanded_tied_weights_keys(all_submodels=True)\n\n        tied_keys = list(tied_keys.items())\n        for i, (target_param_name, source_param_name) in enumerate(tied_keys):\n            # This is `from_pretrained` -> let's check symmetrically in case the source key is not present\n            if missing_keys is not None:\n                remove_from_missing = True\n                source_is_there = source_param_name not in missing_keys\n                target_is_there = target_param_name not in missing_keys\n                # Both are already present -> it means the config is wrong and do not reflect the actual\n                # checkpoint -> let's raise a warning and NOT tie them\n                if source_is_there and target_is_there:\n                    logger.warning(\n                        f\"The tied weights mapping and config for this model specifies to tie {source_param_name} to \"\n                        f\"{target_param_name}, but both are present in the checkpoints, so we will NOT tie them. \"\n                        \"You should update the config with `tie_word_embeddings=False` to silence this warning\"\n                    )\n                    # Remove from internal attribute to correctly reflect actual tied weights\n                    self.all_tied_weights_keys.pop(target_param_name)\n                    # Skip to next iteration\n                    continue\n                # We're missing the source but we have the target -> we swap them, tying the parameter that exists\n                elif not source_is_there and target_is_there:\n                    target_param_name, source_param_name = source_param_name, target_param_name\n                # Both are missing -> check other keys in case more than 2 keys are tied to the same weight\n                elif not source_is_there and not target_is_there:\n                    for target_backup, source_backup in tied_keys[i + 1 :]:\n                        # In case of more than 2 keys tied to the same weight, they are guaranteed to all have\n                        # the same source thanks to `get_expanded_tied_weights_keys` so this check is enough\n                        if source_backup == source_param_name:\n                            target_backup_is_there = target_backup not in missing_keys\n                            # If the target is present, we found the correct weight to tie into (we know the source is missing)\n                            # Note here that we do not tie the missing source right now as well, as it will be done anyway when\n                            # the pair (target_backup, source_backup) becomes the main pair (target_param_name, source_param_name)\n                            if target_backup_is_there:\n                                source_param_name = target_backup\n                                break\n                    # If we did not break from the loop, it was impossible to find a source key -> let's raise\n                    else:\n                        # TODO Cyril: here ideally we want to raise instead of warning, but will break our CI as we have\n                        # tests loading model from empty dicts to perform init checks - since we don't raise, add a flag\n                        # to NOT remove from missing keys as it's actually still missing\n                        remove_from_missing = False\n                        logger.warning(\n                            f\"This checkpoint seem corrupted. The tied weights mapping for this model specifies to tie \"\n                            f\"{source_param_name} to {target_param_name}, but both are absent from the checkpoint, \"\n                            \"and we could not find another related tied weight for those keys\"\n                        )\n\n            # Perform the actual tying\n            source_param = self.get_parameter_or_buffer(source_param_name)\n            if \".\" in target_param_name:\n                parent_name, name = target_param_name.rsplit(\".\", 1)\n                parent = self.get_submodule(parent_name)\n            else:\n                name = target_param_name\n                parent = self\n            # Tie the weights\n            setattr(parent, name, source_param)\n            self._adjust_bias(parent, source_param)\n            # Remove from missing if necessary\n            if missing_keys is not None and remove_from_missing:\n                missing_keys.discard(target_param_name)\n"
+    }
+  },
+  "source_evidence": [
+    {
+      "file": "probe_parameterization.py",
+      "sha256": "c725113ac8dfea6a7a4af53d9d6f08ca44c88fe60047b3edf21d1d9f175dc08e"
+    },
+    {
+      "file": "probe_parameterization_v2.py",
+      "sha256": "434759cfb568017093f0efcd4701b2b350e1ee2d920a7e34e81ae7e2a65f826a"
+    },
+    {
+      "file": "probe_parameterization_v3.py",
+      "sha256": "a1bf6f58f745c4f2490ece527abc9d844968303dabc79562bf57a38d4862db8f"
+    },
+    {
+      "file": "parameterization-response01.json",
+      "sha256": "df680d0ea1f72c2cda6fe8c732004d46214870b6051661a2db7283d7a14f3224"
+    },
+    {
+      "file": "parameterization-response02.json",
+      "sha256": "7e1bef72e19828f8cd9a7e7f1736fe0f4c1123c7126b9dad1d888cae74ce8939"
+    },
+    {
+      "file": "parameterization-response03.json",
+      "sha256": "c9ecab33405edb108542a1ad60dde45698a37038ce9af7671ebd22826780a49c"
+    }
+  ],
+  "counting_rules": {
+    "default_named_parameters": "sum(numel) with PyTorch default remove_duplicate=True; tied identical Parameter object counted once",
+    "non_deduplicated_named_parameters": "sum(numel) with remove_duplicate=False; includes both aliases as names",
+    "state_dict": "sum(numel) over tensor values; aliases appear under both keys",
+    "storage": "sum unique (storage pointer, storage nbytes) within each isolated probe process; pointers have no meaning across processes"
+  },
+  "limitations": [
+    "Original native embedding/lm_head pointer alias was not captured; fresh CPU reload alias and original native optimizer counts are separate observations, not substituted for each other.",
+    "Each original native/CPU comparison remains scoped to its own implementation, fixed trajectory, actual capture and sampled initial-value checks.",
+    "Do not claim a common initial training state or rank these frameworks against each other from these runs."
+  ]
+}

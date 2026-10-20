@@ -1,0 +1,241 @@
+{
+  "scope": "independent read of captured CPU tensor bytes; not an independent model reference or precision comparison",
+  "reader_torch": "2.9.0+cpu",
+  "parameter_tensor_count": 16,
+  "gradient_tensor_count": 16,
+  "sampled_coordinates": 135680,
+  "capture_dtypes": [
+    "torch.float32"
+  ],
+  "all_finite": true,
+  "recomputed_gradient_l2": 0.913871600507864,
+  "recomputed_update_l2": 0.03662982347649616,
+  "observer_gradient_l2": 0.9138716005078639,
+  "observer_update_l2": 0.03662982347649616,
+  "observer_scalar_exact_match": false,
+  "observer_scalar_match_rtol_1e_12": true,
+  "native_reduced_losses": [
+    {
+      "keys": [
+        "loss",
+        "pg_loss",
+        "entropy_loss",
+        "pg_clipfrac",
+        "ppo_kl",
+        "train_rollout_logprob_abs_diff"
+      ],
+      "values": {
+        "dtype": "torch.float32",
+        "shape": [
+          7
+        ],
+        "values": [
+          1.0,
+          0.12143490463495255,
+          0.12143490463495255,
+          3.8297581672668457,
+          0.0,
+          0.0,
+          0.03707800805568695
+        ],
+        "finite": true
+      }
+    },
+    {
+      "keys": [
+        "loss",
+        "pg_loss",
+        "entropy_loss",
+        "pg_clipfrac",
+        "ppo_kl",
+        "train_rollout_logprob_abs_diff"
+      ],
+      "values": {
+        "dtype": "torch.float32",
+        "shape": [
+          7
+        ],
+        "values": [
+          1.0,
+          1.0781166553497314,
+          1.0781166553497314,
+          3.6608381271362305,
+          0.0,
+          0.0,
+          0.0195002518594265
+        ],
+        "finite": true
+      }
+    },
+    {
+      "keys": [
+        "loss",
+        "pg_loss",
+        "entropy_loss",
+        "pg_clipfrac",
+        "ppo_kl",
+        "train_rollout_logprob_abs_diff"
+      ],
+      "values": {
+        "dtype": "torch.float32",
+        "shape": [
+          7
+        ],
+        "values": [
+          1.0,
+          -1.3425532579421997,
+          -1.3425532579421997,
+          2.9274206161499023,
+          0.0,
+          0.0,
+          0.05104239284992218
+        ],
+        "finite": true
+      }
+    },
+    {
+      "keys": [
+        "loss",
+        "pg_loss",
+        "entropy_loss",
+        "pg_clipfrac",
+        "ppo_kl",
+        "train_rollout_logprob_abs_diff"
+      ],
+      "values": {
+        "dtype": "torch.float32",
+        "shape": [
+          7
+        ],
+        "values": [
+          1.0,
+          0.1430017352104187,
+          0.1430017352104187,
+          3.867295503616333,
+          0.0,
+          0.0,
+          0.03821898624300957
+        ],
+        "finite": true
+      }
+    },
+    {
+      "keys": [
+        "loss",
+        "pg_loss",
+        "entropy_loss",
+        "pg_clipfrac",
+        "ppo_kl",
+        "train_rollout_logprob_abs_diff"
+      ],
+      "values": {
+        "dtype": "torch.float32",
+        "shape": [
+          7
+        ],
+        "values": [
+          1.0,
+          0.45200246572494507,
+          0.45200246572494507,
+          3.888463020324707,
+          0.0,
+          0.0,
+          0.03371644765138626
+        ],
+        "finite": true
+      }
+    },
+    {
+      "keys": [
+        "loss",
+        "pg_loss",
+        "entropy_loss",
+        "pg_clipfrac",
+        "ppo_kl",
+        "train_rollout_logprob_abs_diff"
+      ],
+      "values": {
+        "dtype": "torch.float32",
+        "shape": [
+          7
+        ],
+        "values": [
+          1.0,
+          -0.15265215933322906,
+          -0.15265215933322906,
+          3.8058440685272217,
+          0.0,
+          0.0,
+          0.06656740605831146
+        ],
+        "finite": true
+      }
+    },
+    {
+      "keys": [
+        "loss",
+        "pg_loss",
+        "entropy_loss",
+        "pg_clipfrac",
+        "ppo_kl",
+        "train_rollout_logprob_abs_diff"
+      ],
+      "values": {
+        "dtype": "torch.float32",
+        "shape": [
+          7
+        ],
+        "values": [
+          1.0,
+          -1.3174846172332764,
+          -1.3174846172332764,
+          2.9711294174194336,
+          0.0,
+          0.0,
+          0.03067541867494583
+        ],
+        "finite": true
+      }
+    },
+    {
+      "keys": [
+        "loss",
+        "pg_loss",
+        "entropy_loss",
+        "pg_clipfrac",
+        "ppo_kl",
+        "train_rollout_logprob_abs_diff"
+      ],
+      "values": {
+        "dtype": "torch.float32",
+        "shape": [
+          7
+        ],
+        "values": [
+          1.0,
+          1.0181341171264648,
+          1.0181341171264648,
+          2.6630592346191406,
+          0.0,
+          0.0,
+          0.03339690342545509
+        ],
+        "finite": true
+      }
+    }
+  ],
+  "sources": [
+    {
+      "path": "attempts/slime-native-20261020T111547Z-435835/evidence/rank0-step0-after.pt",
+      "sha256": "ac85bf7b69e91377ed46e91d57ce54f59e606c8151fe3cc5c3aaad6177d905d5"
+    },
+    {
+      "path": "attempts/slime-native-20261020T111547Z-435835/evidence/rank0-step0-before.pt",
+      "sha256": "0c17920fbeaf1b829c04b092cc50346261ea58d7ed1fbbccd896565a267026c0"
+    },
+    {
+      "path": "attempts/slime-native-20261020T111547Z-435835/evidence/rank0-step0-native-losses.pt",
+      "sha256": "7c4f564dc8d5b1611310914abe799d61cb961a4a17812eae174326fd2e4ae858"
+    }
+  ]
+}

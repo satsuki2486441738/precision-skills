@@ -1,0 +1,4831 @@
+{
+  "canonical_cases": 16,
+  "historical_completed_retries": 3,
+  "comparisons": 64,
+  "thresholds": null,
+  "numerical_acceptance_not_claimed": true,
+  "same_framework_native_vs_its_independent_CPU_only": true,
+  "cases": [
+    {
+      "label": "canonical-factory-pretrained-bf16",
+      "framework": "factory",
+      "model": "pretrained",
+      "requested_precision": "bf16",
+      "native_entrypoint": "llamafactory.train.tuner.run_exp complete native SFT workflow",
+      "native_versions": {
+        "torch": "2.9.0+cpu",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.11.0",
+        "trl": "0.24.0",
+        "llamafactory": "0.9.5",
+        "peft": "0.18.1",
+        "datasets": "4.0.0"
+      },
+      "native_parameter_dtypes": [
+        "torch.bfloat16",
+        "torch.float32"
+      ],
+      "native_loss": 3.8874094486236572,
+      "reference_loss": 3.92087984085083,
+      "valid_targets": 7,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 311,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 11.501375367774672,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 11.595658282094673,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.822686793331583,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.0010864019432705425,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9974958977582616,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.04815793037414551,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 175858,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight",
+              "index": 7922
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 0.01150137590712433,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.011595658835212514,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0008226868378083776,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.08640200200453e-06,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9974958977305086,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 4.815799184143543e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 175858,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight",
+              "index": 7922
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 1063553,
+            "side_a_norm": {
+              "value": 4856.44547546523,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 4848.315421152143,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 135.33812311450785,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.1312322517867741,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.999612447215589,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.7912755012512207,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 155166,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 155166,
+              "coordinate": [
+                1,
+                3230
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 10,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198
+                    ],
+                    "target_token_id": 151667,
+                    "native_prediction_index": 10
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 11,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667
+                    ],
+                    "target_token_id": 271,
+                    "native_prediction_index": 11
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 12,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271
+                    ],
+                    "target_token_id": 151668,
+                    "native_prediction_index": 12
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 13,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668
+                    ],
+                    "target_token_id": 271,
+                    "native_prediction_index": 13
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 14,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271
+                    ],
+                    "target_token_id": 1151,
+                    "native_prediction_index": 14
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 15,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      1151
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 15
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 16,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      1151,
+                      151645
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 16
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 0.0006465639122521734,
+              "p99": 0.0023730553572848105,
+              "max": 0.002407110550050263,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14
+              }
+            },
+            "max_probability_error": {
+              "mean": 0.004826648142383006,
+              "p99": 0.01687633376814143,
+              "max": 0.01703642361221852,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14,
+                "token": 32
+              }
+            },
+            "tail_merged_js": {
+              "mean": 0.0001797297402817008,
+              "p99": 0.0008095770097853886,
+              "max": 0.0008415085144140874,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14
+              }
+            },
+            "top1_agreement": {
+              "count": 6,
+              "total": 7,
+              "fraction": 0.8571428571428571
+            },
+            "top100_overlap": {
+              "mean": 0.9628571428571429
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.9991548658169705,
+                "p1": 0.9955441375664223,
+                "min": 0.9953072058704442
+              },
+              "side_b_top100": {
+                "mean": 0.9991872778064051,
+                "p1": 0.9958138255097457,
+                "min": 0.9955960587386792
+              },
+              "side_a_union": {
+                "mean": 0.9991645854770311,
+                "p1": 0.9955877931426876,
+                "min": 0.9953523473046794
+              },
+              "side_b_union": {
+                "mean": 0.999197368171331,
+                "p1": 0.9958601336910721,
+                "min": 0.9956440380295319
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-factory-tiny-bf16",
+      "framework": "factory",
+      "model": "tiny",
+      "requested_precision": "bf16",
+      "native_entrypoint": "llamafactory.train.tuner.run_exp complete native SFT workflow",
+      "native_versions": {
+        "torch": "2.9.0+cpu",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.11.0",
+        "trl": "0.24.0",
+        "llamafactory": "0.9.5",
+        "peft": "0.18.1",
+        "datasets": "4.0.0"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 5.359447479248047,
+      "reference_loss": 5.3591628074646,
+      "valid_targets": 2,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 0,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 19.714223708931293,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 19.684385246358794,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.10708952043389042,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.00017047285184369057,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999863709647755,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.010739445686340332,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 33023,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 255
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 0.0197142247414503,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.019684386254139794,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0001070950292673547,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.7048162120363525e-07,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999863694478348,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 1.0739080607891083e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 33023,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 255
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 513,
+            "side_a_norm": {
+              "value": 7.375183851444754,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.373213670282659,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.029673268818852547,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.0013101068230153142,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999919396790155,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.0036779046058654785,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 2,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 2,
+              "coordinate": [
+                0,
+                2
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 22,
+                    "history": [
+                      2,
+                      6,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      12,
+                      1,
+                      1,
+                      3,
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5
+                    ],
+                    "target_token_id": 7,
+                    "native_prediction_index": 22
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 23,
+                    "history": [
+                      2,
+                      6,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      12,
+                      1,
+                      1,
+                      3,
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5,
+                      7
+                    ],
+                    "target_token_id": 3,
+                    "native_prediction_index": 23
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 6.323127587626941e-06,
+              "p99": 7.177122485768632e-06,
+              "max": 7.194550953077646e-06,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 23
+              }
+            },
+            "max_probability_error": {
+              "mean": 2.1274626847565554e-05,
+              "p99": 2.3172666405941637e-05,
+              "max": 2.3211401907132986e-05,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 22,
+                "token": 2
+              }
+            },
+            "tail_merged_js": {
+              "mean": 1.0309696349363767e-07,
+              "p99": 1.2772487074451366e-07,
+              "max": 1.2822748109657234e-07,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 23
+              }
+            },
+            "top1_agreement": {
+              "count": 2,
+              "total": 2,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.47757821365301006,
+                "p1": 0.4765067867626582,
+                "min": 0.476484920907753
+              },
+              "side_b_top100": {
+                "mean": 0.4775164098714554,
+                "p1": 0.4764141743281245,
+                "min": 0.47639167972519936
+              },
+              "side_a_union": {
+                "mean": 0.47757821365301006,
+                "p1": 0.4765067867626582,
+                "min": 0.476484920907753
+              },
+              "side_b_union": {
+                "mean": 0.4775164098714554,
+                "p1": 0.4764141743281245,
+                "min": 0.47639167972519936
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-factory-tiny-fp32",
+      "framework": "factory",
+      "model": "tiny",
+      "requested_precision": "fp32",
+      "native_entrypoint": "llamafactory.train.tuner.run_exp complete native SFT workflow",
+      "native_versions": {
+        "torch": "2.9.0+cpu",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.11.0",
+        "trl": "0.24.0",
+        "llamafactory": "0.9.5",
+        "peft": "0.18.1",
+        "datasets": "4.0.0"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 5.3591628074646,
+      "reference_loss": 5.3591628074646,
+      "valid_targets": 2,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 0,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 19.6843848688372,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 19.684385246358794,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 1.0187771972424523e-05,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.6217633014283314e-08,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999998663,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 9.5367431640625e-07,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 32962,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 194
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 0.019684386083725525,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.019684386254139794,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 5.561294018185661e-08,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 8.852870452497976e-11,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999960091,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 3.725290298461914e-09,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 33223,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 455
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 513,
+            "side_a_norm": {
+              "value": 7.373213617698318,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.373213670282659,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 2.1585267351828844e-06,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 9.530128347798999e-08,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999999571,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 5.364418029785156e-07,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 4,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 4,
+              "coordinate": [
+                0,
+                4
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 22,
+                    "history": [
+                      2,
+                      6,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      12,
+                      1,
+                      1,
+                      3,
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5
+                    ],
+                    "target_token_id": 7,
+                    "native_prediction_index": 22
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 23,
+                    "history": [
+                      2,
+                      6,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      12,
+                      1,
+                      1,
+                      3,
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5,
+                      7
+                    ],
+                    "target_token_id": 3,
+                    "native_prediction_index": 23
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 4.759322411587718e-10,
+              "p99": 4.977062279744714e-10,
+              "max": 4.981505950523429e-10,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 22
+              }
+            },
+            "max_probability_error": {
+              "mean": 1.385210267670911e-09,
+              "p99": 1.6053946160290989e-09,
+              "max": 1.6098881741588578e-09,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 22,
+                "token": 118
+              }
+            },
+            "tail_merged_js": {
+              "mean": 6.086158764542154e-16,
+              "p99": 6.637453539489153e-16,
+              "max": 6.648704453263581e-16,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 22
+              }
+            },
+            "top1_agreement": {
+              "count": 2,
+              "total": 2,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.47751641052444244,
+                "p1": 0.47641416919117957,
+                "min": 0.47639167447009256
+              },
+              "side_b_top100": {
+                "mean": 0.4775164098714554,
+                "p1": 0.4764141743281245,
+                "min": 0.47639167972519936
+              },
+              "side_a_union": {
+                "mean": 0.47751641052444244,
+                "p1": 0.47641416919117957,
+                "min": 0.47639167447009256
+              },
+              "side_b_union": {
+                "mean": 0.4775164098714554,
+                "p1": 0.4764141743281245,
+                "min": 0.47639167972519936
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-trl-pretrained-bf16",
+      "framework": "trl",
+      "model": "pretrained",
+      "requested_precision": "bf16",
+      "native_entrypoint": "trl.SFTTrainer.train with native dataset preparation",
+      "native_versions": {
+        "torch": "2.9.0",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.14.0",
+        "trl": "0.29.1",
+        "ms-swift": "4.6.0",
+        "peft": "0.20.0",
+        "datasets": "4.8.4"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 6.320470809936523,
+      "reference_loss": 6.3126420974731445,
+      "valid_targets": 17,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 311,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 7.429370834758146,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.449405276592647,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.4674616120715429,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.0006173080786945559,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9980294392714316,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.042677879333496094,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 175858,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight",
+              "index": 7922
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 0.0074293711808987055,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.00744940563460128,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0004674616422457022,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 6.173081185411483e-07,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9980294392073771,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 4.2677915189415216e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 175858,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight",
+              "index": 7922
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 2582913,
+            "side_a_norm": {
+              "value": 6800.110409943969,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 6776.493563229966,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 147.75534737684896,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.09193657451020544,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9997691680806318,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.7808113098144531,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 2431174,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 2431174,
+              "coordinate": [
+                16,
+                198
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 0,
+                    "history": [
+                      151644
+                    ],
+                    "target_token_id": 872,
+                    "native_prediction_index": 0
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 1,
+                    "history": [
+                      151644,
+                      872
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 1
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 2,
+                    "history": [
+                      151644,
+                      872,
+                      198
+                    ],
+                    "target_token_id": 675,
+                    "native_prediction_index": 2
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 3,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675
+                    ],
+                    "target_token_id": 264,
+                    "native_prediction_index": 3
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 4,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264
+                    ],
+                    "target_token_id": 1894,
+                    "native_prediction_index": 4
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 5,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 5
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 6,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 6
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 7,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198
+                    ],
+                    "target_token_id": 151644,
+                    "native_prediction_index": 7
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 8,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644
+                    ],
+                    "target_token_id": 77091,
+                    "native_prediction_index": 8
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 9,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 9
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 10,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198
+                    ],
+                    "target_token_id": 151667,
+                    "native_prediction_index": 10
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 11,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667
+                    ],
+                    "target_token_id": 271,
+                    "native_prediction_index": 11
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 12,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271
+                    ],
+                    "target_token_id": 151668,
+                    "native_prediction_index": 12
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 13,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668
+                    ],
+                    "target_token_id": 271,
+                    "native_prediction_index": 13
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 14,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271
+                    ],
+                    "target_token_id": 1151,
+                    "native_prediction_index": 14
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 15,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      1151
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 15
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 16,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      1151,
+                      151645
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 16
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 0.000865069404218164,
+              "p99": 0.0047642229634116216,
+              "max": 0.005250818679892658,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 12
+              }
+            },
+            "max_probability_error": {
+              "mean": 0.007041785783119739,
+              "p99": 0.036516176138985966,
+              "max": 0.03920725019369775,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 12,
+                "token": 151668
+              }
+            },
+            "tail_merged_js": {
+              "mean": 0.0002933760253939128,
+              "p99": 0.002061256471867039,
+              "max": 0.002298477673086508,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 12
+              }
+            },
+            "top1_agreement": {
+              "count": 15,
+              "total": 17,
+              "fraction": 0.8823529411764706
+            },
+            "top100_overlap": {
+              "mean": 0.9688235294117646
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.8872239553484149,
+                "p1": 0.15082057975097457,
+                "min": 0.06160941310305851
+              },
+              "side_b_top100": {
+                "mean": 0.8867141407453021,
+                "p1": 0.1490833713860832,
+                "min": 0.05930396132898873
+              },
+              "side_a_union": {
+                "mean": 0.8876224639587298,
+                "p1": 0.15192608094864393,
+                "min": 0.0626659976564845
+              },
+              "side_b_union": {
+                "mean": 0.8871136102210286,
+                "p1": 0.15014616563899227,
+                "min": 0.06031719227315661
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-trl-pretrained-fp32",
+      "framework": "trl",
+      "model": "pretrained",
+      "requested_precision": "fp32",
+      "native_entrypoint": "trl.SFTTrainer.train with native dataset preparation",
+      "native_versions": {
+        "torch": "2.9.0",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.14.0",
+        "trl": "0.29.1",
+        "ms-swift": "4.6.0",
+        "peft": "0.20.0",
+        "datasets": "4.8.4"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 6.312658786773682,
+      "reference_loss": 6.3126420974731445,
+      "valid_targets": 17,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 311,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 7.449352055479174,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.449405276592647,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.00021203418417700952,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 2.8000248891420233e-07,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999996204406,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 1.8753111362457275e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 270834,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight",
+              "index": 498
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 0.007449352411841579,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.00744940563460128,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 2.1203589284265504e-07,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 2.800047452986402e-10,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999996204362,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 1.8757418729364872e-08,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 270834,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight",
+              "index": 498
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 2582913,
+            "side_a_norm": {
+              "value": 6776.495410465728,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 6776.493563229966,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.032530047420246226,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 2.0240899443349562e-05,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999885154,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.000152587890625,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 1761706,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 1761706,
+              "coordinate": [
+                11,
+                90410
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 0,
+                    "history": [
+                      151644
+                    ],
+                    "target_token_id": 872,
+                    "native_prediction_index": 0
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 1,
+                    "history": [
+                      151644,
+                      872
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 1
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 2,
+                    "history": [
+                      151644,
+                      872,
+                      198
+                    ],
+                    "target_token_id": 675,
+                    "native_prediction_index": 2
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 3,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675
+                    ],
+                    "target_token_id": 264,
+                    "native_prediction_index": 3
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 4,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264
+                    ],
+                    "target_token_id": 1894,
+                    "native_prediction_index": 4
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 5,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 5
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 6,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 6
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 7,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198
+                    ],
+                    "target_token_id": 151644,
+                    "native_prediction_index": 7
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 8,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644
+                    ],
+                    "target_token_id": 77091,
+                    "native_prediction_index": 8
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 9,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 9
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 10,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198
+                    ],
+                    "target_token_id": 151667,
+                    "native_prediction_index": 10
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 11,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667
+                    ],
+                    "target_token_id": 271,
+                    "native_prediction_index": 11
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 12,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271
+                    ],
+                    "target_token_id": 151668,
+                    "native_prediction_index": 12
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 13,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668
+                    ],
+                    "target_token_id": 271,
+                    "native_prediction_index": 13
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 14,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271
+                    ],
+                    "target_token_id": 1151,
+                    "native_prediction_index": 14
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 15,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      1151
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 15
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 16,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      1151,
+                      151645
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 16
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 2.7312241288916173e-07,
+              "p99": 1.2787628149172968e-06,
+              "max": 1.2903904851548675e-06,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14
+              }
+            },
+            "max_probability_error": {
+              "mean": 2.3002091205398938e-06,
+              "p99": 1.1728020214716306e-05,
+              "max": 1.1776606034963333e-05,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 5,
+                "token": 429
+              }
+            },
+            "tail_merged_js": {
+              "mean": 2.48254998712762e-11,
+              "p99": 1.6579379899108253e-10,
+              "max": 1.8147812272446532e-10,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 2
+              }
+            },
+            "top1_agreement": {
+              "count": 17,
+              "total": 17,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.8867141593985295,
+                "p1": 0.14908215363170665,
+                "min": 0.059302586853994275
+              },
+              "side_b_top100": {
+                "mean": 0.8867141407453021,
+                "p1": 0.1490833713860832,
+                "min": 0.05930396132898873
+              },
+              "side_a_union": {
+                "mean": 0.8867141593985295,
+                "p1": 0.14908215363170665,
+                "min": 0.059302586853994275
+              },
+              "side_b_union": {
+                "mean": 0.8867141407453021,
+                "p1": 0.1490833713860832,
+                "min": 0.05930396132898873
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-trl-tiny-bf16",
+      "framework": "trl",
+      "model": "tiny",
+      "requested_precision": "bf16",
+      "native_entrypoint": "trl.SFTTrainer.train with native dataset preparation",
+      "native_versions": {
+        "torch": "2.9.0",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.14.0",
+        "trl": "0.29.1",
+        "ms-swift": "4.6.0",
+        "peft": "0.20.0",
+        "datasets": "4.8.4"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 5.049323558807373,
+      "reference_loss": 5.049330234527588,
+      "valid_targets": 9,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 0,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 7.891010346598672,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.896134419927834,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.041605108879750115,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 6.623002449970532e-05,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999863202488566,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.0027595236897468567,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 33132,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 364
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 0.007891010233110299,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.007896134164185607,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 4.1615979259236316e-05,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 6.624732875678039e-08,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999863129771143,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 2.7604401111602783e-06,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 33132,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 364
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 2305,
+            "side_a_norm": {
+              "value": 11.471832002697411,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 11.468242342467908,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.055680454955526315,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.0011597578219885011,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999882662422211,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.004348360002040863,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 379,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 379,
+              "coordinate": [
+                1,
+                123
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 0,
+                    "history": [
+                      2
+                    ],
+                    "target_token_id": 4,
+                    "native_prediction_index": 0
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 1,
+                    "history": [
+                      2,
+                      4
+                    ],
+                    "target_token_id": 11,
+                    "native_prediction_index": 1
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 2,
+                    "history": [
+                      2,
+                      4,
+                      11
+                    ],
+                    "target_token_id": 12,
+                    "native_prediction_index": 2
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 3,
+                    "history": [
+                      2,
+                      4,
+                      11,
+                      12
+                    ],
+                    "target_token_id": 13,
+                    "native_prediction_index": 3
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 4,
+                    "history": [
+                      2,
+                      4,
+                      11,
+                      12,
+                      13
+                    ],
+                    "target_token_id": 3,
+                    "native_prediction_index": 4
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 5,
+                    "history": [
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3
+                    ],
+                    "target_token_id": 2,
+                    "native_prediction_index": 5
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 6,
+                    "history": [
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2
+                    ],
+                    "target_token_id": 5,
+                    "native_prediction_index": 6
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 7,
+                    "history": [
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5
+                    ],
+                    "target_token_id": 7,
+                    "native_prediction_index": 7
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 8,
+                    "history": [
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5,
+                      7
+                    ],
+                    "target_token_id": 3,
+                    "native_prediction_index": 8
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 5.76823901169622e-06,
+              "p99": 6.474092508067187e-06,
+              "max": 6.48316458376264e-06,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 2
+              }
+            },
+            "max_probability_error": {
+              "mean": 1.581388893203045e-05,
+              "p99": 1.81242723015956e-05,
+              "max": 1.8140906405642206e-05,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 5,
+                "token": 42
+              }
+            },
+            "tail_merged_js": {
+              "mean": 8.683263329585917e-08,
+              "p99": 1.0838967871997717e-07,
+              "max": 1.0878046813776995e-07,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 2
+              }
+            },
+            "top1_agreement": {
+              "count": 9,
+              "total": 9,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 0.9977777777777779
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.47403979322915224,
+                "p1": 0.47185435956537014,
+                "min": 0.4718361761814035
+              },
+              "side_b_top100": {
+                "mean": 0.47400512141603646,
+                "p1": 0.4717919869357191,
+                "min": 0.4717694592041395
+              },
+              "side_a_union": {
+                "mean": 0.47493876157534903,
+                "p1": 0.47187244758239205,
+                "min": 0.4718361761814035
+              },
+              "side_b_union": {
+                "mean": 0.47490378302187725,
+                "p1": 0.4718108325188762,
+                "min": 0.4717694592041395
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-trl-tiny-fp32",
+      "framework": "trl",
+      "model": "tiny",
+      "requested_precision": "fp32",
+      "native_entrypoint": "trl.SFTTrainer.train with native dataset preparation",
+      "native_versions": {
+        "torch": "2.9.0",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.14.0",
+        "trl": "0.29.1",
+        "ms-swift": "4.6.0",
+        "peft": "0.20.0",
+        "datasets": "4.8.4"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 5.049330711364746,
+      "reference_loss": 5.049330234527588,
+      "valid_targets": 9,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 0,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 7.89613389968274,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.896134419927834,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 4.056070279089429e-06,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 6.456746327309044e-09,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999998705,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 2.682209014892578e-07,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 33126,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 358
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 0.007896133727549225,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.007896134164185607,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 3.7482819056614184e-08,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 5.96678651079278e-11,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999887351,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 3.725290298461914e-09,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 1748,
+            "max_coordinate": {
+              "parameter": "lm_head.weight",
+              "index": 1748
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 2305,
+            "side_a_norm": {
+              "value": 11.468242239327328,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 11.468242342467908,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 4.586031296584102e-06,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 9.55215914156175e-08,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999999201,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 4.76837158203125e-07,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 2304,
+            "max_coordinate": {
+              "tensor": "loss",
+              "index": 0,
+              "coordinate": [
+                0
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "effective native trainer objective",
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 4.764272595084041e-10,
+              "p99": 5.24555690279791e-10,
+              "max": 5.246025748817963e-10,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 1
+              }
+            },
+            "max_probability_error": {
+              "mean": 1.4986832975437865e-09,
+              "p99": 2.0640748693914745e-09,
+              "max": 2.0959967502939825e-09,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 4,
+                "token": 204
+              }
+            },
+            "tail_merged_js": {
+              "mean": 6.297613560983849e-16,
+              "p99": 7.696416363173862e-16,
+              "max": 7.7352338691292e-16,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 1
+              }
+            },
+            "top1_agreement": {
+              "count": 9,
+              "total": 9,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.4740051190589159,
+                "p1": 0.47179198404650374,
+                "min": 0.47176945647545576
+              },
+              "side_b_top100": {
+                "mean": 0.47400512141603646,
+                "p1": 0.4717919869357191,
+                "min": 0.4717694592041395
+              },
+              "side_a_union": {
+                "mean": 0.4740051190589159,
+                "p1": 0.47179198404650374,
+                "min": 0.47176945647545576
+              },
+              "side_b_union": {
+                "mean": 0.47400512141603646,
+                "p1": 0.4717919869357191,
+                "min": 0.4717694592041395
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-factory-pretrained-fp32",
+      "framework": "factory",
+      "model": "pretrained",
+      "requested_precision": "fp32",
+      "native_entrypoint": "llamafactory.train.tuner.run_exp complete native SFT workflow",
+      "native_versions": {
+        "torch": "2.9.0+cpu",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.11.0",
+        "trl": "0.24.0",
+        "llamafactory": "0.9.5",
+        "peft": "0.18.1",
+        "datasets": "4.0.0"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 3.9208922386169434,
+      "reference_loss": 3.92087984085083,
+      "valid_targets": 7,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 311,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 11.596224118495696,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 11.596206818847957,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.00012911431830613405,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.705023679106268e-07,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999391275,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 1.3589859008789062e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 175858,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight",
+              "index": 7922
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 0.011596224673794333,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.011596207361260751,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 1.2912042073554168e-07,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.7051042649528002e-10,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999391237,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 1.3620592653751373e-08,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 175858,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight",
+              "index": 7922
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 1063553,
+            "side_a_norm": {
+              "value": 4848.318999775984,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 4848.315421152143,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.02599162213436258,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 2.520309149992725e-05,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999859006,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.000164031982421875,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 242346,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 242346,
+              "coordinate": [
+                1,
+                90410
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 10,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198
+                    ],
+                    "target_token_id": 151667,
+                    "native_prediction_index": 10
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 11,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667
+                    ],
+                    "target_token_id": 271,
+                    "native_prediction_index": 11
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 12,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271
+                    ],
+                    "target_token_id": 151668,
+                    "native_prediction_index": 12
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 13,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668
+                    ],
+                    "target_token_id": 271,
+                    "native_prediction_index": 13
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 14,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271
+                    ],
+                    "target_token_id": 1151,
+                    "native_prediction_index": 14
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 15,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      1151
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 15
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 16,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      1151,
+                      151645
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 16
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 3.53197442841086e-07,
+              "p99": 1.6498893127233293e-06,
+              "max": 1.710994257255308e-06,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14
+              }
+            },
+            "max_probability_error": {
+              "mean": 2.8022916974837893e-06,
+              "p99": 1.3484610721652408e-05,
+              "max": 1.4024292253056458e-05,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14,
+                "token": 3966
+              }
+            },
+            "tail_merged_js": {
+              "mean": 2.3053042203612316e-11,
+              "p99": 1.1735807267466295e-10,
+              "max": 1.2280091250545783e-10,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14
+              }
+            },
+            "top1_agreement": {
+              "count": 7,
+              "total": 7,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.9991873007305436,
+                "p1": 0.9958139682360109,
+                "min": 0.9955962090702846
+              },
+              "side_b_top100": {
+                "mean": 0.9991872778064051,
+                "p1": 0.9958138255097457,
+                "min": 0.9955960587386792
+              },
+              "side_a_union": {
+                "mean": 0.9991873007305436,
+                "p1": 0.9958139682360109,
+                "min": 0.9955962090702846
+              },
+              "side_b_union": {
+                "mean": 0.9991872778064051,
+                "p1": 0.9958138255097457,
+                "min": 0.9955960587386792
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-swift-pretrained-bf16",
+      "framework": "swift",
+      "model": "pretrained",
+      "requested_precision": "bf16",
+      "native_entrypoint": "swift.pipelines.train.sft.sft_main complete native SFT workflow",
+      "native_versions": {
+        "torch": "2.9.0",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.14.0",
+        "trl": "0.29.1",
+        "ms-swift": "4.6.0",
+        "peft": "0.20.0",
+        "datasets": "4.8.4"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 3.884791135787964,
+      "reference_loss": 3.9777562618255615,
+      "valid_targets": 3,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 311,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 17.590723232537382,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 17.457845855079363,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.9542458121914156,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.0012601326691100685,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.998546174028541,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.06092548370361328,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 113145,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.13.self_attn.q_proj.lora_B.default.weight",
+              "index": 6649
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 0.01759072406429802,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.017457846682348087,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0009542458569381656,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.2601327282005468e-06,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9985461740290769,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 6.092549301683903e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 113145,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.13.self_attn.q_proj.lora_B.default.weight",
+              "index": 6649
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 455809,
+            "side_a_norm": {
+              "value": 2706.7376818745524,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 2701.6194815645144,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 50.9859111791295,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.07551943584992664,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9998240450815672,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.5882492065429688,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 304153,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 304153,
+              "coordinate": [
+                2,
+                281
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 14,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271
+                    ],
+                    "target_token_id": 27869,
+                    "native_prediction_index": 14
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 15,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      27869
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 15
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 16,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      27869,
+                      151645
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 16
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 0.0014275552251885226,
+              "p99": 0.0039543196654185315,
+              "max": 0.004031637277961643,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14
+              }
+            },
+            "max_probability_error": {
+              "mean": 0.012531443727363126,
+              "p99": 0.03481647199666837,
+              "max": 0.03550067219243441,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14,
+                "token": 3966
+              }
+            },
+            "tail_merged_js": {
+              "mean": 0.0005243816230983608,
+              "p99": 0.001492163728152186,
+              "max": 0.0015218843486943857,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14
+              }
+            },
+            "top1_agreement": {
+              "count": 2,
+              "total": 3,
+              "fraction": 0.6666666666666666
+            },
+            "top100_overlap": {
+              "mean": 0.9700000000000001
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.9980842099189452,
+                "p1": 0.9949424396518154,
+                "min": 0.9948511819512313
+              },
+              "side_b_top100": {
+                "mean": 0.9983099578849478,
+                "p1": 0.9956710487292777,
+                "min": 0.9955960587386792
+              },
+              "side_a_union": {
+                "mean": 0.9981020656158076,
+                "p1": 0.9949894207110035,
+                "min": 0.9948990083162732
+              },
+              "side_b_union": {
+                "mean": 0.998328081853233,
+                "p1": 0.9957181929700974,
+                "min": 0.9956440380295319
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-swift-pretrained-fp32",
+      "framework": "swift",
+      "model": "pretrained",
+      "requested_precision": "fp32",
+      "native_entrypoint": "swift.pipelines.train.sft.sft_main complete native SFT workflow",
+      "native_versions": {
+        "torch": "2.9.0",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.14.0",
+        "trl": "0.29.1",
+        "ms-swift": "4.6.0",
+        "peft": "0.20.0",
+        "datasets": "4.8.4"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 3.9777753353118896,
+      "reference_loss": 3.9777562618255615,
+      "valid_targets": 3,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 311,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 17.45783918493474,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 17.457845855079363,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.00015708866580321012,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 2.0744399105188914e-07,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999595894,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 8.195638656616211e-06,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 270834,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight",
+              "index": 498
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 0.01745784001037731,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.017457846682348087,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 1.570929114739697e-07,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 2.0744959768736828e-10,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999595874,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 8.17817635834217e-09,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 270834,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight",
+              "index": 498
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 455809,
+            "side_a_norm": {
+              "value": 2701.615430787406,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 2701.6194815645144,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.01163453222279453,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.723286471739853e-05,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999918535,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.0001430511474609375,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 304070,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 304070,
+              "coordinate": [
+                2,
+                198
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 14,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271
+                    ],
+                    "target_token_id": 27869,
+                    "native_prediction_index": 14
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 15,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      27869
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 15
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 16,
+                    "history": [
+                      151644,
+                      872,
+                      198,
+                      675,
+                      264,
+                      1894,
+                      151645,
+                      198,
+                      151644,
+                      77091,
+                      198,
+                      151667,
+                      271,
+                      151668,
+                      271,
+                      27869,
+                      151645
+                    ],
+                    "target_token_id": 198,
+                    "native_prediction_index": 16
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 4.803964655017792e-07,
+              "p99": 1.30890558282245e-06,
+              "max": 1.333767228959775e-06,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14
+              }
+            },
+            "max_probability_error": {
+              "mean": 3.8943520958937645e-06,
+              "p99": 1.0638262815293453e-05,
+              "max": 1.0841210304868287e-05,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14,
+                "token": 3966
+              }
+            },
+            "tail_merged_js": {
+              "mean": 3.0244864458705287e-11,
+              "p99": 7.751350421272144e-11,
+              "max": 7.886132038097353e-11,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 14
+              }
+            },
+            "top1_agreement": {
+              "count": 3,
+              "total": 3,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.9983100012969349,
+                "p1": 0.9956711679603826,
+                "min": 0.9955961802614551
+              },
+              "side_b_top100": {
+                "mean": 0.9983099578849478,
+                "p1": 0.9956710487292777,
+                "min": 0.9955960587386792
+              },
+              "side_a_union": {
+                "mean": 0.9983100012969349,
+                "p1": 0.9956711679603826,
+                "min": 0.9955961802614551
+              },
+              "side_b_union": {
+                "mean": 0.9983099578849478,
+                "p1": 0.9956710487292777,
+                "min": 0.9955960587386792
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-swift-tiny-bf16",
+      "framework": "swift",
+      "model": "tiny",
+      "requested_precision": "bf16",
+      "native_entrypoint": "swift.pipelines.train.sft.sft_main complete native SFT workflow",
+      "native_versions": {
+        "torch": "2.9.0",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.14.0",
+        "trl": "0.29.1",
+        "ms-swift": "4.6.0",
+        "peft": "0.20.0",
+        "datasets": "4.8.4"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 5.61846923828125,
+      "reference_loss": 5.617864608764648,
+      "valid_targets": 2,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 0,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 19.361388720347573,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 19.357483988711245,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.10038464707879821,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.00015979954900824695,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999865766292456,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.00894629955291748,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 1392,
+            "max_coordinate": {
+              "parameter": "lm_head.weight",
+              "index": 1392
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 0.01936138837235788,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.019357485237129476,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.00010038950125270365,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.5980727623370888e-07,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.999986575313048,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 8.946284651756287e-06,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 1392,
+            "max_coordinate": {
+              "parameter": "lm_head.weight",
+              "index": 1392
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 513,
+            "side_a_norm": {
+              "value": 7.5259774048093195,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.523060692461963,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.026933919920927727,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.0011891616145955847,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.999993668762946,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.0037812888622283936,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 138,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 138,
+              "coordinate": [
+                0,
+                138
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 15,
+                    "history": [
+                      2,
+                      6,
+                      1,
+                      1,
+                      12,
+                      1,
+                      1,
+                      3,
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5
+                    ],
+                    "target_token_id": 10,
+                    "native_prediction_index": 15
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 16,
+                    "history": [
+                      2,
+                      6,
+                      1,
+                      1,
+                      12,
+                      1,
+                      1,
+                      3,
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5,
+                      10
+                    ],
+                    "target_token_id": 3,
+                    "native_prediction_index": 16
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 6.204772304823005e-06,
+              "p99": 6.4041522216587534e-06,
+              "max": 6.408221199553361e-06,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 15
+              }
+            },
+            "max_probability_error": {
+              "mean": 2.0633193783166533e-05,
+              "p99": 2.2236648178641394e-05,
+              "max": 2.2269371737732718e-05,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 15,
+                "token": 99
+              }
+            },
+            "tail_merged_js": {
+              "mean": 9.675458045661027e-08,
+              "p99": 1.0111917305579501e-07,
+              "max": 1.0120824637414572e-07,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 15
+              }
+            },
+            "top1_agreement": {
+              "count": 1,
+              "total": 2,
+              "fraction": 0.5
+            },
+            "top100_overlap": {
+              "mean": 0.995
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.47622044602521685,
+                "p1": 0.47527934074617323,
+                "min": 0.47526013451598864
+              },
+              "side_b_top100": {
+                "mean": 0.47614516495686793,
+                "p1": 0.4751942818802735,
+                "min": 0.47517487610320014
+              },
+              "side_a_union": {
+                "mean": 0.47821645615243047,
+                "p1": 0.4772014715068048,
+                "min": 0.4771807575344451
+              },
+              "side_b_union": {
+                "mean": 0.47814104953129,
+                "p1": 0.4771359657249508,
+                "min": 0.4771154538105357
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-swift-tiny-fp32",
+      "framework": "swift",
+      "model": "tiny",
+      "requested_precision": "fp32",
+      "native_entrypoint": "swift.pipelines.train.sft.sft_main complete native SFT workflow",
+      "native_versions": {
+        "torch": "2.9.0",
+        "torch-npu": "2.9.0.post6",
+        "transformers": "5.3.0",
+        "accelerate": "1.14.0",
+        "trl": "0.29.1",
+        "ms-swift": "4.6.0",
+        "peft": "0.20.0",
+        "datasets": "4.8.4"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 5.617864608764648,
+      "reference_loss": 5.617864608764648,
+      "valid_targets": 2,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 0,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 19.357485025903188,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 19.357483988711245,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 1.0302842780591702e-05,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.6400811057781297e-08,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999998601,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 8.940696716308594e-07,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 32967,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 199
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 0.019357486140847244,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.019357485237129476,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 5.5920805731499416e-08,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 8.901878719618226e-11,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999958283,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 3.725290298461914e-09,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 411,
+            "max_coordinate": {
+              "parameter": "lm_head.weight",
+              "index": 411
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 513,
+            "side_a_norm": {
+              "value": 7.523060674156413,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.523060692461963,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 2.0918104206645305e-06,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 9.235568623386705e-08,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999999613,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 4.0978193283081055e-07,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 293,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 293,
+              "coordinate": [
+                1,
+                37
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 15,
+                    "history": [
+                      2,
+                      6,
+                      1,
+                      1,
+                      12,
+                      1,
+                      1,
+                      3,
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5
+                    ],
+                    "target_token_id": 10,
+                    "native_prediction_index": 15
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 16,
+                    "history": [
+                      2,
+                      6,
+                      1,
+                      1,
+                      12,
+                      1,
+                      1,
+                      3,
+                      2,
+                      4,
+                      11,
+                      12,
+                      13,
+                      3,
+                      2,
+                      5,
+                      10
+                    ],
+                    "target_token_id": 3,
+                    "native_prediction_index": 16
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 4.324485069168762e-10,
+              "p99": 4.752903369738152e-10,
+              "max": 4.761646600362018e-10,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 16
+              }
+            },
+            "max_probability_error": {
+              "mean": 1.4792286258738518e-09,
+              "p99": 1.68282657152935e-09,
+              "max": 1.6869816316447683e-09,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 16,
+                "token": 37
+              }
+            },
+            "tail_merged_js": {
+              "mean": 5.315467347967061e-16,
+              "p99": 6.729102985120749e-16,
+              "max": 6.757952692001437e-16,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 16
+              }
+            },
+            "top1_agreement": {
+              "count": 2,
+              "total": 2,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.4761451626624255,
+                "p1": 0.4751942740662288,
+                "min": 0.47517486817651045
+              },
+              "side_b_top100": {
+                "mean": 0.47614516495686793,
+                "p1": 0.4751942818802735,
+                "min": 0.47517487610320014
+              },
+              "side_a_union": {
+                "mean": 0.4761451626624255,
+                "p1": 0.4751942740662288,
+                "min": 0.47517486817651045
+              },
+              "side_b_union": {
+                "mean": 0.47614516495686793,
+                "p1": 0.4751942818802735,
+                "min": 0.47517487610320014
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-axolotl-pretrained-bf16",
+      "framework": "axolotl",
+      "model": "pretrained",
+      "requested_precision": "bf16",
+      "native_entrypoint": "axolotl.cli.train.do_cli complete native SFT workflow",
+      "native_versions": {
+        "axolotl": "0.17.0",
+        "torch": "2.10.0+cpu",
+        "torch-npu": "2.10.0.post4",
+        "transformers": "5.9.0",
+        "accelerate": "1.13.0",
+        "peft": "0.19.1",
+        "trl": "1.5.1",
+        "datasets": "4.8.5"
+      },
+      "native_parameter_dtypes": [
+        "torch.bfloat16",
+        "torch.float32"
+      ],
+      "native_loss": 11.122581481933594,
+      "reference_loss": 11.145906448364258,
+      "valid_targets": 4,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 310,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 6.421284995516506,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 6.39530401618791,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.27282448489617417,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.0003602793346939336,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9991019570563573,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.015557736158370972,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 6605,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+              "index": 2509
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 0.006421285300432551,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.006395304324757883,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0002728244966473825,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 3.602793502120332e-07,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9991019570619499,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 1.5557714505121112e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 6605,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+              "index": 2509
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 607745,
+            "side_a_norm": {
+              "value": 1926.0412618068974,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 1932.725988821426,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 47.790830857973255,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.06130330425365538,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9996992247250578,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.31876325607299805,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 358537,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 358537,
+              "coordinate": [
+                2,
+                54665
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 0,
+                    "history": [
+                      675
+                    ],
+                    "target_token_id": 264,
+                    "native_prediction_index": 0
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 1,
+                    "history": [
+                      675,
+                      264
+                    ],
+                    "target_token_id": 1894,
+                    "native_prediction_index": 1
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 2,
+                    "history": [
+                      675,
+                      264,
+                      1894
+                    ],
+                    "target_token_id": 6176,
+                    "native_prediction_index": 2
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 3,
+                    "history": [
+                      675,
+                      264,
+                      1894,
+                      6176
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 3
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 0.0006009580380343276,
+              "p99": 0.0010873427937621012,
+              "max": 0.001096062595876682,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 2
+              }
+            },
+            "max_probability_error": {
+              "mean": 0.0047474372618702835,
+              "p99": 0.009691194872934628,
+              "max": 0.009817781697066152,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 2,
+                "token": 429
+              }
+            },
+            "tail_merged_js": {
+              "mean": 0.00011640027869669374,
+              "p99": 0.00015228798226915073,
+              "max": 0.00015237933647870103,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 2
+              }
+            },
+            "top1_agreement": {
+              "count": 4,
+              "total": 4,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 0.9824999999999999
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.6288432444732335,
+                "p1": 0.20382263995069455,
+                "min": 0.19421948097902103
+              },
+              "side_b_top100": {
+                "mean": 0.631029431793144,
+                "p1": 0.2108075940112681,
+                "min": 0.20140666592201031
+              },
+              "side_a_union": {
+                "mean": 0.6297206602117879,
+                "p1": 0.20598122957020948,
+                "min": 0.1964448311022323
+              },
+              "side_b_union": {
+                "mean": 0.6319180444375013,
+                "p1": 0.21302070827093517,
+                "min": 0.20368822701445058
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-axolotl-pretrained-fp32",
+      "framework": "axolotl",
+      "model": "pretrained",
+      "requested_precision": "fp32",
+      "native_entrypoint": "axolotl.cli.train.do_cli complete native SFT workflow",
+      "native_versions": {
+        "axolotl": "0.17.0",
+        "torch": "2.10.0+cpu",
+        "torch-npu": "2.10.0.post4",
+        "transformers": "5.9.0",
+        "accelerate": "1.13.0",
+        "peft": "0.19.1",
+        "trl": "1.5.1",
+        "datasets": "4.8.5"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 11.145952224731445,
+      "reference_loss": 11.145906448364258,
+      "valid_targets": 4,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 310,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 6.3949394584645916,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 6.395019902781052,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0003181311660462512,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 4.2010923210270845e-07,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999988417368,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 3.814697265625e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 271346,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight",
+              "index": 1010
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 573440,
+            "side_a_norm": {
+              "value": 0.006394939763844123,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.006395020209191207,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 3.181391649978132e-07,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 4.2011979514637396e-10,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999988416763,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 3.818422555923462e-08,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 271346,
+            "max_coordinate": {
+              "parameter": "base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight",
+              "index": 1010
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 607745,
+            "side_a_norm": {
+              "value": 1932.7224365172233,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 1932.725988821426,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.009917637061989134,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.2721769246809711e-05,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999885237,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.00011444091796875,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 110211,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 110211,
+              "coordinate": [
+                0,
+                110211
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 0,
+                    "history": [
+                      675
+                    ],
+                    "target_token_id": 264,
+                    "native_prediction_index": 0
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 1,
+                    "history": [
+                      675,
+                      264
+                    ],
+                    "target_token_id": 1894,
+                    "native_prediction_index": 1
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 2,
+                    "history": [
+                      675,
+                      264,
+                      1894
+                    ],
+                    "target_token_id": 6176,
+                    "native_prediction_index": 2
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 3,
+                    "history": [
+                      675,
+                      264,
+                      1894,
+                      6176
+                    ],
+                    "target_token_id": 151645,
+                    "native_prediction_index": 3
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 2.385757583199595e-07,
+              "p99": 3.9226252842460105e-07,
+              "max": 3.930676006666948e-07,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 2
+              }
+            },
+            "max_probability_error": {
+              "mean": 1.969562421379103e-06,
+              "p99": 3.513800698007885e-06,
+              "max": 3.5244925848387787e-06,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 2,
+                "token": 429
+              }
+            },
+            "tail_merged_js": {
+              "mean": 1.7771688609462884e-11,
+              "p99": 2.6322491220605673e-11,
+              "max": 2.6584787496359573e-11,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 0
+              }
+            },
+            "top1_agreement": {
+              "count": 4,
+              "total": 4,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.6310283663333389,
+                "p1": 0.21080228230894577,
+                "min": 0.2014011600089007
+              },
+              "side_b_top100": {
+                "mean": 0.631029431793144,
+                "p1": 0.2108075940112681,
+                "min": 0.20140666592201031
+              },
+              "side_a_union": {
+                "mean": 0.6310283663333389,
+                "p1": 0.21080228230894577,
+                "min": 0.2014011600089007
+              },
+              "side_b_union": {
+                "mean": 0.631029431793144,
+                "p1": 0.2108075940112681,
+                "min": 0.20140666592201031
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-axolotl-tiny-bf16",
+      "framework": "axolotl",
+      "model": "tiny",
+      "requested_precision": "bf16",
+      "native_entrypoint": "axolotl.cli.train.do_cli complete native SFT workflow",
+      "native_versions": {
+        "axolotl": "0.17.0",
+        "torch": "2.10.0+cpu",
+        "torch-npu": "2.10.0.post4",
+        "transformers": "5.9.0",
+        "accelerate": "1.13.0",
+        "peft": "0.19.1",
+        "trl": "1.5.1",
+        "datasets": "4.8.5"
+      },
+      "native_parameter_dtypes": [
+        "torch.bfloat16",
+        "torch.float32"
+      ],
+      "native_loss": 5.3970561027526855,
+      "reference_loss": 5.397060394287109,
+      "valid_targets": 2,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 0,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 15.378973011924135,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 15.394858625322454,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.07262527264379397,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.00011561016702055418,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999893940304458,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.0069063156843185425,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 34368,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 1600
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 0.015487263038927066,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.015394860274983614,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.005822123464814465,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 9.26807764953714e-06,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.92893218014953,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.00012281537055969238,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 215245,
+            "max_coordinate": {
+              "parameter": "model.layers.0.self_attn.v_proj.weight",
+              "index": 1613
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 513,
+            "side_a_norm": {
+              "value": 7.2347428531470195,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.237193158712801,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.019072295218894347,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.0008420624046974164,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.999996583711817,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.0025073662400245667,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 394,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 394,
+              "coordinate": [
+                1,
+                138
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 0,
+                    "history": [
+                      12
+                    ],
+                    "target_token_id": 12,
+                    "native_prediction_index": 0
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 1,
+                    "history": [
+                      12,
+                      12
+                    ],
+                    "target_token_id": 3,
+                    "native_prediction_index": 1
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 4.4157105966867555e-06,
+              "p99": 4.4157403727938e-06,
+              "max": 4.4157409804694535e-06,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 0
+              }
+            },
+            "max_probability_error": {
+              "mean": 1.3424789811855836e-05,
+              "p99": 1.3425049022828704e-05,
+              "max": 1.3425054312848558e-05,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 0,
+                "token": 113
+              }
+            },
+            "tail_merged_js": {
+              "mean": 4.958337055460203e-08,
+              "p99": 4.9584068927786896e-08,
+              "max": 4.9584083180300875e-08,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 0
+              }
+            },
+            "top1_agreement": {
+              "count": 2,
+              "total": 2,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.4739155083024494,
+                "p1": 0.4739155083024494,
+                "min": 0.4739155083024494
+              },
+              "side_b_top100": {
+                "mean": 0.47397562938426974,
+                "p1": 0.47397562686150563,
+                "min": 0.47397562681002064
+              },
+              "side_a_union": {
+                "mean": 0.4739155083024494,
+                "p1": 0.4739155083024494,
+                "min": 0.4739155083024494
+              },
+              "side_b_union": {
+                "mean": 0.47397562938426974,
+                "p1": 0.47397562686150563,
+                "min": 0.47397562681002064
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "canonical-axolotl-tiny-fp32",
+      "framework": "axolotl",
+      "model": "tiny",
+      "requested_precision": "fp32",
+      "native_entrypoint": "axolotl.cli.train.do_cli complete native SFT workflow",
+      "native_versions": {
+        "axolotl": "0.17.0",
+        "torch": "2.10.0+cpu",
+        "torch-npu": "2.10.0.post4",
+        "transformers": "5.9.0",
+        "accelerate": "1.13.0",
+        "peft": "0.19.1",
+        "trl": "1.5.1",
+        "datasets": "4.8.5"
+      },
+      "native_parameter_dtypes": [
+        "torch.float32"
+      ],
+      "native_loss": 5.396465301513672,
+      "reference_loss": 5.396465301513672,
+      "valid_targets": 2,
+      "optimizer_steps": 1,
+      "frozen_parameter_hashes_equal_before_after": true,
+      "frozen_tensor_count": 0,
+      "reference_input_contains_native_outcomes": false,
+      "core_reports": {
+        "gradients": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 15.393586679366745,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 15.393586114699074,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 7.921155435159162e-06,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.2609468708587023e-08,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999998687,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 7.748603820800781e-07,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 34411,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 1643
+            }
+          }
+        },
+        "updates": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 394624,
+            "side_a_norm": {
+              "value": 0.015393586889875563,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.015393586681548804,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 4.526983877414627e-08,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 7.206380686985056e-11,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999956759,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 7.450580596923828e-09,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 240693,
+            "max_coordinate": {
+              "parameter": "model.layers.1.mlp.down_proj.weight",
+              "index": 10549
+            }
+          }
+        },
+        "observations": {
+          "status": "no_thresholds",
+          "metrics": {
+            "count": 513,
+            "side_a_norm": {
+              "value": 7.236284070711526,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 7.236284007410521,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 2.1537789283710536e-06,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 9.509166268641121e-08,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999999999999559,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 2.8312206268310547e-07,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 282,
+            "max_coordinate": {
+              "tensor": "logits",
+              "index": 282,
+              "coordinate": [
+                1,
+                26
+              ],
+              "observation": {
+                "stage": "objective",
+                "boundary": "preloss full-vocabulary logits",
+                "targets": [
+                  {
+                    "sample": "batch-0",
+                    "position": 0,
+                    "history": [
+                      12
+                    ],
+                    "target_token_id": 12,
+                    "native_prediction_index": 0
+                  },
+                  {
+                    "sample": "batch-0",
+                    "position": 1,
+                    "history": [
+                      12,
+                      12
+                    ],
+                    "target_token_id": 3,
+                    "native_prediction_index": 1
+                  }
+                ],
+                "invocation": 0
+              }
+            }
+          }
+        },
+        "distributions": {
+          "status": "no_thresholds",
+          "metrics": {
+            "probability_rmse": {
+              "mean": 4.4844721944118864e-10,
+              "p99": 4.727566615849735e-10,
+              "max": 4.732527726491324e-10,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 1
+              }
+            },
+            "max_probability_error": {
+              "mean": 1.6146477839658335e-09,
+              "p99": 1.7610554273964768e-09,
+              "max": 1.764043338486898e-09,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 0,
+                "token": 183
+              }
+            },
+            "tail_merged_js": {
+              "mean": 5.38954823425872e-16,
+              "p99": 5.701325238920488e-16,
+              "max": 5.707688034933993e-16,
+              "max_coordinate": {
+                "sample": "batch-0",
+                "position": 1
+              }
+            },
+            "top1_agreement": {
+              "count": 2,
+              "total": 2,
+              "fraction": 1.0
+            },
+            "top100_overlap": {
+              "mean": 1.0
+            },
+            "coverage": {
+              "side_a_top100": {
+                "mean": 0.4739494084831637,
+                "p1": 0.4739494084831637,
+                "min": 0.4739494084831637
+              },
+              "side_b_top100": {
+                "mean": 0.4739494045328704,
+                "p1": 0.4739494043961221,
+                "min": 0.47394940439333133
+              },
+              "side_a_union": {
+                "mean": 0.4739494084831637,
+                "p1": 0.4739494084831637,
+                "min": 0.4739494084831637
+              },
+              "side_b_union": {
+                "mean": 0.4739494045328704,
+                "p1": 0.4739494043961221,
+                "min": 0.47394940439333133
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

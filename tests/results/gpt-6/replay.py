@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Replay a hashed synthetic artifact bundle through the existing skill tools.
+"""Replay a hashed artifact bundle through the existing skill tools.
 
 Inputs: ZIP containing EXPORT.json (files:[{path,exported_sha256,...}]) and
 REPLAY.json (cases:[{name,operation,inputs,expected}]). Supported operations:
-compare_tensors with contract/side_a/side_b paths; validate with contract/manifest.
+compare_tensors, compare_distributions and compare_target_scores with
+contract/side_a/side_b paths; validate with contract/manifest.
 Paths are relative to the extracted archive. Expected is a nested result subset.
 Outputs: a fresh compare-replay-UTC directory with inputs, per-case JSON reports
 and replay.json; exit 0 if all replay assertions match, otherwise 1.
@@ -78,8 +79,12 @@ def replay(bundle, output_root, scripts):
                 stream.write(data)
     sys.path.insert(0, str(scripts.resolve()))
     from compare_tensors import compare
+    from compare_distributions import compare as compare_distributions
+    from compare_target_scores import compare as compare_target_scores
     from validate_artifacts import validate
-    operations = {'compare_tensors': compare, 'validate': validate}
+    operations = {'compare_tensors': compare, 'validate': validate,
+                  'compare_distributions': compare_distributions,
+                  'compare_target_scores': compare_target_scores}
     cases = json.loads((inputs/'REPLAY.json').read_text(encoding='utf-8'))['cases']
     if not cases:
         raise ValueError('replay cases required')

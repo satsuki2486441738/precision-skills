@@ -1,0 +1,351 @@
+{
+  "status": "native_slime_step_completed_no_independent_numerical_equivalence_test",
+  "source_raw_archive": {
+    "filename": "raw-native-evidence-20261020T112523Z.tar.gz",
+    "bytes": 34574386,
+    "sha256": "00358972e80dab9abc315dd2510a2e87fe639256e8314ef93861119f0948de09",
+    "verified_raw_manifest_files": 1810
+  },
+  "slime": {
+    "source_pin": "2418a7844abe4d490a1676dcf88fc3401adab362",
+    "official_npu_recipe_pin": "0b0c277d5b4cc66efc3b6db269e2e5184e8f3b1e",
+    "model": "pretrained Qwen3-0.6B",
+    "model_parameters": 596049920,
+    "hf_tensor_count": 226,
+    "native_entrypoint": "Slime train.py; official NPU/MindSpeed/Bridge-fork deployment patches plus disclosed compatibility repairs",
+    "native_stage_process_exit": 0,
+    "native_stage_seconds": 160.2217699601315,
+    "completion": {
+      "native_entrypoint_returned": true,
+      "trajectory_count": 8,
+      "generated_action_tokens": 64,
+      "rewards": [
+        0.4248399032337684,
+        0.12130234067358597,
+        0.8893365428991002,
+        0.41799715939396925,
+        0.3347207262028755,
+        0.46356748311397794,
+        0.7117834174334499,
+        0.21408287790000505
+      ],
+      "native_updates": [
+        {
+          "rank": 0,
+          "step": 0,
+          "sampled_gradient_l2": 0.9138716005078639,
+          "sampled_update_l2": 0.03662982347649616,
+          "finite": true,
+          "native_optimizer_result": [
+            true,
+            33.84508451893347,
+            null
+          ],
+          "positive_finite_gradient_and_update": true
+        }
+      ],
+      "validated_one_step": true
+    },
+    "native_optimizer_observer": {
+      "file": "$RLMG_ROOT/sources-offline-v1/slime/slime/backends/megatron_utils/model.py",
+      "source_sha256": "c75e18463373a41c73bccfa123b3d5fb8b338ee538aee37ee9a127d0766242da",
+      "function": "train_one_step",
+      "line": 450,
+      "torch": "2.8.0+cpu",
+      "torch_npu": "2.8.0",
+      "distributed_backend": "hccl",
+      "visible_devices": "12,13,14,15",
+      "npu_name": "Ascend910_9382",
+      "parameters": {
+        "chunk0.module.module.decoder.layers.0.self_attention.linear_proj.weight": {
+          "shape": [
+            1024,
+            2048
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 128
+        },
+        "chunk0.module.module.decoder.layers.0.self_attention.linear_qkv.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 256
+        },
+        "chunk0.module.module.decoder.layers.0.self_attention.linear_qkv.layer_norm_weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 1
+        },
+        "chunk0.module.module.decoder.layers.0.self_attention.q_layernorm.weight": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 1
+        },
+        "chunk0.module.module.decoder.layers.0.self_attention.k_layernorm.weight": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 1
+        },
+        "chunk0.module.module.decoder.layers.0.mlp.linear_fc1.layer_norm_weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 1
+        },
+        "chunk0.module.module.decoder.layers.0.mlp.linear_fc2.weight": {
+          "shape": [
+            1024,
+            3072
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 192
+        },
+        "chunk0.module.module.decoder.layers.1.self_attention.linear_proj.weight": {
+          "shape": [
+            1024,
+            2048
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 128
+        },
+        "chunk0.module.module.decoder.layers.1.self_attention.linear_qkv.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 256
+        },
+        "chunk0.module.module.decoder.layers.1.self_attention.linear_qkv.layer_norm_weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 1
+        },
+        "chunk0.module.module.decoder.layers.1.self_attention.q_layernorm.weight": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 1
+        },
+        "chunk0.module.module.decoder.layers.1.self_attention.k_layernorm.weight": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 1
+        },
+        "chunk0.module.module.decoder.layers.1.mlp.linear_fc1.layer_norm_weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 1
+        },
+        "chunk0.module.module.decoder.layers.1.mlp.linear_fc2.weight": {
+          "shape": [
+            1024,
+            3072
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 192
+        },
+        "chunk0.module.module.decoder.layers.2.self_attention.linear_proj.weight": {
+          "shape": [
+            1024,
+            2048
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 128
+        },
+        "chunk0.module.module.decoder.layers.2.self_attention.linear_qkv.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "sampling_stride": 256
+        }
+      },
+      "native_losses_reduced": [
+        {
+          "keys": [
+            "loss",
+            "pg_loss",
+            "entropy_loss",
+            "pg_clipfrac",
+            "ppo_kl",
+            "train_rollout_logprob_abs_diff"
+          ],
+          "values": "tensor([1.0000, 0.1214, 0.1214, 3.8298, 0.0000, 0.0000, 0.0371],\n       device='npu:0')"
+        },
+        {
+          "keys": [
+            "loss",
+            "pg_loss",
+            "entropy_loss",
+            "pg_clipfrac",
+            "ppo_kl",
+            "train_rollout_logprob_abs_diff"
+          ],
+          "values": "tensor([1.0000, 1.0781, 1.0781, 3.6608, 0.0000, 0.0000, 0.0195],\n       device='npu:0')"
+        },
+        {
+          "keys": [
+            "loss",
+            "pg_loss",
+            "entropy_loss",
+            "pg_clipfrac",
+            "ppo_kl",
+            "train_rollout_logprob_abs_diff"
+          ],
+          "values": "tensor([ 1.0000, -1.3426, -1.3426,  2.9274,  0.0000,  0.0000,  0.0510],\n       device='npu:0')"
+        },
+        {
+          "keys": [
+            "loss",
+            "pg_loss",
+            "entropy_loss",
+            "pg_clipfrac",
+            "ppo_kl",
+            "train_rollout_logprob_abs_diff"
+          ],
+          "values": "tensor([1.0000, 0.1430, 0.1430, 3.8673, 0.0000, 0.0000, 0.0382],\n       device='npu:0')"
+        },
+        {
+          "keys": [
+            "loss",
+            "pg_loss",
+            "entropy_loss",
+            "pg_clipfrac",
+            "ppo_kl",
+            "train_rollout_logprob_abs_diff"
+          ],
+          "values": "tensor([1.0000, 0.4520, 0.4520, 3.8885, 0.0000, 0.0000, 0.0337],\n       device='npu:0')"
+        },
+        {
+          "keys": [
+            "loss",
+            "pg_loss",
+            "entropy_loss",
+            "pg_clipfrac",
+            "ppo_kl",
+            "train_rollout_logprob_abs_diff"
+          ],
+          "values": "tensor([ 1.0000, -0.1527, -0.1527,  3.8058,  0.0000,  0.0000,  0.0666],\n       device='npu:0')"
+        },
+        {
+          "keys": [
+            "loss",
+            "pg_loss",
+            "entropy_loss",
+            "pg_clipfrac",
+            "ppo_kl",
+            "train_rollout_logprob_abs_diff"
+          ],
+          "values": "tensor([ 1.0000, -1.3175, -1.3175,  2.9711,  0.0000,  0.0000,  0.0307],\n       device='npu:0')"
+        },
+        {
+          "keys": [
+            "loss",
+            "pg_loss",
+            "entropy_loss",
+            "pg_clipfrac",
+            "ppo_kl",
+            "train_rollout_logprob_abs_diff"
+          ],
+          "values": "tensor([1.0000, 1.0181, 1.0181, 2.6631, 0.0000, 0.0000, 0.0334],\n       device='npu:0')"
+        }
+      ]
+    },
+    "capture_scope": "first16 eligible trainable parameter tensors, each with numel32..5000000; flattened stride=max(1,numel//16384); all16 present gradients and before/after parameter slices retained",
+    "capture_dtype_policy": "actual BF16 parameter slices and actual gradient slices promoted losslessly to FP32; original parameter shape/dtype/device and sampling stride retained in caller.json; original gradient dtype was not recorded",
+    "reward": "deterministic response-SHA synthetic reward, no quality claim",
+    "reference": "none; no independent CPU replay or compare_tensors/distributions/target_scores call for this Slime run",
+    "equivalence_acceptance": null,
+    "deployment_boundary": "Torch2.8/TorchNPU2.8/Python3.11 on hostCANN9.1 differs from guide CANN8.5. Successful tested compatibility experiment; no official full-matrix support claim."
+  },
+  "nemo_rl": {
+    "version": "0.2.0",
+    "pin": "26f651ea490ef2a343e7f298b9aa54bc7c5da67c",
+    "stage": "actual unmodified FSDP1PolicyWorker constructor entered",
+    "source_file": "nemo_reinforcer/models/policy/fsdp1_policy_worker.py",
+    "line": 80,
+    "source_sha256": "136f9954e26ec180256c572be207825ea6031049337ff7346cbb7701c8b5c0a5",
+    "native_operation": "torch.distributed.init_process_group(backend=\"nccl\")",
+    "exception": "RuntimeError: Distributed package doesn't have NCCL built in",
+    "log": "attempts/upstream-native-startups-20261020T101508Z-202759/nemo-native-worker.log",
+    "optimizer_step_completed": false,
+    "cohort_boundary": "official older pin requestedTorch2.6, actual hostTorch2.9; failure is scoped to actual tested source/env"
+  },
+  "megatron_bridge": {
+    "version": "0.6.2",
+    "pin": "c0e164ed2aedac4ad1c877780e2564a19d5d54ec",
+    "mcore_gitlink": "a0f793dfa4e776d99a8aa63bed74e0fafc91b0db",
+    "stage": "upstream provider startup dependency-blocked before constructor",
+    "exception": "ModuleNotFoundError: transformer_engine",
+    "official_te_pin": "15288857644368b8b7bdddd9bead7d6d3d04de80",
+    "actual_te_source_build_exception": "RuntimeError: Could neither find NVCC executable nor CUDA runtime Python package.",
+    "log": "attempts/upstream-repair-20261020T103545Z-297152/bridge-official-transformer-engine-native-local-build.log",
+    "provider_constructor_reached": false,
+    "separate_npu_ports": "Slime-prescribed Bridge fork actually constructed/loaded/trained NPU actor. Official Ascend/AgentSDK has a separate Bridge patch route, not executed here; neither route counts as untouched upstream success."
+  },
+  "tensorrt_llm": {
+    "version": "0.20.0",
+    "pin": "7965842954628b0b5456a2f7d59786d3dcd41647",
+    "official_arm_wheel_installed": true,
+    "wheel_sha256": "6f3a5c90202ff376bdbe28c71b95117b0518fd354daa3a7cc2c432f6152a589e",
+    "stage": "native LLM startup blocked while loading compiled bindings before LLM constructor",
+    "binding_exception": "ImportError: libnvrtc.so.12: cannot open shared object file",
+    "binding_log": "attempts/upstream-repair-20261020T103820Z-306744/trtllm-official-native-llm-bindings-retry.log",
+    "native_cmake_exception": "No CUDA compiler found",
+    "native_cmake_source": "cpp/cmake/modules/cuda_configuration.cmake:61; cpp/CMakeLists.txt:128",
+    "cmake_log": "attempts/upstream-repair-20261020T103327Z-290145/trtllm-official-native-cmake-configure.log",
+    "generation_completed": false
+  },
+  "checkpoint": {
+    "retained_original_files": 8,
+    "bytes": 8346847432,
+    "sha_manifest": "checkpoint-sha256-manifest.json",
+    "payload_omitted": true
+  },
+  "no_numerical_acceptance_for_four_lanes": true,
+  "public_archive": {
+    "path": "rlmg-native-evidence-20261020T114000Z.zip",
+    "sha256": "9d6a83ccbb710d9945d4737433c21e46033f71a4d99f5cfb76be45bdfaf1f9a7",
+    "bytes": 32785177,
+    "verified_export_files": 1813,
+    "text_files": 1805,
+    "binary_files": 6,
+    "scan_hits": [],
+    "all_export_hashes_verified": true
+  },
+  "timestamp_utc": "2026-10-20T11:36:38.720228+00:00"
+}

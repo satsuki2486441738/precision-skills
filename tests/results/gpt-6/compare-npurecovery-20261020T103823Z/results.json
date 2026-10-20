@@ -1,0 +1,405 @@
+{
+  "schema": "precision-framework-results-v2",
+  "run": "compare-npurecovery-20261020T103823Z",
+  "status": "frozen_branch_results_with_explicit_unfinished_work",
+  "evidence_cutoff_utc": "2026-10-20T12:03:32Z",
+  "cutoff_meaning": "Native/reference evidence frozen for publication; final export validation is in VALIDATION.json.",
+  "starting_repository_snapshot": "16346fc21a41ff87c1d7a0603f4a6fbb33ac8c32",
+  "branch": "validation/gpt-6-cold-skill-20261019",
+  "requested_unique_libraries": 16,
+  "requested_task_lanes": 17,
+  "native_completed_lanes": 14,
+  "untouched_upstream_incomplete_lanes": 3,
+  "canonical_cases": 28,
+  "independent_reference_cases": 27,
+  "canonical_core_comparisons": 107,
+  "all_lanes_have_observed_status": true,
+  "all_requested_native_workflows_completed": false,
+  "new_experiments_started_after_freeze": false,
+  "thresholds": null,
+  "numerical_acceptance_pass_claimed": false,
+  "original_instance_reused": true,
+  "new_instance_created": false,
+  "old_uncollected_job_outcomes": "Unknown; current successes do not retroactively determine replaced-Pod job outcomes.",
+  "runtime": {
+    "architecture": "aarch64",
+    "accelerator": "Ascend910_9382",
+    "logical_devices": 16,
+    "hbm_gib_per_device": 64,
+    "driver": "25.5.2",
+    "cann": "9.1.0",
+    "private_stacks": "Exact sources/versions and recipe deviations remain in per-lane evidence."
+  },
+  "lanes": [
+    {
+      "library": "OpenRLHF",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 5,
+      "evidence": [
+        "openrlhf-community-grpo-evidence.zip"
+      ],
+      "source_scope": "zhuo97 community Ascend fork@06ac74cf1ea896c379ef4cb6a39dbd8488fb16fd plus exact version/import/dtype-RPC patches; not untouched upstream",
+      "limitations": [
+        "16384 sampled optimizer coordinates; no full-model update claim."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "slime",
+      "task": "rl",
+      "status": "native_completed_reference_not_performed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": false,
+      "canonical_core_comparisons": 0,
+      "evidence": [
+        "slime-and-upstream-boundaries.zip"
+      ],
+      "source_scope": "slime@2418a7844abe4d490a1676dcf88fc3401adab362; official NPU recipe and prescribed Bridge fork plus disclosed compatibility repairs",
+      "limitations": [
+        "Independent CPU model reference and numerical comparisons not performed.",
+        "8 trajectories/64 actions; real optimizer step,135680 sampled coordinates.",
+        "BF16 native parameters; F32 stored copies; original gradient dtype not recorded."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "NeMo RL",
+      "task": "rl",
+      "status": "untouched_upstream_native_incomplete",
+      "native_completed": false,
+      "canonical_cases": 0,
+      "independent_reference": false,
+      "canonical_core_comparisons": 0,
+      "evidence": [
+        "slime-upstream-results.json"
+      ],
+      "source_scope": "untouched official v0.2.0@26f651ea490ef2a343e7f298b9aa54bc7c5da67c",
+      "limitations": [
+        "Unmodified FSDP1PolicyWorker entered; NCCL initialization failed: Distributed package doesn't have NCCL built in.",
+        "Native training/optimizer and independent reference remain incomplete."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "ms-swift",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 5,
+      "evidence": [
+        "swift-grpo-evidence.zip"
+      ],
+      "source_scope": "official4.6.0 rlhf_main/GRPO Trainer.train",
+      "limitations": [
+        "Synthetic reward tests execution, not answer quality.",
+        "98304 sampled parameter elements; three valid selected vocabulary rows; BF16 native versus CPU FP32 state declared."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "AReaL",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 4,
+      "evidence": [
+        "areal-grpo-evidence.zip"
+      ],
+      "source_scope": "official ascend-v1.0.4@65d0bcd8afb3e10b0083003a1d1694135fab093c; source unchanged",
+      "limitations": [
+        "BF16 forward, FP32 captured master parameters/gradients/reduction/Adam state.",
+        "67840 sampled coordinates/32 actions; native full-vocabulary distribution capture is not covered.",
+        "Host compatibility stack differs from exact source Docker recipe."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "ROLL",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 5,
+      "evidence": [
+        "roll-grpo-evidence.zip"
+      ],
+      "source_scope": "official v0.4.0@581046abce143e643221f8e292895c46a3b20112; unchanged source plus official torch_npu API migration adapter in private launcher/workers",
+      "limitations": [
+        "Genuine NPU operations, no CUDA emulation.",
+        "67840 sampled coordinates/four selected vocabulary rows; no full-model update claim.",
+        "Actual host stack differs from pinned recipe."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "MindSpeed-RL",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 5,
+      "evidence": [
+        "mindspeed-rl/archive-index.json"
+      ],
+      "source_scope": "official train_grpo, vLLM-Ascend and Megatron actor path; source pins/task-only device/group/registry/control-CPU repairs indexed",
+      "limitations": [
+        "Actual19 F32 gradients,19 BF16 before/after parameter tensors,F32 preloss logits/loss; immutable erratum corrects wrong human BF16 gradient label.",
+        "Signed native objective0; CPU -0.0005752295255661011. Logged actor/pg_loss0.7833 is mean absolute microbatch statistic.",
+        "Fixed native trajectories/old-ref anchors/advantages accepted; independent reward/group audit matches advantages; separate native reward arrays not claimed.",
+        "16 actions include a sampled pad-token ID using actual response lengths."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "TensorRT-LLM",
+      "task": "inference",
+      "status": "untouched_upstream_native_incomplete",
+      "native_completed": false,
+      "canonical_cases": 0,
+      "independent_reference": false,
+      "canonical_core_comparisons": 0,
+      "evidence": [
+        "slime-upstream-results.json"
+      ],
+      "source_scope": "untouched official v0.20.0@7965842954628b0b5456a2f7d59786d3dcd41647; official ARM wheel",
+      "limitations": [
+        "Compiled bindings failed before LLM constructor: libnvrtc.so.12 missing; unchanged CMake: No CUDA compiler found.",
+        "Native generation and independent reference remain incomplete."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "LMDeploy",
+      "task": "inference",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 2,
+      "independent_reference": true,
+      "canonical_core_comparisons": 6,
+      "evidence": [
+        "lmdeploy-native-evidence.zip"
+      ],
+      "source_scope": "LMDeploy@110965c7706bbbeb31e21df5d7ef2531fe01c935;dlinfer@bd37fd38c7831525d962c29925db7244113b7bcf;kernel@7acb9c40a6ca827e885d902b7eaee5d45457b230",
+      "limitations": [
+        "Each model: one prefill/three cached decode predictions; actual get_logits F16 copy before processors; Response API does not expose logits.",
+        "Native F16 KV versus independent CPU F32 KV; CPU loads F16 then promotes F32. Native loaded parameters not individually compared.",
+        "Explicit offline FP64 log-softmax is derived, not native API logprob.",
+        "Initializer import/alias-only repair changes no numerical function AST. Actual pip-check metadata conflicts remain; environment is not called clean."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "MindIE-LLM",
+      "task": "inference",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 3,
+      "evidence": [
+        "mindie/archive-index.json"
+      ],
+      "source_scope": "official PARunner/ModelRunner/ATB PagedAttention; exact source/environment indexed",
+      "limitations": [
+        "Four generated tokens/four native BF16 raw vocabulary rows; warmup excluded.",
+        "Byte-identical task-owned model copy satisfies original ownership check."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "llama.cpp",
+      "task": "inference",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 2,
+      "independent_reference": true,
+      "canonical_core_comparisons": 6,
+      "evidence": [
+        "llama-native-evidence.zip"
+      ],
+      "source_scope": "official CANN and CPU backend@d8d92973c8c21bb4dd5d592f0fec26fe2cd1e654",
+      "limitations": [
+        "Same unquantized F16 GGUF per model;F16 KV; prefill plus two cached decode predictions.",
+        "FP64 offline log-softmax exported F32."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "TRL",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 4,
+      "independent_reference": true,
+      "canonical_core_comparisons": 16,
+      "evidence": [
+        "sft/matrix.json"
+      ],
+      "source_scope": "real SFTTrainer.train; per-case source/runtime identities in canonical matrix/index",
+      "limitations": [
+        "Tiny/pretrained x BF16-requested/FP32; use native_parameter_dtypes for actual parameter storage, capture/metric environments for logits."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "LLaMAFactory",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 4,
+      "independent_reference": true,
+      "canonical_core_comparisons": 16,
+      "evidence": [
+        "sft/matrix.json"
+      ],
+      "source_scope": "real run_exp; per-case source/runtime identities indexed",
+      "limitations": [
+        "Canonical genuine-FP32 cases replace an earlier mixed-precision retry; historical retries do not add coverage."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "ms-swift",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 4,
+      "independent_reference": true,
+      "canonical_core_comparisons": 16,
+      "evidence": [
+        "sft/matrix.json"
+      ],
+      "source_scope": "real sft_main/Trainer.train; per-case source/runtime identities indexed",
+      "limitations": [
+        "CPU reference uses a clean interpreter to exclude global NPU RMSNorm patches."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "Axolotl",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 4,
+      "independent_reference": true,
+      "canonical_core_comparisons": 16,
+      "evidence": [
+        "sft/matrix.json"
+      ],
+      "source_scope": "real trainer pipeline; per-case source/runtime identities indexed",
+      "limitations": [
+        "All-masked fixture rejected; canonical completion targets use explicit full-sequence policy.",
+        "Scoped capability guard truthfully reports unsupported CUDA FP8 on CPU Torch."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "Megatron Bridge",
+      "task": "sft",
+      "status": "untouched_upstream_native_incomplete",
+      "native_completed": false,
+      "canonical_cases": 0,
+      "independent_reference": false,
+      "canonical_core_comparisons": 0,
+      "evidence": [
+        "slime-upstream-results.json"
+      ],
+      "source_scope": "untouched official v0.6.2@c0e164ed2aedac4ad1c877780e2564a19d5d54ec; exact MCore gitlink a0f793dfa4e776d99a8aa63bed74e0fafc91b0db",
+      "limitations": [
+        "Provider constructor not reached: transformer_engine missing; exact official TE source build lacks NVCC/CUDA runtime.",
+        "Untouched native provider/training and independent reference remain incomplete. Slime NPU fork is a distinct identity."
+      ],
+      "thresholds": null
+    },
+    {
+      "library": "MindSpeed-LLM",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 4,
+      "evidence": [
+        "mindspeed-llm/archive-index.json"
+      ],
+      "source_scope": "official pretrain_gpt.main/native optimizer; exact source/environment indexed",
+      "limitations": [
+        "One canonical770432-parameter seeded fixture, nine gradients and16 legal targets.",
+        "Invalid-vocabulary mock-data case rejected; larger valid fixture historical."
+      ],
+      "thresholds": null
+    }
+  ],
+  "unfinished_work": [
+    {
+      "scope": "Three untouched upstream lanes",
+      "items": [
+        "NeMo RL native training/optimizer",
+        "Megatron Bridge provider/training",
+        "TensorRT-LLM generation"
+      ],
+      "boundary": "Actual tested CUDA/NCCL/Transformer Engine prerequisites; separately identified adaptations do not close untouched-upstream outcomes."
+    },
+    {
+      "scope": "Slime",
+      "items": [
+        "Independent CPU model reference",
+        "Core numerical comparisons"
+      ],
+      "boundary": "Capture-byte/scalar verification is not an independent model reference."
+    },
+    {
+      "scope": "All precision acceptance",
+      "items": [
+        "Justified task-specific numerical thresholds"
+      ],
+      "boundary": "thresholds=null/no_thresholds reports diagnostics, not numerical acceptance."
+    }
+  ],
+  "parameterization": {
+    "supplement": "parameterization-supplement.json",
+    "tf53_default_parameter_elements": 751632384,
+    "tf4576_deduplicated_parameter_elements": 596049920,
+    "difference": 155582464,
+    "original_native_embedding_pointer_alias_captured": false,
+    "fresh_tf53_embedding_lm_head_full_torch_equal": true,
+    "claim": "TF5.3 separate ownership/storage versus TF4.57.6 shared Parameter/storage; equal initial embedding values do not imply common complete training state. No cross-framework ranking."
+  },
+  "archive_inventory": [
+    "sft/archive-index.json",
+    "mindspeed-llm/archive-index.json",
+    "mindie/archive-index.json",
+    "mindspeed-rl/archive-index.json",
+    "llama-native-evidence.zip",
+    "lmdeploy-native-evidence.zip",
+    "swift-grpo-evidence.zip",
+    "areal-grpo-evidence.zip",
+    "roll-grpo-evidence.zip",
+    "openrlhf-community-grpo-evidence.zip",
+    "rlar-failure-history.zip",
+    "slime-and-upstream-boundaries.zip",
+    "attribution-v2.zip",
+    "attribution-mindspeed-rl.zip"
+  ],
+  "hash_inventory_authority": "VALIDATION.json for final public hashes; archive EXPORT.json and volume indices for members/source-to-export hashes.",
+  "public_evidence_policy": "Redundant PT payloads containing private path metadata are omitted with original SHA/reason retained. Portable array bytes remain unchanged in their declared capture/export dtype; original-to-stored promotions are disclosed.",
+  "validation": {
+    "record": "VALIDATION.json",
+    "canonical_core_comparisons": 107,
+    "slime_independent_precision_comparisons": 0,
+    "repository_tests_do_not_establish_all_third_party_NPU_support": true
+  },
+  "guide": "GUIDE.md",
+  "readme": "README.md"
+}

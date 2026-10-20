@@ -1,0 +1,797 @@
+{
+  "status": "native_rollout_actor_update_independent_reference_and_core_replay_complete",
+  "framework": "MindSpeed-RL",
+  "canonical_cases": 1,
+  "native_actor": {
+    "framework": "MindSpeed-RL",
+    "status": "native_execution_complete",
+    "optimizer_applied": true,
+    "optimizer_steps": 1,
+    "process_group_backend": "hccl",
+    "changed_elements": 1773025,
+    "nonzero_gradient_elements": 1774560,
+    "finite_gradients": true,
+    "trainable_tensors": 19,
+    "trainable_elements": 1836544,
+    "gradients_present": 19,
+    "optimizer_class": "megatron.core.optimizer.optimizer.ChainedOptimizer",
+    "gradient_boundary": "Native BaseTrainingEngine optimizer.step entry; original BF16 main_grad with clip_grad=0",
+    "update_boundary": "Original native optimizer.step return/copyback",
+    "native_loss_boundary": "GRPOActorLossFunc._compute_grpo_policy_loss return locals, original dtype",
+    "torch": "2.7.1+cpu",
+    "torch_npu": "2.7.1.post8",
+    "npu_name": "Ascend910_9382",
+    "rank": 0,
+    "captures": "native-captures.pt",
+    "sha256": "790edc4be443f356795e8865bb740a0906df9a455e24dfa04735ddc16d1c5b4a",
+    "rollout_claim_requires": "A separate successful native rollout result from this run; this actor result alone does not prove generation."
+  },
+  "native_rollout": {
+    "framework": "MindSpeed-RL",
+    "stage": "native_rollout",
+    "status": "native_execution_complete",
+    "entrypoint": "mindspeed_rl.models.rollout.vllm_engine._post_process_outputs",
+    "generation_backend": "vllm_ascend.platform.NPUPlatform",
+    "vllm_version": "0.11.0",
+    "ascend_plugin": "/host-model/workspace/<user>/projects/yz/precision-gpt6-npu-20261020T090915Z/ascend/envs/rl-torch2.7.1-npu2.7.1.post8/lib/python3.12/site-packages/vllm_ascend/__init__.py",
+    "torch": "2.7.1+cpu",
+    "torch_npu": "2.7.1.post8",
+    "generated_shape": [
+      4,
+      4
+    ],
+    "generated_tokens": 16,
+    "logprob_boundary": "Native chosen-token logprobs after vLLM sampling; not a full-vocabulary logits claim",
+    "captures": "native-captures.pt",
+    "sha256": "541581d24dba686f0adc45649cc0670eee23cb41970f65b7690086f66ce7131f"
+  },
+  "native_signed_objective": 0.0,
+  "reference_signed_objective": -0.0005752295255661011,
+  "loss_abs_difference": 0.0005752295255661011,
+  "native_log_statistic_not_effective_objective": "Upstream actor/pg_loss=0.7833 is the mean absolute microbatch statistic. Signed mean objective is reported separately.",
+  "native_original_storage_dtype_inventory": {
+    "native": {
+      "logprobs": {
+        "F64": 1
+      },
+      "gradients": {
+        "F32": 19
+      },
+      "logits": {
+        "F32": 1
+      },
+      "loss": {
+        "F32": 1
+      },
+      "after": {
+        "BF16": 19
+      },
+      "before": {
+        "BF16": 19
+      }
+    },
+    "reference": {
+      "logprobs": {
+        "F64": 1
+      },
+      "after": {
+        "F32": 19
+      },
+      "before": {
+        "F32": 19
+      },
+      "gradients": {
+        "F32": 19
+      },
+      "logits": {
+        "F32": 1
+      },
+      "loss": {
+        "F32": 1
+      }
+    }
+  },
+  "independent_reference_proof": {
+    "status": "independent_reference_complete",
+    "framework": "MindSpeed-RL fixed-trajectory CPU reference",
+    "reference_model": "Transformers Qwen3ForCausalLM CPU FP32 eager",
+    "reference_input_sha256": "bf7996545bbdac9c15dbd59b34e09bcdcc0f9703e1f8eb6683d3f9b11d296089",
+    "reference_capture_sha256": "21c0d6dc44a4452c154c1d5f2ecaa1dc17ba549078f5d91a86233d9b38192cfa",
+    "native_capture_sha256": "790edc4be443f356795e8865bb740a0906df9a455e24dfa04735ddc16d1c5b4a",
+    "initial_checkpoint_sha256": "c559ad708afa8e129d568189e07110bf17fb78017a215100c51de7ecee0d83d1",
+    "reference_input_keys": [
+      "batch",
+      "before",
+      "config",
+      "initial_optimizer",
+      "megatron_config",
+      "objective"
+    ],
+    "native_outcomes_consumed_by_reference": false,
+    "all_parameters_mapped": true,
+    "initial_hf_checkpoint_values_equal_native_before": true,
+    "initial_master_values_equal": true,
+    "fresh_optimizer_state_empty": true,
+    "optimizer_steps": 1,
+    "optimizer": "torch.optim.Adam",
+    "microbatches": 4,
+    "reduction": "Mean of per-microbatch masked action means, then divide by four; matches selected non-pipeline accumulation",
+    "action_rows": 16,
+    "groups": 1,
+    "trajectories": 4,
+    "loss": -0.0005752295255661011,
+    "components": [
+      {
+        "policy": 1.3038036823272705,
+        "kl": 6.586313247680664e-06,
+        "total": 1.3038036823272705
+      },
+      {
+        "policy": -0.7838714718818665,
+        "kl": 1.1324882507324219e-06,
+        "total": -0.7838714718818665
+      },
+      {
+        "policy": 0.26102906465530396,
+        "kl": 1.7583370208740234e-06,
+        "total": 0.26102906465530396
+      },
+      {
+        "policy": -0.7832621932029724,
+        "kl": 3.2186508178710938e-06,
+        "total": -0.7832621932029724
+      }
+    ],
+    "fixed_dependencies": [
+      "native-generated prompt/response IDs and response lengths",
+      "native old-policy/ref logprobs and GRPO advantages accepted as fixed objective inputs"
+    ],
+    "group_audit": {
+      "source": "Independent replay of official reasoning_steps_reward regex and compute_group_norm_advantage_return; native rewards were not separately captured",
+      "decoded_responses": [
+        "word223 Step 35: word178 word143",
+        "Step 85: Step 45: Step 25:",
+        "word204 Step 89: word199 Step 53:",
+        "Step 111: Step 86: Step 47: word147"
+      ],
+      "derived_rewards": [
+        0.3333333432674408,
+        1.0,
+        0.6666666865348816,
+        1.0
+      ],
+      "derived_group_mean": 0.7500000074505806,
+      "derived_group_std_unbiased": 0.3191423631995413,
+      "group_epsilon": 1e-06,
+      "derived_advantage_max_abs_difference_from_accepted_native": 0.0,
+      "native_advantages_are_accepted_fixed_objective_inputs": true
+    },
+    "not_claimed": [
+      "separately captured native reward arrays",
+      "independent resampling",
+      "acceptance against numerical thresholds"
+    ],
+    "thresholds": null,
+    "original_dtypes": {
+      "native_before": [
+        "torch.bfloat16"
+      ],
+      "reference": "torch.float32"
+    },
+    "unmodified_cpu_runtime": {
+      "torch": "2.7.1+cpu",
+      "forbidden_framework_modules_absent": true
+    }
+  },
+  "original_input_checkpoint_sha256": "c559ad708afa8e129d568189e07110bf17fb78017a215100c51de7ecee0d83d1",
+  "valid_action_mask": "Actual response_length=4 for every response, including the sampled pad-token ID0 as a valid action; no responses!=pad mask.",
+  "metrics": {
+    "gradients": {
+      "status": "no_thresholds",
+      "global": {
+        "count": 1836544,
+        "side_a_norm": {
+          "value": 10.21690115161233,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 10.209181672830058,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.09068379871242305,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 6.691585562166581e-05,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.999960865408782,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.005232870578765869,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 1706287,
+        "max_coordinate": {
+          "parameter": "chunk0.module.module.embedding.word_embeddings.weight",
+          "index": 815
+        }
+      }
+    },
+    "updates": {
+      "status": "no_thresholds",
+      "global": {
+        "count": 1836544,
+        "side_a_norm": {
+          "value": 1.313252446397032,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 1.332154417186999,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.1655298790361822,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 0.00012214500984661069,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9922710628103805,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.002098565921187401,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 828132,
+        "max_coordinate": {
+          "parameter": "chunk0.module.module.decoder.layers.0.self_attention.linear_qkv.weight",
+          "index": 171940
+        }
+      }
+    },
+    "observations": {
+      "status": "no_thresholds",
+      "global": {
+        "count": 4097,
+        "side_a_norm": {
+          "value": 20.233083122143185,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 20.230078681532007,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.1420453880643163,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 0.0022191883080269078,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9999753639937614,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.007154740393161774,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 3910,
+        "max_coordinate": {
+          "tensor": "logits",
+          "index": 3910,
+          "coordinate": [
+            15,
+            70
+          ],
+          "observation": {
+            "stage": "objective",
+            "boundary": "preloss full-vocabulary logits",
+            "targets": [
+              {
+                "sample": "batch-0",
+                "position": 2,
+                "history": [
+                  3,
+                  132,
+                  133
+                ],
+                "target_token_id": 223,
+                "native_prediction_index": 2
+              },
+              {
+                "sample": "batch-0",
+                "position": 3,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  223
+                ],
+                "target_token_id": 38,
+                "native_prediction_index": 3
+              },
+              {
+                "sample": "batch-0",
+                "position": 4,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  223,
+                  38
+                ],
+                "target_token_id": 178,
+                "native_prediction_index": 4
+              },
+              {
+                "sample": "batch-0",
+                "position": 5,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  223,
+                  38,
+                  178
+                ],
+                "target_token_id": 143,
+                "native_prediction_index": 5
+              },
+              {
+                "sample": "batch-1",
+                "position": 2,
+                "history": [
+                  3,
+                  132,
+                  133
+                ],
+                "target_token_id": 88,
+                "native_prediction_index": 2
+              },
+              {
+                "sample": "batch-1",
+                "position": 3,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  88
+                ],
+                "target_token_id": 48,
+                "native_prediction_index": 3
+              },
+              {
+                "sample": "batch-1",
+                "position": 4,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  88,
+                  48
+                ],
+                "target_token_id": 28,
+                "native_prediction_index": 4
+              },
+              {
+                "sample": "batch-1",
+                "position": 5,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  88,
+                  48,
+                  28
+                ],
+                "target_token_id": 0,
+                "native_prediction_index": 5
+              },
+              {
+                "sample": "batch-2",
+                "position": 2,
+                "history": [
+                  3,
+                  132,
+                  133
+                ],
+                "target_token_id": 204,
+                "native_prediction_index": 2
+              },
+              {
+                "sample": "batch-2",
+                "position": 3,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  204
+                ],
+                "target_token_id": 92,
+                "native_prediction_index": 3
+              },
+              {
+                "sample": "batch-2",
+                "position": 4,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  204,
+                  92
+                ],
+                "target_token_id": 199,
+                "native_prediction_index": 4
+              },
+              {
+                "sample": "batch-2",
+                "position": 5,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  204,
+                  92,
+                  199
+                ],
+                "target_token_id": 56,
+                "native_prediction_index": 5
+              },
+              {
+                "sample": "batch-3",
+                "position": 2,
+                "history": [
+                  3,
+                  132,
+                  133
+                ],
+                "target_token_id": 114,
+                "native_prediction_index": 2
+              },
+              {
+                "sample": "batch-3",
+                "position": 3,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  114
+                ],
+                "target_token_id": 89,
+                "native_prediction_index": 3
+              },
+              {
+                "sample": "batch-3",
+                "position": 4,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  114,
+                  89
+                ],
+                "target_token_id": 50,
+                "native_prediction_index": 4
+              },
+              {
+                "sample": "batch-3",
+                "position": 5,
+                "history": [
+                  3,
+                  132,
+                  133,
+                  114,
+                  89,
+                  50
+                ],
+                "target_token_id": 147,
+                "native_prediction_index": 5
+              }
+            ],
+            "invocation": 0
+          }
+        }
+      }
+    },
+    "distributions": {
+      "status": "no_thresholds",
+      "aggregate": {
+        "probability_rmse": {
+          "mean": 1.1957987131169372e-05,
+          "p99": 1.3874057586338814e-05,
+          "max": 1.3974336576657741e-05,
+          "max_coordinate": {
+            "sample": "batch-0",
+            "position": 5
+          }
+        },
+        "max_probability_error": {
+          "mean": 3.5318063339405555e-05,
+          "p99": 4.5242906714459704e-05,
+          "max": 4.544016488502653e-05,
+          "max_coordinate": {
+            "sample": "batch-2",
+            "position": 4,
+            "token": 194
+          }
+        },
+        "tail_merged_js": {
+          "mean": 3.4038874485532936e-07,
+          "p99": 4.5433676550357956e-07,
+          "max": 4.598000861855855e-07,
+          "max_coordinate": {
+            "sample": "batch-0",
+            "position": 5
+          }
+        },
+        "top1_agreement": {
+          "count": 15,
+          "total": 16,
+          "fraction": 0.9375
+        },
+        "top100_overlap": {
+          "mean": 0.995625
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.5128316471058681,
+            "p1": 0.5033858784457407,
+            "min": 0.5032436740395884
+          },
+          "side_b_top100": {
+            "mean": 0.5127733764193224,
+            "p1": 0.5033022755992799,
+            "min": 0.5031498509482893
+          },
+          "side_a_union": {
+            "mean": 0.5146126486186579,
+            "p1": 0.5033858784457407,
+            "min": 0.5032436740395884
+          },
+          "side_b_union": {
+            "mean": 0.5145526349571876,
+            "p1": 0.5033022755992799,
+            "min": 0.5031498509482893
+          }
+        }
+      }
+    },
+    "targets": {
+      "status": "no_thresholds",
+      "metrics": {
+        "target_count": 16,
+        "side_a_nll_nat_per_token": 5.40227085351944,
+        "side_b_nll_nat_per_token": 5.402556419372559,
+        "nll_abs_diff_nat_per_token": 0.0002855658531188965,
+        "mae_nat": 0.0021170377731323242,
+        "p99_nat": 0.005033636093139648,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.005240917205810547,
+        "max_coordinate": {
+          "sample": "batch-0",
+          "position": 6,
+          "token": 143
+        }
+      },
+      "coverage": {
+        "expected": 16,
+        "paired": 16
+      }
+    }
+  },
+  "thresholds": null,
+  "numeric_acceptance_pass_claimed": false,
+  "public_archive": {
+    "relative_directory": "msrl-compact-public-attempt02",
+    "index_sha256": "b012ee6ea91a2ed0ee40a62866ffce7e3abbcca5b9de8eba2e223ed2d2c7eb3a",
+    "bytes": 28449849,
+    "volumes": 3
+  },
+  "private_raw_archive": {
+    "relative_directory": "msrl-full-private-attempt01",
+    "index_sha256": "d78b66b2d7fa7e855550911dce3fb3edc51260dec08649cd898c5f110b509e39",
+    "bytes": 94306020,
+    "volumes": 6
+  },
+  "local_replay": {
+    "status": "all_canonical_core_comparisons_replayed",
+    "canonical_cases": 1,
+    "comparisons": 5,
+    "torch_imported": false,
+    "pickle_loaded": false,
+    "thresholds": null,
+    "records": [
+      {
+        "case": "canonical-mindspeed-rl-grpo-bf16",
+        "stage": "gradients",
+        "returncode": 0,
+        "status": "no_thresholds",
+        "core_sha256": "05c39d401900420815bdfa57762c7164f111b9b442098b0902ff139d058115e9",
+        "output_sha256": "f88057c3e99e97d0f84cf81dc908e739e5027da0460bac46f4fad0cc0ab3a9fd"
+      },
+      {
+        "case": "canonical-mindspeed-rl-grpo-bf16",
+        "stage": "updates",
+        "returncode": 0,
+        "status": "no_thresholds",
+        "core_sha256": "05c39d401900420815bdfa57762c7164f111b9b442098b0902ff139d058115e9",
+        "output_sha256": "8a8e0dc1dea19abbb748272076dc8616a6ed0f18f7e40bfc73b5504fd3a0f66e"
+      },
+      {
+        "case": "canonical-mindspeed-rl-grpo-bf16",
+        "stage": "observations",
+        "returncode": 0,
+        "status": "no_thresholds",
+        "core_sha256": "05c39d401900420815bdfa57762c7164f111b9b442098b0902ff139d058115e9",
+        "output_sha256": "50c0fe1c4511b5acaa7dbb066f7fc76d5b86bd9299e708a8304f40f6dd631714"
+      },
+      {
+        "case": "canonical-mindspeed-rl-grpo-bf16",
+        "stage": "distributions",
+        "returncode": 0,
+        "status": "no_thresholds",
+        "core_sha256": "f8efa3fab164cbc9913feaf8e24859acb8f094135b5edb1f96b3c20a02a3549b",
+        "output_sha256": "f24157133c17bd7b3ecbbbd8508680e8cdb1c5c6227af8f5d4c50b7d859f82a3"
+      },
+      {
+        "case": "canonical-mindspeed-rl-grpo-bf16",
+        "stage": "targets",
+        "returncode": 0,
+        "status": "no_thresholds",
+        "core_sha256": "8c784ba8fcd2505dd5ca9f9eae5fa60321a6451d3b7dc27bd5c5e005c43135ff",
+        "output_sha256": "e7a307f00a7b2a84306c64bfeef4b0fe38bee5ee445298312aad05fd636daf74"
+      }
+    ]
+  },
+  "resource_release": {
+    "utc": "2026-10-20T11:54:00.866478+00:00",
+    "initial_fixture_files_unchanged": true,
+    "files": {
+      "hf/tokenizer_config.json": {
+        "initial_sha256": "31d5ef873ecf3778c5e593a7348be09ec19546d1a766ebb84637037c13b140c6",
+        "after_native_and_reference_sha256": "31d5ef873ecf3778c5e593a7348be09ec19546d1a766ebb84637037c13b140c6",
+        "unchanged": true
+      },
+      "hf/special_tokens_map.json": {
+        "initial_sha256": "0a1d20590bdd36c974506605dba2e4cea2c3d0392a999252137efdbbd456b2d9",
+        "after_native_and_reference_sha256": "0a1d20590bdd36c974506605dba2e4cea2c3d0392a999252137efdbbd456b2d9",
+        "unchanged": true
+      },
+      "hf/tokenizer.json": {
+        "initial_sha256": "08db52b96149c70ce50e089bcb631587c1e61619125bdadec49be90e662b6f11",
+        "after_native_and_reference_sha256": "08db52b96149c70ce50e089bcb631587c1e61619125bdadec49be90e662b6f11",
+        "unchanged": true
+      },
+      "hf/config.json": {
+        "initial_sha256": "7449fee6440a12e516a15be7d40fcb000e81c680e012c1b458c24c275fbd5422",
+        "after_native_and_reference_sha256": "7449fee6440a12e516a15be7d40fcb000e81c680e012c1b458c24c275fbd5422",
+        "unchanged": true
+      },
+      "hf/generation_config.json": {
+        "initial_sha256": "1cb1a0b52bb9c841bcd835529cbb99601135946befc03adb6aaeca55806949ae",
+        "after_native_and_reference_sha256": "1cb1a0b52bb9c841bcd835529cbb99601135946befc03adb6aaeca55806949ae",
+        "unchanged": true
+      },
+      "hf/model.safetensors": {
+        "initial_sha256": "c559ad708afa8e129d568189e07110bf17fb78017a215100c51de7ecee0d83d1",
+        "after_native_and_reference_sha256": "c559ad708afa8e129d568189e07110bf17fb78017a215100c51de7ecee0d83d1",
+        "unchanged": true
+      },
+      "hf/precision-initialization.json": {
+        "initial_sha256": "579d5088ac54c028efb45ebb54ff18efbaf18f761836ec6e0f370a0ba852f0e3",
+        "after_native_and_reference_sha256": "579d5088ac54c028efb45ebb54ff18efbaf18f761836ec6e0f370a0ba852f0e3",
+        "unchanged": true
+      },
+      "hf/precision-config-before-legacy-dtype.json": {
+        "initial_sha256": "0d607ce529c4c4c2a5cc8c05d09820b8193e5d0133934b016d12ea9fa6f6e0d0",
+        "after_native_and_reference_sha256": "0d607ce529c4c4c2a5cc8c05d09820b8193e5d0133934b016d12ea9fa6f6e0d0",
+        "unchanged": true
+      },
+      "hf/precision-legacy-dtype-alias.json": {
+        "initial_sha256": "79bfdbf0d8682ef0e2109847ee67f172ae0cc792fcde5e1c589bd1061a480b87",
+        "after_native_and_reference_sha256": "79bfdbf0d8682ef0e2109847ee67f172ae0cc792fcde5e1c589bd1061a480b87",
+        "unchanged": true
+      },
+      "mcore/latest_checkpointed_iteration.txt": {
+        "initial_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "after_native_and_reference_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "unchanged": true
+      },
+      "data/fixture_packed_input_ids_document.bin": {
+        "initial_sha256": "f4d47fcf568aec70a2f8f2746c6c707b96cf57c22e4ecd59324587217cbfd4f8",
+        "after_native_and_reference_sha256": "f4d47fcf568aec70a2f8f2746c6c707b96cf57c22e4ecd59324587217cbfd4f8",
+        "unchanged": true
+      },
+      "data/fixture_packed_input_ids_document.idx": {
+        "initial_sha256": "d42a3900f1ed07127fc7d1f6c39621178b87f3d92534346a586be748535162cd",
+        "after_native_and_reference_sha256": "d42a3900f1ed07127fc7d1f6c39621178b87f3d92534346a586be748535162cd",
+        "unchanged": true
+      },
+      "data/fixture_packed_labels_document.bin": {
+        "initial_sha256": "b117832cc6a06a8e7adcef90f5808e2667c620156b858d94cface9dda64591e8",
+        "after_native_and_reference_sha256": "b117832cc6a06a8e7adcef90f5808e2667c620156b858d94cface9dda64591e8",
+        "unchanged": true
+      },
+      "data/fixture_packed_labels_document.idx": {
+        "initial_sha256": "ea419f04c36f837d8cc3d385e22c40eaefb9fedb74c11a6538b4ad520f0f35ba",
+        "after_native_and_reference_sha256": "ea419f04c36f837d8cc3d385e22c40eaefb9fedb74c11a6538b4ad520f0f35ba",
+        "unchanged": true
+      }
+    },
+    "mcore_checkpoint_current_hashes_after_execution": {
+      "mcore/iter_0000001/mp_rank_00/model_optim_rng.pt": "7c68f376b66844d2c77cfdadf1865203c21b0c19e41b39b4d8551e13eb372bf7"
+    },
+    "mcore_initial_hash_before_execution_was_not_collected": true,
+    "native_parameter_identity_proof": "Every accepted native initial parameter and optimizer master exactly equals the independently stored initial HF checkpoint value after explicit QKV/SwiGLU/QK-norm coordinate mapping, verified by independent CPU reference.",
+    "task_owned_ray_session_remaining_processes": [],
+    "native_actor_pid_absent": true,
+    "native_device_7_lock_free": true,
+    "no_global_service_or_unrelated_process_changes": true
+  },
+  "observer_boundary_description_erratum": {
+    "schema": "precision-observation-description-erratum-v1",
+    "framework": "MindSpeed-RL",
+    "applies_to": "canonical-mindspeed-rl-grpo-bf16",
+    "original_observer_description": "Native BaseTrainingEngine optimizer.step entry; original BF16 main_grad with clip_grad=0",
+    "correction": "The observer description incorrectly calls the main gradients BF16. All 19 original captured gradient tensors are FP32. Native parameters before/after are BF16; original preloss forward logits and native objective are FP32. No raw tensor was cast or replaced to create this correction.",
+    "actual_storage_dtypes": {
+      "native": {
+        "logprobs": {
+          "F64": 1
+        },
+        "gradients": {
+          "F32": 19
+        },
+        "logits": {
+          "F32": 1
+        },
+        "loss": {
+          "F32": 1
+        },
+        "after": {
+          "BF16": 19
+        },
+        "before": {
+          "BF16": 19
+        }
+      },
+      "reference": {
+        "logprobs": {
+          "F64": 1
+        },
+        "after": {
+          "F32": 19
+        },
+        "before": {
+          "F32": 19
+        },
+        "gradients": {
+          "F32": 19
+        },
+        "logits": {
+          "F32": 1
+        },
+        "loss": {
+          "F32": 1
+        }
+      }
+    },
+    "evidence": {
+      "original_native_pt_sha256": "790edc4be443f356795e8865bb740a0906df9a455e24dfa04735ddc16d1c5b4a",
+      "capture_inspector_sha256": "774c42e20e785939495676fe4b12595a1ee3e4d42e8a0593235d2dd91d54f48f",
+      "compact_native_safetensors_sha256": "ed337bfd468a061fe47f038c874fce0f85e882c6b9ecdc0f2d2226ce9348775d",
+      "header_has_no_path_or_user_metadata": true
+    },
+    "scope": "A human description correction only; native operators, gradients, parameter updates, core results and tensor bytes are unchanged.",
+    "thresholds": null
+  }
+}
