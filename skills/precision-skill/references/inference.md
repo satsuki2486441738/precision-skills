@@ -4,11 +4,13 @@
 
 Replay the selected token IDs, position IDs, attention masks and prediction positions. Check checkpoint/tokenizer/config and numerical settings against the task's common conditions and per-side configuration. At prediction position $t-1$, collect the distribution predicting token $x_t$.
 
-Collect the observations needed by the selected metrics. For target-score comparison, save the requested labels, logical positions and full-vocabulary-normalized logprobs. For distribution comparison, compute natural-log softmax in FP32 before sampling processors, retaining model-defined scaling/softcapping; save full logprob rows or queryable arrays and vocabulary mapping. Retain requested label scores even outside top-100.
+Collect the observations needed by the selected metrics. For target-score comparison, save the requested labels, logical positions and full-vocabulary-normalized logprobs. For distribution comparison, retain native preprocessor scores and their measured dtype when available. Derive natural-log softmax in a declared FP32 or FP64 policy, retaining model-defined scaling/softcapping; save full logprob rows or queryable arrays and vocabulary mapping. Label offline derivation separately from native probabilities. Retain requested label scores even outside top-100.
 
 ### Full forward
 
 For cache-off scoring, use eval/no-grad and collect the requested prediction positions in the native forward pass.
+
+Confirm that the native call actually disables cache where required. Clearing memory between prefix requests does not disable cache storage inside each request. Record each side's actual forward shapes, cache flags and observed cache dtype; an uninstrumented default is not a measured value. A full-sequence reference and separate prefix forwards are different execution boundaries even when their causal token histories match.
 
 ### Cached execution
 
@@ -32,7 +34,9 @@ Reconstruct vocabulary shards, exclude padding and export the score rows needed 
 | [MindIE-LLM](https://github.com/Ascend/MindIE-LLM) | Service/model backend, available score access and scheduled request/prefill/decode mappings |
 | [llama.cpp](https://github.com/ggml-org/llama.cpp) | GGUF/checkpoint identity, quantization, tokenizer conversion and native context/logit-row mapping |
 
-Resolve score availability at the native execution layer and export the observations required by the selected metrics. Use engine replay or a collector for fixed-history decode. The [inference capture tool](../scripts/inference_capture.py) saves full-vocabulary FP32 logprobs before forcing each fixed token, checks logical prefill/decode histories and exports distribution/target-score records. The adapter selects request rows, reconstructs vocabulary shards and maps native scheduling events to logical events.
+Resolve score availability at the native execution layer and export the observations required by the selected metrics. Use engine replay or a collector for fixed-history decode. The [inference capture tool](../scripts/inference_capture.py) saves full-vocabulary logprobs before forcing each fixed token, checks logical prefill/decode histories and exports distribution/target-score records. `FixedHistory` retains native-device FP32 derivation by default; explicit `logprob_dtype='float64'` copies native values and derives FP64 logprobs offline. `derive_logprobs` provides the same declared offline operation on NumPy rows. Do not loosen a normalization invariant to hide an export error. The adapter selects request rows, reconstructs vocabulary shards and maps native scheduling events to logical events.
+
+Validate observed score coordinates as well as token histories. When native context and generation outputs are available, `validate_generation_scores(context, generation, decode)` checks exact last-context/first-generation identity and every supplied decode row. A callback's initial row is not automatically the final prefill distribution. Reject a mismatched callback row and retain the original observation; select the authoritative native API row in the adapter. `validate_history` checks integer token/position IDs and any supplied decode prefix length. `export_records` then loads each selected score row, validates normalization and requires the supplied target value to match it; it cannot establish native cache semantics or physical positions by itself.
 
 ### Other/custom
 

@@ -29,11 +29,15 @@ Run the requested stages within the task's cumulative budget. Save coordinates, 
 
 Task adapters prepare native inputs, execute the framework and map observations to logical coordinates. Tools provide composable planning, export, validation and comparison operations; third-party packages such as msProbe are optional backends. Implement missing adapters or tools as needed. During skill development, extract reusable operations with explicit interfaces and regression coverage for correctness and supported input variations; keep task-specific settings in adapters and environments.
 
+For portable captured evidence, use the [indexed archive and replay tools](references/comparison.md#portable-evidence). Preserve source/export hashes and explicit side identities. Replaying retained arrays checks their metrics; it does not repeat native execution or establish numerical acceptance.
+
 ## Adapt an unfamiliar implementation
 
 Use the installed version's documentation and source to locate batch preparation, native execution and capture boundaries. Execute through its native entrypoint, operators and state transitions. Map observations to the task's logical coordinates, preserving native storage dtypes and distinguishing captured from derived quantities.
 
 Map collected observations to the [comparison interfaces](references/comparison.md). Report unavailable requested observations with their affected coverage.
+
+Record requested settings separately from measured native storage, derived arrays and uninstrumented properties. Scope native completion to the actual source revision, adapter, backend and entrypoint used; keep earlier failed routes separate.
 
 ## Compare and report
 

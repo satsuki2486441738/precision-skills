@@ -27,6 +27,10 @@ Collect the requested stages:
 
 Preserve native dtypes and logical coordinates.
 
+Distinguish requested precision, measured parameter/main-gradient/master/cache storage, exported array dtype and offline reduction dtype. Promoting a copy to FP32 does not establish that native storage was FP32. Keep uninstrumented properties explicit rather than inferring them from an export or configuration name.
+
+For clipping, retain the native returned norm and applied coefficient alongside any independent full-coordinate FP64 pre/postclip diagnostics. Equal configured maximum norms need not yield identical effective coefficients or postclip norms across implementations. Preserve that difference; do not rescale captures to force equality. A norm over sampled coordinates is not a full-model norm. For sampled comparisons, record the exact initial-coordinate checks, parameter selection and omitted stages; do not extend sampled equality to unobserved state.
+
 For distributed training, resolve parameter/gradient ownership, synchronization and optimizer storage in the selected backend. Capture accumulated, unscaled, synchronized gradients from native storage (for example, Megatron `main_grad`), postclip gradients before optimizer mutation, and stored parameters after mutation and model copy-back. Record master/state dtypes separately. Map captured shards and replicas using the [coordinate rules](comparison.md#coordinates); use the logical inventory exporter and explicit-view comparator from [comparison](comparison.md).
 
 When establishing a stateful-optimizer baseline, collect cold and common-restored steps, including parameters, moments and step counter. Reuse accepted baselines for unchanged paths; repeat affected stages after optimizer, precision, objective, sharding or dependency changes.

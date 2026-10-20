@@ -7,7 +7,7 @@ Select tools by operation and supported input semantics. The tool library lives 
 | Operation | Tool entrypoint | Inputs and outputs |
 |---|---|---|
 | Check runtime initialization / interfaces | [runtime_probe.py](../scripts/runtime_probe.py), CLI / Python `probe_runtime`, `inspect_runtime` | Ordered imports, symbols and task checks → actual module identity, distribution metadata and diagnostics in a fresh interpreter or native worker |
-| Capture fixed-history inference / export scores | [inference_capture.py](../scripts/inference_capture.py), Python `FixedHistory`, `validate_history`, `export_records` | Native full-vocabulary logit row and fixed tokens → preconstraint logprob arrays, history checks and distribution/target-score records |
+| Capture fixed-history inference / export scores | [inference_capture.py](../scripts/inference_capture.py), Python `FixedHistory`, `derive_logprobs`, `validate_history`, `validate_generation_scores`, `export_records` | Native rows and fixed tokens → declared logprob derivation, history/score-row checks and verified distribution/target-score records |
 | Compare target/action scores | [compare_target_scores.py](../scripts/compare_target_scores.py), CLI | Contract and paired score records → target-score metrics, including EOS and cached execution |
 | Compare full distributions | [compare_distributions.py](../scripts/compare_distributions.py), CLI | Contract and paired manifests → top-100 union/tail metrics |
 | Compare distributions across hosts | [query_distributions.py](../scripts/query_distributions.py), CLI / Python | Source manifests → inventories and union queries → comparison; full arrays stay at source |
@@ -15,6 +15,8 @@ Select tools by operation and supported input semantics. The tool library lives 
 | Export logical tensors / compare replica views | [tensor_artifacts.py](../scripts/tensor_artifacts.py), CLI / Python | Per-rank inventories → logical manifests; explicit view pairs → comparisons |
 | Compare assistant-body scores | [compare_scores.py](../scripts/compare_scores.py), CLI | Single-turn cache-off score artifacts with execution evidence → metrics |
 | Validate artifacts | [validate_artifacts.py](../scripts/validate_artifacts.py), CLI | Contract and one side's tensor/distribution manifest → validation and coverage |
+| Package / verify / extract evidence | [evidence_bundle.py](../scripts/evidence_bundle.py), CLI / Python `pack`, `verify`, `extract` | Curated files and optional literal text replacements → indexed source/export hashes, streamed verification and fresh extraction |
+| Replay retained comparisons | [replay_bundle.py](../scripts/replay_bundle.py), CLI / Python `replay` | Indexed ZIP with `REPLAY.json` → selected skill CLI reports and expected-subset checks, preserving explicit side order |
 | Plan msProbe module capture | [msprobe_capture.py](../scripts/msprobe_capture.py), Python `plan_modules` | Native module inventory, selected paths and output sizes → L0 configuration, observation selection and payload estimate; execution uses the [layerwise integration](layerwise.md#integrate-and-verify) |
 
 Supporting modules provide [artifact readers](../scripts/artifact_io.py), [execution-condition checks](../scripts/conditions.py) and [target-score arithmetic](../scripts/score_metrics.py). Reuse them inside tools and task adapters; their module docstrings own the interfaces. Task adapters own native masks, logical mappings, losses and objective reductions.
@@ -30,6 +32,23 @@ Read the selected interface before collection. Distribution matrix rows belong i
 Use `--help` for CLI usage. When adapting inputs, extract only the selected module docstring with Python `ast`; distribution/tensor schemas share [artifact_io.py](../scripts/artifact_io.py). Inspect implementation functions as needed.
 
 Contracts set `thresholds: null`. Outputs contain metrics, coordinate counts and unavailable comparisons. Exit codes: 0=comparison metrics computed successfully, 1=unavailable comparison, 2=CLI/output error.
+
+## Portable evidence
+
+Stage only the intended public files in a separate directory. Keep model/environment trees, credentials and private filenames out of that selection. The archive tool streams unchanged payloads and records each source/export SHA256 and byte count. Optional replacements are explicit literal pairs applied to valid UTF-8 text across extensions, including logs, YAML and shell files; keep the replacement specification outside the staged directory. Protected numeric/model extensions (listed in the docstring), NUL-containing files and invalid UTF-8 are unchanged. It does not detect every possible binary format; use untransformed packing for other raw formats. Paths are preserved, so filename review and privacy scanning remain the caller's responsibility. The tool neither discovers every secret nor certifies privacy. Avoid broad automatic IP replacement: public package versions can have the same spelling as an IPv4 address.
+
+From the skill directory:
+
+```sh
+python scripts/evidence_bundle.py pack STAGED_FILES NEW.zip --replacements PRIVATE_REPLACEMENTS.json
+python scripts/evidence_bundle.py verify NEW.zip
+python scripts/evidence_bundle.py extract NEW.zip NEW_DIRECTORY
+python scripts/replay_bundle.py --bundle NEW.zip --output-root runs
+```
+
+Omit `--replacements` when no text changes are needed. `EXPORT.json` covers every member except itself. Verification checks unique portable paths, complete coverage, hashes and any declared byte counts; extraction requires a new output directory. The default expanded-byte cap is 16 GiB and index JSON is capped at 16 MiB. Use `--max-expanded-bytes` to select a different archive/replay cap. Older supported `EXPORT.json` lists may omit sizes; their receipts disclose ZIP-metadata-derived lengths. An explicit `--index FILES.json` supports a complete plain path-to-hash/size inventory. Other legacy layouts require an explicit conversion/adapter; their archived verifier scripts are not executed by these tools.
+
+`REPLAY.json` contains nonempty `cases`, each with unique `name`, `operation`, `inputs` and a nonempty `expected` report subset. Operations are `validate` (contract/manifest) and `compare_tensors`, `compare_distributions`, `compare_target_scores` (contract/side_a/side_b). Use relative paths, preserving the contract's side identities and order. Expected floating values use `rel_tol=abs_tol=1e-12`; these are retained-metric replay tolerances, not model acceptance thresholds. Replaying uses installed tools, or an explicitly selected `--scripts` directory, and does not execute bundled Python. Artifact references consumed by those tools must resolve inside the extracted evidence. A successful replay does not repeat native training/generation, prove source authenticity or supply missing raw arrays.
 
 ## Coordinates
 

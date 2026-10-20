@@ -38,6 +38,8 @@ skill 组织任务，任务适配代码接入原生执行路径，[工具库](sk
 
 工具负责检查运行环境初始化和实际导入的接口、采集固定历史的推理分布、规划内部采样、导出和校验产物，以及比较分布、张量观察值（含激活）、梯度、更新和目标评分。msProbe 是可选的采集后端；内置规划工具生成有界的 L0 采集范围并估算张量数据量，任务适配代码负责执行采集。缺少的任务接入按需实现，开发阶段再将可复用操作整理进工具库。数组工具依赖 NumPy；目标评分工具使用标准库。
 
+[证据归档与重放工具](skills/precision-skill/references/comparison.md#portable-evidence)为选定文件记录原始/导出哈希，完整校验索引归档，并通过已安装 skill 的 CLI 重放保留的比较。工具保留二进制数组字节，支持显式 UTF-8 文本替换，并限制重放只读取归档内的产物。推理工具会核对实际评分行与目标分数是否一致；在保留原有 FP32 采集路径的同时，提供显式离线 FP64 推导。
+
 完整采集任务及 agent 的预期执行过程见[固定历史推理示例](skills/precision-skill/examples/fixed-history-inference.md)，涵盖环境准备、采集接入、校验、比较和交付。
 
 在 skill 目录运行[合成产物示例](skills/precision-skill/examples/tensors.py)：

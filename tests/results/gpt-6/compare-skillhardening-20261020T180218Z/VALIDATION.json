@@ -1,0 +1,666 @@
+{
+  "schema": "precision-skill-maintenance-validation-v1",
+  "starting_commit": "040abf7b8c7ec59ff0bddcd45aea05de752aa1b3",
+  "repository_tests": {
+    "linux": {
+      "tests": 167,
+      "skipped": 0,
+      "status": "OK",
+      "sha256": "0056e378002a6d8fc496f250d2aa3f4f2874bed41d8bde43645ea23a9ab7e539"
+    },
+    "windows": {
+      "tests": 167,
+      "skipped": 5,
+      "status": "OK",
+      "sha256": "84c2f2c8c6b67e83ff4ada454a7140274187d29e24255a476e037e9076efa2de"
+    }
+  },
+  "skill_metadata": {
+    "status": "valid",
+    "validator": "skill-creator/scripts/quick_validate.py",
+    "environment": "existing WSL Python with PyYAML"
+  },
+  "independent_review": {
+    "status": "no_remaining_blocker",
+    "reproduced_fixes": [
+      "external replay reference closure",
+      "nonfinite JSON index",
+      "unrepresentable logprob derivation",
+      "strict typed history and capture metadata",
+      "F64 safetensor row/key binding"
+    ]
+  },
+  "retained_artifact_checks": {
+    "native_jobs_rerun": false,
+    "trt_bundle_sha256": "9bea802aade39168dc91666ea255fb8099241c494739e36454cb436ec8aca58d",
+    "native_score_boundary_checks": [
+      {
+        "case": "seeded-llama",
+        "authoritative_rows": {
+          "distributions": 4,
+          "prompt_rows": 4,
+          "decode_rows": 3,
+          "first_generation_is_last_context": true,
+          "decode_rows_checked": true
+        },
+        "wrong_initial_callback_rejected": true,
+        "exact_retained_FP64_derivation": true,
+        "verified_exported_targets": 4
+      },
+      {
+        "case": "qwen25-05b",
+        "authoritative_rows": {
+          "distributions": 4,
+          "prompt_rows": 4,
+          "decode_rows": 3,
+          "first_generation_is_last_context": true,
+          "decode_rows_checked": true
+        },
+        "wrong_initial_callback_rejected": true,
+        "exact_retained_FP64_derivation": true,
+        "verified_exported_targets": 4
+      }
+    ],
+    "trt_installed_tool_comparators": 6,
+    "all_retained_metrics_matched": true,
+    "nemo_FILES_index": {
+      "archive_sha256": "b06be333c1f8220b303d6e6381e43b5fc20e3589577d2f641ec92052487d1038",
+      "file_count": 557,
+      "size_source": "index"
+    },
+    "original_array_bytes_modified": false
+  },
+  "luna_portable": {
+    "index": "luna-portable-index.json",
+    "sha256": "bd51a97e59ce5f0bd64f6712e3f063fb6409dc0ca8066fad9a99005a09250395",
+    "replay_operations": 4,
+    "comparators": 2,
+    "validators": 2,
+    "all_assertions_matched": true,
+    "all21_copied_members_byte_identical": true,
+    "metrics_interpretation": "Target metrics exact; three JS aggregate deltas <=3.5051427732354825e-17, explicit replay tolerance1e-12."
+  },
+  "historical_original_synthetic_replay": {
+    "cases": 8,
+    "matched": true,
+    "entrypoint": "tests/results/gpt-6/replay.py",
+    "unrelated_CWD_tested": true
+  },
+  "optimized_Python_checks": {
+    "archive_tests": 19,
+    "status": "passed",
+    "tampered_archive_and_external_replay_references_rejected": true
+  },
+  "source_inventory": [
+    {
+      "path": ".gitignore",
+      "executed_working_sha256": "45ef516b03c177e3257aead38dca056f431f7399450a96ece6412e8ba5c73c42",
+      "git_blob_sha256": "445617c777621ea84ce8ec4d14c32d50b7bc5089825a6f1b823316ef518b2466",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "README.md",
+      "executed_working_sha256": "d1766806006c756b691d3fb606ef492fbcacecf8a99a5adc0582ed2576d90150",
+      "git_blob_sha256": "5929480b8853191c56e4abaefd85d133b1cf59d5b7afedb0bfa2c72a41db18cd",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "README.zh-CN.md",
+      "executed_working_sha256": "1385c319bfa273d1ba03e6200a8a5a3a05bcbac73142d088397d6898b57312f5",
+      "git_blob_sha256": "9d5b5849d61499efffc4c3d4223e3df2e065ee11097c51b1c891d94726fbf9f0",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "skills/precision-skill/SKILL.md",
+      "executed_working_sha256": "c6ca0a9c2e2976bebd4f7b67b76e245cd33cd6ef39c1de37e57ccc6e27341afb",
+      "git_blob_sha256": "ddc82b318f1aa8112b98f5fd70555d9ba5751dd308331717126958a7f0c5164e",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "skills/precision-skill/examples/fixed-history-inference.md",
+      "executed_working_sha256": "ee218ee11a52f3f7ad733407f498edfa74b99a89b320d6f173118bcaa5cc0deb",
+      "git_blob_sha256": "26daa85a80a8ed971af526278059c7444446f0248b8ef58b194872bf375028da",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "skills/precision-skill/references/comparison.md",
+      "executed_working_sha256": "22110f96c53344abe395364566970af88c663c61d9884c89cc0552cc657c379b",
+      "git_blob_sha256": "000eb351d83280c88b58a828df1ec56b6a9c6fab203a5042cd519f342aec79e6",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "skills/precision-skill/references/inference.md",
+      "executed_working_sha256": "f0cbd6d007983d75426af72acef4b46b28a72783c41c60827cbeee5f6e169b36",
+      "git_blob_sha256": "34b5c6c38f2632ad5f9541b1997ed2ebf92ded4e1d05f62614dbe90885baac4c",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "skills/precision-skill/references/sft.md",
+      "executed_working_sha256": "279956964f89311a28550814edd3c34de747f4562257545f1d3e7f8c1dd48aa8",
+      "git_blob_sha256": "3ff14ded13e006798c510d2ec8c5abb163631e820461b0fedb618e5d8b6f95ef",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "skills/precision-skill/scripts/evidence_bundle.py",
+      "executed_working_sha256": "7ecf30826e79ff9bd8b136fd2ec81a0b261859431b26913223a6405cfde10155",
+      "git_blob_sha256": "7ecf30826e79ff9bd8b136fd2ec81a0b261859431b26913223a6405cfde10155",
+      "only_Git_newline_normalization": false
+    },
+    {
+      "path": "skills/precision-skill/scripts/inference_capture.py",
+      "executed_working_sha256": "58776c8537cfe43ec9b07d6e0d63e1a1f07699ff40e075f03cc077230b0e0af4",
+      "git_blob_sha256": "d673102da6f873e58f4bbcefafd1618dc34276cb23c1845a27448530da9a0f6b",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "skills/precision-skill/scripts/replay_bundle.py",
+      "executed_working_sha256": "14f5e63722748891a0bf2368f5744ce87e5389cd97e65fd8d0921d2cf58d9fda",
+      "git_blob_sha256": "14f5e63722748891a0bf2368f5744ce87e5389cd97e65fd8d0921d2cf58d9fda",
+      "only_Git_newline_normalization": false
+    },
+    {
+      "path": "tests/results/gpt-6/README.md",
+      "executed_working_sha256": "94af66f7b0259427ce4e08bc46ab5f94915f97f4e9755b7d33a6edd856f1b5af",
+      "git_blob_sha256": "94af66f7b0259427ce4e08bc46ab5f94915f97f4e9755b7d33a6edd856f1b5af",
+      "only_Git_newline_normalization": false
+    },
+    {
+      "path": "tests/results/gpt-6/replay.py",
+      "executed_working_sha256": "b0cf735e0c10127ba10d2cb1fb84cc46c9776566dc546b3c1fdc964b0475e5c4",
+      "git_blob_sha256": "2d9bfa6fe0b9f66d2545f09e1b011d439c4927d536ca9f3c84629ddde2ce2a01",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "tests/test_evidence_bundle.py",
+      "executed_working_sha256": "49839bd89572fa71954b4f926f125660dc588082acc5cf5275da512163dc275f",
+      "git_blob_sha256": "49839bd89572fa71954b4f926f125660dc588082acc5cf5275da512163dc275f",
+      "only_Git_newline_normalization": false
+    },
+    {
+      "path": "tests/test_inference_capture.py",
+      "executed_working_sha256": "02a32bdb73cf799c4356ec4f42bd328587310a2a62e6d5d3e03eb323315c55b7",
+      "git_blob_sha256": "09cdbb7dffb1549dc256fff314db636848f067b0f234c7a16b66bef4938faac1",
+      "only_Git_newline_normalization": true
+    },
+    {
+      "path": "tests/test_replay_bundle.py",
+      "executed_working_sha256": "be7558c4e0a809bb6c34defb5afe388c71fc128cfd2984df56d5c9869721cd7b",
+      "git_blob_sha256": "be7558c4e0a809bb6c34defb5afe388c71fc128cfd2984df56d5c9869721cd7b",
+      "only_Git_newline_normalization": false
+    }
+  ],
+  "source_hash_scope": "Executed working bytes separately from Git-normalized committed bytes; raw numerical artifacts unchanged.",
+  "local_documentation_links": {
+    "status": "valid",
+    "records": [
+      {
+        "document": "README.md",
+        "target": "README.zh-CN.md",
+        "status": "valid"
+      },
+      {
+        "document": "README.md",
+        "target": "skills/precision-skill/",
+        "status": "valid"
+      },
+      {
+        "document": "README.md",
+        "target": "skills/precision-skill/SKILL.md",
+        "status": "valid"
+      },
+      {
+        "document": "README.md",
+        "target": "skills/precision-skill/references/layerwise.md",
+        "status": "valid"
+      },
+      {
+        "document": "README.md",
+        "target": "skills/precision-skill/references/comparison.md#tools",
+        "status": "valid"
+      },
+      {
+        "document": "README.md",
+        "target": "skills/precision-skill/references/comparison.md#portable-evidence",
+        "status": "valid"
+      },
+      {
+        "document": "README.md",
+        "target": "skills/precision-skill/examples/fixed-history-inference.md",
+        "status": "valid"
+      },
+      {
+        "document": "README.md",
+        "target": "skills/precision-skill/examples/tensors.py",
+        "status": "valid"
+      },
+      {
+        "document": "README.md",
+        "target": "AGENTS.md",
+        "status": "valid"
+      },
+      {
+        "document": "README.zh-CN.md",
+        "target": "README.md",
+        "status": "valid"
+      },
+      {
+        "document": "README.zh-CN.md",
+        "target": "skills/precision-skill/",
+        "status": "valid"
+      },
+      {
+        "document": "README.zh-CN.md",
+        "target": "skills/precision-skill/SKILL.md",
+        "status": "valid"
+      },
+      {
+        "document": "README.zh-CN.md",
+        "target": "skills/precision-skill/references/layerwise.md",
+        "status": "valid"
+      },
+      {
+        "document": "README.zh-CN.md",
+        "target": "skills/precision-skill/references/comparison.md#tools",
+        "status": "valid"
+      },
+      {
+        "document": "README.zh-CN.md",
+        "target": "skills/precision-skill/references/comparison.md#portable-evidence",
+        "status": "valid"
+      },
+      {
+        "document": "README.zh-CN.md",
+        "target": "skills/precision-skill/examples/fixed-history-inference.md",
+        "status": "valid"
+      },
+      {
+        "document": "README.zh-CN.md",
+        "target": "skills/precision-skill/examples/tensors.py",
+        "status": "valid"
+      },
+      {
+        "document": "README.zh-CN.md",
+        "target": "AGENTS.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "references/comparison.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "scripts/runtime_probe.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "references/inference.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "references/sft.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "references/rl.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "references/comparison.md#tools",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "references/comparison.md#portable-evidence",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "references/comparison.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "references/comparison.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/SKILL.md",
+        "target": "references/layerwise.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/examples/fixed-history-inference.md",
+        "target": "../references/inference.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/examples/fixed-history-inference.md",
+        "target": "../references/comparison.md#tools",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/runtime_probe.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/inference_capture.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/compare_target_scores.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/compare_distributions.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/query_distributions.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/compare_tensors.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/tensor_artifacts.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/compare_scores.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/validate_artifacts.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/evidence_bundle.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/replay_bundle.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/msprobe_capture.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "layerwise.md#integrate-and-verify",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/artifact_io.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/conditions.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/score_metrics.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../examples/tensors.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../examples/fixed-history-inference.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/conditions.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/comparison.md",
+        "target": "../scripts/artifact_io.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/inference.md",
+        "target": "../scripts/inference_capture.py",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/inference.md",
+        "target": "../SKILL.md#adapt-an-unfamiliar-implementation",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/inference.md",
+        "target": "comparison.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/sft.md",
+        "target": "comparison.md#coordinates",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/sft.md",
+        "target": "comparison.md",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/sft.md",
+        "target": "../SKILL.md#adapt-an-unfamiliar-implementation",
+        "status": "valid"
+      },
+      {
+        "document": "skills/precision-skill/references/sft.md",
+        "target": "comparison.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-skillvalidation-20261019T083016Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-frameworkmatrix-20261019T124628Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-frameworkmatrix-20261019T124628Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-npuvalidation-20261020T064804Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-npuvalidation-20261020T064804Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-npurecovery-20261020T103823Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-npurecovery-20261020T103823Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-remainingcomplete-20261020T140716Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "replay.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "../../../skills/precision-skill/scripts/replay_bundle.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "../../../skills/precision-skill/references/comparison.md#portable-evidence",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "results.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "VALIDATION.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../../../../skills/precision-skill/scripts/inference_capture.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../../../test_inference_capture.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../../../test_evidence_bundle.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../../../test_replay_bundle.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../../../../skills/precision-skill/scripts/evidence_bundle.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../../../../skills/precision-skill/scripts/replay_bundle.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../replay.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../../../../skills/precision-skill/references/comparison.md#portable-evidence",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../compare-trtcomplete-20261020T134000Z/guide-notes.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../../gpt-6-luna/compare-luna-native-20261019T140106Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "../compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-skillhardening-20261020T180218Z/GUIDE.md",
+        "target": "luna-portable-index.json",
+        "status": "valid"
+      }
+    ]
+  },
+  "privacy": {
+    "status": "no_selected_private_identifier_or_secret_patterns",
+    "expanded_bytes_scanned": 3690323,
+    "numeric_NPY_without_pickle": 6,
+    "raw_F32_arrays_copied_without_parsing": 1,
+    "limits": "Pattern review plus exact known-array bindings; not a general privacy certification."
+  },
+  "validation_evidence": {
+    "file": "validation-evidence.zip",
+    "sha256": "5108e29f6a14cd0023742cd8b4af29177201c7fc7578e152e1925ee8361c4102",
+    "file_count": 6
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 61,
+      "sha256": "22106984a6c1274ead5c283789ca11d75b303658949aaa627698747e7b2d6160"
+    },
+    {
+      "path": "GUIDE.md",
+      "bytes": 11201,
+      "sha256": "33219567de9a7a6ded211fa8944376ece08c6510dedbd127998bcfe34f16ee11"
+    },
+    {
+      "path": "luna-portable-evidence.zip",
+      "bytes": 1559546,
+      "sha256": "bd51a97e59ce5f0bd64f6712e3f063fb6409dc0ca8066fad9a99005a09250395"
+    },
+    {
+      "path": "luna-portable-index.json",
+      "bytes": 8692,
+      "sha256": "0fdb2a2f83a758e896f5d15b8fb9cdcec8aed39b83670f6ec64fc5f5aeb88c5c"
+    },
+    {
+      "path": "results.json",
+      "bytes": 3344,
+      "sha256": "a50d363680ce6eed8feaf80f5be5845c72973bcffe72618ff12b4fdaa9fc6c74"
+    },
+    {
+      "path": "validation-evidence.zip",
+      "bytes": 12778,
+      "sha256": "5108e29f6a14cd0023742cd8b4af29177201c7fc7578e152e1925ee8361c4102"
+    }
+  ],
+  "inventory_excludes": "VALIDATION.json itself",
+  "native_model_jobs_started": false,
+  "thresholds": null,
+  "numerical_acceptance_pass_claimed": false
+}

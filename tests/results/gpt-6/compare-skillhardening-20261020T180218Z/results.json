@@ -1,0 +1,75 @@
+{
+  "schema": "precision-skill-maintenance-v1",
+  "run": "compare-skillhardening-20261020T180218Z",
+  "local_date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "branch": "validation/gpt-6-cold-skill-20261019",
+  "starting_commit": "040abf7b8c7ec59ff0bddcd45aea05de752aa1b3",
+  "maintainer": "YuZhengYYDS",
+  "native_experiments_started": false,
+  "historical_archives_modified": false,
+  "previous_native_case_counts_changed": false,
+  "shipped_tools": [
+    "skills/precision-skill/scripts/evidence_bundle.py",
+    "skills/precision-skill/scripts/replay_bundle.py"
+  ],
+  "inference_operations": [
+    "strict validate_history with supplied decode-prefix checks",
+    "array-bound export_records with normalization and target-value validation",
+    "derive_logprobs with explicit offline FP32/FP64 policy",
+    "validate_generation_scores for native context/generation/decode anchors",
+    "optional FixedHistory offline FP64; original FP32 default preserved"
+  ],
+  "fixed_skill_and_tool_issues": [
+    "boolean/float history coordinates and unchecked decode prefix",
+    "empty or unbound target-score exports",
+    "invalid capture rank/boundary/nonfloating tensors before file IO",
+    "unrepresentable derivation dtype returning nonfinite outputs",
+    "replay reading unindexed external rank/array references",
+    "index JSON overflow literals accepted as infinity",
+    "deep Windows archive paths failing real retained-artifact extraction"
+  ],
+  "historical_helper_issue_replaced": {
+    "issue": "Luna archived verifier used assert for integrity, disabled under Python -O",
+    "action": "New explicit archive checks and one-off portable Luna conversion; old archive bytes preserved"
+  },
+  "upstream_issue_not_patched": {
+    "framework": "TensorRT-LLM1.2.0 PyTorch backend",
+    "issue": "initial logits-processor callback uses first context row with return_context_logits=True",
+    "skill_action": "Validate authoritative last-context/first-generation and decode score rows; reject wrong callback coordinate",
+    "vendor_source_modified": false
+  },
+  "kept_case_specific": [
+    "Ray accelerator resource routing and rank-environment cleanup",
+    "CUDA/MPI installation and compatibility overlays",
+    "IPC-path and fresh-process framework lifecycle workarounds",
+    "model conversion layouts and EOS/template adapters"
+  ],
+  "metadata_guidance": [
+    "actual cache flags/storage and native forward shapes",
+    "requested versus native/exported/derived dtype",
+    "native clipping coefficient versus independent full-coordinate diagnostics",
+    "sampled versus complete parameter coverage"
+  ],
+  "retained_validation": {
+    "original_compatibility_replay_cases": 8,
+    "tensorrt_comparators": 6,
+    "tensorrt_model_score_boundary_checks": 2,
+    "tensorrt_verified_exported_targets": 8,
+    "nemo_FILES_indexed_members": 557,
+    "luna_comparators": 2,
+    "luna_distribution_validators": 2,
+    "luna_portable_index": "luna-portable-index.json",
+    "new_native_model_cases": 0
+  },
+  "tests": {
+    "total": 167,
+    "linux_skipped": 0,
+    "windows_skipped": 5,
+    "scope": "Repository tool regression and retained-array checks, not native framework or precision acceptance"
+  },
+  "thresholds": null,
+  "numerical_acceptance_pass_claimed": false,
+  "guide": "GUIDE.md",
+  "validation": "VALIDATION.json"
+}

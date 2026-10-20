@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "kind": "luna-portable-evidence-index",
+  "scope": "Explicit one-off legacy conversion and retained-array offline replay; no native execution rerun. This does not add canonical cases or claim built-in Luna legacy-schema support.",
+  "source": {
+    "path": "tests/results/gpt-6-luna/compare-luna-native-20261019T140106Z/evidence.zip",
+    "sha256": "49d433192e2a94ec09b5d1e6301d41aca384499c72a03ca2e418dfbcd7b6367c",
+    "bytes": 1694934,
+    "frozen_zip_unchanged": true,
+    "verified_files_records": 67,
+    "verified_derived_files_records": 17
+  },
+  "portable": {
+    "path": "luna-portable-evidence.zip",
+    "sha256": "bd51a97e59ce5f0bd64f6712e3f063fb6409dc0ca8066fad9a99005a09250395",
+    "bytes": 1559546,
+    "index": "EXPORT.json",
+    "uniform_export_sha256": "38ed22f5c307bb50920bb32a5bf0485e443fb79d27fc0e22e5e93a968f8b9745",
+    "file_count": 24,
+    "payload_bytes": 1884524,
+    "all_staged_bytes_preserved": true,
+    "copied_arrays": 7,
+    "copied_corrected_jsons": 14,
+    "bundled_python_files": 0,
+    "legacy_export_copy_sha256": "4cfb3ac15457c765bab78192d2a30c968a975433676f5f4c759294126e96997b",
+    "conversion_receipt_sha256": "c9fb590e640be0bfd3805476d1c2470b6bb5b0f28ad6cc187798af8247b6e967",
+    "mapping_sha256": "d2dcdccdb5140533a1f25cafe14eee546242231517a350d3ccae7c092214f291",
+    "replay_document_sha256": "782911ef60ed1a6973b8f055543b77c8e789656e498de8dcfcc8b2bc89039394"
+  },
+  "replay": {
+    "matched": true,
+    "comparator_groups": 2,
+    "distribution_validators": 2,
+    "side_order": {
+      "side_a": "transformersCpuF32FullSequence",
+      "side_b": "llamaCpuF32WeightsF16KV"
+    },
+    "cases": [
+      {
+        "name": "luna-target-scores",
+        "operation": "compare_target_scores",
+        "assertion": "matched",
+        "report_sha256": "1d90deca4acc690d4e379ca97d725e6f053d433c650c7e7e8395a5f5f15066ba",
+        "status": "no_thresholds",
+        "side": null,
+        "sides": {
+          "side_a": "transformersCpuF32FullSequence",
+          "side_b": "llamaCpuF32WeightsF16KV"
+        },
+        "coordinate_count": null,
+        "position_count": null
+      },
+      {
+        "name": "luna-distributions",
+        "operation": "compare_distributions",
+        "assertion": "matched",
+        "report_sha256": "7a863b4cad51679f429cd7cb84c46bb59464afda0af2b3ebde98a78437fdd1dd",
+        "status": "no_thresholds",
+        "side": null,
+        "sides": {
+          "side_a": "transformersCpuF32FullSequence",
+          "side_b": "llamaCpuF32WeightsF16KV"
+        },
+        "coordinate_count": null,
+        "position_count": 3
+      },
+      {
+        "name": "luna-reference-distribution-validation",
+        "operation": "validate",
+        "assertion": "matched",
+        "report_sha256": "b075317ecb6635c264fb1a8196840adf0e6ac66fd1e01b19d680116da33f9c4a",
+        "status": "validated",
+        "side": "transformersCpuF32FullSequence",
+        "sides": null,
+        "coordinate_count": 147456,
+        "position_count": null
+      },
+      {
+        "name": "luna-native-distribution-validation",
+        "operation": "validate",
+        "assertion": "matched",
+        "report_sha256": "9baf2343a21fef1009be71827bedfa01b79ef58700b10a273948bfd8a9e66ade",
+        "status": "validated",
+        "side": "llamaCpuF32WeightsF16KV",
+        "sides": null,
+        "coordinate_count": 147456,
+        "position_count": null
+      }
+    ],
+    "target_metrics": {
+      "target_count": 3,
+      "side_a_nll_nat_per_token": 3.162992219130198,
+      "side_b_nll_nat_per_token": 3.162873069445292,
+      "nll_abs_diff_nat_per_token": 0.00011914968490600586,
+      "mae_nat": 0.000430444876352946,
+      "p99_nat": 0.0006144928932189941,
+      "p99_method": "global linear h=0.99*(N-1)",
+      "max_abs_nat": 0.0006175041198730469,
+      "max_coordinate": {
+        "sample": "smollm2-native-cpu-001",
+        "position": 6,
+        "token": 314
+      }
+    },
+    "distribution_aggregate": {
+      "probability_rmse": {
+        "mean": 1.943635834200819e-05,
+        "p99": 2.1630118372854394e-05,
+        "max": 2.1674121097190987e-05,
+        "max_coordinate": {
+          "sample": "smollm2-native-cpu-001",
+          "position": 6
+        }
+      },
+      "max_probability_error": {
+        "mean": 0.00012613277605028062,
+        "p99": 0.00012997417628928586,
+        "max": 0.00013007220856880997,
+        "max_coordinate": {
+          "sample": "smollm2-native-cpu-001",
+          "position": 6,
+          "token": 260
+        }
+      },
+      "tail_merged_js": {
+        "mean": 9.087503158776219e-08,
+        "p99": 1.6436633823987927e-07,
+        "max": 1.659300125965264e-07,
+        "max_coordinate": {
+          "sample": "smollm2-native-cpu-001",
+          "position": 6
+        }
+      },
+      "top1_agreement": {
+        "count": 3,
+        "total": 3,
+        "fraction": 1.0
+      },
+      "top100_overlap": {
+        "mean": 1.0
+      },
+      "coverage": {
+        "side_a_top100": {
+          "mean": 0.9554490023186425,
+          "p1": 0.9041969382386773,
+          "min": 0.9029742577051875
+        },
+        "side_b_top100": {
+          "mean": 0.9554145977853502,
+          "p1": 0.9040924608476948,
+          "min": 0.9028675645288643
+        },
+        "side_a_union": {
+          "mean": 0.9554490023186425,
+          "p1": 0.9041969382386773,
+          "min": 0.9029742577051875
+        },
+        "side_b_union": {
+          "mean": 0.9554145977853502,
+          "p1": 0.9040924608476948,
+          "min": 0.9028675645288643
+        }
+      }
+    },
+    "normalization_tolerance": 5e-05,
+    "renormalization": "none",
+    "command": "python -B skills/precision-skill/scripts/replay_bundle.py --bundle tests/results/gpt-6/compare-skillhardening-20261020T180218Z/luna-portable-evidence.zip --output-root runs",
+    "legacy_report_comparison": {
+      "target_metrics_exact_equal": true,
+      "distribution_aggregate_exact_equal": false,
+      "changed_distribution_fields": 3,
+      "maximum_absolute_distribution_delta": 3.5051427732354825e-17,
+      "floating_assertion_relative_tolerance": 1e-12,
+      "floating_assertion_absolute_tolerance": 1e-12,
+      "all_assertions_matched": true,
+      "differences": [
+        {
+          "path": "aggregate.tail_merged_js.mean",
+          "legacy": 9.087503155271076e-08,
+          "current": 9.087503158776219e-08,
+          "absolute_difference": 3.5051427732354825e-17
+        },
+        {
+          "path": "aggregate.tail_merged_js.p99",
+          "legacy": 1.64366338238124e-07,
+          "current": 1.6436633823987927e-07,
+          "absolute_difference": 1.755264024947724e-18
+        },
+        {
+          "path": "aggregate.tail_merged_js.max",
+          "legacy": 1.6593001259592145e-07,
+          "current": 1.659300125965264e-07,
+          "absolute_difference": 6.049403430171806e-19
+        }
+      ]
+    }
+  },
+  "current_tools": [
+    {
+      "path": "skills/precision-skill/scripts/evidence_bundle.py",
+      "sha256": "74c29b272c89c4d86ce8ba5bed86b49b94de28ebc20e3b45761d29729e129ab7"
+    },
+    {
+      "path": "skills/precision-skill/scripts/replay_bundle.py",
+      "sha256": "14f5e63722748891a0bf2368f5744ce87e5389cd97e65fd8d0921d2cf58d9fda"
+    },
+    {
+      "path": "skills/precision-skill/scripts/compare_distributions.py",
+      "sha256": "f8efa3fab164cbc9913feaf8e24859acb8f094135b5edb1f96b3c20a02a3549b"
+    },
+    {
+      "path": "skills/precision-skill/scripts/compare_target_scores.py",
+      "sha256": "8c784ba8fcd2505dd5ca9f9eae5fa60321a6451d3b7dc27bd5c5e005c43135ff"
+    },
+    {
+      "path": "skills/precision-skill/scripts/validate_artifacts.py",
+      "sha256": "749f146c2d0f1c70268db7dd36d1dbaccde622120e6fb1f4b54366373740afe3"
+    },
+    {
+      "path": "skills/precision-skill/scripts/artifact_io.py",
+      "sha256": "3df5e8271b817e78444dade3a6b6700b64a9ed3b028141e968343deb5e7b6a3f"
+    },
+    {
+      "path": "skills/precision-skill/scripts/conditions.py",
+      "sha256": "2f38598facdfb34b92225d0ea2893ceaf941516f6ec3843b6e6193321a6cb577"
+    },
+    {
+      "path": "skills/precision-skill/scripts/score_metrics.py",
+      "sha256": "17dd19a2406fa69af7002b542d68ce7f28902dfc31aa34e72c0b4debe7fde72e"
+    }
+  ],
+  "limits": [
+    "The corrected native F16 KV and reference full-sequence execution declarations remain unchanged.",
+    "The legacy 5e-5 mass tolerance validates retained FP32 normalization rounding; precision thresholds remain null.",
+    "Original unavailable build history and private raw pre-export source identities are not reconstructed.",
+    "Portable payload omits historical collectors and upstream sources; the unchanged frozen ZIP retains them."
+  ]
+}
