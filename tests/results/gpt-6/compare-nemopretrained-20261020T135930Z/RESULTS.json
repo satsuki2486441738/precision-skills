@@ -1,0 +1,298 @@
+{
+  "schema": "precision-nemo-pretrained-official-cli-v1",
+  "run": "compare-nemopretrained-20261020T135930Z",
+  "status": "official_cli_and_independent_cpu_reference_completed_with_disclosed_adapters",
+  "official_cli": "examples/run_grpo_math.py",
+  "upstream_source_pin": "26f651ea490ef2a343e7f298b9aa54bc7c5da67c",
+  "canonical_cases": 1,
+  "independent_reference_cases": 1,
+  "core_comparisons": 5,
+  "native_returncode": 0,
+  "native_driver_seconds": 107.50416231155396,
+  "cpu_reference_seconds": 17.21262550354004,
+  "native_workflow": [
+    "actual pretrained Qwen3-0.6B sampling,8 completions",
+    "native math_verify reward evaluation",
+    "native baseline and normalized advantage calculation",
+    "native policy and reference rescore",
+    "native ClippedPGLossFn backward, norm clipping, AdamW and scheduler",
+    "official CLI metrics and trajectory logging"
+  ],
+  "native_reward_case": {
+    "prompt": "What is 17 times 19? Answer with only the integer.",
+    "expected_answer": "323",
+    "actual_rewards": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "seed": 20261020,
+    "temperature": 1.3,
+    "top_p": 1.0,
+    "max_new_tokens": 16,
+    "groups": 1,
+    "trajectories": 8,
+    "nonzero_advantage_actions": 126,
+    "advantage_range": [
+      -1.0,
+      0.40824827551841736
+    ],
+    "forced_tokens_or_rewards": false
+  },
+  "precision_summary": {
+    "canonical_cases": 1,
+    "independent_reference_cases": 1,
+    "core_comparisons": 5,
+    "trained_parameter_elements": 596049920,
+    "sampled_parameter_elements": 19840,
+    "sampled_parameter_tensors": 310,
+    "initial_sample_values_exactly_equal": true,
+    "trajectories": 8,
+    "groups": 1,
+    "actions": 126,
+    "native_global_loss": -0.23221725225448608,
+    "cpu_global_loss": -0.23221802711486816,
+    "native_postclip_full_gradient_l2_diagnostic": 0.4999999709705217,
+    "comparison_uses_native_current_outputs_as_cpu_input": false,
+    "thresholds": null,
+    "comparisons": [
+      {
+        "name": "gradients",
+        "status": "no_thresholds",
+        "global": {
+          "count": 19840,
+          "side_a_norm": {
+            "value": 0.4405803485542939,
+            "status": "no_thresholds"
+          },
+          "side_b_norm": {
+            "value": 0.44058337073310394,
+            "status": "no_thresholds"
+          },
+          "error_norm": {
+            "value": 1.1995061333599357e-05,
+            "status": "no_thresholds"
+          },
+          "rmse": {
+            "value": 8.515921296171418e-08,
+            "status": "no_thresholds"
+          },
+          "cosine": {
+            "value": 0.9999999996529114,
+            "status": "no_thresholds"
+          },
+          "max_abs": {
+            "value": 4.991888999938965e-06,
+            "status": "no_thresholds"
+          },
+          "max_flat_index": 8631,
+          "max_coordinate": {
+            "parameter": "actor.model.layers.2.mlp.down_proj.weight.sample-first64",
+            "index": 55
+          }
+        }
+      },
+      {
+        "name": "postclip-gradients",
+        "status": "no_thresholds",
+        "global": {
+          "count": 19840,
+          "side_a_norm": {
+            "value": 0.014580011333626587,
+            "status": "no_thresholds"
+          },
+          "side_b_norm": {
+            "value": 0.014583663072613946,
+            "status": "no_thresholds"
+          },
+          "error_norm": {
+            "value": 3.6718800075864762e-06,
+            "status": "no_thresholds"
+          },
+          "rmse": {
+            "value": 2.6068596303049268e-08,
+            "status": "no_thresholds"
+          },
+          "cosine": {
+            "value": 0.9999999996531412,
+            "status": "no_thresholds"
+          },
+          "max_abs": {
+            "value": 1.312699168920517e-06,
+            "status": "no_thresholds"
+          },
+          "max_flat_index": 8631,
+          "max_coordinate": {
+            "parameter": "actor.model.layers.2.mlp.down_proj.weight.sample-first64",
+            "index": 55
+          }
+        }
+      },
+      {
+        "name": "updates",
+        "status": "no_thresholds",
+        "global": {
+          "count": 19840,
+          "side_a_norm": {
+            "value": 0.013970913399193216,
+            "status": "no_thresholds"
+          },
+          "side_b_norm": {
+            "value": 0.013970930076003012,
+            "status": "no_thresholds"
+          },
+          "error_norm": {
+            "value": 8.684310792549342e-06,
+            "status": "no_thresholds"
+          },
+          "rmse": {
+            "value": 6.165446358634882e-08,
+            "status": "no_thresholds"
+          },
+          "cosine": {
+            "value": 0.9999998068080626,
+            "status": "no_thresholds"
+          },
+          "max_abs": {
+            "value": 6.802380084991455e-06,
+            "status": "no_thresholds"
+          },
+          "max_flat_index": 8691,
+          "max_coordinate": {
+            "parameter": "actor.model.layers.2.mlp.gate_proj.weight.sample-first64",
+            "index": 51
+          }
+        }
+      },
+      {
+        "name": "loss",
+        "status": "no_thresholds",
+        "global": {
+          "count": 1,
+          "side_a_norm": {
+            "value": 0.23221725225448608,
+            "status": "no_thresholds"
+          },
+          "side_b_norm": {
+            "value": 0.23221802711486816,
+            "status": "no_thresholds"
+          },
+          "error_norm": {
+            "value": 7.748603820800781e-07,
+            "status": "no_thresholds"
+          },
+          "rmse": {
+            "value": 7.748603820800781e-07,
+            "status": "no_thresholds"
+          },
+          "cosine": {
+            "value": 1.0,
+            "status": "no_thresholds"
+          },
+          "max_abs": {
+            "value": 7.748603820800781e-07,
+            "status": "no_thresholds"
+          },
+          "max_flat_index": 0,
+          "max_coordinate": {
+            "tensor": "actor.reported_global_loss",
+            "index": 0,
+            "coordinate": [
+              0
+            ],
+            "observation": {
+              "boundary": "native HfPolicy.train returned global_loss; mean of four masked microbatch objectives",
+              "optimizer_step": 0,
+              "invocation": 0,
+              "execution_stage": "training"
+            }
+          }
+        }
+      },
+      {
+        "name": "action-scores",
+        "status": "no_thresholds",
+        "metrics": {
+          "target_count": 126,
+          "side_a_nll_nat_per_token": 0.45564152203510977,
+          "side_b_nll_nat_per_token": 0.4556408964657668,
+          "nll_abs_diff_nat_per_token": 6.25569342993515e-07,
+          "mae_nat": 3.95727826211593e-06,
+          "p99_nat": 3.5881996154785156e-05,
+          "p99_method": "global linear h=0.99*(N-1)",
+          "max_abs_nat": 5.53131103515625e-05,
+          "max_coordinate": {
+            "sample": "trajectory-6",
+            "position": 41,
+            "token": 1438
+          }
+        },
+        "coverage": {
+          "expected": 126,
+          "paired": 126
+        }
+      }
+    ]
+  },
+  "independence": {
+    "reference_reads": "same hashed pretrained checkpoint plus copied IDs/masks/old-reference-generation anchors/native normalized advantages and config",
+    "reference_native_outputs_read": [],
+    "reference_computation": "fresh CPU forward, independent explicit clipped objective and KL, four ordered loss/4 backwards, native torch clipping and fresh AdamW",
+    "device": "all model parameters, inputs and forward outputs explicitly CPU",
+    "incidental_torch_npu_availability_import": true,
+    "vendor_migration_absent": true,
+    "nemo_imports_absent": true,
+    "reference_regenerates_rollout_or_rewards": false
+  },
+  "runtime": {
+    "torch": "2.9.0+cpu",
+    "transformers": "4.57.1",
+    "numpy": "1.26.4",
+    "torch_npu": "2.9.0.post6",
+    "CANN": "9.1.0",
+    "native_device": "Ascend910_9382 physical8, npu:0",
+    "ray": "2.43.0",
+    "math_verify": "0.7.0"
+  },
+  "scope": {
+    "full_native_model_trained_elements": 596049920,
+    "paired_parameter_coordinates": 19840,
+    "paired_parameter_tensors": 310,
+    "selection": "first min(64,numel) flat coordinates per unique optimizer parameter",
+    "paired_initial_sample_values_equal": true,
+    "paired_full_initial_checkpoint_file_hashes_equal": true,
+    "paired_full_gradient_arrays": false,
+    "paired_current_action_scores": 126,
+    "optimizer_steps": 1
+  },
+  "source_identity": "116 pinned Python source files after CRLF normalization; two Ray resource-routing files changed; mathematical source and official CLI unchanged. No literal Git byte identity claim.",
+  "adaptations": [
+    "official torch_npu.contrib.transfer_to_npu from installed torch_npu2.9.0.post6",
+    "Ray actual NPU1/GPU0 resource routing and same private interpreter",
+    "bounded local JSON dataset routed through unchanged native math formatting and math_verify",
+    "startup seed and observational copy-only captures; original operations called once and returned unchanged",
+    "source-exposed NRL_SKIP_TIED_WEIGHT_CHECK=1 for single-rank FSDP1; actual shared Qwen3 embeddings retained and310 unique optimizer objects verified"
+  ],
+  "limitations": [
+    "Single rank, no distributed FSDP sharding coverage.",
+    "NeMo v0.2.0 torch2.6.0 dependency pin differs from adapted NPU torch2.9.0 stack.",
+    "The tied-weight guard override is required here; DTensor v0.2.0 registry does not support Qwen3.",
+    "CPU replays fixed native trajectories/advantages; it does not independently regenerate rewards or sampling.",
+    "This case is distinct from the earlier45K fixed injected-advantage worker precision case and earlier zero-reward official CLI smoke case.",
+    "Stored update metrics cover selected coordinates; full596M gradient/update arrays are unavailable."
+  ],
+  "original_successful_native_archive_sha256": "6da7dbeeb8ec60c0023f7f82b792270e6dec212b16224d6ec2ef3e32648e4459",
+  "precision_capture_archive_sha256": "ab5bace1c384ef6372587397db747ed467e1aa058052e4782547283beba68a2f",
+  "thresholds": null,
+  "numerical_acceptance_pass_claimed": false,
+  "evidence": {
+    "file": "nemo-pretrained-pair-evidence.zip",
+    "bytes": 2182203,
+    "sha256": "b06be333c1f8220b303d6e6381e43b5fc20e3589577d2f641ec92052487d1038"
+  }
+}

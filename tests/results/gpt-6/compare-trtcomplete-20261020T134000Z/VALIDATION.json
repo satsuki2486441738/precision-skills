@@ -1,0 +1,20 @@
+{
+  "status": "hash_privacy_source_license_and_six_comparisons_validated",
+  "archive_sha256": "9bea802aade39168dc91666ea255fb8099241c494739e36454cb436ec8aca58d",
+  "export_entries_verified": 204,
+  "binary_files_unchanged": 32,
+  "parent_generic_replay": {
+    "cases": 6,
+    "matched": true
+  },
+  "independent_auditor_generic_replay": {
+    "actual_comparator_calls": 6,
+    "matched": true
+  },
+  "independent_audit": {
+    "file": "independent-public-audit.json",
+    "sha256": "f00085562ea598c0202300fdf9be52524e5bed04aa92411be3dbb2ed0a5bc20a"
+  },
+  "all_thresholds": null,
+  "numerical_acceptance_pass_claimed": false
+}

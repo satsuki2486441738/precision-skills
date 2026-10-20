@@ -1,0 +1,408 @@
+{
+  "schema": "precision-framework-results-v3",
+  "run": "compare-remainingcomplete-20261020T140716Z",
+  "branch": "validation/gpt-6-cold-skill-20261019",
+  "starting_commit": "5d5e798424f40e14347cb013937139530c18a470",
+  "maintainer": "YuZhengYYDS",
+  "model_family_label": "gpt-6; exact backend model identifier not exposed",
+  "status": "selected_source_routes_native_and_references_completed_with_explicit_limits",
+  "requested_unique_libraries": 16,
+  "requested_task_lanes": 17,
+  "native_completed_lanes": 17,
+  "canonical_cases": 34,
+  "independent_reference_cases": 34,
+  "canonical_core_comparison_groups": 138,
+  "portable_offline_comparison_groups": 136,
+  "private_source_only_comparison_groups": 2,
+  "counts_exclude_validators_and_auxiliary_or_repeated_native_cases": true,
+  "thresholds": null,
+  "numerical_acceptance_pass_claimed": false,
+  "previous_checkpoint": "../compare-npurecovery-20261020T103823Z/results.json",
+  "historical_untouched_upstream_ascend_baselines_not_completed": 3,
+  "original_instance_reused": true,
+  "new_instance_created": false,
+  "local_nvidia_gpu_used_for_tensorrt": true,
+  "all_requested_lanes_ran_on_npu": false,
+  "new_trials_are_independent_cold_context_model_comparison": false,
+  "owned_native_jobs_left_running": false,
+  "lanes": [
+    {
+      "library": "OpenRLHF",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 5,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/openrlhf-community-grpo-evidence.zip"
+      ],
+      "source_scope": "zhuo97 community Ascend fork@06ac74cf1ea896c379ef4cb6a39dbd8488fb16fd plus exact version/import/dtype-RPC patches; not untouched upstream",
+      "limitations": [
+        "16384 sampled optimizer coordinates; no full-model update claim."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "slime",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed_with_declared_route",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 4,
+      "evidence": [
+        "../compare-slimereference-20261020T123737Z/index.json"
+      ],
+      "source_scope": "Existing official-NPU-recipe Slime native step, now independently replayed on CPU; exact original source identities retained.",
+      "limitations": [
+        "135680 sampled paired coordinates; original native gradient dtype unrecorded; no native postclip/full-model gradient capture or restored-common-optimizer experiment."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json",
+      "prior_checkpoint_status": "native_completed_reference_not_performed"
+    },
+    {
+      "library": "NeMo RL",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed_with_declared_route",
+      "native_completed": true,
+      "canonical_cases": 2,
+      "independent_reference": true,
+      "canonical_core_comparisons": 11,
+      "evidence": [
+        "../compare-nemopretrained-20261020T135930Z/RESULTS.json",
+        "../compare-nemocomplete-worker-v3-20261020T131017Z/RESULTS.json",
+        "../compare-nemoofficialcli-v2-20261020T134600Z/RESULTS.json"
+      ],
+      "source_scope": "Official v0.2.0 normalized source, official transfer_to_npu, two real Ray NPU resource-routing patches; native tied-weight guard override for single-rank pretrained Qwen3. Not untouched NVIDIA dependency cohort.",
+      "limitations": [
+        "One tiny worker API precision case with injected advantages; one actual reward-driven pretrained official CLI precision case; tiny zero-reward official CLI is auxiliary, not a third canonical precision case.",
+        "Pretrained full596M training but only19840 paired sampled parameter coordinates and126 action scores; no multirank FSDP sharding claim.",
+        "CPU norm reduction and actual clipping coefficient differ from native; both maxnorm policies0.5, actual fullpostclip norms about0.50012248 CPU/0.49999997 NPU.",
+        "CPU may incidentally import installed torch_npu for availability discovery; no NeMo or transfer_to_npu import and explicit CPU tensors/parameters."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json",
+      "prior_checkpoint_status": "untouched_upstream_native_incomplete"
+    },
+    {
+      "library": "ms-swift",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 5,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/swift-grpo-evidence.zip"
+      ],
+      "source_scope": "official4.6.0 rlhf_main/GRPO Trainer.train",
+      "limitations": [
+        "Synthetic reward tests execution, not answer quality.",
+        "98304 sampled parameter elements; three valid selected vocabulary rows; BF16 native versus CPU FP32 state declared."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "AReaL",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 4,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/areal-grpo-evidence.zip"
+      ],
+      "source_scope": "official ascend-v1.0.4@65d0bcd8afb3e10b0083003a1d1694135fab093c; source unchanged",
+      "limitations": [
+        "BF16 forward, FP32 captured master parameters/gradients/reduction/Adam state.",
+        "67840 sampled coordinates/32 actions; native full-vocabulary distribution capture is not covered.",
+        "Host compatibility stack differs from exact source Docker recipe."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "ROLL",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 5,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/roll-grpo-evidence.zip"
+      ],
+      "source_scope": "official v0.4.0@581046abce143e643221f8e292895c46a3b20112; unchanged source plus official torch_npu API migration adapter in private launcher/workers",
+      "limitations": [
+        "Genuine NPU operations, no CUDA emulation.",
+        "67840 sampled coordinates/four selected vocabulary rows; no full-model update claim.",
+        "Actual host stack differs from pinned recipe."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "MindSpeed-RL",
+      "task": "rl",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 5,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/mindspeed-rl/archive-index.json"
+      ],
+      "source_scope": "official train_grpo, vLLM-Ascend and Megatron actor path; source pins/task-only device/group/registry/control-CPU repairs indexed",
+      "limitations": [
+        "Actual19 F32 gradients,19 BF16 before/after parameter tensors,F32 preloss logits/loss; immutable erratum corrects wrong human BF16 gradient label.",
+        "Signed native objective0; CPU -0.0005752295255661011. Logged actor/pg_loss0.7833 is mean absolute microbatch statistic.",
+        "Fixed native trajectories/old-ref anchors/advantages accepted; independent reward/group audit matches advantages; separate native reward arrays not claimed.",
+        "16 actions include a sampled pad-token ID using actual response lengths."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "TensorRT-LLM",
+      "task": "inference",
+      "status": "native_and_independent_reference_completed_with_declared_route",
+      "native_completed": true,
+      "canonical_cases": 2,
+      "independent_reference": true,
+      "canonical_core_comparisons": 6,
+      "evidence": [
+        "../compare-trtcomplete-20261020T134000Z/INDEX.json"
+      ],
+      "source_scope": "Official TensorRT-LLM1.2.0 wheel PyTorch backend/TRTLLM attention on local RTX5060 SM120; separate from historical v0.20.0 ARM/Ascend failure.",
+      "limitations": [
+        "GPU, not NPU; PyTorch backend, not serialized-engine build; TP1 and four predictions per model.",
+        "Same source checkpoint hashes, but native converted parameter values unmeasured and native KV dtype inferred from allocator source; CPU arithmetic/cache FP32 versus requested native FP16.",
+        "First callback row with return_context_logits=True is wrong prompt coordinate; canonical unchanged API generation rows validated independently."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json",
+      "prior_checkpoint_status": "untouched_upstream_native_incomplete"
+    },
+    {
+      "library": "LMDeploy",
+      "task": "inference",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 2,
+      "independent_reference": true,
+      "canonical_core_comparisons": 6,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/lmdeploy-native-evidence.zip"
+      ],
+      "source_scope": "LMDeploy@110965c7706bbbeb31e21df5d7ef2531fe01c935;dlinfer@bd37fd38c7831525d962c29925db7244113b7bcf;kernel@7acb9c40a6ca827e885d902b7eaee5d45457b230",
+      "limitations": [
+        "Each model: one prefill/three cached decode predictions; actual get_logits F16 copy before processors; Response API does not expose logits.",
+        "Native F16 KV versus independent CPU F32 KV; CPU loads F16 then promotes F32. Native loaded parameters not individually compared.",
+        "Explicit offline FP64 log-softmax is derived, not native API logprob.",
+        "Initializer import/alias-only repair changes no numerical function AST. Actual pip-check metadata conflicts remain; environment is not called clean."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "MindIE-LLM",
+      "task": "inference",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 3,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/mindie/archive-index.json"
+      ],
+      "source_scope": "official PARunner/ModelRunner/ATB PagedAttention; exact source/environment indexed",
+      "limitations": [
+        "Four generated tokens/four native BF16 raw vocabulary rows; warmup excluded.",
+        "Byte-identical task-owned model copy satisfies original ownership check."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "llama.cpp",
+      "task": "inference",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 2,
+      "independent_reference": true,
+      "canonical_core_comparisons": 6,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/llama-native-evidence.zip"
+      ],
+      "source_scope": "official CANN and CPU backend@d8d92973c8c21bb4dd5d592f0fec26fe2cd1e654",
+      "limitations": [
+        "Same unquantized F16 GGUF per model;F16 KV; prefill plus two cached decode predictions.",
+        "FP64 offline log-softmax exported F32."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "TRL",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 4,
+      "independent_reference": true,
+      "canonical_core_comparisons": 16,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/sft/matrix.json"
+      ],
+      "source_scope": "real SFTTrainer.train; per-case source/runtime identities in canonical matrix/index",
+      "limitations": [
+        "Tiny/pretrained x BF16-requested/FP32; use native_parameter_dtypes for actual parameter storage, capture/metric environments for logits."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "LLaMAFactory",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 4,
+      "independent_reference": true,
+      "canonical_core_comparisons": 16,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/sft/matrix.json"
+      ],
+      "source_scope": "real run_exp; per-case source/runtime identities indexed",
+      "limitations": [
+        "Canonical genuine-FP32 cases replace an earlier mixed-precision retry; historical retries do not add coverage."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "ms-swift",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 4,
+      "independent_reference": true,
+      "canonical_core_comparisons": 16,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/sft/matrix.json"
+      ],
+      "source_scope": "real sft_main/Trainer.train; per-case source/runtime identities indexed",
+      "limitations": [
+        "CPU reference uses a clean interpreter to exclude global NPU RMSNorm patches."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "Axolotl",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 4,
+      "independent_reference": true,
+      "canonical_core_comparisons": 16,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/sft/matrix.json"
+      ],
+      "source_scope": "real trainer pipeline; per-case source/runtime identities indexed",
+      "limitations": [
+        "All-masked fixture rejected; canonical completion targets use explicit full-sequence policy.",
+        "Scoped capability guard truthfully reports unsupported CUDA FP8 on CPU Torch."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    },
+    {
+      "library": "Megatron Bridge",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed_with_declared_route",
+      "native_completed": true,
+      "canonical_cases": 2,
+      "independent_reference": true,
+      "canonical_core_comparisons": 10,
+      "evidence": [
+        "../compare-bridgecomplete-20261020T134310Z/INDEX.json"
+      ],
+      "source_scope": "Slime-prescribed fzyzcjy/Megatron-Bridge0.3.0rc0@35b4ebfc486fb15dcc0273ceea804c3606be948a plus exact MCore/MindSpeed and recorded compatibility patches; not untouched official v0.6.2.",
+      "limitations": [
+        "Native BF16 stored parameters/updates versus clean CPU FP32; no clipping/stateful optimizer, stateless SGD.",
+        "Full initial596M coordinates checked exactly; pretrained full gradient/update arrays retained privately. Two fulltensor comparison groups are source-only, not publicly replayable.",
+        "Native16-token versus CPU17-token HF-label-shift adapter retains identical causal histories for16 paired rows; extra final CPU target masked; actual pretrained EOS151645."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json",
+      "prior_checkpoint_status": "untouched_upstream_native_incomplete"
+    },
+    {
+      "library": "MindSpeed-LLM",
+      "task": "sft",
+      "status": "native_and_independent_reference_completed",
+      "native_completed": true,
+      "canonical_cases": 1,
+      "independent_reference": true,
+      "canonical_core_comparisons": 4,
+      "evidence": [
+        "../compare-npurecovery-20261020T103823Z/mindspeed-llm/archive-index.json"
+      ],
+      "source_scope": "official pretrain_gpt.main/native optimizer; exact source/environment indexed",
+      "limitations": [
+        "One canonical770432-parameter seeded fixture, nine gradients and16 legal targets.",
+        "Invalid-vocabulary mock-data case rejected; larger valid fixture historical."
+      ],
+      "thresholds": null,
+      "carried_forward_from": "../compare-npurecovery-20261020T103823Z/results.json"
+    }
+  ],
+  "closed_work": [
+    "Slime independent full-model CPU forward/backward/clip/AdamW with sampled native comparison.",
+    "NeMo tiny worker and reward-driven pretrained official GRPO CLI, independent CPU references.",
+    "Bridge fork native conversion/checkpoint save/fresh-process restore/finetune/SGD/final save on tiny and pretrained models, independent CPU references.",
+    "Official TensorRT-LLM1.2.0 real GPU generation and independent CPU references on seeded Llama and pretrained Qwen2.5."
+  ],
+  "unfinished_or_not_established": [
+    {
+      "scope": "Historical untouched NVIDIA cohorts on Ascend",
+      "items": [
+        "NeMo original unadapted NCCL cohort",
+        "Official Bridge v0.6.2 exact TE/CUDA cohort",
+        "TensorRT-LLM v0.20.0 ARM/Ascend cohort"
+      ],
+      "meaning": "Those original failures remain historical; separately identified successful adapters/fork/version/hardware do not retroactively turn them into passes."
+    },
+    {
+      "scope": "Coverage",
+      "items": [
+        "Multi-device/sharding/scaling validation",
+        "Full public pretrained Bridge gradient/update array replay",
+        "Uncaptured Slime native gradient dtype/postclip/full-model arrays",
+        "Direct native TensorRT converted-weight/cache tensor equality",
+        "Other model families, long runs, quality and throughput conclusions"
+      ]
+    },
+    {
+      "scope": "Numerical acceptance",
+      "items": [
+        "Justified task-specific thresholds"
+      ],
+      "meaning": "All thresholds remain null. Completed workflows and valid metrics do not establish precision acceptance."
+    }
+  ],
+  "supplements": [
+    "../compare-slimereference-20261020T123737Z",
+    "../compare-nemocomplete-worker-v3-20261020T131017Z",
+    "../compare-nemoofficialcli-v2-20261020T134600Z",
+    "../compare-nemopretrained-20261020T135930Z",
+    "../compare-bridgecomplete-20261020T134310Z",
+    "../compare-trtcomplete-20261020T134000Z"
+  ],
+  "guide": "GUIDE.md",
+  "validation": "VALIDATION.json"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "corrected_unpublished_text_export_independently_audited",
+  "archive_sha256": "8c50f180de7d433997d0438ff32a38b345bc18d0447a2e298ea1979aa16c2302",
+  "files_inventory_verified": 333,
+  "binary_files_unchanged": 2,
+  "only_changed_members": [
+    "EXPORT.json",
+    "FILES.json",
+    "two Ray runtime_env_agent logs"
+  ],
+  "private_originals_and_prior_candidate_retained": true,
+  "official_cli_source_pinned_content_verified": true,
+  "native_cli_returncode": 0,
+  "scope": "Tiny zero-reward official CLI smoke; no nonzero policy-gradient or paired precision claim.",
+  "independent_audit": {
+    "file": "../compare-trtcomplete-20261020T134000Z/independent-public-audit.json",
+    "sha256": "f00085562ea598c0202300fdf9be52524e5bed04aa92411be3dbb2ed0a5bc20a"
+  },
+  "thresholds": null
+}

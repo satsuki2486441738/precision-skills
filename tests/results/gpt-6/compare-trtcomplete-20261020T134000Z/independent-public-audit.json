@@ -1,0 +1,71 @@
+{
+  "status": "clean_final_public_archives",
+  "trt": {
+    "archive": "tests/results/gpt-6/compare-trtcomplete-20261020T134000Z/tensorrt-llm-native-and-reference.zip",
+    "sha256": "9bea802aade39168dc91666ea255fb8099241c494739e36454cb436ec8aca58d",
+    "bytes": 16460535,
+    "members": 205,
+    "fresh_generic_replay_actual_comparators": 6,
+    "fresh_generic_replay_all_matched": true,
+    "fresh_replay_path": "compare-replay-20261020T134912Z/replay.json",
+    "export_manifest_member_hashes_verified": 204,
+    "binary_files_byte_unchanged_to_original_hash": 32,
+    "binary_files_independently_compared_to_private_original_bytes": 32,
+    "installed_source_and_license_manifest_verified": 10,
+    "actual_multi_component_license_bytes": 17940,
+    "license_sha256": "5d8f6f1a2f855c68a273674d6a3925c6349d7632d0864d089b46f94d8ea76eff",
+    "same_prior_semantic_audit_reused": true,
+    "scope": "Official1.2.0 PyTorch backend, real RTX5060 captured nativeAPI; same sourceweights with declared casts, no direct native converted-weight equality measurement, native cache F16 inferred not instrumented, CPU F32 cache; source callback defect and unchanged canonical API row selection previously independently verified."
+  },
+  "nemo_official_cli": {
+    "old_candidate_sha256": "44ba3b45fc49cd0728cd104e7bb71f650394312c615865a370a759768eccd585",
+    "final_sha256": "8c50f180de7d433997d0438ff32a38b345bc18d0447a2e298ea1979aa16c2302",
+    "bytes": 1263496,
+    "members": 334,
+    "member_hashes_verified": 333,
+    "changed_members": [
+      "EXPORT.json",
+      "ray-logs/s0/runtime_env_agent-4d4a53000e77.log",
+      "ray-logs/s1/runtime_env_agent-951a13ce0fa8.log",
+      "FILES.json"
+    ],
+    "all_two_binary_files_unchanged": true,
+    "source_python_files_verified": 116,
+    "only_resource_routing_patches": [
+      "nemo_reinforcer/distributed/virtual_cluster.py",
+      "nemo_reinforcer/distributed/worker_groups.py"
+    ],
+    "official_entrypoint_matches_pinned_content": true,
+    "included_license_content_matches_git": true,
+    "license_sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+    "actual_cli_returncode": 0,
+    "safe_capture_parameter_elements": 45376,
+    "safe_capture_tensors": 30,
+    "actual_adamw_steps_all15": 1,
+    "safe_capture_max_update_recomputed": 1.0132789611816406e-06,
+    "native_trajectory_count": 2,
+    "native_rewards_allzero": true,
+    "scope": "Official CLI completion smoke only; advantages zero and policy surrogate gradient zero, total gradient not measured; stored updates may include weight decay/KL roundoff; no nonzero GRPO precision or numerical acceptance claim.",
+    "outer_source_scope_correct": true
+  },
+  "privacy": {
+    "full_byte_scan_expanded_bytes": 34650839,
+    "all_archive_members": 539,
+    "numeric_npys_without_pickle": 20,
+    "safe_tensor_headers": 14,
+    "unclassified_secret_or_private_path_hits": 0,
+    "classified_false_positive_count": 24,
+    "false_positive_scope": "Known NVIDIA public package versions in recorded contexts and exact pinned upstream test_logger fixture10.0.0.1/.2; no broad private-IP exclusion."
+  },
+  "thresholds": null,
+  "findings": [],
+  "limits": [
+    "No GPU/NPU job was launched by auditor. Native execution assessed using preserved arrays, successful process records, unchanged source and adapter/resource evidence.",
+    "Whole-wheel binary artifact not retained; installed source/RECORD and actual multi-component LICENSE hashes are verified.",
+    "Tiny official NeMo CLI is completion smoke only; meaningful nonzero worker precision comparison is separate."
+  ],
+  "tracked_files_edited": false,
+  "public_files_modified": false,
+  "dependency_changes": false,
+  "push_performed": false
+}

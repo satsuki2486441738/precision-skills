@@ -14,6 +14,8 @@ identifier was not exposed. Child agents inherited the model selection.
 - [NPU preparation and recovery guide](compare-npuvalidation-20261020T064804Z/GUIDE.md)
 - [2026-10-20 original-instance recovery and native evidence](compare-npurecovery-20261020T103823Z/README.md)
 - [Native execution, failures and replay guide](compare-npurecovery-20261020T103823Z/GUIDE.md)
+- [2026-10-20 remaining native workflows and references completed](compare-remainingcomplete-20261020T140716Z/README.md)
+- [Completion, numerical differences, unfinished scope and replay guide](compare-remainingcomplete-20261020T140716Z/GUIDE.md)
 - [Reusable evidence replay utility](replay.py)
 
 The cold worker starts with `fork_turns="none"`, receives a task and a pinned

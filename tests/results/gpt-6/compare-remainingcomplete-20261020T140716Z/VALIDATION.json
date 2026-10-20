@@ -1,0 +1,562 @@
+{
+  "schema": "precision-completion-validation-v1",
+  "starting_commit": "5d5e798424f40e14347cb013937139530c18a470",
+  "repository_tests": {
+    "command": "python -B -m unittest discover -s tests -v",
+    "linux": {
+      "tests": 130,
+      "skipped": 0,
+      "returncode": 0,
+      "status": "OK",
+      "observed_execution": "Current parent tool execution: Ran130 tests in5.218s,OK; full stdout was not separately saved."
+    },
+    "windows": {
+      "tests": 130,
+      "skipped": 3,
+      "status": "OK",
+      "source": "Bridge worker captured current regression log",
+      "log_sha256": "a08e46960b6bc6446e1b0dac33b5c7a0fb2b7cc351e61f3addd7dc30c982459d"
+    },
+    "scope": "Repository tool regressions; not third-party runtime or numerical acceptance."
+  },
+  "skill_metadata": {
+    "validator": "skill-creator/scripts/quick_validate.py",
+    "environment": "existing WSL Python with PyYAML",
+    "returncode": 0,
+    "stdout": "Skill is valid!"
+  },
+  "canonical_matrix": {
+    "libraries": 16,
+    "lanes": 17,
+    "native_completed_lanes": 17,
+    "paired_cases": 34,
+    "comparison_groups": 138,
+    "public_portable_groups": 136,
+    "private_source_only_groups": 2,
+    "auxiliary_repeated_cases_and_validators_excluded": true
+  },
+  "public_replay_and_audits": {
+    "slime": {
+      "comparisons": 4,
+      "independent_audit": "Included audit binds original native arrays and independent CPU reference; no new native run."
+    },
+    "nemo_worker": {
+      "comparisons": 6,
+      "exact_initial_coordinates": 45376
+    },
+    "nemo_pretrained": {
+      "comparisons": 5,
+      "validators": 8,
+      "exact_initial_sampled_coordinates": 19840,
+      "independent_audit_sha256": "3e9c12213a8a79a75b1526b95cc6dac4de6df87a8552787d70ad63c9a5615e67"
+    },
+    "bridge": {
+      "public_comparisons": 8,
+      "public_cli_count": 16,
+      "source_only_comparisons": 2,
+      "source_cli_count": 6,
+      "private_full_arrays_independently_rerun_by_auditor": false
+    },
+    "tensorrt": {
+      "comparisons": 6,
+      "parent_generic_replay_matched": true,
+      "independent_generic_cli_replay_matched": true
+    },
+    "carried_forward": {
+      "comparisons": 107,
+      "reference_cases": 27,
+      "old_published_bytes_preserved": true
+    }
+  },
+  "privacy": {
+    "status": "clean_after_explicit_corrections_and_narrow_false_positive_classification",
+    "all_new_supplements_scan": {
+      "status": "clean",
+      "files_scanned": 2097,
+      "expanded_bytes_scanned": 170532675,
+      "zip_containers": 29,
+      "safetensor_headers": 33,
+      "numeric_npy_verified_without_pickle": 471,
+      "export_manifest_entries_verified": 1407,
+      "public_package_version_allowlist_hits": {
+        "10.10.0.31": 13,
+        "10.0.0.1": 5,
+        "10.0.0.2": 4,
+        "10.3.5.147": 5,
+        "10.14.1.48": 2,
+        "10.4.0.35": 10,
+        "10.4.1.81": 2
+      },
+      "pickle_deserialized": false
+    },
+    "report_in": "independent-audits.zip/parent-public-scan.json",
+    "known_public_version_and_upstream_fixture_classification": true,
+    "original_unpublished_leaky_nemo_cli_candidate_quarantined": true,
+    "pickle_deserialized": false
+  },
+  "audits_companion": {
+    "file": "independent-audits.zip",
+    "bytes": 15568,
+    "sha256": "e0fbda0a664a52ee380662786cb2c26fe71ced930e6e58699216cd12968e219e"
+  },
+  "local_documentation_links": {
+    "status": "valid",
+    "records": [
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-skillvalidation-20261019T083016Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-frameworkmatrix-20261019T124628Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-frameworkmatrix-20261019T124628Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-npuvalidation-20261020T064804Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-npuvalidation-20261020T064804Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-npurecovery-20261020T103823Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-npurecovery-20261020T103823Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-remainingcomplete-20261020T140716Z/README.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/README.md",
+        "target": "replay.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "results.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "VALIDATION.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/openrlhf-community-grpo-evidence.zip",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-slimereference-20261020T123737Z/index.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-nemopretrained-20261020T135930Z/RESULTS.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/swift-grpo-evidence.zip",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/areal-grpo-evidence.zip",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/roll-grpo-evidence.zip",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/mindspeed-rl/archive-index.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-trtcomplete-20261020T134000Z/INDEX.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/lmdeploy-native-evidence.zip",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/mindie/archive-index.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/llama-native-evidence.zip",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/sft/matrix.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/sft/matrix.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/sft/matrix.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/sft/matrix.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-bridgecomplete-20261020T134310Z/INDEX.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/mindspeed-llm/archive-index.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-slimereference-20261020T123737Z/guide-notes.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-nemopretrained-20261020T135930Z/RESULTS.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-nemocomplete-worker-v3-20261020T131017Z/RESULTS.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-nemoofficialcli-v2-20261020T134600Z/RESULTS.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-bridgecomplete-20261020T134310Z/guide-notes.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-trtcomplete-20261020T134000Z/guide-notes.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../replay.py",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "../compare-npurecovery-20261020T103823Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+        "target": "VALIDATION.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "results.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "VALIDATION.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "../compare-slimereference-20261020T123737Z/index.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "../compare-nemocomplete-worker-v3-20261020T131017Z/RESULTS.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "../compare-nemoofficialcli-v2-20261020T134600Z/RESULTS.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "../compare-nemopretrained-20261020T135930Z/RESULTS.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "../compare-bridgecomplete-20261020T134310Z/INDEX.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "../compare-trtcomplete-20261020T134000Z/INDEX.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+        "target": "../compare-npurecovery-20261020T103823Z/GUIDE.md",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-slimereference-20261020T123737Z/guide-notes.md",
+        "target": "../compare-npurecovery-20261020T103823Z/attribution-v2.zip",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/guide-notes.md",
+        "target": "INDEX.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/guide-notes.md",
+        "target": "VALIDATION.json",
+        "status": "valid"
+      },
+      {
+        "document": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/guide-notes.md",
+        "target": "independent-audit.json",
+        "status": "valid"
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/.gitattributes",
+      "bytes": 61,
+      "sha256": "22106984a6c1274ead5c283789ca11d75b303658949aaa627698747e7b2d6160"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/GUIDE.md",
+      "bytes": 19878,
+      "sha256": "9e0a92f97d2b79176e91fa8e7ad2b762e6fd0dbd87b034cf94199bfbefb22e20"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/independent-audits.zip",
+      "bytes": 15568,
+      "sha256": "e0fbda0a664a52ee380662786cb2c26fe71ced930e6e58699216cd12968e219e"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/README.md",
+      "bytes": 1655,
+      "sha256": "9b17427689e7eb247180a261ae8a9f2652e2bc834542d606300aaa64d814be3a"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-remainingcomplete-20261020T140716Z/results.json",
+      "bytes": 19840,
+      "sha256": "d0823ff56db76b8dd57c43f8e67656b35aa54e1129ad43a47c1a00e08c3c72d2"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-slimereference-20261020T123737Z/.gitattributes",
+      "bytes": 61,
+      "sha256": "22106984a6c1274ead5c283789ca11d75b303658949aaa627698747e7b2d6160"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-slimereference-20261020T123737Z/guide-notes.md",
+      "bytes": 2786,
+      "sha256": "b5a998f6bbbfc2cbe85fccb4f96bdf8d3b4f33a3e0e6d3c67c944dadbcc4e9c0"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-slimereference-20261020T123737Z/index.json",
+      "bytes": 5715,
+      "sha256": "96f83a6df4235ddb81df45df7cfd7bea0c0f6e7bc77ad67913e3d9668af08eaf"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-slimereference-20261020T123737Z/slime-independent-cpu-reference.zip",
+      "bytes": 2841832,
+      "sha256": "5c5e607a8d197c94808214460a773541665efbb4e6b10ac0e7f5c0f064a19190"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemocomplete-worker-v3-20261020T131017Z/.gitattributes",
+      "bytes": 61,
+      "sha256": "22106984a6c1274ead5c283789ca11d75b303658949aaa627698747e7b2d6160"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemocomplete-worker-v3-20261020T131017Z/nemo-worker-evidence.zip",
+      "bytes": 4268675,
+      "sha256": "da47d18941c9634c6886f2fcbb2af6108a2a93234923d6f6db6074e91fe129c6"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemocomplete-worker-v3-20261020T131017Z/README.txt",
+      "bytes": 1294,
+      "sha256": "4b5ccd33190209b66a5b9655d0750dfcc28aaffda253b1ae4886e29d257956dc"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemocomplete-worker-v3-20261020T131017Z/RESULTS.json",
+      "bytes": 12301,
+      "sha256": "746711dfa220a10fe25d8aabae0af0c2aecfb8e92c3ee42f1bc8cef878da4c1f"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemocomplete-worker-v3-20261020T131017Z/VALIDATION.json",
+      "bytes": 349,
+      "sha256": "cd03fc8865d4999986fb57f4f1e008d81fd7a6d91cbb7af39f53e7d512582ef2"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemoofficialcli-v2-20261020T134600Z/.gitattributes",
+      "bytes": 61,
+      "sha256": "22106984a6c1274ead5c283789ca11d75b303658949aaa627698747e7b2d6160"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemoofficialcli-v2-20261020T134600Z/nemo-official-cli-evidence.zip",
+      "bytes": 1263496,
+      "sha256": "8c50f180de7d433997d0438ff32a38b345bc18d0447a2e298ea1979aa16c2302"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemoofficialcli-v2-20261020T134600Z/README.txt",
+      "bytes": 582,
+      "sha256": "aed540ddda1383698f9c43af5fe73a783536f9402ebfee673e5c77298faa38b4"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemoofficialcli-v2-20261020T134600Z/RESULTS.json",
+      "bytes": 4241,
+      "sha256": "6a8bd08209a6b161f85dc9175463cda051c38f1f56b224999e978ef4a2e33a89"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemoofficialcli-v2-20261020T134600Z/VALIDATION.json",
+      "bytes": 801,
+      "sha256": "4d7964411fa357329c0facac4e3f58e57ee7330440aa5685ab4d7995b121aaff"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemopretrained-20261020T135930Z/.gitattributes",
+      "bytes": 61,
+      "sha256": "22106984a6c1274ead5c283789ca11d75b303658949aaa627698747e7b2d6160"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemopretrained-20261020T135930Z/nemo-pretrained-pair-evidence.zip",
+      "bytes": 2182203,
+      "sha256": "b06be333c1f8220b303d6e6381e43b5fc20e3589577d2f641ec92052487d1038"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemopretrained-20261020T135930Z/README.txt",
+      "bytes": 878,
+      "sha256": "5cb9e2b734f6f5dcdf397c33030f3be90347680534eba8b8ebced73f69c78e2f"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemopretrained-20261020T135930Z/RESULTS.json",
+      "bytes": 10687,
+      "sha256": "3b150113ebdfce019feaa54af5d2e849ccf2f673047500af1edb9b4afe441a94"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-nemopretrained-20261020T135930Z/VALIDATION.json",
+      "bytes": 1123,
+      "sha256": "8245816cfc82b35a83f153b00adb5aa220850b0d2f0b6759ce9668e65fe91910"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/.gitattributes",
+      "bytes": 61,
+      "sha256": "22106984a6c1274ead5c283789ca11d75b303658949aaa627698747e7b2d6160"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/bridge-pretrained-sft.zip",
+      "bytes": 29225226,
+      "sha256": "34fcdb0ece452ccaf597fb4cd6c2ffec625f11a6b187b4f05e17966e4607dabe"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/bridge-pretrained-tensor-cli.zip",
+      "bytes": 62418,
+      "sha256": "d6c6d2c8677ff89abde0962c4764efbe900b257d9ccc3d99b42f88cd145cc5f6"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/bridge-tiny-sft.zip",
+      "bytes": 1527454,
+      "sha256": "85958bed1ada3d3de29815856678d6af705a8efd18680be858d7a8ce13f8b0ee"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/guide-notes.md",
+      "bytes": 7038,
+      "sha256": "46ff99a25e2094d70b48e0f26408b30006b5a18efe8dcdf083b873b4da492bae"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/independent-audit.json",
+      "bytes": 5427,
+      "sha256": "69e153f8e732c0203f9a963b54a14a22ecef30489a3b84a43a039ea4f73d0fc2"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/INDEX.json",
+      "bytes": 3602,
+      "sha256": "bd2106d5d360c3dd34e96a629c22d395c08a4310ab352d6002ae6aea60480595"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-bridgecomplete-20261020T134310Z/VALIDATION.json",
+      "bytes": 2428,
+      "sha256": "498aac3a29fe9b17b4ca4d54ab9f19ef988775caf5cd1a832c9547e8d2556a2a"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-trtcomplete-20261020T134000Z/.gitattributes",
+      "bytes": 61,
+      "sha256": "22106984a6c1274ead5c283789ca11d75b303658949aaa627698747e7b2d6160"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-trtcomplete-20261020T134000Z/guide-notes.md",
+      "bytes": 2920,
+      "sha256": "eba39fa4dd3e6068469b3c2adcf3b41ee3fcd5165ae5007b55de3306199dca5b"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-trtcomplete-20261020T134000Z/independent-public-audit.json",
+      "bytes": 3813,
+      "sha256": "f00085562ea598c0202300fdf9be52524e5bed04aa92411be3dbb2ed0a5bc20a"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-trtcomplete-20261020T134000Z/INDEX.json",
+      "bytes": 1672,
+      "sha256": "0d3916447a5994640d79862e43945b0090f18c1df47125b0562d42fa905b7b63"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-trtcomplete-20261020T134000Z/tensorrt-llm-native-and-reference.zip",
+      "bytes": 16460535,
+      "sha256": "9bea802aade39168dc91666ea255fb8099241c494739e36454cb436ec8aca58d"
+    },
+    {
+      "path": "tests/results/gpt-6/compare-trtcomplete-20261020T134000Z/VALIDATION.json",
+      "bytes": 629,
+      "sha256": "ee23e972cc08216698bb5dd0a8f329de9e4aab182ece83ae0ad23f54530cf37e"
+    }
+  ],
+  "inventory_excludes": "VALIDATION.json itself and existing model-family README.md; Git commit records them.",
+  "thresholds": null,
+  "numerical_acceptance_pass_claimed": false
+}

@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "case": "Slime independent CPU precision reference supplement",
+  "status": "no_thresholds",
+  "thresholds": null,
+  "archive": "slime-independent-cpu-reference.zip",
+  "bytes": 2841832,
+  "sha256": "5c5e607a8d197c94808214460a773541665efbb4e6b10ac0e7f5c0f064a19190",
+  "independent_model_reference": "actual full-model CPU FP32 forward, GRPO backward, full-model clipping, cold AdamW",
+  "coverage": {
+    "trajectories": 8,
+    "complete_groups": 2,
+    "actions": 64,
+    "sampled_tensors": 16,
+    "paired_gradient_elements": 135680,
+    "paired_update_elements": 135680,
+    "native_optimizer_events": 1,
+    "cpu_optimizer_events": 1,
+    "exact_initial_coordinates": 135680
+  },
+  "comparisons": [
+    {
+      "stage": "scores",
+      "exit_code": 0,
+      "status": "no_thresholds",
+      "metrics": {
+        "target_count": 64,
+        "side_a_nll_nat_per_token": 3.038545394781977,
+        "side_b_nll_nat_per_token": 3.0373060439014807,
+        "nll_abs_diff_nat_per_token": 0.001239350880496204,
+        "mae_nat": 0.03028716880362481,
+        "p99_nat": 0.1130942642688751,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.1175692081451416,
+        "max_coordinate": {
+          "sample": "5",
+          "position": 10,
+          "token": 11652
+        }
+      }
+    },
+    {
+      "stage": "objectives",
+      "exit_code": 0,
+      "status": "no_thresholds",
+      "metrics": {
+        "count": 48,
+        "side_a_norm": {
+          "value": 10.446625668606334,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 10.430328661444124,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.06776869021764122,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 0.009781567884945877,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9999801443930408,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.04522132873535156,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 32,
+        "max_coordinate": {
+          "tensor": "sample5.objective_components",
+          "index": 2,
+          "coordinate": [
+            2
+          ],
+          "observation": {
+            "sample": "5",
+            "boundary": "native per-microbatch reported loss components",
+            "invocation": 5,
+            "execution_stage": "preupdate GRPO objective"
+          }
+        }
+      }
+    },
+    {
+      "stage": "gradients",
+      "exit_code": 0,
+      "status": "no_thresholds",
+      "metrics": {
+        "count": 135680,
+        "side_a_norm": {
+          "value": 0.913871600507864,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 0.9178202173596249,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.054481531738253534,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 0.00014790790706445333,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.998239895131943,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.008780628442764282,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 51378,
+        "max_coordinate": {
+          "parameter": "decoder.layers.0.self_attention.q_layernorm.weight.flat_stride_1",
+          "index": 50
+        }
+      }
+    },
+    {
+      "stage": "updates",
+      "exit_code": 0,
+      "status": "no_thresholds",
+      "metrics": {
+        "count": 135680,
+        "side_a_norm": {
+          "value": 0.03662982347649616,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 0.03670356140766055,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.021139787311546643,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 5.739085516281744e-05,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.8338031014664161,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.00022201985120773315,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 1024,
+        "max_coordinate": {
+          "parameter": "decoder.layers.0.mlp.linear_fc2.weight.flat_stride_192",
+          "index": 0
+        }
+      }
+    }
+  ],
+  "fresh_unpack_replay": {
+    "all_cli_exit_codes": 0,
+    "all_status": "no_thresholds",
+    "numeric_reports_exact_equal": true
+  },
+  "previous_public_native_bundle": "../compare-npurecovery-20261020T103823Z/slime-and-upstream-boundaries.zip",
+  "privacy_scan": "completed; no private paths, account IDs, addresses, private keys, or PT pickle files in payload",
+  "unavailable": [
+    "native_gradient_source_dtype",
+    "native_per_action_ratio_and_branch_capture",
+    "native_backward_invocation_per_action_scores",
+    "native_postclip_gradients",
+    "full_native_initial_state_capture",
+    "full_model_native_gradients_and_updates",
+    "common_restored_optimizer_step"
+  ],
+  "third_party_attribution_reuse": {
+    "companion": "../compare-npurecovery-20261020T103823Z/attribution-v2.zip",
+    "sha256": "eeca1efdd0ff499d485bf5da8d8049c64da3f1697924782d4bd8cb950f45ea8b",
+    "scope": "Reuses unchanged pinned Slime objective/native source and Qwen3 model license bytes from the prior companion; this notice extends the attribution to source snapshots redistributed by this supplement. Upstream model revision remains unknown where the resource has no pinned revision."
+  }
+}

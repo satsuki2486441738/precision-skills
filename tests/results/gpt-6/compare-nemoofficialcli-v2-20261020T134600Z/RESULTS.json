@@ -1,0 +1,107 @@
+{
+  "schema": "precision-nemo-official-cli-completion-v1",
+  "run": "compare-nemoofficialcli-v2-20261020T134600Z",
+  "status": "official_cli_completed_with_disclosed_npu_resource_and_data_adapters",
+  "official_cli": "examples/run_grpo_math.py",
+  "upstream_source_pin": "26f651ea490ef2a343e7f298b9aa54bc7c5da67c",
+  "official_cli_returncode": 0,
+  "optimizer_steps": 1,
+  "driver_seconds": 103.48448443412781,
+  "native_workflow": [
+    "HF generation",
+    "native math_verify reward evaluation",
+    "native per-prompt baseline and advantage calculation",
+    "native policy and reference logprobs",
+    "native ClippedPGLossFn backward, clipping, AdamW and scheduler",
+    "native training metrics and trajectory JSONL"
+  ],
+  "source_identity": "Pinned upstream source after line-ending normalization; two private resource-routing files changed; mathematical source and official CLI unchanged. No literal Git byte identity claim.",
+  "source_resource_adapters": [
+    "nemo_reinforcer/distributed/virtual_cluster.py: GPU resource key to real NPU, use same private interpreter",
+    "nemo_reinforcer/distributed/worker_groups.py: Ray num_gpus0 and resources NPU count"
+  ],
+  "startup_adapters": [
+    "official torch_npu.contrib.transfer_to_npu",
+    "force private owned Ray cluster with actual NPU1 and GPU0",
+    "route OpenMath dataset loading to bounded local JSON; unchanged native formatting and reward functions",
+    "observe original AdamW.step once and capture safe before/after arrays; return original result unchanged"
+  ],
+  "actual_ray_resources": {
+    "object_store_memory": 268435456.0,
+    "CPU": 8.0,
+    "NPU": 1.0,
+    "node:__internal_head__": 1.0,
+    "node:127.0.0.1": 1.0,
+    "memory": 1082036620288.0,
+    "accelerator_type:Ascend910_9382": 1.0
+  },
+  "runtime": {
+    "torch": "2.9.0+cpu",
+    "torch_npu": "2.9.0.post6",
+    "CANN": "9.1.0",
+    "transformers": "4.57.1",
+    "ray": "2.43.0",
+    "numpy": "1.26.4",
+    "math_verify": "0.7.0",
+    "latex2sympy2_extended": "1.10.1",
+    "antlr4_python3_runtime": "4.9.3",
+    "omegaconf": "2.3.0",
+    "device": "Ascend910_9382 physical8, npu:0",
+    "dtype": "float32"
+  },
+  "optimizer_capture": {
+    "pid": 576260,
+    "event": "native AdamW.step completed",
+    "parameter_elements": 45376,
+    "device": "npu:0",
+    "steps": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "max_stored_update": 1.0132789611816406e-06,
+    "capture_observational_only": true
+  },
+  "native_reward_and_gradient_scope": {
+    "rewards": "both zero (native math_verify on synthetic prompts)",
+    "advantages": "both zero, derived from unchanged native zero-reward baseline calculation",
+    "policy_surrogate_gradients": "zero by the native objective with zero advantages; not a nonzero GRPO policy-gradient case",
+    "total_policy_gradient_measured": false,
+    "total_gradient_note": "KL roundoff and weight decay may contribute to stored updates; this supplement does not attribute the nonzero update to a policy-gradient signal."
+  },
+  "comparison_scope": "Independent nonzero fixed-advantage CPU precision replay belongs to the separate worker supplement. This full reward-pipeline execution is a completion smoke case, not a paired numerical equivalence case.",
+  "limitations": [
+    "One rank; no distributed FSDP sharding coverage.",
+    "Seeded tiny random fixture and zero rewards have no answer-quality meaning.",
+    "NeMo v0.2.0 torch2.6.0 dependency pin differs from the actual adapted NPU torch2.9.0 stack.",
+    "Historical untouched-upstream NCCL failure is preserved and not relabeled."
+  ],
+  "thresholds": null,
+  "numerical_acceptance_pass_claimed": false,
+  "evidence": {
+    "file": "nemo-official-cli-evidence.zip",
+    "bytes": 1263496,
+    "sha256": "8c50f180de7d433997d0438ff32a38b345bc18d0447a2e298ea1979aa16c2302"
+  },
+  "portable_log_paths": true,
+  "privacy_correction": {
+    "prior_candidate_quarantined": true,
+    "redacted_text_files": [
+      "ray-logs/s0/runtime_env_agent-4d4a53000e77.log",
+      "ray-logs/s1/runtime_env_agent-951a13ce0fa8.log"
+    ],
+    "all_binary_bytes_unchanged": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "publication": {
+    "three_archives_copied_byte_preserved": true,
+    "archive_hashes_match_independently_audited_frozen_handoff": true,
+    "maximum_file_bytes": 29225226,
+    "file_size_limit_bytes": 47185920,
+    "audit_file_sha256": "69e153f8e732c0203f9a963b54a14a22ecef30489a3b84a43a039ea4f73d0fc2",
+    "private_storage_locators_published": false
+  },
+  "archives": [
+    {"file": "bridge-tiny-sft.zip", "members": 181, "largest_member_bytes": 331648, "private_path_scan": "clear", "pickle_files": 0},
+    {"file": "bridge-pretrained-sft.zip", "members": 94, "largest_member_bytes": 19447936, "private_path_scan": "clear", "pickle_files": 0},
+    {"file": "bridge-pretrained-tensor-cli.zip", "members": 8, "largest_member_bytes": 243019, "private_path_scan": "clear", "pickle_files": 0}
+  ],
+  "recorded_offline_execution": {
+    "tiny_public_clis": 11,
+    "pretrained_public_clis": 5,
+    "public_comparison_groups": 8,
+    "public_clis": 16,
+    "pretrained_private_source_full_tensor_comparison_groups": 2,
+    "pretrained_private_source_full_tensor_clis": 6,
+    "total_comparison_groups": 10,
+    "total_clis": 22,
+    "validators": 12,
+    "comparators": 10,
+    "all_cli_returncodes_zero": true,
+    "source_standard_tensor_metrics_equal_compact_metrics": true,
+    "public_full_pretrained_gradient_update_replay_available": false
+  },
+  "independent_handoff_audit": {
+    "status": "clean_with_explicit_source_only_full_tensor_scope",
+    "file": "independent-audit.json",
+    "public_pretrained_clis_rerun": 5,
+    "unchanged_tiny_prior_audit_clis": 11,
+    "private_full_pretrained_tensor_arrays_rerun": false,
+    "private_source_evidence_checked": "Source code, actual CLI invocation records, recorded validation reports, consistent hashes and all310 tensor report entries; not independent recomputation from private arrays.",
+    "archive_members_scanned": 283,
+    "expanded_bytes_scanned": 58290347,
+    "privacy_findings": [],
+    "source_license_bytes_verified": true
+  },
+  "source_identities_unchanged_after_runs": true,
+  "owned_case_processes_remaining": 0,
+  "repository_tests": {"run": 130, "skipped": 3, "status": "OK", "log_sha256": "a08e46960b6bc6446e1b0dac33b5c7a0fb2b7cc351e61f3addd7dc30c982459d"},
+  "thresholds": null,
+  "numerical_acceptance": "Not defined. Zero CLI exit codes establish artifact validity and completed comparisons, not numerical acceptance."
+}

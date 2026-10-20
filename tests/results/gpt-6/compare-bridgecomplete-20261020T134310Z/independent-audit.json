@@ -1,0 +1,123 @@
+{
+  "status": "clean_with_explicit_source_only_full_tensor_scope",
+  "archives": [
+    {
+      "file": "bridge-tiny-sft.zip",
+      "bytes": 1527454,
+      "sha256": "85958bed1ada3d3de29815856678d6af705a8efd18680be858d7a8ce13f8b0ee",
+      "members": 181
+    },
+    {
+      "file": "bridge-pretrained-sft.zip",
+      "bytes": 29225226,
+      "sha256": "34fcdb0ece452ccaf597fb4cd6c2ffec625f11a6b187b4f05e17966e4607dabe",
+      "members": 94
+    },
+    {
+      "file": "bridge-pretrained-tensor-cli.zip",
+      "bytes": 62418,
+      "sha256": "d6c6d2c8677ff89abde0962c4764efbe900b257d9ccc3d99b42f88cd145cc5f6",
+      "members": 8
+    }
+  ],
+  "privacy": {
+    "findings": [],
+    "full_byte_scan_expanded_bytes": 58290347,
+    "all283_archive_members_scanned": true,
+    "outer_docs_scanned": true,
+    "safetensors_headers": 10,
+    "npy_without_pickle": 4
+  },
+  "replay_coverage": {
+    "public_portable_comparison_groups": 8,
+    "public_portable_cli_count": 16,
+    "portable_validators": 8,
+    "portable_metric_comparators": 8,
+    "source_only_comparison_groups": 2,
+    "source_only_cli_count": 6,
+    "source_only_validators": 4,
+    "source_only_metric_comparators": 2,
+    "total_executed_comparison_groups": 10,
+    "total_executed_clis": 22,
+    "current_pretrained_independent_audit_cli_count": 5,
+    "unchanged_tiny_prior_audit_cli_count": 11,
+    "all_canonical_thresholds": null,
+    "current_index_and_scope_correctly_separate_local_and_source": true
+  },
+  "pretrained_inputs": {
+    "native_input_tokens": 16,
+    "cpu_input_tokens": 17,
+    "paired_prediction_positions": 16,
+    "active_targets": 14,
+    "actual_eos_id": 151645,
+    "active_eos_targets": 2,
+    "extra_cpu_token_final_shift_masked": true,
+    "matching_causal_histories": true
+  },
+  "portable_numeric_replay": {
+    "actual_current_cli_count": 5,
+    "validators": 2,
+    "comparators": 3,
+    "public_full_gradient_update_replay_available": false,
+    "max_frozen_report_rounding_difference": 2.842170943040401e-14,
+    "causal_histories": "native16input vsCPU17input with extra last targetmasked; first16causal prefixes match",
+    "portable_values": {
+      "bridge-npu": {
+        "raw_logits_dtype": "BF16",
+        "logprobs_derived_fp64": true,
+        "max_logsoftmax_recompute_rounding": 7.72715225139109e-14,
+        "objective_from_active_logprobs": 9.794724371233952,
+        "active_targets": 14,
+        "active_eos": 2
+      },
+      "cpu": {
+        "raw_logits_dtype": "F32",
+        "logprobs_derived_fp64": true,
+        "max_logsoftmax_recompute_rounding": 1.5987211554602254e-14,
+        "objective_from_active_logprobs": 9.773665216730295,
+        "active_targets": 14,
+        "active_eos": 2
+      }
+    }
+  },
+  "full_tensor_evidence": {
+    "logical_tensors": 310,
+    "elements": 596049920,
+    "recorded_source_cli_records_and_actual_tools_verified": true,
+    "source_reports_equal_compact_stats_all310_tensors": true,
+    "source_update_report_initial_values_exactly_checked_all310": true,
+    "capture_and_full_artifact_indexes_consistent": true,
+    "independent_auditor_reran_full_source_tensors": false,
+    "reason": "Full pretrained parameter/gradient/update arrays and manifests are private at source; hashes/reports alone do not provide portable full-tensor replay."
+  },
+  "licenses": {
+    "bridge-npu": {
+      "source_commit": "35b4ebfc486fb15dcc0273ceea804c3606be948a",
+      "unchanged_in_both_native_cases": true,
+      "included_license_matches_git_original_bytes": true,
+      "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "megatron": {
+      "source_commit": "3714d81d418c9f1bca4594fc35f9e8289f652862",
+      "unchanged_in_both_native_cases": true,
+      "included_license_matches_git_original_bytes": true,
+      "license_sha256": "28279786a05ce666e169a14d76875a8435be91ff257db35adb8ef9046810f5e2"
+    },
+    "mindspeed": {
+      "source_commit": "fc63de5c48426dd019c3b3f39e65f5bdf56e4086",
+      "unchanged_in_both_native_cases": true,
+      "included_license_matches_git_original_bytes": true,
+      "license_sha256": "a86175c5484c16faa19b2de2933f902500b3c83f9e58828e68d05ed996bd4436"
+    }
+  },
+  "scope": "Slime-prescribed Bridge fork0.3.0rc0 + official MindSpeed and disclosed source patches on actual captured single-rank NPU; not untouched NVIDIA Bridge0.6.2. Pretrained CPU reference independently loads pretrained source, performs complete backward and statelessSGD; native stored BF16 updates vs CPU FP32 include quantization differences.",
+  "findings": [],
+  "limitations": [
+    "Complete source-side 596M before/gradient/after arrays were not accessible to this offline handoff audit; complete initial-state and full-tensor numerical claims were checked via source code, actual CLI invocation records, recorded validation reports and consistent hashes, not independently recomputed from those arrays.",
+    "Existing CPU summary raw metadata retains a tiny-template wording; canonical model/config/results correctly identify pretrainedQwen3-0.6B and original raw bytes remain preserved.",
+    "Pretrained model upstream revision remains unasserted; model content is identified by actual file hashes."
+  ],
+  "tracked_files_edited": false,
+  "native_jobs_launched": false,
+  "push_performed": false
+}

@@ -1,0 +1,42 @@
+{
+  "status": "validated",
+  "archive_sha256": "b06be333c1f8220b303d6e6381e43b5fc20e3589577d2f641ec92052487d1038",
+  "exported_files_hash_verified": 557,
+  "unchanged_binary_files": 35,
+  "safetensors_header_private_metadata_scan": "clean",
+  "all_utf8_and_outer_text_private_ip_scan": "clean",
+  "private_sentinels_scan": "clean",
+  "actual_core_cli_replay": {
+    "comparisons": [
+      {
+        "name": "action-scores",
+        "status": "no_thresholds",
+        "metrics_reproduced": true
+      },
+      {
+        "name": "gradients",
+        "status": "no_thresholds",
+        "metrics_reproduced": true
+      },
+      {
+        "name": "loss",
+        "status": "no_thresholds",
+        "metrics_reproduced": true
+      },
+      {
+        "name": "postclip-gradients",
+        "status": "no_thresholds",
+        "metrics_reproduced": true
+      },
+      {
+        "name": "updates",
+        "status": "no_thresholds",
+        "metrics_reproduced": true
+      }
+    ],
+    "thresholds": null
+  },
+  "tensor_validation_clis": 8,
+  "comparison_clis": 5,
+  "thresholds": null
+}

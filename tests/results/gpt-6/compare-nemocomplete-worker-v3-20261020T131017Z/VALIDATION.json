@@ -1,0 +1,12 @@
+{
+  "status": "validated",
+  "archive_sha256": "da47d18941c9634c6886f2fcbb2af6108a2a93234923d6f6db6074e91fe129c6",
+  "exported_files_hash_verified": 319,
+  "binary_files_byte_identical_to_original": 146,
+  "privacy_scan": "clean",
+  "actual_core_cli_replay": {
+    "status": "completed",
+    "comparisons": 6
+  },
+  "thresholds": null
+}

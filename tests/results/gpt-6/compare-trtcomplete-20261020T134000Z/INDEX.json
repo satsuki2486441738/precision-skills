@@ -1,0 +1,28 @@
+{
+  "schema": "precision-tensorrt-supplement-v1",
+  "archive": "tensorrt-llm-native-and-reference.zip",
+  "bytes": 16460535,
+  "sha256": "9bea802aade39168dc91666ea255fb8099241c494739e36454cb436ec8aca58d",
+  "members": 205,
+  "native_cases": 2,
+  "independent_cpu_reference_cases": 2,
+  "portable_comparison_groups": 6,
+  "original_comparator_cli_calls": 6,
+  "thresholds": null,
+  "numerical_acceptance_pass_claimed": false,
+  "route": "Official TensorRT-LLM1.2.0 wheel PyTorch backend; TRTLLM attention; local RTX5060 SM120; TP1; not Ascend or serialized TensorRT engine.",
+  "models": [
+    "seeded tiny Llama",
+    "pretrained Qwen2.5-0.5B-Instruct"
+  ],
+  "source_manifest": "independent-audit/installed-source-manifest.json",
+  "source_identity": "Installed wheel files verified against RECORD; three API files separately equal official v1.2.0 Git tag. Full engine Git-byte identity not proven.",
+  "license": "Actual installed 17940-byte multi-component LICENSE retained; SHA256 5d8f6f1a2f855c68a273674d6a3925c6349d7632d0864d089b46f94d8ea76eff",
+  "limitations": [
+    "Native converted parameters not directly measured; same source checkpoint hashes and declared cast policy only.",
+    "Native KV dtype inferred from unchanged auto allocator source, not copied cache tensors.",
+    "Native requested FP16 model/cache versus CPU FP32 arithmetic/cache; not a matched-cache-precision test.",
+    "Four prediction rows per model, one prefill and three cached decode; no throughput, scaling, quality or numerical acceptance claim.",
+    "Installed library and RECORD hashes retained; no cached whole-wheel file was available to hash."
+  ]
+}

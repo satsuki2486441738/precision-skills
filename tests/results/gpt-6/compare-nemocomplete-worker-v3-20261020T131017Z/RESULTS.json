@@ -1,0 +1,358 @@
+{
+  "schema": "precision-nemo-worker-completion-v1",
+  "status": "adapted_native_worker_pipeline_and_independent_reference_completed",
+  "run": "compare-nemocomplete-worker-v3-20261020T131017Z",
+  "source_pin": "26f651ea490ef2a343e7f298b9aa54bc7c5da67c",
+  "native_entrypoints": [
+    "FSDP1PolicyWorker.generate",
+    "FSDP1PolicyWorker.get_logprobs",
+    "FSDP1PolicyWorker.train",
+    "ClippedPGLossFn.__call__",
+    "torch.optim.AdamW.step"
+  ],
+  "official_orchestrator_run_grpo_completed": false,
+  "source_scope": "Official NeMo v0.2.0 source with line endings normalized; no source computation edits; official Ascend transfer_to_npu API migration and PyTorch2.9.0 for the NPU runtime; Ray modified_class worker instantiated locally",
+  "runtime": {
+    "device": "Ascend910_9382 npu:0 physical8",
+    "torch": "2.9.0+cpu",
+    "torch_npu": "2.9.0.post6",
+    "CANN": "9.1.0",
+    "python": "3.12.13",
+    "transformers": "4.57.1",
+    "ray": "2.43.0",
+    "native_backend": "HCCL single rank; upstream skips FSDP wrapping at world_size1",
+    "attention": "sdpa",
+    "parameter_gradient_dtype": "float32",
+    "numpy": "1.26.4"
+  },
+  "official_recipe_deviation": "NeMo v0.2.0 pyproject pins torch2.6.0; exact NVIDIA dependency cohort was not used. Ascend official compatibility table maps torch_npu2.9.0.post6 and torch2.9.0 to CANN9.1.0.",
+  "adaptation": {
+    "official_source": "https://github.com/Ascend/pytorch/blob/v2.9.0-26.1.0/torch_npu/contrib/transfer_to_npu.py",
+    "installed_adapter_sha256": "1aae2d0171d039bccada5f4ad4819c07b4f779afff12783a1c6b0806ff361fa2",
+    "mathematical_operators_substituted_by_collector": false,
+    "device_resource_emulation": false
+  },
+  "summary": {
+    "native_and_independent_reference_completed": true,
+    "canonical_cases": 1,
+    "core_comparisons": 6,
+    "parameter_elements": 45376,
+    "parameter_tensors": 15,
+    "trajectories": 2,
+    "actions": 8,
+    "optimizer_steps": 1,
+    "native_loss": 8.912086741474923e-06,
+    "reference_loss": 8.897185580281075e-06,
+    "absolute_loss_error": 1.4901161193847656e-08,
+    "source_files_verified": 68,
+    "thresholds": null,
+    "comparisons": [
+      {
+        "name": "gradients",
+        "status": "no_thresholds",
+        "global": {
+          "count": 45376,
+          "side_a_norm": {
+            "value": 5.13869779025201,
+            "status": "no_thresholds"
+          },
+          "side_b_norm": {
+            "value": 5.138698159983612,
+            "status": "no_thresholds"
+          },
+          "error_norm": {
+            "value": 1.1948053855389e-06,
+            "status": "no_thresholds"
+          },
+          "rmse": {
+            "value": 5.608982266283823e-09,
+            "status": "no_thresholds"
+          },
+          "cosine": {
+            "value": 0.9999999999999758,
+            "status": "no_thresholds"
+          },
+          "max_abs": {
+            "value": 1.7136335372924805e-07,
+            "status": "no_thresholds"
+          },
+          "max_flat_index": 5559,
+          "max_coordinate": {
+            "parameter": "model.embed_tokens.weight",
+            "index": 1463
+          }
+        }
+      },
+      {
+        "name": "postclip-gradients",
+        "status": "no_thresholds",
+        "global": {
+          "count": 45376,
+          "side_a_norm": {
+            "value": 0.499999928575244,
+            "status": "no_thresholds"
+          },
+          "side_b_norm": {
+            "value": 0.49999992905198243,
+            "status": "no_thresholds"
+          },
+          "error_norm": {
+            "value": 1.1218631516242785e-07,
+            "status": "no_thresholds"
+          },
+          "rmse": {
+            "value": 5.26655687931948e-10,
+            "status": "no_thresholds"
+          },
+          "cosine": {
+            "value": 0.9999999999999748,
+            "status": "no_thresholds"
+          },
+          "max_abs": {
+            "value": 1.7695128917694092e-08,
+            "status": "no_thresholds"
+          },
+          "max_flat_index": 5559,
+          "max_coordinate": {
+            "parameter": "model.embed_tokens.weight",
+            "index": 1463
+          }
+        }
+      },
+      {
+        "name": "updates",
+        "status": "no_thresholds",
+        "global": {
+          "count": 45376,
+          "side_a_norm": {
+            "value": 0.020480982161736497,
+            "status": "no_thresholds"
+          },
+          "side_b_norm": {
+            "value": 0.020480982246580504,
+            "status": "no_thresholds"
+          },
+          "error_norm": {
+            "value": 1.1896331389122479e-07,
+            "status": "no_thresholds"
+          },
+          "rmse": {
+            "value": 5.584701291359481e-10,
+            "status": "no_thresholds"
+          },
+          "cosine": {
+            "value": 0.9999999999831312,
+            "status": "no_thresholds"
+          },
+          "max_abs": {
+            "value": 5.593756213784218e-08,
+            "status": "no_thresholds"
+          },
+          "max_flat_index": 18294,
+          "max_coordinate": {
+            "parameter": "model.layers.0.mlp.gate_proj.weight",
+            "index": 1846
+          }
+        }
+      },
+      {
+        "name": "loss",
+        "status": "no_thresholds",
+        "global": {
+          "count": 1,
+          "side_a_norm": {
+            "value": 8.912086741474923e-06,
+            "status": "no_thresholds"
+          },
+          "side_b_norm": {
+            "value": 8.897185580281075e-06,
+            "status": "no_thresholds"
+          },
+          "error_norm": {
+            "value": 1.4901161193847656e-08,
+            "status": "no_thresholds"
+          },
+          "rmse": {
+            "value": 1.4901161193847656e-08,
+            "status": "no_thresholds"
+          },
+          "cosine": {
+            "value": 1.0,
+            "status": "no_thresholds"
+          },
+          "max_abs": {
+            "value": 1.4901161193847656e-08,
+            "status": "no_thresholds"
+          },
+          "max_flat_index": 0,
+          "max_coordinate": {
+            "tensor": "actor.clipped_policy_plus_kl_loss",
+            "index": 0,
+            "coordinate": [
+              0
+            ],
+            "observation": {
+              "boundary": "pre-backward full minibatch objective",
+              "optimizer_step": 0,
+              "group": "both trajectories",
+              "invocation": 0,
+              "execution_stage": "training"
+            }
+          }
+        }
+      },
+      {
+        "name": "training-logits",
+        "status": "no_thresholds",
+        "global": {
+          "count": 512,
+          "side_a_norm": {
+            "value": 3.580016069647347,
+            "status": "no_thresholds"
+          },
+          "side_b_norm": {
+            "value": 3.5800161228388556,
+            "status": "no_thresholds"
+          },
+          "error_norm": {
+            "value": 7.678920906520677e-07,
+            "status": "no_thresholds"
+          },
+          "rmse": {
+            "value": 3.3936356532474505e-08,
+            "status": "no_thresholds"
+          },
+          "cosine": {
+            "value": 0.9999999999999774,
+            "status": "no_thresholds"
+          },
+          "max_abs": {
+            "value": 1.1920928955078125e-07,
+            "status": "no_thresholds"
+          },
+          "max_flat_index": 219,
+          "max_coordinate": {
+            "tensor": "actor.logits",
+            "index": 219,
+            "coordinate": [
+              3,
+              27
+            ],
+            "observation": {
+              "boundary": "pre-loss model logits",
+              "action_prediction_positions": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  6
+                ]
+              ],
+              "optimizer_step": 0,
+              "invocation": 0,
+              "execution_stage": "training"
+            }
+          }
+        }
+      },
+      {
+        "name": "action-scores",
+        "status": "no_thresholds",
+        "metrics": {
+          "target_count": 8,
+          "side_a_nll_nat_per_token": 3.811605840921402,
+          "side_b_nll_nat_per_token": 3.8116058111190796,
+          "nll_abs_diff_nat_per_token": 2.9802322387695312e-08,
+          "mae_nat": 2.9802322387695312e-08,
+          "p99_nat": 2.2172927856445306e-07,
+          "p99_method": "global linear h=0.99*(N-1)",
+          "max_abs_nat": 2.384185791015625e-07,
+          "max_coordinate": {
+            "sample": "trajectory-0",
+            "position": 6,
+            "token": 22
+          }
+        },
+        "coverage": {
+          "expected": 8,
+          "paired": 8
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Worker API pipeline completed; examples/run_grpo.py/Ray orchestration not yet covered.",
+    "Single-rank native worker path; distributed FSDP sharding not covered.",
+    "Seeded tiny random model; execution/precision fixture has no answer-quality meaning.",
+    "Fixed trajectory PPO surrogate with injected old/reference score anchors and advantages; reward evaluation, GRPO group normalization and full algorithm driver not exercised.",
+    "The raw collector annotation says complete group/synthetic reward test; this is corrected here: two distinct prompts use injected +1/-1 advantages; no reward function was called.",
+    "Untouched NVIDIA-only historical NCCL failure remains historical and is not retroactively changed."
+  ],
+  "thresholds": null,
+  "numerical_acceptance_pass_claimed": false,
+  "official_sources": [
+    {
+      "url": "https://github.com/NVIDIA-NeMo/RL/blob/26f651ea490ef2a343e7f298b9aa54bc7c5da67c/pyproject.toml",
+      "supports": "upstream torch2.6.0 and ray2.43.0 dependency pins"
+    },
+    {
+      "url": "https://github.com/Ascend/pytorch/blob/master/COMPATIBILITY.md",
+      "supports": "TorchNPU2.9.0.post6 / torch2.9.0 / CANN9.1.0 cohort"
+    },
+    {
+      "url": "https://github.com/Ascend/pytorch/blob/v2.9.0-26.1.0/torch_npu/contrib/transfer_to_npu.py",
+      "supports": "official CUDA API to NPU and NCCL to HCCL migration adapter"
+    },
+    {
+      "url": "https://docs.nvidia.com/nemo/rl/latest/about/installation.html",
+      "supports": "current official CUDA/NVIDIA installation path"
+    }
+  ],
+  "evidence": {
+    "file": "nemo-worker-evidence.zip",
+    "sha256": "da47d18941c9634c6886f2fcbb2af6108a2a93234923d6f6db6074e91fe129c6",
+    "bytes": 4268675
+  },
+  "export": {
+    "schema": "precision-public-export-v1",
+    "original_private_capture_archive_sha256": "ec3be365f6b5163903cb9eecf0ae4a9e71b906a03427b825085296b9b10e0cfc",
+    "exported_file_count": 320,
+    "redacted_text_files": 43,
+    "binary_bytes_unchanged": true,
+    "all_text_and_safetensors_metadata_scanned": true,
+    "metadata_corrections": [
+      "core native/reference versions.numpy now records captured runtime1.26.4; exporter2.3.5 is separate",
+      "source matches pinned Git after CRLF normalization; literal Git byte identity is not claimed"
+    ],
+    "redaction_count_meaning": "43 private-text redactions: 42 first-pass files plus the separately corrected inherited MASTER_ADDR file; semantic metadata corrections are listed separately."
+  },
+  "source_python_files_verified_against_git_after_crlf_normalization": 68,
+  "source_identity_note": "The executed source matches the pinned Git source after CRLF normalization; literal Git byte identity is not claimed.",
+  "artifact_exporter_numpy": "2.3.5"
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "title": "Megatron Bridge native NPU SFT and independent CPU comparison",
+  "created_utc": "2026-10-20T13:43:10Z",
+  "classification": "Completed single-rank native provider/conversion/finetune through the Slime-prescribed Bridge fork, official MindSpeed and disclosed adaptations on real Ascend NPU.",
+  "untouched_official_bridge_success": false,
+  "archives": [
+    {"file": "bridge-tiny-sft.zip", "bytes": 1527454, "sha256": "85958bed1ada3d3de29815856678d6af705a8efd18680be858d7a8ce13f8b0ee", "coverage": "Full portable tiny arrays and five comparison groups."},
+    {"file": "bridge-pretrained-sft.zip", "bytes": 29225226, "sha256": "34fcdb0ece452ccaf597fb4cd6c2ffec625f11a6b187b4f05e17966e4607dabe", "coverage": "Pretrained native/CPU logs, captures, hashes, reports and three portable comparison groups; complete parameter/gradient/update arrays remain private at source."},
+    {"file": "bridge-pretrained-tensor-cli.zip", "bytes": 62418, "sha256": "d6c6d2c8677ff89abde0962c4764efbe900b257d9ccc3d99b42f88cd145cc5f6", "coverage": "Six executed source-side standard tensor CLI receipts, reports and array hashes; no full pretrained parameter arrays."}
+  ],
+  "canonical_cases": [
+    {"model": "Seeded tiny Qwen3", "initialization": "seed20261020; 2 layers; hidden64; head_dim16; vocab128", "native_workflow_complete": true, "independent_cpu_forward_backward_update": true, "unique_logical_tensors": 24, "elements": 82304, "initial_values_exact": true},
+    {"model": "Local pretrained Qwen3-0.6B", "initialization": "28 layers; hidden1024; head_dim128; vocab151936; actual model file hashes retained; upstream revision unasserted", "native_workflow_complete": true, "independent_cpu_forward_backward_update": true, "unique_logical_tensors": 310, "elements": 596049920, "initial_values_exact": true}
+  ],
+  "coverage": {
+    "public_portable_comparison_groups": 8,
+    "public_portable_cli_count": 16,
+    "public_portable_validators": 8,
+    "public_portable_metric_comparators": 8,
+    "private_source_full_tensor_comparison_groups": 2,
+    "private_source_full_tensor_cli_count": 6,
+    "private_source_full_tensor_validators": 4,
+    "private_source_full_tensor_metric_comparators": 2,
+    "total_executed_comparison_groups": 10,
+    "total_executed_clis": 22,
+    "total_validation_clis": 12,
+    "total_metric_clis": 10,
+    "independent_handoff_auditor_reran_private_full_tensors": false
+  },
+  "executed_sources": {
+    "bridge": {"repository": "https://github.com/fzyzcjy/Megatron-Bridge", "version": "0.3.0rc0", "commit": "35b4ebfc486fb15dcc0273ceea804c3606be948a", "diff_sha256": "329e5af35a8388c5058a6e9c6217d36c16b6bad250d03e8c1243ef315e597da2"},
+    "mcore": {"repository": "https://github.com/NVIDIA/Megatron-LM", "version": "0.16.0rc0", "commit": "3714d81d418c9f1bca4594fc35f9e8289f652862", "diff_sha256": "4be790ce4a64a3f1bf5335e7d5c27165fde49b989f03a326fdfdcfc7ac79797b"},
+    "mindspeed": {"repository": "https://gitcode.com/Ascend/MindSpeed", "commit": "fc63de5c48426dd019c3b3f39e65f5bdf56e4086", "diff_sha256": "a4b3f92556a9028cca16b57476ead5ec27818b9afa2c6067df3b7ffb77b25c85"}
+  },
+  "thresholds": null,
+  "numerical_acceptance": "No acceptance threshold or numerical-pass claim. CLI validity and recorded differences are separate.",
+  "independent_audit": {"file": "independent-audit.json", "sha256": "69e153f8e732c0203f9a963b54a14a22ecef30489a3b84a43a039ea4f73d0fc2", "status": "clean_with_explicit_source_only_full_tensor_scope", "copied_byte_preserved": true},
+  "documents": ["VALIDATION.json", "guide-notes.md", "independent-audit.json"]
+}
