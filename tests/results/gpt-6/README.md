@@ -10,6 +10,8 @@ identifier was not exposed. Child agents inherited the model selection.
 - [2026-10-19 cold training trial and artifact fixes](compare-skillvalidation-20261019T083016Z/README.md)
 - [2026-10-19 expanded native framework evaluation](compare-frameworkmatrix-20261019T124628Z/README.md)
 - [Expanded evaluation guide](compare-frameworkmatrix-20261019T124628Z/GUIDE.md)
+- [2026-10-20 NPU native follow-up checkpoint (incomplete)](compare-npuvalidation-20261020T064804Z/README.md)
+- [NPU preparation and recovery guide](compare-npuvalidation-20261020T064804Z/GUIDE.md)
 - [Reusable evidence replay utility](replay.py)
 
 The cold worker starts with `fork_turns="none"`, receives a task and a pinned
