@@ -8,6 +8,8 @@ Collect every valid target's label, prediction/target position and full-vocabula
 
 Collect the complete logical model-parameter inventory, retaining tied-weight mappings and trainable flags. Capture every trainable parameter's gradient and stored update for the requested stages, including absent/present-zero gradients and unchanged updates.
 
+Inspect actual parameter aliases after framework loading; a config flag or equal checkpoint embedding/head values does not prove the same runtime tying. If a supported route needs a derived configuration, retain its exact diff and original identity, apply it to both sides, and label the measured variant explicitly.
+
 ### LoRA
 
 For adapter training, check initial adapter values, target modules, rank, alpha/scaling, dropout, bias/modules-to-save, dtype, quantization and merged state against the task's common conditions and per-side configuration. Capture every adapter/additional trainable coordinate plus frozen-base identity and unchanged-state checks.
@@ -32,6 +34,8 @@ Distinguish requested precision, measured parameter/main-gradient/master/cache s
 For clipping, retain the native returned norm and applied coefficient alongside any independent full-coordinate FP64 pre/postclip diagnostics. Equal configured maximum norms need not yield identical effective coefficients or postclip norms across implementations. Preserve that difference; do not rescale captures to force equality. A norm over sampled coordinates is not a full-model norm. For sampled comparisons, record the exact initial-coordinate checks, parameter selection and omitted stages; do not extend sampled equality to unobserved state.
 
 For distributed training, resolve parameter/gradient ownership, synchronization and optimizer storage in the selected backend. Capture accumulated, unscaled, synchronized gradients from native storage (for example, Megatron `main_grad`), postclip gradients before optimizer mutation, and stored parameters after mutation and model copy-back. Record master/state dtypes separately. Map captured shards and replicas using the [coordinate rules](comparison.md#coordinates); use the logical inventory exporter and explicit-view comparator from [comparison](comparison.md).
+
+Record actual worker topology rather than inferring it from a backend class name: a DP=1 branch may skip wrapping. Distinguish native experiment count from rank captures and independently executed reference processes. For a repeated-batch DDP audit, retain each rank's ordered inputs and synchronized gradient equality; scope conclusions to that fixture. Install passive capture on the worker and optimizer instance that actually execute, including serialized workers and optimizer wrappers, and verify the requested events fired before exporting a complete case.
 
 When establishing a stateful-optimizer baseline, collect cold and common-restored steps, including parameters, moments and step counter. Reuse accepted baselines for unchanged paths; repeat affected stages after optimizer, precision, objective, sharding or dependency changes.
 

@@ -267,6 +267,16 @@
         "matched": true,
         "cases": 5
       }
+    },
+    {
+      "archive": "mindspeed-cuda/mindspeed-cuda-pinned-boundary.zip",
+      "bytes": 107886,
+      "sha256": "d12ebd9e9ec616e6a9fef08e450d02b3d7c81e701e87ddfbe2c8da0b8188015f",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "file_count": 65,
+      "portable_replay_completed": false,
+      "reason": "Dependency/runtime boundary only; no numerical execution or precision comparisons."
     }
   ]
 }

@@ -6,6 +6,10 @@ Apply the [training state and stages](sft.md#training-stages) to actor and criti
 
 Identify the optimizer step, accumulation window and actor/critic order.
 
+For an independent reference, declare whether old-policy anchors are frozen captured inputs or recomputed separately on each side. Recompute the current reference policy without native current scores, gradients or updates. Initial ratio=1 and near-zero group-averaged loss can coexist with nonzero gradients; retain the actual update rather than inferring it from the scalar loss.
+
+Capture effective model-call inputs after packing/padding, including positions, sequence boundaries, temperature and attention implementation. A mask dictionary containing `None` does not establish causal attention: eager and SDPA paths can interpret it differently. Check the executed causal/padding semantics before attributing a discrepancy to precision. If conditions differ, retain that attempt as incomparable and rerun the affected native/reference path with matched semantics.
+
 Capture the inputs, configuration and intermediate values used by the native objective, as applicable:
 
 | Objective component | State to capture |

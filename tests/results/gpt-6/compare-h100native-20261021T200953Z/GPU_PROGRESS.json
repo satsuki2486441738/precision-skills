@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-21T20:40:00Z",
+  "updated_at": "2026-10-21T21:01:33.853838+00:00",
   "scope": "CUDA native workflow evidence, distinct from previous CPU and NPU executions",
   "baseline_revision": "70bc3a2d0d04a6f2b688f557d022ed98e31eee01",
   "new_cuda_cases_completed": 30,
@@ -129,8 +129,14 @@
     {
       "id": "mindspeed-llm",
       "status": "selected_route_requires_ascend",
-      "remaining": "Historical Ascend route retained; newer FSDP2 CUDA candidate being tested separately through declared dependencies and actual entrypoint.",
-      "alternative_source_revision": "8fdb88fde799ea050f687fede0efd1b236dc058a"
+      "remaining": "Historical Ascend route retained. Pinned newer CUDA FSDP2 candidate has clean declared dependencies but actual eager Core/NPU imports and Triton collision prevent native training; not a completed CUDA precision case.",
+      "alternative_source_revision": "8fdb88fde799ea050f687fede0efd1b236dc058a",
+      "cuda_candidate": {
+        "status": "pinned_cuda_candidate_not_closed",
+        "native_optimizer_steps": 0,
+        "gpu_initialized": false,
+        "evidence": "mindspeed-cuda/PUBLIC-INDEX.json"
+      }
     }
   ],
   "new_original_comparison_groups": 120,
@@ -158,5 +164,16 @@
   "h100_native_rank_captures": 20,
   "h100_comparison_groups": 102,
   "source_publication_before_history": true,
-  "comparison_replay_does_not_execute_model": true
+  "comparison_replay_does_not_execute_model": true,
+  "website_publication": {
+    "source_revision": "fa8e0631759b4f1ead41b6fb39f49daf67546379",
+    "site_revision": "514fb17b3d4f9a849d924b4dea762526efbceecc",
+    "added_history_entries": 6,
+    "deployed_history_entries": 63,
+    "deployed_comparison_groups": 341,
+    "history_structure_tests_passed": 27,
+    "browser_passed": true,
+    "skill_validation_action": "success",
+    "pages_action": "success"
+  }
 }

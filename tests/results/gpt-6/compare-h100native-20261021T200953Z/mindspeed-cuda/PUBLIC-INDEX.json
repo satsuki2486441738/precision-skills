@@ -1,0 +1,21 @@
+{
+  "archive": "mindspeed-cuda-pinned-boundary.zip",
+  "bytes": 107886,
+  "sha256": "d12ebd9e9ec616e6a9fef08e450d02b3d7c81e701e87ddfbe2c8da0b8188015f",
+  "verified": true,
+  "file_count": 65,
+  "all_selected_bytes_utf8_and_privacy_scan_clean": true,
+  "compiled_cache_files": 0,
+  "numeric_arrays": 0,
+  "numerical_replay": "unavailable: no numerical execution/comparison",
+  "status": "pinned_cuda_candidate_not_closed",
+  "source_pins": {
+    "mindspeed-llm": "8fdb88fde799ea050f687fede0efd1b236dc058a",
+    "fsdp-turbo": "54c02abb1890ec3f682ea5489f3d3cd94dedcfe6",
+    "mindspeed-core": "c5a72765f99fd8470362c7afdc2cdffe0ab5aea6"
+  },
+  "clean_package_count": 112,
+  "native_entrypoint_exit_code": 1,
+  "gpu_initialized": false,
+  "native_optimizer_steps": 0
+}
