@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-21T19:50:39.604430+00:00",
+  "evidence_branch": "validation/gpt-6-cold-skill-20261019",
+  "evidence_revision": "a9fe8dff25de1c3bf806955b06e85d56a9c0a26b",
+  "site_revision": "65a0d984c97d12166928baf58f2a735ac7c5e4b2",
+  "new_native_cases": 22,
+  "new_history_entries": 14,
+  "original_comparison_groups": 120,
+  "portable_replay_groups": 96,
+  "previous_history_entries_preserved": 43,
+  "repair_verification_records_preserved": 9,
+  "numerical_acceptance": null,
+  "checks": {
+    "history_validator": "passed: 57 evaluations, 9 repair verification records",
+    "repository_validator": "passed: 2 skills, 84 local links in 24 Markdown files",
+    "linux_unittest": {
+      "tests": 226,
+      "skipped": 18,
+      "status": "passed"
+    },
+    "skill_smoke_install": "passed: two clean skill installs and CPU FP32/BF16 gradient example",
+    "browser": {
+      "status": "passed",
+      "comparisons": 239,
+      "metrics": 2056,
+      "drawn_charts": 384,
+      "mobile_layout": true,
+      "filters_download_routes_and_races": true
+    },
+    "remote_branch_sha_verified": true,
+    "github_pages_workflow": "success",
+    "validate_skill_workflow": "success",
+    "deployed_json": {
+      "evaluations": 57,
+      "new_entries_pinned_to_evidence_revision": 14
+    }
+  },
+  "remaining_remote_workflows_closed_by_this_publication": false
+}

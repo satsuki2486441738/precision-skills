@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-21T19:18:25.877546+00:00",
+  "updated_at": "2026-10-21T19:50:39.603485+00:00",
   "scope": "CUDA native workflow evidence, distinct from previous CPU and NPU executions",
   "baseline_revision": "70bc3a2d0d04a6f2b688f557d022ed98e31eee01",
   "new_cuda_cases_completed": 22,
   "numerical_acceptance": null,
-  "remote_allocation": "replacement four-GPU job submitted after observed missing ensurepip/venv failure; native measurements pending",
+  "remote_allocation": "four H100 80GB worker running genuine native evaluation preparation; Slime canonical two-GPU workflow scheduled ahead of gated four-rank TRL; no new remote numerical closure yet",
   "lanes": [
     {
       "id": "openrlhf-rl",
@@ -126,5 +126,20 @@
   "new_portable_replay_groups": 96,
   "new_completed_cuda_lanes": 7,
   "including_previous_completed_cuda_lanes": 8,
-  "four_rank_ddp_complete": false
+  "four_rank_ddp_complete": false,
+  "site_publication": {
+    "source_revision": "a9fe8dff25de1c3bf806955b06e85d56a9c0a26b",
+    "site_revision": "65a0d984c97d12166928baf58f2a735ac7c5e4b2",
+    "new_entries": 14,
+    "deployed_total_entries": 57,
+    "original_comparison_groups": 120,
+    "portable_replay_groups": 96
+  },
+  "fixed_input_supplement": {
+    "cases": 2,
+    "index": "swift-rl/fixed-inputs-index.json",
+    "old_policy_scores": "fixed native FP32 [2,4] anchors; current policy independently recomputed on CPU",
+    "adds_native_cases": false,
+    "old_comparison_archives_modified": false
+  }
 }
