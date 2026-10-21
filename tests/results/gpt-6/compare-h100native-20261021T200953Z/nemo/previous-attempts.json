@@ -1,0 +1,31 @@
+[
+  {
+    "run": "compare-gpurl-20261021T200128Z",
+    "case": "tiny",
+    "route": "DTensor + HF generation",
+    "outcome": "unsupported native combination: DTensorPolicyWorker lacks generate",
+    "native_optimizer_events": 0,
+    "counted_complete": false,
+    "private_native_log_sha256": "b275624a56dc1102042c48d989ea5ce8c8efb3388b94a98c6fe6704a2740d5b1"
+  },
+  {
+    "run": "compare-gpurl-20261021T200841Z",
+    "case": "tiny",
+    "route": "FSDP1PolicyWorker DP1 + HF, untied variant",
+    "outcome": "native training returned; optimizer/clip capture absent in serialized worker; numerical evidence incomplete",
+    "observed_optimizer_events": 0,
+    "native_train_returned": true,
+    "counted_complete": false,
+    "private_native_log_sha256": "b3b74df6255e9c6bfec3a6bbc1f48a111e3997967dc8b3f212ff3ed21cb9c08e"
+  },
+  {
+    "run": "compare-gpurl-20261021T200841Z",
+    "case": "pretrained",
+    "route": "FSDP1PolicyWorker DP1 + HF, untied variant",
+    "outcome": "native training returned; optimizer/clip capture absent in serialized worker; numerical evidence incomplete",
+    "observed_optimizer_events": 0,
+    "native_train_returned": true,
+    "counted_complete": false,
+    "private_native_log_sha256": "5c8137b91d325ffe6ad1195e32ffdc25fabe21a46593cbfa12ed9bccd7a1232c"
+  }
+]

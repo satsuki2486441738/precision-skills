@@ -1,0 +1,205 @@
+{
+  "native_experiments": 4,
+  "native_rank_completion_count": 16,
+  "native_world_size": 4,
+  "independent_CPU_reference_world_size": 1,
+  "comparisons": 80,
+  "portable_replays": 80,
+  "all_replays_match": true,
+  "all_archives_below_90MiB": true,
+  "all_public_numerical_files_equal_to_original_export_SHA256": true,
+  "private_raw_PT_reserialized": false,
+  "private_identifiers_absent": true,
+  "numerical_acceptance": null,
+  "records": [
+    {
+      "case": "trl-pretrained-bf16-w4-rank-0",
+      "archive": "trl-pretrained-bf16-w4-rank-0.zip",
+      "bytes": 38385946,
+      "sha256": "4501d2de72dac72bc5dec8929b93e3a8f6d778565b817b020bc1237a4b2a1115",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-pretrained-bf16-w4-rank-0-verify.json",
+      "replay": "trl-pretrained-bf16-w4-rank-0-replay.log"
+    },
+    {
+      "case": "trl-pretrained-bf16-w4-rank-1",
+      "archive": "trl-pretrained-bf16-w4-rank-1.zip",
+      "bytes": 38385140,
+      "sha256": "67a49f13e81e7fbc9d15ba1356c6835952061c327bcec3a01baea386a6f14057",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-pretrained-bf16-w4-rank-1-verify.json",
+      "replay": "trl-pretrained-bf16-w4-rank-1-replay.log"
+    },
+    {
+      "case": "trl-pretrained-bf16-w4-rank-2",
+      "archive": "trl-pretrained-bf16-w4-rank-2.zip",
+      "bytes": 38385180,
+      "sha256": "bb008aa1576157e8586dfac13485ee0e0b4228fbfb950afbe5bbcb2551ad04a1",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-pretrained-bf16-w4-rank-2-verify.json",
+      "replay": "trl-pretrained-bf16-w4-rank-2-replay.log"
+    },
+    {
+      "case": "trl-pretrained-bf16-w4-rank-3",
+      "archive": "trl-pretrained-bf16-w4-rank-3.zip",
+      "bytes": 38385198,
+      "sha256": "1bb202a628fbcd5ea303c1008193763d83a325fca71f527a15331e9fa1f7b668",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-pretrained-bf16-w4-rank-3-verify.json",
+      "replay": "trl-pretrained-bf16-w4-rank-3-replay.log"
+    },
+    {
+      "case": "trl-pretrained-fp32-w4-rank-0",
+      "archive": "trl-pretrained-fp32-w4-rank-0.zip",
+      "bytes": 50285692,
+      "sha256": "a6c51cc4b28fb2e99f15c42e83e2c4173fbc64c63f0502443cea805e2040d219",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-pretrained-fp32-w4-rank-0-verify.json",
+      "replay": "trl-pretrained-fp32-w4-rank-0-replay.log"
+    },
+    {
+      "case": "trl-pretrained-fp32-w4-rank-1",
+      "archive": "trl-pretrained-fp32-w4-rank-1.zip",
+      "bytes": 50284903,
+      "sha256": "0393a818c41b6e8671cae998f3f409d98e8d09fe3e613200a690f934179a58ea",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-pretrained-fp32-w4-rank-1-verify.json",
+      "replay": "trl-pretrained-fp32-w4-rank-1-replay.log"
+    },
+    {
+      "case": "trl-pretrained-fp32-w4-rank-2",
+      "archive": "trl-pretrained-fp32-w4-rank-2.zip",
+      "bytes": 50284924,
+      "sha256": "e4b709b40232b733f74894d00677b461fc2c0a083d1fd03677b8a81fd601a8a7",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-pretrained-fp32-w4-rank-2-verify.json",
+      "replay": "trl-pretrained-fp32-w4-rank-2-replay.log"
+    },
+    {
+      "case": "trl-pretrained-fp32-w4-rank-3",
+      "archive": "trl-pretrained-fp32-w4-rank-3.zip",
+      "bytes": 50284930,
+      "sha256": "942b5e1506ed7bb213bac955703c861749b93aff990993debf27e25324a522e8",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-pretrained-fp32-w4-rank-3-verify.json",
+      "replay": "trl-pretrained-fp32-w4-rank-3-replay.log"
+    },
+    {
+      "case": "trl-tiny-bf16-w4-rank-0",
+      "archive": "trl-tiny-bf16-w4-rank-0.zip",
+      "bytes": 8078589,
+      "sha256": "88f611e0c55dba7a70ff03cd68a4b857d14eb956bc47e098d2686086842afe25",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-tiny-bf16-w4-rank-0-verify.json",
+      "replay": "trl-tiny-bf16-w4-rank-0-replay.log"
+    },
+    {
+      "case": "trl-tiny-bf16-w4-rank-1",
+      "archive": "trl-tiny-bf16-w4-rank-1.zip",
+      "bytes": 8077827,
+      "sha256": "635eb7a9059add47c0a9f01c0c0e21080a61179129f6cb0ae72d1aba24797e53",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-tiny-bf16-w4-rank-1-verify.json",
+      "replay": "trl-tiny-bf16-w4-rank-1-replay.log"
+    },
+    {
+      "case": "trl-tiny-bf16-w4-rank-2",
+      "archive": "trl-tiny-bf16-w4-rank-2.zip",
+      "bytes": 8077864,
+      "sha256": "adbf974194a97d90631fd9078ff42eece3119023e136313ce972a752fd11c927",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-tiny-bf16-w4-rank-2-verify.json",
+      "replay": "trl-tiny-bf16-w4-rank-2-replay.log"
+    },
+    {
+      "case": "trl-tiny-bf16-w4-rank-3",
+      "archive": "trl-tiny-bf16-w4-rank-3.zip",
+      "bytes": 8077883,
+      "sha256": "87c7c27c17c25061518deac929a93474c35bdc5d0b190b296fed6f72caca7cbc",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-tiny-bf16-w4-rank-3-verify.json",
+      "replay": "trl-tiny-bf16-w4-rank-3-replay.log"
+    },
+    {
+      "case": "trl-tiny-fp32-w4-rank-0",
+      "archive": "trl-tiny-fp32-w4-rank-0.zip",
+      "bytes": 8737490,
+      "sha256": "0a12ce2bb870bd5859183c782b21f1458d1e52a69153eda7938ff5b0f8782842",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-tiny-fp32-w4-rank-0-verify.json",
+      "replay": "trl-tiny-fp32-w4-rank-0-replay.log"
+    },
+    {
+      "case": "trl-tiny-fp32-w4-rank-1",
+      "archive": "trl-tiny-fp32-w4-rank-1.zip",
+      "bytes": 8736718,
+      "sha256": "4b083d811b72826cc8dbf705cee4356d9cc86effa0c34dde2305d29d1c7daf7d",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-tiny-fp32-w4-rank-1-verify.json",
+      "replay": "trl-tiny-fp32-w4-rank-1-replay.log"
+    },
+    {
+      "case": "trl-tiny-fp32-w4-rank-2",
+      "archive": "trl-tiny-fp32-w4-rank-2.zip",
+      "bytes": 8736749,
+      "sha256": "de13e8796fcdfe3ffa67a899b2ec59399da106a96eae12ef46c7f60ae398db25",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-tiny-fp32-w4-rank-2-verify.json",
+      "replay": "trl-tiny-fp32-w4-rank-2-replay.log"
+    },
+    {
+      "case": "trl-tiny-fp32-w4-rank-3",
+      "archive": "trl-tiny-fp32-w4-rank-3.zip",
+      "bytes": 8736740,
+      "sha256": "a305ed4a38d53f38116f972146bb7be235cacafa407873e1327bff87d92d276f",
+      "portable_replay_cases": 5,
+      "numeric_files_unchanged": true,
+      "raw_PT_excluded": true,
+      "verify": "trl-tiny-fp32-w4-rank-3-verify.json",
+      "replay": "trl-tiny-fp32-w4-rank-3-replay.log"
+    }
+  ],
+  "publish_only": [
+    "*.zip",
+    "*-verify.json",
+    "*-replay.log",
+    "summary.json",
+    "guide-notes.json",
+    "PUBLICATION-INDEX.json"
+  ],
+  "never_publish": [
+    "private-redactions.json",
+    "*-stage",
+    "*-replay"
+  ]
+}

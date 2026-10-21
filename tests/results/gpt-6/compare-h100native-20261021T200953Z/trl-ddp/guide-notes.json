@@ -1,0 +1,67 @@
+{
+  "native_experiments": 4,
+  "actual_native_topology": "four H100 devices; four ranks participated in each of four torchrun jobs",
+  "rank_capture_count": 16,
+  "comparison_count": 80,
+  "reference_topology": "independent single-process CPU recomputation per native rank, no CPU DDP claim",
+  "DDP_scope": "identical initial values and ordered tokens/labels/masks on every native rank; audit verifies synchronized gradient replicas exactly equal and reports observed native/CPU gradient scalar and norm ratios",
+  "objectives": "Original effective model denominator is replayed independently; valid shifted target count and trainer num_items are distinct. Native objective is not relabeled as selected-token mean NLL.",
+  "precision": "FP32 and BF16 are requested trainer precision modes; actual captured logits, parameters and gradients retain their real dtypes in each record. BF16 autocast does not imply every stored tensor is BF16.",
+  "model_scope": "Seeded tiny Qwen2 full training; pinned Qwen3-0.6B LoRA q_proj/v_proj r4. Every trainable coordinate retained for both models.",
+  "source_revision": "Qwen/Qwen3-0.6B c1899de289a04d12100db370d81485cdf75e47ca; original local verification flag retained, separate shared/source identity receipt records post-hoc hash verification",
+  "recovery": "v6 shell function overwrote outer framework variable and rejected swift-trl before native training; v7 makes function variables local. Original native collector/export/audit numerical source SHA unchanged.",
+  "metadata_recovery": "Allowlist only torch.torch_version.TorchVersion in the CPU recovery process; original PT files and numerical paths unchanged. Failed receipts/logs retained.",
+  "public_scope": "Original private PT excluded, never reserialized. Original hashes retained. Public safetensors byte-identical to exporter outputs; native original dtypes preserved and FP64 logprobs explicitly derived.",
+  "failed_attempts": [
+    {
+      "name": "failed-v6-swift-trl-pretrained-bf16-w1.native.log",
+      "original_sha256": "7062381047e732fa57b6035caa003b3eebc4fdc024bc8cc57770726b8b213567",
+      "counted_as_native_training": false
+    },
+    {
+      "name": "failed-v6-swift-trl-pretrained-fp32-w1.native.log",
+      "original_sha256": "7062381047e732fa57b6035caa003b3eebc4fdc024bc8cc57770726b8b213567",
+      "counted_as_native_training": false
+    },
+    {
+      "name": "failed-v6-swift-trl-tiny-bf16-w1.native.log",
+      "original_sha256": "7062381047e732fa57b6035caa003b3eebc4fdc024bc8cc57770726b8b213567",
+      "counted_as_native_training": false
+    },
+    {
+      "name": "failed-v6-swift-trl-tiny-fp32-w1.native.log",
+      "original_sha256": "7062381047e732fa57b6035caa003b3eebc4fdc024bc8cc57770726b8b213567",
+      "counted_as_native_training": false
+    },
+    {
+      "name": "failed-metadata-export-trl-pretrained-bf16-w4.log",
+      "original_sha256": "5a58bfcf6868b1cdbb5870ab868ff80f5d352ead3dda539c77e6ef6e7a33dfa3",
+      "failure": "TorchVersion string subclass rejected by weights_only reader after native completion"
+    },
+    {
+      "name": "failed-metadata-export-trl-pretrained-fp32-w4.log",
+      "original_sha256": "5a58bfcf6868b1cdbb5870ab868ff80f5d352ead3dda539c77e6ef6e7a33dfa3",
+      "failure": "TorchVersion string subclass rejected by weights_only reader after native completion"
+    },
+    {
+      "name": "failed-metadata-export-trl-tiny-bf16-w4.log",
+      "original_sha256": "5a58bfcf6868b1cdbb5870ab868ff80f5d352ead3dda539c77e6ef6e7a33dfa3",
+      "failure": "TorchVersion string subclass rejected by weights_only reader after native completion"
+    },
+    {
+      "name": "failed-metadata-export-trl-tiny-fp32-w4.log",
+      "original_sha256": "5a58bfcf6868b1cdbb5870ab868ff80f5d352ead3dda539c77e6ef6e7a33dfa3",
+      "failure": "TorchVersion string subclass rejected by weights_only reader after native completion"
+    }
+  ],
+  "numerical_acceptance": null,
+  "thresholds": null,
+  "source_SHA256": {
+    "native_gpu_sft.py": "5dd188e573fd7ca2c2566615c1715db71871cbb332c39fe89c43289b953ba7d2",
+    "export_compare_sft.py": "eae61403212db626d96a50f26cdc7647220c7f2be7d26a6b88627dd730b05f0b",
+    "audit_ddp.py": "b5b9f0ec6f06e76e628c0a425f7ff93864ea18878e2b1bdd4f92c2f5df4c6ba7",
+    "suite.sh": "4a586888d1b10fbb560a3dafde76eedc4d5dc1378242097f5f96bd73de2d1f51",
+    "recover_cpu_ddp_v8.py": "1d569c03f60cb8af9c9ade2327cec6691af11e57acf24de4bc6f7c0e02548304",
+    "pack_remote_sft.py": "436ac29df4e448c45b25d3ba4afcff740ffc7fd58a383da952002def09abee36"
+  }
+}

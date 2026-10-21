@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "<WORK_ROOT>/runtime-sft-v3/exports/trl-ddp-public-v9-20261021T203109Z/trl-pretrained-fp32-w4-rank-0.zip",
+  "index": "EXPORT.json",
+  "file_count": 87,
+  "payload_bytes": 76998552,
+  "archive_sha256": "a6c51cc4b28fb2e99f15c42e83e2c4173fbc64c63f0502443cea805e2040d219",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "<WORK_ROOT>/runtime-sft-v3/exports/trl-ddp-public-v9-20261021T203109Z/trl-pretrained-bf16-w4-rank-0.zip",
+  "index": "EXPORT.json",
+  "file_count": 87,
+  "payload_bytes": 76999655,
+  "archive_sha256": "4501d2de72dac72bc5dec8929b93e3a8f6d778565b817b020bc1237a4b2a1115",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

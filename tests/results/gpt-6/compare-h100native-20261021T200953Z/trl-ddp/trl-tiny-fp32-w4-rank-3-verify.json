@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "<WORK_ROOT>/runtime-sft-v3/exports/trl-ddp-public-v9-20261021T203109Z/trl-tiny-fp32-w4-rank-3.zip",
+  "index": "EXPORT.json",
+  "file_count": 86,
+  "payload_bytes": 10037515,
+  "archive_sha256": "a305ed4a38d53f38116f972146bb7be235cacafa407873e1327bff87d92d276f",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

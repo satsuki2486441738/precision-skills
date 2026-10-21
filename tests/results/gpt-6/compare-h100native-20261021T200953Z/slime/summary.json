@@ -1,0 +1,2017 @@
+{
+  "schema_version": 1,
+  "native_cuda_cases": 2,
+  "physical_gpus_per_workflow": 2,
+  "native_training_world_size": 1,
+  "original_comparison_groups": 14,
+  "portable_replay_groups": 14,
+  "numerical_acceptance": null,
+  "old_policy_reference_semantics": "Each execution independently recomputes its own old-policy anchors from initial weights and then current scores; CPU does not freeze native old anchors.",
+  "clipping_semantics": "Original torch clip_grad_norm_ return sets each path actual clipping factor; extra FP64 full-gradient norm is diagnostic and does not replace the native/CPU clipping algorithm.",
+  "cases": [
+    {
+      "case": "slime-tiny-20261021T194857Z",
+      "model": "tiny",
+      "archive": "slime-tiny.zip",
+      "sha256": "cd105a013cb23cf74a4d36c38ea02a838042ee1be8d082c3264936da1cc05915",
+      "bytes": 9904206,
+      "verification": {
+        "action": "verify",
+        "bundle": "slime-tiny.zip",
+        "index": "EXPORT.json",
+        "file_count": 313,
+        "payload_bytes": 12084254,
+        "archive_sha256": "cd105a013cb23cf74a4d36c38ea02a838042ee1be8d082c3264936da1cc05915",
+        "entries_without_indexed_sizes": 0,
+        "size_source": "index"
+      },
+      "publication_conditions": {
+        "old_policy_semantics": "Each execution independently recomputes its own old policy from the original checkpoint before current forward; CPU does not consume native anchors. Both initial ratios are one.",
+        "objective": "One complete GRPO group batch; per-sequence masked mean, then global batch mean. Nonzero group advantages and gradients may accompany zero summed initial loss.",
+        "cpu_clip_factor": "Actual torch.nn.utils.clip_grad_norm_ uses its returned FP32 norm and max_norm/(returned_norm+1e-6), clamped at one. The separately calculated FP64 diagnostic norm is not used for clipping.",
+        "clip_measurements": {
+          "native_fp64": 4.087693819260449,
+          "reference_fp64": 4.088484558263493,
+          "native_returned": 4.087693691253662,
+          "reference_returned": 4.088482856750488
+        },
+        "parameter_coverage": {
+          "trajectories": 4,
+          "groups": 2,
+          "valid_actions": 24,
+          "optimizer_events": 1,
+          "native_microbatches": 4,
+          "selected_parameter_tensors": 25,
+          "selected_parameter_elements": 361344,
+          "total_parameter_tensors": 25,
+          "total_parameter_elements": 361344,
+          "selection": "all parameters"
+        },
+        "source_archive_sha256": "13eb55cd5d741bfac24326f4fa117a671e404fbcc66c6bc56027ea1572ef6efa",
+        "removed_compiled_caches": [
+          "provenance/native-adapter-source/__pycache__/native_capture.cpython-311.pyc",
+          "provenance/native-adapter-source/__pycache__/sitecustomize.cpython-311.pyc"
+        ],
+        "all_numerical_file_bytes_equal_to_source_archive": true,
+        "numeric_files": [
+          {
+            "path": "native/gradients-000-value.npy",
+            "sha256": "4dac2418201ee6c1cc50a86d7fb8a3cd70c1c50f4e4a9255d932728d186317e1",
+            "bytes": 131200
+          },
+          {
+            "path": "native/gradients-001-value.npy",
+            "sha256": "9f42f086c4b953ff56de36851cbd1ebdba13f68b2c6641885f724ad0a64e8f84",
+            "bytes": 65664
+          },
+          {
+            "path": "native/gradients-002-value.npy",
+            "sha256": "c706f6b06b1d658724d3098e4bb421bb86b1026f11420234481f7bc788b1e286",
+            "bytes": 32896
+          },
+          {
+            "path": "native/gradients-003-value.npy",
+            "sha256": "5fe76350caa1b06a1f645309eeca240ad410445d5aac48baf90bb3285a5ce772",
+            "bytes": 32896
+          },
+          {
+            "path": "native/gradients-004-value.npy",
+            "sha256": "87c3bb36d3fdb95b8c692a7e389abc13b8a80372445518ba048eb4b49917fdcf",
+            "bytes": 65664
+          },
+          {
+            "path": "native/gradients-005-value.npy",
+            "sha256": "d487d2905a4c80260f94f1ebe364dec273101ae555b778f7b8c131f00907ae4d",
+            "bytes": 384
+          },
+          {
+            "path": "native/gradients-006-value.npy",
+            "sha256": "5b5fea4fd7062b20ad57288f9c8723f6e30f33bc66e281fde2dd25f5f2e06cfc",
+            "bytes": 384
+          },
+          {
+            "path": "native/gradients-007-value.npy",
+            "sha256": "f42a945e5ad8c0ce7aebc0edac23cf48614356d460a20899eceb94c6d6eacce8",
+            "bytes": 131200
+          },
+          {
+            "path": "native/gradients-008-value.npy",
+            "sha256": "953e4aa34d76d938a8f1b6dd09f5c0dd1ed3da987bdc374e172657b89df68ec1",
+            "bytes": 131200
+          },
+          {
+            "path": "native/gradients-009-value.npy",
+            "sha256": "3f39b300bfd993a91e3e3ceee9544da9eb739c204c8e1ff297f880344eedbd8a",
+            "bytes": 131200
+          },
+          {
+            "path": "native/gradients-010-value.npy",
+            "sha256": "2df0e30d9e38c2aef358a3bbd69fbb49f801c3aac63739fb9d563b4a9ff5f206",
+            "bytes": 640
+          },
+          {
+            "path": "native/gradients-011-value.npy",
+            "sha256": "4399460be02cf0814cc84fb63090bdb6f547f267dac978adc719b94ae0fd6295",
+            "bytes": 640
+          },
+          {
+            "path": "native/gradients-012-value.npy",
+            "sha256": "396a173005d3af326f4b304ed8393742a9d11db16ac5bb27561e770cfbf2dba7",
+            "bytes": 65664
+          },
+          {
+            "path": "native/gradients-013-value.npy",
+            "sha256": "59bb299242cb4a7ac74b59f307413cd21a6f047890b0c32e4dbe4cb261d342f5",
+            "bytes": 32896
+          },
+          {
+            "path": "native/gradients-014-value.npy",
+            "sha256": "6eec67b6e996836a17fdf0e9bf021bd4b849e77726584ace1253d84a993f778f",
+            "bytes": 32896
+          },
+          {
+            "path": "native/gradients-015-value.npy",
+            "sha256": "3ce935520ba537dfb96803349a1da8f8cd930f9a71843a1b7147b116d850f4fb",
+            "bytes": 65664
+          },
+          {
+            "path": "native/gradients-016-value.npy",
+            "sha256": "4549cd5a034fb4b1c75331ab101dac34a769e89a397e829f2f26163a71505838",
+            "bytes": 384
+          },
+          {
+            "path": "native/gradients-017-value.npy",
+            "sha256": "f2199d9f85f61bc068ce2ef9bd2fd038f7b6f75167e3bcb24adce6be363fb164",
+            "bytes": 384
+          },
+          {
+            "path": "native/gradients-018-value.npy",
+            "sha256": "491f1377f4cf59b725a8c29ae3e2ceb41edc66702409c8bbf8d7a898f3477db7",
+            "bytes": 131200
+          },
+          {
+            "path": "native/gradients-019-value.npy",
+            "sha256": "b464c9c7be0c11ca944f3b0c2df7762b7048ba42938bbf4c0f7b577475b55063",
+            "bytes": 131200
+          },
+          {
+            "path": "native/gradients-020-value.npy",
+            "sha256": "94c77d713821a127418428a5de4e2dad58e867fc842d2618e5c5f6d3ac992ada",
+            "bytes": 131200
+          },
+          {
+            "path": "native/gradients-021-value.npy",
+            "sha256": "070f3998d5658e20ff32fc31d00fd7a7a59c5bec6602ab6646ee81ed45b6e254",
+            "bytes": 640
+          },
+          {
+            "path": "native/gradients-022-value.npy",
+            "sha256": "1af81f46026b95619d4e7524414f3a6198935c6ea097d20c50190fda786952e9",
+            "bytes": 640
+          },
+          {
+            "path": "native/gradients-023-value.npy",
+            "sha256": "305aca209a831bee4ee88a151ffff55866b7e7b779ea125e559e447d9be69f8a",
+            "bytes": 640
+          },
+          {
+            "path": "native/gradients-024-value.npy",
+            "sha256": "5820dd692a1604892800cf9296fb9089d5bbfe64433b34bf94dea5d8dfe6bd19",
+            "bytes": 131200
+          },
+          {
+            "path": "native/observations-000-value.npy",
+            "sha256": "976f777805772092168b2a0b5213e34b1593e6fdc80a0358a843922038ebb790",
+            "bytes": 144
+          },
+          {
+            "path": "native/observations-001-value.npy",
+            "sha256": "27ab43ff689643418d04d49720a558245e3d44306d506987180f7c73441988d4",
+            "bytes": 144
+          },
+          {
+            "path": "native/observations-002-value.npy",
+            "sha256": "8a4c6d2f2a85e5de4ca0b6cab002919f8eef7ebfe93d53874101eb39e4972fc8",
+            "bytes": 136
+          },
+          {
+            "path": "native/observations-003-value.npy",
+            "sha256": "c16b0b72609bc80c313165c5ef2d3eef4b678d1ed035675442ed826e3151756d",
+            "bytes": 136
+          },
+          {
+            "path": "native/observations-004-value.npy",
+            "sha256": "afb8ea11a6eb4fa055714cbd796bb3c845c12ed937e557b19ee9cc9636dece51",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-005-value.npy",
+            "sha256": "ba6d3d5021e2866999908845fdab565ad4d92b356b2b539d43666b86f88894e5",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-006-value.npy",
+            "sha256": "ba6d3d5021e2866999908845fdab565ad4d92b356b2b539d43666b86f88894e5",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-007-value.npy",
+            "sha256": "4659296b17285ac8d4453490664afe66839e99ca5848c00f8d33da8b5f4819db",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-008-value.npy",
+            "sha256": "165e6425c2230a7256c36efc124509a828814fa5054623b731ba9097e05785d2",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-009-value.npy",
+            "sha256": "579f4fc9e240b80aade6941d3fba86534d9e959a8520066318b52ed266243e65",
+            "bytes": 132
+          },
+          {
+            "path": "native/postclip-gradients-000-value.npy",
+            "sha256": "1759f90b9be59ca4231d40eca5b76da135a0d3d22adf77b6880b3a51ef728474",
+            "bytes": 131200
+          },
+          {
+            "path": "native/postclip-gradients-001-value.npy",
+            "sha256": "cac847ca95d98dc875907982e0b66f6e2cfd1e7d83882226c9e13917bf961ad9",
+            "bytes": 65664
+          },
+          {
+            "path": "native/postclip-gradients-002-value.npy",
+            "sha256": "10706864acf0d9a356fe3dcd6dd24f7433ad8ef188aeca346b666dc4b3526d2f",
+            "bytes": 32896
+          },
+          {
+            "path": "native/postclip-gradients-003-value.npy",
+            "sha256": "0800133db666f2f177a1b751d3562a9a47964faa2b43c6212f235acf0b591e4e",
+            "bytes": 32896
+          },
+          {
+            "path": "native/postclip-gradients-004-value.npy",
+            "sha256": "1c6ccad894216397c9ac364f5fe73b90c304f86275f54a9c3021f91828733079",
+            "bytes": 65664
+          },
+          {
+            "path": "native/postclip-gradients-005-value.npy",
+            "sha256": "cd42fe71ac8ef6cc1678ea109124032d590139d67de78ab2d73d7155e9f1dc9a",
+            "bytes": 384
+          },
+          {
+            "path": "native/postclip-gradients-006-value.npy",
+            "sha256": "4dbf63871cc474ab23915c2eac560914d12f7fca262c7400ef0eacb272bbd1de",
+            "bytes": 384
+          },
+          {
+            "path": "native/postclip-gradients-007-value.npy",
+            "sha256": "1c74a301f866d0c126ad779d080ecbf87652006d1bd4a6cff81684647babede7",
+            "bytes": 131200
+          },
+          {
+            "path": "native/postclip-gradients-008-value.npy",
+            "sha256": "99e9f657ea0ce2bc5d399e32516cd27c984053ed2b237eb40444a1da32e49821",
+            "bytes": 131200
+          },
+          {
+            "path": "native/postclip-gradients-009-value.npy",
+            "sha256": "330af558dfc4e2d78f2266e7047a0037dd21e00d6006f70a7fb1cfcb7cc09358",
+            "bytes": 131200
+          },
+          {
+            "path": "native/postclip-gradients-010-value.npy",
+            "sha256": "6f686bc2a361ed096bc5e0f2267cd729d1b41ced86cee38cd01ee49b6f3ecefe",
+            "bytes": 640
+          },
+          {
+            "path": "native/postclip-gradients-011-value.npy",
+            "sha256": "68c0ef38be0ed41013b3c34f5fdeb21195ff495c7ed830032dd427a692e189d3",
+            "bytes": 640
+          },
+          {
+            "path": "native/postclip-gradients-012-value.npy",
+            "sha256": "5413c0ab5644120940fc66fbd1206288a27a8e5ff31a3066359bcedc9c83532e",
+            "bytes": 65664
+          },
+          {
+            "path": "native/postclip-gradients-013-value.npy",
+            "sha256": "884dafe70f5aee1bfb4eb11cfb9ef931b12d5aee9830b65eb08fcc5d7adcd832",
+            "bytes": 32896
+          },
+          {
+            "path": "native/postclip-gradients-014-value.npy",
+            "sha256": "a1adc66830e3842919d273da9d91a9278cdc33fe901a62c3ab067855b637c99c",
+            "bytes": 32896
+          },
+          {
+            "path": "native/postclip-gradients-015-value.npy",
+            "sha256": "9721dfeaa1a6dad10894e1a8e351838018fb4557e2fc0ae39972095cb68a9a10",
+            "bytes": 65664
+          },
+          {
+            "path": "native/postclip-gradients-016-value.npy",
+            "sha256": "b2ea7fecead035ea06ebea0f89acf32eb47756d8cbc3c0cb2ca4a9830bd4082a",
+            "bytes": 384
+          },
+          {
+            "path": "native/postclip-gradients-017-value.npy",
+            "sha256": "74ec092ad21267ad0b5de4d46d75cd8d98fa62510828263128e0e3e46fb46729",
+            "bytes": 384
+          },
+          {
+            "path": "native/postclip-gradients-018-value.npy",
+            "sha256": "a202feb0390cd9fe3b1b8efebaefe93249e04dba2787921ea897f1c6ff32e0d8",
+            "bytes": 131200
+          },
+          {
+            "path": "native/postclip-gradients-019-value.npy",
+            "sha256": "be44d96c321ce34ba7a173e780ca80d5e27e578668efe54433ae6e8aad85cccb",
+            "bytes": 131200
+          },
+          {
+            "path": "native/postclip-gradients-020-value.npy",
+            "sha256": "618dcda43d93b85cedf39f2cb6afa72715acc57f3e714e7ccfe55322f4ecf8a4",
+            "bytes": 131200
+          },
+          {
+            "path": "native/postclip-gradients-021-value.npy",
+            "sha256": "ff8a8b732a813e7f56bc873095a5330c658aaa20f39530c24e4860e975e65628",
+            "bytes": 640
+          },
+          {
+            "path": "native/postclip-gradients-022-value.npy",
+            "sha256": "c7ec1ed458cf3f5cd301d9f7139731e0bfc2ba2750ea8fed56d4e36b16325344",
+            "bytes": 640
+          },
+          {
+            "path": "native/postclip-gradients-023-value.npy",
+            "sha256": "fe74a27cb92c861694b7b6cb5cb6076d18a12a6a4ba4aacac8e16a6ea2a2ec31",
+            "bytes": 640
+          },
+          {
+            "path": "native/postclip-gradients-024-value.npy",
+            "sha256": "88a98859073ff888db270d5427a5f09d5a75b2d5d438e47d9eee998e1179b486",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-000-after.npy",
+            "sha256": "c3bdab9507740d578b5c2001fd10def9e8ea201bc6c840276b6a9e78fe7e21d1",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-000-before.npy",
+            "sha256": "2698f0e57fa2c1ffc4a0b406ddecc421a53bb15912361c343ffd097b1db92b05",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-001-after.npy",
+            "sha256": "9fdd919341b6b2c6fd9330ec5796955c50b0320f76bd05dd90c9313e9c3986f3",
+            "bytes": 65664
+          },
+          {
+            "path": "native/updates-001-before.npy",
+            "sha256": "de40fb5b7ec0ad13367c39dff002f4434d0311a90cddaf6c68024e34979d124a",
+            "bytes": 65664
+          },
+          {
+            "path": "native/updates-002-after.npy",
+            "sha256": "3540e87862a50e1aa880e0a5dcafe6936f220a9fab009af12efed8cc7f3dd862",
+            "bytes": 32896
+          },
+          {
+            "path": "native/updates-002-before.npy",
+            "sha256": "673fd10bab5e0af766505a9ab2a520c047c403ecb63c0a8321565827d4659119",
+            "bytes": 32896
+          },
+          {
+            "path": "native/updates-003-after.npy",
+            "sha256": "0973f8cb584772286e50be8f4439ffa58260f9ed4474e2a5f4eb2cafbfd85c47",
+            "bytes": 32896
+          },
+          {
+            "path": "native/updates-003-before.npy",
+            "sha256": "4e087eca9c2a50dcffce31db4e77e54735b97c3c719802e07372178ae2887638",
+            "bytes": 32896
+          },
+          {
+            "path": "native/updates-004-after.npy",
+            "sha256": "8c81c27a8106b5fab65d094b28da23fbb29a78e8c1fdf85d56c0db6394eb7b9a",
+            "bytes": 65664
+          },
+          {
+            "path": "native/updates-004-before.npy",
+            "sha256": "0ff17693a31b039a868aced4913938a7bb9962feaad787494e33fc0b78900fe1",
+            "bytes": 65664
+          },
+          {
+            "path": "native/updates-005-after.npy",
+            "sha256": "bb6e2babe82fcf16d4a1ef7dd0eb82922aa358dbe7f8e05f990ce7af69917ce2",
+            "bytes": 384
+          },
+          {
+            "path": "native/updates-005-before.npy",
+            "sha256": "8ea55249a14ffac7d3ba4a9dbb232eed83356b353a4aa26e086054ae4bd8549d",
+            "bytes": 384
+          },
+          {
+            "path": "native/updates-006-after.npy",
+            "sha256": "72a074f40bedffb8793e2e3efbe4b8f4a73ea57a842aeabac3e45e738f30fd1e",
+            "bytes": 384
+          },
+          {
+            "path": "native/updates-006-before.npy",
+            "sha256": "8ea55249a14ffac7d3ba4a9dbb232eed83356b353a4aa26e086054ae4bd8549d",
+            "bytes": 384
+          },
+          {
+            "path": "native/updates-007-after.npy",
+            "sha256": "6652504073ab4f32893b68d512c47f0130cdbc3fa57fc8721054e8f88aa7160d",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-007-before.npy",
+            "sha256": "2b637723bbf6bd40cd8fe4f0fd06958fc9f66019a7e1feb4fb468377fb1b8958",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-008-after.npy",
+            "sha256": "ff98123ca3cd2ca8f3eb62557231cf81400a8c4180517733efcc5ba60c569661",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-008-before.npy",
+            "sha256": "021bbf9e5db300e7340d80ae438cc30e131189d41f100debc90aa020ff083f40",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-009-after.npy",
+            "sha256": "88cef56230b3a5b01e22653d20c215c9c5e86de4ac6ad10670911efc8232c157",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-009-before.npy",
+            "sha256": "48b654e892f86edc4cda2cc185744549ff13fd65117341800bf6aca1243073a9",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-010-after.npy",
+            "sha256": "3adb1acfe3a3366d56ca08a3df102b034d34850dc05db96d97299cf5a2c102eb",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-010-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-011-after.npy",
+            "sha256": "07346e940cbb7024034021f0c093dc1dcb3a8bda85ef5cc739df302209c864e9",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-011-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-012-after.npy",
+            "sha256": "e8934d14bbf8ccc20c79765ef2406e053e5e399df398e4b241111b3d7e90987b",
+            "bytes": 65664
+          },
+          {
+            "path": "native/updates-012-before.npy",
+            "sha256": "235f77d5a0e6f2558079bd9ae72b115539e06513aa434ddbe346c3775fa5fea4",
+            "bytes": 65664
+          },
+          {
+            "path": "native/updates-013-after.npy",
+            "sha256": "4ec0592c728f3c2c4c2a76fda71796c762b5f489e722ab43b811c3faca2ab71a",
+            "bytes": 32896
+          },
+          {
+            "path": "native/updates-013-before.npy",
+            "sha256": "f9d5e9ad184061166ae405d53b3bdea0229ae76f298d403a03f1c69d4d3cb87f",
+            "bytes": 32896
+          },
+          {
+            "path": "native/updates-014-after.npy",
+            "sha256": "e17831332d16f84b3e8e4ed3053e5686a24ae160f258ad12ed8e9f70f17c64df",
+            "bytes": 32896
+          },
+          {
+            "path": "native/updates-014-before.npy",
+            "sha256": "84b1d40bf25447d69ccd46ad3e3daabdcca6a18fc82b31d73e7e671f25d82176",
+            "bytes": 32896
+          },
+          {
+            "path": "native/updates-015-after.npy",
+            "sha256": "01d88bcb0fd79a2340303a1e918139b208f2a93f62b4fc432870d6f4c01c3fc2",
+            "bytes": 65664
+          },
+          {
+            "path": "native/updates-015-before.npy",
+            "sha256": "efa9ea422da4965e87a7f12fd37b08fb7c66f5e0e609984670af13da675c93cb",
+            "bytes": 65664
+          },
+          {
+            "path": "native/updates-016-after.npy",
+            "sha256": "74de4f9d910eb7ce8d2364ddf6806cc5b608f3894280a68af7152d63beb8ffbc",
+            "bytes": 384
+          },
+          {
+            "path": "native/updates-016-before.npy",
+            "sha256": "8ea55249a14ffac7d3ba4a9dbb232eed83356b353a4aa26e086054ae4bd8549d",
+            "bytes": 384
+          },
+          {
+            "path": "native/updates-017-after.npy",
+            "sha256": "9fab75fea46b557f9ebb63b31324677f55e0f5ba82809267be2c4af3eb9f9e78",
+            "bytes": 384
+          },
+          {
+            "path": "native/updates-017-before.npy",
+            "sha256": "8ea55249a14ffac7d3ba4a9dbb232eed83356b353a4aa26e086054ae4bd8549d",
+            "bytes": 384
+          },
+          {
+            "path": "native/updates-018-after.npy",
+            "sha256": "3a99d0e4abffbd47e80d061bc96067b9215bf97ed6adca5a273c0b3606621dbb",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-018-before.npy",
+            "sha256": "37ca43cc53beb1c840bf2428ec93bba48a835ec0fea06b9838f8b46e020f57e3",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-019-after.npy",
+            "sha256": "6eae6a257a2b2d09239c91f89a79ceeae8be40f5599ebf0e651221acfcaf4869",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-019-before.npy",
+            "sha256": "fa057c73953a7814412ce1615420f1d307b21abd38043a6e368fd5088b7d405b",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-020-after.npy",
+            "sha256": "8d69554427d3d653bf0510562245f3be94c0e52dc7b218293729e267407cf4d6",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-020-before.npy",
+            "sha256": "1257ecc3bd2d9da2f2d2ca6c7a8b85d938c032c8f4000d6a7bc05a304844b1bc",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-021-after.npy",
+            "sha256": "bbba1ffc6cabf3414bbd40bc5bba62283fbfd6f8ca35ae1009888e45d9d07955",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-021-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-022-after.npy",
+            "sha256": "10c332bab5326165bf5a942de1bcb3557309d5ff628e5c393d187f3ee23fc857",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-022-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-023-after.npy",
+            "sha256": "0387a480de77b0a64247fb9f167450a480c65c632f3720587f917ef063a07255",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-023-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-024-after.npy",
+            "sha256": "4f8c918bee9ae24a5b4925669efd576da1f9f85b514ac5f8f834975383066d7f",
+            "bytes": 131200
+          },
+          {
+            "path": "native/updates-024-before.npy",
+            "sha256": "f8de2151c9a2c17b58f4e8d6c46c7f77e471e367410ad4e07b8bf27cd89a7d30",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/gradients-000-value.npy",
+            "sha256": "31b3b1cf560468ff555e27d54555ef661c2cdb525971c991bbcb0d438d1e58dc",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/gradients-001-value.npy",
+            "sha256": "c6e2b53587d3749b554a9542a2e5bc7f11dd6fe93d5ba8b22c6c7a69d3251808",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/gradients-002-value.npy",
+            "sha256": "5b8ca139096e1cd59fa06e35c0bf4884fa4e54a4eb489ada17c6e1ee9b2ae74a",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/gradients-003-value.npy",
+            "sha256": "c87109dd6edb085ddde6755f6f7020959837a3b5bba625e54d26f7abc3a38c88",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/gradients-004-value.npy",
+            "sha256": "5196a45975a0649f5be8b1897bdb0c7f1feaf5f5f2c2720d96acccbb9ab5681a",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/gradients-005-value.npy",
+            "sha256": "505487fd58bc77dfbf43656657bd68c74d0408c1f545d1684718a35c445d46a3",
+            "bytes": 384
+          },
+          {
+            "path": "reference/gradients-006-value.npy",
+            "sha256": "281dca618142df4f3d874be0f49c447296e56a630421a9772c9f3dcbc470c798",
+            "bytes": 384
+          },
+          {
+            "path": "reference/gradients-007-value.npy",
+            "sha256": "5d4a5480aaafd5bd50bac536643f180658fc2e3868d987343a3e0da4d23ff333",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/gradients-008-value.npy",
+            "sha256": "188f68baf22e1918b44d77948e56fbd15230c1966f4e64150ec903c474b6a067",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/gradients-009-value.npy",
+            "sha256": "e395ef2986abbc311d9726a43fc0caa236292976bcc2dd6bc4a5b51e68b166fb",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/gradients-010-value.npy",
+            "sha256": "bbff494756b99b45cd976d98c160bd046a284ace45402af512f3953881001bd5",
+            "bytes": 640
+          },
+          {
+            "path": "reference/gradients-011-value.npy",
+            "sha256": "a2496cdc6d41e65ac41af952bbea495f5de9b2daa0210125e7e297af876356f3",
+            "bytes": 640
+          },
+          {
+            "path": "reference/gradients-012-value.npy",
+            "sha256": "99d3aba1023a680972ee2fc0e6a022de22fde46ede6158cb764b4948bf9e5f17",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/gradients-013-value.npy",
+            "sha256": "ac2214b200cfbdaeeee1bd8e95861d8af30cf4d0e4903328e3fc2e978fcb1895",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/gradients-014-value.npy",
+            "sha256": "11d00af013316a653d2016600283f40f9a514664d0ca3d40865f40c9c6b4a9d1",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/gradients-015-value.npy",
+            "sha256": "03eb9f7b8d8750c1dd03c32af250eef7dd4d906048ac839ea6859fde1695f6f2",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/gradients-016-value.npy",
+            "sha256": "b360f7b996ef0f86189e2befbe8594cebf11b43e9bfc57cf77ed3917812f962a",
+            "bytes": 384
+          },
+          {
+            "path": "reference/gradients-017-value.npy",
+            "sha256": "de4eebb2346e6c678795c4ade9ef509e2a7cc3caaf4bb5ddb14ed3f56f628bc6",
+            "bytes": 384
+          },
+          {
+            "path": "reference/gradients-018-value.npy",
+            "sha256": "c5e730145dc4a9b7fcb16e1faf165e57ca14235ec7f5562d28f7ab44d0e6c664",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/gradients-019-value.npy",
+            "sha256": "ebf97ff74fecf2536e7db9fc715c178bf355ce372e08ddba93b77c72ffa3fb38",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/gradients-020-value.npy",
+            "sha256": "c944c9d32c5a5bddbe457ec45d00e3eb7021113778a5c1fba2158e9d6303a849",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/gradients-021-value.npy",
+            "sha256": "87d3fa31932da91234dbdfd724963c19933ccbcf66fb921925ed1eed77c35470",
+            "bytes": 640
+          },
+          {
+            "path": "reference/gradients-022-value.npy",
+            "sha256": "486dd46e100e9c1ae2d633b5bcc2dd8c71770d53b893dce60750f9d876eaf96e",
+            "bytes": 640
+          },
+          {
+            "path": "reference/gradients-023-value.npy",
+            "sha256": "d03c6c1585d3b023b786b37a15d43355ca971ad43903228d17a94a0477c4d67c",
+            "bytes": 640
+          },
+          {
+            "path": "reference/gradients-024-value.npy",
+            "sha256": "46131fe636654619a5ee5113448e0fdc4c9bb691c40f50ff93ca2f22735e398a",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/observations-000-value.npy",
+            "sha256": "976f777805772092168b2a0b5213e34b1593e6fdc80a0358a843922038ebb790",
+            "bytes": 144
+          },
+          {
+            "path": "reference/observations-001-value.npy",
+            "sha256": "27ab43ff689643418d04d49720a558245e3d44306d506987180f7c73441988d4",
+            "bytes": 144
+          },
+          {
+            "path": "reference/observations-002-value.npy",
+            "sha256": "8a4c6d2f2a85e5de4ca0b6cab002919f8eef7ebfe93d53874101eb39e4972fc8",
+            "bytes": 136
+          },
+          {
+            "path": "reference/observations-003-value.npy",
+            "sha256": "c16b0b72609bc80c313165c5ef2d3eef4b678d1ed035675442ed826e3151756d",
+            "bytes": 136
+          },
+          {
+            "path": "reference/observations-004-value.npy",
+            "sha256": "afb8ea11a6eb4fa055714cbd796bb3c845c12ed937e557b19ee9cc9636dece51",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-005-value.npy",
+            "sha256": "25725ca0b99715c88d5590f4164b7560387960b940f1188583c6bb9854abbe0a",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-006-value.npy",
+            "sha256": "25725ca0b99715c88d5590f4164b7560387960b940f1188583c6bb9854abbe0a",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-007-value.npy",
+            "sha256": "4659296b17285ac8d4453490664afe66839e99ca5848c00f8d33da8b5f4819db",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-008-value.npy",
+            "sha256": "165e6425c2230a7256c36efc124509a828814fa5054623b731ba9097e05785d2",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-009-value.npy",
+            "sha256": "579f4fc9e240b80aade6941d3fba86534d9e959a8520066318b52ed266243e65",
+            "bytes": 132
+          },
+          {
+            "path": "reference/postclip-gradients-000-value.npy",
+            "sha256": "745ae7eec3f0ad9a9520daeaa59ee407734216fc2cedef0b3ab9bbe27838d025",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/postclip-gradients-001-value.npy",
+            "sha256": "b17f579dc64394bdedaa15e80eec2b32c2167346bbad35f9216fb89b361e5eb6",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/postclip-gradients-002-value.npy",
+            "sha256": "183a7f9fd821cc6ee178754530d193a0bdc8d518455ef09082098694d6962ef8",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/postclip-gradients-003-value.npy",
+            "sha256": "6db790139b9965b1c5815ed33e24264e12697309770928d42f2f9cc0224e12ed",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/postclip-gradients-004-value.npy",
+            "sha256": "e6e5b29e18df8247f1e82b0f443917be5e7e9c3d96970d6300d499dc7c1d688c",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/postclip-gradients-005-value.npy",
+            "sha256": "3d9889e26faded34c110051bdd6a1045f76c96bf1fd5d82752b6548834d7aadc",
+            "bytes": 384
+          },
+          {
+            "path": "reference/postclip-gradients-006-value.npy",
+            "sha256": "3b24aa9412d444439cbecbe2ff379daa2cdc3c9a96a0b62a77924db0244939d6",
+            "bytes": 384
+          },
+          {
+            "path": "reference/postclip-gradients-007-value.npy",
+            "sha256": "5520ac6494a452a6ac44d9ef9582b428928d0f76e48185ce29422a3c902fd022",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/postclip-gradients-008-value.npy",
+            "sha256": "209ee2f64ce686cf4043e7306e5ec01453755cb991c68d68109dad70b7924653",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/postclip-gradients-009-value.npy",
+            "sha256": "87bb2a86f9173eab2e693630ab7d77574f9ef35b83989420f2e68335f78503c6",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/postclip-gradients-010-value.npy",
+            "sha256": "ed77f6b9e91263c58e74af79db80a8e367a85ba2a5aa01e64948c77af446f349",
+            "bytes": 640
+          },
+          {
+            "path": "reference/postclip-gradients-011-value.npy",
+            "sha256": "56c7fc3a4a9bc079752e4237861d824c929bc7a3a9a55f649dbb37a2200d39fb",
+            "bytes": 640
+          },
+          {
+            "path": "reference/postclip-gradients-012-value.npy",
+            "sha256": "dff937a321a61d6b88162b6636e57009d5efda24dff2f3f2b877d29b4cccd716",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/postclip-gradients-013-value.npy",
+            "sha256": "a4202c1126f4248a5fca2205c239ff67b4c8b673cea8235a075f01a812a6ff77",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/postclip-gradients-014-value.npy",
+            "sha256": "28d8f6ade4fa1efdb8401304891fe1226fc693b8211a8de0b037b0dba55b2733",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/postclip-gradients-015-value.npy",
+            "sha256": "2344e65e5a8564be688b97dff8624a4e9267ecdaf81ed233850ff66feb3c65ba",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/postclip-gradients-016-value.npy",
+            "sha256": "6139434c8186ef6bf765fb72b53554c4e03a3c99375947e78826dbd0baa6f4e3",
+            "bytes": 384
+          },
+          {
+            "path": "reference/postclip-gradients-017-value.npy",
+            "sha256": "30500372f9dbb4e99545a41c341d3043a678d7a58d514796b4faff820f7bfad8",
+            "bytes": 384
+          },
+          {
+            "path": "reference/postclip-gradients-018-value.npy",
+            "sha256": "a7dc662372b77c6a65995a30b46d59a8d2d231dda2cd2ac10bed0519d08862aa",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/postclip-gradients-019-value.npy",
+            "sha256": "ae789ca5dba352e0f209af492d1e2a757c01da2fae3876c895aecb83274b93a5",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/postclip-gradients-020-value.npy",
+            "sha256": "4d36d33911f0c0019d466e3ba27d52079327b637c8a5b7d9489311830f2fb980",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/postclip-gradients-021-value.npy",
+            "sha256": "74a419938858cb8179a5bdc675cda99587c717df45b23e4e62cb88bbcbe7f724",
+            "bytes": 640
+          },
+          {
+            "path": "reference/postclip-gradients-022-value.npy",
+            "sha256": "dc2c1fe9fe04f5e2fb5270fde5acd555b6df3e39edbb601086c7e2cb8ed3ea4c",
+            "bytes": 640
+          },
+          {
+            "path": "reference/postclip-gradients-023-value.npy",
+            "sha256": "2837f0ea847152b55b067db84616313f94ec7f6aafbd5502d5378b37e268bf39",
+            "bytes": 640
+          },
+          {
+            "path": "reference/postclip-gradients-024-value.npy",
+            "sha256": "199bd96137920c173deda7404b5cde44cc8dc4277f99c69d76bfb8757414929c",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-000-after.npy",
+            "sha256": "d385016f071e8ebaf4aa96148d6a6565b2a65b1ff427bdd859cba1c8e5939750",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-000-before.npy",
+            "sha256": "2698f0e57fa2c1ffc4a0b406ddecc421a53bb15912361c343ffd097b1db92b05",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-001-after.npy",
+            "sha256": "a9a45cd2c26217fb9868e0b15f355875f17b73ce4f01bb9c74c2b9e2380b5313",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/updates-001-before.npy",
+            "sha256": "de40fb5b7ec0ad13367c39dff002f4434d0311a90cddaf6c68024e34979d124a",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/updates-002-after.npy",
+            "sha256": "4cc42165655f9e07425133da9f38bdc4a93dc1222b949f17f70193f1f4efd17c",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/updates-002-before.npy",
+            "sha256": "673fd10bab5e0af766505a9ab2a520c047c403ecb63c0a8321565827d4659119",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/updates-003-after.npy",
+            "sha256": "3238d5926f05823821d8032fd97e1b9623d05fb247cf7715451fcb05028a1d02",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/updates-003-before.npy",
+            "sha256": "4e087eca9c2a50dcffce31db4e77e54735b97c3c719802e07372178ae2887638",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/updates-004-after.npy",
+            "sha256": "3645614f1944d9c4d65b38530d12411a6515b627e8afa36620adad286bcb1aaf",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/updates-004-before.npy",
+            "sha256": "0ff17693a31b039a868aced4913938a7bb9962feaad787494e33fc0b78900fe1",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/updates-005-after.npy",
+            "sha256": "c7afb1ee8ea651f1b611104535fc365915b728e76723148e39f4ec0efda06da0",
+            "bytes": 384
+          },
+          {
+            "path": "reference/updates-005-before.npy",
+            "sha256": "8ea55249a14ffac7d3ba4a9dbb232eed83356b353a4aa26e086054ae4bd8549d",
+            "bytes": 384
+          },
+          {
+            "path": "reference/updates-006-after.npy",
+            "sha256": "6dae92106fbeba2abbc6a39114c081af5daff240e7d37006f2991bc01285ad49",
+            "bytes": 384
+          },
+          {
+            "path": "reference/updates-006-before.npy",
+            "sha256": "8ea55249a14ffac7d3ba4a9dbb232eed83356b353a4aa26e086054ae4bd8549d",
+            "bytes": 384
+          },
+          {
+            "path": "reference/updates-007-after.npy",
+            "sha256": "b9651ae8ec3aeb9efd4f4e808a4e2992d8234e1b87fc2aa26280c0c1b558363c",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-007-before.npy",
+            "sha256": "2b637723bbf6bd40cd8fe4f0fd06958fc9f66019a7e1feb4fb468377fb1b8958",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-008-after.npy",
+            "sha256": "40755b2972934d4bfa812f0284e69a84951532ab1b8a71390f5fe9802d4e495d",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-008-before.npy",
+            "sha256": "021bbf9e5db300e7340d80ae438cc30e131189d41f100debc90aa020ff083f40",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-009-after.npy",
+            "sha256": "3347f621c5df579e61f5685522764582069f681ac3eb75f075b0c258eeaad119",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-009-before.npy",
+            "sha256": "48b654e892f86edc4cda2cc185744549ff13fd65117341800bf6aca1243073a9",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-010-after.npy",
+            "sha256": "769aae2a28c254584668717ca862a62ccf818a88cf0fe600c58a115ede20bfef",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-010-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-011-after.npy",
+            "sha256": "51483bf09a4ff150e0b0b50e96273cf9b69d4f3506136d2bb99bdacc1dd0cc3c",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-011-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-012-after.npy",
+            "sha256": "dd011aa21eb39466083eeb8888b9ff7c5752ddabc76c747e87aef522a3d08a45",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/updates-012-before.npy",
+            "sha256": "235f77d5a0e6f2558079bd9ae72b115539e06513aa434ddbe346c3775fa5fea4",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/updates-013-after.npy",
+            "sha256": "cb493ae8a5035ed64aa7f79f80ecdfeaaf2903b88bdbbe85fd655b066b31a3a6",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/updates-013-before.npy",
+            "sha256": "f9d5e9ad184061166ae405d53b3bdea0229ae76f298d403a03f1c69d4d3cb87f",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/updates-014-after.npy",
+            "sha256": "bf9776bd00dec7f3fca5f60bfe97afd2523579b281295803035a6ae0565a7b9f",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/updates-014-before.npy",
+            "sha256": "84b1d40bf25447d69ccd46ad3e3daabdcca6a18fc82b31d73e7e671f25d82176",
+            "bytes": 32896
+          },
+          {
+            "path": "reference/updates-015-after.npy",
+            "sha256": "16cc55b5ec5b14b7cc621c1ca4c2d9e9fdc537bfebe4238945e180332d42b729",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/updates-015-before.npy",
+            "sha256": "efa9ea422da4965e87a7f12fd37b08fb7c66f5e0e609984670af13da675c93cb",
+            "bytes": 65664
+          },
+          {
+            "path": "reference/updates-016-after.npy",
+            "sha256": "47f9f8173ac0e657dda97c7788b8c4e81a092d3626c15c79ac8364c732f93d3b",
+            "bytes": 384
+          },
+          {
+            "path": "reference/updates-016-before.npy",
+            "sha256": "8ea55249a14ffac7d3ba4a9dbb232eed83356b353a4aa26e086054ae4bd8549d",
+            "bytes": 384
+          },
+          {
+            "path": "reference/updates-017-after.npy",
+            "sha256": "360fa8aa0a57c6f906c9260ca62a9c37daa343e835bbe2c3c0fea89389e85b94",
+            "bytes": 384
+          },
+          {
+            "path": "reference/updates-017-before.npy",
+            "sha256": "8ea55249a14ffac7d3ba4a9dbb232eed83356b353a4aa26e086054ae4bd8549d",
+            "bytes": 384
+          },
+          {
+            "path": "reference/updates-018-after.npy",
+            "sha256": "d6004f966f2b6001d0da23b7af8d2933f67f24c5fe16bc85157c338090971340",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-018-before.npy",
+            "sha256": "37ca43cc53beb1c840bf2428ec93bba48a835ec0fea06b9838f8b46e020f57e3",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-019-after.npy",
+            "sha256": "832e1f5213e70eaf009b7b2dee24aebe7a06cc492875cb7dd3df519f36579a44",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-019-before.npy",
+            "sha256": "fa057c73953a7814412ce1615420f1d307b21abd38043a6e368fd5088b7d405b",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-020-after.npy",
+            "sha256": "a53a0cad48c776332a4df00ab090225cc3451f0f2b978b0dedac7f3d1cef8150",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-020-before.npy",
+            "sha256": "1257ecc3bd2d9da2f2d2ca6c7a8b85d938c032c8f4000d6a7bc05a304844b1bc",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-021-after.npy",
+            "sha256": "db4e85004042653823ec2a924e44becd8d62ce34247ea976fbc056c58c46b1be",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-021-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-022-after.npy",
+            "sha256": "9bfdac72a6341d99fd284d3fe6a03d7b65f33dc8332805bc04305838863bce50",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-022-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-023-after.npy",
+            "sha256": "0387a480de77b0a64247fb9f167450a480c65c632f3720587f917ef063a07255",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-023-before.npy",
+            "sha256": "8c890e416e925fc26af805b68cdca24237b557a8535e3fa14210e22bc8b14669",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-024-after.npy",
+            "sha256": "d2df978f9f098d5265a97ffd02415be7d1d188f8573f9137aad5c430c887ee7e",
+            "bytes": 131200
+          },
+          {
+            "path": "reference/updates-024-before.npy",
+            "sha256": "f8de2151c9a2c17b58f4e8d6c46c7f77e471e367410ad4e07b8bf27cd89a7d30",
+            "bytes": 131200
+          }
+        ],
+        "native_execution_repeated": false,
+        "thresholds": null
+      },
+      "summary": {
+        "status": "native_full_workflow_and_independent_reference_complete",
+        "thresholds": null,
+        "workflow_scope": "official-train-loop",
+        "full_production_workflow_completed": true,
+        "native_weight_sync_versions": [
+          1,
+          2
+        ],
+        "framework": "slime",
+        "source_revision": "0104a9e922ecd3cea768f7c2520e7d1a122afdc9",
+        "native_entrypoint": "official train.py",
+        "rollout_engine": "SGLang 0.5.9",
+        "training_backend": "FSDP2",
+        "reference_device": "cpu",
+        "reference_dtype": "float32",
+        "native_parameter_storage_dtypes": [
+          "torch.float32"
+        ],
+        "initial_optimizer_state_entries": 0,
+        "final_optimizer_state_entries": 25,
+        "native_forward_observed_dtypes": [
+          "torch.bfloat16"
+        ],
+        "actual_runtime": {
+          "modules": {
+            "torch": {
+              "path": "<WORK>/.venv/lib/python3.11/site-packages/torch/__init__.py",
+              "imported_version": "2.9.1+cu128",
+              "distribution_version": "2.9.1"
+            },
+            "transformers": {
+              "path": "<WORK>/.venv/lib/python3.11/site-packages/transformers/__init__.py",
+              "imported_version": "4.57.1",
+              "distribution_version": "4.57.1"
+            },
+            "slime": {
+              "path": "<ADAPTER>/source/slime/__init__.py",
+              "imported_version": null,
+              "distribution_version": "0.2.2"
+            },
+            "sglang": {
+              "path": "<WORK>/.venv/lib/python3.11/site-packages/sglang/__init__.py",
+              "imported_version": "0.5.9",
+              "distribution_version": "0.5.9"
+            },
+            "ray": {
+              "path": "<WORK>/.venv/lib/python3.11/site-packages/ray/__init__.py",
+              "imported_version": "2.54.0",
+              "distribution_version": "2.54.0"
+            }
+          },
+          "cuda": "12.8",
+          "device": "NVIDIA H100 80GB HBM3",
+          "rank": 0,
+          "world_size": 1,
+          "tf32": false
+        },
+        "initial_selected_storage_exact_equal": true,
+        "reward_fixture": "execution only: index within group + response token checksum modulo17 /100; not a reward-quality evaluation",
+        "full_preclip_norm": {
+          "native_fp64": 4.087693819260449,
+          "reference_fp64": 4.088484558263493,
+          "native_returned": 4.087693691253662,
+          "reference_returned": 4.088482856750488
+        },
+        "loss": {
+          "native": 0.0,
+          "reference": 0.0
+        },
+        "coverage": {
+          "trajectories": 4,
+          "groups": 2,
+          "valid_actions": 24,
+          "optimizer_events": 1,
+          "native_microbatches": 4,
+          "selected_parameter_tensors": 25,
+          "selected_parameter_elements": 361344,
+          "total_parameter_tensors": 25,
+          "total_parameter_elements": 361344,
+          "selection": "all parameters"
+        },
+        "reference_finished_before_native_outputs_read": true,
+        "score_metrics": {
+          "target-scores": {
+            "target_count": 24,
+            "side_a_nll_nat_per_token": 5.498093406359355,
+            "side_b_nll_nat_per_token": 5.497624099254608,
+            "nll_abs_diff_nat_per_token": 0.0004693071047467967,
+            "mae_nat": 0.0014550089836120605,
+            "p99_nat": 0.003928184509277344,
+            "p99_method": "global linear h=0.99*(N-1)",
+            "max_abs_nat": 0.004158496856689453,
+            "max_coordinate": {
+              "sample": "1",
+              "position": 11,
+              "token": 131
+            }
+          },
+          "old-target-scores": {
+            "target_count": 24,
+            "side_a_nll_nat_per_token": 5.498093406359355,
+            "side_b_nll_nat_per_token": 5.497624099254608,
+            "nll_abs_diff_nat_per_token": 0.0004693071047467967,
+            "mae_nat": 0.0014550089836120605,
+            "p99_nat": 0.003928184509277344,
+            "p99_method": "global linear h=0.99*(N-1)",
+            "max_abs_nat": 0.004158496856689453,
+            "max_coordinate": {
+              "sample": "1",
+              "position": 11,
+              "token": 131
+            }
+          },
+          "rollout-target-scores": {
+            "target_count": 24,
+            "side_a_nll_nat_per_token": 5.498009939988454,
+            "side_b_nll_nat_per_token": 5.497624099254608,
+            "nll_abs_diff_nat_per_token": 0.0003858407338457326,
+            "mae_nat": 0.001179059346516927,
+            "p99_nat": 0.0034000396728515623,
+            "p99_method": "global linear h=0.99*(N-1)",
+            "max_abs_nat": 0.0034351348876953125,
+            "max_coordinate": {
+              "sample": "2",
+              "position": 6,
+              "token": 60
+            }
+          }
+        },
+        "rollout_score_semantics": "SGLang rollout BF16 logprobs are retained separately; policy ratio uses native FSDP recomputed old anchors",
+        "tensor_metrics": {
+          "gradients": {
+            "count": 361344,
+            "side_a_norm": {
+              "value": 4.087693819260449,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 4.088484558263493,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0416625429664901,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 6.930831661208732e-05,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999480884064214,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.0023894309997558594,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 34254,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 1486
+            }
+          },
+          "postclip-gradients": {
+            "count": 361344,
+            "side_a_norm": {
+              "value": 0.0999999789574265,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.10000001813456316,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0010189366297957978,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.6950665398015155e-06,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9999480884057899,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 5.773059092462063e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 34254,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 1486
+            }
+          },
+          "updates": {
+            "count": 361344,
+            "side_a_norm": {
+              "value": 0.00575632751238894,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.0057566072344913365,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0006512531050381467,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 1.0834013765048738e-06,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9936003320153085,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 1.998618245124817e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 34357,
+            "max_coordinate": {
+              "parameter": "model.embed_tokens.weight",
+              "index": 1589
+            }
+          }
+        }
+      },
+      "inputs_archive": "slime-tiny-inputs.zip",
+      "inputs_index": "INPUTS-INDEX.json"
+    },
+    {
+      "case": "slime-pretrained-20261021T195747Z",
+      "model": "pretrained",
+      "archive": "slime-pretrained.zip",
+      "sha256": "606706add90f627a4ba08eb96ee466edc4c2bd2aca019a95d5d59bdc4d730e8b",
+      "bytes": 25225410,
+      "verification": {
+        "action": "verify",
+        "bundle": "slime-pretrained.zip",
+        "index": "EXPORT.json",
+        "file_count": 161,
+        "payload_bytes": 34375848,
+        "archive_sha256": "606706add90f627a4ba08eb96ee466edc4c2bd2aca019a95d5d59bdc4d730e8b",
+        "entries_without_indexed_sizes": 0,
+        "size_source": "index"
+      },
+      "publication_conditions": {
+        "old_policy_semantics": "Each execution independently recomputes its own old policy from the original checkpoint before current forward; CPU does not consume native anchors. Both initial ratios are one.",
+        "objective": "One complete GRPO group batch; per-sequence masked mean, then global batch mean. Nonzero group advantages and gradients may accompany zero summed initial loss.",
+        "cpu_clip_factor": "Actual torch.nn.utils.clip_grad_norm_ uses its returned FP32 norm and max_norm/(returned_norm+1e-6), clamped at one. The separately calculated FP64 diagnostic norm is not used for clipping.",
+        "clip_measurements": {
+          "native_fp64": 61.367064107556864,
+          "reference_fp64": 60.69391233574162,
+          "native_returned": 61.3670654296875,
+          "reference_returned": 60.67780303955078
+        },
+        "parameter_coverage": {
+          "trajectories": 4,
+          "groups": 2,
+          "valid_actions": 24,
+          "optimizer_events": 1,
+          "native_microbatches": 4,
+          "selected_parameter_tensors": 6,
+          "selected_parameter_elements": 1051904,
+          "total_parameter_tensors": 310,
+          "total_parameter_elements": 596049920,
+          "selection": "selected complete tensors; other parameter numerical arrays unavailable"
+        },
+        "source_archive_sha256": "6b51b4c7c4ce6664bc133a02f01c218ec27476f9ee189a13a650b5f5309e1ed7",
+        "removed_compiled_caches": [
+          "provenance/native-adapter-source/__pycache__/native_capture.cpython-311.pyc",
+          "provenance/native-adapter-source/__pycache__/sitecustomize.cpython-311.pyc"
+        ],
+        "all_numerical_file_bytes_equal_to_source_archive": true,
+        "numeric_files": [
+          {
+            "path": "native/gradients-000-value.npy",
+            "sha256": "6e71c232600b4ba7f03713c9d93194d12549554f7a7bcbf3933ac00e86d912f5",
+            "bytes": 4194432
+          },
+          {
+            "path": "native/gradients-001-value.npy",
+            "sha256": "4e375075d46daef04d5188e62b2fedd20e8cd9e9051ba4e2b489dd6b07b1a1db",
+            "bytes": 640
+          },
+          {
+            "path": "native/gradients-002-value.npy",
+            "sha256": "78d7f9b3f79b4ffbbdd055f77554069e092151165ca3cd026c90ab63243d9bfe",
+            "bytes": 640
+          },
+          {
+            "path": "native/gradients-003-value.npy",
+            "sha256": "464bf46625adee14ab0a47a67868a88c19a2abbe8e049055a2f39763a4917645",
+            "bytes": 4224
+          },
+          {
+            "path": "native/gradients-004-value.npy",
+            "sha256": "356c38cc121ab4c3a1def073e52ee2b07845829e49d6d44ea4766fc6ebb26c07",
+            "bytes": 4224
+          },
+          {
+            "path": "native/gradients-005-value.npy",
+            "sha256": "4915d30b6bf39df63795d4b1a69bb1041025a5d610504a947205182ce4eeed88",
+            "bytes": 4224
+          },
+          {
+            "path": "native/observations-000-value.npy",
+            "sha256": "5838b6cd10eede418ba73c6abdf9ac34629f75b8c0aea0ca2b0bc14ece8c1248",
+            "bytes": 144
+          },
+          {
+            "path": "native/observations-001-value.npy",
+            "sha256": "cd40669ac174f24d0572bc89e462c420eb0d72c929a24203063ab13a3671c6ba",
+            "bytes": 144
+          },
+          {
+            "path": "native/observations-002-value.npy",
+            "sha256": "f4584401edf7f64d42a773e3106478d10a5ef62d9a7c75e0361ae4c387241d72",
+            "bytes": 136
+          },
+          {
+            "path": "native/observations-003-value.npy",
+            "sha256": "81b06807beebef9de9787ef1354929424b137f37bbde629058bf9f4d45d3e43d",
+            "bytes": 136
+          },
+          {
+            "path": "native/observations-004-value.npy",
+            "sha256": "0064e3a564fb07c57a6a1370f114cdfd9c1d7dd3fd30ee42938690c8b96bf4c3",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-005-value.npy",
+            "sha256": "1d3cc3b88df89de78ef3093bedfc322e25f16643ed24b3cf58465247e3bf071c",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-006-value.npy",
+            "sha256": "1d3cc3b88df89de78ef3093bedfc322e25f16643ed24b3cf58465247e3bf071c",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-007-value.npy",
+            "sha256": "4659296b17285ac8d4453490664afe66839e99ca5848c00f8d33da8b5f4819db",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-008-value.npy",
+            "sha256": "165e6425c2230a7256c36efc124509a828814fa5054623b731ba9097e05785d2",
+            "bytes": 224
+          },
+          {
+            "path": "native/observations-009-value.npy",
+            "sha256": "579f4fc9e240b80aade6941d3fba86534d9e959a8520066318b52ed266243e65",
+            "bytes": 132
+          },
+          {
+            "path": "native/postclip-gradients-000-value.npy",
+            "sha256": "db9df2bb91cb534277b0a8d5a4c3210567874a2ecfbf33a442801cdec64b3cd3",
+            "bytes": 4194432
+          },
+          {
+            "path": "native/postclip-gradients-001-value.npy",
+            "sha256": "4ffe9e50d08f9219997a8325bf603d5859d6eab1b283baa906bfea7696291e2c",
+            "bytes": 640
+          },
+          {
+            "path": "native/postclip-gradients-002-value.npy",
+            "sha256": "0e2df6e82c9e8460606ce4c5f8c47ffbacf8358648c58e7fb2f30d219689269d",
+            "bytes": 640
+          },
+          {
+            "path": "native/postclip-gradients-003-value.npy",
+            "sha256": "bedd7ed95afec0d3f841f282ab20668cf894b80459873f1db74e07b88f3170d4",
+            "bytes": 4224
+          },
+          {
+            "path": "native/postclip-gradients-004-value.npy",
+            "sha256": "bacd24cd87bbf76a05094fa027f4fca26d78d4c9037a032442927865029d29fb",
+            "bytes": 4224
+          },
+          {
+            "path": "native/postclip-gradients-005-value.npy",
+            "sha256": "e865127ba19ee639f6ff43219cafcd06dd5ece41d9d1e01c739c84914419efdf",
+            "bytes": 4224
+          },
+          {
+            "path": "native/updates-000-after.npy",
+            "sha256": "99b150965645ed661c3ed78be91b6044087c0f1bb87759b4b9247c52b5dbff6b",
+            "bytes": 4194432
+          },
+          {
+            "path": "native/updates-000-before.npy",
+            "sha256": "710501ccfd46205b941a0a0404270d9ab7cc7aef52bbfa52d384d2255466cd9f",
+            "bytes": 4194432
+          },
+          {
+            "path": "native/updates-001-after.npy",
+            "sha256": "db186add7212b67c8e2af2ca84b8d50e008e70f26981be0843c1668fdc42c9c1",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-001-before.npy",
+            "sha256": "41b8f8dec00d12deb9798c3c808904bb124083f5c3dd8fcb1099700bc1d69ee4",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-002-after.npy",
+            "sha256": "62fe4ae84621e8a5b1d7eea6d1006a74ded5064dbcd9d1d98b87917b031ebfdc",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-002-before.npy",
+            "sha256": "5ada3e4eec74a9d0d4dd6cc695ac1b4f0f55aff45405b20dfad4d799b16464fb",
+            "bytes": 640
+          },
+          {
+            "path": "native/updates-003-after.npy",
+            "sha256": "20d48a66396eccf402faac8295cbcd542154cfd3e5b7160c9ad3c9b17a0a080b",
+            "bytes": 4224
+          },
+          {
+            "path": "native/updates-003-before.npy",
+            "sha256": "b9a60f3bb792027d3d138062fffd2534a9c01cf39c5a80fe871c4a0884825fef",
+            "bytes": 4224
+          },
+          {
+            "path": "native/updates-004-after.npy",
+            "sha256": "55c33ff78aab1847b9c5e38dfd17b4deb0217addf058a3e2aaa8e6a6944fbde8",
+            "bytes": 4224
+          },
+          {
+            "path": "native/updates-004-before.npy",
+            "sha256": "4740064e5b2b03232b24b9994cafcdd8c52b69bff7572ce193a5621052778077",
+            "bytes": 4224
+          },
+          {
+            "path": "native/updates-005-after.npy",
+            "sha256": "e0ddfde1d3df4f0e6381792734499e073dc62bbf9822c85d1064baa8043ff36b",
+            "bytes": 4224
+          },
+          {
+            "path": "native/updates-005-before.npy",
+            "sha256": "050ab1c7f386475749fd005b2349098bd257dfe319340ce49178366dd1640c63",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/gradients-000-value.npy",
+            "sha256": "24e3f7ffef8c1070a0452a6386282693e8ec4970b6db10dfd24a27aedf3cce1d",
+            "bytes": 4194432
+          },
+          {
+            "path": "reference/gradients-001-value.npy",
+            "sha256": "daa88bc6193bf6573f45a398b4ea527757c610b32749b8bcc8a74c58b1356311",
+            "bytes": 640
+          },
+          {
+            "path": "reference/gradients-002-value.npy",
+            "sha256": "322e57c276db1cf195199014d913625cdee54e283c3e8c0be546668cfd90b923",
+            "bytes": 640
+          },
+          {
+            "path": "reference/gradients-003-value.npy",
+            "sha256": "f0f12061ef559c1813bc9c1f1a76c7b08bfaf2c8dcfb415c169a7bff78d138aa",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/gradients-004-value.npy",
+            "sha256": "c6618834cbdf922d7320f1f55c68b7a1654830dc9e7cd558085675bd1fcc0f8e",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/gradients-005-value.npy",
+            "sha256": "76ec4d182909df93e09c535211f42ed5c29a5accd20a107d5d4d18f8afc1f5cd",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/observations-000-value.npy",
+            "sha256": "5838b6cd10eede418ba73c6abdf9ac34629f75b8c0aea0ca2b0bc14ece8c1248",
+            "bytes": 144
+          },
+          {
+            "path": "reference/observations-001-value.npy",
+            "sha256": "cd40669ac174f24d0572bc89e462c420eb0d72c929a24203063ab13a3671c6ba",
+            "bytes": 144
+          },
+          {
+            "path": "reference/observations-002-value.npy",
+            "sha256": "f4584401edf7f64d42a773e3106478d10a5ef62d9a7c75e0361ae4c387241d72",
+            "bytes": 136
+          },
+          {
+            "path": "reference/observations-003-value.npy",
+            "sha256": "81b06807beebef9de9787ef1354929424b137f37bbde629058bf9f4d45d3e43d",
+            "bytes": 136
+          },
+          {
+            "path": "reference/observations-004-value.npy",
+            "sha256": "0064e3a564fb07c57a6a1370f114cdfd9c1d7dd3fd30ee42938690c8b96bf4c3",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-005-value.npy",
+            "sha256": "1e784ffa2d17613921052ddd6985d8383c6bd6f2ea5706aef46ccbebc680dcfd",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-006-value.npy",
+            "sha256": "1e784ffa2d17613921052ddd6985d8383c6bd6f2ea5706aef46ccbebc680dcfd",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-007-value.npy",
+            "sha256": "4659296b17285ac8d4453490664afe66839e99ca5848c00f8d33da8b5f4819db",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-008-value.npy",
+            "sha256": "165e6425c2230a7256c36efc124509a828814fa5054623b731ba9097e05785d2",
+            "bytes": 224
+          },
+          {
+            "path": "reference/observations-009-value.npy",
+            "sha256": "7dca91a192108eb6bac51f1b53d4c172710206aa31e45a603899b448a3d5a8b4",
+            "bytes": 132
+          },
+          {
+            "path": "reference/postclip-gradients-000-value.npy",
+            "sha256": "08185fae9888006ff0278a1ec5f204ae9fb1787197172733df91c748246e35be",
+            "bytes": 4194432
+          },
+          {
+            "path": "reference/postclip-gradients-001-value.npy",
+            "sha256": "7e6cea33ea123460a4c2cd1cd1f2c1c70322787608a12efff806489caf928ecb",
+            "bytes": 640
+          },
+          {
+            "path": "reference/postclip-gradients-002-value.npy",
+            "sha256": "264a1516ad4b22e25b53d404e8dbd9bce942bde5ff2056e9a454f3fe5f92583e",
+            "bytes": 640
+          },
+          {
+            "path": "reference/postclip-gradients-003-value.npy",
+            "sha256": "d63ff99a16fd9f8a9b58732a6d6dee19b0fcae5e711b1d60fe26aa339115eb24",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/postclip-gradients-004-value.npy",
+            "sha256": "d4137a27e7898713d7a8381c1022906f17609865860ef2feea073887e7e258a6",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/postclip-gradients-005-value.npy",
+            "sha256": "e4a47c9791e2ad62f4447f1c340b401f206fb4c07b815de6c9c5bfaf4a7aacc4",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/updates-000-after.npy",
+            "sha256": "1cbb0649dbab6f3e2304cf13c80376cba5fbf053ec761d23fd9b12ebc8ee20e6",
+            "bytes": 4194432
+          },
+          {
+            "path": "reference/updates-000-before.npy",
+            "sha256": "710501ccfd46205b941a0a0404270d9ab7cc7aef52bbfa52d384d2255466cd9f",
+            "bytes": 4194432
+          },
+          {
+            "path": "reference/updates-001-after.npy",
+            "sha256": "30b025ef7ac1f3c2c7a39eccfb22badbbbc2eaf5187cc90a1fbd1ead3c678b1b",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-001-before.npy",
+            "sha256": "41b8f8dec00d12deb9798c3c808904bb124083f5c3dd8fcb1099700bc1d69ee4",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-002-after.npy",
+            "sha256": "7af10f3ae65085700e5564a7fcad8f1229668190aa5ba17123d49b69130f9b3a",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-002-before.npy",
+            "sha256": "5ada3e4eec74a9d0d4dd6cc695ac1b4f0f55aff45405b20dfad4d799b16464fb",
+            "bytes": 640
+          },
+          {
+            "path": "reference/updates-003-after.npy",
+            "sha256": "6529cb591fa08b96e307d92273b80fb4c36d58b6ca707077d5e05d31154c541d",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/updates-003-before.npy",
+            "sha256": "b9a60f3bb792027d3d138062fffd2534a9c01cf39c5a80fe871c4a0884825fef",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/updates-004-after.npy",
+            "sha256": "24dbeb9cea66a8bcc2b13a763b15723131b998e593c07958d72f83708f265804",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/updates-004-before.npy",
+            "sha256": "4740064e5b2b03232b24b9994cafcdd8c52b69bff7572ce193a5621052778077",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/updates-005-after.npy",
+            "sha256": "4e41c06a66ffe6df94d6d2fd99ee52328fc76601128246a742d8fab756bcb90d",
+            "bytes": 4224
+          },
+          {
+            "path": "reference/updates-005-before.npy",
+            "sha256": "050ab1c7f386475749fd005b2349098bd257dfe319340ce49178366dd1640c63",
+            "bytes": 4224
+          }
+        ],
+        "native_execution_repeated": false,
+        "thresholds": null
+      },
+      "summary": {
+        "status": "native_full_workflow_and_independent_reference_complete",
+        "thresholds": null,
+        "workflow_scope": "official-train-loop",
+        "full_production_workflow_completed": true,
+        "native_weight_sync_versions": [
+          1,
+          2
+        ],
+        "framework": "slime",
+        "source_revision": "0104a9e922ecd3cea768f7c2520e7d1a122afdc9",
+        "native_entrypoint": "official train.py",
+        "rollout_engine": "SGLang 0.5.9",
+        "training_backend": "FSDP2",
+        "reference_device": "cpu",
+        "reference_dtype": "float32",
+        "native_parameter_storage_dtypes": [
+          "torch.float32"
+        ],
+        "initial_optimizer_state_entries": 0,
+        "final_optimizer_state_entries": 310,
+        "native_forward_observed_dtypes": [
+          "torch.bfloat16"
+        ],
+        "actual_runtime": {
+          "modules": {
+            "torch": {
+              "path": "<WORK>/.venv/lib/python3.11/site-packages/torch/__init__.py",
+              "imported_version": "2.9.1+cu128",
+              "distribution_version": "2.9.1"
+            },
+            "transformers": {
+              "path": "<WORK>/.venv/lib/python3.11/site-packages/transformers/__init__.py",
+              "imported_version": "4.57.1",
+              "distribution_version": "4.57.1"
+            },
+            "slime": {
+              "path": "<ADAPTER>/source/slime/__init__.py",
+              "imported_version": null,
+              "distribution_version": "0.2.2"
+            },
+            "sglang": {
+              "path": "<WORK>/.venv/lib/python3.11/site-packages/sglang/__init__.py",
+              "imported_version": "0.5.9",
+              "distribution_version": "0.5.9"
+            },
+            "ray": {
+              "path": "<WORK>/.venv/lib/python3.11/site-packages/ray/__init__.py",
+              "imported_version": "2.54.0",
+              "distribution_version": "2.54.0"
+            }
+          },
+          "cuda": "12.8",
+          "device": "NVIDIA H100 80GB HBM3",
+          "rank": 0,
+          "world_size": 1,
+          "tf32": false
+        },
+        "initial_selected_storage_exact_equal": true,
+        "reward_fixture": "execution only: index within group + response token checksum modulo17 /100; not a reward-quality evaluation",
+        "full_preclip_norm": {
+          "native_fp64": 61.367064107556864,
+          "reference_fp64": 60.69391233574162,
+          "native_returned": 61.3670654296875,
+          "reference_returned": 60.67780303955078
+        },
+        "loss": {
+          "native": 0.0,
+          "reference": -2.9802322387695312e-08
+        },
+        "coverage": {
+          "trajectories": 4,
+          "groups": 2,
+          "valid_actions": 24,
+          "optimizer_events": 1,
+          "native_microbatches": 4,
+          "selected_parameter_tensors": 6,
+          "selected_parameter_elements": 1051904,
+          "total_parameter_tensors": 310,
+          "total_parameter_elements": 596049920,
+          "selection": "selected complete tensors; other parameter numerical arrays unavailable"
+        },
+        "reference_finished_before_native_outputs_read": true,
+        "score_metrics": {
+          "target-scores": {
+            "target_count": 24,
+            "side_a_nll_nat_per_token": 3.1246798199911914,
+            "side_b_nll_nat_per_token": 3.131827392925819,
+            "nll_abs_diff_nat_per_token": 0.007147572934627533,
+            "mae_nat": 0.04485102246205012,
+            "p99_nat": 0.12340476036071776,
+            "p99_method": "global linear h=0.99*(N-1)",
+            "max_abs_nat": 0.13159751892089844,
+            "max_coordinate": {
+              "sample": "0",
+              "position": 6,
+              "token": 323
+            }
+          },
+          "old-target-scores": {
+            "target_count": 24,
+            "side_a_nll_nat_per_token": 3.1246798199911914,
+            "side_b_nll_nat_per_token": 3.131827392925819,
+            "nll_abs_diff_nat_per_token": 0.007147572934627533,
+            "mae_nat": 0.04485102246205012,
+            "p99_nat": 0.12340476036071776,
+            "p99_method": "global linear h=0.99*(N-1)",
+            "max_abs_nat": 0.13159751892089844,
+            "max_coordinate": {
+              "sample": "0",
+              "position": 6,
+              "token": 323
+            }
+          },
+          "rollout-target-scores": {
+            "target_count": 24,
+            "side_a_nll_nat_per_token": 3.1460155844688416,
+            "side_b_nll_nat_per_token": 3.131827392925819,
+            "nll_abs_diff_nat_per_token": 0.014188191543022644,
+            "mae_nat": 0.0328712152938048,
+            "p99_nat": 0.11793061733245849,
+            "p99_method": "global linear h=0.99*(N-1)",
+            "max_abs_nat": 0.12245559692382812,
+            "max_coordinate": {
+              "sample": "2",
+              "position": 9,
+              "token": 14582
+            }
+          }
+        },
+        "rollout_score_semantics": "SGLang rollout BF16 logprobs are retained separately; policy ratio uses native FSDP recomputed old anchors",
+        "tensor_metrics": {
+          "gradients": {
+            "count": 1051904,
+            "side_a_norm": {
+              "value": 2.549296018782981,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 2.5030085446597914,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.23277588805320903,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 0.00022696032197444866,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9959220482580694,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 0.0279092937707901,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 1050840,
+            "max_coordinate": {
+              "parameter": "model.layers.0.self_attn.q_norm.weight",
+              "index": 88
+            }
+          },
+          "postclip-gradients": {
+            "count": 1051904,
+            "side_a_norm": {
+              "value": 0.0041541765695719355,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.004125080987411228,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.00037497824304261076,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 3.6560995851473357e-07,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9959220482465571,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 4.2355735786259174e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 1050840,
+            "max_coordinate": {
+              "parameter": "model.layers.0.self_attn.q_norm.weight",
+              "index": 88
+            }
+          },
+          "updates": {
+            "count": 1051904,
+            "side_a_norm": {
+              "value": 0.010023654358870239,
+              "status": "no_thresholds"
+            },
+            "side_b_norm": {
+              "value": 0.01002182144490227,
+              "status": "no_thresholds"
+            },
+            "error_norm": {
+              "value": 0.0030510903843538567,
+              "status": "no_thresholds"
+            },
+            "rmse": {
+              "value": 2.974863340862031e-06,
+              "status": "no_thresholds"
+            },
+            "cosine": {
+              "value": 0.9536652045045334,
+              "status": "no_thresholds"
+            },
+            "max_abs": {
+              "value": 1.996755599975586e-05,
+              "status": "no_thresholds"
+            },
+            "max_flat_index": 392,
+            "max_coordinate": {
+              "parameter": "model.layers.0.input_layernorm.weight",
+              "index": 392
+            }
+          }
+        }
+      },
+      "inputs_archive": "slime-pretrained-inputs.zip",
+      "inputs_index": "INPUTS-INDEX.json"
+    }
+  ]
+}

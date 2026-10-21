@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-21T20:48:44.522473+00:00",
+  "scope": "Public ZIP integrity, numeric replay and non-numeric byte scan; numerical acceptance is unset.",
+  "numerical_acceptance": null,
+  "records": [
+    {
+      "archive": "nemo/nemo-pretrained-untied-fp32-fixed-inputs.zip",
+      "bytes": 11791,
+      "sha256": "a20652ed27e840c5620c2c3ed75bfa583cead9a7b5b9f33bcb8177882d09357f",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "nemo/nemo-pretrained-untied-fp32.zip",
+      "bytes": 1738357,
+      "sha256": "c7fdd4b8083b7c46bd2acb6c05c568e1b7a1d9b9fb0527d1f303dbbcd285d30a",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 4
+      }
+    },
+    {
+      "archive": "nemo/nemo-tiny-untied-fp32-fixed-inputs.zip",
+      "bytes": 12173,
+      "sha256": "b67633022dc4686e42d0d3c2b304e6c84686466bd68bf46cbd08e8588579a017",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "nemo/nemo-tiny-untied-fp32.zip",
+      "bytes": 1955251,
+      "sha256": "74b819b74025aeb38653ebbb787dff5acc987932906cdb968ab37367c4473b17",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 4
+      }
+    },
+    {
+      "archive": "slime/slime-pretrained-inputs.zip",
+      "bytes": 16986,
+      "sha256": "8de327c626df8b1e09fe67b9a9c4f972dadfaf69078b04bc4c52265e76d16dec",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "slime/slime-pretrained.zip",
+      "bytes": 25225410,
+      "sha256": "606706add90f627a4ba08eb96ee466edc4c2bd2aca019a95d5d59bdc4d730e8b",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 7
+      }
+    },
+    {
+      "archive": "slime/slime-tiny-inputs.zip",
+      "bytes": 1356099,
+      "sha256": "de3cd05ba0a458758b447df68db9aaba4b4a266298075f37280791baef02471d",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "slime/slime-tiny.zip",
+      "bytes": 9904206,
+      "sha256": "cd105a013cb23cf74a4d36c38ea02a838042ee1be8d082c3264936da1cc05915",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 7
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-pretrained-bf16-w4-rank-0.zip",
+      "bytes": 38385946,
+      "sha256": "4501d2de72dac72bc5dec8929b93e3a8f6d778565b817b020bc1237a4b2a1115",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-pretrained-bf16-w4-rank-1.zip",
+      "bytes": 38385140,
+      "sha256": "67a49f13e81e7fbc9d15ba1356c6835952061c327bcec3a01baea386a6f14057",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-pretrained-bf16-w4-rank-2.zip",
+      "bytes": 38385180,
+      "sha256": "bb008aa1576157e8586dfac13485ee0e0b4228fbfb950afbe5bbcb2551ad04a1",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-pretrained-bf16-w4-rank-3.zip",
+      "bytes": 38385198,
+      "sha256": "1bb202a628fbcd5ea303c1008193763d83a325fca71f527a15331e9fa1f7b668",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-pretrained-fp32-w4-rank-0.zip",
+      "bytes": 50285692,
+      "sha256": "a6c51cc4b28fb2e99f15c42e83e2c4173fbc64c63f0502443cea805e2040d219",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-pretrained-fp32-w4-rank-1.zip",
+      "bytes": 50284903,
+      "sha256": "0393a818c41b6e8671cae998f3f409d98e8d09fe3e613200a690f934179a58ea",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-pretrained-fp32-w4-rank-2.zip",
+      "bytes": 50284924,
+      "sha256": "e4b709b40232b733f74894d00677b461fc2c0a083d1fd03677b8a81fd601a8a7",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-pretrained-fp32-w4-rank-3.zip",
+      "bytes": 50284930,
+      "sha256": "942b5e1506ed7bb213bac955703c861749b93aff990993debf27e25324a522e8",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-tiny-bf16-w4-rank-0.zip",
+      "bytes": 8078589,
+      "sha256": "88f611e0c55dba7a70ff03cd68a4b857d14eb956bc47e098d2686086842afe25",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-tiny-bf16-w4-rank-1.zip",
+      "bytes": 8077827,
+      "sha256": "635eb7a9059add47c0a9f01c0c0e21080a61179129f6cb0ae72d1aba24797e53",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-tiny-bf16-w4-rank-2.zip",
+      "bytes": 8077864,
+      "sha256": "adbf974194a97d90631fd9078ff42eece3119023e136313ce972a752fd11c927",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-tiny-bf16-w4-rank-3.zip",
+      "bytes": 8077883,
+      "sha256": "87c7c27c17c25061518deac929a93474c35bdc5d0b190b296fed6f72caca7cbc",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-tiny-fp32-w4-rank-0.zip",
+      "bytes": 8737490,
+      "sha256": "0a12ce2bb870bd5859183c782b21f1458d1e52a69153eda7938ff5b0f8782842",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-tiny-fp32-w4-rank-1.zip",
+      "bytes": 8736718,
+      "sha256": "4b083d811b72826cc8dbf705cee4356d9cc86effa0c34dde2305d29d1c7daf7d",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-tiny-fp32-w4-rank-2.zip",
+      "bytes": 8736749,
+      "sha256": "de13e8796fcdfe3ffa67a899b2ec59399da106a96eae12ef46c7f60ae398db25",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "trl-ddp/trl-tiny-fp32-w4-rank-3.zip",
+      "bytes": 8736740,
+      "sha256": "a305ed4a38d53f38116f972146bb7be235cacafa407873e1327bff87d92d276f",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    }
+  ]
+}

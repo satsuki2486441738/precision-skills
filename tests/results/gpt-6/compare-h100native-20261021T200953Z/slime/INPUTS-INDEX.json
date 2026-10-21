@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case": "tiny",
+      "archive": "slime-tiny-inputs.zip",
+      "bytes": 1356099,
+      "sha256": "de3cd05ba0a458758b447df68db9aaba4b4a266298075f37280791baef02471d",
+      "numeric_tensors": 24,
+      "original_tensor_bits_roundtrip_equal": true,
+      "all_non_numeric_bytes_private_pattern_scan_clean": true,
+      "original_main_zip_unchanged": true,
+      "verification": {
+        "index": "EXPORT.json",
+        "file_count": 34,
+        "payload_bytes": 1568837,
+        "archive_sha256": "de3cd05ba0a458758b447df68db9aaba4b4a266298075f37280791baef02471d"
+      },
+      "validation": {
+        "typed_input_storage_bits_verified": true,
+        "trajectories": 4,
+        "groups": 2,
+        "valid_actions": 24,
+        "old_policy_semantics": "Native recomputes its own BF16 FSDP old policy; CPU independently recomputes its own FP32 old policy from the original checkpoint. Neither native old/current scores nor their anchors are CPU inputs.",
+        "reward_recomputed_from_token_checksum": true,
+        "no_native_current_score_loss_gradient_or_update_loaded": true,
+        "thresholds": null
+      }
+    },
+    {
+      "case": "pretrained",
+      "archive": "slime-pretrained-inputs.zip",
+      "bytes": 16986,
+      "sha256": "8de327c626df8b1e09fe67b9a9c4f972dadfaf69078b04bc4c52265e76d16dec",
+      "numeric_tensors": 24,
+      "original_tensor_bits_roundtrip_equal": true,
+      "all_non_numeric_bytes_private_pattern_scan_clean": true,
+      "original_main_zip_unchanged": true,
+      "verification": {
+        "index": "EXPORT.json",
+        "file_count": 28,
+        "payload_bytes": 112220,
+        "archive_sha256": "8de327c626df8b1e09fe67b9a9c4f972dadfaf69078b04bc4c52265e76d16dec"
+      },
+      "validation": {
+        "typed_input_storage_bits_verified": true,
+        "trajectories": 4,
+        "groups": 2,
+        "valid_actions": 24,
+        "old_policy_semantics": "Native recomputes its own BF16 FSDP old policy; CPU independently recomputes its own FP32 old policy from the original checkpoint. Neither native old/current scores nor their anchors are CPU inputs.",
+        "reward_recomputed_from_token_checksum": true,
+        "no_native_current_score_loss_gradient_or_update_loaded": true,
+        "thresholds": null
+      }
+    }
+  ]
+}

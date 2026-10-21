@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-21T20:40:00Z",
+  "scope": "CUDA native workflow evidence, distinct from previous CPU and NPU executions",
+  "baseline_revision": "70bc3a2d0d04a6f2b688f557d022ed98e31eee01",
+  "new_cuda_cases_completed": 30,
+  "numerical_acceptance": null,
+  "remote_allocation": "four H100 80GB; native recovery in progress; completed scope retained in this directory",
+  "lanes": [
+    {
+      "id": "openrlhf-rl",
+      "status": "native_transport_recovered_retry_pending",
+      "remaining": "Actual NCCL initialization recovered using CUMEM=0; native reward API recovery and full optimization/reference still pending."
+    },
+    {
+      "id": "slime-rl",
+      "status": "cuda_native_complete",
+      "remaining": "Selected two-GPU native workflow and independent CPU reference complete; pretrained parameter arrays cover six whole tensors only",
+      "models": 2,
+      "cases": 2,
+      "comparison_groups": 14,
+      "evidence": "slime/summary.json"
+    },
+    {
+      "id": "nemo-rl",
+      "status": "cuda_native_complete_untied_variant",
+      "remaining": "Single-GPU DP1 branch skips FSDP wrapping. Untied derived config; selected coordinate coverage explicit. No multi-GPU or original tied-config claim.",
+      "models": 2,
+      "cases": 2,
+      "comparison_groups": 8,
+      "evidence": "nemo/public-export-index.json"
+    },
+    {
+      "id": "ms-swift-sft",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Selected single-GPU native workflow complete; only TRL adds the four-rank fixture in this continuation.",
+      "models": 2,
+      "cases": 4,
+      "comparison_groups": 20,
+      "evidence": "swift/summary.json"
+    },
+    {
+      "id": "ms-swift-rl",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Full native selected workflow complete; numerical tensor coverage limited to declared 98,304 coordinates per model",
+      "models": 2,
+      "cases": 2,
+      "comparison_groups": 8,
+      "evidence": "swift-rl/results.json"
+    },
+    {
+      "id": "areal-rl",
+      "status": "native_returned_reference_conditions_incomparable",
+      "remaining": "Native eager packed inputs had a different effective attention boundary from the standard causal CPU reference; fresh SDPA matched-condition attempt required."
+    },
+    {
+      "id": "roll-rl",
+      "status": "native_pre_optimizer_retry_pending",
+      "remaining": "Strict batch < dataset-length assertion; add a second genuine prompt and rerun native workflow."
+    },
+    {
+      "id": "mindspeed-rl",
+      "status": "selected_route_requires_ascend",
+      "remaining": "Historical Atlas/torch_npu/CANN route cannot be measured on the NVIDIA allocation"
+    },
+    {
+      "id": "tensorrt-llm",
+      "status": "existing_cuda_complete",
+      "models": 2,
+      "source": "tests/results/gpt-6/compare-trtcomplete-20261020T134000Z",
+      "remaining": "Preserve existing evidence; TP1 PyTorch/TRTLLM attention route, not serialized engine build"
+    },
+    {
+      "id": "lmdeploy",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Selected native PyTorch CUDA / GGML_CUDA cached route complete; no claim about other backends",
+      "models": 2,
+      "cases": 2,
+      "evidence": "inference/native-summary.json"
+    },
+    {
+      "id": "mindie-llm",
+      "status": "selected_route_requires_ascend",
+      "remaining": "Official selected engine requires Ascend runtime and devices"
+    },
+    {
+      "id": "llama-cpp",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Selected native PyTorch CUDA / GGML_CUDA cached route complete; no claim about other backends",
+      "models": 2,
+      "cases": 2,
+      "evidence": "inference/native-summary.json"
+    },
+    {
+      "id": "trl-sfttrainer",
+      "status": "cuda_native_single_and_four_gpu_complete",
+      "remaining": "Selected native four-rank fixture complete; CPU references are single-process world1. Existing single-GPU evidence preserved.",
+      "models": 2,
+      "cases": 4,
+      "comparison_groups": 20,
+      "evidence": "trl-ddp/summary.json",
+      "h100_native_experiments": 4,
+      "h100_rank_captures": 16,
+      "h100_comparison_groups": 80
+    },
+    {
+      "id": "llamafactory-sft",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Selected single-GPU native workflow complete; only TRL adds the four-rank fixture in this continuation.",
+      "models": 2,
+      "cases": 4,
+      "comparison_groups": 20,
+      "evidence": "factory/summary.json"
+    },
+    {
+      "id": "axolotl-sft",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Selected single-GPU native workflow complete; only TRL adds the four-rank fixture in this continuation.",
+      "models": 2,
+      "cases": 4,
+      "comparison_groups": 20,
+      "evidence": "axolotl/summary.json"
+    },
+    {
+      "id": "megatron-bridge",
+      "status": "native_cuda_dependency_build_in_progress",
+      "remaining": "Official CUDA extensions being built; native conversion/checkpoint/SGD/reference not yet closed."
+    },
+    {
+      "id": "mindspeed-llm",
+      "status": "selected_route_requires_ascend",
+      "remaining": "Historical Ascend route retained; newer FSDP2 CUDA candidate being tested separately through declared dependencies and actual entrypoint.",
+      "alternative_source_revision": "8fdb88fde799ea050f687fede0efd1b236dc058a"
+    }
+  ],
+  "new_original_comparison_groups": 120,
+  "new_portable_replay_groups": 96,
+  "new_completed_cuda_lanes": 7,
+  "including_previous_completed_cuda_lanes": 8,
+  "four_rank_ddp_complete": false,
+  "site_publication": {
+    "source_revision": "a9fe8dff25de1c3bf806955b06e85d56a9c0a26b",
+    "site_revision": "65a0d984c97d12166928baf58f2a735ac7c5e4b2",
+    "new_entries": 14,
+    "deployed_total_entries": 57,
+    "original_comparison_groups": 120,
+    "portable_replay_groups": 96
+  },
+  "fixed_input_supplement": {
+    "cases": 2,
+    "index": "swift-rl/fixed-inputs-index.json",
+    "old_policy_scores": "fixed native FP32 [2,4] anchors; current policy independently recomputed on CPU",
+    "adds_native_cases": false,
+    "old_comparison_archives_modified": false
+  },
+  "snapshot": "H100 publication phase one",
+  "h100_native_experiments": 8,
+  "h100_native_rank_captures": 20,
+  "h100_comparison_groups": 102,
+  "source_publication_before_history": true,
+  "comparison_replay_does_not_execute_model": true
+}
