@@ -1,28 +1,130 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-21T18:00:45Z",
+  "updated_at": "2026-10-21T19:18:25.877546+00:00",
   "scope": "CUDA native workflow evidence, distinct from previous CPU and NPU executions",
   "baseline_revision": "70bc3a2d0d04a6f2b688f557d022ed98e31eee01",
-  "new_cuda_cases_completed": 0,
+  "new_cuda_cases_completed": 22,
   "numerical_acceptance": null,
-  "remote_allocation": "not_started_console_session_expired",
+  "remote_allocation": "replacement four-GPU job submitted after observed missing ensurepip/venv failure; native measurements pending",
   "lanes": [
-    {"id":"openrlhf-rl","status":"previous_cuda_component_only","remaining":"Official native rollout/reward/group objective/backward/native optimizer and independent reference"},
-    {"id":"slime-rl","status":"cuda_native_pending","remaining":"Official CUDA workflow and independent reference"},
-    {"id":"nemo-rl","status":"cuda_native_pending","remaining":"Official CUDA workflow and independent reference"},
-    {"id":"ms-swift-sft","status":"previous_cuda_component_only","remaining":"Native sft_main raw-text preprocessing/training workflow and independent reference"},
-    {"id":"ms-swift-rl","status":"cuda_native_pending","remaining":"Prior CPU GRPO component is not CUDA; run native rlhf_main and independent reference"},
-    {"id":"areal-rl","status":"cuda_native_pending","remaining":"Official CUDA workflow and independent reference"},
-    {"id":"roll-rl","status":"cuda_native_pending","remaining":"Official CUDA workflow and independent reference"},
-    {"id":"mindspeed-rl","status":"selected_route_requires_ascend","remaining":"Historical Atlas/torch_npu/CANN route cannot be measured on the NVIDIA allocation"},
-    {"id":"tensorrt-llm","status":"existing_cuda_complete","models":2,"source":"tests/results/gpt-6/compare-trtcomplete-20261020T134000Z","remaining":"Preserve existing evidence; TP1 PyTorch/TRTLLM attention route, not serialized engine build"},
-    {"id":"lmdeploy","status":"previous_cuda_component_only","remaining":"Actual native cached decode; prior fresh-prefix requests had zero cached decode calls"},
-    {"id":"mindie-llm","status":"selected_route_requires_ascend","remaining":"Official selected engine requires Ascend runtime and devices"},
-    {"id":"llama-cpp","status":"cuda_native_pending","remaining":"Build GGML_CUDA and prove positive layer offload; prior CPU/CANN results do not close CUDA"},
-    {"id":"trl-sfttrainer","status":"previous_cuda_component_only","remaining":"Native SFTTrainer raw-text preprocessing/train workflow, independent reference, and separate four-rank run"},
-    {"id":"llamafactory-sft","status":"previous_cuda_component_only","remaining":"Native run_exp preprocessing/training workflow and independent reference"},
-    {"id":"axolotl-sft","status":"cuda_native_pending","remaining":"Official native CLI training workflow and independent reference"},
-    {"id":"megatron-bridge","status":"cuda_native_pending","remaining":"Official NVIDIA conversion/checkpoint/fresh restore/native finetune and independent reference"},
-    {"id":"mindspeed-llm","status":"selected_route_requires_ascend","remaining":"Historical Megatron route requires Ascend; current FSDP2 CUDA/NCCL branch is a separate unvalidated alternative","alternative_source_revision":"8fdb88fde799ea050f687fede0efd1b236dc058a"}
-  ]
+    {
+      "id": "openrlhf-rl",
+      "status": "previous_cuda_component_only",
+      "remaining": "Official native rollout/reward/group objective/backward/native optimizer and independent reference"
+    },
+    {
+      "id": "slime-rl",
+      "status": "cuda_native_pending",
+      "remaining": "Official CUDA workflow and independent reference"
+    },
+    {
+      "id": "nemo-rl",
+      "status": "cuda_native_pending",
+      "remaining": "Official CUDA workflow and independent reference"
+    },
+    {
+      "id": "ms-swift-sft",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Four-GPU allocation repeat/per-rank DDP audit pending; single-GPU selected native workflow complete",
+      "models": 2,
+      "cases": 4,
+      "comparison_groups": 20,
+      "evidence": "swift/summary.json"
+    },
+    {
+      "id": "ms-swift-rl",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Full native selected workflow complete; numerical tensor coverage limited to declared 98,304 coordinates per model",
+      "models": 2,
+      "cases": 2,
+      "comparison_groups": 8,
+      "evidence": "swift-rl/results.json"
+    },
+    {
+      "id": "areal-rl",
+      "status": "cuda_native_pending",
+      "remaining": "Official CUDA workflow and independent reference"
+    },
+    {
+      "id": "roll-rl",
+      "status": "cuda_native_pending",
+      "remaining": "Official CUDA workflow and independent reference"
+    },
+    {
+      "id": "mindspeed-rl",
+      "status": "selected_route_requires_ascend",
+      "remaining": "Historical Atlas/torch_npu/CANN route cannot be measured on the NVIDIA allocation"
+    },
+    {
+      "id": "tensorrt-llm",
+      "status": "existing_cuda_complete",
+      "models": 2,
+      "source": "tests/results/gpt-6/compare-trtcomplete-20261020T134000Z",
+      "remaining": "Preserve existing evidence; TP1 PyTorch/TRTLLM attention route, not serialized engine build"
+    },
+    {
+      "id": "lmdeploy",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Selected native PyTorch CUDA / GGML_CUDA cached route complete; no claim about other backends",
+      "models": 2,
+      "cases": 2,
+      "evidence": "inference/native-summary.json"
+    },
+    {
+      "id": "mindie-llm",
+      "status": "selected_route_requires_ascend",
+      "remaining": "Official selected engine requires Ascend runtime and devices"
+    },
+    {
+      "id": "llama-cpp",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Selected native PyTorch CUDA / GGML_CUDA cached route complete; no claim about other backends",
+      "models": 2,
+      "cases": 2,
+      "evidence": "inference/native-summary.json"
+    },
+    {
+      "id": "trl-sfttrainer",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Four-GPU allocation repeat/per-rank DDP audit pending; single-GPU selected native workflow complete",
+      "models": 2,
+      "cases": 4,
+      "comparison_groups": 20,
+      "evidence": "trl/summary.json"
+    },
+    {
+      "id": "llamafactory-sft",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Four-GPU allocation repeat/per-rank DDP audit pending; single-GPU selected native workflow complete",
+      "models": 2,
+      "cases": 4,
+      "comparison_groups": 20,
+      "evidence": "factory/summary.json"
+    },
+    {
+      "id": "axolotl-sft",
+      "status": "cuda_native_single_gpu_complete",
+      "remaining": "Four-GPU allocation repeat/per-rank DDP audit pending; single-GPU selected native workflow complete",
+      "models": 2,
+      "cases": 4,
+      "comparison_groups": 20,
+      "evidence": "axolotl/summary.json"
+    },
+    {
+      "id": "megatron-bridge",
+      "status": "cuda_native_pending",
+      "remaining": "Official NVIDIA conversion/checkpoint/fresh restore/native finetune and independent reference"
+    },
+    {
+      "id": "mindspeed-llm",
+      "status": "selected_route_requires_ascend",
+      "remaining": "Historical Megatron route requires Ascend; current FSDP2 CUDA/NCCL branch is a separate unvalidated alternative",
+      "alternative_source_revision": "8fdb88fde799ea050f687fede0efd1b236dc058a"
+    }
+  ],
+  "new_original_comparison_groups": 120,
+  "new_portable_replay_groups": 96,
+  "new_completed_cuda_lanes": 7,
+  "including_previous_completed_cuda_lanes": 8,
+  "four_rank_ddp_complete": false
 }

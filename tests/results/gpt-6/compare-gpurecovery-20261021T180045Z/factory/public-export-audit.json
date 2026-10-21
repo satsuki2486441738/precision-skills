@@ -1,0 +1,47 @@
+{
+  "archives": [
+    {
+      "archive": "factory-pretrained-bf16-rank-0.zip",
+      "sha256": "4cb833614166c55e72c5498f8ded6893a48438403f4680e992f7b1a535fe45d2",
+      "bytes": 45094459,
+      "files": 62,
+      "literal_replacements": 83,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "factory-pretrained-fp32-rank-0.zip",
+      "sha256": "4ca37a79354126120a148d81c04dc46dad14a9a7f1eaf3c5a54beec771498c30",
+      "bytes": 46214307,
+      "files": 62,
+      "literal_replacements": 83,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "factory-tiny-bf16-rank-0.zip",
+      "sha256": "e0e54eb4aae8765675f8cc813ffbea7fbf6143da7cc2455f7a14e7d7f1a8a950",
+      "bytes": 17485725,
+      "files": 62,
+      "literal_replacements": 83,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "factory-tiny-fp32-rank-0.zip",
+      "sha256": "1df454a784634f8bb0927e349af8392318a48eb283952dc8bb40c03a3e07722d",
+      "bytes": 18805866,
+      "files": 62,
+      "literal_replacements": 83,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    }
+  ],
+  "summary_redacted": true,
+  "pickle_deserialized": false,
+  "numeric_files_modified": false
+}

@@ -1,0 +1,17 @@
+{
+  "run": "compare-inferencecuda-20261021T182139Z",
+  "bundle": "inference-cuda-public-evidence-v02.zip",
+  "bytes": 16144570,
+  "sha256": "9dec5fdb8de0b8fccf7b56fc509318981668efdaa7f1d68fd516401f87881139",
+  "models": 2,
+  "native_model_lanes": 4,
+  "references": 2,
+  "paired_distributions": 12,
+  "paired_targets": 12,
+  "overall_comparisons": 8,
+  "stage_comparisons": 24,
+  "validated_sides": 6,
+  "portable_replay_comparisons": 8,
+  "thresholds": null,
+  "gpu_released": true
+}

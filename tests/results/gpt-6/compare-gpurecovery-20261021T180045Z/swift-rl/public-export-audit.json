@@ -1,0 +1,837 @@
+{
+  "schema_version": 1,
+  "literal_redaction_only": true,
+  "redaction_categories": [
+    "explicit hostname",
+    "explicit project paths",
+    "explicit environment and model paths",
+    "explicit runtime-user home paths"
+  ],
+  "raw_evidence_modified": false,
+  "cases": [
+    {
+      "case": "swift-tiny-fp32",
+      "archive": "swift-tiny-fp32.zip",
+      "bytes": 3015123,
+      "sha256": "019fc2594a987ae96a79bb6c03ac5509ba0299c3aa0adc364196eb123c25d29f",
+      "verified": true,
+      "replay_matched": true,
+      "replay_cases": 4,
+      "numeric_files": 96,
+      "numeric_bytes_unchanged": true,
+      "numeric_files_sha256": [
+        {
+          "path": "native/gradients-00-value.npy",
+          "sha256": "15673f6087faa7b665b768b939743a963684c1bd59f40c882c63963557e71330"
+        },
+        {
+          "path": "native/gradients-01-value.npy",
+          "sha256": "207953f4d10d432ac051bf2d6b70f34195c492b57baf9a7d1a3e88dbfe0ef85a"
+        },
+        {
+          "path": "native/gradients-02-value.npy",
+          "sha256": "f0b77644f6458f27dc357cca5dfbce1a0184f440a8859d836b3a6e3ea822ec46"
+        },
+        {
+          "path": "native/gradients-03-value.npy",
+          "sha256": "92ed2f023cfb0a23b2daf8b1ceceb4d32436fa9877fee7061a30b6683760545d"
+        },
+        {
+          "path": "native/gradients-04-value.npy",
+          "sha256": "04fbe6d453d317c35e0073825b8042ff0de2e930a8e9ba3a7a94c575c0e84a88"
+        },
+        {
+          "path": "native/gradients-05-value.npy",
+          "sha256": "6f071d70c6df4600e0f886f1a15676f19006e96e7db8558c8d0146613f1620ae"
+        },
+        {
+          "path": "native/gradients-06-value.npy",
+          "sha256": "f2cc47f3bdf84d7d4d3cb73771dffd08269c915a0bf2685f04497151e132d975"
+        },
+        {
+          "path": "native/gradients-07-value.npy",
+          "sha256": "5868c2d139a4070f7136d95c7347e8d114fecd96bed53d7f8d58cefb76474952"
+        },
+        {
+          "path": "native/gradients-08-value.npy",
+          "sha256": "5e5406df701b2305da22d270c5a12b8c7261b78a06ed71b896cdc3c0c53b01f1"
+        },
+        {
+          "path": "native/gradients-09-value.npy",
+          "sha256": "9ec6636bde09557029e8f1901de5d5e908d02db533992c8f9673cb8d16d8035c"
+        },
+        {
+          "path": "native/gradients-10-value.npy",
+          "sha256": "c243eca1e6819210b40ff97a94a4c7033c62cebb6cc8ac4a4b86c1b0499905ed"
+        },
+        {
+          "path": "native/gradients-11-value.npy",
+          "sha256": "4ad046b807d02ae5fe29e9bcf74d0d7088c8452d68eaa1352b50c24ae828d642"
+        },
+        {
+          "path": "native/postclip-gradients-00-value.npy",
+          "sha256": "cbb58ffd729ddd2c8bc34c5207f584010a68f012fb7a710a26e5116e70fa5e86"
+        },
+        {
+          "path": "native/postclip-gradients-01-value.npy",
+          "sha256": "a6ca9ecb230101fb85c65e8bf62baa8ab7caabbd92fd72630436c255fa5e7561"
+        },
+        {
+          "path": "native/postclip-gradients-02-value.npy",
+          "sha256": "2264794d366538c58b2355eba1a08d1db22c52237dec8f3771f7eb081eed043b"
+        },
+        {
+          "path": "native/postclip-gradients-03-value.npy",
+          "sha256": "9ec077abdddebd56302128ddebe15c15abd1926a7d23eb0ead059bc672ead723"
+        },
+        {
+          "path": "native/postclip-gradients-04-value.npy",
+          "sha256": "b97ede41edaddb196b122f243b17456027f57820b93b7ab7881a630fd9706f19"
+        },
+        {
+          "path": "native/postclip-gradients-05-value.npy",
+          "sha256": "f822df8613f78bfe7f1e8cb263a571e736095edee0eef8b4b5b0c9c0c81b3c32"
+        },
+        {
+          "path": "native/postclip-gradients-06-value.npy",
+          "sha256": "cfec2b114f2fa0af9a3063d1e41ef14a8758a4d1edb9535862904e2e9b7b7402"
+        },
+        {
+          "path": "native/postclip-gradients-07-value.npy",
+          "sha256": "52c70aed812fe463f1b724b6f14538c65d623186dfb0f95bcefa7a1452cf3e8f"
+        },
+        {
+          "path": "native/postclip-gradients-08-value.npy",
+          "sha256": "8cf0649125d51b02d269ade597ffa746540a27a16aef4f4f633ab99893a434ce"
+        },
+        {
+          "path": "native/postclip-gradients-09-value.npy",
+          "sha256": "28c26cd5fae183d4c79d663179d91871a770209e4a1b5bebd1a2a2d1c1761220"
+        },
+        {
+          "path": "native/postclip-gradients-10-value.npy",
+          "sha256": "72aa3d1effa0b17a670bf9ba1988e036d99414a2a576a2b87018a587f6c7315e"
+        },
+        {
+          "path": "native/postclip-gradients-11-value.npy",
+          "sha256": "6140917403ce6310fdc4f071ab269afcb7f4b190c475f60d251394fc9c075b53"
+        },
+        {
+          "path": "native/updates-00-after.npy",
+          "sha256": "c759f76a9496feae9a4754f6c716663ec3890113e5ba71aef0da2de50355c2ca"
+        },
+        {
+          "path": "native/updates-00-before.npy",
+          "sha256": "435ca09e830a96aa9376d59225c78af9c83d557da982a0e5d90aa0476602f16f"
+        },
+        {
+          "path": "native/updates-01-after.npy",
+          "sha256": "f998be131bf79ab519deeff72545065085a6c6fb4c4dec70412ad1767efda4ed"
+        },
+        {
+          "path": "native/updates-01-before.npy",
+          "sha256": "047f89df53104b009dfbff77eb6c1b3995712e9c9ec24f65976343ceae9cdc12"
+        },
+        {
+          "path": "native/updates-02-after.npy",
+          "sha256": "db42cb8e6413c924f08e7bc0dc40dc8586d294e0842587b340ed88a2b4a600c2"
+        },
+        {
+          "path": "native/updates-02-before.npy",
+          "sha256": "a57ab4dbe6b479f64d4940250cd3a50c735b40f56765d50cf2ff3c6e87292c29"
+        },
+        {
+          "path": "native/updates-03-after.npy",
+          "sha256": "cf793b5658394671cdd588999a0a7b060275862ad14d5dbbaf029120aea59650"
+        },
+        {
+          "path": "native/updates-03-before.npy",
+          "sha256": "ac92a6e2083de3275bf55aaa732e836492f0401cd04d5b2ffc6ea124a1f6ae59"
+        },
+        {
+          "path": "native/updates-04-after.npy",
+          "sha256": "f90495007a5570f9bb71c22d0a4f0d38eb1e9c5fe872e741961196bc73af6fea"
+        },
+        {
+          "path": "native/updates-04-before.npy",
+          "sha256": "9a4dde4d3c3060d6d1c34020047dc8e5a78f85f583170f868112313e9ca6bb62"
+        },
+        {
+          "path": "native/updates-05-after.npy",
+          "sha256": "102383ac72052d34151543a6056da0d9cf522cbcc0c9a6fa56ca208a9fc78650"
+        },
+        {
+          "path": "native/updates-05-before.npy",
+          "sha256": "c4e74bafb74d46ed4780429b0e25714868c134880878aea691630e5acc99b264"
+        },
+        {
+          "path": "native/updates-06-after.npy",
+          "sha256": "24824b61add4def082e96d30caa14927d5a0314619258bc0ad53958971415b3d"
+        },
+        {
+          "path": "native/updates-06-before.npy",
+          "sha256": "bf5b7405441878b3f9ba039de175b839d6f2401e60bb20c6a13b92e283cf7693"
+        },
+        {
+          "path": "native/updates-07-after.npy",
+          "sha256": "b61a82b4a092df4c1da6a64295fd623991bb362b5dbbc290929b68eb812f5f3c"
+        },
+        {
+          "path": "native/updates-07-before.npy",
+          "sha256": "c6df62917d107c55d1edccc7e30fb6e7892b00703aa37d8ddc72d20c736a7c27"
+        },
+        {
+          "path": "native/updates-08-after.npy",
+          "sha256": "7060e36145adddc0cb32c63ca8b640898b302f4a68c5991d68a659dfe34d3e26"
+        },
+        {
+          "path": "native/updates-08-before.npy",
+          "sha256": "674d31c9757c736e9eec0791569ff110b55511e3f94db06e419bb811ff7b1906"
+        },
+        {
+          "path": "native/updates-09-after.npy",
+          "sha256": "2fb7bee5a9d6a15c89f6d49146f3577f8e1d804beeb2f4004368b713057e8a9d"
+        },
+        {
+          "path": "native/updates-09-before.npy",
+          "sha256": "c808fdd90bbf7ef028a1e6618c2f645df25e65d9a7ef07513df2b4b33bead435"
+        },
+        {
+          "path": "native/updates-10-after.npy",
+          "sha256": "936ebc9dc9aa0fe957b8d6d2c8bcf5d88ca8af8cf4203619e6d92a1c8b35a606"
+        },
+        {
+          "path": "native/updates-10-before.npy",
+          "sha256": "a177b182acb5634dfae540f48325fe966794c70d1055ab2907488a97a693a229"
+        },
+        {
+          "path": "native/updates-11-after.npy",
+          "sha256": "0684d033ad1854918a2c0d9f7318615c66a64d0560b5bdcfa404b5dcee5f37db"
+        },
+        {
+          "path": "native/updates-11-before.npy",
+          "sha256": "b61b23e24d4aebd6595889b1340466bb59d6f610936052d1c58af25e6743d55c"
+        },
+        {
+          "path": "reference/gradients-00-value.npy",
+          "sha256": "6ed664099123e6a6fbceddea9abea7dab972520eab692e0042096eb0dcf99ebc"
+        },
+        {
+          "path": "reference/gradients-01-value.npy",
+          "sha256": "35e2858437147238b0e8bc01cd47061069a6603d02b669e734fe758af9846d28"
+        },
+        {
+          "path": "reference/gradients-02-value.npy",
+          "sha256": "37203a8a07a2bcf5e5302cc12c9d135ea8595673589bfbd4962fbedd85a23898"
+        },
+        {
+          "path": "reference/gradients-03-value.npy",
+          "sha256": "9c18029f5ac4e9279819de0833b161bdbc275aff3781d7145521abc4fc735c43"
+        },
+        {
+          "path": "reference/gradients-04-value.npy",
+          "sha256": "e88b20fa7e1e089bd9da8eaff2734095330f2e93a033d65979e328833e609100"
+        },
+        {
+          "path": "reference/gradients-05-value.npy",
+          "sha256": "f1d5aeac83fd2448953e743b726890b2b7875115ca0bddd061bddcacb11939fd"
+        },
+        {
+          "path": "reference/gradients-06-value.npy",
+          "sha256": "0330d420731bb672b15000929a4dacb6506271f38d0ef56526ddb4335cd1ccbd"
+        },
+        {
+          "path": "reference/gradients-07-value.npy",
+          "sha256": "52e5bf60e7861b2518525b06fd08b208bae1160ac35930c5bb5e8449dd6de954"
+        },
+        {
+          "path": "reference/gradients-08-value.npy",
+          "sha256": "2e5320c1c1d2672cd0a01c563f6b256ac4b36762c1c39eb4ee783067f1ba2b14"
+        },
+        {
+          "path": "reference/gradients-09-value.npy",
+          "sha256": "0f57e70d574793a3806af9cc36efc41589f1d8dcf356e3f64cc2b31eb5f623a8"
+        },
+        {
+          "path": "reference/gradients-10-value.npy",
+          "sha256": "522e4d8990e195ce3e8214db156daf6d5cd354ee8a888465454d122b206154ec"
+        },
+        {
+          "path": "reference/gradients-11-value.npy",
+          "sha256": "faa63b23cbbcc27542f7d4e41380b5d4aa435274d4b5b327a09ecb0b17cca196"
+        },
+        {
+          "path": "reference/postclip-gradients-00-value.npy",
+          "sha256": "7649dc61445ae00c4c0ee51dc83d6a31f14f683fe64eb754074dac49342956b3"
+        },
+        {
+          "path": "reference/postclip-gradients-01-value.npy",
+          "sha256": "1036ea2ca271b378e70421a20b486a38b3cf8b61215d6a375cf41da7f8829c7c"
+        },
+        {
+          "path": "reference/postclip-gradients-02-value.npy",
+          "sha256": "dc0419c000e21b0938b6bfb6a5fe963159cf7f9e597e9e6dc4d906574f159d81"
+        },
+        {
+          "path": "reference/postclip-gradients-03-value.npy",
+          "sha256": "7f56c65b614fb643624d74b83bfde5ad78c9ec4fb971716042b0f8f79fdff6cf"
+        },
+        {
+          "path": "reference/postclip-gradients-04-value.npy",
+          "sha256": "f7a9003fea9fd654c185e88b80bfbbc3ca7207f3f6fe1c4dcbc911233cee9c9d"
+        },
+        {
+          "path": "reference/postclip-gradients-05-value.npy",
+          "sha256": "c1f82209c405a695d9e38541c27eea2e1b4967ffa89fed4f9fdba3baec110ad0"
+        },
+        {
+          "path": "reference/postclip-gradients-06-value.npy",
+          "sha256": "8fc332355ef08494968f408983e929e82d8d6f2d080b489fbeb2ba22741ea110"
+        },
+        {
+          "path": "reference/postclip-gradients-07-value.npy",
+          "sha256": "49cf59c8788f45a0a82b8caa44fc84cc2b0dd97decfbac1a0b1e03ae77521db1"
+        },
+        {
+          "path": "reference/postclip-gradients-08-value.npy",
+          "sha256": "91a282c057ea97ed867b88ba010f5caebcd28ebff5d621997726c0b901393483"
+        },
+        {
+          "path": "reference/postclip-gradients-09-value.npy",
+          "sha256": "93f1ecf714c5cf7e6f378b16f6de514d7fcd89e6b2853125a135306fe44896b7"
+        },
+        {
+          "path": "reference/postclip-gradients-10-value.npy",
+          "sha256": "16f834b7ce4f0ffc242d1e22469a9bd71d71466ad3555acfc95da86e7e616053"
+        },
+        {
+          "path": "reference/postclip-gradients-11-value.npy",
+          "sha256": "ca7fbdd0f5b61cbe1a430918f046b8b68acfcdb20824600d0185b427985ac86c"
+        },
+        {
+          "path": "reference/updates-00-after.npy",
+          "sha256": "e729eaba0d6801e7b68350eb74beb8628e52a8eba279d9b75a99be5319103ea2"
+        },
+        {
+          "path": "reference/updates-00-before.npy",
+          "sha256": "435ca09e830a96aa9376d59225c78af9c83d557da982a0e5d90aa0476602f16f"
+        },
+        {
+          "path": "reference/updates-01-after.npy",
+          "sha256": "d04ec0682bb8bbb8be6040e71a182194938a4ae676d663da463f12021d424c9c"
+        },
+        {
+          "path": "reference/updates-01-before.npy",
+          "sha256": "047f89df53104b009dfbff77eb6c1b3995712e9c9ec24f65976343ceae9cdc12"
+        },
+        {
+          "path": "reference/updates-02-after.npy",
+          "sha256": "f8d180a1aa067b01f5ab7ac561b92f23b6e6627df76446d274d3ffab24837c54"
+        },
+        {
+          "path": "reference/updates-02-before.npy",
+          "sha256": "a57ab4dbe6b479f64d4940250cd3a50c735b40f56765d50cf2ff3c6e87292c29"
+        },
+        {
+          "path": "reference/updates-03-after.npy",
+          "sha256": "e0399108f359c058ae4d3f9640aadf3de3963ca764816e1135b8a72e6b4e1f3c"
+        },
+        {
+          "path": "reference/updates-03-before.npy",
+          "sha256": "ac92a6e2083de3275bf55aaa732e836492f0401cd04d5b2ffc6ea124a1f6ae59"
+        },
+        {
+          "path": "reference/updates-04-after.npy",
+          "sha256": "3d40e46a51365382abfbc4926be1fff588c8f810bea1d4bcc6d79326dfb6b2af"
+        },
+        {
+          "path": "reference/updates-04-before.npy",
+          "sha256": "9a4dde4d3c3060d6d1c34020047dc8e5a78f85f583170f868112313e9ca6bb62"
+        },
+        {
+          "path": "reference/updates-05-after.npy",
+          "sha256": "4afb572eeee8b21f7ca85a9a803c6983e1c5f603f73b68d73d8d2b25a4ae58ba"
+        },
+        {
+          "path": "reference/updates-05-before.npy",
+          "sha256": "c4e74bafb74d46ed4780429b0e25714868c134880878aea691630e5acc99b264"
+        },
+        {
+          "path": "reference/updates-06-after.npy",
+          "sha256": "3794b39541565c8d9737b9ee91decbc7976091b6624da1b6183fb2e19863e06e"
+        },
+        {
+          "path": "reference/updates-06-before.npy",
+          "sha256": "bf5b7405441878b3f9ba039de175b839d6f2401e60bb20c6a13b92e283cf7693"
+        },
+        {
+          "path": "reference/updates-07-after.npy",
+          "sha256": "3d4bde4ba80272e2a67ad470e84ac908a5dfd4060709d143616be4dadd4b1764"
+        },
+        {
+          "path": "reference/updates-07-before.npy",
+          "sha256": "c6df62917d107c55d1edccc7e30fb6e7892b00703aa37d8ddc72d20c736a7c27"
+        },
+        {
+          "path": "reference/updates-08-after.npy",
+          "sha256": "3a3dfbe0e48f8ab9d7cf5e11d11457256792de2fa50dcb14105b95b8e8f6b34d"
+        },
+        {
+          "path": "reference/updates-08-before.npy",
+          "sha256": "674d31c9757c736e9eec0791569ff110b55511e3f94db06e419bb811ff7b1906"
+        },
+        {
+          "path": "reference/updates-09-after.npy",
+          "sha256": "b24bba94aaea6be1c60e162fae7b4896b997386507604bed7af3632055896663"
+        },
+        {
+          "path": "reference/updates-09-before.npy",
+          "sha256": "c808fdd90bbf7ef028a1e6618c2f645df25e65d9a7ef07513df2b4b33bead435"
+        },
+        {
+          "path": "reference/updates-10-after.npy",
+          "sha256": "44feb720bdd14ab3b76c238d033daa88346d47405f200327207f64ddd5af4ae7"
+        },
+        {
+          "path": "reference/updates-10-before.npy",
+          "sha256": "a177b182acb5634dfae540f48325fe966794c70d1055ab2907488a97a693a229"
+        },
+        {
+          "path": "reference/updates-11-after.npy",
+          "sha256": "d807077e3d51a34cf1d1a5da1839e1c31b39cf9f8e843f50a034260013385515"
+        },
+        {
+          "path": "reference/updates-11-before.npy",
+          "sha256": "b61b23e24d4aebd6595889b1340466bb59d6f610936052d1c58af25e6743d55c"
+        }
+      ],
+      "text_files_with_replacements": 32,
+      "explicit_private_literals_remaining": [],
+      "coverage": {
+        "trajectories": 2,
+        "groups": 1,
+        "actions": 8,
+        "sampled_parameter_count": 12,
+        "sampled_elements": 98304,
+        "full_model_elements": 19709312,
+        "full_model_parameter_count": 24,
+        "native_optimizer_full_parameter_elements": 19709312,
+        "selection": "first 12 native optimizer coordinates; flattened [0,min(8192,numel)) each",
+        "optimizer_events": 1
+      },
+      "initial_values_exact_equal": true
+    },
+    {
+      "case": "swift-pretrained-bf16",
+      "archive": "swift-pretrained-bf16.zip",
+      "bytes": 1902374,
+      "sha256": "e6067d4ec58cb192f5cdf18a1e33a97cfc6ee0396c56737d259e2ae592e82663",
+      "verified": true,
+      "replay_matched": true,
+      "replay_cases": 4,
+      "numeric_files": 96,
+      "numeric_bytes_unchanged": true,
+      "numeric_files_sha256": [
+        {
+          "path": "native/gradients-00-value.npy",
+          "sha256": "c41c8ed8458b060e9a0c606fa3a51fa5b5d67cccb48b0d48de30bf30506d6753"
+        },
+        {
+          "path": "native/gradients-01-value.npy",
+          "sha256": "5f6324fbc3f5ecb1365cb84cf08b8a153b20fc81a90585f583d08b1728566066"
+        },
+        {
+          "path": "native/gradients-02-value.npy",
+          "sha256": "c34d5fe236ae8a6f723ac2e7f75ffa16238fdead26abc6d643493a28d3e88c56"
+        },
+        {
+          "path": "native/gradients-03-value.npy",
+          "sha256": "97c150f279b89a03a080ffb2f3cfb1d336f846c7e1bbe1c2650f0965fee31502"
+        },
+        {
+          "path": "native/gradients-04-value.npy",
+          "sha256": "7367d2cb34ee3ac3708db599e1d9f0c9bf6ca5de65a01109516ef9c80659fafe"
+        },
+        {
+          "path": "native/gradients-05-value.npy",
+          "sha256": "4d33ae578b4010681a83b5a52127de38587417580d50786ea2c82d0af71abaf0"
+        },
+        {
+          "path": "native/gradients-06-value.npy",
+          "sha256": "93581393e41c49c303c118e22476f69c365055483507bb84a264e6ecfd65246a"
+        },
+        {
+          "path": "native/gradients-07-value.npy",
+          "sha256": "f06a6a0b1b91c1092d6b4333f23e041743a779e52275e2bd05237e85665345ff"
+        },
+        {
+          "path": "native/gradients-08-value.npy",
+          "sha256": "90dea138d5d50e976bb48c8f892a66429a51850f7cec8130df11bdf46a0fc3a6"
+        },
+        {
+          "path": "native/gradients-09-value.npy",
+          "sha256": "c609c310df90e77d5c4caae9d2757494aeaf677fd37212e23668a42ac820c642"
+        },
+        {
+          "path": "native/gradients-10-value.npy",
+          "sha256": "f50b409bab7a749c01bbbfdcf12cfcdfadec15126b3ce44d279bd9e1fb4121c4"
+        },
+        {
+          "path": "native/gradients-11-value.npy",
+          "sha256": "641caa54a572320fcd6967d3b035b72af5d0ff598b1887b321513041a816a839"
+        },
+        {
+          "path": "native/postclip-gradients-00-value.npy",
+          "sha256": "c41c8ed8458b060e9a0c606fa3a51fa5b5d67cccb48b0d48de30bf30506d6753"
+        },
+        {
+          "path": "native/postclip-gradients-01-value.npy",
+          "sha256": "f961362e7b060c066693afabadd967018a00531b9f9d04bbc2ac11525eb24b05"
+        },
+        {
+          "path": "native/postclip-gradients-02-value.npy",
+          "sha256": "d4c1e103a75a2be6ad75b5a8e12a82c8e5dec69370472b3ce0378543642b1d9f"
+        },
+        {
+          "path": "native/postclip-gradients-03-value.npy",
+          "sha256": "0beabd34afa8fffabb773b2c14288f157aaabd40c27038f411cf51493f9195ac"
+        },
+        {
+          "path": "native/postclip-gradients-04-value.npy",
+          "sha256": "b9fb4beb3d03fe66aff53c0255198d6d9474c82408d7274ce78a309f207151ac"
+        },
+        {
+          "path": "native/postclip-gradients-05-value.npy",
+          "sha256": "9c5d7231a4ebac55a7d583dae7958904b4e5626f09f7c2f2b7b56d8d758aeff3"
+        },
+        {
+          "path": "native/postclip-gradients-06-value.npy",
+          "sha256": "9762e7780a683e61e983849c9a909f9a921f7d8c0c0689e761a766608ed8d89c"
+        },
+        {
+          "path": "native/postclip-gradients-07-value.npy",
+          "sha256": "3fd9eec687dc8ebaf9295586632a4e230402ef60090b2be2d3b6ec4fe375a37b"
+        },
+        {
+          "path": "native/postclip-gradients-08-value.npy",
+          "sha256": "9cddb77dd21c80c857c8183d9e602c6da0c8c12a8f71b3eec1eb18bf12bd7026"
+        },
+        {
+          "path": "native/postclip-gradients-09-value.npy",
+          "sha256": "e37ef78815ab4e0c7f135aecadfd8102680c647322b5db0362e916fd0a0cd6b0"
+        },
+        {
+          "path": "native/postclip-gradients-10-value.npy",
+          "sha256": "acdedc084bfee636fe2906e1eff93ab339341be4165c17bd3994c978a03643a4"
+        },
+        {
+          "path": "native/postclip-gradients-11-value.npy",
+          "sha256": "4874d6381fe12848e3759275ea4e0408a117f330e64253ea3c881bc8867683ee"
+        },
+        {
+          "path": "native/updates-00-after.npy",
+          "sha256": "4da35c4720469b88886b4ccdca23c92c73b5fae24de548ce8703339fd85b3430"
+        },
+        {
+          "path": "native/updates-00-before.npy",
+          "sha256": "4da35c4720469b88886b4ccdca23c92c73b5fae24de548ce8703339fd85b3430"
+        },
+        {
+          "path": "native/updates-01-after.npy",
+          "sha256": "f21786547e776277a25f99308308a0358fe15eaacb1df3dd84481dd0585686ba"
+        },
+        {
+          "path": "native/updates-01-before.npy",
+          "sha256": "27dcbb9cecdc929be3ca4ef98af71831c172ce68d310a29f5b1fe028be45250f"
+        },
+        {
+          "path": "native/updates-02-after.npy",
+          "sha256": "0cfc111fb6c6fc0834cc1caf2f3a1ff645fe9d1311efdf2ef493f6cd107a6627"
+        },
+        {
+          "path": "native/updates-02-before.npy",
+          "sha256": "578a5f2045f9983b17356f06c01386a9384e42d5b7170ab612bf1fd89542a209"
+        },
+        {
+          "path": "native/updates-03-after.npy",
+          "sha256": "3e4a39574ab36bd1a208280b4665e3c480ea0253af0364287bee48a08cdbc568"
+        },
+        {
+          "path": "native/updates-03-before.npy",
+          "sha256": "2ffece7e77e8f0e6a4b004728a4d734ff3e7ab59112dba69b8e4b9852eeda5f8"
+        },
+        {
+          "path": "native/updates-04-after.npy",
+          "sha256": "d84c7ccd20cf77e9d1e878268ebf476ddfbbe9be23a79fe59a71abf195162861"
+        },
+        {
+          "path": "native/updates-04-before.npy",
+          "sha256": "c06859247f4fd8ee8e2d8c3cbf6900335d97d4eb7cfa0d3ab2725b9ba7d548fd"
+        },
+        {
+          "path": "native/updates-05-after.npy",
+          "sha256": "3006f33a1faad46d264f9c3dc8ea028952679ccf19bc340579152e4666198a3e"
+        },
+        {
+          "path": "native/updates-05-before.npy",
+          "sha256": "0662b076f0251cf97e0395bce48ddc62688ac17c97c0b75c3234d994bdf24c89"
+        },
+        {
+          "path": "native/updates-06-after.npy",
+          "sha256": "33515df454539fb28900de265f59dac653edffc2d010c663be13bef405359649"
+        },
+        {
+          "path": "native/updates-06-before.npy",
+          "sha256": "715fdf2cc9e4df9ebb73f4dee64f3849832fa05d3c772c84eacb880024db70ce"
+        },
+        {
+          "path": "native/updates-07-after.npy",
+          "sha256": "f35800bd22be988b604e6c2004e3ed2c5b9f6969dc37132c16575ae1df7f5735"
+        },
+        {
+          "path": "native/updates-07-before.npy",
+          "sha256": "7c7576f1d66e51d4d6cfa5b190d7750557f9831cff25827a3213cbe3746fffd9"
+        },
+        {
+          "path": "native/updates-08-after.npy",
+          "sha256": "13fb00fa688bcd9a2391108b4352cc319d4de8d9e2046f53daccbee18113f1d2"
+        },
+        {
+          "path": "native/updates-08-before.npy",
+          "sha256": "8550b1686da6e32d89aa67d04440c9329c0e2c575db43ef1cab53cb4b131c698"
+        },
+        {
+          "path": "native/updates-09-after.npy",
+          "sha256": "bd8dff6e1d64c344420e1c71db64740bf03c9b5fe9187448b41795abfb0470c1"
+        },
+        {
+          "path": "native/updates-09-before.npy",
+          "sha256": "961b57edb809e6e1d30e731cfabb07b899dd8a8176aab39775d602d3ae1a028b"
+        },
+        {
+          "path": "native/updates-10-after.npy",
+          "sha256": "a87064d48f5c64a75cc74a84102e19ab85ed01d4f2e98f53916c4fbef3f493b3"
+        },
+        {
+          "path": "native/updates-10-before.npy",
+          "sha256": "a105fc84ff02aa6fd9eeade862036183a1910bdb1aeaa1586f45b742ec1bd2ad"
+        },
+        {
+          "path": "native/updates-11-after.npy",
+          "sha256": "6d6234a0973380706e603d995849dbbd767a848dc74cd096842deddd73e94ef3"
+        },
+        {
+          "path": "native/updates-11-before.npy",
+          "sha256": "278da10fdf833f9d1fb6288b65c1631c17505d4a6e157042ad0f709d1b94e286"
+        },
+        {
+          "path": "reference/gradients-00-value.npy",
+          "sha256": "c41c8ed8458b060e9a0c606fa3a51fa5b5d67cccb48b0d48de30bf30506d6753"
+        },
+        {
+          "path": "reference/gradients-01-value.npy",
+          "sha256": "cb1a911c1ec70a2f64bfa0425d7ec134aec4cf1b03fdae4eb2dffb61e2bda069"
+        },
+        {
+          "path": "reference/gradients-02-value.npy",
+          "sha256": "f5527f3da1e93625e48376eb4b35bbbd52941ed487fa19e8f79ddfeb902a9a1b"
+        },
+        {
+          "path": "reference/gradients-03-value.npy",
+          "sha256": "f23870abcd1336f4433b4b332420a18feef0f20a2ddc13667f91efa5e779ccd7"
+        },
+        {
+          "path": "reference/gradients-04-value.npy",
+          "sha256": "d884f726d8061d7e9e5327dd087f5fcdfff6191a77b31f23bf0fcbba0819213d"
+        },
+        {
+          "path": "reference/gradients-05-value.npy",
+          "sha256": "566830c0628391a0a0991c7e6b06f08e846905db69e382f283cd4d942b1c6270"
+        },
+        {
+          "path": "reference/gradients-06-value.npy",
+          "sha256": "1ee9aaab17435b9d448fb51c11ee8467af8d8d791da594eca3f37573c4924016"
+        },
+        {
+          "path": "reference/gradients-07-value.npy",
+          "sha256": "1defa6b13d5c3f229f23db1ae1e6a765c493be47e228c5e8eb848e4dbd2371df"
+        },
+        {
+          "path": "reference/gradients-08-value.npy",
+          "sha256": "0093577be68cd4513a0145c1060dd4853f40318f8482cbfedba36aaf837b6dbb"
+        },
+        {
+          "path": "reference/gradients-09-value.npy",
+          "sha256": "0c836fb62342d8c5d514b66887753fd30f0a3634ff65406a3f4595d7d9507bb0"
+        },
+        {
+          "path": "reference/gradients-10-value.npy",
+          "sha256": "1f779e92db7f0f85d3ebfbbad169149a6838c9050c007d74ebc24e5c49d92949"
+        },
+        {
+          "path": "reference/gradients-11-value.npy",
+          "sha256": "192fa66a16c9a3c4f2a678b2877fbed6bf01653555eba30341d7d9cca285ede9"
+        },
+        {
+          "path": "reference/postclip-gradients-00-value.npy",
+          "sha256": "c41c8ed8458b060e9a0c606fa3a51fa5b5d67cccb48b0d48de30bf30506d6753"
+        },
+        {
+          "path": "reference/postclip-gradients-01-value.npy",
+          "sha256": "ac48d041d6ca3105f2941d23a10f87ced133c7e4b5cfbf3ce2d003cbd895545f"
+        },
+        {
+          "path": "reference/postclip-gradients-02-value.npy",
+          "sha256": "3c16b49dd79b2d9d75d0a5a54a5768017d6305d04c6cca3e20bf410e55bd0e97"
+        },
+        {
+          "path": "reference/postclip-gradients-03-value.npy",
+          "sha256": "ff4651e51e27e063bba6bdf4361eff29356aabbbc79eccf73fa367fa68b8a6e1"
+        },
+        {
+          "path": "reference/postclip-gradients-04-value.npy",
+          "sha256": "33926df9a2e34b73142acb2780d1f828c81b6bd1b68f1a756bfb846a1ea5ab1a"
+        },
+        {
+          "path": "reference/postclip-gradients-05-value.npy",
+          "sha256": "7354a6d16aa0892ac46ed3ec650b84b82a6347ac43b8b376210f6fccfc2b92c0"
+        },
+        {
+          "path": "reference/postclip-gradients-06-value.npy",
+          "sha256": "512159ff80003b1041bf8498c098664b2abe13d4ae3c18087a32d36f845b096f"
+        },
+        {
+          "path": "reference/postclip-gradients-07-value.npy",
+          "sha256": "0ff58fc0be5a95373f5989deed9f3a18a616dc32f23c3c2cc19e0f69a2ed4046"
+        },
+        {
+          "path": "reference/postclip-gradients-08-value.npy",
+          "sha256": "b00a68fd8a00951963cced3e3ef809d8193565c23957c380ce095dac81d30085"
+        },
+        {
+          "path": "reference/postclip-gradients-09-value.npy",
+          "sha256": "7c87e8844576efddc8cf45cabdacd83a2f9863290e10e8eab09028bc6c7ccbce"
+        },
+        {
+          "path": "reference/postclip-gradients-10-value.npy",
+          "sha256": "685d155f75cc422718464dbba5206507453b9bffb8ae4d59a53193f6d1063bfa"
+        },
+        {
+          "path": "reference/postclip-gradients-11-value.npy",
+          "sha256": "12ded6bd11b121ba73b5474f424714c9ffba075a12242955eeb5fa8c1f2bc3fb"
+        },
+        {
+          "path": "reference/updates-00-after.npy",
+          "sha256": "4da35c4720469b88886b4ccdca23c92c73b5fae24de548ce8703339fd85b3430"
+        },
+        {
+          "path": "reference/updates-00-before.npy",
+          "sha256": "4da35c4720469b88886b4ccdca23c92c73b5fae24de548ce8703339fd85b3430"
+        },
+        {
+          "path": "reference/updates-01-after.npy",
+          "sha256": "0057470b18e87c2822880eaa27088647b989066e3aea933e0872c2767ee918b3"
+        },
+        {
+          "path": "reference/updates-01-before.npy",
+          "sha256": "27dcbb9cecdc929be3ca4ef98af71831c172ce68d310a29f5b1fe028be45250f"
+        },
+        {
+          "path": "reference/updates-02-after.npy",
+          "sha256": "ba8a40156126bc9f34288bb7bd8c5b280d15f995cd0968f6bd32993c11cc2f0e"
+        },
+        {
+          "path": "reference/updates-02-before.npy",
+          "sha256": "578a5f2045f9983b17356f06c01386a9384e42d5b7170ab612bf1fd89542a209"
+        },
+        {
+          "path": "reference/updates-03-after.npy",
+          "sha256": "90dc5e412105d0c2d52abfbf3e85dd5e2d82621e09f858eda23dec74dcb3cb08"
+        },
+        {
+          "path": "reference/updates-03-before.npy",
+          "sha256": "2ffece7e77e8f0e6a4b004728a4d734ff3e7ab59112dba69b8e4b9852eeda5f8"
+        },
+        {
+          "path": "reference/updates-04-after.npy",
+          "sha256": "36359898015b29a9a214c9ab55dd396f0209c86115130d66dd2a30a005bb2434"
+        },
+        {
+          "path": "reference/updates-04-before.npy",
+          "sha256": "c06859247f4fd8ee8e2d8c3cbf6900335d97d4eb7cfa0d3ab2725b9ba7d548fd"
+        },
+        {
+          "path": "reference/updates-05-after.npy",
+          "sha256": "f7e99ae03e43739b6da521472a905cc1dabf3c7bb62dd2db6540c31b35910b0e"
+        },
+        {
+          "path": "reference/updates-05-before.npy",
+          "sha256": "0662b076f0251cf97e0395bce48ddc62688ac17c97c0b75c3234d994bdf24c89"
+        },
+        {
+          "path": "reference/updates-06-after.npy",
+          "sha256": "96d06b866cdb24f57f0e43c69884a49eae426de7486cab286e18aeee98d8f991"
+        },
+        {
+          "path": "reference/updates-06-before.npy",
+          "sha256": "715fdf2cc9e4df9ebb73f4dee64f3849832fa05d3c772c84eacb880024db70ce"
+        },
+        {
+          "path": "reference/updates-07-after.npy",
+          "sha256": "622f60c2d0f8c5ec2c50e0e93a5ec7935dca3fc73a1e6bf561ad055b9ed2dac7"
+        },
+        {
+          "path": "reference/updates-07-before.npy",
+          "sha256": "7c7576f1d66e51d4d6cfa5b190d7750557f9831cff25827a3213cbe3746fffd9"
+        },
+        {
+          "path": "reference/updates-08-after.npy",
+          "sha256": "dcd4e5d3cbf15c593cfbc325d3381683590905de20ce857695b5fd6ea79544f9"
+        },
+        {
+          "path": "reference/updates-08-before.npy",
+          "sha256": "8550b1686da6e32d89aa67d04440c9329c0e2c575db43ef1cab53cb4b131c698"
+        },
+        {
+          "path": "reference/updates-09-after.npy",
+          "sha256": "98d2ced0695ed63658eca1144a336d698d230902475b3ec1a86f9b1cbe231ac9"
+        },
+        {
+          "path": "reference/updates-09-before.npy",
+          "sha256": "961b57edb809e6e1d30e731cfabb07b899dd8a8176aab39775d602d3ae1a028b"
+        },
+        {
+          "path": "reference/updates-10-after.npy",
+          "sha256": "5e2fa03775a6b11376f1d84b91ab0be4b1871c44c2bac05fbfbe617039a78215"
+        },
+        {
+          "path": "reference/updates-10-before.npy",
+          "sha256": "a105fc84ff02aa6fd9eeade862036183a1910bdb1aeaa1586f45b742ec1bd2ad"
+        },
+        {
+          "path": "reference/updates-11-after.npy",
+          "sha256": "7100bf298e821f25f2214e4630c4df5e2cac47c82ef3ed234bc1c27af9f8246c"
+        },
+        {
+          "path": "reference/updates-11-before.npy",
+          "sha256": "278da10fdf833f9d1fb6288b65c1631c17505d4a6e157042ad0f709d1b94e286"
+        }
+      ],
+      "text_files_with_replacements": 32,
+      "explicit_private_literals_remaining": [],
+      "coverage": {
+        "trajectories": 2,
+        "groups": 1,
+        "actions": 6,
+        "sampled_parameter_count": 12,
+        "sampled_elements": 98304,
+        "full_model_elements": 751632384,
+        "full_model_parameter_count": 311,
+        "native_optimizer_full_parameter_elements": 751632384,
+        "selection": "first 12 native optimizer coordinates; flattened [0,min(8192,numel)) each",
+        "optimizer_events": 1
+      },
+      "initial_values_exact_equal": true
+    }
+  ]
+}

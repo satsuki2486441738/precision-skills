@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-21T19:18:25.877546+00:00",
+  "new_native_cuda_cases": 22,
+  "new_original_comparison_groups": 120,
+  "portable_replay_groups": 96,
+  "numerical_acceptance": null,
+  "four_rank_ddp_complete": false,
+  "core_tests": {
+    "tests": 167,
+    "status": "passed",
+    "command": "python -B -m unittest discover -s tests -v"
+  },
+  "root_independent_windows_replay": {
+    "selected_case": "trl-pretrained-bf16-rank-0",
+    "matched": true,
+    "comparisons": 5,
+    "runtime": "bundled Python NumPy-only, no Torch"
+  },
+  "agent_retained_replays": {
+    "sft": 80,
+    "inference": 8,
+    "swift_rl": 8,
+    "matched": true
+  },
+  "archives": [
+    {
+      "path": "axolotl/axolotl-pretrained-bf16-rank-0.zip",
+      "sha256": "15197b1bcf6245ba64e45f82b2dd1c4903d6fc7271388c7092de4cf74657d007",
+      "bytes": 24136308,
+      "indexed_files": 62,
+      "verified": true
+    },
+    {
+      "path": "axolotl/axolotl-pretrained-fp32-rank-0.zip",
+      "sha256": "3bc39261f4cebf425fe12ae2648749e0482fe1a95c38602ac528893c24de197e",
+      "bytes": 33761555,
+      "indexed_files": 62,
+      "verified": true
+    },
+    {
+      "path": "axolotl/axolotl-tiny-bf16-rank-0.zip",
+      "sha256": "8e360af05100fb3d4a7d908713ecee0473725e2aaa8c520fc10f436edee1fd33",
+      "bytes": 10889862,
+      "indexed_files": 62,
+      "verified": true
+    },
+    {
+      "path": "axolotl/axolotl-tiny-fp32-rank-0.zip",
+      "sha256": "ea674f5bb920eafe534e179f36323c6b2ba7e6e75867ae1b6e9bddf0a69b7502",
+      "bytes": 18758339,
+      "indexed_files": 62,
+      "verified": true
+    },
+    {
+      "path": "factory/factory-pretrained-bf16-rank-0.zip",
+      "sha256": "4cb833614166c55e72c5498f8ded6893a48438403f4680e992f7b1a535fe45d2",
+      "bytes": 45094459,
+      "indexed_files": 62,
+      "verified": true
+    },
+    {
+      "path": "factory/factory-pretrained-fp32-rank-0.zip",
+      "sha256": "4ca37a79354126120a148d81c04dc46dad14a9a7f1eaf3c5a54beec771498c30",
+      "bytes": 46214307,
+      "indexed_files": 62,
+      "verified": true
+    },
+    {
+      "path": "factory/factory-tiny-bf16-rank-0.zip",
+      "sha256": "e0e54eb4aae8765675f8cc813ffbea7fbf6143da7cc2455f7a14e7d7f1a8a950",
+      "bytes": 17485725,
+      "indexed_files": 62,
+      "verified": true
+    },
+    {
+      "path": "factory/factory-tiny-fp32-rank-0.zip",
+      "sha256": "1df454a784634f8bb0927e349af8392318a48eb283952dc8bb40c03a3e07722d",
+      "bytes": 18805866,
+      "indexed_files": 62,
+      "verified": true
+    },
+    {
+      "path": "inference/inference-cuda-public-evidence-v02.zip",
+      "sha256": "9dec5fdb8de0b8fccf7b56fc509318981668efdaa7f1d68fd516401f87881139",
+      "bytes": 16144570,
+      "indexed_files": 308,
+      "verified": true
+    },
+    {
+      "path": "sft-environment-and-native-logs.zip",
+      "sha256": "988ada38cc2ae2b7652a9b60fa7fa5e46a7695cd578f1a21c0f33fb7d0e2a0f3",
+      "bytes": 235360,
+      "indexed_files": 244,
+      "verified": true
+    },
+    {
+      "path": "source-launch-v1.zip",
+      "sha256": "381503721811c64f317d42a652791cd742195e1fb82ace404831c8ab398dcc97",
+      "bytes": 105289,
+      "indexed_files": 31,
+      "verified": true
+    },
+    {
+      "path": "source-launch-v2.zip",
+      "sha256": "cbbfff3600c0c717a2e10262696b936dc1ee4158e574bcd0f22a356e938c045b",
+      "bytes": 124407,
+      "indexed_files": 37,
+      "verified": true
+    },
+    {
+      "path": "source-launch-v3.zip",
+      "sha256": "c3fd9b861c2bbb92b84ce48535029ff1bd37835ab75ae8c2a51874ee0bf8d6e9",
+      "bytes": 146196,
+      "indexed_files": 46,
+      "verified": true
+    },
+    {
+      "path": "swift/swift-pretrained-bf16-rank-0.zip",
+      "sha256": "465e480a94c55e8268782b3e02a371ff341c798f3660df14af59dab9fa05abab",
+      "bytes": 36521702,
+      "indexed_files": 61,
+      "verified": true
+    },
+    {
+      "path": "swift/swift-pretrained-fp32-rank-0.zip",
+      "sha256": "5591b17a68678755ac38328e29a1944076e9096ea72667c941bbb9d790c095a3",
+      "bytes": 45661285,
+      "indexed_files": 61,
+      "verified": true
+    },
+    {
+      "path": "swift/swift-tiny-bf16-rank-0.zip",
+      "sha256": "1d6afe3b29987c26dc549af79e41d5f28cbc4213db481df73945f525b754b769",
+      "bytes": 17455828,
+      "indexed_files": 61,
+      "verified": true
+    },
+    {
+      "path": "swift/swift-tiny-fp32-rank-0.zip",
+      "sha256": "c3042362801dfe8f5f11b29ef845a066c4216e82f77f4c923e4701aab6a8cd8f",
+      "bytes": 18769903,
+      "indexed_files": 61,
+      "verified": true
+    },
+    {
+      "path": "swift-rl/swift-pretrained-bf16.zip",
+      "sha256": "e6067d4ec58cb192f5cdf18a1e33a97cfc6ee0396c56737d259e2ae592e82663",
+      "bytes": 1902374,
+      "indexed_files": 148,
+      "verified": true
+    },
+    {
+      "path": "swift-rl/swift-tiny-fp32.zip",
+      "sha256": "019fc2594a987ae96a79bb6c03ac5509ba0299c3aa0adc364196eb123c25d29f",
+      "bytes": 3015123,
+      "indexed_files": 148,
+      "verified": true
+    },
+    {
+      "path": "trl/trl-pretrained-bf16-rank-0.zip",
+      "sha256": "aa075d8ff12111c5d6745433d2668fdfda2987ff4e02f62d9042866a2a97036a",
+      "bytes": 61912804,
+      "indexed_files": 60,
+      "verified": true
+    },
+    {
+      "path": "trl/trl-pretrained-fp32-rank-0.zip",
+      "sha256": "3f9aa3227e238334489b7d6d56448f46df92dc38a45c867803dbb68da44ae454",
+      "bytes": 79976558,
+      "indexed_files": 60,
+      "verified": true
+    },
+    {
+      "path": "trl/trl-tiny-bf16-rank-0.zip",
+      "sha256": "1c9725ec901d132d33e19bcd0a562b584c0a585d3e3545c7dda27578208f86ed",
+      "bytes": 17441862,
+      "indexed_files": 60,
+      "verified": true
+    },
+    {
+      "path": "trl/trl-tiny-fp32-rank-0.zip",
+      "sha256": "73b529f5466b2683270ec04416ebc01de9a1ca03e733fc6f982e70536e564d4f",
+      "bytes": 18760970,
+      "indexed_files": 60,
+      "verified": true
+    }
+  ]
+}

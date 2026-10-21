@@ -1,0 +1,47 @@
+{
+  "archives": [
+    {
+      "archive": "swift-pretrained-bf16-rank-0.zip",
+      "sha256": "465e480a94c55e8268782b3e02a371ff341c798f3660df14af59dab9fa05abab",
+      "bytes": 36521702,
+      "files": 61,
+      "literal_replacements": 99,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "swift-pretrained-fp32-rank-0.zip",
+      "sha256": "5591b17a68678755ac38328e29a1944076e9096ea72667c941bbb9d790c095a3",
+      "bytes": 45661285,
+      "files": 61,
+      "literal_replacements": 99,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "swift-tiny-bf16-rank-0.zip",
+      "sha256": "1d6afe3b29987c26dc549af79e41d5f28cbc4213db481df73945f525b754b769",
+      "bytes": 17455828,
+      "files": 61,
+      "literal_replacements": 99,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "swift-tiny-fp32-rank-0.zip",
+      "sha256": "c3042362801dfe8f5f11b29ef845a066c4216e82f77f4c923e4701aab6a8cd8f",
+      "bytes": 18769903,
+      "files": 61,
+      "literal_replacements": 99,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    }
+  ],
+  "summary_redacted": true,
+  "pickle_deserialized": false,
+  "numeric_files_modified": false
+}

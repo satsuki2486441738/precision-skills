@@ -1,0 +1,306 @@
+[
+  {
+    "status": "independent_reference_and_comparison_complete",
+    "reference_device": "cpu",
+    "reference_dtype": "float32",
+    "native_device": "NVIDIA GeForce RTX 5060",
+    "native_dtype": "float32",
+    "reference_complete_before_native_output_arrays_read": true,
+    "reference_complete_time": 1792608243.967667,
+    "initial_values_exact_equal": true,
+    "loss": {
+      "reference": 5.960464477539063e-08,
+      "native": 2.9802322387695312e-08,
+      "abs_error": 2.9802322387695312e-08
+    },
+    "full_preclip_norm": {
+      "reference_fp64": 5.023185091887173,
+      "native_fp64": 5.0231835896535575,
+      "native_returned": 5.023183822631836
+    },
+    "loss_reduction": "seq-mean-token-mean",
+    "reward_formula_independently_checked": true,
+    "reference_optimizer_scope": "declared flattened coordinates; elementwise AdamW after full model backward and clipping",
+    "coverage": {
+      "trajectories": 2,
+      "groups": 1,
+      "actions": 8,
+      "sampled_parameter_count": 12,
+      "sampled_elements": 98304,
+      "full_model_elements": 19709312,
+      "full_model_parameter_count": 24,
+      "native_optimizer_full_parameter_elements": 19709312,
+      "selection": "first 12 native optimizer coordinates; flattened [0,min(8192,numel)) each",
+      "optimizer_events": 1
+    },
+    "reward_quality_claimed": false,
+    "thresholds": null,
+    "case": "swift-tiny-fp32",
+    "metrics": {
+      "gradients": {
+        "count": 98304,
+        "side_a_norm": {
+          "value": 3.1965603357591315,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 3.196561397562058,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 3.2733169671925275e-06,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 1.044004731252114e-08,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9999999999995314,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 1.434236764907837e-07,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 1708,
+        "max_coordinate": {
+          "parameter": "model.embed_tokens.weight",
+          "index": 1708
+        }
+      },
+      "postclip-gradients": {
+        "count": 98304,
+        "side_a_norm": {
+          "value": 0.6363612932063911,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 0.6363615052633416,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 6.520616659289756e-07,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 2.0797114093165845e-09,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9999999999995307,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 2.8405338525772095e-08,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 1708,
+        "max_coordinate": {
+          "parameter": "model.embed_tokens.weight",
+          "index": 1708
+        }
+      },
+      "updates": {
+        "count": 98304,
+        "side_a_norm": {
+          "value": 0.3104099303812631,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 0.3104098686527494,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 3.6432291427107265e-05,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 1.1619859916248277e-07,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9999999931123569,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 3.0484050512313843e-05,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 8553,
+        "max_coordinate": {
+          "parameter": "model.layers.0.mlp.down_proj.weight",
+          "index": 361
+        }
+      },
+      "target-scores": {
+        "target_count": 8,
+        "side_a_nll_nat_per_token": 11.322242617607117,
+        "side_b_nll_nat_per_token": 11.322242379188538,
+        "nll_abs_diff_nat_per_token": 2.384185791015625e-07,
+        "mae_nat": 4.76837158203125e-07,
+        "p99_nat": 9.5367431640625e-07,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 9.5367431640625e-07,
+        "max_coordinate": {
+          "sample": "0",
+          "position": 25,
+          "token": 53311
+        }
+      }
+    },
+    "archive_sha256": "778a6eca350f5d8a6304313cdde7a56344f40319e22e3c0cce0d83a35b99b178"
+  },
+  {
+    "status": "independent_reference_and_comparison_complete",
+    "reference_device": "cpu",
+    "reference_dtype": "float32",
+    "native_device": "NVIDIA GeForce RTX 5060",
+    "native_dtype": "bfloat16",
+    "reference_complete_before_native_output_arrays_read": true,
+    "reference_complete_time": 1792608172.827235,
+    "initial_values_exact_equal": true,
+    "loss": {
+      "reference": 0.03234735131263733,
+      "native": 0.0,
+      "abs_error": 0.03234735131263733
+    },
+    "full_preclip_norm": {
+      "reference_fp64": 220.71223106862496,
+      "native_fp64": 223.48441886321635,
+      "native_returned": 223.0
+    },
+    "loss_reduction": "seq-mean-token-mean",
+    "reward_formula_independently_checked": true,
+    "reference_optimizer_scope": "declared flattened coordinates; elementwise AdamW after full model backward and clipping",
+    "coverage": {
+      "trajectories": 2,
+      "groups": 1,
+      "actions": 6,
+      "sampled_parameter_count": 12,
+      "sampled_elements": 98304,
+      "full_model_elements": 751632384,
+      "full_model_parameter_count": 311,
+      "native_optimizer_full_parameter_elements": 751632384,
+      "selection": "first 12 native optimizer coordinates; flattened [0,min(8192,numel)) each",
+      "optimizer_events": 1
+    },
+    "reward_quality_claimed": false,
+    "thresholds": null,
+    "case": "swift-pretrained-bf16",
+    "metrics": {
+      "gradients": {
+        "count": 98304,
+        "side_a_norm": {
+          "value": 6.06533897863026,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 5.783447378432694,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.7176925491058105,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 0.0022890371582117122,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9937907996892038,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.11301279067993164,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 26901,
+        "max_coordinate": {
+          "parameter": "model.layers.0.mlp.up_proj.weight",
+          "index": 2325
+        }
+      },
+      "postclip-gradients": {
+        "count": 98304,
+        "side_a_norm": {
+          "value": 0.02720447066210081,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 0.026209622439664067,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.0031358354581317136,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 1.0001558319986226e-05,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9937983824999652,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.0004418543539941311,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 26901,
+        "max_coordinate": {
+          "parameter": "model.layers.0.mlp.up_proj.weight",
+          "index": 2325
+        }
+      },
+      "updates": {
+        "count": 98304,
+        "side_a_norm": {
+          "value": 0.29539714552929375,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 0.2952863006262135,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.11999276061062908,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 0.0003827096827135069,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.917466525113753,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.00244140625,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 16577,
+        "max_coordinate": {
+          "parameter": "model.layers.0.mlp.gate_proj.weight",
+          "index": 193
+        }
+      },
+      "target-scores": {
+        "target_count": 6,
+        "side_a_nll_nat_per_token": 2.4091874758402505,
+        "side_b_nll_nat_per_token": 2.4062337055802345,
+        "nll_abs_diff_nat_per_token": 0.0029537702600159754,
+        "mae_nat": 0.05639946709076563,
+        "p99_nat": 0.12635895013809206,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.12841129302978516,
+        "max_coordinate": {
+          "sample": "1",
+          "position": 23,
+          "token": 74
+        }
+      }
+    },
+    "archive_sha256": "d8d54551bb4a3d673732a650aab6b2238f8da01fc3e2ca37893114d9e9371c12"
+  }
+]

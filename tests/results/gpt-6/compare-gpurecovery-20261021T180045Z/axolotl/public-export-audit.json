@@ -1,0 +1,47 @@
+{
+  "archives": [
+    {
+      "archive": "axolotl-pretrained-bf16-rank-0.zip",
+      "sha256": "15197b1bcf6245ba64e45f82b2dd1c4903d6fc7271388c7092de4cf74657d007",
+      "bytes": 24136308,
+      "files": 62,
+      "literal_replacements": 95,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "axolotl-pretrained-fp32-rank-0.zip",
+      "sha256": "3bc39261f4cebf425fe12ae2648749e0482fe1a95c38602ac528893c24de197e",
+      "bytes": 33761555,
+      "files": 62,
+      "literal_replacements": 95,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "axolotl-tiny-bf16-rank-0.zip",
+      "sha256": "8e360af05100fb3d4a7d908713ecee0473725e2aaa8c520fc10f436edee1fd33",
+      "bytes": 10889862,
+      "files": 62,
+      "literal_replacements": 95,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "axolotl-tiny-fp32-rank-0.zip",
+      "sha256": "ea674f5bb920eafe534e179f36323c6b2ba7e6e75867ae1b6e9bddf0a69b7502",
+      "bytes": 18758339,
+      "files": 62,
+      "literal_replacements": 95,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    }
+  ],
+  "summary_redacted": true,
+  "pickle_deserialized": false,
+  "numeric_files_modified": false
+}

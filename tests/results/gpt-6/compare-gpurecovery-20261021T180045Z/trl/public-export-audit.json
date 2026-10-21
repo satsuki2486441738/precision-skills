@@ -1,0 +1,47 @@
+{
+  "archives": [
+    {
+      "archive": "trl-pretrained-bf16-rank-0.zip",
+      "sha256": "aa075d8ff12111c5d6745433d2668fdfda2987ff4e02f62d9042866a2a97036a",
+      "bytes": 61912804,
+      "files": 60,
+      "literal_replacements": 84,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "trl-pretrained-fp32-rank-0.zip",
+      "sha256": "3f9aa3227e238334489b7d6d56448f46df92dc38a45c867803dbb68da44ae454",
+      "bytes": 79976558,
+      "files": 60,
+      "literal_replacements": 84,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "trl-tiny-bf16-rank-0.zip",
+      "sha256": "1c9725ec901d132d33e19bcd0a562b584c0a585d3e3545c7dda27578208f86ed",
+      "bytes": 17441862,
+      "files": 60,
+      "literal_replacements": 84,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    },
+    {
+      "archive": "trl-tiny-fp32-rank-0.zip",
+      "sha256": "73b529f5466b2683270ec04416ebc01de9a1ca03e733fc6f982e70536e564d4f",
+      "bytes": 18760970,
+      "files": 60,
+      "literal_replacements": 84,
+      "protected_numeric_files_byte_identical": 5,
+      "hostname_absent_from_all_bytes": true,
+      "private_roots_absent_from_text": true
+    }
+  ],
+  "summary_redacted": true,
+  "pickle_deserialized": false,
+  "numeric_files_modified": false
+}

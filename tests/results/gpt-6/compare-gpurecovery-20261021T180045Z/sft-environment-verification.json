@@ -1,0 +1,10 @@
+{
+  "archive": "sft-environment-and-native-logs.zip",
+  "sha256": "988ada38cc2ae2b7652a9b60fa7fa5e46a7695cd578f1a21c0f33fb7d0e2a0f3",
+  "bytes": 235360,
+  "files": 244,
+  "literal_replacements": 1456,
+  "hostname_and_private_roots_absent": true,
+  "all_exported_hashes_checked": true,
+  "native_cases_not_added_by_environment_evidence": true
+}

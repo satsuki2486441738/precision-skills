@@ -1,0 +1,37 @@
+{
+  "status": "independent_reference_and_comparison_complete",
+  "reference_device": "cpu",
+  "reference_dtype": "float32",
+  "native_device": "NVIDIA GeForce RTX 5060",
+  "native_dtype": "float32",
+  "reference_complete_before_native_output_arrays_read": true,
+  "reference_complete_time": 1792608243.967667,
+  "initial_values_exact_equal": true,
+  "loss": {
+    "reference": 5.960464477539063e-08,
+    "native": 2.9802322387695312e-08,
+    "abs_error": 2.9802322387695312e-08
+  },
+  "full_preclip_norm": {
+    "reference_fp64": 5.023185091887173,
+    "native_fp64": 5.0231835896535575,
+    "native_returned": 5.023183822631836
+  },
+  "loss_reduction": "seq-mean-token-mean",
+  "reward_formula_independently_checked": true,
+  "reference_optimizer_scope": "declared flattened coordinates; elementwise AdamW after full model backward and clipping",
+  "coverage": {
+    "trajectories": 2,
+    "groups": 1,
+    "actions": 8,
+    "sampled_parameter_count": 12,
+    "sampled_elements": 98304,
+    "full_model_elements": 19709312,
+    "full_model_parameter_count": 24,
+    "native_optimizer_full_parameter_elements": 19709312,
+    "selection": "first 12 native optimizer coordinates; flattened [0,min(8192,numel)) each",
+    "optimizer_events": 1
+  },
+  "reward_quality_claimed": false,
+  "thresholds": null
+}

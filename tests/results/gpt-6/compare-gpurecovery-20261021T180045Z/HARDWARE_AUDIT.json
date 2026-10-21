@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-10-21T19:16:12.604489+00:00",
+  "method": "nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader",
+  "hardware": {
+    "name": "NVIDIA GeForce RTX 5060",
+    "memory_mib": 8151,
+    "driver_version": "595.95",
+    "environment": "WSL Ubuntu-24.04 on the local Windows host"
+  },
+  "scope": "Physical GPU identity of the same host used for the local canonical CUDA cases. Axolotl completion receipts record CUDA device placement but omit the marketing GPU model; this host query supplies that field.",
+  "private_identifiers_omitted": [
+    "hostname",
+    "GPU UUID",
+    "host IP"
+  ],
+  "numerical_acceptance": null
+}

@@ -1,0 +1,10 @@
+{
+  "status": "selected_private_literals_absent",
+  "checked": [
+    "hostname",
+    "private_home_prefix",
+    "private_repository_mount_prefix"
+  ],
+  "binary_arrays_untransformed": true,
+  "findings": []
+}

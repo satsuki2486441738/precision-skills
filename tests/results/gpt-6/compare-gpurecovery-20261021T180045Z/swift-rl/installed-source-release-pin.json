@@ -1,0 +1,3241 @@
+{
+  "framework": "official modelscope/ms-swift",
+  "installed_version": "4.6.0",
+  "official_repository": "https://github.com/modelscope/ms-swift",
+  "official_release_tag": "v4.6.0",
+  "official_git_revision": "ad818a2cdfafaf4305ac40c4acd892a211978bc2",
+  "comparison": "all installed Python source files versus immutable official Git release blobs, normalizing CRLF to LF on both sides",
+  "matched_files": 538,
+  "different_files": [],
+  "installed_files_absent_from_pin": [],
+  "files": [
+    {
+      "path": "swift/__init__.py",
+      "installed_lf_sha256": "90b0694c0baa4c61860c0a33845aa80f45e408993e9bca3fdf4f1b982677bfd8",
+      "official_git_blob_lf_sha256": "90b0694c0baa4c61860c0a33845aa80f45e408993e9bca3fdf4f1b982677bfd8",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/__init__.py",
+      "installed_lf_sha256": "df3b3b3bba58a57e4d401017c0b17183855c8c6f3f6365904cecdf1c61efa5de",
+      "official_git_blob_lf_sha256": "df3b3b3bba58a57e4d401017c0b17183855c8c6f3f6365904cecdf1c61efa5de",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/base.py",
+      "installed_lf_sha256": "90fe43f5d650fa29df1728f014e510e69a33a2e3407e4d33392da7d53090fa9f",
+      "official_git_blob_lf_sha256": "90fe43f5d650fa29df1728f014e510e69a33a2e3407e4d33392da7d53090fa9f",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/deepseek_v3_1.py",
+      "installed_lf_sha256": "5be8b0f21da15787d074af304d65034d26da0a7d5c6c1b9ab40e5242b83fc803",
+      "official_git_blob_lf_sha256": "5be8b0f21da15787d074af304d65034d26da0a7d5c6c1b9ab40e5242b83fc803",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/deepseek_v4.py",
+      "installed_lf_sha256": "92607100c5edeb81bfdfff2dfee32baf7c5a8aae150a55ce1363265ffbef23c8",
+      "official_git_blob_lf_sha256": "92607100c5edeb81bfdfff2dfee32baf7c5a8aae150a55ce1363265ffbef23c8",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/deepseek_v41.py",
+      "installed_lf_sha256": "1bf793281a764ab0d3f1722ad5a5e88dc5407566f915baae04547aeee6950bac",
+      "official_git_blob_lf_sha256": "1bf793281a764ab0d3f1722ad5a5e88dc5407566f915baae04547aeee6950bac",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/extra.py",
+      "installed_lf_sha256": "1d606ed8b3b39bc1218df34e2ac452c176b4ed77f6dd0f3e776dadb2b3baf177",
+      "official_git_blob_lf_sha256": "1d606ed8b3b39bc1218df34e2ac452c176b4ed77f6dd0f3e776dadb2b3baf177",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/gemma4.py",
+      "installed_lf_sha256": "bd31b8261fa44bcde19fed240c64b231423a5963dc99c26081e7784c19aafb9e",
+      "official_git_blob_lf_sha256": "bd31b8261fa44bcde19fed240c64b231423a5963dc99c26081e7784c19aafb9e",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/glm4.py",
+      "installed_lf_sha256": "38346476501bbe823a66a82109521361326931fa439bd801f4535e626dd74125",
+      "official_git_blob_lf_sha256": "38346476501bbe823a66a82109521361326931fa439bd801f4535e626dd74125",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/hermes.py",
+      "installed_lf_sha256": "15456ad8224a98bc372a57605d6f7f9435b811243978e59831d953941bdc02d8",
+      "official_git_blob_lf_sha256": "15456ad8224a98bc372a57605d6f7f9435b811243978e59831d953941bdc02d8",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/hy_v3.py",
+      "installed_lf_sha256": "bebb69faeff2d369efe0ff5294acdda5519911017a2ff61bdcb2bf7065381a22",
+      "official_git_blob_lf_sha256": "bebb69faeff2d369efe0ff5294acdda5519911017a2ff61bdcb2bf7065381a22",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/kimi_k25.py",
+      "installed_lf_sha256": "151fa7addf80d4cc80a7f162bfac3944f38b6019705875dea96669ceebc7f79a",
+      "official_git_blob_lf_sha256": "151fa7addf80d4cc80a7f162bfac3944f38b6019705875dea96669ceebc7f79a",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/kimi_k3.py",
+      "installed_lf_sha256": "b05d2d57ae073c596f99e17cab4604b0acaf0857b1363cbd46bd30fdf639e600",
+      "official_git_blob_lf_sha256": "b05d2d57ae073c596f99e17cab4604b0acaf0857b1363cbd46bd30fdf639e600",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/ling3.py",
+      "installed_lf_sha256": "70a8f24fd024eead8e3f8ecdbc5b4ac292d9f4d8042c98b439ca130a21d1f119",
+      "official_git_blob_lf_sha256": "70a8f24fd024eead8e3f8ecdbc5b4ac292d9f4d8042c98b439ca130a21d1f119",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/llama.py",
+      "installed_lf_sha256": "66cd509f98965a86f8550dbb52e8e568ef5453fe316d7e93ce2a0ca0772a7920",
+      "official_git_blob_lf_sha256": "66cd509f98965a86f8550dbb52e8e568ef5453fe316d7e93ce2a0ca0772a7920",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/mapping.py",
+      "installed_lf_sha256": "583b7c1fc8c89f6ce1754ae9a6dc3253a14b80d73f939984c56f52fcfa394bc6",
+      "official_git_blob_lf_sha256": "583b7c1fc8c89f6ce1754ae9a6dc3253a14b80d73f939984c56f52fcfa394bc6",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/minicpm5.py",
+      "installed_lf_sha256": "e7080432fe9dc86aa0e49ad89ac17224a8eacf13e61bbe2f55854b81fc1b3fc0",
+      "official_git_blob_lf_sha256": "e7080432fe9dc86aa0e49ad89ac17224a8eacf13e61bbe2f55854b81fc1b3fc0",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/minimax_m2.py",
+      "installed_lf_sha256": "2b7470b578b74557895530a25457db2d5ebc2d75b1172ec32ac15d1bbebe028d",
+      "official_git_blob_lf_sha256": "2b7470b578b74557895530a25457db2d5ebc2d75b1172ec32ac15d1bbebe028d",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/minimax_m3.py",
+      "installed_lf_sha256": "6676034a2201e0a1aa31583e68a7e7b55c6d52ff141244e513bb4d45c28b697f",
+      "official_git_blob_lf_sha256": "6676034a2201e0a1aa31583e68a7e7b55c6d52ff141244e513bb4d45c28b697f",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/mistral.py",
+      "installed_lf_sha256": "c85c8e840a0ad0b4543ae233c07e706da945e8df94b70803100f85b44fb8ffad",
+      "official_git_blob_lf_sha256": "c85c8e840a0ad0b4543ae233c07e706da945e8df94b70803100f85b44fb8ffad",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/qwen.py",
+      "installed_lf_sha256": "97f09773483c004087f548f7b15126ea9e0c8a54be68165a8a884d5d97ca5948",
+      "official_git_blob_lf_sha256": "97f09773483c004087f548f7b15126ea9e0c8a54be68165a8a884d5d97ca5948",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/qwen3_coder.py",
+      "installed_lf_sha256": "4c9c7a735e9265d37b6cf38eecc073d407cda51eab542a4d1c53b2bfb479f6ec",
+      "official_git_blob_lf_sha256": "4c9c7a735e9265d37b6cf38eecc073d407cda51eab542a4d1c53b2bfb479f6ec",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/react.py",
+      "installed_lf_sha256": "c0965aa9e593bc2e1b8612ce7fe8636bfdfc06942924d762ff18ddbd4a8f1e70",
+      "official_git_blob_lf_sha256": "c0965aa9e593bc2e1b8612ce7fe8636bfdfc06942924d762ff18ddbd4a8f1e70",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/seed_oss.py",
+      "installed_lf_sha256": "b7e895694b547c3a3867fb9bd12816e1f0a14d83028ad1fa5f1157d487facdae",
+      "official_git_blob_lf_sha256": "b7e895694b547c3a3867fb9bd12816e1f0a14d83028ad1fa5f1157d487facdae",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/spark.py",
+      "installed_lf_sha256": "7e51b4c620f7cc9c471007e9da1ef87b69e3cfd797baea7f48d3a24d21ed5daf",
+      "official_git_blob_lf_sha256": "7e51b4c620f7cc9c471007e9da1ef87b69e3cfd797baea7f48d3a24d21ed5daf",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/toolbench.py",
+      "installed_lf_sha256": "7073321481fe6d4b7761675c96e266a8b869b20131bf7c54594ac402b1ce85e8",
+      "official_git_blob_lf_sha256": "7073321481fe6d4b7761675c96e266a8b869b20131bf7c54594ac402b1ce85e8",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/xing4_0.py",
+      "installed_lf_sha256": "11f7eb0d19014172349f3b3018537e87bfaeb93920af1b0aa3a8c115ff8f1c1d",
+      "official_git_blob_lf_sha256": "11f7eb0d19014172349f3b3018537e87bfaeb93920af1b0aa3a8c115ff8f1c1d",
+      "equal": true
+    },
+    {
+      "path": "swift/agent_template/youtu.py",
+      "installed_lf_sha256": "c0fe9d6ea26493d88142746c94e4ac0fd263d90e91e626fc6c8170bff2e64f4a",
+      "official_git_blob_lf_sha256": "c0fe9d6ea26493d88142746c94e4ac0fd263d90e91e626fc6c8170bff2e64f4a",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/__init__.py",
+      "installed_lf_sha256": "36ae224cef3f1f2b1dfe7722489502a6b60eb175af9210afe4a82d04cf8dec0a",
+      "official_git_blob_lf_sha256": "36ae224cef3f1f2b1dfe7722489502a6b60eb175af9210afe4a82d04cf8dec0a",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/app_args.py",
+      "installed_lf_sha256": "a9bbfc1900d8777b942c6775584d9423146916cff92190b3c147f11dc958b5c0",
+      "official_git_blob_lf_sha256": "a9bbfc1900d8777b942c6775584d9423146916cff92190b3c147f11dc958b5c0",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/base_args/__init__.py",
+      "installed_lf_sha256": "aa033961b8967ef7df49ae8720638f9563e204d63d81ad2afdef615c0df03c33",
+      "official_git_blob_lf_sha256": "aa033961b8967ef7df49ae8720638f9563e204d63d81ad2afdef615c0df03c33",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/base_args/base_args.py",
+      "installed_lf_sha256": "b002a504d5052cb32612d2cb79baa29faf08d63781fd8633486c80d08bc50545",
+      "official_git_blob_lf_sha256": "b002a504d5052cb32612d2cb79baa29faf08d63781fd8633486c80d08bc50545",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/base_args/data_args.py",
+      "installed_lf_sha256": "2aa47dbd253320c193b22edb318580ee531261ef42ba5d51123ccef0a3dfde82",
+      "official_git_blob_lf_sha256": "2aa47dbd253320c193b22edb318580ee531261ef42ba5d51123ccef0a3dfde82",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/base_args/generation_args.py",
+      "installed_lf_sha256": "73dc03da55279e5681b372bd3007b6ddcd051c763984aef3512e5e5a3ddfba53",
+      "official_git_blob_lf_sha256": "73dc03da55279e5681b372bd3007b6ddcd051c763984aef3512e5e5a3ddfba53",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/base_args/model_args.py",
+      "installed_lf_sha256": "0375d8c463667e1175dc0786563d344aa83c90c510e1aa4498d5b7e9639d3208",
+      "official_git_blob_lf_sha256": "0375d8c463667e1175dc0786563d344aa83c90c510e1aa4498d5b7e9639d3208",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/base_args/quant_args.py",
+      "installed_lf_sha256": "625796f9dad86a6eb6a4e02a8f0ababc612aac0f0f503c76a8b64f1ef49dee1f",
+      "official_git_blob_lf_sha256": "625796f9dad86a6eb6a4e02a8f0ababc612aac0f0f503c76a8b64f1ef49dee1f",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/base_args/template_args.py",
+      "installed_lf_sha256": "1817305008508d02c0f5e9e603992c261ce54ee7c8c2fbbe4498b4cbc1e4e0e9",
+      "official_git_blob_lf_sha256": "1817305008508d02c0f5e9e603992c261ce54ee7c8c2fbbe4498b4cbc1e4e0e9",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/deploy_args.py",
+      "installed_lf_sha256": "778909afdd7fe06372553c1175aa5f66520b3b404b25eb49a7f9d73ff31ffb60",
+      "official_git_blob_lf_sha256": "778909afdd7fe06372553c1175aa5f66520b3b404b25eb49a7f9d73ff31ffb60",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/eval_args.py",
+      "installed_lf_sha256": "f298ba2c974f0365e1b80b5700b6a210bff2c41a92bdcd3c29dc4f5a75fad59b",
+      "official_git_blob_lf_sha256": "f298ba2c974f0365e1b80b5700b6a210bff2c41a92bdcd3c29dc4f5a75fad59b",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/export_args.py",
+      "installed_lf_sha256": "9b5d71f7f08ad6f4f2ce47fdf26be70ae061cee2ffad0c84d266c4dd878e92e7",
+      "official_git_blob_lf_sha256": "9b5d71f7f08ad6f4f2ce47fdf26be70ae061cee2ffad0c84d266c4dd878e92e7",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/infer_args.py",
+      "installed_lf_sha256": "dc4dfda4af80e80ed375c09c11347a2ddfa7ed493d8b3fe3e974fca88c7b12ac",
+      "official_git_blob_lf_sha256": "dc4dfda4af80e80ed375c09c11347a2ddfa7ed493d8b3fe3e974fca88c7b12ac",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/merge_args.py",
+      "installed_lf_sha256": "8d265634d38591dcbca8efb16672fee16e74dc2cee7d1c72bd795e8d7bc08b7c",
+      "official_git_blob_lf_sha256": "8d265634d38591dcbca8efb16672fee16e74dc2cee7d1c72bd795e8d7bc08b7c",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/pretrain_args.py",
+      "installed_lf_sha256": "530a744dabbe8fff3443151965d7260e4a2c7bf1c7ff9a3af57f33fed7602ef5",
+      "official_git_blob_lf_sha256": "530a744dabbe8fff3443151965d7260e4a2c7bf1c7ff9a3af57f33fed7602ef5",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/rlhf_args.py",
+      "installed_lf_sha256": "398460c030da856dd962d7274232b7c9082c207defc5bf84f91aceeebf06b47b",
+      "official_git_blob_lf_sha256": "398460c030da856dd962d7274232b7c9082c207defc5bf84f91aceeebf06b47b",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/sampling_args.py",
+      "installed_lf_sha256": "c1cced2ae9f8b9b065bf44714337ac5710a54ac6be5cda6091615fa9a50b4400",
+      "official_git_blob_lf_sha256": "c1cced2ae9f8b9b065bf44714337ac5710a54ac6be5cda6091615fa9a50b4400",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/sft_args.py",
+      "installed_lf_sha256": "93e01284e6a550a2103df54811a0d335fdea8292ef1e8bff341dc12dc929d769",
+      "official_git_blob_lf_sha256": "93e01284e6a550a2103df54811a0d335fdea8292ef1e8bff341dc12dc929d769",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/tuner_args.py",
+      "installed_lf_sha256": "e14e8c9928b1199efaf1a05e1cf44d1d77b7b2f472fcdf3f4a229cca2d1c2cc9",
+      "official_git_blob_lf_sha256": "e14e8c9928b1199efaf1a05e1cf44d1d77b7b2f472fcdf3f4a229cca2d1c2cc9",
+      "equal": true
+    },
+    {
+      "path": "swift/arguments/webui_args.py",
+      "installed_lf_sha256": "702b9b54415961a4656504d5312fcec55ec7caad112b1599f6467242c1c19b0e",
+      "official_git_blob_lf_sha256": "702b9b54415961a4656504d5312fcec55ec7caad112b1599f6467242c1c19b0e",
+      "equal": true
+    },
+    {
+      "path": "swift/callbacks/__init__.py",
+      "installed_lf_sha256": "1d19f3247563f7c25ec91d754f7df3cf66eb1c3acb5422aa19fac94b38247070",
+      "official_git_blob_lf_sha256": "1d19f3247563f7c25ec91d754f7df3cf66eb1c3acb5422aa19fac94b38247070",
+      "equal": true
+    },
+    {
+      "path": "swift/callbacks/activation_cpu_offload.py",
+      "installed_lf_sha256": "7ac81bb8ad244d1b9580b14ef52334fb868652108b8ae5d884861c2027297a22",
+      "official_git_blob_lf_sha256": "7ac81bb8ad244d1b9580b14ef52334fb868652108b8ae5d884861c2027297a22",
+      "equal": true
+    },
+    {
+      "path": "swift/callbacks/adalora.py",
+      "installed_lf_sha256": "1a53162ed959e49d5387ce549a09245fa9447e74229dcbc3f2dff98bc04f3f19",
+      "official_git_blob_lf_sha256": "1a53162ed959e49d5387ce549a09245fa9447e74229dcbc3f2dff98bc04f3f19",
+      "equal": true
+    },
+    {
+      "path": "swift/callbacks/base.py",
+      "installed_lf_sha256": "9ef650b461b7442661d031ffdcc99a844d8eca629f3ce732b729ca503219580f",
+      "official_git_blob_lf_sha256": "9ef650b461b7442661d031ffdcc99a844d8eca629f3ce732b729ca503219580f",
+      "equal": true
+    },
+    {
+      "path": "swift/callbacks/deepspeed_elastic.py",
+      "installed_lf_sha256": "58c89747a9e0f5950a3ee2c8368184cf028044453e7c6e601d2e469bf3b3d7fb",
+      "official_git_blob_lf_sha256": "58c89747a9e0f5950a3ee2c8368184cf028044453e7c6e601d2e469bf3b3d7fb",
+      "equal": true
+    },
+    {
+      "path": "swift/callbacks/early_stop.py",
+      "installed_lf_sha256": "bf64454942415ff3668e318f37426bbbca1a45ca7a68d1b470bee7ed0a0ad308",
+      "official_git_blob_lf_sha256": "bf64454942415ff3668e318f37426bbbca1a45ca7a68d1b470bee7ed0a0ad308",
+      "equal": true
+    },
+    {
+      "path": "swift/callbacks/lisa.py",
+      "installed_lf_sha256": "08baea5b9c243626461a2a7237563ce997248885be1a5258cecc9c9e70ea43e5",
+      "official_git_blob_lf_sha256": "08baea5b9c243626461a2a7237563ce997248885be1a5258cecc9c9e70ea43e5",
+      "equal": true
+    },
+    {
+      "path": "swift/callbacks/mapping.py",
+      "installed_lf_sha256": "6ccad9a4e04defae30e36b54d138c6e2335256d69cb2b1c1ab60c23024c27553",
+      "official_git_blob_lf_sha256": "6ccad9a4e04defae30e36b54d138c6e2335256d69cb2b1c1ab60c23024c27553",
+      "equal": true
+    },
+    {
+      "path": "swift/callbacks/perf_log.py",
+      "installed_lf_sha256": "93079630b3c3dedea93c14579e014a2090d145f16cd047744ede8fb678ffd552",
+      "official_git_blob_lf_sha256": "93079630b3c3dedea93c14579e014a2090d145f16cd047744ede8fb678ffd552",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/__init__.py",
+      "installed_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "official_git_blob_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/_megatron/__init__.py",
+      "installed_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "official_git_blob_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/_megatron/export.py",
+      "installed_lf_sha256": "310378154288d59302d30c8ecefbf0bdba4281732f2e8825124e2ed258da7899",
+      "official_git_blob_lf_sha256": "310378154288d59302d30c8ecefbf0bdba4281732f2e8825124e2ed258da7899",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/_megatron/main.py",
+      "installed_lf_sha256": "e1a89aee02857b246054b9ae232804b99670fa54545c2d9f22e78153bbc0d55f",
+      "official_git_blob_lf_sha256": "e1a89aee02857b246054b9ae232804b99670fa54545c2d9f22e78153bbc0d55f",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/_megatron/pt.py",
+      "installed_lf_sha256": "9f98701a4bfc02355b938ccee831994cb95b84338cec1af630d5f47454d681ca",
+      "official_git_blob_lf_sha256": "9f98701a4bfc02355b938ccee831994cb95b84338cec1af630d5f47454d681ca",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/_megatron/rlhf.py",
+      "installed_lf_sha256": "08dffeb4b965da5be4796734da9872227e39d5aae05d9feee6d6909ec9390d55",
+      "official_git_blob_lf_sha256": "08dffeb4b965da5be4796734da9872227e39d5aae05d9feee6d6909ec9390d55",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/_megatron/sft.py",
+      "installed_lf_sha256": "b9f444130ac1f6d7f21ca11adc6453e87014c48a61458dadbe612fb88450e7ae",
+      "official_git_blob_lf_sha256": "b9f444130ac1f6d7f21ca11adc6453e87014c48a61458dadbe612fb88450e7ae",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/app.py",
+      "installed_lf_sha256": "a76d661052ae0e23f8f55bb7f0236ce165d18b569e4c92fa77c1d00705e5926f",
+      "official_git_blob_lf_sha256": "a76d661052ae0e23f8f55bb7f0236ce165d18b569e4c92fa77c1d00705e5926f",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/deploy.py",
+      "installed_lf_sha256": "02744690cc2e23703157f3821f0ba99acbe767e5d727ee6cab6d557305bd03c5",
+      "official_git_blob_lf_sha256": "02744690cc2e23703157f3821f0ba99acbe767e5d727ee6cab6d557305bd03c5",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/eval.py",
+      "installed_lf_sha256": "df56a22ee54e600b1d4e880ef1b3b635d0a6425f27c0b3bba94c83a95946ed8c",
+      "official_git_blob_lf_sha256": "df56a22ee54e600b1d4e880ef1b3b635d0a6425f27c0b3bba94c83a95946ed8c",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/export.py",
+      "installed_lf_sha256": "db6d422c31b5afb2f46ad9033cc394fc81712809548e0e66795d1cebb8c4b23e",
+      "official_git_blob_lf_sha256": "db6d422c31b5afb2f46ad9033cc394fc81712809548e0e66795d1cebb8c4b23e",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/infer.py",
+      "installed_lf_sha256": "b98698ad3910e21cb487a56554f75f0564ae7a6b3a635559a07865f3688d6c29",
+      "official_git_blob_lf_sha256": "b98698ad3910e21cb487a56554f75f0564ae7a6b3a635559a07865f3688d6c29",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/main.py",
+      "installed_lf_sha256": "fcc9f982a76102f792139c65de3b211b4af2c633801e7f0807996ac77dfcba88",
+      "official_git_blob_lf_sha256": "fcc9f982a76102f792139c65de3b211b4af2c633801e7f0807996ac77dfcba88",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/merge_lora.py",
+      "installed_lf_sha256": "a895b208d15982dddf09414d304cb0deea6a4abb78b46d846c5187886913b221",
+      "official_git_blob_lf_sha256": "a895b208d15982dddf09414d304cb0deea6a4abb78b46d846c5187886913b221",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/pt.py",
+      "installed_lf_sha256": "734b823cdfa1f4361d85473f792d67a9a15039f306aaae6d297d40787193db69",
+      "official_git_blob_lf_sha256": "734b823cdfa1f4361d85473f792d67a9a15039f306aaae6d297d40787193db69",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/rlhf.py",
+      "installed_lf_sha256": "f68c8b93ff4bfd08374fa2bca6efadcfe23e7beec13db162953275138fa56d65",
+      "official_git_blob_lf_sha256": "f68c8b93ff4bfd08374fa2bca6efadcfe23e7beec13db162953275138fa56d65",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/rollout.py",
+      "installed_lf_sha256": "725608b786ef21ed26ddc8872653291e8d6744638149c4ca6059d0b4faeb3f2c",
+      "official_git_blob_lf_sha256": "725608b786ef21ed26ddc8872653291e8d6744638149c4ca6059d0b4faeb3f2c",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/sample.py",
+      "installed_lf_sha256": "3c8ab9b1b0f512f862de206fb6cf3b97ebae54ffcf696b25cb9c33c4a87efda3",
+      "official_git_blob_lf_sha256": "3c8ab9b1b0f512f862de206fb6cf3b97ebae54ffcf696b25cb9c33c4a87efda3",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/sft.py",
+      "installed_lf_sha256": "97162d10eb5b82cdfadf1ec30a0eac50cc0bc9646140b8342806df9e8e6e07f0",
+      "official_git_blob_lf_sha256": "97162d10eb5b82cdfadf1ec30a0eac50cc0bc9646140b8342806df9e8e6e07f0",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/utils.py",
+      "installed_lf_sha256": "26f62725dcaadb6626ad15c9c01fae64e447b820822e19c89cf788061467eda8",
+      "official_git_blob_lf_sha256": "26f62725dcaadb6626ad15c9c01fae64e447b820822e19c89cf788061467eda8",
+      "equal": true
+    },
+    {
+      "path": "swift/cli/web_ui.py",
+      "installed_lf_sha256": "c1ce092a819dbd10b92c89556cbde999dc50e435c46fcf05153c2a5a30cd8118",
+      "official_git_blob_lf_sha256": "c1ce092a819dbd10b92c89556cbde999dc50e435c46fcf05153c2a5a30cd8118",
+      "equal": true
+    },
+    {
+      "path": "swift/dataloader/__init__.py",
+      "installed_lf_sha256": "72b34c3db4c9102511e7b20bcdcd67cca6afdc4b8cc8bbcbaa67eebc5a4c5bc6",
+      "official_git_blob_lf_sha256": "72b34c3db4c9102511e7b20bcdcd67cca6afdc4b8cc8bbcbaa67eebc5a4c5bc6",
+      "equal": true
+    },
+    {
+      "path": "swift/dataloader/dispatcher.py",
+      "installed_lf_sha256": "0bf2a8947e82d765a743cf501dcae6f08d75bd72721004c0b3d5fee3f7e29d82",
+      "official_git_blob_lf_sha256": "0bf2a8947e82d765a743cf501dcae6f08d75bd72721004c0b3d5fee3f7e29d82",
+      "equal": true
+    },
+    {
+      "path": "swift/dataloader/shard.py",
+      "installed_lf_sha256": "06837a6008c6c69efa4de98a7f749733073ee99b11fa65b24b8ae27dce7ed946",
+      "official_git_blob_lf_sha256": "06837a6008c6c69efa4de98a7f749733073ee99b11fa65b24b8ae27dce7ed946",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/__init__.py",
+      "installed_lf_sha256": "ab243865ec1f44795f723a3cd26c86e4cc8aaabfc55227edd7a1d546d9834e07",
+      "official_git_blob_lf_sha256": "ab243865ec1f44795f723a3cd26c86e4cc8aaabfc55227edd7a1d546d9834e07",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/dataset/__init__.py",
+      "installed_lf_sha256": "0338d709df53622644ee1e4a4eb5fff65bd01b74abe65992efbbe78a53198341",
+      "official_git_blob_lf_sha256": "0338d709df53622644ee1e4a4eb5fff65bd01b74abe65992efbbe78a53198341",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/dataset/llm.py",
+      "installed_lf_sha256": "e2d629fd2993a313330806769eccdea28dfd52258d36da34e9588fc62e0f6a7d",
+      "official_git_blob_lf_sha256": "e2d629fd2993a313330806769eccdea28dfd52258d36da34e9588fc62e0f6a7d",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/dataset/mllm.py",
+      "installed_lf_sha256": "64adf01854f03e19f29690266209da78c474b6d0a1275c31072e3d287ff45506",
+      "official_git_blob_lf_sha256": "64adf01854f03e19f29690266209da78c474b6d0a1275c31072e3d287ff45506",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/dataset_meta.py",
+      "installed_lf_sha256": "e0869a4b370b377585afb801cd5e4121d5ad137cb34ca6c36971bc5b5dad2d7e",
+      "official_git_blob_lf_sha256": "e0869a4b370b377585afb801cd5e4121d5ad137cb34ca6c36971bc5b5dad2d7e",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/dataset_syntax.py",
+      "installed_lf_sha256": "51d1ffce707b17c84c5fb7cc544163706c4fd5946b2f6673e102f372522301ec",
+      "official_git_blob_lf_sha256": "51d1ffce707b17c84c5fb7cc544163706c4fd5946b2f6673e102f372522301ec",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/indexed_dataset.py",
+      "installed_lf_sha256": "87cd03d6975665fb9e93c9b2c86a6a838d1db07408cc00f183e9fe0342d1c2a6",
+      "official_git_blob_lf_sha256": "87cd03d6975665fb9e93c9b2c86a6a838d1db07408cc00f183e9fe0342d1c2a6",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/loader.py",
+      "installed_lf_sha256": "20f83a4e3c4cdb736e29a0848767b0f525a3280ab11ce2ff2b91955093fb1157",
+      "official_git_blob_lf_sha256": "20f83a4e3c4cdb736e29a0848767b0f525a3280ab11ce2ff2b91955093fb1157",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/media.py",
+      "installed_lf_sha256": "6e96f5ac1d8a7e842720a7d10aa39d6cb7f0c4f6959f5a22dcda1a6dbd99646a",
+      "official_git_blob_lf_sha256": "6e96f5ac1d8a7e842720a7d10aa39d6cb7f0c4f6959f5a22dcda1a6dbd99646a",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/packing.py",
+      "installed_lf_sha256": "922c36ce152dc1d7c95e10913ad88934036a09d448eae646524cdcb29a9b9308",
+      "official_git_blob_lf_sha256": "922c36ce152dc1d7c95e10913ad88934036a09d448eae646524cdcb29a9b9308",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/preprocessor/__init__.py",
+      "installed_lf_sha256": "d64ab1fc9300cb56abe836d699c8364377b5a5b0ea380b5351df964570595bf9",
+      "official_git_blob_lf_sha256": "d64ab1fc9300cb56abe836d699c8364377b5a5b0ea380b5351df964570595bf9",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/preprocessor/core.py",
+      "installed_lf_sha256": "40723715b269d2778e68df75973716b09aa253f297f9fa25f339d2115c07f14e",
+      "official_git_blob_lf_sha256": "40723715b269d2778e68df75973716b09aa253f297f9fa25f339d2115c07f14e",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/preprocessor/decision.py",
+      "installed_lf_sha256": "67942ec417dcb07aa9500fc3c0c548027c814334a1aeb99f9d04507678fbdc40",
+      "official_git_blob_lf_sha256": "67942ec417dcb07aa9500fc3c0c548027c814334a1aeb99f9d04507678fbdc40",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/preprocessor/extra.py",
+      "installed_lf_sha256": "5b1f08046d8678b727694ab9b1128dc65d7b7a8b93642e483a376b7128be0c36",
+      "official_git_blob_lf_sha256": "5b1f08046d8678b727694ab9b1128dc65d7b7a8b93642e483a376b7128be0c36",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/register.py",
+      "installed_lf_sha256": "cf794860f74e8ce584bf4581e52f1bf8ed3d8030b55baa5657bd07eba8a199d0",
+      "official_git_blob_lf_sha256": "cf794860f74e8ce584bf4581e52f1bf8ed3d8030b55baa5657bd07eba8a199d0",
+      "equal": true
+    },
+    {
+      "path": "swift/dataset/utils.py",
+      "installed_lf_sha256": "1ca1f36e738730e889b26049c2bd361bf0c00ff03cedcccc3deb8f2e3f1ec8f0",
+      "official_git_blob_lf_sha256": "1ca1f36e738730e889b26049c2bd361bf0c00ff03cedcccc3deb8f2e3f1ec8f0",
+      "equal": true
+    },
+    {
+      "path": "swift/hub/__init__.py",
+      "installed_lf_sha256": "ca01c407a33cf8801d5b72c6eeb523e7486f18f7410dff716f168d2d10fbaca8",
+      "official_git_blob_lf_sha256": "ca01c407a33cf8801d5b72c6eeb523e7486f18f7410dff716f168d2d10fbaca8",
+      "equal": true
+    },
+    {
+      "path": "swift/hub/constant.py",
+      "installed_lf_sha256": "725a5fd6502648cff2a485ddb7198a7fe0a868d86ee35648cbeff6d0b6009aa5",
+      "official_git_blob_lf_sha256": "725a5fd6502648cff2a485ddb7198a7fe0a868d86ee35648cbeff6d0b6009aa5",
+      "equal": true
+    },
+    {
+      "path": "swift/hub/hub.py",
+      "installed_lf_sha256": "6fab59e76f8919603b0bce9b87b43434986e1db076a00bb1efe73bdcc696d031",
+      "official_git_blob_lf_sha256": "6fab59e76f8919603b0bce9b87b43434986e1db076a00bb1efe73bdcc696d031",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/__init__.py",
+      "installed_lf_sha256": "cea0885e9a4b3329f8cb861a665c24c6476028d1ea3c316f3bc41b59e81a44fa",
+      "official_git_blob_lf_sha256": "cea0885e9a4b3329f8cb861a665c24c6476028d1ea3c316f3bc41b59e81a44fa",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/base.py",
+      "installed_lf_sha256": "9b5fad65aeebf8370123f8cf4677fc1b557ec3e466a51112169467212daf278d",
+      "official_git_blob_lf_sha256": "9b5fad65aeebf8370123f8cf4677fc1b557ec3e466a51112169467212daf278d",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/grpo_vllm_engine.py",
+      "installed_lf_sha256": "e73c57091db50e7d9f40a86fbf47bae4dce244277ccfdced51cad54b993db65b",
+      "official_git_blob_lf_sha256": "e73c57091db50e7d9f40a86fbf47bae4dce244277ccfdced51cad54b993db65b",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/infer_client.py",
+      "installed_lf_sha256": "594b697a90bb96603cfc432ae0f0b0214327ba0bb7653d575abbdbc3e4ac773f",
+      "official_git_blob_lf_sha256": "594b697a90bb96603cfc432ae0f0b0214327ba0bb7653d575abbdbc3e4ac773f",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/infer_engine.py",
+      "installed_lf_sha256": "533862e6afc4dbf9ec05565ca711ff6d03b4f8a241e12e8bd0c96b3dc7e5ef86",
+      "official_git_blob_lf_sha256": "533862e6afc4dbf9ec05565ca711ff6d03b4f8a241e12e8bd0c96b3dc7e5ef86",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/lmdeploy_engine.py",
+      "installed_lf_sha256": "842a24f7ac2aa185d6c7244ce2621d1b98145ad701468c1194db6f54c732b04c",
+      "official_git_blob_lf_sha256": "842a24f7ac2aa185d6c7244ce2621d1b98145ad701468c1194db6f54c732b04c",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/patch.py",
+      "installed_lf_sha256": "a6855fb48dc19b5fd748a12dfe32d98b39011b47d1bee513d8d888ebb431f376",
+      "official_git_blob_lf_sha256": "a6855fb48dc19b5fd748a12dfe32d98b39011b47d1bee513d8d888ebb431f376",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/protocol.py",
+      "installed_lf_sha256": "168abd3beb6c75079716d837241b61efffd191a4911a1669633d5528372ad5af",
+      "official_git_blob_lf_sha256": "168abd3beb6c75079716d837241b61efffd191a4911a1669633d5528372ad5af",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/sglang_engine.py",
+      "installed_lf_sha256": "d59578cbe1550f96eac275136fb06dd4ff545e8f7714162b9a24ffac07313a52",
+      "official_git_blob_lf_sha256": "d59578cbe1550f96eac275136fb06dd4ff545e8f7714162b9a24ffac07313a52",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/transformers_engine.py",
+      "installed_lf_sha256": "9181400251d2d6a599239db0f5c8c862c203bdfd8e5ff4724d991d667f81cbcc",
+      "official_git_blob_lf_sha256": "9181400251d2d6a599239db0f5c8c862c203bdfd8e5ff4724d991d667f81cbcc",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/utils.py",
+      "installed_lf_sha256": "5aa9dc2376402d4d6a0167c5f1253a6cd085e10b157a0f3f5a7b72c0f8607644",
+      "official_git_blob_lf_sha256": "5aa9dc2376402d4d6a0167c5f1253a6cd085e10b157a0f3f5a7b72c0f8607644",
+      "equal": true
+    },
+    {
+      "path": "swift/infer_engine/vllm_engine.py",
+      "installed_lf_sha256": "3bfc320ace5a59ca78684e8ed1427ebe401573737845afa213dc91f85efac23d",
+      "official_git_blob_lf_sha256": "3bfc320ace5a59ca78684e8ed1427ebe401573737845afa213dc91f85efac23d",
+      "equal": true
+    },
+    {
+      "path": "swift/loss/__init__.py",
+      "installed_lf_sha256": "f4beafe8b8afa372668fc2af1e3998053922fee62de555ab4b99e825575bf5d1",
+      "official_git_blob_lf_sha256": "f4beafe8b8afa372668fc2af1e3998053922fee62de555ab4b99e825575bf5d1",
+      "equal": true
+    },
+    {
+      "path": "swift/loss/base.py",
+      "installed_lf_sha256": "2923cbe4097095cadd345938c5550d31294d6b27b58d39c03cef63d7e6e7049d",
+      "official_git_blob_lf_sha256": "2923cbe4097095cadd345938c5550d31294d6b27b58d39c03cef63d7e6e7049d",
+      "equal": true
+    },
+    {
+      "path": "swift/loss/causal_lm.py",
+      "installed_lf_sha256": "d203543147b3e8518c298876eaec9cdcd08b4fe86b5914c7e4428fd012044e11",
+      "official_git_blob_lf_sha256": "d203543147b3e8518c298876eaec9cdcd08b4fe86b5914c7e4428fd012044e11",
+      "equal": true
+    },
+    {
+      "path": "swift/loss/decision.py",
+      "installed_lf_sha256": "4451e4f7dfe9fa56e24081ec6761019eacfd33480c7328979392b97ece7e19b3",
+      "official_git_blob_lf_sha256": "4451e4f7dfe9fa56e24081ec6761019eacfd33480c7328979392b97ece7e19b3",
+      "equal": true
+    },
+    {
+      "path": "swift/loss/embedding.py",
+      "installed_lf_sha256": "f071d5c2eb64826d2f79247f663361d03e275085759498316f2ee50c4094de33",
+      "official_git_blob_lf_sha256": "f071d5c2eb64826d2f79247f663361d03e275085759498316f2ee50c4094de33",
+      "equal": true
+    },
+    {
+      "path": "swift/loss/mapping.py",
+      "installed_lf_sha256": "f0eb65a631cc1b443f18954e6c73e4eb3a36ea823b4ac997b429e7e6e03c84d2",
+      "official_git_blob_lf_sha256": "f0eb65a631cc1b443f18954e6c73e4eb3a36ea823b4ac997b429e7e6e03c84d2",
+      "equal": true
+    },
+    {
+      "path": "swift/loss/reranker.py",
+      "installed_lf_sha256": "7701a7bf7120aa6a7941742701f85bddca3c54713a989cfb78716d24e6135792",
+      "official_git_blob_lf_sha256": "7701a7bf7120aa6a7941742701f85bddca3c54713a989cfb78716d24e6135792",
+      "equal": true
+    },
+    {
+      "path": "swift/loss_scale/__init__.py",
+      "installed_lf_sha256": "93223a7c39d5ed58d522d9803d191d32153450f418aecc15a3e75fdc369c6fb7",
+      "official_git_blob_lf_sha256": "93223a7c39d5ed58d522d9803d191d32153450f418aecc15a3e75fdc369c6fb7",
+      "equal": true
+    },
+    {
+      "path": "swift/loss_scale/agent.py",
+      "installed_lf_sha256": "e25d7e1ec9e15bc622ceabc326a6c803103da05428a8a99cb69c8e607a2a8f6b",
+      "official_git_blob_lf_sha256": "e25d7e1ec9e15bc622ceabc326a6c803103da05428a8a99cb69c8e607a2a8f6b",
+      "equal": true
+    },
+    {
+      "path": "swift/loss_scale/base.py",
+      "installed_lf_sha256": "a03a7015a563b3295849b4458ae7d6091f7ddba9c24bebf697388649a1e4e28f",
+      "official_git_blob_lf_sha256": "a03a7015a563b3295849b4458ae7d6091f7ddba9c24bebf697388649a1e4e28f",
+      "equal": true
+    },
+    {
+      "path": "swift/loss_scale/mapping.py",
+      "installed_lf_sha256": "424c61e45cddbca81d21788593ea20f7095981fc77fe74f64cdcb385994cd9e6",
+      "official_git_blob_lf_sha256": "424c61e45cddbca81d21788593ea20f7095981fc77fe74f64cdcb385994cd9e6",
+      "equal": true
+    },
+    {
+      "path": "swift/loss_scale/other.py",
+      "installed_lf_sha256": "4567aa3e957dfb0bd158176d80d2a459aa14ee9819c14f720380ccdf0b811d15",
+      "official_git_blob_lf_sha256": "4567aa3e957dfb0bd158176d80d2a459aa14ee9819c14f720380ccdf0b811d15",
+      "equal": true
+    },
+    {
+      "path": "swift/loss_scale/utils.py",
+      "installed_lf_sha256": "dc620b789951c69e060734f36f6742c329db88bcbd569dc90782808b5742b8a3",
+      "official_git_blob_lf_sha256": "dc620b789951c69e060734f36f6742c329db88bcbd569dc90782808b5742b8a3",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/__init__.py",
+      "installed_lf_sha256": "66a1fb6ebcae46e7d74a431a0facf8584b6f68eae19411964d36b1589a63030d",
+      "official_git_blob_lf_sha256": "66a1fb6ebcae46e7d74a431a0facf8584b6f68eae19411964d36b1589a63030d",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/arguments/__init__.py",
+      "installed_lf_sha256": "2f6408b2cfa96920b40ac93b9fa2f56e2d66a29220918e93aa38e12adcbfad4d",
+      "official_git_blob_lf_sha256": "2f6408b2cfa96920b40ac93b9fa2f56e2d66a29220918e93aa38e12adcbfad4d",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/arguments/export_args.py",
+      "installed_lf_sha256": "04573c9faa31939c2f9d936b16bfa0d1dd47555a744d03645e6f4614e3fb9904",
+      "official_git_blob_lf_sha256": "04573c9faa31939c2f9d936b16bfa0d1dd47555a744d03645e6f4614e3fb9904",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/arguments/megatron_args.py",
+      "installed_lf_sha256": "ee5b040132967d6520efea1ed2eeed92fb45fc1b552a734652d1935e5a979230",
+      "official_git_blob_lf_sha256": "ee5b040132967d6520efea1ed2eeed92fb45fc1b552a734652d1935e5a979230",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/arguments/megatron_base_args.py",
+      "installed_lf_sha256": "05cfa000b48e4e888bbcbc5d608f8cb8267f42146100db8c513f0667741d3ee4",
+      "official_git_blob_lf_sha256": "05cfa000b48e4e888bbcbc5d608f8cb8267f42146100db8c513f0667741d3ee4",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/arguments/pretrain_args.py",
+      "installed_lf_sha256": "4391d3df78201e4bf1822cf862afa02c6f978c4b0b46edafea15696cfb49691e",
+      "official_git_blob_lf_sha256": "4391d3df78201e4bf1822cf862afa02c6f978c4b0b46edafea15696cfb49691e",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/arguments/rlhf_args.py",
+      "installed_lf_sha256": "34f98091cf8aa10984046cd770b7c0b3175b99390b4fd465f445c9e4667b6e30",
+      "official_git_blob_lf_sha256": "34f98091cf8aa10984046cd770b7c0b3175b99390b4fd465f445c9e4667b6e30",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/arguments/sft_args.py",
+      "installed_lf_sha256": "692861645cff1fbd05ed22afbc58c09a6795343ce03f5d5d1b2383db3b1f3529",
+      "official_git_blob_lf_sha256": "692861645cff1fbd05ed22afbc58c09a6795343ce03f5d5d1b2383db3b1f3529",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/callbacks/__init__.py",
+      "installed_lf_sha256": "2eb6b59b72073e40dfd62e1ecf593c460cc9967ae8ffc1f36b981429cc4b68e8",
+      "official_git_blob_lf_sha256": "2eb6b59b72073e40dfd62e1ecf593c460cc9967ae8ffc1f36b981429cc4b68e8",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/callbacks/base.py",
+      "installed_lf_sha256": "5c6cb93814d0a7ec04578f5262d8aa0e885aa078426ead4307631f0bbae5feb0",
+      "official_git_blob_lf_sha256": "5c6cb93814d0a7ec04578f5262d8aa0e885aa078426ead4307631f0bbae5feb0",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/callbacks/default_flow.py",
+      "installed_lf_sha256": "4aefc7c799c8495a5127153c7d40e34f2a0393e013be9dbd8212ae84efab4c89",
+      "official_git_blob_lf_sha256": "4aefc7c799c8495a5127153c7d40e34f2a0393e013be9dbd8212ae84efab4c89",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/callbacks/mapping.py",
+      "installed_lf_sha256": "53f36ffaa52a5876fd71d178a8072ab1f5ee3614f95e6c6c4abfb5d19c770f5e",
+      "official_git_blob_lf_sha256": "53f36ffaa52a5876fd71d178a8072ab1f5ee3614f95e6c6c4abfb5d19c770f5e",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/callbacks/print.py",
+      "installed_lf_sha256": "35569cad043c6d94ea568252477069a650c2b6acae0d14b671ae6be4b8c80c18",
+      "official_git_blob_lf_sha256": "35569cad043c6d94ea568252477069a650c2b6acae0d14b671ae6be4b8c80c18",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/callbacks/swanlab.py",
+      "installed_lf_sha256": "e04a99c56d1f28ad2c9bd9c3e842d22345a2d3f8f1984093f6f10dcdb3d52c43",
+      "official_git_blob_lf_sha256": "e04a99c56d1f28ad2c9bd9c3e842d22345a2d3f8f1984093f6f10dcdb3d52c43",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/callbacks/tensorboard.py",
+      "installed_lf_sha256": "c906840061ad09403bd2506c0354539f23db2c71a3092bf79de5bdf2ed69aab5",
+      "official_git_blob_lf_sha256": "c906840061ad09403bd2506c0354539f23db2c71a3092bf79de5bdf2ed69aab5",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/callbacks/utils.py",
+      "installed_lf_sha256": "f573fcda28db59aa9ede1409e13d9c664fdfac4e67ba8e5c004f700aeb5d8725",
+      "official_git_blob_lf_sha256": "f573fcda28db59aa9ede1409e13d9c664fdfac4e67ba8e5c004f700aeb5d8725",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/callbacks/wandb.py",
+      "installed_lf_sha256": "bfd0cdcd015fb5fda879500ba52193fb319696382d689902073fd863f3095b07",
+      "official_git_blob_lf_sha256": "bfd0cdcd015fb5fda879500ba52193fb319696382d689902073fd863f3095b07",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/convert.py",
+      "installed_lf_sha256": "19bc91c65aae8cd0d2fbe653c232a70035041c6ae6874cf9313b2fe243f88184",
+      "official_git_blob_lf_sha256": "19bc91c65aae8cd0d2fbe653c232a70035041c6ae6874cf9313b2fe243f88184",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/init.py",
+      "installed_lf_sha256": "e4120296bf92a1c30544723ed27f3e002a2d65f57de8e5372fbe4e2c535a60c0",
+      "official_git_blob_lf_sha256": "e4120296bf92a1c30544723ed27f3e002a2d65f57de8e5372fbe4e2c535a60c0",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/model/__init__.py",
+      "installed_lf_sha256": "f52500742763406a3a65eececaf3284f9536e13b10579dcbf8a2cf7819f0f4c5",
+      "official_git_blob_lf_sha256": "f52500742763406a3a65eececaf3284f9536e13b10579dcbf8a2cf7819f0f4c5",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/model/utils.py",
+      "installed_lf_sha256": "68dc0dbb3e09ad0113358a29475729a8c028959025ea463ecf5d01b037c31717",
+      "official_git_blob_lf_sha256": "68dc0dbb3e09ad0113358a29475729a8c028959025ea463ecf5d01b037c31717",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/pipelines/__init__.py",
+      "installed_lf_sha256": "9e87da2017a92da3761a52224f6785b7023f779a46879379fdb207625d26e540",
+      "official_git_blob_lf_sha256": "9e87da2017a92da3761a52224f6785b7023f779a46879379fdb207625d26e540",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/pipelines/export/__init__.py",
+      "installed_lf_sha256": "4ca5708b705343a0823d34dd790a722697c086c6d26201594b460ac428bce8b4",
+      "official_git_blob_lf_sha256": "4ca5708b705343a0823d34dd790a722697c086c6d26201594b460ac428bce8b4",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/pipelines/export/export.py",
+      "installed_lf_sha256": "548c229d03778bd7c4bbebace0f760207d61ce2dcb32915494cd3a27a069f53f",
+      "official_git_blob_lf_sha256": "548c229d03778bd7c4bbebace0f760207d61ce2dcb32915494cd3a27a069f53f",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/pipelines/train/__init__.py",
+      "installed_lf_sha256": "50acbd9f743082e64e26f1ec4f0a22fcd184c50768bed61bef564c5f53961990",
+      "official_git_blob_lf_sha256": "50acbd9f743082e64e26f1ec4f0a22fcd184c50768bed61bef564c5f53961990",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/pipelines/train/pretrain.py",
+      "installed_lf_sha256": "6bd4f8e15259af7275605d325b055e14f1229284191f2cc0172a1042fa2c0f46",
+      "official_git_blob_lf_sha256": "6bd4f8e15259af7275605d325b055e14f1229284191f2cc0172a1042fa2c0f46",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/pipelines/train/rlhf.py",
+      "installed_lf_sha256": "90af0c2c14af09baf3c8d6dd4fc3558ae3c6c115c8c2d76cdda7f01196ce868e",
+      "official_git_blob_lf_sha256": "90af0c2c14af09baf3c8d6dd4fc3558ae3c6c115c8c2d76cdda7f01196ce868e",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/pipelines/train/sft.py",
+      "installed_lf_sha256": "0336a2dcc605b34b42f43814f5b7a72123e329f582e8c9eaaa99678fc884b661",
+      "official_git_blob_lf_sha256": "0336a2dcc605b34b42f43814f5b7a72123e329f582e8c9eaaa99678fc884b661",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/__init__.py",
+      "installed_lf_sha256": "75a41e4b335bfbca8f89f1ad1de20e05f6460211b1bc9388c63e95d3d9e1b149",
+      "official_git_blob_lf_sha256": "75a41e4b335bfbca8f89f1ad1de20e05f6460211b1bc9388c63e95d3d9e1b149",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/base.py",
+      "installed_lf_sha256": "a5e44bee709f375c7768f1eb864ec1cef04b06c7cb4f3dd9252b19be2427ccbd",
+      "official_git_blob_lf_sha256": "a5e44bee709f375c7768f1eb864ec1cef04b06c7cb4f3dd9252b19be2427ccbd",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/batch_sampler.py",
+      "installed_lf_sha256": "33037066b38b2ee02140272aa01d4262feabef30b2c358db23ec15da22829b7a",
+      "official_git_blob_lf_sha256": "33037066b38b2ee02140272aa01d4262feabef30b2c358db23ec15da22829b7a",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/dpo_trainer.py",
+      "installed_lf_sha256": "a08eabd92aa9707281ab7e0cdb809703c61a9c4f48f21d60d157327c2b2f80fb",
+      "official_git_blob_lf_sha256": "a08eabd92aa9707281ab7e0cdb809703c61a9c4f48f21d60d157327c2b2f80fb",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/embedding_trainer.py",
+      "installed_lf_sha256": "313c4b2c22f7f174eba5b5843eb4e3f7cd6c9dce50e324ea98527fb19c03fe4e",
+      "official_git_blob_lf_sha256": "313c4b2c22f7f174eba5b5843eb4e3f7cd6c9dce50e324ea98527fb19c03fe4e",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/gkd_trainer.py",
+      "installed_lf_sha256": "1ef792a4227140da727fcb36cc852ed927d635776e987a47fb3913bed30c2986",
+      "official_git_blob_lf_sha256": "1ef792a4227140da727fcb36cc852ed927d635776e987a47fb3913bed30c2986",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/gkd_utils.py",
+      "installed_lf_sha256": "bb66fecd31e1e6fa31ddd38430a2a15ab97129d9b351f4baf2720dc5ca38f90f",
+      "official_git_blob_lf_sha256": "bb66fecd31e1e6fa31ddd38430a2a15ab97129d9b351f4baf2720dc5ca38f90f",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/grpo_trainer.py",
+      "installed_lf_sha256": "34ec4b21ec0e33b2920d1b3712e86abccf594f08cce055417ec723ea7b38378b",
+      "official_git_blob_lf_sha256": "34ec4b21ec0e33b2920d1b3712e86abccf594f08cce055417ec723ea7b38378b",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/kto_trainer.py",
+      "installed_lf_sha256": "64c2ceddfb441c1f96e5376c3a10fee29ae209ae01997d0fd152eb655e909c15",
+      "official_git_blob_lf_sha256": "64c2ceddfb441c1f96e5376c3a10fee29ae209ae01997d0fd152eb655e909c15",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/reranker_trainer.py",
+      "installed_lf_sha256": "a071edfde8fcecec45e86ae564b0db90ab1ec177fc961a35f216304ee5168032",
+      "official_git_blob_lf_sha256": "a071edfde8fcecec45e86ae564b0db90ab1ec177fc961a35f216304ee5168032",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/reward_trainer.py",
+      "installed_lf_sha256": "c486ffdd025f9094a8ae865dc0750783f6ea11468aae1c30b67250d6f4c734ea",
+      "official_git_blob_lf_sha256": "c486ffdd025f9094a8ae865dc0750783f6ea11468aae1c30b67250d6f4c734ea",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/rlhf_mixin.py",
+      "installed_lf_sha256": "f3e2d572767fa8fa8995703e8d517b969ac5df2aed422d0b3c3d773b96f0f6c5",
+      "official_git_blob_lf_sha256": "f3e2d572767fa8fa8995703e8d517b969ac5df2aed422d0b3c3d773b96f0f6c5",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/rollout_mixin.py",
+      "installed_lf_sha256": "c77710d5f900e455a8873f2a5495bdf57d7bd6628a6c2a54bed61b798272886d",
+      "official_git_blob_lf_sha256": "c77710d5f900e455a8873f2a5495bdf57d7bd6628a6c2a54bed61b798272886d",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/trainer.py",
+      "installed_lf_sha256": "b7efa15ead7a4f049495c4a0639c27edf6b99bddf9795c47c178a555cbcbf6dc",
+      "official_git_blob_lf_sha256": "b7efa15ead7a4f049495c4a0639c27edf6b99bddf9795c47c178a555cbcbf6dc",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/utils.py",
+      "installed_lf_sha256": "9e5c236cc3b8f01165f2e8764f512e4e7bd29ed38d0cef5a47c3b7afc08fcb16",
+      "official_git_blob_lf_sha256": "9e5c236cc3b8f01165f2e8764f512e4e7bd29ed38d0cef5a47c3b7afc08fcb16",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/trainers/vocab_parallel_utils.py",
+      "installed_lf_sha256": "39b1d7c9a790a4ef4507e8a0e6004316b8e67f11c739bceb74c4caa92c5b730d",
+      "official_git_blob_lf_sha256": "39b1d7c9a790a4ef4507e8a0e6004316b8e67f11c739bceb74c4caa92c5b730d",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/utils/__init__.py",
+      "installed_lf_sha256": "e611f3fc03d82c7b67c7a06027a407fe24b205f68774edff1d2968cccd85abdc",
+      "official_git_blob_lf_sha256": "e611f3fc03d82c7b67c7a06027a407fe24b205f68774edff1d2968cccd85abdc",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/utils/convert_utils.py",
+      "installed_lf_sha256": "22bf0357560dc1aae66bac1b03f67182a704803ef4d7bd993ec9717f6ff992be",
+      "official_git_blob_lf_sha256": "22bf0357560dc1aae66bac1b03f67182a704803ef4d7bd993ec9717f6ff992be",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/utils/megatron_fsdp_checkpoint.py",
+      "installed_lf_sha256": "95e3576d98e6a328c5a350b3a0ac541018ce0fdaf532b539f84fa16c6be046b3",
+      "official_git_blob_lf_sha256": "95e3576d98e6a328c5a350b3a0ac541018ce0fdaf532b539f84fa16c6be046b3",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/utils/megatron_lm_utils.py",
+      "installed_lf_sha256": "33dc91db1f3b8dcfcbf0d9fdb5f9c24fc43e145fd1c7f03dd1c44c848828e0fa",
+      "official_git_blob_lf_sha256": "33dc91db1f3b8dcfcbf0d9fdb5f9c24fc43e145fd1c7f03dd1c44c848828e0fa",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/utils/parallel_utils.py",
+      "installed_lf_sha256": "bd702e6b22ced4961259a8332007dded178faaed1d828b4dae80598c95d04753",
+      "official_git_blob_lf_sha256": "bd702e6b22ced4961259a8332007dded178faaed1d828b4dae80598c95d04753",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/utils/patcher.py",
+      "installed_lf_sha256": "87239d8527806a7a2fdbd5d7309246abc2c8fe84984d18e7e7990302c32c5dab",
+      "official_git_blob_lf_sha256": "87239d8527806a7a2fdbd5d7309246abc2c8fe84984d18e7e7990302c32c5dab",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/utils/router_replay_utils.py",
+      "installed_lf_sha256": "8cf627e9d753d8dd3e648872a9f1e714925eef164f7b94a0060dc037a0fa48b3",
+      "official_git_blob_lf_sha256": "8cf627e9d753d8dd3e648872a9f1e714925eef164f7b94a0060dc037a0fa48b3",
+      "equal": true
+    },
+    {
+      "path": "swift/megatron/utils/utils.py",
+      "installed_lf_sha256": "600f014b9edf0167b3e2bfc92b0ab49d23b2288e5348e20881c3b3eedb680cde",
+      "official_git_blob_lf_sha256": "600f014b9edf0167b3e2bfc92b0ab49d23b2288e5348e20881c3b3eedb680cde",
+      "equal": true
+    },
+    {
+      "path": "swift/metrics/__init__.py",
+      "installed_lf_sha256": "17e7ddbc95ad94b7a97d04886180f4037d497982943d6fb4a085792e38ffd8ed",
+      "official_git_blob_lf_sha256": "17e7ddbc95ad94b7a97d04886180f4037d497982943d6fb4a085792e38ffd8ed",
+      "equal": true
+    },
+    {
+      "path": "swift/metrics/acc.py",
+      "installed_lf_sha256": "224b07211fa3cc86e7ea98f04d29d6ed6e815e5c1882e7214a0a5b5b2baaa91e",
+      "official_git_blob_lf_sha256": "224b07211fa3cc86e7ea98f04d29d6ed6e815e5c1882e7214a0a5b5b2baaa91e",
+      "equal": true
+    },
+    {
+      "path": "swift/metrics/base.py",
+      "installed_lf_sha256": "40b7d165a4bac58f97ec64995ff77072f0056831f4980602ce3a97bc20d2da38",
+      "official_git_blob_lf_sha256": "40b7d165a4bac58f97ec64995ff77072f0056831f4980602ce3a97bc20d2da38",
+      "equal": true
+    },
+    {
+      "path": "swift/metrics/embedding.py",
+      "installed_lf_sha256": "31b74cee584720916423815b5abf9e5fa9709d43fd9ee46033b1c8071cfe21d9",
+      "official_git_blob_lf_sha256": "31b74cee584720916423815b5abf9e5fa9709d43fd9ee46033b1c8071cfe21d9",
+      "equal": true
+    },
+    {
+      "path": "swift/metrics/mapping.py",
+      "installed_lf_sha256": "37336d3b8e23e1cb527d6d97ab72c89938d740a3f43e4d18ff7ed77b1caecbc8",
+      "official_git_blob_lf_sha256": "37336d3b8e23e1cb527d6d97ab72c89938d740a3f43e4d18ff7ed77b1caecbc8",
+      "equal": true
+    },
+    {
+      "path": "swift/metrics/nlg.py",
+      "installed_lf_sha256": "7eb579a7f58cef0ba4718d44bf49177e0985f312125ea74c1ba2bfbac91a9fba",
+      "official_git_blob_lf_sha256": "7eb579a7f58cef0ba4718d44bf49177e0985f312125ea74c1ba2bfbac91a9fba",
+      "equal": true
+    },
+    {
+      "path": "swift/metrics/reranker.py",
+      "installed_lf_sha256": "899dcf75d748987001596bdc6e72041b7400df1f4aa15dc5177311793ea9d8f7",
+      "official_git_blob_lf_sha256": "899dcf75d748987001596bdc6e72041b7400df1f4aa15dc5177311793ea9d8f7",
+      "equal": true
+    },
+    {
+      "path": "swift/metrics/utils.py",
+      "installed_lf_sha256": "8478d5a98399c3b88816f78befb6bc32b6dc8f67da1756cee889a25e71c19e88",
+      "official_git_blob_lf_sha256": "8478d5a98399c3b88816f78befb6bc32b6dc8f67da1756cee889a25e71c19e88",
+      "equal": true
+    },
+    {
+      "path": "swift/model/__init__.py",
+      "installed_lf_sha256": "b1ced567b8feec779f9c0f81ea3680cfc81d7a8e4d64888ffd3cab177e232822",
+      "official_git_blob_lf_sha256": "b1ced567b8feec779f9c0f81ea3680cfc81d7a8e4d64888ffd3cab177e232822",
+      "equal": true
+    },
+    {
+      "path": "swift/model/constant.py",
+      "installed_lf_sha256": "4e3fcf1025076457b0e066510a7673111db957aefea5998605b293f87e6f7553",
+      "official_git_blob_lf_sha256": "4e3fcf1025076457b0e066510a7673111db957aefea5998605b293f87e6f7553",
+      "equal": true
+    },
+    {
+      "path": "swift/model/decision_head.py",
+      "installed_lf_sha256": "02c7bb8d5c44183dd07a473a4bf4b468184133a3c760d86361a076715084a747",
+      "official_git_blob_lf_sha256": "02c7bb8d5c44183dd07a473a4bf4b468184133a3c760d86361a076715084a747",
+      "equal": true
+    },
+    {
+      "path": "swift/model/model_arch.py",
+      "installed_lf_sha256": "cb4c2e8ee2e2304218deafb9dedca9f3bc4622222e8ebaa67b774d4776ae0c1d",
+      "official_git_blob_lf_sha256": "cb4c2e8ee2e2304218deafb9dedca9f3bc4622222e8ebaa67b774d4776ae0c1d",
+      "equal": true
+    },
+    {
+      "path": "swift/model/model_meta.py",
+      "installed_lf_sha256": "b6bdeeaaf96adb7ad54e3d1875ab34dcf8df77a5a4c24dbace91769f4fbaa84e",
+      "official_git_blob_lf_sha256": "b6bdeeaaf96adb7ad54e3d1875ab34dcf8df77a5a4c24dbace91769f4fbaa84e",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/__init__.py",
+      "installed_lf_sha256": "913a1792ba32047785fff64e34087ed62f91605cd46b93bb2cc2a62d48914dac",
+      "official_git_blob_lf_sha256": "913a1792ba32047785fff64e34087ed62f91605cd46b93bb2cc2a62d48914dac",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/baai.py",
+      "installed_lf_sha256": "e97da48f51740401cb16124c97e02e6daccc6bb9cf0eb3317656f9d10fe3eb7e",
+      "official_git_blob_lf_sha256": "e97da48f51740401cb16124c97e02e6daccc6bb9cf0eb3317656f9d10fe3eb7e",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/baichuan.py",
+      "installed_lf_sha256": "855e38bbbcecfd3bb04c2ba6912adb65981a8a5218fd7ef41a53bff5742ee9e3",
+      "official_git_blob_lf_sha256": "855e38bbbcecfd3bb04c2ba6912adb65981a8a5218fd7ef41a53bff5742ee9e3",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/baidu.py",
+      "installed_lf_sha256": "9b727e420c602d0daa3ff2b39fbb6de458ab19edb93d2e442cb7284374014d1a",
+      "official_git_blob_lf_sha256": "9b727e420c602d0daa3ff2b39fbb6de458ab19edb93d2e442cb7284374014d1a",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/bert.py",
+      "installed_lf_sha256": "1abaad0f4e05455de9a24481373b10195137abdc91afb2f3d009181605a94399",
+      "official_git_blob_lf_sha256": "1abaad0f4e05455de9a24481373b10195137abdc91afb2f3d009181605a94399",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/codefuse.py",
+      "installed_lf_sha256": "7baf11635bdb1998e1ae6477ba933c8f1c896235094e9a0afc60973f2793aff5",
+      "official_git_blob_lf_sha256": "7baf11635bdb1998e1ae6477ba933c8f1c896235094e9a0afc60973f2793aff5",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/decision.py",
+      "installed_lf_sha256": "300fd33bb395eed3fdad95bd3f2123b1ca4d5ca9ddb4c732c1b0ea361cd95efd",
+      "official_git_blob_lf_sha256": "300fd33bb395eed3fdad95bd3f2123b1ca4d5ca9ddb4c732c1b0ea361cd95efd",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/deepseek.py",
+      "installed_lf_sha256": "7e1fca1cf32ccc335c3ff0a2090f5bc3ef85d098cf8328026291a3845a14bc55",
+      "official_git_blob_lf_sha256": "7e1fca1cf32ccc335c3ff0a2090f5bc3ef85d098cf8328026291a3845a14bc55",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/gemma.py",
+      "installed_lf_sha256": "2be5b6a23d1fc05c283ce25034a645f69d4ad5a791bd2581ebabd18315a94199",
+      "official_git_blob_lf_sha256": "2be5b6a23d1fc05c283ce25034a645f69d4ad5a791bd2581ebabd18315a94199",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/glm.py",
+      "installed_lf_sha256": "f91b9d4ecb9a52825f6b2c97565c65065eaed476839246b7a1a2ab9b5c45ae21",
+      "official_git_blob_lf_sha256": "f91b9d4ecb9a52825f6b2c97565c65065eaed476839246b7a1a2ab9b5c45ae21",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/internlm.py",
+      "installed_lf_sha256": "2a7c7aa46d341450ebb5d28d8bad149b784f8bcb9dff5fd123594ddd0a234580",
+      "official_git_blob_lf_sha256": "2a7c7aa46d341450ebb5d28d8bad149b784f8bcb9dff5fd123594ddd0a234580",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/llama.py",
+      "installed_lf_sha256": "1681afa38b0caa49135aa72cb743032edfd5015d1066635cc662aa4829dddf7a",
+      "official_git_blob_lf_sha256": "1681afa38b0caa49135aa72cb743032edfd5015d1066635cc662aa4829dddf7a",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/llava.py",
+      "installed_lf_sha256": "e632e2c726bb65adb017bc7234f39123f0b0b021f56bf4da884af9a6e2a57599",
+      "official_git_blob_lf_sha256": "e632e2c726bb65adb017bc7234f39123f0b0b021f56bf4da884af9a6e2a57599",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/llm.py",
+      "installed_lf_sha256": "88ec478ce09af1a298ef0bbe74127eddcaa2cb813954858a27434c9f4cf2256e",
+      "official_git_blob_lf_sha256": "88ec478ce09af1a298ef0bbe74127eddcaa2cb813954858a27434c9f4cf2256e",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/mamba.py",
+      "installed_lf_sha256": "a81933921ad79196eaae829a54949298184d479b2e51bfd18ec57292bf91dc13",
+      "official_git_blob_lf_sha256": "a81933921ad79196eaae829a54949298184d479b2e51bfd18ec57292bf91dc13",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/microsoft.py",
+      "installed_lf_sha256": "eacadacfee8138ee58b81ad2c8f420c41202352afb5697dc5ec038e15a81f611",
+      "official_git_blob_lf_sha256": "eacadacfee8138ee58b81ad2c8f420c41202352afb5697dc5ec038e15a81f611",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/minicpm.py",
+      "installed_lf_sha256": "9dd57a54be17d9f6e25b3aa4de17afd7d5429a1b28ddbfd1c0b62e119404b162",
+      "official_git_blob_lf_sha256": "9dd57a54be17d9f6e25b3aa4de17afd7d5429a1b28ddbfd1c0b62e119404b162",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/minimax.py",
+      "installed_lf_sha256": "ac80f7d598ddc8b0645420eb4ebe1a579287bb91e79200613ce1e7f3c244322d",
+      "official_git_blob_lf_sha256": "ac80f7d598ddc8b0645420eb4ebe1a579287bb91e79200613ce1e7f3c244322d",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/mistral.py",
+      "installed_lf_sha256": "9373fecd6bd7f4b0241f3297a8278778cef2e9d071ea73e0a2827022bce6e746",
+      "official_git_blob_lf_sha256": "9373fecd6bd7f4b0241f3297a8278778cef2e9d071ea73e0a2827022bce6e746",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/mllm.py",
+      "installed_lf_sha256": "51cafcf91bea231d38953553b8c36ac5f49ca36e5254bef8eae078b096b25e47",
+      "official_git_blob_lf_sha256": "51cafcf91bea231d38953553b8c36ac5f49ca36e5254bef8eae078b096b25e47",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/moonshot.py",
+      "installed_lf_sha256": "87cf42f477c05199aeab3b99c597ac66eae997e7062076ecc00d34d96d9ba0cc",
+      "official_git_blob_lf_sha256": "87cf42f477c05199aeab3b99c597ac66eae997e7062076ecc00d34d96d9ba0cc",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/moss.py",
+      "installed_lf_sha256": "a58a1253d4f8c6e0d09ee53457308ce8d4d3d474bf4de82522616c9c2e137fd1",
+      "official_git_blob_lf_sha256": "a58a1253d4f8c6e0d09ee53457308ce8d4d3d474bf4de82522616c9c2e137fd1",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/mplug.py",
+      "installed_lf_sha256": "f81e69aab5b93c2129c3d4d358ac6718f0ccfd1901ed10e4833c4dc0cdaa3fd1",
+      "official_git_blob_lf_sha256": "f81e69aab5b93c2129c3d4d358ac6718f0ccfd1901ed10e4833c4dc0cdaa3fd1",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/nvidia.py",
+      "installed_lf_sha256": "40a4496d6196fdee3d510fc414485fe05c278ce9cc3a9189ca773203495b96f4",
+      "official_git_blob_lf_sha256": "40a4496d6196fdee3d510fc414485fe05c278ce9cc3a9189ca773203495b96f4",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/openbuddy.py",
+      "installed_lf_sha256": "62b5dd4bf69481043a16d0b9510275b003d9e4a2c37fd6c9309497b5e4523048",
+      "official_git_blob_lf_sha256": "62b5dd4bf69481043a16d0b9510275b003d9e4a2c37fd6c9309497b5e4523048",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/qwen.py",
+      "installed_lf_sha256": "1dbbc8e70b098a4713ad1b3f700afd44b4aae38731c1115e9ebfa309724cf7a6",
+      "official_git_blob_lf_sha256": "1dbbc8e70b098a4713ad1b3f700afd44b4aae38731c1115e9ebfa309724cf7a6",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/seed.py",
+      "installed_lf_sha256": "007ae52284aa60c5deb67c25c7f91f22af44db6a9ebf4ac680c288a1b4e84670",
+      "official_git_blob_lf_sha256": "007ae52284aa60c5deb67c25c7f91f22af44db6a9ebf4ac680c288a1b4e84670",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/skywork.py",
+      "installed_lf_sha256": "c68fb6e3a7f9af9e9baf4bfad672854e167a4bb020d55c08720bbaf922f51946",
+      "official_git_blob_lf_sha256": "c68fb6e3a7f9af9e9baf4bfad672854e167a4bb020d55c08720bbaf922f51946",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/spark.py",
+      "installed_lf_sha256": "7c35e8b9e53771e29af30d8b34a719bb458ce220bbf73b63348709d5f5a20b86",
+      "official_git_blob_lf_sha256": "7c35e8b9e53771e29af30d8b34a719bb458ce220bbf73b63348709d5f5a20b86",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/stepfun.py",
+      "installed_lf_sha256": "d5a85702026fc7d5adb0066184606536157a488c93f97d13ca4f2a94c07b03dd",
+      "official_git_blob_lf_sha256": "d5a85702026fc7d5adb0066184606536157a488c93f97d13ca4f2a94c07b03dd",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/telechat.py",
+      "installed_lf_sha256": "b6f604231efeea262b8676d1248ae54452a25cacf2907ed925679e1f8434dbad",
+      "official_git_blob_lf_sha256": "b6f604231efeea262b8676d1248ae54452a25cacf2907ed925679e1f8434dbad",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/tencent.py",
+      "installed_lf_sha256": "c0be618a227cb7a2863f387b6da4dd8a4283e4b145620e13d48a72db8ca5e0cf",
+      "official_git_blob_lf_sha256": "c0be618a227cb7a2863f387b6da4dd8a4283e4b145620e13d48a72db8ca5e0cf",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/valley.py",
+      "installed_lf_sha256": "fed7d18351f6aa6cd8aacaff597d7023b954e430c3cd9056795bec4e2a747254",
+      "official_git_blob_lf_sha256": "fed7d18351f6aa6cd8aacaff597d7023b954e430c3cd9056795bec4e2a747254",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/xing4_0.py",
+      "installed_lf_sha256": "b84ef5f970337a342251c0a68842c6c9ae813f2980fdc313846aceaa1a73b260",
+      "official_git_blob_lf_sha256": "b84ef5f970337a342251c0a68842c6c9ae813f2980fdc313846aceaa1a73b260",
+      "equal": true
+    },
+    {
+      "path": "swift/model/models/yi.py",
+      "installed_lf_sha256": "c9b888c18a9f2d51dbaf6145e1022e573217eded3663383e906aafbcb43f8d13",
+      "official_git_blob_lf_sha256": "c9b888c18a9f2d51dbaf6145e1022e573217eded3663383e906aafbcb43f8d13",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/__init__.py",
+      "installed_lf_sha256": "602c8453b708cafd07dbea9e31727674c24b4aba79d499124c226c19f752f099",
+      "official_git_blob_lf_sha256": "602c8453b708cafd07dbea9e31727674c24b4aba79d499124c226c19f752f099",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/env.py",
+      "installed_lf_sha256": "d77807cec1cdb807af324b9f9fcda56ba3380b0bde816f165f2ed9721821a53e",
+      "official_git_blob_lf_sha256": "d77807cec1cdb807af324b9f9fcda56ba3380b0bde816f165f2ed9721821a53e",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/fsdp.py",
+      "installed_lf_sha256": "143bc5c539a4d2a034df5e1a12a6b1406977b6c728bee951858a2898560e089e",
+      "official_git_blob_lf_sha256": "143bc5c539a4d2a034df5e1a12a6b1406977b6c728bee951858a2898560e089e",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/megatron_checkpoint.py",
+      "installed_lf_sha256": "c00cbbe17e5839521319d848c3e9485ff19145da213bf1ca632d68d68ed5e177",
+      "official_git_blob_lf_sha256": "c00cbbe17e5839521319d848c3e9485ff19145da213bf1ca632d68d68ed5e177",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/mindspeed.py",
+      "installed_lf_sha256": "d57966427d36b815efe262882806f3fd93788b505e88bff837277b3bf70feddb",
+      "official_git_blob_lf_sha256": "d57966427d36b815efe262882806f3fd93788b505e88bff837277b3bf70feddb",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/model.py",
+      "installed_lf_sha256": "38f48a1c8430615544040b7dd56d32de1a117c1a1290823e9555e9f4d44bef33",
+      "official_git_blob_lf_sha256": "38f48a1c8430615544040b7dd56d32de1a117c1a1290823e9555e9f4d44bef33",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/utils.py",
+      "installed_lf_sha256": "7d0dee6a876e7a5fede6da2f9c19c573e2ea0c94d2ac08ea24d3573b178c5741",
+      "official_git_blob_lf_sha256": "7d0dee6a876e7a5fede6da2f9c19c573e2ea0c94d2ac08ea24d3573b178c5741",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/vllm_ascend.py",
+      "installed_lf_sha256": "ae935849e1b658d380123d2c1dece52b0eed09b523bb9d55fec94c6bb025fc72",
+      "official_git_blob_lf_sha256": "ae935849e1b658d380123d2c1dece52b0eed09b523bb9d55fec94c6bb025fc72",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/vllm_ascend_lora.py",
+      "installed_lf_sha256": "4f2e03e0ae47fd5e9e3385b40d59fae283cf9ee1dfa844a687bcb481401cc215",
+      "official_git_blob_lf_sha256": "4f2e03e0ae47fd5e9e3385b40d59fae283cf9ee1dfa844a687bcb481401cc215",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/vllm_ascend_memory.py",
+      "installed_lf_sha256": "4275dfa5136994a54f4914b0c7e2a09edcb92f31d9da8e9ebb1cbda226698cbb",
+      "official_git_blob_lf_sha256": "4275dfa5136994a54f4914b0c7e2a09edcb92f31d9da8e9ebb1cbda226698cbb",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patch/vllm_ascend_moe.py",
+      "installed_lf_sha256": "e032c24ac27b1e009e34aa6e49a8ce04dfd0559919439bcfd465e7315a45a09d",
+      "official_git_blob_lf_sha256": "e032c24ac27b1e009e34aa6e49a8ce04dfd0559919439bcfd465e7315a45a09d",
+      "equal": true
+    },
+    {
+      "path": "swift/model/npu_patcher.py",
+      "installed_lf_sha256": "8a5830e8d9dba285099fc53f5003c7fd37af0c6ac7e9a6cb5effc12427270a98",
+      "official_git_blob_lf_sha256": "8a5830e8d9dba285099fc53f5003c7fd37af0c6ac7e9a6cb5effc12427270a98",
+      "equal": true
+    },
+    {
+      "path": "swift/model/omnijev_branch.py",
+      "installed_lf_sha256": "7f3c7dba247aa9fe5a8f1d8205dd37a04a22ebd8501017b9335ba802b31c13c2",
+      "official_git_blob_lf_sha256": "7f3c7dba247aa9fe5a8f1d8205dd37a04a22ebd8501017b9335ba802b31c13c2",
+      "equal": true
+    },
+    {
+      "path": "swift/model/omnijev_media.py",
+      "installed_lf_sha256": "29687bea802f10972168361c7b41340d6c3d1fadd5397a221578f8bbbcbb098e",
+      "official_git_blob_lf_sha256": "29687bea802f10972168361c7b41340d6c3d1fadd5397a221578f8bbbcbb098e",
+      "equal": true
+    },
+    {
+      "path": "swift/model/patcher.py",
+      "installed_lf_sha256": "90e9e0c7211b7d22a5578e625771e7b62b6b049f6c8ce594486f8ac961fa5188",
+      "official_git_blob_lf_sha256": "90e9e0c7211b7d22a5578e625771e7b62b6b049f6c8ce594486f8ac961fa5188",
+      "equal": true
+    },
+    {
+      "path": "swift/model/register.py",
+      "installed_lf_sha256": "67c1d21141ab02ef80e37060e1226d1c2d0d2d25da8bed80cb255d93412de388",
+      "official_git_blob_lf_sha256": "67c1d21141ab02ef80e37060e1226d1c2d0d2d25da8bed80cb255d93412de388",
+      "equal": true
+    },
+    {
+      "path": "swift/model/utils.py",
+      "installed_lf_sha256": "ea9e610abe8f6d6b573641875e863159d062d6c0bb11e2425a3b6546bca427a5",
+      "official_git_blob_lf_sha256": "ea9e610abe8f6d6b573641875e863159d062d6c0bb11e2425a3b6546bca427a5",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/__init__.py",
+      "installed_lf_sha256": "22cf8ce484b126cf305bdcf4f584c778b12189535c607550e1bed1b757f3fa10",
+      "official_git_blob_lf_sha256": "22cf8ce484b126cf305bdcf4f584c778b12189535c607550e1bed1b757f3fa10",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/base.py",
+      "installed_lf_sha256": "ecaba5a3e1cf8c3bc18bcfbe5856d319e4d228fa77cead7570189bb71b51b25b",
+      "official_git_blob_lf_sha256": "ecaba5a3e1cf8c3bc18bcfbe5856d319e4d228fa77cead7570189bb71b51b25b",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/galore/__init__.py",
+      "installed_lf_sha256": "c8fa4ce85d27cd01d16c015c847ac4dcb4f8e66adae543895cf2e13622b2917c",
+      "official_git_blob_lf_sha256": "c8fa4ce85d27cd01d16c015c847ac4dcb4f8e66adae543895cf2e13622b2917c",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/galore/adafactor.py",
+      "installed_lf_sha256": "ae22a65628a9605304a1819f4ebc9bfdbb83353e2b907f368bf38ae0e845d8d4",
+      "official_git_blob_lf_sha256": "ae22a65628a9605304a1819f4ebc9bfdbb83353e2b907f368bf38ae0e845d8d4",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/galore/adamw.py",
+      "installed_lf_sha256": "ba788e82e284cb263572d7f6abc0a79161c5612e2004a12227247a338244de92",
+      "official_git_blob_lf_sha256": "ba788e82e284cb263572d7f6abc0a79161c5612e2004a12227247a338244de92",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/galore/adamw8bit.py",
+      "installed_lf_sha256": "4cba375660855cf1ddfabaef97a7f1db38592e5448338b376d27d76af5b2678f",
+      "official_git_blob_lf_sha256": "4cba375660855cf1ddfabaef97a7f1db38592e5448338b376d27d76af5b2678f",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/galore/galore_projector.py",
+      "installed_lf_sha256": "42b80e7e912c23dcf5c1acd2ba6bb2b32e22d090fa14cef4ee05eb84d196f2a7",
+      "official_git_blob_lf_sha256": "42b80e7e912c23dcf5c1acd2ba6bb2b32e22d090fa14cef4ee05eb84d196f2a7",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/galore/utils.py",
+      "installed_lf_sha256": "fc1200c27e6aef960bb7a76c3b499dd0fc0d6b9c7837b3206fbd9c0d7570eaec",
+      "official_git_blob_lf_sha256": "fc1200c27e6aef960bb7a76c3b499dd0fc0d6b9c7837b3206fbd9c0d7570eaec",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/lorap.py",
+      "installed_lf_sha256": "b2ff329a44cba5575b90969c9b620cae0a4077be69c915a8081a2fbec10f9206",
+      "official_git_blob_lf_sha256": "b2ff329a44cba5575b90969c9b620cae0a4077be69c915a8081a2fbec10f9206",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/mapping.py",
+      "installed_lf_sha256": "0c3a0dad825a7f62b48822582fb19bb7b72315471d0964278165eac828a763f4",
+      "official_git_blob_lf_sha256": "0c3a0dad825a7f62b48822582fb19bb7b72315471d0964278165eac828a763f4",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/multimodal.py",
+      "installed_lf_sha256": "1fe67d3432518849a1e136b839f6501743ac1fdbbcdb02dfcf3fde68b34f598c",
+      "official_git_blob_lf_sha256": "1fe67d3432518849a1e136b839f6501743ac1fdbbcdb02dfcf3fde68b34f598c",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/muon.py",
+      "installed_lf_sha256": "8b66beca9dea713183924961e58f508f613a82d138aec1b960cf8741d1af05e7",
+      "official_git_blob_lf_sha256": "8b66beca9dea713183924961e58f508f613a82d138aec1b960cf8741d1af05e7",
+      "equal": true
+    },
+    {
+      "path": "swift/optimizers/muonclip.py",
+      "installed_lf_sha256": "f4881497b3d394fde36fbc72f987d552a2577d68c57e067f8d9dc84e68dccd9c",
+      "official_git_blob_lf_sha256": "f4881497b3d394fde36fbc72f987d552a2577d68c57e067f8d9dc84e68dccd9c",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/__init__.py",
+      "installed_lf_sha256": "1626a57b11106ff2833a8ec295030764e3c4f5dfde557531b8293702446c6fbf",
+      "official_git_blob_lf_sha256": "1626a57b11106ff2833a8ec295030764e3c4f5dfde557531b8293702446c6fbf",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/app/__init__.py",
+      "installed_lf_sha256": "b72742569ccf0674be041212349e709f9d8cde30166e518c6f4a50cb43bc6992",
+      "official_git_blob_lf_sha256": "b72742569ccf0674be041212349e709f9d8cde30166e518c6f4a50cb43bc6992",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/app/app.py",
+      "installed_lf_sha256": "3479b170ae9f8009444611a5bdf2591c9ef2f888ba4e071605908e4c78348238",
+      "official_git_blob_lf_sha256": "3479b170ae9f8009444611a5bdf2591c9ef2f888ba4e071605908e4c78348238",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/app/build_ui.py",
+      "installed_lf_sha256": "731f2703b5784cf419fdd20ef8d6167a475a64f5348db2b06db1e3fbed3eb405",
+      "official_git_blob_lf_sha256": "731f2703b5784cf419fdd20ef8d6167a475a64f5348db2b06db1e3fbed3eb405",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/app/locale.py",
+      "installed_lf_sha256": "4db6041176e56f9e592ae92b3b550a415e5723687dab8dd251d43a65aae779c7",
+      "official_git_blob_lf_sha256": "4db6041176e56f9e592ae92b3b550a415e5723687dab8dd251d43a65aae779c7",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/base.py",
+      "installed_lf_sha256": "dacb239734817d1242a1a1d01e704d6f384b04eca3b84edaf5bb7110c9a6e7d6",
+      "official_git_blob_lf_sha256": "dacb239734817d1242a1a1d01e704d6f384b04eca3b84edaf5bb7110c9a6e7d6",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/eval/__init__.py",
+      "installed_lf_sha256": "09f1586e007fd461fca45f7f565671c33cf7406ee01055a5a634e81429b368b3",
+      "official_git_blob_lf_sha256": "09f1586e007fd461fca45f7f565671c33cf7406ee01055a5a634e81429b368b3",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/eval/eval.py",
+      "installed_lf_sha256": "c3a98cce3dff937340efe9121be9e5a02d9b4656467f18f79a22d70b785ff1bb",
+      "official_git_blob_lf_sha256": "c3a98cce3dff937340efe9121be9e5a02d9b4656467f18f79a22d70b785ff1bb",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/eval/utils.py",
+      "installed_lf_sha256": "6f5fda65b23c220409b211e6420b000904abd9c7a7be1cb7c38ffd52b95af3eb",
+      "official_git_blob_lf_sha256": "6f5fda65b23c220409b211e6420b000904abd9c7a7be1cb7c38ffd52b95af3eb",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/export/__init__.py",
+      "installed_lf_sha256": "682ab6803b6f21733f9a4ba1f37366dd20a77e1d7e34f6671de29f9f70a6b4c5",
+      "official_git_blob_lf_sha256": "682ab6803b6f21733f9a4ba1f37366dd20a77e1d7e34f6671de29f9f70a6b4c5",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/export/cached_dataset.py",
+      "installed_lf_sha256": "53bc638483ccbabdceede2b712c65733171c5c28854009045cb675c58709c44e",
+      "official_git_blob_lf_sha256": "53bc638483ccbabdceede2b712c65733171c5c28854009045cb675c58709c44e",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/export/export.py",
+      "installed_lf_sha256": "044d3181c4a6c50a4b0bdf7cb6c825bfd76327c2ad0aa3c3f2721d1c3ec63d20",
+      "official_git_blob_lf_sha256": "044d3181c4a6c50a4b0bdf7cb6c825bfd76327c2ad0aa3c3f2721d1c3ec63d20",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/export/merge_lora.py",
+      "installed_lf_sha256": "937f96ffad69d3210ca8fd8e3d7fb6827f8f219cea384ae0babc9782eb75651b",
+      "official_git_blob_lf_sha256": "937f96ffad69d3210ca8fd8e3d7fb6827f8f219cea384ae0babc9782eb75651b",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/export/ollama.py",
+      "installed_lf_sha256": "c0d69beb3da5faec70fdfc2711377a6aa4f1dd190244a129632990b58b707a70",
+      "official_git_blob_lf_sha256": "c0d69beb3da5faec70fdfc2711377a6aa4f1dd190244a129632990b58b707a70",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/export/quant.py",
+      "installed_lf_sha256": "cd004834ae3f08ea9392a8466b79df1f9b5a0f3d55146dabb8c0782bf0654f7b",
+      "official_git_blob_lf_sha256": "cd004834ae3f08ea9392a8466b79df1f9b5a0f3d55146dabb8c0782bf0654f7b",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/infer/__init__.py",
+      "installed_lf_sha256": "aeb9b15949667a36df3340f75abb383dab8fdf6dc0ccc694f93edf4994e0913a",
+      "official_git_blob_lf_sha256": "aeb9b15949667a36df3340f75abb383dab8fdf6dc0ccc694f93edf4994e0913a",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/infer/deploy.py",
+      "installed_lf_sha256": "22be77ae241fcf858c73ff8536e7a3db19af818b261e77f0d05142973499db04",
+      "official_git_blob_lf_sha256": "22be77ae241fcf858c73ff8536e7a3db19af818b261e77f0d05142973499db04",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/infer/infer.py",
+      "installed_lf_sha256": "500aeb70cb3d07f4a597443661f45f2722357dc38a3ea3e4e4bdfd7117a42dd5",
+      "official_git_blob_lf_sha256": "500aeb70cb3d07f4a597443661f45f2722357dc38a3ea3e4e4bdfd7117a42dd5",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/infer/rollout.py",
+      "installed_lf_sha256": "59fdbf2ddf0b18768b46a82ca514fcd1a6dbfe5087cdb814d3e1e67d41d627dc",
+      "official_git_blob_lf_sha256": "59fdbf2ddf0b18768b46a82ca514fcd1a6dbfe5087cdb814d3e1e67d41d627dc",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/infer/utils.py",
+      "installed_lf_sha256": "a4943b2d1af9639df6b37a793a1367651aa00033b23270fcf8fb4c81da6cc6bf",
+      "official_git_blob_lf_sha256": "a4943b2d1af9639df6b37a793a1367651aa00033b23270fcf8fb4c81da6cc6bf",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/sampling/__init__.py",
+      "installed_lf_sha256": "4e649d150fdefcaf10f37f78190c7e3c89fc215b453b7a3988da9db1623deb05",
+      "official_git_blob_lf_sha256": "4e649d150fdefcaf10f37f78190c7e3c89fc215b453b7a3988da9db1623deb05",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/sampling/base.py",
+      "installed_lf_sha256": "7f088575c3979c2691625dcbff326fe848cb53441f02689cdb0c2e9a8db1a393",
+      "official_git_blob_lf_sha256": "7f088575c3979c2691625dcbff326fe848cb53441f02689cdb0c2e9a8db1a393",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/sampling/distill_sampler.py",
+      "installed_lf_sha256": "80b58b3f2b35b6bd65e27d0cdf6bbc5ce10ec0c7a81ac5196d439c7ea114c742",
+      "official_git_blob_lf_sha256": "80b58b3f2b35b6bd65e27d0cdf6bbc5ce10ec0c7a81ac5196d439c7ea114c742",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/sampling/sampling.py",
+      "installed_lf_sha256": "1f9ccf4287cc42024b515a436f4df48f111926aaa19d793fbf252465bee32a7e",
+      "official_git_blob_lf_sha256": "1f9ccf4287cc42024b515a436f4df48f111926aaa19d793fbf252465bee32a7e",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/sampling/utils.py",
+      "installed_lf_sha256": "956e260dc287846810b5d7ebc90d2766414788d90245205d80be134051002bcd",
+      "official_git_blob_lf_sha256": "956e260dc287846810b5d7ebc90d2766414788d90245205d80be134051002bcd",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/sampling/vanilla_sampler.py",
+      "installed_lf_sha256": "20c383c5d5b1940e40ade3c280df16520103b69a0cc8d6a883760c4e5a0dfb28",
+      "official_git_blob_lf_sha256": "20c383c5d5b1940e40ade3c280df16520103b69a0cc8d6a883760c4e5a0dfb28",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/train/__init__.py",
+      "installed_lf_sha256": "9d36fe8cd8a3090f7a6e7a16f77505210d71fde244c1c92dba4151d6105e519c",
+      "official_git_blob_lf_sha256": "9d36fe8cd8a3090f7a6e7a16f77505210d71fde244c1c92dba4151d6105e519c",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/train/kto.py",
+      "installed_lf_sha256": "58657b87b610fff0a9d4a3d419d2e1b250e4f962d7e390566667df10252c123b",
+      "official_git_blob_lf_sha256": "58657b87b610fff0a9d4a3d419d2e1b250e4f962d7e390566667df10252c123b",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/train/pretrain.py",
+      "installed_lf_sha256": "82cd4d082f3903935bc7e3922356a8646e75b7fe43b5427e11004e0d9d3e0938",
+      "official_git_blob_lf_sha256": "82cd4d082f3903935bc7e3922356a8646e75b7fe43b5427e11004e0d9d3e0938",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/train/rlhf.py",
+      "installed_lf_sha256": "d3effd533116309c2dc9f20431c38952f328ea21e582dadb2b230d0905628d9a",
+      "official_git_blob_lf_sha256": "d3effd533116309c2dc9f20431c38952f328ea21e582dadb2b230d0905628d9a",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/train/sft.py",
+      "installed_lf_sha256": "744ceb388ae51f3f50f95f9ceb208980696ba95eaa1f01aaabb0584bd78515b6",
+      "official_git_blob_lf_sha256": "744ceb388ae51f3f50f95f9ceb208980696ba95eaa1f01aaabb0584bd78515b6",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/train/tuner.py",
+      "installed_lf_sha256": "594967c5797535f20eaed50677bb977197ec104c9ac4344621a97f39fb1cf494",
+      "official_git_blob_lf_sha256": "594967c5797535f20eaed50677bb977197ec104c9ac4344621a97f39fb1cf494",
+      "equal": true
+    },
+    {
+      "path": "swift/pipelines/utils.py",
+      "installed_lf_sha256": "5a757864d6b6dcc553f25d216352756dd61dc000645f9589ff4dacb161eb8eba",
+      "official_git_blob_lf_sha256": "5a757864d6b6dcc553f25d216352756dd61dc000645f9589ff4dacb161eb8eba",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/__init__.py",
+      "installed_lf_sha256": "f7468aa6cf9f75b1ccca9d14f703d478cf15a0b0872a197a17532852af41d776",
+      "official_git_blob_lf_sha256": "f7468aa6cf9f75b1ccca9d14f703d478cf15a0b0872a197a17532852af41d776",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/__init__.py",
+      "installed_lf_sha256": "018fbd06ff0a8654ebd79517ab68606a1e8abf6672351d434600dea3826dd57c",
+      "official_git_blob_lf_sha256": "018fbd06ff0a8654ebd79517ab68606a1e8abf6672351d434600dea3826dd57c",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/base_trainer.py",
+      "installed_lf_sha256": "a33beaa54b9eb6c1fb47deab437132a3265d7ae27ecd86138854bd62332ecc78",
+      "official_git_blob_lf_sha256": "a33beaa54b9eb6c1fb47deab437132a3265d7ae27ecd86138854bd62332ecc78",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/checkpoint_engine/__init__.py",
+      "installed_lf_sha256": "a156ef26975a565230c0783501d067bacf94c367c422f2d6b7968690713f8393",
+      "official_git_blob_lf_sha256": "a156ef26975a565230c0783501d067bacf94c367c422f2d6b7968690713f8393",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/checkpoint_engine/base.py",
+      "installed_lf_sha256": "c067aec06c4c7d5fe3b45ecba3821e0684b96d4e21c982ecf7a1c0e11aef6241",
+      "official_git_blob_lf_sha256": "c067aec06c4c7d5fe3b45ecba3821e0684b96d4e21c982ecf7a1c0e11aef6241",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/checkpoint_engine/hccl.py",
+      "installed_lf_sha256": "a50c72f3ee3eb195c51127d2736c29c308c4fa7930aff2929ff7dc0ea24e61e9",
+      "official_git_blob_lf_sha256": "a50c72f3ee3eb195c51127d2736c29c308c4fa7930aff2929ff7dc0ea24e61e9",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/checkpoint_engine/manager.py",
+      "installed_lf_sha256": "d25f1d84ebe9025a6710b1d13216a006be481959955b2cf1008c644acff463df",
+      "official_git_blob_lf_sha256": "d25f1d84ebe9025a6710b1d13216a006be481959955b2cf1008c644acff463df",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/checkpoint_engine/mixin.py",
+      "installed_lf_sha256": "b58a9c20bd590d67eff342879135076f42245956a893bb5d700eb0704123ff04",
+      "official_git_blob_lf_sha256": "b58a9c20bd590d67eff342879135076f42245956a893bb5d700eb0704123ff04",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/checkpoint_engine/nccl.py",
+      "installed_lf_sha256": "f938bf5416850086e940006bf6ff0745f7253a38b06ad5e5f432388812bca7fd",
+      "official_git_blob_lf_sha256": "f938bf5416850086e940006bf6ff0745f7253a38b06ad5e5f432388812bca7fd",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/driver_utils.py",
+      "installed_lf_sha256": "326a09fc197ff83e8327fc08bb4dd074e13f8a213f5667223a14b3b56b8edf49",
+      "official_git_blob_lf_sha256": "326a09fc197ff83e8327fc08bb4dd074e13f8a213f5667223a14b3b56b8edf49",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/gkd_trainer.py",
+      "installed_lf_sha256": "1b2283ca11c63851d05cbc5a8ba28dc9e28504e8fbb0207fc8f237e8aecac3d3",
+      "official_git_blob_lf_sha256": "1b2283ca11c63851d05cbc5a8ba28dc9e28504e8fbb0207fc8f237e8aecac3d3",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/grpo_trainer.py",
+      "installed_lf_sha256": "3e84e0b897b3b7830b830c670d08e634f3582a66e5084bf66546e0c639a6fbf8",
+      "official_git_blob_lf_sha256": "3e84e0b897b3b7830b830c670d08e634f3582a66e5084bf66546e0c639a6fbf8",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/loss/__init__.py",
+      "installed_lf_sha256": "19f52199543bcb385c8883aed3b8ed0ec54c500f9488e4d8fa3376ebc05c04f6",
+      "official_git_blob_lf_sha256": "19f52199543bcb385c8883aed3b8ed0ec54c500f9488e4d8fa3376ebc05c04f6",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/loss/base.py",
+      "installed_lf_sha256": "d45c0814eef3a21f7ce9529405d7f37fe4c84e4353a9cfe0e0b47f37d680fa31",
+      "official_git_blob_lf_sha256": "d45c0814eef3a21f7ce9529405d7f37fe4c84e4353a9cfe0e0b47f37d680fa31",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/loss/gkd.py",
+      "installed_lf_sha256": "ea081131bcbba99c522a3ad96f506d079bb4202c3fec67ee1f30613ce4041eff",
+      "official_git_blob_lf_sha256": "ea081131bcbba99c522a3ad96f506d079bb4202c3fec67ee1f30613ce4041eff",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/loss/grpo.py",
+      "installed_lf_sha256": "d9a030b595663ec3d5952b4a0df26aae8d4e8ec0fe1dfafd241940b14598fd6f",
+      "official_git_blob_lf_sha256": "d9a030b595663ec3d5952b4a0df26aae8d4e8ec0fe1dfafd241940b14598fd6f",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/megatron_worker.py",
+      "installed_lf_sha256": "c934fa63a20f35b04e841f86c4a0935963f26e56716336e751ec1cda7d7db5e8",
+      "official_git_blob_lf_sha256": "c934fa63a20f35b04e841f86c4a0935963f26e56716336e751ec1cda7d7db5e8",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/model_worker.py",
+      "installed_lf_sha256": "4f5e7f678b3213463cfe496283dec951427f6c6463b9e0122427eb816b22aae0",
+      "official_git_blob_lf_sha256": "4f5e7f678b3213463cfe496283dec951427f6c6463b9e0122427eb816b22aae0",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/pipeline.py",
+      "installed_lf_sha256": "3617b08b8f50f6938f37b389db53dc5dd4eb0b70294108dfd7feb7d34cc600f9",
+      "official_git_blob_lf_sha256": "3617b08b8f50f6938f37b389db53dc5dd4eb0b70294108dfd7feb7d34cc600f9",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/resource_pool.py",
+      "installed_lf_sha256": "2567c86ecc45bdc34f48e1ed1a9fac352047b16938f5acebe39a3dd04459548f",
+      "official_git_blob_lf_sha256": "2567c86ecc45bdc34f48e1ed1a9fac352047b16938f5acebe39a3dd04459548f",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/rollout/__init__.py",
+      "installed_lf_sha256": "6672f2c64bf777d5dee6b1c9a8041dd91d22dad37f76d70279084f2c3ad2189f",
+      "official_git_blob_lf_sha256": "6672f2c64bf777d5dee6b1c9a8041dd91d22dad37f76d70279084f2c3ad2189f",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/rollout/adapter.py",
+      "installed_lf_sha256": "1713768e364c04943669cbeb4852dc55c79608004126c0906f17faffe05a87a5",
+      "official_git_blob_lf_sha256": "1713768e364c04943669cbeb4852dc55c79608004126c0906f17faffe05a87a5",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/rollout/ray_vllm_engine.py",
+      "installed_lf_sha256": "2bc63420dc90050980968d48777a77b66e1570f87ca61c86046e019236eda409",
+      "official_git_blob_lf_sha256": "2bc63420dc90050980968d48777a77b66e1570f87ca61c86046e019236eda409",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/rollout/replica.py",
+      "installed_lf_sha256": "911bae41bff7c9f252d8e657668be2e86cdb30be72182d999ec645bdfa0c7ca1",
+      "official_git_blob_lf_sha256": "911bae41bff7c9f252d8e657668be2e86cdb30be72182d999ec645bdfa0c7ca1",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/rollout/vllm_server.py",
+      "installed_lf_sha256": "763519b51c7c28e0a5cd865d7c7da2a4fd52bc98771fef3c5f0f7671876ba40d",
+      "official_git_blob_lf_sha256": "763519b51c7c28e0a5cd865d7c7da2a4fd52bc98771fef3c5f0f7671876ba40d",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/rollout/weight_transfer.py",
+      "installed_lf_sha256": "596c6c8be1bd6cb98c18d5f85326f21e6c917b3937154e29f454e6717deb5ce1",
+      "official_git_blob_lf_sha256": "596c6c8be1bd6cb98c18d5f85326f21e6c917b3937154e29f454e6717deb5ce1",
+      "equal": true
+    },
+    {
+      "path": "swift/ray/megatron/worker_group.py",
+      "installed_lf_sha256": "0d7ab63149c4a57f9bdc90610c0c9bd663f1c08a07f4ff2f8ff669c64cedfc09",
+      "official_git_blob_lf_sha256": "0d7ab63149c4a57f9bdc90610c0c9bd663f1c08a07f4ff2f8ff669c64cedfc09",
+      "equal": true
+    },
+    {
+      "path": "swift/ray_utils/__init__.py",
+      "installed_lf_sha256": "a899a928d5998713dacb6188f90818ac2e62cda58fdf743f4f6777195821c37d",
+      "official_git_blob_lf_sha256": "a899a928d5998713dacb6188f90818ac2e62cda58fdf743f4f6777195821c37d",
+      "equal": true
+    },
+    {
+      "path": "swift/ray_utils/arguments.py",
+      "installed_lf_sha256": "d1bbfa2dd02d9d427921c1b72a24778cd15c2fb25d2b7ecc22d993ba1c2e8eed",
+      "official_git_blob_lf_sha256": "d1bbfa2dd02d9d427921c1b72a24778cd15c2fb25d2b7ecc22d993ba1c2e8eed",
+      "equal": true
+    },
+    {
+      "path": "swift/ray_utils/base.py",
+      "installed_lf_sha256": "1aaa87b7a29d046f3a8a1c64a3b1e41717cf725d14f0d890c6729e99cd03c006",
+      "official_git_blob_lf_sha256": "1aaa87b7a29d046f3a8a1c64a3b1e41717cf725d14f0d890c6729e99cd03c006",
+      "equal": true
+    },
+    {
+      "path": "swift/ray_utils/resource_manager.py",
+      "installed_lf_sha256": "4018228ea23ecad5db7667f2b90072bb4db35d7cdcf52f275114ac788c9548c8",
+      "official_git_blob_lf_sha256": "4018228ea23ecad5db7667f2b90072bb4db35d7cdcf52f275114ac788c9548c8",
+      "equal": true
+    },
+    {
+      "path": "swift/rewards/__init__.py",
+      "installed_lf_sha256": "5e751254900a6a8fa348c3c3ccd028675e7623004c7346da6d7f5c14c3e6b0eb",
+      "official_git_blob_lf_sha256": "5e751254900a6a8fa348c3c3ccd028675e7623004c7346da6d7f5c14c3e6b0eb",
+      "equal": true
+    },
+    {
+      "path": "swift/rewards/orm.py",
+      "installed_lf_sha256": "eb3e5ddada814fab4fb5dd8d39d78221b0da538924cfe6d797d3ec22e2cf09f1",
+      "official_git_blob_lf_sha256": "eb3e5ddada814fab4fb5dd8d39d78221b0da538924cfe6d797d3ec22e2cf09f1",
+      "equal": true
+    },
+    {
+      "path": "swift/rewards/prm.py",
+      "installed_lf_sha256": "cc41692787cf48b393af0f8be29b27fb741e8e8a48dcdc21699b3744c976af46",
+      "official_git_blob_lf_sha256": "cc41692787cf48b393af0f8be29b27fb741e8e8a48dcdc21699b3744c976af46",
+      "equal": true
+    },
+    {
+      "path": "swift/rewards/rm_plugin.py",
+      "installed_lf_sha256": "594e628153cea3b2633e4f9649d124b065d6e6b76132ea0af0698849a0f086e6",
+      "official_git_blob_lf_sha256": "594e628153cea3b2633e4f9649d124b065d6e6b76132ea0af0698849a0f086e6",
+      "equal": true
+    },
+    {
+      "path": "swift/rl_core/__init__.py",
+      "installed_lf_sha256": "f7468aa6cf9f75b1ccca9d14f703d478cf15a0b0872a197a17532852af41d776",
+      "official_git_blob_lf_sha256": "f7468aa6cf9f75b1ccca9d14f703d478cf15a0b0872a197a17532852af41d776",
+      "equal": true
+    },
+    {
+      "path": "swift/rl_core/advantage.py",
+      "installed_lf_sha256": "397e403576ad2557e0e7ee80130e0b37b1e400fa1c71a00eeee9d03e32354f64",
+      "official_git_blob_lf_sha256": "397e403576ad2557e0e7ee80130e0b37b1e400fa1c71a00eeee9d03e32354f64",
+      "equal": true
+    },
+    {
+      "path": "swift/rl_core/data.py",
+      "installed_lf_sha256": "41bbea1ac146b58fbbd98dd154b69b0f1287d94ab9986c60565f7dc6e8cfb3b3",
+      "official_git_blob_lf_sha256": "41bbea1ac146b58fbbd98dd154b69b0f1287d94ab9986c60565f7dc6e8cfb3b3",
+      "equal": true
+    },
+    {
+      "path": "swift/rl_core/grpo_algorithm.py",
+      "installed_lf_sha256": "9f64a67b53b9cfa33b8cbb8270370c175f321910a057f28e54c34c52f7e18a9b",
+      "official_git_blob_lf_sha256": "9f64a67b53b9cfa33b8cbb8270370c175f321910a057f28e54c34c52f7e18a9b",
+      "equal": true
+    },
+    {
+      "path": "swift/rl_core/resample.py",
+      "installed_lf_sha256": "a4fde1db85146a7da8a3d60ac7df82258471d0b44e98bd68c0606caa0ccd604b",
+      "official_git_blob_lf_sha256": "a4fde1db85146a7da8a3d60ac7df82258471d0b44e98bd68c0606caa0ccd604b",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/__init__.py",
+      "installed_lf_sha256": "90e2bca39083779eb442b3c6502dc8f8a3836db58eec6883563d765ec6e89bcd",
+      "official_git_blob_lf_sha256": "90e2bca39083779eb442b3c6502dc8f8a3836db58eec6883563d765ec6e89bcd",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/args_mixin.py",
+      "installed_lf_sha256": "ded96ceef0acae839a80915415da6b98b7f2de695b462e55f0800439a1213aa0",
+      "official_git_blob_lf_sha256": "ded96ceef0acae839a80915415da6b98b7f2de695b462e55f0800439a1213aa0",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/arguments.py",
+      "installed_lf_sha256": "eae7f95808c4f5755aae675deedf2d96ad9153c45c427271e81a6fb5fd4e6380",
+      "official_git_blob_lf_sha256": "eae7f95808c4f5755aae675deedf2d96ad9153c45c427271e81a6fb5fd4e6380",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/base_rollout_mixin.py",
+      "installed_lf_sha256": "04ccb9e4bc9963c9d1ce0a641183257d907471e6b3206060bdf7e56092ecc6fc",
+      "official_git_blob_lf_sha256": "04ccb9e4bc9963c9d1ce0a641183257d907471e6b3206060bdf7e56092ecc6fc",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/cpo_trainer.py",
+      "installed_lf_sha256": "35caf9cd7ef52259dd0436f1c21cad05fbbb8a3adcb1016aed93a4f6637b80c8",
+      "official_git_blob_lf_sha256": "35caf9cd7ef52259dd0436f1c21cad05fbbb8a3adcb1016aed93a4f6637b80c8",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/dpo_trainer.py",
+      "installed_lf_sha256": "573cf45c599d86f4455812ebe2f7a8160c2c9bb28a9980f7f50765c06f77fe97",
+      "official_git_blob_lf_sha256": "573cf45c599d86f4455812ebe2f7a8160c2c9bb28a9980f7f50765c06f77fe97",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/gkd_helpers.py",
+      "installed_lf_sha256": "1d729c94df6cbfeb2f6fd69f18b5a9ea15402de63acb6f297ddfb6b57fd836d8",
+      "official_git_blob_lf_sha256": "1d729c94df6cbfeb2f6fd69f18b5a9ea15402de63acb6f297ddfb6b57fd836d8",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/gkd_loss.py",
+      "installed_lf_sha256": "71f9a8e87053033eec15ea5219acd1fd9baad7433577a94a18cab37ecdeef1dc",
+      "official_git_blob_lf_sha256": "71f9a8e87053033eec15ea5219acd1fd9baad7433577a94a18cab37ecdeef1dc",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/gkd_trainer.py",
+      "installed_lf_sha256": "0b4651a50eb657c500abe7ee58d485756995e137a25f729cd2747d7a59c423b7",
+      "official_git_blob_lf_sha256": "0b4651a50eb657c500abe7ee58d485756995e137a25f729cd2747d7a59c423b7",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/grpo_trainer.py",
+      "installed_lf_sha256": "53fddb594ce9a996da34b285984ce4fa3d8709fee4164cc88e98f1223732da2f",
+      "official_git_blob_lf_sha256": "53fddb594ce9a996da34b285984ce4fa3d8709fee4164cc88e98f1223732da2f",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/kto_trainer.py",
+      "installed_lf_sha256": "8c2fe5f1735d2353f57cb0071543ed4397b6dbe2971f6da89d21d4cd7f827a1d",
+      "official_git_blob_lf_sha256": "8c2fe5f1735d2353f57cb0071543ed4397b6dbe2971f6da89d21d4cd7f827a1d",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/orpo_trainer.py",
+      "installed_lf_sha256": "070a247a23144e83bdc1f0139b0d87889c8f66c530aecd248f3a1f8e32a685cd",
+      "official_git_blob_lf_sha256": "070a247a23144e83bdc1f0139b0d87889c8f66c530aecd248f3a1f8e32a685cd",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/ppo_trainer.py",
+      "installed_lf_sha256": "f31f77e6618e416a6c17e8e7eb86ac78a98518b722285ae4405fd2231e527029",
+      "official_git_blob_lf_sha256": "f31f77e6618e416a6c17e8e7eb86ac78a98518b722285ae4405fd2231e527029",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/reward_trainer.py",
+      "installed_lf_sha256": "4a5f0569c37055e51b5d7f83f956a60b71d53985ae706a13e20f285a1f0e0daa",
+      "official_git_blob_lf_sha256": "4a5f0569c37055e51b5d7f83f956a60b71d53985ae706a13e20f285a1f0e0daa",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/rlhf_mixin.py",
+      "installed_lf_sha256": "4ea7aa82f8f94749e22fee68b54e039021b21b7a08d380961d9b03324c69582d",
+      "official_git_blob_lf_sha256": "4ea7aa82f8f94749e22fee68b54e039021b21b7a08d380961d9b03324c69582d",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/rollout_mixin.py",
+      "installed_lf_sha256": "5bf2ca9b283dab64a6f13dfca78ec57b5106e5074a55170cff55290adfab0934",
+      "official_git_blob_lf_sha256": "5bf2ca9b283dab64a6f13dfca78ec57b5106e5074a55170cff55290adfab0934",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/utils.py",
+      "installed_lf_sha256": "99d6005d3ec16742325b03739ed5806e24218bdfc2c2eb0f3ee0063cb4c3db7f",
+      "official_git_blob_lf_sha256": "99d6005d3ec16742325b03739ed5806e24218bdfc2c2eb0f3ee0063cb4c3db7f",
+      "equal": true
+    },
+    {
+      "path": "swift/rlhf_trainers/vllm_client.py",
+      "installed_lf_sha256": "45dab85f822d63b53a5e249907c41b87237c511eb40e5c5f1eeaf46978d6c06d",
+      "official_git_blob_lf_sha256": "45dab85f822d63b53a5e249907c41b87237c511eb40e5c5f1eeaf46978d6c06d",
+      "equal": true
+    },
+    {
+      "path": "swift/rollout/__init__.py",
+      "installed_lf_sha256": "f78a0a497a2304747148829750cd01d25594f0846e6f3a6cd65e640c066af1ea",
+      "official_git_blob_lf_sha256": "f78a0a497a2304747148829750cd01d25594f0846e6f3a6cd65e640c066af1ea",
+      "equal": true
+    },
+    {
+      "path": "swift/rollout/agent_loop.py",
+      "installed_lf_sha256": "d6ea1ac1c20faf9643c40bf20a7e27ac4666fb03f3558296edecc007cd92f8ca",
+      "official_git_blob_lf_sha256": "d6ea1ac1c20faf9643c40bf20a7e27ac4666fb03f3558296edecc007cd92f8ca",
+      "equal": true
+    },
+    {
+      "path": "swift/rollout/gym_env.py",
+      "installed_lf_sha256": "d6ac14449dc7dd2d6f85c2498bd8509cf706930ea855f7fad1b73a82467a137d",
+      "official_git_blob_lf_sha256": "d6ac14449dc7dd2d6f85c2498bd8509cf706930ea855f7fad1b73a82467a137d",
+      "equal": true
+    },
+    {
+      "path": "swift/rollout/multi_turn.py",
+      "installed_lf_sha256": "681f805afb9ca0fba40bc493fcfb5f43c7d979674fee9c87dac73603d2063b98",
+      "official_git_blob_lf_sha256": "681f805afb9ca0fba40bc493fcfb5f43c7d979674fee9c87dac73603d2063b98",
+      "equal": true
+    },
+    {
+      "path": "swift/rollout/openenv_wrapper.py",
+      "installed_lf_sha256": "386461d1952fd73791f492504d46da86c8d650f89b9054e1b9c66386c7e6a907",
+      "official_git_blob_lf_sha256": "386461d1952fd73791f492504d46da86c8d650f89b9054e1b9c66386c7e6a907",
+      "equal": true
+    },
+    {
+      "path": "swift/sequence_parallel/__init__.py",
+      "installed_lf_sha256": "874665bc49b224052798e246d70b3c3a072a37b506340ed7c3229cea1b50bcb1",
+      "official_git_blob_lf_sha256": "874665bc49b224052798e246d70b3c3a072a37b506340ed7c3229cea1b50bcb1",
+      "equal": true
+    },
+    {
+      "path": "swift/sequence_parallel/ring_utils.py",
+      "installed_lf_sha256": "390eeea92e72bc507f3061c0e5a9f271b941231040263b954176eafe1f3e8d2c",
+      "official_git_blob_lf_sha256": "390eeea92e72bc507f3061c0e5a9f271b941231040263b954176eafe1f3e8d2c",
+      "equal": true
+    },
+    {
+      "path": "swift/sequence_parallel/sequence_parallel.py",
+      "installed_lf_sha256": "0bce625908990d8126c797d3478ee0698d662643673c229ac836e7e3f3b2e6a7",
+      "official_git_blob_lf_sha256": "0bce625908990d8126c797d3478ee0698d662643673c229ac836e7e3f3b2e6a7",
+      "equal": true
+    },
+    {
+      "path": "swift/sequence_parallel/ulysses.py",
+      "installed_lf_sha256": "18ee345a282ff3ed8ff6103240216457ad925008b7f516e960518e07c5cfd10d",
+      "official_git_blob_lf_sha256": "18ee345a282ff3ed8ff6103240216457ad925008b7f516e960518e07c5cfd10d",
+      "equal": true
+    },
+    {
+      "path": "swift/sequence_parallel/utils.py",
+      "installed_lf_sha256": "063c86a51d702286bd809533c90c1e44f2538bbe7d55f88d8d20b95bec3945a9",
+      "official_git_blob_lf_sha256": "063c86a51d702286bd809533c90c1e44f2538bbe7d55f88d8d20b95bec3945a9",
+      "equal": true
+    },
+    {
+      "path": "swift/sequence_parallel/zigzag_ring_attn.py",
+      "installed_lf_sha256": "06f37733c93bec6e0a4bc03459d9a658c1055650936c7b543d3a86c9b6bff266",
+      "official_git_blob_lf_sha256": "06f37733c93bec6e0a4bc03459d9a658c1055650936c7b543d3a86c9b6bff266",
+      "equal": true
+    },
+    {
+      "path": "swift/sequence_parallel/zigzag_ring_attn_npu.py",
+      "installed_lf_sha256": "d3c00d862a3dd6c74d4063becff220d5bf514954c6b5b254f8e94c5da7c849ad",
+      "official_git_blob_lf_sha256": "d3c00d862a3dd6c74d4063becff220d5bf514954c6b5b254f8e94c5da7c849ad",
+      "equal": true
+    },
+    {
+      "path": "swift/template/__init__.py",
+      "installed_lf_sha256": "38adc0ff782ccf41300e7b706b89e7d9c8549a1fc5610bdf06d1c4ca48670e63",
+      "official_git_blob_lf_sha256": "38adc0ff782ccf41300e7b706b89e7d9c8549a1fc5610bdf06d1c4ca48670e63",
+      "equal": true
+    },
+    {
+      "path": "swift/template/base.py",
+      "installed_lf_sha256": "a2d14012e37058ad392c1f242e220fd69bb654f29887baffb04aa552f3dfbc16",
+      "official_git_blob_lf_sha256": "a2d14012e37058ad392c1f242e220fd69bb654f29887baffb04aa552f3dfbc16",
+      "equal": true
+    },
+    {
+      "path": "swift/template/constant.py",
+      "installed_lf_sha256": "11c72c8b7ff1bcabf82da82a8ee45074fcb7e2f2fce00fc4482801dc5044dee6",
+      "official_git_blob_lf_sha256": "11c72c8b7ff1bcabf82da82a8ee45074fcb7e2f2fce00fc4482801dc5044dee6",
+      "equal": true
+    },
+    {
+      "path": "swift/template/grounding.py",
+      "installed_lf_sha256": "3d227bf53c16520b954d1b1599db882a1269d2c55e7eb9238c0465734d3f0e31",
+      "official_git_blob_lf_sha256": "3d227bf53c16520b954d1b1599db882a1269d2c55e7eb9238c0465734d3f0e31",
+      "equal": true
+    },
+    {
+      "path": "swift/template/register.py",
+      "installed_lf_sha256": "e94027d4d5e59e96de7f9b6a3db4a8fed43ad1d2c567d6bc7cac57620facf2a0",
+      "official_git_blob_lf_sha256": "e94027d4d5e59e96de7f9b6a3db4a8fed43ad1d2c567d6bc7cac57620facf2a0",
+      "equal": true
+    },
+    {
+      "path": "swift/template/template_inputs.py",
+      "installed_lf_sha256": "e8b4fa0cc33904dc9cd031da735f18824c0ae55212d1e5304246c77a42cd7019",
+      "official_git_blob_lf_sha256": "e8b4fa0cc33904dc9cd031da735f18824c0ae55212d1e5304246c77a42cd7019",
+      "equal": true
+    },
+    {
+      "path": "swift/template/template_meta.py",
+      "installed_lf_sha256": "886964adb85c23bb38374804a1754ef9dd95773d2ecdb1210a18b36bad5497fc",
+      "official_git_blob_lf_sha256": "886964adb85c23bb38374804a1754ef9dd95773d2ecdb1210a18b36bad5497fc",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/__init__.py",
+      "installed_lf_sha256": "289b681036676c25eb4bbfa0bfd506feade4761f53d51cdc503a198c9636c11b",
+      "official_git_blob_lf_sha256": "289b681036676c25eb4bbfa0bfd506feade4761f53d51cdc503a198c9636c11b",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/baai.py",
+      "installed_lf_sha256": "003d6c7378b717e21dba28091819a516e9af9b79ae1b865fac3fb864e7c39323",
+      "official_git_blob_lf_sha256": "003d6c7378b717e21dba28091819a516e9af9b79ae1b865fac3fb864e7c39323",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/baidu.py",
+      "installed_lf_sha256": "ef8c5fc93829a02fdc4034dc8872cc8fcfd974a6fb8af720a64b08af82a9a10b",
+      "official_git_blob_lf_sha256": "ef8c5fc93829a02fdc4034dc8872cc8fcfd974a6fb8af720a64b08af82a9a10b",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/bert.py",
+      "installed_lf_sha256": "98deb3e4c18bc52a6736968b5a39bab45177fcbaeea25640d3e669f754c87f71",
+      "official_git_blob_lf_sha256": "98deb3e4c18bc52a6736968b5a39bab45177fcbaeea25640d3e669f754c87f71",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/decision.py",
+      "installed_lf_sha256": "373a7c39b1bdc18d517d90d5f0a8240977808c7a268103eb248709fa39009c21",
+      "official_git_blob_lf_sha256": "373a7c39b1bdc18d517d90d5f0a8240977808c7a268103eb248709fa39009c21",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/deepseek.py",
+      "installed_lf_sha256": "1acf10449ee30fc388ef584500ca51014ad528969f0f6399d56a92b2f7ec51cc",
+      "official_git_blob_lf_sha256": "1acf10449ee30fc388ef584500ca51014ad528969f0f6399d56a92b2f7ec51cc",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/dots.py",
+      "installed_lf_sha256": "860c55b0bf4d2273048c61e34e891186cc9faae9d920296d3f52d7cb67367428",
+      "official_git_blob_lf_sha256": "860c55b0bf4d2273048c61e34e891186cc9faae9d920296d3f52d7cb67367428",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/gemma.py",
+      "installed_lf_sha256": "f447de87dfa3564174fec6be8a6c095e7cec785ba22bc9c38b893c021981c05c",
+      "official_git_blob_lf_sha256": "f447de87dfa3564174fec6be8a6c095e7cec785ba22bc9c38b893c021981c05c",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/glm.py",
+      "installed_lf_sha256": "54d13a90285e8d7aa51f503201c7533b7136832fbe6e3789798f50660a699d1f",
+      "official_git_blob_lf_sha256": "54d13a90285e8d7aa51f503201c7533b7136832fbe6e3789798f50660a699d1f",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/idefics3.py",
+      "installed_lf_sha256": "dc5cc459ccc652d22f3cb224fd2aa3ea39f537ece1a11f830df8a601630898b8",
+      "official_git_blob_lf_sha256": "dc5cc459ccc652d22f3cb224fd2aa3ea39f537ece1a11f830df8a601630898b8",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/internlm.py",
+      "installed_lf_sha256": "9f09cc204c954c4de3714435ded3957c7933abc35d239523d2e8dbc844436b62",
+      "official_git_blob_lf_sha256": "9f09cc204c954c4de3714435ded3957c7933abc35d239523d2e8dbc844436b62",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/internvl.py",
+      "installed_lf_sha256": "6795d6f8bc646bd791dc8669a252efe64a8d546ae65768f552a0f29be2deb803",
+      "official_git_blob_lf_sha256": "6795d6f8bc646bd791dc8669a252efe64a8d546ae65768f552a0f29be2deb803",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/kwai.py",
+      "installed_lf_sha256": "4e7ab3e98e75fba108af5810c1d04f645b225c759177186f23a0014a7b389acc",
+      "official_git_blob_lf_sha256": "4e7ab3e98e75fba108af5810c1d04f645b225c759177186f23a0014a7b389acc",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/llama.py",
+      "installed_lf_sha256": "a0d4c451692f55249d1f6b5e6e78c9522afbf3a93523b2c2674443fc2cbf81ce",
+      "official_git_blob_lf_sha256": "a0d4c451692f55249d1f6b5e6e78c9522afbf3a93523b2c2674443fc2cbf81ce",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/llava.py",
+      "installed_lf_sha256": "789325dadaa87af68cc99ba5968f44c2a52bc2cb2bb27acce73907fcaec4c579",
+      "official_git_blob_lf_sha256": "789325dadaa87af68cc99ba5968f44c2a52bc2cb2bb27acce73907fcaec4c579",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/llm.py",
+      "installed_lf_sha256": "1b5dd42dfbd297484800a0eb25bde28c17cbc6866a02eee9bd77fab84a3f4d6c",
+      "official_git_blob_lf_sha256": "1b5dd42dfbd297484800a0eb25bde28c17cbc6866a02eee9bd77fab84a3f4d6c",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/megrez.py",
+      "installed_lf_sha256": "290da475b94e662519291ed6cebb3557b7adbc46f4a539feb3dea8662af24762",
+      "official_git_blob_lf_sha256": "290da475b94e662519291ed6cebb3557b7adbc46f4a539feb3dea8662af24762",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/microsoft.py",
+      "installed_lf_sha256": "75728c1756185fa3a5b9171091f39bc3fc0718cccd1934ee1a755d01bf5256cb",
+      "official_git_blob_lf_sha256": "75728c1756185fa3a5b9171091f39bc3fc0718cccd1934ee1a755d01bf5256cb",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/midashenglm.py",
+      "installed_lf_sha256": "2eec79f003a8a38091b5fb96a0986853cbc6bb3b1b69deb800a2cc628b18e4e7",
+      "official_git_blob_lf_sha256": "2eec79f003a8a38091b5fb96a0986853cbc6bb3b1b69deb800a2cc628b18e4e7",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/mimo.py",
+      "installed_lf_sha256": "53e493c41df456a056e66a02480899442f985c65ee2772fc9dc40e204e8c3897",
+      "official_git_blob_lf_sha256": "53e493c41df456a056e66a02480899442f985c65ee2772fc9dc40e204e8c3897",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/minicpm.py",
+      "installed_lf_sha256": "745ae9c24d285dd6843b64a455f5f2adc5ee48f5f8f8bc8f42a2a063deb4da20",
+      "official_git_blob_lf_sha256": "745ae9c24d285dd6843b64a455f5f2adc5ee48f5f8f8bc8f42a2a063deb4da20",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/minimax.py",
+      "installed_lf_sha256": "edb806ad4a9ae09170a8f163f7cc8b8a28411dea8768cdbd3b30ced4cf82b950",
+      "official_git_blob_lf_sha256": "edb806ad4a9ae09170a8f163f7cc8b8a28411dea8768cdbd3b30ced4cf82b950",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/minimind.py",
+      "installed_lf_sha256": "7f99563cd785b4349b05548795d5681ae3df71e79d6929d97488985c14c26cc1",
+      "official_git_blob_lf_sha256": "7f99563cd785b4349b05548795d5681ae3df71e79d6929d97488985c14c26cc1",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/mistral.py",
+      "installed_lf_sha256": "a42a5ff0a37ccb2273048e563ab5bd5d93b69f3179ef10a2c3cc012ac5f6d5a1",
+      "official_git_blob_lf_sha256": "a42a5ff0a37ccb2273048e563ab5bd5d93b69f3179ef10a2c3cc012ac5f6d5a1",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/molmo.py",
+      "installed_lf_sha256": "cd8f9a6883e12f4bd60893582a940a213f55ce382079390c1c2d77e70ae9c64e",
+      "official_git_blob_lf_sha256": "cd8f9a6883e12f4bd60893582a940a213f55ce382079390c1c2d77e70ae9c64e",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/moonshot.py",
+      "installed_lf_sha256": "dcd5f05d6e43411918d0fb2e51f852baf1c4b7851be08f87979d6933d7b442b6",
+      "official_git_blob_lf_sha256": "dcd5f05d6e43411918d0fb2e51f852baf1c4b7851be08f87979d6933d7b442b6",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/moss.py",
+      "installed_lf_sha256": "a708b84032c8dcca32de57a7952b04f45294f26e1c9fba3d9481367654c88caf",
+      "official_git_blob_lf_sha256": "a708b84032c8dcca32de57a7952b04f45294f26e1c9fba3d9481367654c88caf",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/mplug.py",
+      "installed_lf_sha256": "168a9e85f42427897e08412282976bc0a96f6622f0c2b34b051b9d834b6c35db",
+      "official_git_blob_lf_sha256": "168a9e85f42427897e08412282976bc0a96f6622f0c2b34b051b9d834b6c35db",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/museglimmer.py",
+      "installed_lf_sha256": "901797c7bbf03e46d2f1502e63b19f219d98635f15490b8e44c9d562acd4dbb4",
+      "official_git_blob_lf_sha256": "901797c7bbf03e46d2f1502e63b19f219d98635f15490b8e44c9d562acd4dbb4",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/openbuddy.py",
+      "installed_lf_sha256": "237617f4913b96ca6623a1b473b15d6ca17162d8d68c69e8df0f17abe217a211",
+      "official_git_blob_lf_sha256": "237617f4913b96ca6623a1b473b15d6ca17162d8d68c69e8df0f17abe217a211",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/pixtral.py",
+      "installed_lf_sha256": "fd58ed031e06b44ea1d040993ea59e001722234162de264e929470b4ae71d88b",
+      "official_git_blob_lf_sha256": "fd58ed031e06b44ea1d040993ea59e001722234162de264e929470b4ae71d88b",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/qwen.py",
+      "installed_lf_sha256": "600a230bbe1b55ebbfc97c2d366d7aa4bd0b5ab3da5219816958d1e1363e5707",
+      "official_git_blob_lf_sha256": "600a230bbe1b55ebbfc97c2d366d7aa4bd0b5ab3da5219816958d1e1363e5707",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/seed.py",
+      "installed_lf_sha256": "65f80cdc00f4ff01634ea686934391f02636370b3faa74bd5afe24505fe08fb7",
+      "official_git_blob_lf_sha256": "65f80cdc00f4ff01634ea686934391f02636370b3faa74bd5afe24505fe08fb7",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/spark.py",
+      "installed_lf_sha256": "3c9e4af27fc471d8f5a54dceb8b9e606733abe0530a021f39012068ab8978930",
+      "official_git_blob_lf_sha256": "3c9e4af27fc471d8f5a54dceb8b9e606733abe0530a021f39012068ab8978930",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/stepfun.py",
+      "installed_lf_sha256": "7767ceee55657fe6a87e3c3e764877bb5389e3200a59030b2d8df82513f181e8",
+      "official_git_blob_lf_sha256": "7767ceee55657fe6a87e3c3e764877bb5389e3200a59030b2d8df82513f181e8",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/tencent.py",
+      "installed_lf_sha256": "355ed2b7f07db36da505065cf71a1d9960eb0905057275a625bd8765aedcdac9",
+      "official_git_blob_lf_sha256": "355ed2b7f07db36da505065cf71a1d9960eb0905057275a625bd8765aedcdac9",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/utils.py",
+      "installed_lf_sha256": "ef1667e013739fb1342b3980b382b99498c02dc0565eb7711ffb2015ec0dd80b",
+      "official_git_blob_lf_sha256": "ef1667e013739fb1342b3980b382b99498c02dc0565eb7711ffb2015ec0dd80b",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/valley.py",
+      "installed_lf_sha256": "283fca7d53a66c4f1a23a3cf210a3f5f1fc4987d7c58c69733a082d7a3ccf11c",
+      "official_git_blob_lf_sha256": "283fca7d53a66c4f1a23a3cf210a3f5f1fc4987d7c58c69733a082d7a3ccf11c",
+      "equal": true
+    },
+    {
+      "path": "swift/template/templates/yi.py",
+      "installed_lf_sha256": "1f62d5e030fd945b6e880f13adc523c478664d500c7458e5b7075e47478b01ab",
+      "official_git_blob_lf_sha256": "1f62d5e030fd945b6e880f13adc523c478664d500c7458e5b7075e47478b01ab",
+      "equal": true
+    },
+    {
+      "path": "swift/template/utils.py",
+      "installed_lf_sha256": "3ea4206ea33268eebb4e70fa0e5056ae2bee91477472c12783dea94d74ee39d9",
+      "official_git_blob_lf_sha256": "3ea4206ea33268eebb4e70fa0e5056ae2bee91477472c12783dea94d74ee39d9",
+      "equal": true
+    },
+    {
+      "path": "swift/template/vision_utils.py",
+      "installed_lf_sha256": "71ce03a21c138f003705aaf30868d67e614e811843d719250fd1d89a517619a8",
+      "official_git_blob_lf_sha256": "71ce03a21c138f003705aaf30868d67e614e811843d719250fd1d89a517619a8",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/__init__.py",
+      "installed_lf_sha256": "d9271d3b0e055a77b784b8dff86c7fcd7886e7a63869ef5aea09ab4c3891335c",
+      "official_git_blob_lf_sha256": "d9271d3b0e055a77b784b8dff86c7fcd7886e7a63869ef5aea09ab4c3891335c",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/arguments.py",
+      "installed_lf_sha256": "e975b60f1a5c099a8950e477eb5836768938399fbbe0e58f09c390dba308342f",
+      "official_git_blob_lf_sha256": "e975b60f1a5c099a8950e477eb5836768938399fbbe0e58f09c390dba308342f",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/decision_trainer.py",
+      "installed_lf_sha256": "c6588f75fafb724d841ad1258fc2b39911b899d93d7aaffd0c46fdd6f437abe1",
+      "official_git_blob_lf_sha256": "c6588f75fafb724d841ad1258fc2b39911b899d93d7aaffd0c46fdd6f437abe1",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/embedding_trainer.py",
+      "installed_lf_sha256": "c38b1b7ef79fad8431df1b24daa0e7d0625638adcb6dc954d90b1792b64b08b0",
+      "official_git_blob_lf_sha256": "c38b1b7ef79fad8431df1b24daa0e7d0625638adcb6dc954d90b1792b64b08b0",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/mixin.py",
+      "installed_lf_sha256": "28de40c05995c573b2f4fe54b16a73b3ab7b48afa92781d7fff7cfb8145d0eab",
+      "official_git_blob_lf_sha256": "28de40c05995c573b2f4fe54b16a73b3ab7b48afa92781d7fff7cfb8145d0eab",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/patcher.py",
+      "installed_lf_sha256": "b0051338111611cbbc5c50d1d4665296eb8c03be39385400fbedd313d98afbb5",
+      "official_git_blob_lf_sha256": "b0051338111611cbbc5c50d1d4665296eb8c03be39385400fbedd313d98afbb5",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/reranker_trainer.py",
+      "installed_lf_sha256": "21e12afc5f3c7df346bdeb958d9698a926a93ce2bbd15a4564ccbe636d2ec115",
+      "official_git_blob_lf_sha256": "21e12afc5f3c7df346bdeb958d9698a926a93ce2bbd15a4564ccbe636d2ec115",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/seq2seq_trainer.py",
+      "installed_lf_sha256": "4bb65c60321cd619dd44a530e1b228ce470c625a9134666758c21d1337f79163",
+      "official_git_blob_lf_sha256": "4bb65c60321cd619dd44a530e1b228ce470c625a9134666758c21d1337f79163",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/trainer.py",
+      "installed_lf_sha256": "1c0d56939468b2e29b28ebcb179d476b294dff83fc4333791e3f4cedb9c5d132",
+      "official_git_blob_lf_sha256": "1c0d56939468b2e29b28ebcb179d476b294dff83fc4333791e3f4cedb9c5d132",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/trainer_factory.py",
+      "installed_lf_sha256": "e1696fad6bf3d5861ee8f48af1fa3052d27638325061a5d03f2a8da523ec3b1c",
+      "official_git_blob_lf_sha256": "e1696fad6bf3d5861ee8f48af1fa3052d27638325061a5d03f2a8da523ec3b1c",
+      "equal": true
+    },
+    {
+      "path": "swift/trainers/utils.py",
+      "installed_lf_sha256": "6218d952e56cb491833860dacc557f71b87c83aa67ed4817daba183f61945734",
+      "official_git_blob_lf_sha256": "6218d952e56cb491833860dacc557f71b87c83aa67ed4817daba183f61945734",
+      "equal": true
+    },
+    {
+      "path": "swift/tuner_plugin/__init__.py",
+      "installed_lf_sha256": "82760a92bee3ded57051ae3077ec594be9856317c85243036e40ef4fc37d1a1a",
+      "official_git_blob_lf_sha256": "82760a92bee3ded57051ae3077ec594be9856317c85243036e40ef4fc37d1a1a",
+      "equal": true
+    },
+    {
+      "path": "swift/tuner_plugin/base.py",
+      "installed_lf_sha256": "81224a49eb08cf6a47018359a7aa3bc085bd086c6a2fa15e7864d8db2c17e4f5",
+      "official_git_blob_lf_sha256": "81224a49eb08cf6a47018359a7aa3bc085bd086c6a2fa15e7864d8db2c17e4f5",
+      "equal": true
+    },
+    {
+      "path": "swift/tuner_plugin/dummy.py",
+      "installed_lf_sha256": "88d4c0a0aa74c4970b6d55f2fe8dd84ea055c78b8ef3d87ffdedd5721ab2d4c5",
+      "official_git_blob_lf_sha256": "88d4c0a0aa74c4970b6d55f2fe8dd84ea055c78b8ef3d87ffdedd5721ab2d4c5",
+      "equal": true
+    },
+    {
+      "path": "swift/tuner_plugin/ia3.py",
+      "installed_lf_sha256": "7a2dccaf7a9005f8fb212b838149d290ab6d3f4898dde32e9ea4784140b55b4a",
+      "official_git_blob_lf_sha256": "7a2dccaf7a9005f8fb212b838149d290ab6d3f4898dde32e9ea4784140b55b4a",
+      "equal": true
+    },
+    {
+      "path": "swift/tuner_plugin/lora_llm.py",
+      "installed_lf_sha256": "8f0445ac2848ef2245f5d030b9b88e9a77d207ab6a902c9195a56efd99a43b5b",
+      "official_git_blob_lf_sha256": "8f0445ac2848ef2245f5d030b9b88e9a77d207ab6a902c9195a56efd99a43b5b",
+      "equal": true
+    },
+    {
+      "path": "swift/tuner_plugin/mapping.py",
+      "installed_lf_sha256": "2f7ee423bc5e50192098347ae416a24e59dbb1d3a7002d8abe2cfe9aa149f593",
+      "official_git_blob_lf_sha256": "2f7ee423bc5e50192098347ae416a24e59dbb1d3a7002d8abe2cfe9aa149f593",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/__init__.py",
+      "installed_lf_sha256": "cbcdb4dbcb03651b2bd828a668e9abaf7c55ae3f10f8db9aff4bac6f083fc7b4",
+      "official_git_blob_lf_sha256": "cbcdb4dbcb03651b2bd828a668e9abaf7c55ae3f10f8db9aff4bac6f083fc7b4",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/adapter.py",
+      "installed_lf_sha256": "3732ddf08bc8924f84f055cc239deded0f3f81bbf074bc5f9c79ef1ee5d17fa3",
+      "official_git_blob_lf_sha256": "3732ddf08bc8924f84f055cc239deded0f3f81bbf074bc5f9c79ef1ee5d17fa3",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/base.py",
+      "installed_lf_sha256": "afc25abcc6103e82684426808516a4a055b0ba464d58a2e1353165f61f4c81d2",
+      "official_git_blob_lf_sha256": "afc25abcc6103e82684426808516a4a055b0ba464d58a2e1353165f61f4c81d2",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/llamapro.py",
+      "installed_lf_sha256": "752750cea015e4f46ca50bc96d8e69b867f8d281013ea4b301818b89e799536b",
+      "official_git_blob_lf_sha256": "752750cea015e4f46ca50bc96d8e69b867f8d281013ea4b301818b89e799536b",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/longlora/__init__.py",
+      "installed_lf_sha256": "f7468aa6cf9f75b1ccca9d14f703d478cf15a0b0872a197a17532852af41d776",
+      "official_git_blob_lf_sha256": "f7468aa6cf9f75b1ccca9d14f703d478cf15a0b0872a197a17532852af41d776",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/longlora/llama.py",
+      "installed_lf_sha256": "11ed017aeb38b92217d2b3eed781c02c8b64d0462defb3eabb6754d3540c8256",
+      "official_git_blob_lf_sha256": "11ed017aeb38b92217d2b3eed781c02c8b64d0462defb3eabb6754d3540c8256",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/longlora/longlora.py",
+      "installed_lf_sha256": "4d392193607ad5b099db9af8f5435878f62dac9f631ec202ceec53ab66d0a1f0",
+      "official_git_blob_lf_sha256": "4d392193607ad5b099db9af8f5435878f62dac9f631ec202ceec53ab66d0a1f0",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/lora.py",
+      "installed_lf_sha256": "3bc77b7fecb993ef92685c7751ad77343279a9b2c62d2c05f7165fd315541d9f",
+      "official_git_blob_lf_sha256": "3bc77b7fecb993ef92685c7751ad77343279a9b2c62d2c05f7165fd315541d9f",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/lora_layers.py",
+      "installed_lf_sha256": "fb5b39b7d86dca11af55ab1732722779b9471d6aea1de0449f1c8d4a20d3b2dd",
+      "official_git_blob_lf_sha256": "fb5b39b7d86dca11af55ab1732722779b9471d6aea1de0449f1c8d4a20d3b2dd",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/mapping.py",
+      "installed_lf_sha256": "eb60535e06143c545ffc49e83c227994987a97be788619ed6b930ae51793b986",
+      "official_git_blob_lf_sha256": "eb60535e06143c545ffc49e83c227994987a97be788619ed6b930ae51793b986",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/neftune.py",
+      "installed_lf_sha256": "a43eea8437ba83a738732b2976bd0ee2af8c15cc5868ab30b32c1ec4c8d2ce3d",
+      "official_git_blob_lf_sha256": "a43eea8437ba83a738732b2976bd0ee2af8c15cc5868ab30b32c1ec4c8d2ce3d",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/part.py",
+      "installed_lf_sha256": "98f96987a3da4114335892b88990950f4eccd08381efad1fa2fa9a93467a6ca8",
+      "official_git_blob_lf_sha256": "98f96987a3da4114335892b88990950f4eccd08381efad1fa2fa9a93467a6ca8",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/peft.py",
+      "installed_lf_sha256": "fb72f78a6cc4aa9d89f3b9f592fd2b8c7ec9118562e67a2bd33c4af6ff290c30",
+      "official_git_blob_lf_sha256": "fb72f78a6cc4aa9d89f3b9f592fd2b8c7ec9118562e67a2bd33c4af6ff290c30",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/prompt.py",
+      "installed_lf_sha256": "f3f6c13ca880f4d1f137bc4433e792f677086a00e1cc4ac347b4a65b45cf5feb",
+      "official_git_blob_lf_sha256": "f3f6c13ca880f4d1f137bc4433e792f677086a00e1cc4ac347b4a65b45cf5feb",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/reft.py",
+      "installed_lf_sha256": "9b4ae2cc4ad6eecdab8a1fd2a8e89e7282540349b61d84948937d353f61e3156",
+      "official_git_blob_lf_sha256": "9b4ae2cc4ad6eecdab8a1fd2a8e89e7282540349b61d84948937d353f61e3156",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/restuning.py",
+      "installed_lf_sha256": "a75ab2d96d815fed919bf19483e29fb90334a8e6874e3d500418474fa0fcf6b5",
+      "official_git_blob_lf_sha256": "a75ab2d96d815fed919bf19483e29fb90334a8e6874e3d500418474fa0fcf6b5",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/restuning_components.py",
+      "installed_lf_sha256": "556cf941dbd02c0ab3f28445b374edef0b4d4de3d5d78ce19d9c0894c2fbfe61",
+      "official_git_blob_lf_sha256": "556cf941dbd02c0ab3f28445b374edef0b4d4de3d5d78ce19d9c0894c2fbfe61",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/scetuning/__init__.py",
+      "installed_lf_sha256": "3ee801334f9015e2e98343820909ead6e1f1054387e8562fdd65e39e532105e7",
+      "official_git_blob_lf_sha256": "3ee801334f9015e2e98343820909ead6e1f1054387e8562fdd65e39e532105e7",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/scetuning/scetuning.py",
+      "installed_lf_sha256": "549bbab8bd080689148c7d9d4ae36f1fed0bedfbf2fcf32fc69d814f4bbf7961",
+      "official_git_blob_lf_sha256": "549bbab8bd080689148c7d9d4ae36f1fed0bedfbf2fcf32fc69d814f4bbf7961",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/scetuning/scetuning_components.py",
+      "installed_lf_sha256": "af5bcb1eca74559170be0bd3e9c00ee1d183876d2b167d7197aa74be45505983",
+      "official_git_blob_lf_sha256": "af5bcb1eca74559170be0bd3e9c00ee1d183876d2b167d7197aa74be45505983",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/side.py",
+      "installed_lf_sha256": "7c18422cbf263ebb21c5efc471154a4a40c9c26a3c4ccbdbae04c2976891a663",
+      "official_git_blob_lf_sha256": "7c18422cbf263ebb21c5efc471154a4a40c9c26a3c4ccbdbae04c2976891a663",
+      "equal": true
+    },
+    {
+      "path": "swift/tuners/utils.py",
+      "installed_lf_sha256": "6c8d69f6700f840068c5643cadb273975f097b5b9fa83be300f33f478bb9665f",
+      "official_git_blob_lf_sha256": "6c8d69f6700f840068c5643cadb273975f097b5b9fa83be300f33f478bb9665f",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/__init__.py",
+      "installed_lf_sha256": "65df9895ec83307a84186ab96889e8bae0bef4200c290ad170833545f684859c",
+      "official_git_blob_lf_sha256": "65df9895ec83307a84186ab96889e8bae0bef4200c290ad170833545f684859c",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/app.py",
+      "installed_lf_sha256": "19b905e53ed38646cb1ba6658b178cb8d9dd23794c43f10ab2468b28a128f727",
+      "official_git_blob_lf_sha256": "19b905e53ed38646cb1ba6658b178cb8d9dd23794c43f10ab2468b28a128f727",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/base.py",
+      "installed_lf_sha256": "053da77c9261a315b5e8049d1ca5a3852036f167c212e672877f44f1a4a3dddb",
+      "official_git_blob_lf_sha256": "053da77c9261a315b5e8049d1ca5a3852036f167c212e672877f44f1a4a3dddb",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_eval/__init__.py",
+      "installed_lf_sha256": "c31cf5783729d865c8721c5763652dc9fdaa94eb0c81c7b3749d99523754e31b",
+      "official_git_blob_lf_sha256": "c31cf5783729d865c8721c5763652dc9fdaa94eb0c81c7b3749d99523754e31b",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_eval/eval.py",
+      "installed_lf_sha256": "408030b31d37893b7a3ba20e251dd886274865160666642ccb5990c993d7b73c",
+      "official_git_blob_lf_sha256": "408030b31d37893b7a3ba20e251dd886274865160666642ccb5990c993d7b73c",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_eval/llm_eval.py",
+      "installed_lf_sha256": "cd83b871298ecd56426117755ee045d8373278c463515eb3fa3577c46935a402",
+      "official_git_blob_lf_sha256": "cd83b871298ecd56426117755ee045d8373278c463515eb3fa3577c46935a402",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_eval/model.py",
+      "installed_lf_sha256": "1af7bdde9a83e10741d32e2f6379d983c9a7e15d44cb69fe9636da6400d7871a",
+      "official_git_blob_lf_sha256": "1af7bdde9a83e10741d32e2f6379d983c9a7e15d44cb69fe9636da6400d7871a",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_eval/runtime.py",
+      "installed_lf_sha256": "ba9e3395a5b1bdb25f48c0d83ed3a9af2ac3339d5aefad7b5babd34d7edd8f2c",
+      "official_git_blob_lf_sha256": "ba9e3395a5b1bdb25f48c0d83ed3a9af2ac3339d5aefad7b5babd34d7edd8f2c",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_export/__init__.py",
+      "installed_lf_sha256": "8271fabedaaa9dd67636deb8ea41400588d65d0e9bd84ef67b6ca816b6e45bd5",
+      "official_git_blob_lf_sha256": "8271fabedaaa9dd67636deb8ea41400588d65d0e9bd84ef67b6ca816b6e45bd5",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_export/export.py",
+      "installed_lf_sha256": "ab63ca7fe6cc0034575cd22bd3da918af4371aa534692250f8a9e82a9bce04d1",
+      "official_git_blob_lf_sha256": "ab63ca7fe6cc0034575cd22bd3da918af4371aa534692250f8a9e82a9bce04d1",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_export/llm_export.py",
+      "installed_lf_sha256": "bb60a2dd22b7555419fdb049b3512c96c0d26b4a5ab9d0e0705044d926945c5f",
+      "official_git_blob_lf_sha256": "bb60a2dd22b7555419fdb049b3512c96c0d26b4a5ab9d0e0705044d926945c5f",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_export/model.py",
+      "installed_lf_sha256": "a54980505f120a011b458f4317f4da0beabfdc2987154e4e5a6f01c8d3e75555",
+      "official_git_blob_lf_sha256": "a54980505f120a011b458f4317f4da0beabfdc2987154e4e5a6f01c8d3e75555",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_export/runtime.py",
+      "installed_lf_sha256": "32c5d48375d4af84b941bad71484dfb7a44c3913341a3ad4706edd162b6a99ec",
+      "official_git_blob_lf_sha256": "32c5d48375d4af84b941bad71484dfb7a44c3913341a3ad4706edd162b6a99ec",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/__init__.py",
+      "installed_lf_sha256": "dcb95fdbbc2a173e3461104181bf38dcb79139ee3342a1262ae28d50dd3c0298",
+      "official_git_blob_lf_sha256": "dcb95fdbbc2a173e3461104181bf38dcb79139ee3342a1262ae28d50dd3c0298",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/advanced.py",
+      "installed_lf_sha256": "ed26df26faadaf2e8366a9770451bc3001c1694b01159eeb84690776f98b43de",
+      "official_git_blob_lf_sha256": "ed26df26faadaf2e8366a9770451bc3001c1694b01159eeb84690776f98b43de",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/dataset.py",
+      "installed_lf_sha256": "e2e5b745e7da31714ff96c706019355e34527c2e6633a6bb7e27a1f4b64efc06",
+      "official_git_blob_lf_sha256": "e2e5b745e7da31714ff96c706019355e34527c2e6633a6bb7e27a1f4b64efc06",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/external_rollout.py",
+      "installed_lf_sha256": "7352eb2b7d76ca8ccaeb0fedffb3b614f08320ec8d7a99c949149878e2dc2aa5",
+      "official_git_blob_lf_sha256": "7352eb2b7d76ca8ccaeb0fedffb3b614f08320ec8d7a99c949149878e2dc2aa5",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/external_runtime.py",
+      "installed_lf_sha256": "8d3aa120933f1853cb88e27b57719099ca1cf3eb2b5cc5d8868657a13662a6a2",
+      "official_git_blob_lf_sha256": "8d3aa120933f1853cb88e27b57719099ca1cf3eb2b5cc5d8868657a13662a6a2",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/grpo_advanced.py",
+      "installed_lf_sha256": "65801c84c9a80208e67bdcc9f17b8d7be17a478cfa70c686af8cf7b73510ee17",
+      "official_git_blob_lf_sha256": "65801c84c9a80208e67bdcc9f17b8d7be17a478cfa70c686af8cf7b73510ee17",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/hyper.py",
+      "installed_lf_sha256": "7ef16fed15b4cc2ec133a85368a13d7d508afbd536bebf8115ce4eb3eab2b8ff",
+      "official_git_blob_lf_sha256": "7ef16fed15b4cc2ec133a85368a13d7d508afbd536bebf8115ce4eb3eab2b8ff",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/llm_grpo.py",
+      "installed_lf_sha256": "06522aa888e832712d1acdf610753fc4d447ef0602f7dda6f4eaa89ceab879ed",
+      "official_git_blob_lf_sha256": "06522aa888e832712d1acdf610753fc4d447ef0602f7dda6f4eaa89ceab879ed",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/lora.py",
+      "installed_lf_sha256": "bd7ef5bc6533e632df42eb75956261b36a229c74de42847d69b277a21384af26",
+      "official_git_blob_lf_sha256": "bd7ef5bc6533e632df42eb75956261b36a229c74de42847d69b277a21384af26",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/model.py",
+      "installed_lf_sha256": "0fd0a21488d8830c35320e20309d14853ed193d0dd1c7f68eb0a173816b0faf5",
+      "official_git_blob_lf_sha256": "0fd0a21488d8830c35320e20309d14853ed193d0dd1c7f68eb0a173816b0faf5",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/optimizer.py",
+      "installed_lf_sha256": "733c68c3f40c7c76f5d65c5a4f2e7baa28eb40afa64c3568630530a1825f4020",
+      "official_git_blob_lf_sha256": "733c68c3f40c7c76f5d65c5a4f2e7baa28eb40afa64c3568630530a1825f4020",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/quantization.py",
+      "installed_lf_sha256": "4cfad8b4a7dfb291d3f0cbba4e9d2340c7225181ae4489ad815ce18de74eb5fe",
+      "official_git_blob_lf_sha256": "4cfad8b4a7dfb291d3f0cbba4e9d2340c7225181ae4489ad815ce18de74eb5fe",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/report_to.py",
+      "installed_lf_sha256": "38de8b44d161eb79da4fefad5cf071d3a3d688d36945d9165ed63c5be813443e",
+      "official_git_blob_lf_sha256": "38de8b44d161eb79da4fefad5cf071d3a3d688d36945d9165ed63c5be813443e",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/reward.py",
+      "installed_lf_sha256": "4fe45f4d8af10b554db0355d1de9d7e6e8f18739612bc166f87bd596566a3042",
+      "official_git_blob_lf_sha256": "4fe45f4d8af10b554db0355d1de9d7e6e8f18739612bc166f87bd596566a3042",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/rollout.py",
+      "installed_lf_sha256": "7668515e69915737653872ed597c424736a1f06c524989192287061bcb0ca4c0",
+      "official_git_blob_lf_sha256": "7668515e69915737653872ed597c424736a1f06c524989192287061bcb0ca4c0",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/runtime.py",
+      "installed_lf_sha256": "0189d4fc95769a6c6c1696eb20928b0da3f4a4cfb011146704cc9d9eefc1e13d",
+      "official_git_blob_lf_sha256": "0189d4fc95769a6c6c1696eb20928b0da3f4a4cfb011146704cc9d9eefc1e13d",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/save.py",
+      "installed_lf_sha256": "25be1ad455f987b9bea464060de57e369a04997e759f292a966ab1fd0d0d3040",
+      "official_git_blob_lf_sha256": "25be1ad455f987b9bea464060de57e369a04997e759f292a966ab1fd0d0d3040",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/target.py",
+      "installed_lf_sha256": "da22f28f4ce014084202f54429ac731aaa1b102cfdb62b052b96f2462e4b45ee",
+      "official_git_blob_lf_sha256": "da22f28f4ce014084202f54429ac731aaa1b102cfdb62b052b96f2462e4b45ee",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_grpo/tuner.py",
+      "installed_lf_sha256": "af988c75dff2b7480c5730e452b46e0ce2e03651ed6e6eab0c05f0d8dfbd0430",
+      "official_git_blob_lf_sha256": "af988c75dff2b7480c5730e452b46e0ce2e03651ed6e6eab0c05f0d8dfbd0430",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_infer/__init__.py",
+      "installed_lf_sha256": "c36b3aa58e064b3d1e7a8d8a615a3c8919afa12bcf9dc214ba7b962095d173e1",
+      "official_git_blob_lf_sha256": "c36b3aa58e064b3d1e7a8d8a615a3c8919afa12bcf9dc214ba7b962095d173e1",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_infer/generate.py",
+      "installed_lf_sha256": "034f5db51ddfbd4e48bea8c41e95ba5a91e1a7cdbdebb41608edfbe43ab4dedd",
+      "official_git_blob_lf_sha256": "034f5db51ddfbd4e48bea8c41e95ba5a91e1a7cdbdebb41608edfbe43ab4dedd",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_infer/llm_infer.py",
+      "installed_lf_sha256": "b00a2365d9413a89dd9b06f340667bf92a1c00f9ff965b8e4cc5a61751dc156e",
+      "official_git_blob_lf_sha256": "b00a2365d9413a89dd9b06f340667bf92a1c00f9ff965b8e4cc5a61751dc156e",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_infer/model.py",
+      "installed_lf_sha256": "fdd5c8886deea099feb7c444cc252a74873c1eaa514cc0e52abc00ff23167850",
+      "official_git_blob_lf_sha256": "fdd5c8886deea099feb7c444cc252a74873c1eaa514cc0e52abc00ff23167850",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_infer/runtime.py",
+      "installed_lf_sha256": "d7b5ce04f0c8e36d646fdee3ba9cdf30c829bc96cb1bbbaa6522ffe9c5814d56",
+      "official_git_blob_lf_sha256": "d7b5ce04f0c8e36d646fdee3ba9cdf30c829bc96cb1bbbaa6522ffe9c5814d56",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/__init__.py",
+      "installed_lf_sha256": "ba44b83f7c817e2661da6d84605f464dd42396b0cce6f8e8d1082d398c0afb31",
+      "official_git_blob_lf_sha256": "ba44b83f7c817e2661da6d84605f464dd42396b0cce6f8e8d1082d398c0afb31",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/advanced.py",
+      "installed_lf_sha256": "fbcf89745b28c848eac54ec00a32963ccf3bd7d05c5a81ff6e3df7ddec8dd184",
+      "official_git_blob_lf_sha256": "fbcf89745b28c848eac54ec00a32963ccf3bd7d05c5a81ff6e3df7ddec8dd184",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/dataset.py",
+      "installed_lf_sha256": "c77c358d95eb24301a5239e9b21990028023c534c98b0abfa1da211e7900b6ba",
+      "official_git_blob_lf_sha256": "c77c358d95eb24301a5239e9b21990028023c534c98b0abfa1da211e7900b6ba",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/hyper.py",
+      "installed_lf_sha256": "1df1a00c49e18ece1698a0745fc7ce21b3b078fc33755f5f37a0014f028b2f3a",
+      "official_git_blob_lf_sha256": "1df1a00c49e18ece1698a0745fc7ce21b3b078fc33755f5f37a0014f028b2f3a",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/llm_rlhf.py",
+      "installed_lf_sha256": "7a0b1708014797201a2ac769ff31acd74b448ca87fa0b578705f9e12ed148b52",
+      "official_git_blob_lf_sha256": "7a0b1708014797201a2ac769ff31acd74b448ca87fa0b578705f9e12ed148b52",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/lora.py",
+      "installed_lf_sha256": "5c2628a06d6a2cc6e82aa38a8fb24cd174991ade9d647a9fc7b00431c4d1cf56",
+      "official_git_blob_lf_sha256": "5c2628a06d6a2cc6e82aa38a8fb24cd174991ade9d647a9fc7b00431c4d1cf56",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/model.py",
+      "installed_lf_sha256": "0d8c23327b6fefed0f211c1a3af1d52e3d6418941b5356597b60260b89950679",
+      "official_git_blob_lf_sha256": "0d8c23327b6fefed0f211c1a3af1d52e3d6418941b5356597b60260b89950679",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/optimizer.py",
+      "installed_lf_sha256": "740210293be38395f2ce650dd1b6dcb07edc38b23981fc0768a20e0393afd019",
+      "official_git_blob_lf_sha256": "740210293be38395f2ce650dd1b6dcb07edc38b23981fc0768a20e0393afd019",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/quantization.py",
+      "installed_lf_sha256": "f53a8dbb6e2616d4e000af5c30835dfc5c259a4b220b0075fb60d027d2a46535",
+      "official_git_blob_lf_sha256": "f53a8dbb6e2616d4e000af5c30835dfc5c259a4b220b0075fb60d027d2a46535",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/report_to.py",
+      "installed_lf_sha256": "5915d042983fba7a75e5a92177b32ac161959713b3c7ad5d5299e4f1f4f6076e",
+      "official_git_blob_lf_sha256": "5915d042983fba7a75e5a92177b32ac161959713b3c7ad5d5299e4f1f4f6076e",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/rlhf.py",
+      "installed_lf_sha256": "e535631517f69bd70f6a7ab54ce2ba945baac3cf457ca1777a5de10a9d2cf656",
+      "official_git_blob_lf_sha256": "e535631517f69bd70f6a7ab54ce2ba945baac3cf457ca1777a5de10a9d2cf656",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/runtime.py",
+      "installed_lf_sha256": "9be0d69224ec64d51bfed62763c029611445595343688cb2e43c3e4b3988973a",
+      "official_git_blob_lf_sha256": "9be0d69224ec64d51bfed62763c029611445595343688cb2e43c3e4b3988973a",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/save.py",
+      "installed_lf_sha256": "334064b330992d2e6c4dbe91de98549053ab49e59e1d418c5b7eae078e207863",
+      "official_git_blob_lf_sha256": "334064b330992d2e6c4dbe91de98549053ab49e59e1d418c5b7eae078e207863",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/target.py",
+      "installed_lf_sha256": "a667ecb7337a8ec375aec06c8321891c8ec7618548c479ce90231eaa1db033f0",
+      "official_git_blob_lf_sha256": "a667ecb7337a8ec375aec06c8321891c8ec7618548c479ce90231eaa1db033f0",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_rlhf/tuner.py",
+      "installed_lf_sha256": "7cda550b2a21ea1f2a4ea4a459363abd81f153a426dc5121de8cd7f42af686bd",
+      "official_git_blob_lf_sha256": "7cda550b2a21ea1f2a4ea4a459363abd81f153a426dc5121de8cd7f42af686bd",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_sample/__init__.py",
+      "installed_lf_sha256": "c6a750f958125a5d8af13e7106c9a07339e154fceab6f582b13543c8d48fec04",
+      "official_git_blob_lf_sha256": "c6a750f958125a5d8af13e7106c9a07339e154fceab6f582b13543c8d48fec04",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_sample/llm_sample.py",
+      "installed_lf_sha256": "fc974bfb14762a58ea72f3eccde6de07ce441931ec341155c95469f113f57181",
+      "official_git_blob_lf_sha256": "fc974bfb14762a58ea72f3eccde6de07ce441931ec341155c95469f113f57181",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_sample/model.py",
+      "installed_lf_sha256": "e42f3e8e481515dd5b53e99072c7a6aaaf9f82aa84c0143b1aeb37ea7c33785f",
+      "official_git_blob_lf_sha256": "e42f3e8e481515dd5b53e99072c7a6aaaf9f82aa84c0143b1aeb37ea7c33785f",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_sample/runtime.py",
+      "installed_lf_sha256": "ea27e67733681492eed2edc20e9acbefa03b34f6630740f51cfdaaae919219c1",
+      "official_git_blob_lf_sha256": "ea27e67733681492eed2edc20e9acbefa03b34f6630740f51cfdaaae919219c1",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_sample/sample.py",
+      "installed_lf_sha256": "3823e763858acfc7e08a320b464e6f7a378b0270a431d00a7f705130ca55f9e9",
+      "official_git_blob_lf_sha256": "3823e763858acfc7e08a320b464e6f7a378b0270a431d00a7f705130ca55f9e9",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/__init__.py",
+      "installed_lf_sha256": "a9673fe8a985258dcfd83130a96b2bee05447340223d3a2cbfb362a38f3f0925",
+      "official_git_blob_lf_sha256": "a9673fe8a985258dcfd83130a96b2bee05447340223d3a2cbfb362a38f3f0925",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/advanced.py",
+      "installed_lf_sha256": "ffba800ed6e7795fec054ac1f787eda047c0097f20857df7e8a1660d09217e6e",
+      "official_git_blob_lf_sha256": "ffba800ed6e7795fec054ac1f787eda047c0097f20857df7e8a1660d09217e6e",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/dataset.py",
+      "installed_lf_sha256": "df3c880dc3539a6c2e8b0d1539b22bf1505061b828cda5b2c3e7b40d6cb488c3",
+      "official_git_blob_lf_sha256": "df3c880dc3539a6c2e8b0d1539b22bf1505061b828cda5b2c3e7b40d6cb488c3",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/hyper.py",
+      "installed_lf_sha256": "dbbe2bbd2684ad7487a012c4c2584c190edcf56e76e30b69bfc8086cb4077b6a",
+      "official_git_blob_lf_sha256": "dbbe2bbd2684ad7487a012c4c2584c190edcf56e76e30b69bfc8086cb4077b6a",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/llm_train.py",
+      "installed_lf_sha256": "20c69923bf832d2b275db3d2654485b71163b69426d666a8ab2552b7d7e068a1",
+      "official_git_blob_lf_sha256": "20c69923bf832d2b275db3d2654485b71163b69426d666a8ab2552b7d7e068a1",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/lora.py",
+      "installed_lf_sha256": "722980b8b1b8f7fa64cb41720a2f84de853b531ec5af796b04297cedd7702df9",
+      "official_git_blob_lf_sha256": "722980b8b1b8f7fa64cb41720a2f84de853b531ec5af796b04297cedd7702df9",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/model.py",
+      "installed_lf_sha256": "994fba1608f23f79aac8faf30fe64428ffc1cbdb73d29ea53b41a4786d1e5bd0",
+      "official_git_blob_lf_sha256": "994fba1608f23f79aac8faf30fe64428ffc1cbdb73d29ea53b41a4786d1e5bd0",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/optimizer.py",
+      "installed_lf_sha256": "c4cdf3ad73d0360b22c9130d8d7af9f10228adfa45e12e0133432a1508e40dd2",
+      "official_git_blob_lf_sha256": "c4cdf3ad73d0360b22c9130d8d7af9f10228adfa45e12e0133432a1508e40dd2",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/quantization.py",
+      "installed_lf_sha256": "1bf74686780a0b3a2cedaee19195da6583148f28bd390b42088fd34bfec9a574",
+      "official_git_blob_lf_sha256": "1bf74686780a0b3a2cedaee19195da6583148f28bd390b42088fd34bfec9a574",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/report_to.py",
+      "installed_lf_sha256": "6eb0ba7f5e9b010be2a2c30254ea0f0ba3e4a66bdfee612fe0e6cb75fc0f9ab5",
+      "official_git_blob_lf_sha256": "6eb0ba7f5e9b010be2a2c30254ea0f0ba3e4a66bdfee612fe0e6cb75fc0f9ab5",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/runtime.py",
+      "installed_lf_sha256": "42251d3d5d928a641d1a463f800cfe37dab647a26abae2e0b11e1f4d62c064b7",
+      "official_git_blob_lf_sha256": "42251d3d5d928a641d1a463f800cfe37dab647a26abae2e0b11e1f4d62c064b7",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/save.py",
+      "installed_lf_sha256": "efa2a64c8f50d355ca0c36212f97105af765076c3b2b44e6840756f6eaba9475",
+      "official_git_blob_lf_sha256": "efa2a64c8f50d355ca0c36212f97105af765076c3b2b44e6840756f6eaba9475",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/self_cog.py",
+      "installed_lf_sha256": "34f2a45f6d6c4848feb8ad223301f3b9c13bdb83b838bf77ba1dec3392ff8893",
+      "official_git_blob_lf_sha256": "34f2a45f6d6c4848feb8ad223301f3b9c13bdb83b838bf77ba1dec3392ff8893",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/target.py",
+      "installed_lf_sha256": "2bdd5db6450cb779b28a784f127d8f5b5b04471970399ec1abe49663d10512d3",
+      "official_git_blob_lf_sha256": "2bdd5db6450cb779b28a784f127d8f5b5b04471970399ec1abe49663d10512d3",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/task.py",
+      "installed_lf_sha256": "866c94e16154c65cb50bca6d619790dce56944b91efaa77000f712a55c946e3d",
+      "official_git_blob_lf_sha256": "866c94e16154c65cb50bca6d619790dce56944b91efaa77000f712a55c946e3d",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/tuner.py",
+      "installed_lf_sha256": "1d102dbfdc9e93e927a6ee3c93e724ff3ddb2e8cf03d9cb038e199e3372f10be",
+      "official_git_blob_lf_sha256": "1d102dbfdc9e93e927a6ee3c93e724ff3ddb2e8cf03d9cb038e199e3372f10be",
+      "equal": true
+    },
+    {
+      "path": "swift/ui/llm_train/utils.py",
+      "installed_lf_sha256": "fdbf4e396d824c38b0ab4e81af42d3f08fb3f1789a75f0cc780ddf5d76c7a52d",
+      "official_git_blob_lf_sha256": "fdbf4e396d824c38b0ab4e81af42d3f08fb3f1789a75f0cc780ddf5d76c7a52d",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/__init__.py",
+      "installed_lf_sha256": "9c18ece43ba12265a37fb60001e9ee4ad5547ca5aa4337a0088e939b302ffb89",
+      "official_git_blob_lf_sha256": "9c18ece43ba12265a37fb60001e9ee4ad5547ca5aa4337a0088e939b302ffb89",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/constants.py",
+      "installed_lf_sha256": "34cd8c22bdd0770ce017a30293be8da4c3849674e14eb8c1ce311ff2507f06de",
+      "official_git_blob_lf_sha256": "34cd8c22bdd0770ce017a30293be8da4c3849674e14eb8c1ce311ff2507f06de",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/env.py",
+      "installed_lf_sha256": "d166e53e69f72c7ced8e09cd9cecb21ece89c43b11ce2de27d938ccf8f1eea8b",
+      "official_git_blob_lf_sha256": "d166e53e69f72c7ced8e09cd9cecb21ece89c43b11ce2de27d938ccf8f1eea8b",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/hf_config.py",
+      "installed_lf_sha256": "d5658d237715fc82ff09bebfe5a309df5d056ac25065be1620c586e3b9c6c6f4",
+      "official_git_blob_lf_sha256": "d5658d237715fc82ff09bebfe5a309df5d056ac25065be1620c586e3b9c6c6f4",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/hub_utils.py",
+      "installed_lf_sha256": "4402da340516af20e6855aab7b9992c6a14afdfe3f1f88dc28ddcd9642f6e194",
+      "official_git_blob_lf_sha256": "4402da340516af20e6855aab7b9992c6a14afdfe3f1f88dc28ddcd9642f6e194",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/import_utils.py",
+      "installed_lf_sha256": "9f2dda878aee8cac19d2d88968c5f55c873ac85c41f7e1df408f65ac43a31dba",
+      "official_git_blob_lf_sha256": "9f2dda878aee8cac19d2d88968c5f55c873ac85c41f7e1df408f65ac43a31dba",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/io_utils.py",
+      "installed_lf_sha256": "40ba5701936b3e620bc89e26b46616b83af0229a2c3a811f803b29163de63a5f",
+      "official_git_blob_lf_sha256": "40ba5701936b3e620bc89e26b46616b83af0229a2c3a811f803b29163de63a5f",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/logger.py",
+      "installed_lf_sha256": "0da3c479def5459653ea0dc42ec09d9a715a72884417b6ffa6b802c8a566e97d",
+      "official_git_blob_lf_sha256": "0da3c479def5459653ea0dc42ec09d9a715a72884417b6ffa6b802c8a566e97d",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/media_utils.py",
+      "installed_lf_sha256": "d308c0138e1e89d0aa7e5afd9eaeea9ad0ce16e661c6e94e3c2582214b998513",
+      "official_git_blob_lf_sha256": "d308c0138e1e89d0aa7e5afd9eaeea9ad0ce16e661c6e94e3c2582214b998513",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/np_utils.py",
+      "installed_lf_sha256": "51f2c3ce9ffc62b506d385ccdcf16b6a8aa751b5da95086713d8c05f66d38a02",
+      "official_git_blob_lf_sha256": "51f2c3ce9ffc62b506d385ccdcf16b6a8aa751b5da95086713d8c05f66d38a02",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/processor_utils.py",
+      "installed_lf_sha256": "34a3023c5fd3b2d43910fdd4e82e9081acf47fac823650e29c1cfd8ce2a3b7b3",
+      "official_git_blob_lf_sha256": "34a3023c5fd3b2d43910fdd4e82e9081acf47fac823650e29c1cfd8ce2a3b7b3",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/schema_utils.py",
+      "installed_lf_sha256": "ae9129ce8bfb6be02ca4a37f994392250cf87a7b21e03f4e796362f8cd7a65e1",
+      "official_git_blob_lf_sha256": "ae9129ce8bfb6be02ca4a37f994392250cf87a7b21e03f4e796362f8cd7a65e1",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/shutdown_manager.py",
+      "installed_lf_sha256": "ea953e123561b141d8a5dd682dac214c03f47e8c22664710850f805c5d4f63f2",
+      "official_git_blob_lf_sha256": "ea953e123561b141d8a5dd682dac214c03f47e8c22664710850f805c5d4f63f2",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/tb_utils.py",
+      "installed_lf_sha256": "4df4ee1e3fdf763930fc680086270ee1a9487f76592d93df401988bd59fe0756",
+      "official_git_blob_lf_sha256": "4df4ee1e3fdf763930fc680086270ee1a9487f76592d93df401988bd59fe0756",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/torch_utils.py",
+      "installed_lf_sha256": "345011337478a017030c945e3ba147e9628cf634e01e854724d8db2afdde95a4",
+      "official_git_blob_lf_sha256": "345011337478a017030c945e3ba147e9628cf634e01e854724d8db2afdde95a4",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/transformers_utils.py",
+      "installed_lf_sha256": "90861f029e6a68de01d4067451efc937f7bec9f4aac12d43921b84f0cc6f3bb8",
+      "official_git_blob_lf_sha256": "90861f029e6a68de01d4067451efc937f7bec9f4aac12d43921b84f0cc6f3bb8",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/url_utils.py",
+      "installed_lf_sha256": "b271ecc18386cf931ce0b08c8bae6271cfc741f81e3b98577a643078b776ca79",
+      "official_git_blob_lf_sha256": "b271ecc18386cf931ce0b08c8bae6271cfc741f81e3b98577a643078b776ca79",
+      "equal": true
+    },
+    {
+      "path": "swift/utils/utils.py",
+      "installed_lf_sha256": "6ce755990d8cec739cf682962f55df7392f1627dcfc7793209912d412dd12c6a",
+      "official_git_blob_lf_sha256": "6ce755990d8cec739cf682962f55df7392f1627dcfc7793209912d412dd12c6a",
+      "equal": true
+    },
+    {
+      "path": "swift/version.py",
+      "installed_lf_sha256": "c74d39deec4f4c7247512503cb7eb8f4cbfd89973d7f53593a72b53015c9ad42",
+      "official_git_blob_lf_sha256": "c74d39deec4f4c7247512503cb7eb8f4cbfd89973d7f53593a72b53015c9ad42",
+      "equal": true
+    }
+  ]
+}

@@ -1,0 +1,625 @@
+{
+  "status": "native_cuda_and_independent_cpu_reference_complete",
+  "run": "compare-inferencecuda-20261021T182139Z",
+  "hardware": "NVIDIA GeForce RTX 5060 8GB, sm120",
+  "dependencies": {
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "triton": "3.5.1",
+    "lmdeploy": "0.18.0",
+    "transformers": "4.57.1",
+    "native_compiler": "NVIDIA nvcc12.8.93",
+    "llama.cpp_commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab"
+  },
+  "models": 2,
+  "native_model_lanes": 4,
+  "independent_cpu_references": 2,
+  "paired_distributions": 12,
+  "paired_targets": 12,
+  "overall_comparisons": 8,
+  "stage_comparisons": 24,
+  "validated_sides": 6,
+  "cases": [
+    {
+      "model": "SmolLM2-135M-Instruct",
+      "source_checkpoint": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "source_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "vocab_size": 49152,
+      "positions": 3,
+      "target_tokens": [
+        30,
+        378,
+        3575
+      ],
+      "history_lengths": [
+        6,
+        7,
+        8
+      ],
+      "requested_stages": [
+        "prefill",
+        "first_cached_decode",
+        "later_cached_decode"
+      ],
+      "native_LMDeploy": {
+        "backend": "PyTorch CUDA",
+        "raw_storage_dtype": "F16",
+        "forward_input_ids": [
+          [
+            [
+              504,
+              3575,
+              282,
+              4649,
+              314,
+              7042
+            ]
+          ],
+          [
+            [
+              30
+            ]
+          ],
+          [
+            [
+              378
+            ]
+          ]
+        ],
+        "forward_positions": [
+          [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ],
+          [
+            [
+              6
+            ]
+          ],
+          [
+            [
+              7
+            ]
+          ]
+        ],
+        "score_shapes": [
+          [
+            1,
+            1,
+            49152
+          ],
+          [
+            1,
+            1,
+            49152
+          ],
+          [
+            1,
+            1,
+            49152
+          ]
+        ],
+        "score_devices": [
+          "cuda:0",
+          "cuda:0",
+          "cuda:0"
+        ],
+        "cache_storage_dtypes": [
+          "torch.float16",
+          "torch.float16",
+          "torch.float16"
+        ],
+        "cache_device": "cuda:0",
+        "same_native_cache_storage_across_steps": true,
+        "raw_boundary": "native model get_logits return before every sampling processor"
+      },
+      "native_llama": {
+        "backend": "GGML_CUDA",
+        "source_commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+        "gpu_layers_offloaded": 31,
+        "gpu_layers_total": 31,
+        "raw_storage_dtype": "F32 API logits, original native-logits.bin retained",
+        "measured_cache_lines": [
+          "llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.",
+          "llama_kv_cache:      CUDA0 KV buffer size =    11.25 MiB",
+          "llama_kv_cache: size =   11.25 MiB (   256 cells,  30 layers,  1/1 seqs), K (f32):    5.62 MiB, V (f32):    5.62 MiB"
+        ],
+        "forward_batch_tokens": [
+          6,
+          1,
+          1
+        ]
+      },
+      "reference": {
+        "entrypoint": "independent Transformers CPU FP32 eager forward",
+        "raw_storage_dtype": "F32",
+        "weights": "same pinned source checkpoint separately loaded; cast FP16 then FP32",
+        "native_scores_used": false,
+        "native_parameters_used": false
+      },
+      "normalization": "offline FP64 natural-log log_softmax from each retained raw row",
+      "thresholds": null
+    },
+    {
+      "model": "Qwen2.5-0.5B-Instruct",
+      "source_checkpoint": "Qwen/Qwen2.5-0.5B-Instruct",
+      "source_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "vocab_size": 151936,
+      "positions": 3,
+      "target_tokens": [
+        13,
+        576,
+        6722
+      ],
+      "history_lengths": [
+        6,
+        7,
+        8
+      ],
+      "requested_stages": [
+        "prefill",
+        "first_cached_decode",
+        "later_cached_decode"
+      ],
+      "native_LMDeploy": {
+        "backend": "PyTorch CUDA",
+        "raw_storage_dtype": "F16",
+        "forward_input_ids": [
+          [
+            [
+              785,
+              6722,
+              315,
+              9625,
+              374,
+              12095
+            ]
+          ],
+          [
+            [
+              13
+            ]
+          ],
+          [
+            [
+              576
+            ]
+          ]
+        ],
+        "forward_positions": [
+          [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ],
+          [
+            [
+              6
+            ]
+          ],
+          [
+            [
+              7
+            ]
+          ]
+        ],
+        "score_shapes": [
+          [
+            1,
+            1,
+            151936
+          ],
+          [
+            1,
+            1,
+            151936
+          ],
+          [
+            1,
+            1,
+            151936
+          ]
+        ],
+        "score_devices": [
+          "cuda:0",
+          "cuda:0",
+          "cuda:0"
+        ],
+        "cache_storage_dtypes": [
+          "torch.float16",
+          "torch.float16",
+          "torch.float16"
+        ],
+        "cache_device": "cuda:0",
+        "same_native_cache_storage_across_steps": true,
+        "raw_boundary": "native model get_logits return before every sampling processor"
+      },
+      "native_llama": {
+        "backend": "GGML_CUDA",
+        "source_commit": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+        "gpu_layers_offloaded": 25,
+        "gpu_layers_total": 25,
+        "raw_storage_dtype": "F32 API logits, original native-logits.bin retained",
+        "measured_cache_lines": [
+          "llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.",
+          "llama_kv_cache:      CUDA0 KV buffer size =     6.00 MiB",
+          "llama_kv_cache: size =    6.00 MiB (   256 cells,  24 layers,  1/1 seqs), K (f32):    3.00 MiB, V (f32):    3.00 MiB"
+        ],
+        "forward_batch_tokens": [
+          6,
+          1,
+          1
+        ]
+      },
+      "reference": {
+        "entrypoint": "independent Transformers CPU FP32 eager forward",
+        "raw_storage_dtype": "F32",
+        "weights": "same pinned source checkpoint separately loaded; cast FP16 then FP32",
+        "native_scores_used": false,
+        "native_parameters_used": false
+      },
+      "normalization": "offline FP64 natural-log log_softmax from each retained raw row",
+      "thresholds": null
+    }
+  ],
+  "metrics": [
+    {
+      "model": "SmolLM2-135M-Instruct",
+      "lane": "lmdeploy",
+      "distributions": {
+        "probability_rmse": {
+          "mean": 0.0002948796375222074,
+          "p99": 0.000532611058773221,
+          "max": 0.0005390718707677859,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.002240397397464492,
+          "p99": 0.003788680798754315,
+          "max": 0.0038251769000128277,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5,
+            "token": 28
+          }
+        },
+        "tail_merged_js": {
+          "mean": 4.349460982227467e-06,
+          "p99": 7.977375429148139e-06,
+          "max": 8.07676778365971e-06,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 1.0
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.9705996593278257,
+            "p1": 0.9404709165733912,
+            "min": 0.939812496397536
+          },
+          "side_b_top100": {
+            "mean": 0.9706145663605756,
+            "p1": 0.9405049106301154,
+            "min": 0.9398471495890843
+          },
+          "side_a_union": {
+            "mean": 0.9705996593278257,
+            "p1": 0.9404709165733912,
+            "min": 0.939812496397536
+          },
+          "side_b_union": {
+            "mean": 0.9706145663605756,
+            "p1": 0.9405049106301154,
+            "min": 0.9398471495890843
+          }
+        }
+      },
+      "targets": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5048393462328693,
+        "side_b_nll_nat_per_token": 1.5093269493493449,
+        "nll_abs_diff_nat_per_token": 0.004487603116475558,
+        "mae_nat": 0.004487603116475632,
+        "p99_nat": 0.006996142106490008,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.007069198432309687,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 6,
+          "token": 30
+        }
+      },
+      "status": "metrics_computed",
+      "thresholds": null
+    },
+    {
+      "model": "SmolLM2-135M-Instruct",
+      "lane": "llama",
+      "distributions": {
+        "probability_rmse": {
+          "mean": 0.00010314644248257683,
+          "p99": 0.00013406275251310357,
+          "max": 0.0001342982701801056,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.0007498585564241952,
+          "p99": 0.0009860316665543257,
+          "max": 0.0009872793019735093,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7,
+            "token": 3575
+          }
+        },
+        "tail_merged_js": {
+          "mean": 7.774821157104254e-07,
+          "p99": 1.4111474132052012e-06,
+          "max": 1.4302119626206423e-06,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 1.0
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.9705996593278257,
+            "p1": 0.9404709165733912,
+            "min": 0.939812496397536
+          },
+          "side_b_top100": {
+            "mean": 0.9706452763673993,
+            "p1": 0.9406207500519561,
+            "min": 0.9399656835709834
+          },
+          "side_a_union": {
+            "mean": 0.9705996593278257,
+            "p1": 0.9404709165733912,
+            "min": 0.939812496397536
+          },
+          "side_b_union": {
+            "mean": 0.9706452763673993,
+            "p1": 0.9406207500519561,
+            "min": 0.9399656835709834
+          }
+        }
+      },
+      "targets": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5048393462328693,
+        "side_b_nll_nat_per_token": 1.5067821036016962,
+        "nll_abs_diff_nat_per_token": 0.0019427573688268751,
+        "mae_nat": 0.0019427573688266901,
+        "p99_nat": 0.003251049213382184,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.0032823380139228586,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 8,
+          "token": 3575
+        }
+      },
+      "status": "metrics_computed",
+      "thresholds": null
+    },
+    {
+      "model": "Qwen2.5-0.5B-Instruct",
+      "lane": "lmdeploy",
+      "distributions": {
+        "probability_rmse": {
+          "mean": 0.00010915470313786392,
+          "p99": 0.0001616067532836651,
+          "max": 0.00016273865953278724,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.0007834853855882862,
+          "p99": 0.0012171102475555923,
+          "max": 0.0012280048441195013,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6,
+            "token": 576
+          }
+        },
+        "tail_merged_js": {
+          "mean": 2.9095739491781746e-06,
+          "p99": 4.334363199617723e-06,
+          "max": 4.351783437735217e-06,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 6
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 0.9933333333333333
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.8786277117594546,
+            "p1": 0.7547214476271668,
+            "min": 0.7519944762308499
+          },
+          "side_b_top100": {
+            "mean": 0.8785142973115114,
+            "p1": 0.7541027114986599,
+            "min": 0.751357399198624
+          },
+          "side_a_union": {
+            "mean": 0.8790084450310774,
+            "p1": 0.7558112147289577,
+            "min": 0.7531064834775754
+          },
+          "side_b_union": {
+            "mean": 0.878896614624444,
+            "p1": 0.7551969535185274,
+            "min": 0.7524739726882848
+          }
+        }
+      },
+      "targets": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5634624217101276,
+        "side_b_nll_nat_per_token": 1.5587140803172053,
+        "nll_abs_diff_nat_per_token": 0.004748341392922351,
+        "mae_nat": 0.004748341392922388,
+        "p99_nat": 0.008969557941615584,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.009046792028857942,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 7,
+          "token": 576
+        }
+      },
+      "status": "metrics_computed",
+      "thresholds": null
+    },
+    {
+      "model": "Qwen2.5-0.5B-Instruct",
+      "lane": "llama",
+      "distributions": {
+        "probability_rmse": {
+          "mean": 4.195579721335668e-05,
+          "p99": 5.4665963038780895e-05,
+          "max": 5.496785071148283e-05,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5
+          }
+        },
+        "max_probability_error": {
+          "mean": 0.00032611485956568487,
+          "p99": 0.0004669854787207828,
+          "max": 0.00047020311084378097,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 5,
+            "token": 13
+          }
+        },
+        "tail_merged_js": {
+          "mean": 4.443653426130142e-07,
+          "p99": 5.579312943137343e-07,
+          "max": 5.586808920257308e-07,
+          "max_coordinate": {
+            "sample": "geography",
+            "position": 7
+          }
+        },
+        "top1_agreement": {
+          "count": 3,
+          "total": 3,
+          "fraction": 1.0
+        },
+        "top100_overlap": {
+          "mean": 0.9966666666666667
+        },
+        "coverage": {
+          "side_a_top100": {
+            "mean": 0.8786277117594546,
+            "p1": 0.7547214476271668,
+            "min": 0.7519944762308499
+          },
+          "side_b_top100": {
+            "mean": 0.8785972993878742,
+            "p1": 0.7547801602490279,
+            "min": 0.7520574462147722
+          },
+          "side_a_union": {
+            "mean": 0.8789983808416965,
+            "p1": 0.7558112147289577,
+            "min": 0.7531064834775754
+          },
+          "side_b_union": {
+            "mean": 0.8789674451491338,
+            "p1": 0.755868388787131,
+            "min": 0.7531678834985509
+          }
+        }
+      },
+      "targets": {
+        "target_count": 3,
+        "side_a_nll_nat_per_token": 1.5634624217101276,
+        "side_b_nll_nat_per_token": 1.5643536387005383,
+        "nll_abs_diff_nat_per_token": 0.0008912169904107259,
+        "mae_nat": 0.0012431514465259437,
+        "p99_nat": 0.0022641157187779015,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.0022917548600727145,
+        "max_coordinate": {
+          "sample": "geography",
+          "position": 7,
+          "token": 576
+        }
+      },
+      "status": "metrics_computed",
+      "thresholds": null
+    }
+  ],
+  "other_routes": [
+    {
+      "framework": "LMDeploy TurboMind0.18.0",
+      "status": "not_executed_in_new_cached_cuda_lane",
+      "coverage": "previous evidence has only fresh-prefix CUDA rows; not counted as new cached decode"
+    },
+    {
+      "framework": "TensorRT-LLM",
+      "status": "reuse_existing_two_model_RTX5060_native_evidence",
+      "coverage": "not rerun or counted as new execution in this supplement"
+    },
+    {
+      "framework": "MindIE selected Ascend route",
+      "status": "requires_Ascend_hardware_runtime",
+      "coverage": "not replaced by a CUDA imitation"
+    }
+  ],
+  "first_attempt": {
+    "status": "diagnostic_only",
+    "finding": "Fixed-history callback originally raised on an extra post-request native processor call. Canonical fresh run returns scores unchanged after the requested history is exhausted. Both old source and errors remain in failure-history."
+  },
+  "gpu_release": "All own native collector subprocesses completed and exited; subsequent finalization uses CPU only",
+  "thresholds": null
+}
