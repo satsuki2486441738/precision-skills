@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-21T21:01:33.853838+00:00",
+  "updated_at": "2026-10-21T21:11:28.009112+00:00",
   "scope": "CUDA native workflow evidence, distinct from previous CPU and NPU executions",
   "baseline_revision": "70bc3a2d0d04a6f2b688f557d022ed98e31eee01",
-  "new_cuda_cases_completed": 30,
+  "new_cuda_cases_completed": 32,
   "numerical_acceptance": null,
   "remote_allocation": "four H100 80GB; native recovery in progress; completed scope retained in this directory",
   "lanes": [
@@ -50,8 +50,12 @@
     },
     {
       "id": "areal-rl",
-      "status": "native_returned_reference_conditions_incomparable",
-      "remaining": "Native eager packed inputs had a different effective attention boundary from the standard causal CPU reference; fresh SDPA matched-condition attempt required."
+      "status": "cuda_native_complete_matched_sdpa",
+      "remaining": "Selected two-GPU native workflow and independent CPU reference complete. Earlier eager/causal mismatch remains incomparable. Gradient/update scope sampled; full initial values/aliases independently audited.",
+      "models": 2,
+      "cases": 2,
+      "comparison_groups": 8,
+      "evidence": "areal/public-export-index.json"
     },
     {
       "id": "roll-rl",
@@ -159,10 +163,10 @@
     "adds_native_cases": false,
     "old_comparison_archives_modified": false
   },
-  "snapshot": "H100 publication phase one",
-  "h100_native_experiments": 8,
-  "h100_native_rank_captures": 20,
-  "h100_comparison_groups": 102,
+  "snapshot": "H100 continuation including matched-condition AReaL",
+  "h100_native_experiments": 10,
+  "h100_native_rank_captures": 22,
+  "h100_comparison_groups": 110,
   "source_publication_before_history": true,
   "comparison_replay_does_not_execute_model": true,
   "website_publication": {

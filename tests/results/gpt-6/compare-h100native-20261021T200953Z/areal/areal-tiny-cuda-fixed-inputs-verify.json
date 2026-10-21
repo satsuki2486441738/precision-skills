@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "areal-tiny-cuda-fixed-inputs.zip",
+  "index": "EXPORT.json",
+  "file_count": 64,
+  "payload_bytes": 135374,
+  "archive_sha256": "c4998c9f2ec867ae67f63a43d1d002e39bdde30f3a746f4df7f39bf7445e5bd3",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

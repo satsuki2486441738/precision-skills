@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "areal-tiny-cuda.zip",
+  "index": "EXPORT.json",
+  "file_count": 224,
+  "payload_bytes": 2543851,
+  "archive_sha256": "050a4cad69d7f4f2f38f62985463c8b281cb4f2e6b1f9626e0efcb87cc87c4f5",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

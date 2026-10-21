@@ -1,9 +1,54 @@
 {
   "schema_version": 1,
-  "verified_at": "2026-10-21T20:48:44.522473+00:00",
+  "verified_at": "2026-10-21T21:08:00.780604+00:00",
   "scope": "Public ZIP integrity, numeric replay and non-numeric byte scan; numerical acceptance is unset.",
   "numerical_acceptance": null,
   "records": [
+    {
+      "archive": "areal/areal-pretrained-cuda-fixed-inputs.zip",
+      "bytes": 44757,
+      "sha256": "c3bada2139dde55298106f9a43fc1e20bc2ab439f50a1bcade83498532c85dfd",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "areal/areal-pretrained-cuda.zip",
+      "bytes": 1840849,
+      "sha256": "76ecb99e17bab96339fbd54811129833c34740dbe6a56abe54416589a7349b47",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 4
+      }
+    },
+    {
+      "archive": "areal/areal-tiny-cuda-fixed-inputs.zip",
+      "bytes": 31654,
+      "sha256": "c4998c9f2ec867ae67f63a43d1d002e39bdde30f3a746f4df7f39bf7445e5bd3",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "areal/areal-tiny-cuda.zip",
+      "bytes": 2007805,
+      "sha256": "050a4cad69d7f4f2f38f62985463c8b281cb4f2e6b1f9626e0efcb87cc87c4f5",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 4
+      }
+    },
+    {
+      "archive": "mindspeed-cuda/mindspeed-cuda-pinned-boundary.zip",
+      "bytes": 107886,
+      "sha256": "d12ebd9e9ec616e6a9fef08e450d02b3d7c81e701e87ddfbe2c8da0b8188015f",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": false,
+      "reason": "Pinned dependency/runtime boundary; no numerical execution or precision comparison."
+    },
     {
       "archive": "nemo/nemo-pretrained-untied-fp32-fixed-inputs.zip",
       "bytes": 11791,
@@ -267,16 +312,6 @@
         "matched": true,
         "cases": 5
       }
-    },
-    {
-      "archive": "mindspeed-cuda/mindspeed-cuda-pinned-boundary.zip",
-      "bytes": 107886,
-      "sha256": "d12ebd9e9ec616e6a9fef08e450d02b3d7c81e701e87ddfbe2c8da0b8188015f",
-      "public_bytes_scan": true,
-      "bundle_verified": true,
-      "file_count": 65,
-      "portable_replay_completed": false,
-      "reason": "Dependency/runtime boundary only; no numerical execution or precision comparisons."
     }
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "areal-pretrained-cuda-fixed-inputs.zip",
+  "index": "EXPORT.json",
+  "file_count": 64,
+  "payload_bytes": 207439,
+  "archive_sha256": "c3bada2139dde55298106f9a43fc1e20bc2ab439f50a1bcade83498532c85dfd",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

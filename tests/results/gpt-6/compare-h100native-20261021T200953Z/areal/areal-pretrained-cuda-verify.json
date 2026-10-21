@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "areal-pretrained-cuda.zip",
+  "index": "EXPORT.json",
+  "file_count": 228,
+  "payload_bytes": 2822923,
+  "archive_sha256": "76ecb99e17bab96339fbd54811129833c34740dbe6a56abe54416589a7349b47",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}
