@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "kind": "prepared_native_gpu_launcher_source",
+  "remote_execution_completed": false,
+  "numerical_acceptance": null,
+  "core_source_revision": "70bc3a2d0d04a6f2b688f557d022ed98e31eee01",
+  "archive": "source-launch-v1.zip",
+  "archive_sha256": "381503721811c64f317d42a652791cd742195e1fb82ace404831c8ab398dcc97",
+  "files_sha256": {
+    "launch_all.sh": "eb0b23bb2766c1b2d664d58c812a4bd7de327036107c37ce88fc3e8ca1949ffb",
+    "sft/suite.sh": "8b110d1a3b28e71e4d0e7c9268a7f083c8e800af80b82a6037bf6bf68215b816",
+    "sft/native_gpu_sft.py": "5bf9b3d6d24f79565507507e0a62fab3eb686d558dde594e507a5592c5be9bbe",
+    "sft/export_compare_sft.py": "eae61403212db626d96a50f26cdc7647220c7f2be7d26a6b88627dd730b05f0b",
+    "inference/launch.sh": "4d666fa051777c41a0ebfa04f4055ce83dbd03133be17653fdc53fa03b22deb0",
+    "inference/suite.py": "cf1a3b92a0b5e81c23e7c2c6e98b60af573008241ce1c58014fe8b72919ed516",
+    "inference/native_llama_cuda.cpp": "431f6800fdde07a2bad4e3aa8001291121eef0c0131e1883cea93b95bc30ecd9",
+    "inference/analyze.py": "7ccca5523e21c3794b9d8bbb89bdffad89c9ee69c5d94b565c582df4cb82670e",
+    "rl/run_suite.py": "d36902f831cd55cba951ed6b98b9b4a9a7c55f795c1ad5013b7913819a7f4700",
+    "rl/prepare_models.py": "5d866089b00bb5e07adf43f378f897cd53d03f0fae80900011b77241e29c31ff",
+    "rl/native_swift.py": "265d3a318f627038a32930bb0376ebfa8452a27cb1c413a9a06686e803f65614",
+    "rl/native_openrlhf.py": "b0784ef3a19977e1b5bf9cfb06bf5482d2e66a99efaba871eeffe7187c513915",
+    "rl/observe_openrlhf.py": "fc09418404b3c54df5db4df630c6e51b472d333bc53ccf4ba329077f4d65bd70",
+    "rl/capture.py": "f3f048d74e463ba1ca8c911f6991138be0f1a4564784675dbe460b89a82ff41b",
+    "rl/cpu_reference.py": "16a982e0008dc0f4a5f74d82e4b8688d7f3ba0b960a0d6fda03540a96cecc151",
+    "rl/sitecustomize.py": "87f5833e5869f23228aba72aeb10c55daa6768406d5afe8389f3607071d0fa64",
+    "skill/scripts/artifact_io.py": "3df5e8271b817e78444dade3a6b6700b64a9ed3b028141e968343deb5e7b6a3f",
+    "skill/scripts/compare_distributions.py": "f8efa3fab164cbc9913feaf8e24859acb8f094135b5edb1f96b3c20a02a3549b",
+    "skill/scripts/compare_scores.py": "205b1c186a8ad9d3bf259529c6b5ad9fdd98f526c53c6f59e606d26111b8b1a3",
+    "skill/scripts/compare_target_scores.py": "8c784ba8fcd2505dd5ca9f9eae5fa60321a6451d3b7dc27bd5c5e005c43135ff",
+    "skill/scripts/compare_tensors.py": "05c39d401900420815bdfa57762c7164f111b9b442098b0902ff139d058115e9",
+    "skill/scripts/conditions.py": "2f38598facdfb34b92225d0ea2893ceaf941516f6ec3843b6e6193321a6cb577",
+    "skill/scripts/evidence_bundle.py": "7ecf30826e79ff9bd8b136fd2ec81a0b261859431b26913223a6405cfde10155",
+    "skill/scripts/inference_capture.py": "58776c8537cfe43ec9b07d6e0d63e1a1f07699ff40e075f03cc077230b0e0af4",
+    "skill/scripts/msprobe_capture.py": "1cc8fb9224dfb30c1b9457eace46a3582713f90110ded62f598fdf2795b3cf2e",
+    "skill/scripts/query_distributions.py": "f2cea9dc3f7e1bcf19e91f3fb4ded3acb14a6f1866da6a05bce749b7b97d487b",
+    "skill/scripts/replay_bundle.py": "14f5e63722748891a0bf2368f5744ce87e5389cd97e65fd8d0921d2cf58d9fda",
+    "skill/scripts/runtime_probe.py": "323239964eada5a13b9163d711abdf25e578db70cbfbbbf66930661bc795b865",
+    "skill/scripts/score_metrics.py": "17dd19a2406fa69af7002b542d68ce7f28902dfc31aa34e72c0b4debe7fde72e",
+    "skill/scripts/tensor_artifacts.py": "f0ab0fea2ea8a4dc39401f88ecfb0837cc5ce76a4ac1d8c6689138635640518f",
+    "skill/scripts/validate_artifacts.py": "749f146c2d0f1c70268db7dd36d1dbaccde622120e6fb1f4b54366373740afe3"
+  },
+  "verification": {
+    "action": "verify",
+    "bundle": "C:\\Users\\260010260\\Documents\\ChatGPT\\\u8bba\u6587\\precision-skills\\tests\\results\\gpt-6\\compare-gpurecovery-20261021T180045Z\\source-launch-v1.zip",
+    "index": "EXPORT.json",
+    "file_count": 31,
+    "payload_bytes": 300287,
+    "archive_sha256": "381503721811c64f317d42a652791cd742195e1fb82ace404831c8ab398dcc97",
+    "entries_without_indexed_sizes": 0,
+    "size_source": "index"
+  },
+  "intended_groups": [
+    "sft",
+    "inference",
+    "rl:swift,openrlhf"
+  ],
+  "entrypoint": "launch_all.sh",
+  "required_environment": [
+    "PRECISION_WORK_ROOT absolute persistent private directory"
+  ],
+  "note": "Source preparation is not a completed GPU measurement; the initial archive does not implement the other four RL lanes or official Bridge lane."
+}

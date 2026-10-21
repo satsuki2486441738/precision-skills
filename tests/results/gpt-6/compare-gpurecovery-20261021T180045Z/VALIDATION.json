@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "source_archive_sha256": "381503721811c64f317d42a652791cd742195e1fb82ace404831c8ab398dcc97",
+  "archive_members_ast_checked": [
+    "inference/analyze.py",
+    "inference/suite.py",
+    "rl/capture.py",
+    "rl/cpu_reference.py",
+    "rl/native_openrlhf.py",
+    "rl/native_swift.py",
+    "rl/observe_openrlhf.py",
+    "rl/prepare_models.py",
+    "rl/run_suite.py",
+    "rl/sitecustomize.py",
+    "sft/export_compare_sft.py",
+    "sft/native_gpu_sft.py",
+    "skill/scripts/artifact_io.py",
+    "skill/scripts/compare_distributions.py",
+    "skill/scripts/compare_scores.py",
+    "skill/scripts/compare_target_scores.py",
+    "skill/scripts/compare_tensors.py",
+    "skill/scripts/conditions.py",
+    "skill/scripts/evidence_bundle.py",
+    "skill/scripts/inference_capture.py",
+    "skill/scripts/msprobe_capture.py",
+    "skill/scripts/query_distributions.py",
+    "skill/scripts/replay_bundle.py",
+    "skill/scripts/runtime_probe.py",
+    "skill/scripts/score_metrics.py",
+    "skill/scripts/tensor_artifacts.py",
+    "skill/scripts/validate_artifacts.py"
+  ],
+  "unit_tests": {
+    "command": "python -B -m unittest discover -s tests -v",
+    "tests": 167,
+    "result": "passed",
+    "interpreter": "WSL Python3.11 PyTorch2.8 cu128"
+  },
+  "launcher_bash_syntax": "passed",
+  "public_source_literal_scan": "passed for explicitly selected private endpoints/identity paths/key headers; not general privacy certification",
+  "native_gpu_execution_claim": "No remote execution claimed by this prepared-source receipt; measured local cases are exported separately.",
+  "acceptance": null
+}
