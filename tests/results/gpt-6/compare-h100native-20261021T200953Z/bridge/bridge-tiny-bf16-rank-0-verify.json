@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "<WORK_ROOT>\\projects\\gpu-completion-20261022\\sft\\export\\bridge-h100-public-v11\\bridge-tiny-bf16-rank-0.zip",
+  "index": "EXPORT.json",
+  "file_count": 125,
+  "payload_bytes": 9172646,
+  "archive_sha256": "fd46ef067371538efc892445459b874f22072ad09f851cf26033c874cdcc7c86",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

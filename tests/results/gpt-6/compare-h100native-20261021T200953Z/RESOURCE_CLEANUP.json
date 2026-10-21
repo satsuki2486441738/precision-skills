@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-21T21:37:27.211783+00:00",
+  "allocation": "successful four-H100 native continuation",
+  "gpu_count": 4,
+  "hardware": "NVIDIA H100 80GB HBM3",
+  "console_state_verified": "Stopped",
+  "console_runtime": "2h10min",
+  "runtime_scope": "This successful allocation only; earlier failed startup and earlier jobs are not included.",
+  "all_native_and_reference_children_joined": true,
+  "last_worker_compute_audits_empty": true,
+  "needed_data_persisted_before_stop": true,
+  "private_local_backups": [
+    {
+      "role": "RL final native/reference data",
+      "bytes": 41983582,
+      "sha256": "e25be2e61beb5c0e6e68debc1970577f011c5f32c4884a5de0d9844d1f86c13a",
+      "retained_privately": true,
+      "public_raw_PT": false
+    },
+    {
+      "role": "Bridge original native/reference data",
+      "bytes": 84678674,
+      "sha256": "35d2d7e629e3858ec98050443a7046dea5bbe9731a736586a3babc670304afda",
+      "retained_privately": true,
+      "public_raw_PT": false
+    }
+  ],
+  "native_checkpoint_files_persisted_on_AFS": 40,
+  "compiled_dependency_wheels_persisted_on_AFS": 6,
+  "private_screenshot_retained": true,
+  "private_screenshot_published": false,
+  "after_stop_work": "Local CPU-only publication and history integration",
+  "precision_acceptance": null
+}

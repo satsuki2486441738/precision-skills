@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "roll-tiny-cuda-fixed-inputs.zip",
+  "index": "EXPORT.json",
+  "file_count": 21,
+  "payload_bytes": 62526,
+  "archive_sha256": "900c00821701d7e05b9287a9b17baaeb0b35f7925ca4eb84e9b07175c9b9d8b7",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

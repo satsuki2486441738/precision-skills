@@ -1,0 +1,53 @@
+{
+  "status": "independent_reference_and_comparison_complete",
+  "reference_device": "cpu",
+  "reference_dtype": "float32",
+  "native_device": "NVIDIA H100 80GB HBM3",
+  "native_dtype": "bfloat16",
+  "reference_complete_before_native_output_arrays_read": true,
+  "reference_complete_time": 1792617503.7404964,
+  "full_initial_state_audit": {
+    "all_parameters_equal": true,
+    "aliases_equal": true,
+    "unique_parameter_count": 24,
+    "parameter_elements": 19709312,
+    "aliases": [
+      [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+      ]
+    ],
+    "initial_state_record": "initial_state-pid76080-000.json",
+    "all_master_parameters_equal": true
+  },
+  "initial_values_exact_equal": true,
+  "master_initial_values_exact_equal": true,
+  "loss": {
+    "reference": 5.947612226009369e-05,
+    "native": 2.9802322387695312e-08,
+    "abs_error": 5.9446319937705994e-05
+  },
+  "full_preclip_norm": {
+    "reference_fp64": 2.512161573768005,
+    "native_fp64": 2.5095458641776904,
+    "native_returned": null,
+    "native_optimizer_global_norm_field": 2.5095458030700684
+  },
+  "loss_reduction": "token-mean",
+  "reward_formula_independently_checked": true,
+  "reference_optimizer_scope": "declared flattened coordinates; elementwise AdamW after full model backward and clipping",
+  "coverage": {
+    "trajectories": 4,
+    "groups": 2,
+    "actions": 32,
+    "sampled_parameter_count": 12,
+    "sampled_elements": 98304,
+    "full_model_elements": 19709312,
+    "full_model_parameter_count": 24,
+    "native_optimizer_full_parameter_elements": 19709312,
+    "selection": "first 12 native optimizer coordinates; flattened [0,min(8192,numel)) each",
+    "optimizer_events": 1
+  },
+  "reward_quality_claimed": false,
+  "thresholds": null
+}

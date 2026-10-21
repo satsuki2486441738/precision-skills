@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "native_run": "compare-gpurl-20261021T211255Z",
+  "source_checkout_revision_audit": {
+    "expected": "06ab51e75c0e8c5b4d6b66912996b2a611e3dc2f",
+    "actual": "06ab51e75c0e8c5b4d6b66912996b2a611e3dc2f",
+    "matched": true
+  },
+  "dependency_check": {
+    "exit_code": 0,
+    "stdout": "No broken requirements found.",
+    "private_raw_freeze_sha256": "96d22eb1ac71cf236cab8d74843ee684dd4afcc2edabcc69581d892826c225d4"
+  },
+  "native_launcher_source_zip_sha256": "899b9e7ecce26a6a74218692ed6eb20b52a8b680f7b8be9370418baa6d3014d8",
+  "reference_launcher_source_zip_sha256": "020159c82848bd6a0a32cb46801d8e0e46251427d50410711620ad3b220356bc",
+  "raw_artifact_sha256": {
+    "source_pin_record": "3d8e4a9ed6146aa57d0139a6fae070126b2baaa6e8943b77e7d838d39ff90b00",
+    "pipcheck_record": "56de9cad596a782ab2469c2b13fc2c5683eb621fc188e28b76e1350593fb3158"
+  },
+  "existing_zip_bytes_unchanged": true
+}

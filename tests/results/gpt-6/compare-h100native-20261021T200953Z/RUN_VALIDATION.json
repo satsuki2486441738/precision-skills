@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_at": "2026-10-21T21:08:00.780604+00:00",
+  "verified_at": "2026-10-21T21:33:24.959101+00:00",
   "scope": "Public ZIP integrity, numeric replay and non-numeric byte scan; numerical acceptance is unset.",
   "numerical_acceptance": null,
   "records": [
@@ -41,6 +41,30 @@
       }
     },
     {
+      "archive": "bridge/bridge-pretrained-bf16-rank-0.zip",
+      "bytes": 38476164,
+      "sha256": "bf1f294f3db88a836a7309542967a1e42845b5c45a0814788abc956bf84c5fb6",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "bridge/bridge-tiny-bf16-rank-0.zip",
+      "bytes": 5276458,
+      "sha256": "fd46ef067371538efc892445459b874f22072ad09f851cf26033c874cdcc7c86",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
       "archive": "mindspeed-cuda/mindspeed-cuda-pinned-boundary.zip",
       "bytes": 107886,
       "sha256": "d12ebd9e9ec616e6a9fef08e450d02b3d7c81e701e87ddfbe2c8da0b8188015f",
@@ -77,6 +101,78 @@
       "archive": "nemo/nemo-tiny-untied-fp32.zip",
       "bytes": 1955251,
       "sha256": "74b819b74025aeb38653ebbb787dff5acc987932906cdb968ab37367c4473b17",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 4
+      }
+    },
+    {
+      "archive": "openrlhf/openrlhf-pretrained-cuda-fixed-inputs.zip",
+      "bytes": 49756,
+      "sha256": "3e86833ceba61528d059652b94737ecb7abe1288ed08722667417263823be52f",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "openrlhf/openrlhf-pretrained-cuda.zip",
+      "bytes": 3231678,
+      "sha256": "96ef0e7c7bdb5c58708372d7000b9b31a04d5969b08e2d6a3d6f52430f0fe9b9",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "openrlhf/openrlhf-tiny-cuda-fixed-inputs.zip",
+      "bytes": 23467,
+      "sha256": "e77ccde9e0b5cebf7ee753e11608938b59cd1ee569e48efb4fc50f2b16f2ab04",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "openrlhf/openrlhf-tiny-cuda.zip",
+      "bytes": 3110914,
+      "sha256": "f7af68124c382798e2d534550cb8ce5c2e2df66de24b6d64a855a90e885c757e",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 5
+      }
+    },
+    {
+      "archive": "roll/roll-pretrained-cuda-fixed-inputs.zip",
+      "bytes": 30177,
+      "sha256": "74bf1ec59dbe132169f314947c5190d1eb63865cf8e70a858712a8114eed9be0",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "roll/roll-pretrained-cuda.zip",
+      "bytes": 1934911,
+      "sha256": "113544e4b3bb0e2b4604a3cc3cf2ec0a225ebc7ebcc7b567634e5cef4fe583e0",
+      "public_bytes_scan": true,
+      "bundle_verified": true,
+      "portable_replay_completed": true,
+      "replay_summary": {
+        "matched": true,
+        "cases": 4
+      }
+    },
+    {
+      "archive": "roll/roll-tiny-cuda-fixed-inputs.zip",
+      "bytes": 16971,
+      "sha256": "900c00821701d7e05b9287a9b17baaeb0b35f7925ca4eb84e9b07175c9b9d8b7",
+      "public_bytes_scan": true
+    },
+    {
+      "archive": "roll/roll-tiny-cuda.zip",
+      "bytes": 2090984,
+      "sha256": "01141c5bd0c3ab858ba92b3871cebefb66ed14a9adcaa7d0b65e5219d9056844",
       "public_bytes_scan": true,
       "bundle_verified": true,
       "portable_replay_completed": true,

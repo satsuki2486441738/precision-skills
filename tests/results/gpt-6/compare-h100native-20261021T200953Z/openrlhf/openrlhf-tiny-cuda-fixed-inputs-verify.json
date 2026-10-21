@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "openrlhf-tiny-cuda-fixed-inputs.zip",
+  "index": "EXPORT.json",
+  "file_count": 43,
+  "payload_bytes": 93080,
+  "archive_sha256": "e77ccde9e0b5cebf7ee753e11608938b59cd1ee569e48efb4fc50f2b16f2ab04",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

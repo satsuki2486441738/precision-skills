@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "openrlhf-tiny-cuda.zip",
+  "index": "EXPORT.json",
+  "file_count": 254,
+  "payload_bytes": 5143084,
+  "archive_sha256": "f7af68124c382798e2d534550cb8ce5c2e2df66de24b6d64a855a90e885c757e",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "roll-pretrained-cuda.zip",
+  "index": "EXPORT.json",
+  "file_count": 175,
+  "payload_bytes": 2759398,
+  "archive_sha256": "113544e4b3bb0e2b4604a3cc3cf2ec0a225ebc7ebcc7b567634e5cef4fe583e0",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

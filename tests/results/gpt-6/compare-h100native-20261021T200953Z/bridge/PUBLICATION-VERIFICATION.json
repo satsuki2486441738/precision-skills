@@ -1,0 +1,33 @@
+{
+  "public_index_sha256": "e1caf9aa8c85e8f3940c729df85ffcd42e956b4f2eabdca5fc3a4053da7fc1c7",
+  "private_identifier_scan_passed": true,
+  "JSON_members_parse": true,
+  "archive_numeric_hashes_equal_to_original_export": true,
+  "archive_size_below_90MiB_each": true,
+  "all_original_10_comparisons_replay_match": true,
+  "no_additional_native_execution_claimed": true,
+  "source_case_counts": [
+    {
+      "case": "bridge-pretrained-bf16-rank-0",
+      "replay_cases": 5
+    },
+    {
+      "case": "bridge-tiny-bf16-rank-0",
+      "replay_cases": 5
+    }
+  ],
+  "public_files": [
+    "summary.json",
+    "guide-notes.json",
+    "bridge-pretrained-bf16-rank-0.zip",
+    "bridge-pretrained-bf16-rank-0-verify.json",
+    "bridge-pretrained-bf16-rank-0-replay.log",
+    "bridge-tiny-bf16-rank-0.zip",
+    "bridge-tiny-bf16-rank-0-verify.json",
+    "bridge-tiny-bf16-rank-0-replay.log",
+    "PUBLICATION-INDEX.json",
+    "PUBLICATION-VERIFICATION.json"
+  ],
+  "thresholds": null,
+  "numerical_acceptance": null
+}

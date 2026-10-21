@@ -1,16 +1,20 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-21T21:11:28.009112+00:00",
+  "updated_at": "2026-10-21T21:36:27.866469+00:00",
   "scope": "CUDA native workflow evidence, distinct from previous CPU and NPU executions",
   "baseline_revision": "70bc3a2d0d04a6f2b688f557d022ed98e31eee01",
-  "new_cuda_cases_completed": 32,
+  "new_cuda_cases_completed": 38,
   "numerical_acceptance": null,
-  "remote_allocation": "four H100 80GB; native recovery in progress; completed scope retained in this directory",
+  "remote_allocation": "Stopped after all native/CPU children joined and evidence persisted; console runtime2h10min",
   "lanes": [
     {
       "id": "openrlhf-rl",
-      "status": "native_transport_recovered_retry_pending",
-      "remaining": "Actual NCCL initialization recovered using CUMEM=0; native reward API recovery and full optimization/reference still pending."
+      "status": "cuda_native_and_reference_complete",
+      "remaining": "Selected native workflow and independent CPU reference complete; exact sampled coverage, dtypes, aliases and prior failures retained in Guide and archives.",
+      "models": 2,
+      "cases": 2,
+      "comparison_groups": 10,
+      "evidence": "openrlhf/public-export-index.json"
     },
     {
       "id": "slime-rl",
@@ -59,8 +63,12 @@
     },
     {
       "id": "roll-rl",
-      "status": "native_pre_optimizer_retry_pending",
-      "remaining": "Strict batch < dataset-length assertion; add a second genuine prompt and rerun native workflow."
+      "status": "cuda_native_and_reference_complete",
+      "remaining": "Selected native workflow and independent CPU reference complete; exact sampled coverage, dtypes, aliases and prior failures retained in Guide and archives.",
+      "models": 2,
+      "cases": 2,
+      "comparison_groups": 8,
+      "evidence": "roll/public-export-index.json"
     },
     {
       "id": "mindspeed-rl",
@@ -127,8 +135,12 @@
     },
     {
       "id": "megatron-bridge",
-      "status": "native_cuda_dependency_build_in_progress",
-      "remaining": "Official CUDA extensions being built; native conversion/checkpoint/SGD/reference not yet closed."
+      "status": "cuda_native_and_reference_complete",
+      "remaining": "Selected native workflow and independent CPU reference complete; exact sampled coverage, dtypes, aliases and prior failures retained in Guide and archives.",
+      "models": 2,
+      "cases": 2,
+      "comparison_groups": 10,
+      "evidence": "bridge/PUBLICATION-INDEX.json"
     },
     {
       "id": "mindspeed-llm",
@@ -163,10 +175,10 @@
     "adds_native_cases": false,
     "old_comparison_archives_modified": false
   },
-  "snapshot": "H100 continuation including matched-condition AReaL",
-  "h100_native_experiments": 10,
-  "h100_native_rank_captures": 22,
-  "h100_comparison_groups": 110,
+  "snapshot": "All selected NVIDIA native workflows and references closed; resource stopped",
+  "h100_native_experiments": 16,
+  "h100_native_rank_captures": 28,
+  "h100_comparison_groups": 138,
   "source_publication_before_history": true,
   "comparison_replay_does_not_execute_model": true,
   "website_publication": {
@@ -179,5 +191,11 @@
     "browser_passed": true,
     "skill_validation_action": "success",
     "pages_action": "success"
-  }
+  },
+  "selected_cuda_frameworks_completed": 13,
+  "selected_cuda_routes_completed": 14,
+  "selected_ascend_routes": 3,
+  "existing_trt_experiments": 2,
+  "all_selected_cuda_experiments_including_existing_trt": 40,
+  "history_final_publication": "Six further records prepared; immutable final evidence links added only after this source snapshot is pushed."
 }

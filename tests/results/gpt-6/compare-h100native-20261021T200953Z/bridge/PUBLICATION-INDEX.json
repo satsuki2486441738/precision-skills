@@ -1,0 +1,107 @@
+{
+  "native_workflows": 2,
+  "native_rank_captures": 2,
+  "independent_CPU_references": 2,
+  "comparisons": 10,
+  "portable_replays": 10,
+  "all_replays_match": true,
+  "native_topology": "world1 TP1 PP1; physical GPU3 mapped to logical cuda0",
+  "CPU_topology": "independent CPU world1",
+  "thresholds": null,
+  "numerical_acceptance": null,
+  "all_numeric_bytes_equal_to_original_export": true,
+  "all_raw_PT_excluded": true,
+  "private_original_PT_never_reserialized": true,
+  "public_allowlist": [
+    "summary.json",
+    "guide-notes.json",
+    "bridge-pretrained-bf16-rank-0.zip",
+    "bridge-pretrained-bf16-rank-0-verify.json",
+    "bridge-pretrained-bf16-rank-0-replay.log",
+    "bridge-tiny-bf16-rank-0.zip",
+    "bridge-tiny-bf16-rank-0-verify.json",
+    "bridge-tiny-bf16-rank-0-replay.log",
+    "PUBLICATION-INDEX.json",
+    "PUBLICATION-VERIFICATION.json"
+  ],
+  "cases": [
+    {
+      "case": "bridge-pretrained-bf16-rank-0",
+      "archive": "bridge-pretrained-bf16-rank-0.zip",
+      "bytes": 38476164,
+      "sha256": "bf1f294f3db88a836a7309542967a1e42845b5c45a0814788abc956bf84c5fb6",
+      "numeric_sha256": {
+        "case/metrics/native.safetensors": "a55e7df1387f4ee99beb975b67fd2eb0f0c23a3c3a7477c099f770028bdb5d49",
+        "case/metrics/reference.safetensors": "13139dc0b22a288f421bea691375a306cea54eb43e88e885b082a81d60b21e3f"
+      },
+      "numeric_bytes_equal_to_original_export": true,
+      "PT_excluded": true,
+      "PT_reserialized": false,
+      "replays_match": true,
+      "comparison_groups": 5,
+      "portable_replay_cases": 5,
+      "public_member_count": 125,
+      "EXPORT_replacement_count": 328
+    },
+    {
+      "case": "bridge-tiny-bf16-rank-0",
+      "archive": "bridge-tiny-bf16-rank-0.zip",
+      "bytes": 5276458,
+      "sha256": "fd46ef067371538efc892445459b874f22072ad09f851cf26033c874cdcc7c86",
+      "numeric_sha256": {
+        "case/metrics/native.safetensors": "2dd8bff49ca069d5dcf6556d3d076fda3555e222047a866d0f34de25bba92ce8",
+        "case/metrics/reference.safetensors": "37c2f4fb4554c9fd7a3fe79cd33058dc9b5d441416a9d0c4ce6123fe7e602242"
+      },
+      "numeric_bytes_equal_to_original_export": true,
+      "PT_excluded": true,
+      "PT_reserialized": false,
+      "replays_match": true,
+      "comparison_groups": 5,
+      "portable_replay_cases": 5,
+      "public_member_count": 126,
+      "EXPORT_replacement_count": 328
+    }
+  ],
+  "files": [
+    {
+      "name": "summary.json",
+      "bytes": 793587,
+      "sha256": "f8cf4332957c503847751b367905b4eda8619305ec1ba1a5a0cda0a266abd930"
+    },
+    {
+      "name": "guide-notes.json",
+      "bytes": 14776,
+      "sha256": "e129c1e32736cd65eaf5f8499e1b3bab7055e845843f46537bbf7520d256ac48"
+    },
+    {
+      "name": "bridge-pretrained-bf16-rank-0.zip",
+      "bytes": 38476164,
+      "sha256": "bf1f294f3db88a836a7309542967a1e42845b5c45a0814788abc956bf84c5fb6"
+    },
+    {
+      "name": "bridge-pretrained-bf16-rank-0-verify.json",
+      "bytes": 397,
+      "sha256": "8e47f64199c5c3c227095292e60311581f6de1aeb9b9e100e743072aeb612e9a"
+    },
+    {
+      "name": "bridge-pretrained-bf16-rank-0-replay.log",
+      "bytes": 196,
+      "sha256": "f1f01c1e7252c8bfc94e2149b0bce732620ec65cc084a886ff9cfe5d6865a749"
+    },
+    {
+      "name": "bridge-tiny-bf16-rank-0.zip",
+      "bytes": 5276458,
+      "sha256": "fd46ef067371538efc892445459b874f22072ad09f851cf26033c874cdcc7c86"
+    },
+    {
+      "name": "bridge-tiny-bf16-rank-0-verify.json",
+      "bytes": 390,
+      "sha256": "3720944b2072f87d7118b4eec6084277b7bbf6e8396ceac91e4d718ef5adacda"
+    },
+    {
+      "name": "bridge-tiny-bf16-rank-0-replay.log",
+      "bytes": 190,
+      "sha256": "fd8b35b4d22b70167f15f49871f869975734e192c0e9920a5a7c03a837c39cfe"
+    }
+  ]
+}

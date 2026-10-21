@@ -1,0 +1,353 @@
+{
+  "native_workflows": 2,
+  "independent_CPU_references": 2,
+  "original_comparison_groups": 10,
+  "native_topology": {
+    "world_size": 1,
+    "tensor_model_parallel_size": 1,
+    "pipeline_model_parallel_size": 1,
+    "physical_GPU": 3,
+    "logical_CUDA_device": 0
+  },
+  "workflow": "Official AutoBridge HF conversion and save_megatron_model iteration0 checkpoint, separate cold native checkpoint restore, official finetune forward/backward and one native SGD step, iteration1 checkpoint save; both entrypoints returned.",
+  "source": {
+    "Bridge_version": "0.2.0",
+    "Bridge_git_revision": "7af9601c9da746d21481194356295bfe23df3737",
+    "official_MCore_gitlink": "0d8e0714cd29c01e164fe6de9f532182bdffa942",
+    "actual_MCore_version": "0.16.0rc0",
+    "collector_SHA256": "3aced5f986b7ea4134dca6ed4913d52c9170780f51636829ae8b28b78ae869de",
+    "suite_SHA256": "c42a5a4445c2ec0d9390dd1980eda0fa32c9342656e13386147281bd5f320097"
+  },
+  "optimizer": {
+    "algorithm": "SGD",
+    "learning_rate": 0.001,
+    "momentum": 0,
+    "weight_decay": 0,
+    "gradient_clipping": "disabled",
+    "native_outer_class": "megatron.core.optimizer.optimizer.ChainedOptimizer"
+  },
+  "input_semantics": "17 ordered original token IDs; native uses first16 inputs and next16 labels. First/last prediction masks are zero, giving14 targets including two EOS. CPU computes full17 input rows and matches only the same14 prediction coordinates; unused row counts differ.",
+  "loss_semantics": "Displayed native objective is derived from the actual original loss sum / token count, not an intercepted alternative loss scalar. Target NLL is independently derived from original-dtype logits using FP64 full-vocabulary log_softmax.",
+  "distribution_semantics": "All vocabulary logits retained for14 selected positions. Probability RMSE uses the union of both Top100 sets; JS merges the remaining tail. These metrics are not full-vocabulary per-coordinate probability RMSE.",
+  "independence": "CPU reference reads only dedicated starting state/input and reloads original HF weights. It reads no native gradient, after-state or outcome; every full exported logical initial tensor FP32 SHA256 is verified, with tied aliases recorded.",
+  "mapping": "Official AutoMapping/QKVMapping/GatedMLPMapping; gamma false. Separate zero-buffer export produced zero selected logical outputs and original storage pointers were restored before native save/train. Main gradients mapped through the same linear/permutation conversion, with original main_grad samples retained privately.",
+  "dependency_checks": {
+    "status": "original_two_official_source_metadata_failures_retained",
+    "pip_check_returncode": 1,
+    "errors": [
+      "megatron-bridge 0.2.0 has requirement megatron-core[dev,mlm]<0.16.0,>=0.15.0a0, but you have megatron-core 0.16.0rc0.",
+      "transformer_engine_cu12 2.9.0 is not supported on this platform"
+    ],
+    "official_MCore_gitlink": "0d8e0714cd29c01e164fe6de9f532182bdffa942",
+    "original_wheel_or_package_metadata_changed": false,
+    "native_operators_replaced": false,
+    "runtime_result": "pending full native workflow; no success inferred from package checks"
+  },
+  "dependency_runtime_resolution": "The two original pip check failures remain failures. Exact unmodified official Bridge MCore gitlink is used despite its declaration range mismatch. Original TEcu12 wheel internal cp310 tag is retained; genuine cp311 Torch binding and native CUDA execution completed. No package version/metadata or numerical operator was rewritten.",
+  "earlier_failures": "Preserved previous MCore0.15.0 disable_jit_fuser import failure, pinned HFWeightTuple observer adaptation, real build/retry logs and original wheel identity audit. Their attempts are not additional successful native experiments.",
+  "public_numeric_bytes": "Both original native/reference safetensors per case copied byte-for-byte. Original PT files excluded, never reserialized; private originals retained with SHA256 receipts. Two metadata scope descriptions and starting-state wording corrected in a fresh metrics copy; original metric reports remain byte-identical before text redaction. CPU replay float assertion tolerance1e-12 is not a model acceptance threshold.",
+  "persistent_data": {
+    "private_original_PT_files": 12,
+    "native_checkpoint_files_in_AFS": 40,
+    "built_wheels_in_AFS": 6,
+    "private_tar_bytes": 84678674,
+    "private_tar_SHA256": "35d2d7e629e3858ec98050443a7046dea5bbe9731a736586a3babc670304afda",
+    "GPU_job_stopped_after_local_hash_verification": true
+  },
+  "thresholds": null,
+  "numerical_acceptance": null,
+  "cases": [
+    {
+      "case": "bridge-pretrained-bf16-rank-0",
+      "model": "pretrained",
+      "model_config": {
+        "architectures": [
+          "Qwen3ForCausalLM"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151645,
+        "head_dim": 128,
+        "hidden_act": "silu",
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 40960,
+        "max_window_layers": 28,
+        "model_type": "qwen3",
+        "num_attention_heads": 16,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000,
+        "sliding_window": null,
+        "tie_word_embeddings": true,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.51.0",
+        "use_cache": true,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      },
+      "native_unique_parameter_objects": 226,
+      "native_unique_physical_parameter_elements": 596049920,
+      "exported_logical_tensors": 311,
+      "logical_full_coordinates": 751632384,
+      "compared_gradient_coordinates": 876544,
+      "compared_stored_update_coordinates": 876544,
+      "sample_limit_per_logical_tensor": 4096,
+      "logical_alias_note": "Logical counts follow the actual exported inventory. The pretrained inventory includes a tied lm_head alias; its 751,632,384 logical coordinates are not independent physical parameters. Tiny exported inventory represents the shared output through the embedding coordinate once.",
+      "full_model_native_training": true,
+      "gradient_storage": "FP32 native main_grad",
+      "native_stored_parameter_dtype": "BF16",
+      "reference_compute_and_parameter_dtype": "FP32",
+      "native_objective_derived_from_returned_sum_and_count": {
+        "sum": 136.9083251953125,
+        "token_count": 14,
+        "value": 9.779166221618652
+      },
+      "independent_CPU_objective": 9.773661613464355,
+      "objective_absolute_difference": 0.005504608154296875,
+      "valid_targets": 14,
+      "full_initial_logical_value_hash_match": true,
+      "native_cold_checkpoint_restore_returned": true,
+      "gradient_mapping_gamma_false_and_zero_export_audit": true,
+      "comparison_groups": 5,
+      "portable_replay_cases": 5,
+      "gradient_metrics": {
+        "count": 876544,
+        "side_a_norm": {
+          "value": 43.34397806347556,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 44.61206944651211,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 6.561226006796975,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 0.007008065253554125,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9892841726984443,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.9147639274597168,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 759816,
+        "max_coordinate": {
+          "parameter": "model.layers.6.mlp.gate_proj.weight",
+          "index": 3080
+        }
+      },
+      "stored_update_metrics": {
+        "count": 876544,
+        "side_a_norm": {
+          "value": 0.042640038648207,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 0.04461207013508637,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.014371385176342222,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 1.53501197787475e-05,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9467349989879775,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.0015843510627746582,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 8621,
+        "max_coordinate": {
+          "parameter": "model.layers.0.input_layernorm.weight",
+          "index": 429
+        }
+      },
+      "target_score_metrics": {
+        "target_count": 14,
+        "side_a_nll_nat_per_token": 9.779166229944021,
+        "side_b_nll_nat_per_token": 9.773664597853152,
+        "nll_abs_diff_nat_per_token": 0.00550163209086918,
+        "mae_nat": 0.06296087950828623,
+        "p99_nat": 0.1772672158431975,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.18353166579507274,
+        "max_coordinate": {
+          "sample": "batch-0",
+          "position": 7,
+          "token": 31
+        }
+      },
+      "native_optimizer_event": [
+        true,
+        282.2143605710028,
+        null
+      ]
+    },
+    {
+      "case": "bridge-tiny-bf16-rank-0",
+      "model": "tiny",
+      "model_config": {
+        "architectures": [
+          "Qwen3ForCausalLM"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 1,
+        "dtype": "bfloat16",
+        "eos_token_id": 2,
+        "head_dim": 32,
+        "hidden_act": "silu",
+        "hidden_size": 128,
+        "initializer_range": 0.02,
+        "intermediate_size": 256,
+        "layer_types": [
+          "full_attention",
+          "full_attention"
+        ],
+        "max_position_embeddings": 64,
+        "max_window_layers": 28,
+        "model_type": "qwen3",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 2,
+        "num_key_value_heads": 2,
+        "pad_token_id": 0,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000.0,
+        "sliding_window": null,
+        "tie_word_embeddings": true,
+        "transformers_version": "4.57.1",
+        "use_cache": true,
+        "use_sliding_window": false,
+        "vocab_size": 128
+      },
+      "native_unique_parameter_objects": 18,
+      "native_unique_physical_parameter_elements": 312064,
+      "exported_logical_tensors": 24,
+      "logical_full_coordinates": 312064,
+      "compared_gradient_coordinates": 312064,
+      "compared_stored_update_coordinates": 312064,
+      "sample_limit_per_logical_tensor": 0,
+      "logical_alias_note": "Logical counts follow the actual exported inventory. The pretrained inventory includes a tied lm_head alias; its 751,632,384 logical coordinates are not independent physical parameters. Tiny exported inventory represents the shared output through the embedding coordinate once.",
+      "full_model_native_training": true,
+      "gradient_storage": "FP32 native main_grad",
+      "native_stored_parameter_dtype": "BF16",
+      "reference_compute_and_parameter_dtype": "FP32",
+      "native_objective_derived_from_returned_sum_and_count": {
+        "sum": 68.75443267822266,
+        "token_count": 14,
+        "value": 4.9110307693481445
+      },
+      "independent_CPU_objective": 4.911351203918457,
+      "objective_absolute_difference": 0.0003204345703125,
+      "valid_targets": 14,
+      "full_initial_logical_value_hash_match": true,
+      "native_cold_checkpoint_restore_returned": true,
+      "gradient_mapping_gamma_false_and_zero_export_audit": true,
+      "comparison_groups": 5,
+      "portable_replay_cases": 5,
+      "gradient_metrics": {
+        "count": 312064,
+        "side_a_norm": {
+          "value": 7.882877207813902,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 7.88472229287388,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.07261101785946462,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 0.0001299812440447101,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.9999576139078497,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.00421731173992157,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 1422,
+        "max_coordinate": {
+          "parameter": "model.embed_tokens.weight",
+          "index": 1422
+        }
+      },
+      "stored_update_metrics": {
+        "count": 312064,
+        "side_a_norm": {
+          "value": 0.007394279490980347,
+          "status": "no_thresholds"
+        },
+        "side_b_norm": {
+          "value": 0.007884722584001467,
+          "status": "no_thresholds"
+        },
+        "error_norm": {
+          "value": 0.004826252422166475,
+          "status": "no_thresholds"
+        },
+        "rmse": {
+          "value": 8.639491807168275e-06,
+          "status": "no_thresholds"
+        },
+        "cosine": {
+          "value": 0.8023031774941614,
+          "status": "no_thresholds"
+        },
+        "max_abs": {
+          "value": 0.00018218904733657837,
+          "status": "no_thresholds"
+        },
+        "max_flat_index": 1473,
+        "max_coordinate": {
+          "parameter": "model.embed_tokens.weight",
+          "index": 1473
+        }
+      },
+      "target_score_metrics": {
+        "target_count": 14,
+        "side_a_nll_nat_per_token": 4.911030804380036,
+        "side_b_nll_nat_per_token": 4.911351580837763,
+        "nll_abs_diff_nat_per_token": 0.000320776457726879,
+        "mae_nat": 0.0009420898578516024,
+        "p99_nat": 0.0019631541963391628,
+        "p99_method": "global linear h=0.99*(N-1)",
+        "max_abs_nat": 0.0019813802824968363,
+        "max_coordinate": {
+          "sample": "batch-0",
+          "position": 12,
+          "token": 13
+        }
+      },
+      "native_optimizer_event": [
+        true,
+        7.882876861884175,
+        null
+      ]
+    }
+  ],
+  "dependency_checks_followup_runtime_result": "Both actual native workflows subsequently completed; this does not turn the two package metadata checks into passes."
+}

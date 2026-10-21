@@ -2,10 +2,9 @@
 
 Maintainer: [YuZhengYYDS](https://github.com/YuZhengYYDS).
 
-This directory records parent inspection, clean-context skill execution,
-reproduced bugs, reusable operations and verification evidence. `gpt-6` is the
-model-family label supplied to this Codex session; a more specific backend model
-identifier was not exposed. Child agents inherited the model selection.
+This directory retains the original cold-context skill trials and subsequent
+native GPU/NPU continuations, reproduced bugs and reusable operations. Each run's
+Guide identifies its execution scope, source identity and verification evidence.
 
 - [2026-10-19 cold training trial and artifact fixes](compare-skillvalidation-20261019T083016Z/README.md)
 - [2026-10-19 expanded native framework evaluation](compare-frameworkmatrix-20261019T124628Z/README.md)
@@ -17,9 +16,11 @@ identifier was not exposed. Child agents inherited the model selection.
 - [2026-10-20 remaining native workflows and references completed](compare-remainingcomplete-20261020T140716Z/README.md)
 - [Completion, numerical differences, unfinished scope and replay guide](compare-remainingcomplete-20261020T140716Z/GUIDE.md)
 - [2026-10-21 bugs fixed, reusable skill tools and portable Luna replay](compare-skillhardening-20261020T180218Z/GUIDE.md)
+- [2026-10-22 native CUDA recovery: 22 single-GPU experiments](compare-gpurecovery-20261021T180045Z/GUIDE.md)
+- [2026-10-22 H100 native continuation, current progress and evidence](compare-h100native-20261021T200953Z/GUIDE.md)
 - [Reusable evidence replay utility](replay.py)
 
-The cold worker starts with `fork_turns="none"`, receives a task and a pinned
+The original cold worker starts with `fork_turns="none"`, receives a task and a pinned
 checkout, and does not read parent findings, repository tests or history. This
 isolates conversation context, not the runtime's system instructions or tools.
 Parent review and later replay are recorded separately from the cold outcome.

@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "<WORK_ROOT>\\projects\\gpu-completion-20261022\\sft\\export\\bridge-h100-public-v11\\bridge-pretrained-bf16-rank-0.zip",
+  "index": "EXPORT.json",
+  "file_count": 124,
+  "payload_bytes": 69371072,
+  "archive_sha256": "bf1f294f3db88a836a7309542967a1e42845b5c45a0814788abc956bf84c5fb6",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

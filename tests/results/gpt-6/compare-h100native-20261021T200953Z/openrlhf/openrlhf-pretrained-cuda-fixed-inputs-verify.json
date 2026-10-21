@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "openrlhf-pretrained-cuda-fixed-inputs.zip",
+  "index": "EXPORT.json",
+  "file_count": 43,
+  "payload_bytes": 236528,
+  "archive_sha256": "3e86833ceba61528d059652b94737ecb7abe1288ed08722667417263823be52f",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

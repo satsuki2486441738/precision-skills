@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "roll-tiny-cuda.zip",
+  "index": "EXPORT.json",
+  "file_count": 175,
+  "payload_bytes": 2494359,
+  "archive_sha256": "01141c5bd0c3ab858ba92b3871cebefb66ed14a9adcaa7d0b65e5219d9056844",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case": "roll-tiny-cuda",
+      "lane": "roll",
+      "archive": "roll-tiny-cuda.zip",
+      "sha256": "01141c5bd0c3ab858ba92b3871cebefb66ed14a9adcaa7d0b65e5219d9056844",
+      "bytes": 2090984,
+      "input_archive": "roll-tiny-cuda-fixed-inputs.zip",
+      "input_archive_sha256": "900c00821701d7e05b9287a9b17baaeb0b35f7925ca4eb84e9b07175c9b9d8b7",
+      "input_archive_bytes": 16971,
+      "all_numeric_file_bytes_unchanged": true,
+      "numeric_files": 111,
+      "input_tensor_bits_roundtrip_equal": true,
+      "input_tensors": 15,
+      "verified": true,
+      "replay_matched_cases": 4,
+      "coverage": {
+        "trajectories": 4,
+        "groups": 1,
+        "actions": 32,
+        "sampled_parameter_count": 12,
+        "sampled_elements": 65856,
+        "full_model_elements": 19709312,
+        "full_model_parameter_count": 24,
+        "native_optimizer_full_parameter_elements": 19709312,
+        "selection": "first 12 native optimizer coordinates; flattened [0,min(8192,numel)) each",
+        "optimizer_events": 1
+      }
+    },
+    {
+      "case": "roll-pretrained-cuda",
+      "lane": "roll",
+      "archive": "roll-pretrained-cuda.zip",
+      "sha256": "113544e4b3bb0e2b4604a3cc3cf2ec0a225ebc7ebcc7b567634e5cef4fe583e0",
+      "bytes": 1934911,
+      "input_archive": "roll-pretrained-cuda-fixed-inputs.zip",
+      "input_archive_sha256": "74bf1ec59dbe132169f314947c5190d1eb63865cf8e70a858712a8114eed9be0",
+      "input_archive_bytes": 30177,
+      "all_numeric_file_bytes_unchanged": true,
+      "numeric_files": 111,
+      "input_tensor_bits_roundtrip_equal": true,
+      "input_tensors": 15,
+      "verified": true,
+      "replay_matched_cases": 4,
+      "coverage": {
+        "trajectories": 4,
+        "groups": 1,
+        "actions": 27,
+        "sampled_parameter_count": 12,
+        "sampled_elements": 67840,
+        "full_model_elements": 596049920,
+        "full_model_parameter_count": 310,
+        "native_optimizer_full_parameter_elements": 596049920,
+        "selection": "first 12 native optimizer coordinates; flattened [0,min(8192,numel)) each",
+        "optimizer_events": 1
+      }
+    }
+  ],
+  "privacy_scan": {
+    "outer_text_and_paths": true,
+    "zip_member_text_and_paths": true,
+    "raw_pt_included": false
+  }
+}

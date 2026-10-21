@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "openrlhf-pretrained-cuda.zip",
+  "index": "EXPORT.json",
+  "file_count": 254,
+  "payload_bytes": 5484264,
+  "archive_sha256": "96ef0e7c7bdb5c58708372d7000b9b31a04d5969b08e2d6a3d6f52430f0fe9b9",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

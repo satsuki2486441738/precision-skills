@@ -1,0 +1,10 @@
+{
+  "action": "verify",
+  "bundle": "roll-pretrained-cuda-fixed-inputs.zip",
+  "index": "EXPORT.json",
+  "file_count": 21,
+  "payload_bytes": 134605,
+  "archive_sha256": "74bf1ec59dbe132169f314947c5190d1eb63865cf8e70a858712a8114eed9be0",
+  "entries_without_indexed_sizes": 0,
+  "size_source": "index"
+}

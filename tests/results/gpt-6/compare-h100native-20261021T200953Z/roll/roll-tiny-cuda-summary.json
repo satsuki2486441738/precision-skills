@@ -1,0 +1,52 @@
+{
+  "status": "independent_reference_and_comparison_complete",
+  "reference_device": "cpu",
+  "reference_dtype": "float32",
+  "native_device": "NVIDIA H100 80GB HBM3",
+  "native_dtype": "float32",
+  "reference_complete_before_native_output_arrays_read": true,
+  "reference_complete_time": 1792617383.1825712,
+  "full_initial_state_audit": {
+    "all_parameters_equal": true,
+    "aliases_equal": true,
+    "unique_parameter_count": 24,
+    "parameter_elements": 19709312,
+    "aliases": [
+      [
+        "lm_head.weight",
+        "model.embed_tokens.weight"
+      ]
+    ],
+    "initial_state_record": "initial_state-pid82288-000.json"
+  },
+  "initial_values_exact_equal": true,
+  "master_initial_values_exact_equal": null,
+  "loss": {
+    "reference": 2.9802322387695312e-08,
+    "native": 8.940696716308594e-08,
+    "abs_error": 5.960464477539063e-08
+  },
+  "full_preclip_norm": {
+    "reference_fp64": 4.242363085989152,
+    "native_fp64": 4.242362985028732,
+    "native_returned": 4.242362976074219,
+    "native_optimizer_global_norm_field": null
+  },
+  "loss_reduction": "seq-mean-token-mean",
+  "reward_formula_independently_checked": true,
+  "reference_optimizer_scope": "declared flattened coordinates; elementwise AdamW after full model backward and clipping",
+  "coverage": {
+    "trajectories": 4,
+    "groups": 1,
+    "actions": 32,
+    "sampled_parameter_count": 12,
+    "sampled_elements": 65856,
+    "full_model_elements": 19709312,
+    "full_model_parameter_count": 24,
+    "native_optimizer_full_parameter_elements": 19709312,
+    "selection": "first 12 native optimizer coordinates; flattened [0,min(8192,numel)) each",
+    "optimizer_events": 1
+  },
+  "reward_quality_claimed": false,
+  "thresholds": null
+}
