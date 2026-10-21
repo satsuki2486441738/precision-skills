@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-21T21:44:23.753936+00:00",
+  "source_branch": "validation/gpt-6-cold-skill-20261019",
+  "source_evidence_revision": "3ca83a738a3a972eed48e5c8c90c3204186ff6bf",
+  "site_branch": "main",
+  "site_revision": "ce199bf23aac57109be5e5160dfa1d3072aa2c3d",
+  "pushed_as": "YuZhengYYDS",
+  "source_pushed_before_history": true,
+  "h100_native_experiments": 16,
+  "h100_native_capture_cases": 28,
+  "h100_comparison_and_portable_replay_groups": 138,
+  "h100_added_history_entries": 14,
+  "earlier_local_cuda_experiments": 22,
+  "earlier_local_added_history_entries": 14,
+  "total_new_cuda_experiments": 38,
+  "original_site_evaluations": 43,
+  "total_added_history_entries": 28,
+  "deployed_evaluations": 71,
+  "deployed_comparison_groups": 377,
+  "original43_record_objects_unchanged": true,
+  "history_unit_tests_passed": 27,
+  "browser_verification": {
+    "status": "passed",
+    "evaluations": 71,
+    "comparison_groups": 377,
+    "metrics": 2810,
+    "drawn_two_sided_charts": 538,
+    "repair_records_preserved": 9
+  },
+  "CI": [
+    {
+      "name": "Validate skill",
+      "conclusion": "success",
+      "url": "https://github.com/satsuki2486441738/precision-skills/actions/runs/39680857752"
+    },
+    {
+      "name": "Publish precision history",
+      "conclusion": "success",
+      "url": "https://github.com/satsuki2486441738/precision-skills/actions/runs/39680857295"
+    }
+  ],
+  "deployed_JSON_verified": true,
+  "history_url": "https://satsuki2486441738.github.io/precision-skills/#evaluations",
+  "resource_state": "Stopped",
+  "console_runtime": "2h10min",
+  "skill_reference_hardening_revision": "286219b657bf24c3c33a0232d11ff2cca8dbfbf2",
+  "numerical_acceptance": null,
+  "remaining_boundaries": [
+    "Historical MindSpeed-RL, MindIE-LLM and MindSpeed-LLM selected routes require Ascend; earlier NPU evidence remains separate.",
+    "Pinned newer MindSpeed-LLM CUDA candidate fails before training on actual dependency/import boundaries; no completed precision record.",
+    "Sampled numerical coverage, model variants and original Bridge dependency metadata failures remain explicit."
+  ]
+}

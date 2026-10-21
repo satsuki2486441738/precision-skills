@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-21T21:36:27.866469+00:00",
+  "updated_at": "2026-10-21T21:44:23.753936+00:00",
   "scope": "CUDA native workflow evidence, distinct from previous CPU and NPU executions",
   "baseline_revision": "70bc3a2d0d04a6f2b688f557d022ed98e31eee01",
   "new_cuda_cases_completed": 38,
@@ -182,20 +182,22 @@
   "source_publication_before_history": true,
   "comparison_replay_does_not_execute_model": true,
   "website_publication": {
-    "source_revision": "fa8e0631759b4f1ead41b6fb39f49daf67546379",
-    "site_revision": "514fb17b3d4f9a849d924b4dea762526efbceecc",
-    "added_history_entries": 6,
-    "deployed_history_entries": 63,
-    "deployed_comparison_groups": 341,
+    "source_revision": "3ca83a738a3a972eed48e5c8c90c3204186ff6bf",
+    "site_revision": "ce199bf23aac57109be5e5160dfa1d3072aa2c3d",
+    "h100_added_history_entries": 14,
+    "total_task_added_history_entries": 28,
+    "deployed_history_entries": 71,
+    "deployed_comparison_groups": 377,
     "history_structure_tests_passed": 27,
     "browser_passed": true,
     "skill_validation_action": "success",
-    "pages_action": "success"
+    "pages_action": "success",
+    "deployed_JSON_verified": true
   },
   "selected_cuda_frameworks_completed": 13,
   "selected_cuda_routes_completed": 14,
   "selected_ascend_routes": 3,
   "existing_trt_experiments": 2,
   "all_selected_cuda_experiments_including_existing_trt": 40,
-  "history_final_publication": "Six further records prepared; immutable final evidence links added only after this source snapshot is pushed."
+  "history_final_publication": "Published and deployed; all source snapshots pushed before their corresponding history records."
 }
